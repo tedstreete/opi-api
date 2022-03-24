@@ -31,12 +31,13 @@ Next Meeting Topics (2 weeks):
 - Begin API Mapping and Breakdown views discussions
 
 Actions:
-These will move into the github issues section
-  2/24/2022 -  Define a Layering Diagram for I/DPU Elements - Concept in place
-  2/24/2022 -  Define an Interface diagram view for the I/DPU - Draft
-  2/24/2022 -  Prioritize a top set of APIs to define aligned to the Taxonomy Set
-  3/03/2022 -  Work on defining the Services, Capabilities, and Possible Chaining view.
-  3/03/2022 -  Create a location on GitHub for brainstorming/collaboration - Complete
+These will move into the github issues/discussion area:
+
+- 2/24/2022 -  Define a Layering Diagram for I/DPU Elements - Concept in place
+- 2/24/2022 -  Define an Interface diagram view for the I/DPU - Draft
+- 2/24/2022 -  Prioritize a top set of APIs to define aligned to the Taxonomy Set
+- 3/03/2022 -  Work on defining the Services, Capabilities, and Possible Chaining view.
+- 3/03/2022 -  Create a location on GitHub for brainstorming/collaboration - Complete
 
 Meeting Minutes are at:
 <https://github.com/Diamond-Bluff/dbluff-opi-api/tree/main/doc/minutes>
