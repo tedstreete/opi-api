@@ -1,5 +1,7 @@
 # OPI API and Behavioral Model Group
 
+OPI subgroup dealing with APIs.
+
 ---
 The focus of the subgroup is:
 
