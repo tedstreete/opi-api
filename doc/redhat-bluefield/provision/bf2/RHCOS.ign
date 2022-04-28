@@ -1,0 +1,35 @@
+{
+    "ignition": {"version": "3.3.0-experimental"},
+    "kernelArguments": {
+        "shouldExist": ["crashkernel=auto", "console=ttyAMA1", "console=hvc0", "console=ttyAMA0", "earlycon=pl011,0x01000000" "earlycon=pl011,0x01800000"],
+        "shouldNotExist": ["somekarg"]
+    }
+    "storage": {
+        "files": [{
+            "path": "/etc/hostname",
+            "mode": 420,
+            "overwrite": true,
+            "contents": { "source": "data:,bluefield-soc.mlx" }
+        },
+        {"path": "/usr/bin/connectx_eswitch_mode_config.sh",
+         "mode": 755,
+         "overwrite":true,
+         "contents": {"source": "data:,#!/bin/bash\n\nmode="switchdev"\n\nfor pdev in \$(/usr/sbin/lspci -d 15b3: -D | awk '{print \$1}')\ndo\n	# ignore VFs and PCI bridge\n	if /usr/sbin/lspci -s \${pdev} | grep -qiE "PCI bridge|Virtual" ; then\n		continue\n	fi\n\n	if devlink dev | grep -q "\${pdev}" ; then\n		msg=\$(devlink dev eswitch set pci/\${pdev} mode \${mode} 2>&1)\n		if [ \$? -eq 0 ]; then\n			echo "connectx_eswitch_mode_config: \${pdev}: eswitch mode set to '\${mode}'" > /dev/kmsg\n		else\n			echo "connectx_eswitch_mode_config: \${pdev}: \$msg" > /dev/kmsg\n		fi\n	else\n		echo "connectx_eswitch_mode_config: \${pdev}: devlink dev not supported, skipping.'" > /dev/kmsg\n	fi\ndone"}
+        }
+]
+    }
+    "systemd": {
+        "units": [{
+            "name": "serial-getty@hvc0.service",
+            "enabled": true,
+            "contents": "[Unit]\nDescription=Serial Getty on hvc0\nDocumentation=man:agetty(8) man:systemd-getty-generator(8)\nDocumentation=http://0pointer.de/blog/projects/serial-console.html\nBindsTo=dev-hvc0.device\nAfter=dev-hvc0.device systemd-user-sessions.service plymouth-quit-wait.service getty-pre.target\nAfter=rc-local.service\n\nBefore=getty.target\nIgnoreOnIsolate=yes\n\nConflicts=rescue.service\nBefore=rescue.service\n\n[Service]\n# The '-o' option value tells agetty to replace 'login' arguments with an\n# option to preserve environment (-p), followed by '--' for safety, and then\n# the entered username.\nExecStart=-/sbin/agetty -o '-p -- \\u' --keep-baud 115200,38400,9600 hvc0 $TERM\nType=idle\nRestart=always\nUtmpIdentifier=hvc0\nTTYPath=/dev/hvc0\nTTYReset=yes\nTTYVHangup=yes\nKillMode=process\nIgnoreSIGPIPE=no\nSendSIGHUP=yes\n\n[Install]\nWantedBy=getty.target\n"},
+            {"name": "serial-getty@ttyAMA0.service",
+            "enabled": true,
+            "contents": "[Unit]\nDescription=Serial Getty on ttyAMA0\nDocumentation=man:agetty(8) man:systemd-getty-generator(8)\nDocumentation=http://0pointer.de/blog/projects/serial-console.html\nBindsTo=dev-ttyAMA0.device\nAfter=dev-ttyAMA0.device systemd-user-sessions.service plymouth-quit-wait.service getty-pre.target\nAfter=rc-local.service\n\nBefore=getty.target\nIgnoreOnIsolate=yes\n\nConflicts=rescue.service\nBefore=rescue.service\n\n[Service]\n# The '-o' option value tells agetty to replace 'login' arguments with an\n# option to preserve environment (-p), followed by '--' for safety, and then\n# the entered username.\nExecStart=-/sbin/agetty -o '-p -- \\u' --keep-baud 115200,38400,9600 ttyAMA0 $TERM\nType=idle\nRestart=always\nUtmpIdentifier=ttyAMA0\nTTYPath=/dev/ttyAMA0\nTTYReset=yes\nTTYVHangup=yes\nKillMode=process\nIgnoreSIGPIPE=no\nSendSIGHUP=yes\n\n[Install]\nWantedBy=getty.target\n"},
+            {"name": "serial-getty@ttyAMA1.service",
+            "enabled": true,
+            "contents": "[Unit]\nDescription=Serial Getty on  ttyAMA1\nDocumentation=man:agetty(8) man:systemd-getty-generator(8)\nDocumentation=http://0pointer.de/blog/projects/serial-console.html\nBindsTo=dev- ttyAMA1.device\nAfter=dev- ttyAMA1.device systemd-user-sessions.service plymouth-quit-wait.service getty-pre.target\nAfter=rc-local.service\n\nBefore=getty.target\nIgnoreOnIsolate=yes\n\nConflicts=rescue.service\nBefore=rescue.service\n\n[Service]\n# The '-o' option value tells agetty to replace 'login' arguments with an\n# option to preserve environment (-p), followed by '--' for safety, and then\n# the entered username.\nExecStart=-/sbin/agetty -o '-p -- \\u' --keep-baud 115200,38400,9600  ttyAMA1 $TERM\nType=idle\nRestart=always\nUtmpIdentifier= ttyAMA1\nTTYPath=/dev/ ttyAMA1\nTTYReset=yes\nTTYVHangup=yes\nKillMode=process\nIgnoreSIGPIPE=no\nSendSIGHUP=yes\n\n[Install]\nWantedBy=getty.target\n"},
+            {"name": "connectx_eswitch_mode_config.service",
+             "enabled": true,
+             "contents": "[Unit]\nDescription=connectx_eswitch_mode_config: Set eswitch mode\nAfter=systemd-udev-settle.service\nBefore=network.target network.service networking.service remote-fs-pre.target\n\n[Service]\nType=oneshot\nExecStart=/usr/bin/connectx_eswitch_mode_config.sh\n\n[Install]\nWantedBy=multi-user.target"}
+]}
