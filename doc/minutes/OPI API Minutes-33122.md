@@ -11,7 +11,7 @@ Agenda:
 
 Notes:
 
-- Overview of IPDK (https://ipdk.io/)
+- Overview of IPDK <https://ipdk.io/>
 - Walk through of Target Abstraction Interface
   - Fixed Table views in the TDI (Table Driven Interface) for the networking capabilities
   - Lookaside and Inline TLS capability will need to be defined

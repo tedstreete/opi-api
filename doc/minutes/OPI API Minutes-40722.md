@@ -7,11 +7,12 @@ Attendees: Mark Sanders, Gene Bagwell, Venkat Pullela, Yuval Caduri, Wayne Hinem
 
 Agenda:
 
-- Update on GitHub location https://github.com/opiproject/opi-api 
+- Update on GitHub location <https://github.com/opiproject/opi-api>
   - Re-setting the github tie-ins for notifications to the Slack channel
 - DPDK Interface walk-through – Jerin Jacob Kollanukkaran (Marvell)
 
 Notes:
+
 - DataPlane Workload Acceleration (DWA) in DPDK.
   - This was pushed to the DPDK as the recommended proposal by Marvell.  Will upload the deck as reference material
 
@@ -39,4 +40,5 @@ Notes:
     - Vendor specifics on the data movement of the data-plane traffic may be the deciding factor as it may be different between vendors that feed into the Data plane traffic
 
 Upcoming Meeting Topics:
+
 - TBD
