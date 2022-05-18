@@ -1,9 +1,9 @@
 # Open Programmable Infrastructure API and Behavioral Model Group
 
 ---
-Minutes 4/28/2022
+Minutes 5/05/2022
 
-Attendees: Mark Sanders, Steven Royer, Wayne Hineman, Raja Kommula, Dan Daly, Patty Driever, Umesh Deshpan.., Ted Streete, Satananda Burla, Venkat Pullela, Kyle Mestery, Burugula, Shafiq
+Attendees: Mark Sanders, Steven Royer, Wayne Hineman, Raja Kommula, Dan Daly, Patty Driever, Umesh Deshpande, Ted Streete, Satananda Burla, Venkat Pullela, Kyle Mestery, R Sarma Burugula, Shafiq Abedin
 
 Agenda:
 
