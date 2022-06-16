@@ -8,6 +8,7 @@
 *** Compression
 *** RAID (across storage backends)
 *** DARE (Data at Rest Encryption)
+*** QoS (Min and Max Iops and BW)
 *** others...
 ** BackEnd (fabric)
 *** NVMe
