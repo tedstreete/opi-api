@@ -4,6 +4,11 @@
 *** NVMe Subsystem
 *** NVMe Controller
 *** NVMe Namespace
+** Middle End (Storage Services)
+*** Compression
+*** RAID (across storage backends)
+*** DARE (Data at Rest Encryption)
+*** others...
 ** BackEnd (fabric)
 *** NVMe
 **** PCIe
