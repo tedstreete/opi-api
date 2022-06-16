@@ -42,5 +42,8 @@
 
 The Network Services Offload use case will build a foundation for the examples that can be put together for the OPI.  The basic topology is shown in the diagram.  It consists of two servers, with D/IPUs that are connected through a network switch.
 
+![Network Services Offload Use Case](doc/minutes/images/API-Use-Case-1.png)
+
+The network switch provides a mechanism to provide any debugging and analysis of the traffic on the network connection.  Each server contains a DPU with its network interface.
 
 Subsequent use cases can be built upon the network services offload.
