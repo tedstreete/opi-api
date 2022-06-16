@@ -5,7 +5,7 @@
 - Virtual Switch Offload
 - Network Service Offload
 - NVMeoF
-- Storage Offload
+- Storage Offload/Services
 - Firewall/Distributed Firewall
 - ...
 
@@ -19,16 +19,22 @@
   - Re-provisioning
   - Firmware Update
   - OS Update
+  - Retirement
 
 ## Interfaces
 
 - Configuration Interface
   - Network facing (Ethernet inband or out-of-band)
   - Host facing (Network port over PCIe)
+  - BMC facing (for systems with integrated BMCs)
 - Consumption Interface
   - Virtual Function
     - Network VF Interface
     - Virtual Storage (VF Interface)
+
+What would the AI/ML consumption interface look like?
+What are the Security implications on consumption interfaces?
+What are the Security API boundary implications to create the air gap?
 
 ## Building Blocks
 
@@ -36,7 +42,7 @@
 - VF/PF
 - Access Security
 
-## UseCases
+## Use Case Examples
 
 ### Network Services Offload
 
