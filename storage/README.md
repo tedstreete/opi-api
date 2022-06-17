@@ -1,5 +1,7 @@
 # OPI Storage APIs
 
+![Storage Services Offload Use Case](../doc/minutes/images/API-Storage-Use-Case.png)
+
 - We identified 3 layers of APIs in Storage
   - Front End
     - Those are *host* facing APIs
