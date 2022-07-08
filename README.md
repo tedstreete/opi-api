@@ -1,5 +1,9 @@
 # OPI API and Behavioral Model Group
 
+[![MarkdownLint](https://github.com/opiproject/opi-api/actions/workflows/markdown.yml/badge.svg)](https://github.com/opiproject/opi-api/actions/workflows/markdown.yml)
+
+## Overview
+
 OPI subgroup dealing with APIs.
 
 ---
@@ -32,7 +36,7 @@ The focus of the subgroup is:
 - Status
   - Active
 
-# I Want To Contribute!
+## I Want To Contribute
 
 This project welcomes contributions and suggestions.  We are happy to have the Community involved via submission of **Issues and Pull Requests** (with substantive content or even just fixes). We are hoping for the documents, test framework, etc. to become a community process with active engagement.  PRs can be reviewed by by any number of people, and a maintainer may accept.
 
