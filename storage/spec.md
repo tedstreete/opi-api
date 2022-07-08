@@ -112,9 +112,9 @@ Q: what NVMe spec version we mandate ? 1.3 ? 1.4 ? 2.0 ?
 | string         | Model               | Subsystem Model Number                       |
 | string         | Max NS              | Maximum namespaces allowed in this subsystem |
 
-_Question(from Marvel): When is this supposed to be used since there is no way in NVMe protocol for for NVMe subsystem update to be propagated to the host ?_
+Question(from Marvel): _When is this supposed to be used since there is no way in NVMe protocol for for NVMe subsystem update to be propagated to the host ?_
 
-_Answer: Even in nvme there is no option to update live, one can always bind/unbibd nvme driver to see the change, this is suppose to save delete/add commands_
+Answer: _Even in nvme there is no option to update live, one can always bind/unbibd nvme driver to see the change, this is suppose to save delete/add commands_
 
 #### `NVMe Subsystem List`
 
@@ -143,9 +143,9 @@ _Answer: Even in nvme there is no option to update live, one can always bind/unb
 | number         | MaxIOQPs            | Max IO queue pairs (SQ/CQ) supported         |
 | number         | MaxNS               | Max number of namespaces for this controller |
 
-_Question (from Marvel): Does controller create also involve exposing the Controller to the host on PCIe bus or is that a separate operation ?_
+Question (from Marvel): _Does controller create also involve exposing the Controller to the host on PCIe bus or is that a separate operation ?_
 
-_Answer: Do you see the need to have a separate command for PCIe bus expose? I was thinking this command will expose_
+Answer: _Do you see the need to have a separate command for PCIe bus expose? I was thinking this command will expose_
 
 #### `NVMe Controller Delete`
 

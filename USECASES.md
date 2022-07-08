@@ -54,11 +54,9 @@ The network switch provides a mechanism to provide any debugging and analysis of
 
 Subsequent use cases can be built upon the network services offload.
 
-
 ### Storage Services Offload
 
 The The basic topology is shown in the diagram.
 It consists of SAN/NAS (Network Attached Storage) Array/Applience/Controllers or JBOF/EBOF and a Initiator server, with D/IPUs that are connected through a network switch.
 
 ![Storage Services Offload Use Case](doc/minutes/images/API-Storage-Use-Case.png)
-
