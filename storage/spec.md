@@ -5,6 +5,14 @@ Authors:
 * Boris Glimcher <<boris.glimcher@dell.com>> (@glimchb)
 * tbd...
 
+## Revision
+
+| Rev  | Date           |  Author             | Change Description                |
+|:----:|:--------------:|:-------------------:|-----------------------------------|
+| v0.1 |   07/24/2022   | Boris Glimcher      | Initial draft. Host emulation, Front End (host-facing) only support NVMe/PCIe; Back End (network-facing) only support NVMe/TCPl; Middle End (Storage Services) - Nothing |
+| v0.2 | TBD            | Boris Glimcher      | Front End (host-facing) - adding Virtio-blk;  Back End (network-facing) - adding NVMe/PCIe, NULL; Middle End (Storage Services) - adding encryption |
+| v0.3 | TBD            | Boris Glimcher      | Front End (host-facing) - adding Virtio-scsi, Virtio-fs; Back End (network-facing) - adding iSCSI, NVMe/RDMA; Middle End (Storage Services) - adding comptession, raid |
+
 ## Documentation for reference
 
 * <https://github.com/spdk/spdk/blob/master/doc/sma.md>
