@@ -2,7 +2,7 @@
 
 ## Implementation
 
-The spec.md is implemented in proto. Compile it as:
+The [Specification](spec.md) is implemented in proto. Compile it as:
 
 ```bash
    docker run -v $PWD:/defs namely/protoc-all -d proto -l go -o ./proto/  --go-source-relative
