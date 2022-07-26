@@ -1,5 +1,13 @@
 # OPI Storage APIs
 
+## Implementation
+
+The spec.md is implemented in proto. Compile it as:
+
+```bash
+   docker run -v $PWD:/defs namely/protoc-all -d proto -l go -o ./proto/  --go-source-relative
+```
+
 ## Common APIs abstraction layer
 
 ![OPI Common APIs and SHIM abstraction layer](../doc/minutes/images/API-GW-Layers.png)
