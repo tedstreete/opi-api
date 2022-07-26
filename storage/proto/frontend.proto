@@ -6,7 +6,7 @@ option go_package = "github.com/opiproject/opi-api/storage/proto";
 
 // NVMe/PCIe emulation
 
-service NVMeSubsystem {
+service NVMeSubsystemService {
     rpc NVMeSubsystemCreate (NVMeSubsystemCreateRequest) returns (NVMeSubsystemCreateResponse) {}
     rpc NVMeSubsystemDelete (NVMeSubsystemDeleteRequest) returns (NVMeSubsystemDeleteResponse) {}
     rpc NVMeSubsystemUpdate (NVMeSubsystemUpdateRequest) returns (NVMeSubsystemUpdateResponse) {}
@@ -15,7 +15,7 @@ service NVMeSubsystem {
     rpc NVMeSubsystemStats  (NVMeSubsystemStatsRequest)  returns (NVMeSubsystemStatsResponse)  {}
 }
 
-service NVMeController {
+service NVMeControllerService {
     rpc NVMeControllerCreate (NVMeControllerCreateRequest) returns (NVMeControllerCreateResponse) {}
     rpc NVMeControllerDelete (NVMeControllerDeleteRequest) returns (NVMeControllerDeleteResponse) {}
     rpc NVMeControllerUpdate (NVMeControllerUpdateRequest) returns (NVMeControllerUpdateResponse) {}
@@ -24,7 +24,7 @@ service NVMeController {
     rpc NVMeControllerStats  (NVMeControllerStatsRequest)  returns (NVMeControllerStatsResponse)  {}
 }
 
-service NVMeNamespace {
+service NVMeNamespaceService {
     rpc NVMeNamespaceCreate (NVMeNamespaceCreateRequest) returns (NVMeNamespaceCreateResponse) {}
     rpc NVMeNamespaceDelete (NVMeNamespaceDeleteRequest) returns (NVMeNamespaceDeleteResponse) {}
     rpc NVMeNamespaceUpdate (NVMeNamespaceUpdateRequest) returns (NVMeNamespaceUpdateResponse) {}
@@ -39,182 +39,192 @@ service NVMeNamespace {
 
 // TODO: Virtio-fs
 
+message NVMeSubsystem {
+    int64 Id = 1;
+    string NQN = 3;
+    string SerialNumber = 4;
+    string ModelNumber = 5;
+    int64 MaxNs = 6;
+}
+
+message NVMeController {
+    int64 Id = 1;
+    string Name = 2;
+    string SubsystemId = 3;
+    string PCIeID = 4;
+    int64 MaxIOQPs = 5;
+    int64 MaxNs = 6;
+}
+
+message NVMeNamespace {
+    int64 Id = 1;
+    string Name = 2;
+    string SubsystemId = 3;
+    int64 ControllerId = 4;
+    int64 NsId = 5;
+    string Bdev = 6;
+    int64 BlockSize = 7;
+    int64 NumBlocks = 8;
+    string NGUID = 9;
+    string EUI64 = 10;
+    string UUID = 11;
+    string Multipath = 12;
+    string Authentication = 13;
+}
+
 message NVMeSubsystemCreateRequest {
-    string name = 1;
-    int64 id = 2;
+    NVMeSubsystem Subsystem = 1;
 }
 
 message NVMeSubsystemCreateResponse {
-    string name = 1;
-    int64 id = 2;
+    // Intentionally empty.
 }
 
 message NVMeSubsystemDeleteRequest {
-    string name = 1;
-    int64 id = 2;
+    int64 Id = 1;
 }
 
 message NVMeSubsystemDeleteResponse {
-    string name = 1;
-    int64 id = 2;
+    // Intentionally empty.
 }
 
 message NVMeSubsystemUpdateRequest {
-    string name = 1;
-    int64 id = 2;
+    NVMeSubsystem Subsystem = 1;
 }
 
 message NVMeSubsystemUpdateResponse {
-    string name = 1;
-    int64 id = 2;
+    // Intentionally empty.
 }
 
 message NVMeSubsystemListRequest {
-    string name = 1;
-    int64 id = 2;
+    // Intentionally empty.
 }
 
 message NVMeSubsystemListResponse {
-    string name = 1;
-    int64 id = 2;
+    repeated NVMeSubsystem Subsystem = 1;
 }
 
 message NVMeSubsystemGetRequest {
-    string name = 1;
-    int64 id = 2;
+    int64 Id = 1;
 }
 
 message NVMeSubsystemGetResponse {
-    string name = 1;
-    int64 id = 2;
+    NVMeSubsystem Subsystem = 1;
 }
 
 message NVMeSubsystemStatsRequest {
-    string name = 1;
-    int64 id = 2;
+    int64 Id = 1;
 }
 
 message NVMeSubsystemStatsResponse {
-    string name = 1;
-    int64 id = 2;
+    int64 Id = 1;
+    string Stats = 2;
 }
 
 message NVMeControllerCreateRequest {
-    string name = 1;
-    int64 id = 2;
+    NVMeController Controller = 1;
 }
 
 message NVMeControllerCreateResponse {
-    string name = 1;
-    int64 id = 2;
+    // Intentionally empty.
 }
 
 message NVMeControllerDeleteRequest {
-    string name = 1;
-    int64 id = 2;
+    int64 SubsystemId = 1;
+    int64 ControllerId = 2;
 }
 
 message NVMeControllerDeleteResponse {
-    string name = 1;
-    int64 id = 2;
+    // Intentionally empty.
 }
 
 message NVMeControllerUpdateRequest {
-    string name = 1;
-    int64 id = 2;
+    NVMeController Controller = 1;
 }
 
 message NVMeControllerUpdateResponse {
-    string name = 1;
-    int64 id = 2;
+    // Intentionally empty.
 }
 
 message NVMeControllerListRequest {
-    string name = 1;
-    int64 id = 2;
+    int64 SubsystemId = 1;
 }
 
 message NVMeControllerListResponse {
-    string name = 1;
-    int64 id = 2;
+    repeated NVMeController Controller = 1;
 }
 
 message NVMeControllerGetRequest {
-    string name = 1;
-    int64 id = 2;
+    int64 SubsystemId = 1;
+    int64 ControllerId = 2;
 }
 
 message NVMeControllerGetResponse {
-    string name = 1;
-    int64 id = 2;
+    NVMeController Controller = 1;
 }
 
 message NVMeControllerStatsRequest {
-    string name = 1;
-    int64 id = 2;
+    int64 SubsystemId = 1;
+    int64 ControllerId = 2;
 }
 
 message NVMeControllerStatsResponse {
-    string name = 1;
-    int64 id = 2;
+    int64 Id = 1;
+    string Stats = 2;
 }
 
 message NVMeNamespaceCreateRequest {
-    string name = 1;
-    int64 id = 2;
+    NVMeNamespace Namespace = 1;
 }
 
 message NVMeNamespaceCreateResponse {
-    string name = 1;
-    int64 id = 2;
+    // Intentionally empty.
 }
 
 message NVMeNamespaceDeleteRequest {
-    string name = 1;
-    int64 id = 2;
+    int64 SubsystemId = 1;
+    int64 ControllerId = 2;
+    int64 NamespaceId = 3;
 }
 
 message NVMeNamespaceDeleteResponse {
-    string name = 1;
-    int64 id = 2;
+    // Intentionally empty.
 }
 
 message NVMeNamespaceUpdateRequest {
-    string name = 1;
-    int64 id = 2;
+    NVMeNamespace Namespace = 1;
 }
 
 message NVMeNamespaceUpdateResponse {
-    string name = 1;
-    int64 id = 2;
+    // Intentionally empty.
 }
 
 message NVMeNamespaceListRequest {
-    string name = 1;
-    int64 id = 2;
+    int64 SubsystemId = 1;
+    int64 ControllerId = 2;
 }
 
 message NVMeNamespaceListResponse {
-    string name = 1;
-    int64 id = 2;
+    repeated NVMeNamespace Namespace = 1;
 }
 
 message NVMeNamespaceGetRequest {
-    string name = 1;
-    int64 id = 2;
+    int64 SubsystemId = 1;
+    int64 ControllerId = 2;
+    int64 NamespaceId = 3;
 }
 
 message NVMeNamespaceGetResponse {
-    string name = 1;
-    int64 id = 2;
+    NVMeNamespace Namespace = 1;
 }
 
 message NVMeNamespaceStatsRequest {
-    string name = 1;
-    int64 id = 2;
+    int64 SubsystemId = 1;
+    int64 ControllerId = 2;
+    int64 NamespaceId = 3;
 }
 
 message NVMeNamespaceStatsResponse {
-    string name = 1;
-    int64 id = 2;
+    int64 Id = 1;
+    string Stats = 2;
 }
