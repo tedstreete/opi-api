@@ -19,12 +19,12 @@ Where there is possible divergence between TAI and the OPI APIs are:
 Separate from the IPU SDK, IPDK defines the Infrastructure Application Interface which closely corresponds to the NB API. Where there is possible divergence between InfraApp and the OPI NB APIs are:
 
 - Northbound API Definition: IPDK's InfraApp is not instantiating new protobufs, instead it is using pre-defined protobufs to transfer different objects between Infrastructure Applications attaching to IPDK. There is good alignment on the set of protocols called out on the slide today (OPenConfig, CSI, SMA). The missing interfaces (currently) are:
-    - P4Runtime
-    - Redfish / REST API
-    - Managed Kubernetes
-    - Envoy xDS
+  - P4Runtime
+  - Redfish / REST API
+  - Managed Kubernetes
+  - Envoy xDS
 
-# Networking Comparison
+## Networking Comparison
 
 The IPU SDK supports the [TDI](https://github.com/p4lang/tdi/blob/main/README.md) API.  SAI is also supported and is converted to TDI via pragmas such that there is effectively only one codepath into the devices for networking.
 
@@ -40,7 +40,7 @@ The set of tables defined for networking are:
 
 The local networking interface on the IPU compute complex has additional logic to split trap packets between control plane packets to the kernel and exception packets that are processed in userspace.  Packets from the IPU can be sent and received to/from the host by using netdevs specific to the virtual devices that have been instantiated.  Userspace applications can similarly send traffic to/from the host by using inline tags to differentiate traffic coming and going from different destinations (Virtual Devices to the host, Physical Devices to the Network).
 
-# Storage Comparison
+## Storage Comparison
 
 The IPU SDK uses TDI for storage in a similar fashion as networking.
 
@@ -52,7 +52,7 @@ The IPU SDK enables movement of traffic to/from the host over virtual devices (v
 
 This is a sub-set of scope being set up in the OPI APIs, as any of the NVMe-over-* configuration and setup would reside in the IPU compute complex and would not be pushed through into the IPU SDK.
 
-# Security Comparison
+## Security Comparison
 
 The IPU SDK uses TDI for IPsec in a similar fashion as networking.
 
@@ -61,4 +61,3 @@ The set of tables defined for IPsec are:
 - IPsec Management:  Derived from the OpenConfig for programming security associations from strongSwan
 
 IPsec is enabled in the pipeline using P4.  The P4 program determines what modes of IPsec are enabled.  The parameters for each security association (SA) referred to in the P4 is set via OpenConfig.  The OpenConfig for these security association is translated into a set of TDI tables organized by SA index.
-
