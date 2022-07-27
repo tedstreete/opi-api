@@ -24,19 +24,304 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+type NvmeTransportType int32
+
+const (
+	NvmeTransportType_NVME_TRANSPORT_FC     NvmeTransportType = 0
+	NvmeTransportType_NVME_TRANSPORT_PCIE   NvmeTransportType = 1
+	NvmeTransportType_NVME_TRANSPORT_RDMA   NvmeTransportType = 2
+	NvmeTransportType_NVME_TRANSPORT_TCP    NvmeTransportType = 3
+	NvmeTransportType_NVME_TRANSPORT_CUSTOM NvmeTransportType = 4
+)
+
+// Enum value maps for NvmeTransportType.
+var (
+	NvmeTransportType_name = map[int32]string{
+		0: "NVME_TRANSPORT_FC",
+		1: "NVME_TRANSPORT_PCIE",
+		2: "NVME_TRANSPORT_RDMA",
+		3: "NVME_TRANSPORT_TCP",
+		4: "NVME_TRANSPORT_CUSTOM",
+	}
+	NvmeTransportType_value = map[string]int32{
+		"NVME_TRANSPORT_FC":     0,
+		"NVME_TRANSPORT_PCIE":   1,
+		"NVME_TRANSPORT_RDMA":   2,
+		"NVME_TRANSPORT_TCP":    3,
+		"NVME_TRANSPORT_CUSTOM": 4,
+	}
+)
+
+func (x NvmeTransportType) Enum() *NvmeTransportType {
+	p := new(NvmeTransportType)
+	*p = x
+	return p
+}
+
+func (x NvmeTransportType) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (NvmeTransportType) Descriptor() protoreflect.EnumDescriptor {
+	return file_backend_proto_enumTypes[0].Descriptor()
+}
+
+func (NvmeTransportType) Type() protoreflect.EnumType {
+	return &file_backend_proto_enumTypes[0]
+}
+
+func (x NvmeTransportType) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use NvmeTransportType.Descriptor instead.
+func (NvmeTransportType) EnumDescriptor() ([]byte, []int) {
+	return file_backend_proto_rawDescGZIP(), []int{0}
+}
+
+type NvmeAddressFamily int32
+
+const (
+	NvmeAddressFamily_NVMF_ADRFAM_IPV4       NvmeAddressFamily = 0
+	NvmeAddressFamily_NVMF_ADRFAM_IPV6       NvmeAddressFamily = 1
+	NvmeAddressFamily_NVMF_ADRFAM_IB         NvmeAddressFamily = 2
+	NvmeAddressFamily_NVMF_ADRFAM_FC         NvmeAddressFamily = 3
+	NvmeAddressFamily_NVMF_ADRFAM_INTRA_HOST NvmeAddressFamily = 4
+)
+
+// Enum value maps for NvmeAddressFamily.
+var (
+	NvmeAddressFamily_name = map[int32]string{
+		0: "NVMF_ADRFAM_IPV4",
+		1: "NVMF_ADRFAM_IPV6",
+		2: "NVMF_ADRFAM_IB",
+		3: "NVMF_ADRFAM_FC",
+		4: "NVMF_ADRFAM_INTRA_HOST",
+	}
+	NvmeAddressFamily_value = map[string]int32{
+		"NVMF_ADRFAM_IPV4":       0,
+		"NVMF_ADRFAM_IPV6":       1,
+		"NVMF_ADRFAM_IB":         2,
+		"NVMF_ADRFAM_FC":         3,
+		"NVMF_ADRFAM_INTRA_HOST": 4,
+	}
+)
+
+func (x NvmeAddressFamily) Enum() *NvmeAddressFamily {
+	p := new(NvmeAddressFamily)
+	*p = x
+	return p
+}
+
+func (x NvmeAddressFamily) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (NvmeAddressFamily) Descriptor() protoreflect.EnumDescriptor {
+	return file_backend_proto_enumTypes[1].Descriptor()
+}
+
+func (NvmeAddressFamily) Type() protoreflect.EnumType {
+	return &file_backend_proto_enumTypes[1]
+}
+
+func (x NvmeAddressFamily) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use NvmeAddressFamily.Descriptor instead.
+func (NvmeAddressFamily) EnumDescriptor() ([]byte, []int) {
+	return file_backend_proto_rawDescGZIP(), []int{1}
+}
+
+type NvmeMultipath int32
+
+const (
+	NvmeMultipath_NVME_MPIO_DISABLE   NvmeMultipath = 0
+	NvmeMultipath_NVME_MPIO_FAILOVER  NvmeMultipath = 1
+	NvmeMultipath_NVME_MPIO_MULTIPATH NvmeMultipath = 2
+)
+
+// Enum value maps for NvmeMultipath.
+var (
+	NvmeMultipath_name = map[int32]string{
+		0: "NVME_MPIO_DISABLE",
+		1: "NVME_MPIO_FAILOVER",
+		2: "NVME_MPIO_MULTIPATH",
+	}
+	NvmeMultipath_value = map[string]int32{
+		"NVME_MPIO_DISABLE":   0,
+		"NVME_MPIO_FAILOVER":  1,
+		"NVME_MPIO_MULTIPATH": 2,
+	}
+)
+
+func (x NvmeMultipath) Enum() *NvmeMultipath {
+	p := new(NvmeMultipath)
+	*p = x
+	return p
+}
+
+func (x NvmeMultipath) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (NvmeMultipath) Descriptor() protoreflect.EnumDescriptor {
+	return file_backend_proto_enumTypes[2].Descriptor()
+}
+
+func (NvmeMultipath) Type() protoreflect.EnumType {
+	return &file_backend_proto_enumTypes[2]
+}
+
+func (x NvmeMultipath) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use NvmeMultipath.Descriptor instead.
+func (NvmeMultipath) EnumDescriptor() ([]byte, []int) {
+	return file_backend_proto_rawDescGZIP(), []int{2}
+}
+
+type NVMfRemoteController struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Id          int64             `protobuf:"varint,1,opt,name=Id,proto3" json:"Id,omitempty"`
+	Trtype      NvmeTransportType `protobuf:"varint,2,opt,name=trtype,proto3,enum=opi.storage.v1.NvmeTransportType" json:"trtype,omitempty"`
+	Adrfam      NvmeAddressFamily `protobuf:"varint,3,opt,name=adrfam,proto3,enum=opi.storage.v1.NvmeAddressFamily" json:"adrfam,omitempty"`
+	Traddr      string            `protobuf:"bytes,4,opt,name=traddr,proto3" json:"traddr,omitempty"`
+	Trsvcid     int64             `protobuf:"varint,5,opt,name=trsvcid,proto3" json:"trsvcid,omitempty"`
+	Subnqn      string            `protobuf:"bytes,6,opt,name=subnqn,proto3" json:"subnqn,omitempty"`
+	Hdgst       bool              `protobuf:"varint,7,opt,name=hdgst,proto3" json:"hdgst,omitempty"`
+	Ddgst       bool              `protobuf:"varint,8,opt,name=ddgst,proto3" json:"ddgst,omitempty"`
+	Multipath   NvmeMultipath     `protobuf:"varint,9,opt,name=multipath,proto3,enum=opi.storage.v1.NvmeMultipath" json:"multipath,omitempty"`
+	NumIoQueues int64             `protobuf:"varint,10,opt,name=num_io_queues,json=numIoQueues,proto3" json:"num_io_queues,omitempty"`
+	QueueSize   int64             `protobuf:"varint,11,opt,name=queue_size,json=queueSize,proto3" json:"queue_size,omitempty"`
+}
+
+func (x *NVMfRemoteController) Reset() {
+	*x = NVMfRemoteController{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_backend_proto_msgTypes[0]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *NVMfRemoteController) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*NVMfRemoteController) ProtoMessage() {}
+
+func (x *NVMfRemoteController) ProtoReflect() protoreflect.Message {
+	mi := &file_backend_proto_msgTypes[0]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use NVMfRemoteController.ProtoReflect.Descriptor instead.
+func (*NVMfRemoteController) Descriptor() ([]byte, []int) {
+	return file_backend_proto_rawDescGZIP(), []int{0}
+}
+
+func (x *NVMfRemoteController) GetId() int64 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
+}
+
+func (x *NVMfRemoteController) GetTrtype() NvmeTransportType {
+	if x != nil {
+		return x.Trtype
+	}
+	return NvmeTransportType_NVME_TRANSPORT_FC
+}
+
+func (x *NVMfRemoteController) GetAdrfam() NvmeAddressFamily {
+	if x != nil {
+		return x.Adrfam
+	}
+	return NvmeAddressFamily_NVMF_ADRFAM_IPV4
+}
+
+func (x *NVMfRemoteController) GetTraddr() string {
+	if x != nil {
+		return x.Traddr
+	}
+	return ""
+}
+
+func (x *NVMfRemoteController) GetTrsvcid() int64 {
+	if x != nil {
+		return x.Trsvcid
+	}
+	return 0
+}
+
+func (x *NVMfRemoteController) GetSubnqn() string {
+	if x != nil {
+		return x.Subnqn
+	}
+	return ""
+}
+
+func (x *NVMfRemoteController) GetHdgst() bool {
+	if x != nil {
+		return x.Hdgst
+	}
+	return false
+}
+
+func (x *NVMfRemoteController) GetDdgst() bool {
+	if x != nil {
+		return x.Ddgst
+	}
+	return false
+}
+
+func (x *NVMfRemoteController) GetMultipath() NvmeMultipath {
+	if x != nil {
+		return x.Multipath
+	}
+	return NvmeMultipath_NVME_MPIO_DISABLE
+}
+
+func (x *NVMfRemoteController) GetNumIoQueues() int64 {
+	if x != nil {
+		return x.NumIoQueues
+	}
+	return 0
+}
+
+func (x *NVMfRemoteController) GetQueueSize() int64 {
+	if x != nil {
+		return x.QueueSize
+	}
+	return 0
+}
+
 type NVMfRemoteControllerConnectRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
-	Id   int64  `protobuf:"varint,2,opt,name=id,proto3" json:"id,omitempty"`
+	Controller *NVMfRemoteController `protobuf:"bytes,1,opt,name=Controller,proto3" json:"Controller,omitempty"`
 }
 
 func (x *NVMfRemoteControllerConnectRequest) Reset() {
 	*x = NVMfRemoteControllerConnectRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_backend_proto_msgTypes[0]
+		mi := &file_backend_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -49,7 +334,7 @@ func (x *NVMfRemoteControllerConnectRequest) String() string {
 func (*NVMfRemoteControllerConnectRequest) ProtoMessage() {}
 
 func (x *NVMfRemoteControllerConnectRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_backend_proto_msgTypes[0]
+	mi := &file_backend_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -62,36 +347,26 @@ func (x *NVMfRemoteControllerConnectRequest) ProtoReflect() protoreflect.Message
 
 // Deprecated: Use NVMfRemoteControllerConnectRequest.ProtoReflect.Descriptor instead.
 func (*NVMfRemoteControllerConnectRequest) Descriptor() ([]byte, []int) {
-	return file_backend_proto_rawDescGZIP(), []int{0}
+	return file_backend_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *NVMfRemoteControllerConnectRequest) GetName() string {
+func (x *NVMfRemoteControllerConnectRequest) GetController() *NVMfRemoteController {
 	if x != nil {
-		return x.Name
+		return x.Controller
 	}
-	return ""
-}
-
-func (x *NVMfRemoteControllerConnectRequest) GetId() int64 {
-	if x != nil {
-		return x.Id
-	}
-	return 0
+	return nil
 }
 
 type NVMfRemoteControllerConnectResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
-
-	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
-	Id   int64  `protobuf:"varint,2,opt,name=id,proto3" json:"id,omitempty"`
 }
 
 func (x *NVMfRemoteControllerConnectResponse) Reset() {
 	*x = NVMfRemoteControllerConnectResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_backend_proto_msgTypes[1]
+		mi := &file_backend_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -104,7 +379,7 @@ func (x *NVMfRemoteControllerConnectResponse) String() string {
 func (*NVMfRemoteControllerConnectResponse) ProtoMessage() {}
 
 func (x *NVMfRemoteControllerConnectResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_backend_proto_msgTypes[1]
+	mi := &file_backend_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -117,21 +392,7 @@ func (x *NVMfRemoteControllerConnectResponse) ProtoReflect() protoreflect.Messag
 
 // Deprecated: Use NVMfRemoteControllerConnectResponse.ProtoReflect.Descriptor instead.
 func (*NVMfRemoteControllerConnectResponse) Descriptor() ([]byte, []int) {
-	return file_backend_proto_rawDescGZIP(), []int{1}
-}
-
-func (x *NVMfRemoteControllerConnectResponse) GetName() string {
-	if x != nil {
-		return x.Name
-	}
-	return ""
-}
-
-func (x *NVMfRemoteControllerConnectResponse) GetId() int64 {
-	if x != nil {
-		return x.Id
-	}
-	return 0
+	return file_backend_proto_rawDescGZIP(), []int{2}
 }
 
 type NVMfRemoteControllerDisconnectRequest struct {
@@ -139,14 +400,13 @@ type NVMfRemoteControllerDisconnectRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
-	Id   int64  `protobuf:"varint,2,opt,name=id,proto3" json:"id,omitempty"`
+	Id int64 `protobuf:"varint,1,opt,name=Id,proto3" json:"Id,omitempty"`
 }
 
 func (x *NVMfRemoteControllerDisconnectRequest) Reset() {
 	*x = NVMfRemoteControllerDisconnectRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_backend_proto_msgTypes[2]
+		mi := &file_backend_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -159,7 +419,7 @@ func (x *NVMfRemoteControllerDisconnectRequest) String() string {
 func (*NVMfRemoteControllerDisconnectRequest) ProtoMessage() {}
 
 func (x *NVMfRemoteControllerDisconnectRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_backend_proto_msgTypes[2]
+	mi := &file_backend_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -172,14 +432,7 @@ func (x *NVMfRemoteControllerDisconnectRequest) ProtoReflect() protoreflect.Mess
 
 // Deprecated: Use NVMfRemoteControllerDisconnectRequest.ProtoReflect.Descriptor instead.
 func (*NVMfRemoteControllerDisconnectRequest) Descriptor() ([]byte, []int) {
-	return file_backend_proto_rawDescGZIP(), []int{2}
-}
-
-func (x *NVMfRemoteControllerDisconnectRequest) GetName() string {
-	if x != nil {
-		return x.Name
-	}
-	return ""
+	return file_backend_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *NVMfRemoteControllerDisconnectRequest) GetId() int64 {
@@ -193,15 +446,12 @@ type NVMfRemoteControllerDisconnectResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
-
-	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
-	Id   int64  `protobuf:"varint,2,opt,name=id,proto3" json:"id,omitempty"`
 }
 
 func (x *NVMfRemoteControllerDisconnectResponse) Reset() {
 	*x = NVMfRemoteControllerDisconnectResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_backend_proto_msgTypes[3]
+		mi := &file_backend_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -214,7 +464,7 @@ func (x *NVMfRemoteControllerDisconnectResponse) String() string {
 func (*NVMfRemoteControllerDisconnectResponse) ProtoMessage() {}
 
 func (x *NVMfRemoteControllerDisconnectResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_backend_proto_msgTypes[3]
+	mi := &file_backend_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -227,21 +477,7 @@ func (x *NVMfRemoteControllerDisconnectResponse) ProtoReflect() protoreflect.Mes
 
 // Deprecated: Use NVMfRemoteControllerDisconnectResponse.ProtoReflect.Descriptor instead.
 func (*NVMfRemoteControllerDisconnectResponse) Descriptor() ([]byte, []int) {
-	return file_backend_proto_rawDescGZIP(), []int{3}
-}
-
-func (x *NVMfRemoteControllerDisconnectResponse) GetName() string {
-	if x != nil {
-		return x.Name
-	}
-	return ""
-}
-
-func (x *NVMfRemoteControllerDisconnectResponse) GetId() int64 {
-	if x != nil {
-		return x.Id
-	}
-	return 0
+	return file_backend_proto_rawDescGZIP(), []int{4}
 }
 
 type NVMfRemoteControllerResetRequest struct {
@@ -249,14 +485,13 @@ type NVMfRemoteControllerResetRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
-	Id   int64  `protobuf:"varint,2,opt,name=id,proto3" json:"id,omitempty"`
+	Id int64 `protobuf:"varint,1,opt,name=Id,proto3" json:"Id,omitempty"`
 }
 
 func (x *NVMfRemoteControllerResetRequest) Reset() {
 	*x = NVMfRemoteControllerResetRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_backend_proto_msgTypes[4]
+		mi := &file_backend_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -269,7 +504,7 @@ func (x *NVMfRemoteControllerResetRequest) String() string {
 func (*NVMfRemoteControllerResetRequest) ProtoMessage() {}
 
 func (x *NVMfRemoteControllerResetRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_backend_proto_msgTypes[4]
+	mi := &file_backend_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -282,14 +517,7 @@ func (x *NVMfRemoteControllerResetRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NVMfRemoteControllerResetRequest.ProtoReflect.Descriptor instead.
 func (*NVMfRemoteControllerResetRequest) Descriptor() ([]byte, []int) {
-	return file_backend_proto_rawDescGZIP(), []int{4}
-}
-
-func (x *NVMfRemoteControllerResetRequest) GetName() string {
-	if x != nil {
-		return x.Name
-	}
-	return ""
+	return file_backend_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *NVMfRemoteControllerResetRequest) GetId() int64 {
@@ -303,15 +531,12 @@ type NVMfRemoteControllerResetResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
-
-	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
-	Id   int64  `protobuf:"varint,2,opt,name=id,proto3" json:"id,omitempty"`
 }
 
 func (x *NVMfRemoteControllerResetResponse) Reset() {
 	*x = NVMfRemoteControllerResetResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_backend_proto_msgTypes[5]
+		mi := &file_backend_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -324,7 +549,7 @@ func (x *NVMfRemoteControllerResetResponse) String() string {
 func (*NVMfRemoteControllerResetResponse) ProtoMessage() {}
 
 func (x *NVMfRemoteControllerResetResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_backend_proto_msgTypes[5]
+	mi := &file_backend_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -337,21 +562,7 @@ func (x *NVMfRemoteControllerResetResponse) ProtoReflect() protoreflect.Message 
 
 // Deprecated: Use NVMfRemoteControllerResetResponse.ProtoReflect.Descriptor instead.
 func (*NVMfRemoteControllerResetResponse) Descriptor() ([]byte, []int) {
-	return file_backend_proto_rawDescGZIP(), []int{5}
-}
-
-func (x *NVMfRemoteControllerResetResponse) GetName() string {
-	if x != nil {
-		return x.Name
-	}
-	return ""
-}
-
-func (x *NVMfRemoteControllerResetResponse) GetId() int64 {
-	if x != nil {
-		return x.Id
-	}
-	return 0
+	return file_backend_proto_rawDescGZIP(), []int{6}
 }
 
 type NVMfRemoteControllerListRequest struct {
@@ -359,14 +570,13 @@ type NVMfRemoteControllerListRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
-	Id   int64  `protobuf:"varint,2,opt,name=id,proto3" json:"id,omitempty"`
+	Id int64 `protobuf:"varint,1,opt,name=Id,proto3" json:"Id,omitempty"`
 }
 
 func (x *NVMfRemoteControllerListRequest) Reset() {
 	*x = NVMfRemoteControllerListRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_backend_proto_msgTypes[6]
+		mi := &file_backend_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -379,7 +589,7 @@ func (x *NVMfRemoteControllerListRequest) String() string {
 func (*NVMfRemoteControllerListRequest) ProtoMessage() {}
 
 func (x *NVMfRemoteControllerListRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_backend_proto_msgTypes[6]
+	mi := &file_backend_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -392,14 +602,7 @@ func (x *NVMfRemoteControllerListRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NVMfRemoteControllerListRequest.ProtoReflect.Descriptor instead.
 func (*NVMfRemoteControllerListRequest) Descriptor() ([]byte, []int) {
-	return file_backend_proto_rawDescGZIP(), []int{6}
-}
-
-func (x *NVMfRemoteControllerListRequest) GetName() string {
-	if x != nil {
-		return x.Name
-	}
-	return ""
+	return file_backend_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *NVMfRemoteControllerListRequest) GetId() int64 {
@@ -414,14 +617,13 @@ type NVMfRemoteControllerListResponse struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
-	Id   int64  `protobuf:"varint,2,opt,name=id,proto3" json:"id,omitempty"`
+	Controller []*NVMfRemoteController `protobuf:"bytes,1,rep,name=Controller,proto3" json:"Controller,omitempty"`
 }
 
 func (x *NVMfRemoteControllerListResponse) Reset() {
 	*x = NVMfRemoteControllerListResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_backend_proto_msgTypes[7]
+		mi := &file_backend_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -434,7 +636,7 @@ func (x *NVMfRemoteControllerListResponse) String() string {
 func (*NVMfRemoteControllerListResponse) ProtoMessage() {}
 
 func (x *NVMfRemoteControllerListResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_backend_proto_msgTypes[7]
+	mi := &file_backend_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -447,21 +649,14 @@ func (x *NVMfRemoteControllerListResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NVMfRemoteControllerListResponse.ProtoReflect.Descriptor instead.
 func (*NVMfRemoteControllerListResponse) Descriptor() ([]byte, []int) {
-	return file_backend_proto_rawDescGZIP(), []int{7}
+	return file_backend_proto_rawDescGZIP(), []int{8}
 }
 
-func (x *NVMfRemoteControllerListResponse) GetName() string {
+func (x *NVMfRemoteControllerListResponse) GetController() []*NVMfRemoteController {
 	if x != nil {
-		return x.Name
+		return x.Controller
 	}
-	return ""
-}
-
-func (x *NVMfRemoteControllerListResponse) GetId() int64 {
-	if x != nil {
-		return x.Id
-	}
-	return 0
+	return nil
 }
 
 type NVMfRemoteControllerGetRequest struct {
@@ -469,14 +664,13 @@ type NVMfRemoteControllerGetRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
-	Id   int64  `protobuf:"varint,2,opt,name=id,proto3" json:"id,omitempty"`
+	Id int64 `protobuf:"varint,1,opt,name=Id,proto3" json:"Id,omitempty"`
 }
 
 func (x *NVMfRemoteControllerGetRequest) Reset() {
 	*x = NVMfRemoteControllerGetRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_backend_proto_msgTypes[8]
+		mi := &file_backend_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -489,7 +683,7 @@ func (x *NVMfRemoteControllerGetRequest) String() string {
 func (*NVMfRemoteControllerGetRequest) ProtoMessage() {}
 
 func (x *NVMfRemoteControllerGetRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_backend_proto_msgTypes[8]
+	mi := &file_backend_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -502,14 +696,7 @@ func (x *NVMfRemoteControllerGetRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NVMfRemoteControllerGetRequest.ProtoReflect.Descriptor instead.
 func (*NVMfRemoteControllerGetRequest) Descriptor() ([]byte, []int) {
-	return file_backend_proto_rawDescGZIP(), []int{8}
-}
-
-func (x *NVMfRemoteControllerGetRequest) GetName() string {
-	if x != nil {
-		return x.Name
-	}
-	return ""
+	return file_backend_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *NVMfRemoteControllerGetRequest) GetId() int64 {
@@ -524,14 +711,13 @@ type NVMfRemoteControllerGetResponse struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
-	Id   int64  `protobuf:"varint,2,opt,name=id,proto3" json:"id,omitempty"`
+	Controller *NVMfRemoteController `protobuf:"bytes,1,opt,name=Controller,proto3" json:"Controller,omitempty"`
 }
 
 func (x *NVMfRemoteControllerGetResponse) Reset() {
 	*x = NVMfRemoteControllerGetResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_backend_proto_msgTypes[9]
+		mi := &file_backend_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -544,7 +730,7 @@ func (x *NVMfRemoteControllerGetResponse) String() string {
 func (*NVMfRemoteControllerGetResponse) ProtoMessage() {}
 
 func (x *NVMfRemoteControllerGetResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_backend_proto_msgTypes[9]
+	mi := &file_backend_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -557,21 +743,14 @@ func (x *NVMfRemoteControllerGetResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NVMfRemoteControllerGetResponse.ProtoReflect.Descriptor instead.
 func (*NVMfRemoteControllerGetResponse) Descriptor() ([]byte, []int) {
-	return file_backend_proto_rawDescGZIP(), []int{9}
+	return file_backend_proto_rawDescGZIP(), []int{10}
 }
 
-func (x *NVMfRemoteControllerGetResponse) GetName() string {
+func (x *NVMfRemoteControllerGetResponse) GetController() *NVMfRemoteController {
 	if x != nil {
-		return x.Name
+		return x.Controller
 	}
-	return ""
-}
-
-func (x *NVMfRemoteControllerGetResponse) GetId() int64 {
-	if x != nil {
-		return x.Id
-	}
-	return 0
+	return nil
 }
 
 type NVMfRemoteControllerStatsRequest struct {
@@ -579,14 +758,13 @@ type NVMfRemoteControllerStatsRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
-	Id   int64  `protobuf:"varint,2,opt,name=id,proto3" json:"id,omitempty"`
+	Id int64 `protobuf:"varint,1,opt,name=Id,proto3" json:"Id,omitempty"`
 }
 
 func (x *NVMfRemoteControllerStatsRequest) Reset() {
 	*x = NVMfRemoteControllerStatsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_backend_proto_msgTypes[10]
+		mi := &file_backend_proto_msgTypes[11]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -599,7 +777,7 @@ func (x *NVMfRemoteControllerStatsRequest) String() string {
 func (*NVMfRemoteControllerStatsRequest) ProtoMessage() {}
 
 func (x *NVMfRemoteControllerStatsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_backend_proto_msgTypes[10]
+	mi := &file_backend_proto_msgTypes[11]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -612,14 +790,7 @@ func (x *NVMfRemoteControllerStatsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NVMfRemoteControllerStatsRequest.ProtoReflect.Descriptor instead.
 func (*NVMfRemoteControllerStatsRequest) Descriptor() ([]byte, []int) {
-	return file_backend_proto_rawDescGZIP(), []int{10}
-}
-
-func (x *NVMfRemoteControllerStatsRequest) GetName() string {
-	if x != nil {
-		return x.Name
-	}
-	return ""
+	return file_backend_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *NVMfRemoteControllerStatsRequest) GetId() int64 {
@@ -634,14 +805,14 @@ type NVMfRemoteControllerStatsResponse struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
-	Id   int64  `protobuf:"varint,2,opt,name=id,proto3" json:"id,omitempty"`
+	Id    int64  `protobuf:"varint,1,opt,name=Id,proto3" json:"Id,omitempty"`
+	Stats string `protobuf:"bytes,2,opt,name=Stats,proto3" json:"Stats,omitempty"`
 }
 
 func (x *NVMfRemoteControllerStatsResponse) Reset() {
 	*x = NVMfRemoteControllerStatsResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_backend_proto_msgTypes[11]
+		mi := &file_backend_proto_msgTypes[12]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -654,7 +825,7 @@ func (x *NVMfRemoteControllerStatsResponse) String() string {
 func (*NVMfRemoteControllerStatsResponse) ProtoMessage() {}
 
 func (x *NVMfRemoteControllerStatsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_backend_proto_msgTypes[11]
+	mi := &file_backend_proto_msgTypes[12]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -667,14 +838,7 @@ func (x *NVMfRemoteControllerStatsResponse) ProtoReflect() protoreflect.Message 
 
 // Deprecated: Use NVMfRemoteControllerStatsResponse.ProtoReflect.Descriptor instead.
 func (*NVMfRemoteControllerStatsResponse) Descriptor() ([]byte, []int) {
-	return file_backend_proto_rawDescGZIP(), []int{11}
-}
-
-func (x *NVMfRemoteControllerStatsResponse) GetName() string {
-	if x != nil {
-		return x.Name
-	}
-	return ""
+	return file_backend_proto_rawDescGZIP(), []int{12}
 }
 
 func (x *NVMfRemoteControllerStatsResponse) GetId() int64 {
@@ -684,122 +848,171 @@ func (x *NVMfRemoteControllerStatsResponse) GetId() int64 {
 	return 0
 }
 
+func (x *NVMfRemoteControllerStatsResponse) GetStats() string {
+	if x != nil {
+		return x.Stats
+	}
+	return ""
+}
+
 var File_backend_proto protoreflect.FileDescriptor
 
 var file_backend_proto_rawDesc = []byte{
 	0x0a, 0x0d, 0x62, 0x61, 0x63, 0x6b, 0x65, 0x6e, 0x64, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12,
 	0x0e, 0x6f, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x22,
-	0x48, 0x0a, 0x22, 0x4e, 0x56, 0x4d, 0x66, 0x52, 0x65, 0x6d, 0x6f, 0x74, 0x65, 0x43, 0x6f, 0x6e,
-	0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x43, 0x6f, 0x6e, 0x6e, 0x65, 0x63, 0x74, 0x52, 0x65,
-	0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20,
-	0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18,
-	0x02, 0x20, 0x01, 0x28, 0x03, 0x52, 0x02, 0x69, 0x64, 0x22, 0x49, 0x0a, 0x23, 0x4e, 0x56, 0x4d,
-	0x66, 0x52, 0x65, 0x6d, 0x6f, 0x74, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65,
-	0x72, 0x43, 0x6f, 0x6e, 0x6e, 0x65, 0x63, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
-	0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04,
-	0x6e, 0x61, 0x6d, 0x65, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x03,
-	0x52, 0x02, 0x69, 0x64, 0x22, 0x4b, 0x0a, 0x25, 0x4e, 0x56, 0x4d, 0x66, 0x52, 0x65, 0x6d, 0x6f,
-	0x74, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x44, 0x69, 0x73, 0x63,
-	0x6f, 0x6e, 0x6e, 0x65, 0x63, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x12, 0x0a,
-	0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d,
-	0x65, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x52, 0x02, 0x69,
-	0x64, 0x22, 0x4c, 0x0a, 0x26, 0x4e, 0x56, 0x4d, 0x66, 0x52, 0x65, 0x6d, 0x6f, 0x74, 0x65, 0x43,
-	0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x44, 0x69, 0x73, 0x63, 0x6f, 0x6e, 0x6e,
-	0x65, 0x63, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x12, 0x0a, 0x04, 0x6e,
-	0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12,
-	0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x52, 0x02, 0x69, 0x64, 0x22,
-	0x46, 0x0a, 0x20, 0x4e, 0x56, 0x4d, 0x66, 0x52, 0x65, 0x6d, 0x6f, 0x74, 0x65, 0x43, 0x6f, 0x6e,
-	0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x52, 0x65, 0x73, 0x65, 0x74, 0x52, 0x65, 0x71, 0x75,
-	0x65, 0x73, 0x74, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28,
-	0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x02, 0x20,
-	0x01, 0x28, 0x03, 0x52, 0x02, 0x69, 0x64, 0x22, 0x47, 0x0a, 0x21, 0x4e, 0x56, 0x4d, 0x66, 0x52,
-	0x65, 0x6d, 0x6f, 0x74, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x52,
-	0x65, 0x73, 0x65, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x12, 0x0a, 0x04,
-	0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65,
-	0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x52, 0x02, 0x69, 0x64,
-	0x22, 0x45, 0x0a, 0x1f, 0x4e, 0x56, 0x4d, 0x66, 0x52, 0x65, 0x6d, 0x6f, 0x74, 0x65, 0x43, 0x6f,
-	0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x4c, 0x69, 0x73, 0x74, 0x52, 0x65, 0x71, 0x75,
-	0x65, 0x73, 0x74, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28,
-	0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x02, 0x20,
-	0x01, 0x28, 0x03, 0x52, 0x02, 0x69, 0x64, 0x22, 0x46, 0x0a, 0x20, 0x4e, 0x56, 0x4d, 0x66, 0x52,
-	0x65, 0x6d, 0x6f, 0x74, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x4c,
-	0x69, 0x73, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x12, 0x0a, 0x04, 0x6e,
-	0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12,
-	0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x52, 0x02, 0x69, 0x64, 0x22,
-	0x44, 0x0a, 0x1e, 0x4e, 0x56, 0x4d, 0x66, 0x52, 0x65, 0x6d, 0x6f, 0x74, 0x65, 0x43, 0x6f, 0x6e,
-	0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x47, 0x65, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
-	0x74, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52,
-	0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28,
-	0x03, 0x52, 0x02, 0x69, 0x64, 0x22, 0x45, 0x0a, 0x1f, 0x4e, 0x56, 0x4d, 0x66, 0x52, 0x65, 0x6d,
-	0x6f, 0x74, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x47, 0x65, 0x74,
-	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65,
-	0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12, 0x0e, 0x0a, 0x02,
-	0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x52, 0x02, 0x69, 0x64, 0x22, 0x46, 0x0a, 0x20,
-	0x4e, 0x56, 0x4d, 0x66, 0x52, 0x65, 0x6d, 0x6f, 0x74, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f,
-	0x6c, 0x6c, 0x65, 0x72, 0x53, 0x74, 0x61, 0x74, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
-	0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04,
-	0x6e, 0x61, 0x6d, 0x65, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x03,
-	0x52, 0x02, 0x69, 0x64, 0x22, 0x47, 0x0a, 0x21, 0x4e, 0x56, 0x4d, 0x66, 0x52, 0x65, 0x6d, 0x6f,
-	0x74, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x53, 0x74, 0x61, 0x74,
-	0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d,
-	0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12, 0x0e, 0x0a,
-	0x02, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x52, 0x02, 0x69, 0x64, 0x32, 0xbe, 0x06,
-	0x0a, 0x14, 0x4e, 0x56, 0x4d, 0x66, 0x52, 0x65, 0x6d, 0x6f, 0x74, 0x65, 0x43, 0x6f, 0x6e, 0x74,
-	0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x12, 0x88, 0x01, 0x0a, 0x1b, 0x4e, 0x56, 0x4d, 0x66, 0x52,
-	0x65, 0x6d, 0x6f, 0x74, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x43,
-	0x6f, 0x6e, 0x6e, 0x65, 0x63, 0x74, 0x12, 0x32, 0x2e, 0x6f, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f,
-	0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x56, 0x4d, 0x66, 0x52, 0x65, 0x6d, 0x6f,
+	0x92, 0x03, 0x0a, 0x14, 0x4e, 0x56, 0x4d, 0x66, 0x52, 0x65, 0x6d, 0x6f, 0x74, 0x65, 0x43, 0x6f,
+	0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x12, 0x0e, 0x0a, 0x02, 0x49, 0x64, 0x18, 0x01,
+	0x20, 0x01, 0x28, 0x03, 0x52, 0x02, 0x49, 0x64, 0x12, 0x39, 0x0a, 0x06, 0x74, 0x72, 0x74, 0x79,
+	0x70, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x21, 0x2e, 0x6f, 0x70, 0x69, 0x2e, 0x73,
+	0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x76, 0x6d, 0x65, 0x54, 0x72,
+	0x61, 0x6e, 0x73, 0x70, 0x6f, 0x72, 0x74, 0x54, 0x79, 0x70, 0x65, 0x52, 0x06, 0x74, 0x72, 0x74,
+	0x79, 0x70, 0x65, 0x12, 0x39, 0x0a, 0x06, 0x61, 0x64, 0x72, 0x66, 0x61, 0x6d, 0x18, 0x03, 0x20,
+	0x01, 0x28, 0x0e, 0x32, 0x21, 0x2e, 0x6f, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67,
+	0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x76, 0x6d, 0x65, 0x41, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73,
+	0x46, 0x61, 0x6d, 0x69, 0x6c, 0x79, 0x52, 0x06, 0x61, 0x64, 0x72, 0x66, 0x61, 0x6d, 0x12, 0x16,
+	0x0a, 0x06, 0x74, 0x72, 0x61, 0x64, 0x64, 0x72, 0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06,
+	0x74, 0x72, 0x61, 0x64, 0x64, 0x72, 0x12, 0x18, 0x0a, 0x07, 0x74, 0x72, 0x73, 0x76, 0x63, 0x69,
+	0x64, 0x18, 0x05, 0x20, 0x01, 0x28, 0x03, 0x52, 0x07, 0x74, 0x72, 0x73, 0x76, 0x63, 0x69, 0x64,
+	0x12, 0x16, 0x0a, 0x06, 0x73, 0x75, 0x62, 0x6e, 0x71, 0x6e, 0x18, 0x06, 0x20, 0x01, 0x28, 0x09,
+	0x52, 0x06, 0x73, 0x75, 0x62, 0x6e, 0x71, 0x6e, 0x12, 0x14, 0x0a, 0x05, 0x68, 0x64, 0x67, 0x73,
+	0x74, 0x18, 0x07, 0x20, 0x01, 0x28, 0x08, 0x52, 0x05, 0x68, 0x64, 0x67, 0x73, 0x74, 0x12, 0x14,
+	0x0a, 0x05, 0x64, 0x64, 0x67, 0x73, 0x74, 0x18, 0x08, 0x20, 0x01, 0x28, 0x08, 0x52, 0x05, 0x64,
+	0x64, 0x67, 0x73, 0x74, 0x12, 0x3b, 0x0a, 0x09, 0x6d, 0x75, 0x6c, 0x74, 0x69, 0x70, 0x61, 0x74,
+	0x68, 0x18, 0x09, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x1d, 0x2e, 0x6f, 0x70, 0x69, 0x2e, 0x73, 0x74,
+	0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x76, 0x6d, 0x65, 0x4d, 0x75, 0x6c,
+	0x74, 0x69, 0x70, 0x61, 0x74, 0x68, 0x52, 0x09, 0x6d, 0x75, 0x6c, 0x74, 0x69, 0x70, 0x61, 0x74,
+	0x68, 0x12, 0x22, 0x0a, 0x0d, 0x6e, 0x75, 0x6d, 0x5f, 0x69, 0x6f, 0x5f, 0x71, 0x75, 0x65, 0x75,
+	0x65, 0x73, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x03, 0x52, 0x0b, 0x6e, 0x75, 0x6d, 0x49, 0x6f, 0x51,
+	0x75, 0x65, 0x75, 0x65, 0x73, 0x12, 0x1d, 0x0a, 0x0a, 0x71, 0x75, 0x65, 0x75, 0x65, 0x5f, 0x73,
+	0x69, 0x7a, 0x65, 0x18, 0x0b, 0x20, 0x01, 0x28, 0x03, 0x52, 0x09, 0x71, 0x75, 0x65, 0x75, 0x65,
+	0x53, 0x69, 0x7a, 0x65, 0x22, 0x6a, 0x0a, 0x22, 0x4e, 0x56, 0x4d, 0x66, 0x52, 0x65, 0x6d, 0x6f,
 	0x74, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x43, 0x6f, 0x6e, 0x6e,
-	0x65, 0x63, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x33, 0x2e, 0x6f, 0x70, 0x69,
-	0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x56, 0x4d, 0x66,
-	0x52, 0x65, 0x6d, 0x6f, 0x74, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72,
-	0x43, 0x6f, 0x6e, 0x6e, 0x65, 0x63, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22,
-	0x00, 0x12, 0x91, 0x01, 0x0a, 0x1e, 0x4e, 0x56, 0x4d, 0x66, 0x52, 0x65, 0x6d, 0x6f, 0x74, 0x65,
-	0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x44, 0x69, 0x73, 0x63, 0x6f, 0x6e,
-	0x6e, 0x65, 0x63, 0x74, 0x12, 0x35, 0x2e, 0x6f, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61,
-	0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x56, 0x4d, 0x66, 0x52, 0x65, 0x6d, 0x6f, 0x74, 0x65,
-	0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x44, 0x69, 0x73, 0x63, 0x6f, 0x6e,
-	0x6e, 0x65, 0x63, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x36, 0x2e, 0x6f, 0x70,
+	0x65, 0x63, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x44, 0x0a, 0x0a, 0x43, 0x6f,
+	0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x24,
+	0x2e, 0x6f, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e,
+	0x4e, 0x56, 0x4d, 0x66, 0x52, 0x65, 0x6d, 0x6f, 0x74, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f,
+	0x6c, 0x6c, 0x65, 0x72, 0x52, 0x0a, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72,
+	0x22, 0x25, 0x0a, 0x23, 0x4e, 0x56, 0x4d, 0x66, 0x52, 0x65, 0x6d, 0x6f, 0x74, 0x65, 0x43, 0x6f,
+	0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x43, 0x6f, 0x6e, 0x6e, 0x65, 0x63, 0x74, 0x52,
+	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x37, 0x0a, 0x25, 0x4e, 0x56, 0x4d, 0x66, 0x52,
+	0x65, 0x6d, 0x6f, 0x74, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x44,
+	0x69, 0x73, 0x63, 0x6f, 0x6e, 0x6e, 0x65, 0x63, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
+	0x12, 0x0e, 0x0a, 0x02, 0x49, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x02, 0x49, 0x64,
+	0x22, 0x28, 0x0a, 0x26, 0x4e, 0x56, 0x4d, 0x66, 0x52, 0x65, 0x6d, 0x6f, 0x74, 0x65, 0x43, 0x6f,
+	0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x44, 0x69, 0x73, 0x63, 0x6f, 0x6e, 0x6e, 0x65,
+	0x63, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x32, 0x0a, 0x20, 0x4e, 0x56,
+	0x4d, 0x66, 0x52, 0x65, 0x6d, 0x6f, 0x74, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c,
+	0x65, 0x72, 0x52, 0x65, 0x73, 0x65, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x0e,
+	0x0a, 0x02, 0x49, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x02, 0x49, 0x64, 0x22, 0x23,
+	0x0a, 0x21, 0x4e, 0x56, 0x4d, 0x66, 0x52, 0x65, 0x6d, 0x6f, 0x74, 0x65, 0x43, 0x6f, 0x6e, 0x74,
+	0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x52, 0x65, 0x73, 0x65, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f,
+	0x6e, 0x73, 0x65, 0x22, 0x31, 0x0a, 0x1f, 0x4e, 0x56, 0x4d, 0x66, 0x52, 0x65, 0x6d, 0x6f, 0x74,
+	0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x4c, 0x69, 0x73, 0x74, 0x52,
+	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x0e, 0x0a, 0x02, 0x49, 0x64, 0x18, 0x01, 0x20, 0x01,
+	0x28, 0x03, 0x52, 0x02, 0x49, 0x64, 0x22, 0x68, 0x0a, 0x20, 0x4e, 0x56, 0x4d, 0x66, 0x52, 0x65,
+	0x6d, 0x6f, 0x74, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x4c, 0x69,
+	0x73, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x44, 0x0a, 0x0a, 0x43, 0x6f,
+	0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x24,
+	0x2e, 0x6f, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e,
+	0x4e, 0x56, 0x4d, 0x66, 0x52, 0x65, 0x6d, 0x6f, 0x74, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f,
+	0x6c, 0x6c, 0x65, 0x72, 0x52, 0x0a, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72,
+	0x22, 0x30, 0x0a, 0x1e, 0x4e, 0x56, 0x4d, 0x66, 0x52, 0x65, 0x6d, 0x6f, 0x74, 0x65, 0x43, 0x6f,
+	0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x47, 0x65, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65,
+	0x73, 0x74, 0x12, 0x0e, 0x0a, 0x02, 0x49, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x02,
+	0x49, 0x64, 0x22, 0x67, 0x0a, 0x1f, 0x4e, 0x56, 0x4d, 0x66, 0x52, 0x65, 0x6d, 0x6f, 0x74, 0x65,
+	0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x47, 0x65, 0x74, 0x52, 0x65, 0x73,
+	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x44, 0x0a, 0x0a, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c,
+	0x6c, 0x65, 0x72, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x24, 0x2e, 0x6f, 0x70, 0x69, 0x2e,
+	0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x56, 0x4d, 0x66, 0x52,
+	0x65, 0x6d, 0x6f, 0x74, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x52,
+	0x0a, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x22, 0x32, 0x0a, 0x20, 0x4e,
+	0x56, 0x4d, 0x66, 0x52, 0x65, 0x6d, 0x6f, 0x74, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c,
+	0x6c, 0x65, 0x72, 0x53, 0x74, 0x61, 0x74, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12,
+	0x0e, 0x0a, 0x02, 0x49, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x02, 0x49, 0x64, 0x22,
+	0x49, 0x0a, 0x21, 0x4e, 0x56, 0x4d, 0x66, 0x52, 0x65, 0x6d, 0x6f, 0x74, 0x65, 0x43, 0x6f, 0x6e,
+	0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x53, 0x74, 0x61, 0x74, 0x73, 0x52, 0x65, 0x73, 0x70,
+	0x6f, 0x6e, 0x73, 0x65, 0x12, 0x0e, 0x0a, 0x02, 0x49, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x03,
+	0x52, 0x02, 0x49, 0x64, 0x12, 0x14, 0x0a, 0x05, 0x53, 0x74, 0x61, 0x74, 0x73, 0x18, 0x02, 0x20,
+	0x01, 0x28, 0x09, 0x52, 0x05, 0x53, 0x74, 0x61, 0x74, 0x73, 0x2a, 0x8f, 0x01, 0x0a, 0x11, 0x4e,
+	0x76, 0x6d, 0x65, 0x54, 0x72, 0x61, 0x6e, 0x73, 0x70, 0x6f, 0x72, 0x74, 0x54, 0x79, 0x70, 0x65,
+	0x12, 0x15, 0x0a, 0x11, 0x4e, 0x56, 0x4d, 0x45, 0x5f, 0x54, 0x52, 0x41, 0x4e, 0x53, 0x50, 0x4f,
+	0x52, 0x54, 0x5f, 0x46, 0x43, 0x10, 0x00, 0x12, 0x17, 0x0a, 0x13, 0x4e, 0x56, 0x4d, 0x45, 0x5f,
+	0x54, 0x52, 0x41, 0x4e, 0x53, 0x50, 0x4f, 0x52, 0x54, 0x5f, 0x50, 0x43, 0x49, 0x45, 0x10, 0x01,
+	0x12, 0x17, 0x0a, 0x13, 0x4e, 0x56, 0x4d, 0x45, 0x5f, 0x54, 0x52, 0x41, 0x4e, 0x53, 0x50, 0x4f,
+	0x52, 0x54, 0x5f, 0x52, 0x44, 0x4d, 0x41, 0x10, 0x02, 0x12, 0x16, 0x0a, 0x12, 0x4e, 0x56, 0x4d,
+	0x45, 0x5f, 0x54, 0x52, 0x41, 0x4e, 0x53, 0x50, 0x4f, 0x52, 0x54, 0x5f, 0x54, 0x43, 0x50, 0x10,
+	0x03, 0x12, 0x19, 0x0a, 0x15, 0x4e, 0x56, 0x4d, 0x45, 0x5f, 0x54, 0x52, 0x41, 0x4e, 0x53, 0x50,
+	0x4f, 0x52, 0x54, 0x5f, 0x43, 0x55, 0x53, 0x54, 0x4f, 0x4d, 0x10, 0x04, 0x2a, 0x83, 0x01, 0x0a,
+	0x11, 0x4e, 0x76, 0x6d, 0x65, 0x41, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x46, 0x61, 0x6d, 0x69,
+	0x6c, 0x79, 0x12, 0x14, 0x0a, 0x10, 0x4e, 0x56, 0x4d, 0x46, 0x5f, 0x41, 0x44, 0x52, 0x46, 0x41,
+	0x4d, 0x5f, 0x49, 0x50, 0x56, 0x34, 0x10, 0x00, 0x12, 0x14, 0x0a, 0x10, 0x4e, 0x56, 0x4d, 0x46,
+	0x5f, 0x41, 0x44, 0x52, 0x46, 0x41, 0x4d, 0x5f, 0x49, 0x50, 0x56, 0x36, 0x10, 0x01, 0x12, 0x12,
+	0x0a, 0x0e, 0x4e, 0x56, 0x4d, 0x46, 0x5f, 0x41, 0x44, 0x52, 0x46, 0x41, 0x4d, 0x5f, 0x49, 0x42,
+	0x10, 0x02, 0x12, 0x12, 0x0a, 0x0e, 0x4e, 0x56, 0x4d, 0x46, 0x5f, 0x41, 0x44, 0x52, 0x46, 0x41,
+	0x4d, 0x5f, 0x46, 0x43, 0x10, 0x03, 0x12, 0x1a, 0x0a, 0x16, 0x4e, 0x56, 0x4d, 0x46, 0x5f, 0x41,
+	0x44, 0x52, 0x46, 0x41, 0x4d, 0x5f, 0x49, 0x4e, 0x54, 0x52, 0x41, 0x5f, 0x48, 0x4f, 0x53, 0x54,
+	0x10, 0x04, 0x2a, 0x57, 0x0a, 0x0d, 0x4e, 0x76, 0x6d, 0x65, 0x4d, 0x75, 0x6c, 0x74, 0x69, 0x70,
+	0x61, 0x74, 0x68, 0x12, 0x15, 0x0a, 0x11, 0x4e, 0x56, 0x4d, 0x45, 0x5f, 0x4d, 0x50, 0x49, 0x4f,
+	0x5f, 0x44, 0x49, 0x53, 0x41, 0x42, 0x4c, 0x45, 0x10, 0x00, 0x12, 0x16, 0x0a, 0x12, 0x4e, 0x56,
+	0x4d, 0x45, 0x5f, 0x4d, 0x50, 0x49, 0x4f, 0x5f, 0x46, 0x41, 0x49, 0x4c, 0x4f, 0x56, 0x45, 0x52,
+	0x10, 0x01, 0x12, 0x17, 0x0a, 0x13, 0x4e, 0x56, 0x4d, 0x45, 0x5f, 0x4d, 0x50, 0x49, 0x4f, 0x5f,
+	0x4d, 0x55, 0x4c, 0x54, 0x49, 0x50, 0x41, 0x54, 0x48, 0x10, 0x02, 0x32, 0xc5, 0x06, 0x0a, 0x1b,
+	0x4e, 0x56, 0x4d, 0x66, 0x52, 0x65, 0x6d, 0x6f, 0x74, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f,
+	0x6c, 0x6c, 0x65, 0x72, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0x88, 0x01, 0x0a, 0x1b,
+	0x4e, 0x56, 0x4d, 0x66, 0x52, 0x65, 0x6d, 0x6f, 0x74, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f,
+	0x6c, 0x6c, 0x65, 0x72, 0x43, 0x6f, 0x6e, 0x6e, 0x65, 0x63, 0x74, 0x12, 0x32, 0x2e, 0x6f, 0x70,
 	0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x56, 0x4d,
 	0x66, 0x52, 0x65, 0x6d, 0x6f, 0x74, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65,
-	0x72, 0x44, 0x69, 0x73, 0x63, 0x6f, 0x6e, 0x6e, 0x65, 0x63, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f,
-	0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x82, 0x01, 0x0a, 0x19, 0x4e, 0x56, 0x4d, 0x66, 0x52, 0x65,
-	0x6d, 0x6f, 0x74, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x52, 0x65,
-	0x73, 0x65, 0x74, 0x12, 0x30, 0x2e, 0x6f, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67,
-	0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x56, 0x4d, 0x66, 0x52, 0x65, 0x6d, 0x6f, 0x74, 0x65, 0x43,
-	0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x52, 0x65, 0x73, 0x65, 0x74, 0x52, 0x65,
-	0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x31, 0x2e, 0x6f, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72,
-	0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x56, 0x4d, 0x66, 0x52, 0x65, 0x6d, 0x6f, 0x74,
-	0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x52, 0x65, 0x73, 0x65, 0x74,
-	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x7f, 0x0a, 0x18, 0x4e, 0x56,
-	0x4d, 0x66, 0x52, 0x65, 0x6d, 0x6f, 0x74, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c,
-	0x65, 0x72, 0x4c, 0x69, 0x73, 0x74, 0x12, 0x2f, 0x2e, 0x6f, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f,
-	0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x56, 0x4d, 0x66, 0x52, 0x65, 0x6d, 0x6f,
-	0x74, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x4c, 0x69, 0x73, 0x74,
-	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x30, 0x2e, 0x6f, 0x70, 0x69, 0x2e, 0x73, 0x74,
-	0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x56, 0x4d, 0x66, 0x52, 0x65, 0x6d,
-	0x6f, 0x74, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x4c, 0x69, 0x73,
-	0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x7c, 0x0a, 0x17, 0x4e,
-	0x56, 0x4d, 0x66, 0x52, 0x65, 0x6d, 0x6f, 0x74, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c,
-	0x6c, 0x65, 0x72, 0x47, 0x65, 0x74, 0x12, 0x2e, 0x2e, 0x6f, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f,
-	0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x56, 0x4d, 0x66, 0x52, 0x65, 0x6d, 0x6f,
-	0x74, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x47, 0x65, 0x74, 0x52,
-	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2f, 0x2e, 0x6f, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f,
-	0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x56, 0x4d, 0x66, 0x52, 0x65, 0x6d, 0x6f,
-	0x74, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x47, 0x65, 0x74, 0x52,
-	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x82, 0x01, 0x0a, 0x19, 0x4e, 0x56,
-	0x4d, 0x66, 0x52, 0x65, 0x6d, 0x6f, 0x74, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c,
-	0x65, 0x72, 0x53, 0x74, 0x61, 0x74, 0x73, 0x12, 0x30, 0x2e, 0x6f, 0x70, 0x69, 0x2e, 0x73, 0x74,
-	0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x56, 0x4d, 0x66, 0x52, 0x65, 0x6d,
-	0x6f, 0x74, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x53, 0x74, 0x61,
-	0x74, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x31, 0x2e, 0x6f, 0x70, 0x69, 0x2e,
+	0x72, 0x43, 0x6f, 0x6e, 0x6e, 0x65, 0x63, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
+	0x33, 0x2e, 0x6f, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31,
+	0x2e, 0x4e, 0x56, 0x4d, 0x66, 0x52, 0x65, 0x6d, 0x6f, 0x74, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72,
+	0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x43, 0x6f, 0x6e, 0x6e, 0x65, 0x63, 0x74, 0x52, 0x65, 0x73, 0x70,
+	0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x91, 0x01, 0x0a, 0x1e, 0x4e, 0x56, 0x4d, 0x66, 0x52,
+	0x65, 0x6d, 0x6f, 0x74, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x44,
+	0x69, 0x73, 0x63, 0x6f, 0x6e, 0x6e, 0x65, 0x63, 0x74, 0x12, 0x35, 0x2e, 0x6f, 0x70, 0x69, 0x2e,
 	0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x56, 0x4d, 0x66, 0x52,
-	0x65, 0x6d, 0x6f, 0x74, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x53,
-	0x74, 0x61, 0x74, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x42, 0x2d,
-	0x5a, 0x2b, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6f, 0x70, 0x69,
-	0x70, 0x72, 0x6f, 0x6a, 0x65, 0x63, 0x74, 0x2f, 0x6f, 0x70, 0x69, 0x2d, 0x61, 0x70, 0x69, 0x2f,
-	0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2f, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x06, 0x70,
-	0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x65, 0x6d, 0x6f, 0x74, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x44,
+	0x69, 0x73, 0x63, 0x6f, 0x6e, 0x6e, 0x65, 0x63, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
+	0x1a, 0x36, 0x2e, 0x6f, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76,
+	0x31, 0x2e, 0x4e, 0x56, 0x4d, 0x66, 0x52, 0x65, 0x6d, 0x6f, 0x74, 0x65, 0x43, 0x6f, 0x6e, 0x74,
+	0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x44, 0x69, 0x73, 0x63, 0x6f, 0x6e, 0x6e, 0x65, 0x63, 0x74,
+	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x82, 0x01, 0x0a, 0x19, 0x4e,
+	0x56, 0x4d, 0x66, 0x52, 0x65, 0x6d, 0x6f, 0x74, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c,
+	0x6c, 0x65, 0x72, 0x52, 0x65, 0x73, 0x65, 0x74, 0x12, 0x30, 0x2e, 0x6f, 0x70, 0x69, 0x2e, 0x73,
+	0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x56, 0x4d, 0x66, 0x52, 0x65,
+	0x6d, 0x6f, 0x74, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x52, 0x65,
+	0x73, 0x65, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x31, 0x2e, 0x6f, 0x70, 0x69,
+	0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x56, 0x4d, 0x66,
+	0x52, 0x65, 0x6d, 0x6f, 0x74, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72,
+	0x52, 0x65, 0x73, 0x65, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12,
+	0x7f, 0x0a, 0x18, 0x4e, 0x56, 0x4d, 0x66, 0x52, 0x65, 0x6d, 0x6f, 0x74, 0x65, 0x43, 0x6f, 0x6e,
+	0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x4c, 0x69, 0x73, 0x74, 0x12, 0x2f, 0x2e, 0x6f, 0x70,
+	0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x56, 0x4d,
+	0x66, 0x52, 0x65, 0x6d, 0x6f, 0x74, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65,
+	0x72, 0x4c, 0x69, 0x73, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x30, 0x2e, 0x6f,
+	0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x56,
+	0x4d, 0x66, 0x52, 0x65, 0x6d, 0x6f, 0x74, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c,
+	0x65, 0x72, 0x4c, 0x69, 0x73, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00,
+	0x12, 0x7c, 0x0a, 0x17, 0x4e, 0x56, 0x4d, 0x66, 0x52, 0x65, 0x6d, 0x6f, 0x74, 0x65, 0x43, 0x6f,
+	0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x47, 0x65, 0x74, 0x12, 0x2e, 0x2e, 0x6f, 0x70,
+	0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x56, 0x4d,
+	0x66, 0x52, 0x65, 0x6d, 0x6f, 0x74, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65,
+	0x72, 0x47, 0x65, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2f, 0x2e, 0x6f, 0x70,
+	0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x56, 0x4d,
+	0x66, 0x52, 0x65, 0x6d, 0x6f, 0x74, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65,
+	0x72, 0x47, 0x65, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x82,
+	0x01, 0x0a, 0x19, 0x4e, 0x56, 0x4d, 0x66, 0x52, 0x65, 0x6d, 0x6f, 0x74, 0x65, 0x43, 0x6f, 0x6e,
+	0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x53, 0x74, 0x61, 0x74, 0x73, 0x12, 0x30, 0x2e, 0x6f,
+	0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x56,
+	0x4d, 0x66, 0x52, 0x65, 0x6d, 0x6f, 0x74, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c,
+	0x65, 0x72, 0x53, 0x74, 0x61, 0x74, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x31,
+	0x2e, 0x6f, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e,
+	0x4e, 0x56, 0x4d, 0x66, 0x52, 0x65, 0x6d, 0x6f, 0x74, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f,
+	0x6c, 0x6c, 0x65, 0x72, 0x53, 0x74, 0x61, 0x74, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
+	0x65, 0x22, 0x00, 0x42, 0x2d, 0x5a, 0x2b, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f,
+	0x6d, 0x2f, 0x6f, 0x70, 0x69, 0x70, 0x72, 0x6f, 0x6a, 0x65, 0x63, 0x74, 0x2f, 0x6f, 0x70, 0x69,
+	0x2d, 0x61, 0x70, 0x69, 0x2f, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2f, 0x70, 0x72, 0x6f,
+	0x74, 0x6f, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -814,39 +1027,50 @@ func file_backend_proto_rawDescGZIP() []byte {
 	return file_backend_proto_rawDescData
 }
 
-var file_backend_proto_msgTypes = make([]protoimpl.MessageInfo, 12)
+var file_backend_proto_enumTypes = make([]protoimpl.EnumInfo, 3)
+var file_backend_proto_msgTypes = make([]protoimpl.MessageInfo, 13)
 var file_backend_proto_goTypes = []interface{}{
-	(*NVMfRemoteControllerConnectRequest)(nil),     // 0: opi.storage.v1.NVMfRemoteControllerConnectRequest
-	(*NVMfRemoteControllerConnectResponse)(nil),    // 1: opi.storage.v1.NVMfRemoteControllerConnectResponse
-	(*NVMfRemoteControllerDisconnectRequest)(nil),  // 2: opi.storage.v1.NVMfRemoteControllerDisconnectRequest
-	(*NVMfRemoteControllerDisconnectResponse)(nil), // 3: opi.storage.v1.NVMfRemoteControllerDisconnectResponse
-	(*NVMfRemoteControllerResetRequest)(nil),       // 4: opi.storage.v1.NVMfRemoteControllerResetRequest
-	(*NVMfRemoteControllerResetResponse)(nil),      // 5: opi.storage.v1.NVMfRemoteControllerResetResponse
-	(*NVMfRemoteControllerListRequest)(nil),        // 6: opi.storage.v1.NVMfRemoteControllerListRequest
-	(*NVMfRemoteControllerListResponse)(nil),       // 7: opi.storage.v1.NVMfRemoteControllerListResponse
-	(*NVMfRemoteControllerGetRequest)(nil),         // 8: opi.storage.v1.NVMfRemoteControllerGetRequest
-	(*NVMfRemoteControllerGetResponse)(nil),        // 9: opi.storage.v1.NVMfRemoteControllerGetResponse
-	(*NVMfRemoteControllerStatsRequest)(nil),       // 10: opi.storage.v1.NVMfRemoteControllerStatsRequest
-	(*NVMfRemoteControllerStatsResponse)(nil),      // 11: opi.storage.v1.NVMfRemoteControllerStatsResponse
+	(NvmeTransportType)(0),                         // 0: opi.storage.v1.NvmeTransportType
+	(NvmeAddressFamily)(0),                         // 1: opi.storage.v1.NvmeAddressFamily
+	(NvmeMultipath)(0),                             // 2: opi.storage.v1.NvmeMultipath
+	(*NVMfRemoteController)(nil),                   // 3: opi.storage.v1.NVMfRemoteController
+	(*NVMfRemoteControllerConnectRequest)(nil),     // 4: opi.storage.v1.NVMfRemoteControllerConnectRequest
+	(*NVMfRemoteControllerConnectResponse)(nil),    // 5: opi.storage.v1.NVMfRemoteControllerConnectResponse
+	(*NVMfRemoteControllerDisconnectRequest)(nil),  // 6: opi.storage.v1.NVMfRemoteControllerDisconnectRequest
+	(*NVMfRemoteControllerDisconnectResponse)(nil), // 7: opi.storage.v1.NVMfRemoteControllerDisconnectResponse
+	(*NVMfRemoteControllerResetRequest)(nil),       // 8: opi.storage.v1.NVMfRemoteControllerResetRequest
+	(*NVMfRemoteControllerResetResponse)(nil),      // 9: opi.storage.v1.NVMfRemoteControllerResetResponse
+	(*NVMfRemoteControllerListRequest)(nil),        // 10: opi.storage.v1.NVMfRemoteControllerListRequest
+	(*NVMfRemoteControllerListResponse)(nil),       // 11: opi.storage.v1.NVMfRemoteControllerListResponse
+	(*NVMfRemoteControllerGetRequest)(nil),         // 12: opi.storage.v1.NVMfRemoteControllerGetRequest
+	(*NVMfRemoteControllerGetResponse)(nil),        // 13: opi.storage.v1.NVMfRemoteControllerGetResponse
+	(*NVMfRemoteControllerStatsRequest)(nil),       // 14: opi.storage.v1.NVMfRemoteControllerStatsRequest
+	(*NVMfRemoteControllerStatsResponse)(nil),      // 15: opi.storage.v1.NVMfRemoteControllerStatsResponse
 }
 var file_backend_proto_depIdxs = []int32{
-	0,  // 0: opi.storage.v1.NVMfRemoteController.NVMfRemoteControllerConnect:input_type -> opi.storage.v1.NVMfRemoteControllerConnectRequest
-	2,  // 1: opi.storage.v1.NVMfRemoteController.NVMfRemoteControllerDisconnect:input_type -> opi.storage.v1.NVMfRemoteControllerDisconnectRequest
-	4,  // 2: opi.storage.v1.NVMfRemoteController.NVMfRemoteControllerReset:input_type -> opi.storage.v1.NVMfRemoteControllerResetRequest
-	6,  // 3: opi.storage.v1.NVMfRemoteController.NVMfRemoteControllerList:input_type -> opi.storage.v1.NVMfRemoteControllerListRequest
-	8,  // 4: opi.storage.v1.NVMfRemoteController.NVMfRemoteControllerGet:input_type -> opi.storage.v1.NVMfRemoteControllerGetRequest
-	10, // 5: opi.storage.v1.NVMfRemoteController.NVMfRemoteControllerStats:input_type -> opi.storage.v1.NVMfRemoteControllerStatsRequest
-	1,  // 6: opi.storage.v1.NVMfRemoteController.NVMfRemoteControllerConnect:output_type -> opi.storage.v1.NVMfRemoteControllerConnectResponse
-	3,  // 7: opi.storage.v1.NVMfRemoteController.NVMfRemoteControllerDisconnect:output_type -> opi.storage.v1.NVMfRemoteControllerDisconnectResponse
-	5,  // 8: opi.storage.v1.NVMfRemoteController.NVMfRemoteControllerReset:output_type -> opi.storage.v1.NVMfRemoteControllerResetResponse
-	7,  // 9: opi.storage.v1.NVMfRemoteController.NVMfRemoteControllerList:output_type -> opi.storage.v1.NVMfRemoteControllerListResponse
-	9,  // 10: opi.storage.v1.NVMfRemoteController.NVMfRemoteControllerGet:output_type -> opi.storage.v1.NVMfRemoteControllerGetResponse
-	11, // 11: opi.storage.v1.NVMfRemoteController.NVMfRemoteControllerStats:output_type -> opi.storage.v1.NVMfRemoteControllerStatsResponse
-	6,  // [6:12] is the sub-list for method output_type
-	0,  // [0:6] is the sub-list for method input_type
-	0,  // [0:0] is the sub-list for extension type_name
-	0,  // [0:0] is the sub-list for extension extendee
-	0,  // [0:0] is the sub-list for field type_name
+	0,  // 0: opi.storage.v1.NVMfRemoteController.trtype:type_name -> opi.storage.v1.NvmeTransportType
+	1,  // 1: opi.storage.v1.NVMfRemoteController.adrfam:type_name -> opi.storage.v1.NvmeAddressFamily
+	2,  // 2: opi.storage.v1.NVMfRemoteController.multipath:type_name -> opi.storage.v1.NvmeMultipath
+	3,  // 3: opi.storage.v1.NVMfRemoteControllerConnectRequest.Controller:type_name -> opi.storage.v1.NVMfRemoteController
+	3,  // 4: opi.storage.v1.NVMfRemoteControllerListResponse.Controller:type_name -> opi.storage.v1.NVMfRemoteController
+	3,  // 5: opi.storage.v1.NVMfRemoteControllerGetResponse.Controller:type_name -> opi.storage.v1.NVMfRemoteController
+	4,  // 6: opi.storage.v1.NVMfRemoteControllerService.NVMfRemoteControllerConnect:input_type -> opi.storage.v1.NVMfRemoteControllerConnectRequest
+	6,  // 7: opi.storage.v1.NVMfRemoteControllerService.NVMfRemoteControllerDisconnect:input_type -> opi.storage.v1.NVMfRemoteControllerDisconnectRequest
+	8,  // 8: opi.storage.v1.NVMfRemoteControllerService.NVMfRemoteControllerReset:input_type -> opi.storage.v1.NVMfRemoteControllerResetRequest
+	10, // 9: opi.storage.v1.NVMfRemoteControllerService.NVMfRemoteControllerList:input_type -> opi.storage.v1.NVMfRemoteControllerListRequest
+	12, // 10: opi.storage.v1.NVMfRemoteControllerService.NVMfRemoteControllerGet:input_type -> opi.storage.v1.NVMfRemoteControllerGetRequest
+	14, // 11: opi.storage.v1.NVMfRemoteControllerService.NVMfRemoteControllerStats:input_type -> opi.storage.v1.NVMfRemoteControllerStatsRequest
+	5,  // 12: opi.storage.v1.NVMfRemoteControllerService.NVMfRemoteControllerConnect:output_type -> opi.storage.v1.NVMfRemoteControllerConnectResponse
+	7,  // 13: opi.storage.v1.NVMfRemoteControllerService.NVMfRemoteControllerDisconnect:output_type -> opi.storage.v1.NVMfRemoteControllerDisconnectResponse
+	9,  // 14: opi.storage.v1.NVMfRemoteControllerService.NVMfRemoteControllerReset:output_type -> opi.storage.v1.NVMfRemoteControllerResetResponse
+	11, // 15: opi.storage.v1.NVMfRemoteControllerService.NVMfRemoteControllerList:output_type -> opi.storage.v1.NVMfRemoteControllerListResponse
+	13, // 16: opi.storage.v1.NVMfRemoteControllerService.NVMfRemoteControllerGet:output_type -> opi.storage.v1.NVMfRemoteControllerGetResponse
+	15, // 17: opi.storage.v1.NVMfRemoteControllerService.NVMfRemoteControllerStats:output_type -> opi.storage.v1.NVMfRemoteControllerStatsResponse
+	12, // [12:18] is the sub-list for method output_type
+	6,  // [6:12] is the sub-list for method input_type
+	6,  // [6:6] is the sub-list for extension type_name
+	6,  // [6:6] is the sub-list for extension extendee
+	0,  // [0:6] is the sub-list for field type_name
 }
 
 func init() { file_backend_proto_init() }
@@ -856,7 +1080,7 @@ func file_backend_proto_init() {
 	}
 	if !protoimpl.UnsafeEnabled {
 		file_backend_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*NVMfRemoteControllerConnectRequest); i {
+			switch v := v.(*NVMfRemoteController); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -868,7 +1092,7 @@ func file_backend_proto_init() {
 			}
 		}
 		file_backend_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*NVMfRemoteControllerConnectResponse); i {
+			switch v := v.(*NVMfRemoteControllerConnectRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -880,7 +1104,7 @@ func file_backend_proto_init() {
 			}
 		}
 		file_backend_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*NVMfRemoteControllerDisconnectRequest); i {
+			switch v := v.(*NVMfRemoteControllerConnectResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -892,7 +1116,7 @@ func file_backend_proto_init() {
 			}
 		}
 		file_backend_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*NVMfRemoteControllerDisconnectResponse); i {
+			switch v := v.(*NVMfRemoteControllerDisconnectRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -904,7 +1128,7 @@ func file_backend_proto_init() {
 			}
 		}
 		file_backend_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*NVMfRemoteControllerResetRequest); i {
+			switch v := v.(*NVMfRemoteControllerDisconnectResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -916,7 +1140,7 @@ func file_backend_proto_init() {
 			}
 		}
 		file_backend_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*NVMfRemoteControllerResetResponse); i {
+			switch v := v.(*NVMfRemoteControllerResetRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -928,7 +1152,7 @@ func file_backend_proto_init() {
 			}
 		}
 		file_backend_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*NVMfRemoteControllerListRequest); i {
+			switch v := v.(*NVMfRemoteControllerResetResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -940,7 +1164,7 @@ func file_backend_proto_init() {
 			}
 		}
 		file_backend_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*NVMfRemoteControllerListResponse); i {
+			switch v := v.(*NVMfRemoteControllerListRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -952,7 +1176,7 @@ func file_backend_proto_init() {
 			}
 		}
 		file_backend_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*NVMfRemoteControllerGetRequest); i {
+			switch v := v.(*NVMfRemoteControllerListResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -964,7 +1188,7 @@ func file_backend_proto_init() {
 			}
 		}
 		file_backend_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*NVMfRemoteControllerGetResponse); i {
+			switch v := v.(*NVMfRemoteControllerGetRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -976,7 +1200,7 @@ func file_backend_proto_init() {
 			}
 		}
 		file_backend_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*NVMfRemoteControllerStatsRequest); i {
+			switch v := v.(*NVMfRemoteControllerGetResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -988,6 +1212,18 @@ func file_backend_proto_init() {
 			}
 		}
 		file_backend_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*NVMfRemoteControllerStatsRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_backend_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*NVMfRemoteControllerStatsResponse); i {
 			case 0:
 				return &v.state
@@ -1005,13 +1241,14 @@ func file_backend_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_backend_proto_rawDesc,
-			NumEnums:      0,
-			NumMessages:   12,
+			NumEnums:      3,
+			NumMessages:   13,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
 		GoTypes:           file_backend_proto_goTypes,
 		DependencyIndexes: file_backend_proto_depIdxs,
+		EnumInfos:         file_backend_proto_enumTypes,
 		MessageInfos:      file_backend_proto_msgTypes,
 	}.Build()
 	File_backend_proto = out.File
@@ -1028,10 +1265,10 @@ var _ grpc.ClientConnInterface
 // is compatible with the grpc package it is being compiled against.
 const _ = grpc.SupportPackageIsVersion6
 
-// NVMfRemoteControllerClient is the client API for NVMfRemoteController service.
+// NVMfRemoteControllerServiceClient is the client API for NVMfRemoteControllerService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
-type NVMfRemoteControllerClient interface {
+type NVMfRemoteControllerServiceClient interface {
 	NVMfRemoteControllerConnect(ctx context.Context, in *NVMfRemoteControllerConnectRequest, opts ...grpc.CallOption) (*NVMfRemoteControllerConnectResponse, error)
 	NVMfRemoteControllerDisconnect(ctx context.Context, in *NVMfRemoteControllerDisconnectRequest, opts ...grpc.CallOption) (*NVMfRemoteControllerDisconnectResponse, error)
 	NVMfRemoteControllerReset(ctx context.Context, in *NVMfRemoteControllerResetRequest, opts ...grpc.CallOption) (*NVMfRemoteControllerResetResponse, error)
@@ -1040,70 +1277,70 @@ type NVMfRemoteControllerClient interface {
 	NVMfRemoteControllerStats(ctx context.Context, in *NVMfRemoteControllerStatsRequest, opts ...grpc.CallOption) (*NVMfRemoteControllerStatsResponse, error)
 }
 
-type nVMfRemoteControllerClient struct {
+type nVMfRemoteControllerServiceClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewNVMfRemoteControllerClient(cc grpc.ClientConnInterface) NVMfRemoteControllerClient {
-	return &nVMfRemoteControllerClient{cc}
+func NewNVMfRemoteControllerServiceClient(cc grpc.ClientConnInterface) NVMfRemoteControllerServiceClient {
+	return &nVMfRemoteControllerServiceClient{cc}
 }
 
-func (c *nVMfRemoteControllerClient) NVMfRemoteControllerConnect(ctx context.Context, in *NVMfRemoteControllerConnectRequest, opts ...grpc.CallOption) (*NVMfRemoteControllerConnectResponse, error) {
+func (c *nVMfRemoteControllerServiceClient) NVMfRemoteControllerConnect(ctx context.Context, in *NVMfRemoteControllerConnectRequest, opts ...grpc.CallOption) (*NVMfRemoteControllerConnectResponse, error) {
 	out := new(NVMfRemoteControllerConnectResponse)
-	err := c.cc.Invoke(ctx, "/opi.storage.v1.NVMfRemoteController/NVMfRemoteControllerConnect", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/opi.storage.v1.NVMfRemoteControllerService/NVMfRemoteControllerConnect", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *nVMfRemoteControllerClient) NVMfRemoteControllerDisconnect(ctx context.Context, in *NVMfRemoteControllerDisconnectRequest, opts ...grpc.CallOption) (*NVMfRemoteControllerDisconnectResponse, error) {
+func (c *nVMfRemoteControllerServiceClient) NVMfRemoteControllerDisconnect(ctx context.Context, in *NVMfRemoteControllerDisconnectRequest, opts ...grpc.CallOption) (*NVMfRemoteControllerDisconnectResponse, error) {
 	out := new(NVMfRemoteControllerDisconnectResponse)
-	err := c.cc.Invoke(ctx, "/opi.storage.v1.NVMfRemoteController/NVMfRemoteControllerDisconnect", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/opi.storage.v1.NVMfRemoteControllerService/NVMfRemoteControllerDisconnect", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *nVMfRemoteControllerClient) NVMfRemoteControllerReset(ctx context.Context, in *NVMfRemoteControllerResetRequest, opts ...grpc.CallOption) (*NVMfRemoteControllerResetResponse, error) {
+func (c *nVMfRemoteControllerServiceClient) NVMfRemoteControllerReset(ctx context.Context, in *NVMfRemoteControllerResetRequest, opts ...grpc.CallOption) (*NVMfRemoteControllerResetResponse, error) {
 	out := new(NVMfRemoteControllerResetResponse)
-	err := c.cc.Invoke(ctx, "/opi.storage.v1.NVMfRemoteController/NVMfRemoteControllerReset", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/opi.storage.v1.NVMfRemoteControllerService/NVMfRemoteControllerReset", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *nVMfRemoteControllerClient) NVMfRemoteControllerList(ctx context.Context, in *NVMfRemoteControllerListRequest, opts ...grpc.CallOption) (*NVMfRemoteControllerListResponse, error) {
+func (c *nVMfRemoteControllerServiceClient) NVMfRemoteControllerList(ctx context.Context, in *NVMfRemoteControllerListRequest, opts ...grpc.CallOption) (*NVMfRemoteControllerListResponse, error) {
 	out := new(NVMfRemoteControllerListResponse)
-	err := c.cc.Invoke(ctx, "/opi.storage.v1.NVMfRemoteController/NVMfRemoteControllerList", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/opi.storage.v1.NVMfRemoteControllerService/NVMfRemoteControllerList", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *nVMfRemoteControllerClient) NVMfRemoteControllerGet(ctx context.Context, in *NVMfRemoteControllerGetRequest, opts ...grpc.CallOption) (*NVMfRemoteControllerGetResponse, error) {
+func (c *nVMfRemoteControllerServiceClient) NVMfRemoteControllerGet(ctx context.Context, in *NVMfRemoteControllerGetRequest, opts ...grpc.CallOption) (*NVMfRemoteControllerGetResponse, error) {
 	out := new(NVMfRemoteControllerGetResponse)
-	err := c.cc.Invoke(ctx, "/opi.storage.v1.NVMfRemoteController/NVMfRemoteControllerGet", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/opi.storage.v1.NVMfRemoteControllerService/NVMfRemoteControllerGet", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *nVMfRemoteControllerClient) NVMfRemoteControllerStats(ctx context.Context, in *NVMfRemoteControllerStatsRequest, opts ...grpc.CallOption) (*NVMfRemoteControllerStatsResponse, error) {
+func (c *nVMfRemoteControllerServiceClient) NVMfRemoteControllerStats(ctx context.Context, in *NVMfRemoteControllerStatsRequest, opts ...grpc.CallOption) (*NVMfRemoteControllerStatsResponse, error) {
 	out := new(NVMfRemoteControllerStatsResponse)
-	err := c.cc.Invoke(ctx, "/opi.storage.v1.NVMfRemoteController/NVMfRemoteControllerStats", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/opi.storage.v1.NVMfRemoteControllerService/NVMfRemoteControllerStats", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// NVMfRemoteControllerServer is the server API for NVMfRemoteController service.
-type NVMfRemoteControllerServer interface {
+// NVMfRemoteControllerServiceServer is the server API for NVMfRemoteControllerService service.
+type NVMfRemoteControllerServiceServer interface {
 	NVMfRemoteControllerConnect(context.Context, *NVMfRemoteControllerConnectRequest) (*NVMfRemoteControllerConnectResponse, error)
 	NVMfRemoteControllerDisconnect(context.Context, *NVMfRemoteControllerDisconnectRequest) (*NVMfRemoteControllerDisconnectResponse, error)
 	NVMfRemoteControllerReset(context.Context, *NVMfRemoteControllerResetRequest) (*NVMfRemoteControllerResetResponse, error)
@@ -1112,168 +1349,168 @@ type NVMfRemoteControllerServer interface {
 	NVMfRemoteControllerStats(context.Context, *NVMfRemoteControllerStatsRequest) (*NVMfRemoteControllerStatsResponse, error)
 }
 
-// UnimplementedNVMfRemoteControllerServer can be embedded to have forward compatible implementations.
-type UnimplementedNVMfRemoteControllerServer struct {
+// UnimplementedNVMfRemoteControllerServiceServer can be embedded to have forward compatible implementations.
+type UnimplementedNVMfRemoteControllerServiceServer struct {
 }
 
-func (*UnimplementedNVMfRemoteControllerServer) NVMfRemoteControllerConnect(context.Context, *NVMfRemoteControllerConnectRequest) (*NVMfRemoteControllerConnectResponse, error) {
+func (*UnimplementedNVMfRemoteControllerServiceServer) NVMfRemoteControllerConnect(context.Context, *NVMfRemoteControllerConnectRequest) (*NVMfRemoteControllerConnectResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method NVMfRemoteControllerConnect not implemented")
 }
-func (*UnimplementedNVMfRemoteControllerServer) NVMfRemoteControllerDisconnect(context.Context, *NVMfRemoteControllerDisconnectRequest) (*NVMfRemoteControllerDisconnectResponse, error) {
+func (*UnimplementedNVMfRemoteControllerServiceServer) NVMfRemoteControllerDisconnect(context.Context, *NVMfRemoteControllerDisconnectRequest) (*NVMfRemoteControllerDisconnectResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method NVMfRemoteControllerDisconnect not implemented")
 }
-func (*UnimplementedNVMfRemoteControllerServer) NVMfRemoteControllerReset(context.Context, *NVMfRemoteControllerResetRequest) (*NVMfRemoteControllerResetResponse, error) {
+func (*UnimplementedNVMfRemoteControllerServiceServer) NVMfRemoteControllerReset(context.Context, *NVMfRemoteControllerResetRequest) (*NVMfRemoteControllerResetResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method NVMfRemoteControllerReset not implemented")
 }
-func (*UnimplementedNVMfRemoteControllerServer) NVMfRemoteControllerList(context.Context, *NVMfRemoteControllerListRequest) (*NVMfRemoteControllerListResponse, error) {
+func (*UnimplementedNVMfRemoteControllerServiceServer) NVMfRemoteControllerList(context.Context, *NVMfRemoteControllerListRequest) (*NVMfRemoteControllerListResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method NVMfRemoteControllerList not implemented")
 }
-func (*UnimplementedNVMfRemoteControllerServer) NVMfRemoteControllerGet(context.Context, *NVMfRemoteControllerGetRequest) (*NVMfRemoteControllerGetResponse, error) {
+func (*UnimplementedNVMfRemoteControllerServiceServer) NVMfRemoteControllerGet(context.Context, *NVMfRemoteControllerGetRequest) (*NVMfRemoteControllerGetResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method NVMfRemoteControllerGet not implemented")
 }
-func (*UnimplementedNVMfRemoteControllerServer) NVMfRemoteControllerStats(context.Context, *NVMfRemoteControllerStatsRequest) (*NVMfRemoteControllerStatsResponse, error) {
+func (*UnimplementedNVMfRemoteControllerServiceServer) NVMfRemoteControllerStats(context.Context, *NVMfRemoteControllerStatsRequest) (*NVMfRemoteControllerStatsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method NVMfRemoteControllerStats not implemented")
 }
 
-func RegisterNVMfRemoteControllerServer(s *grpc.Server, srv NVMfRemoteControllerServer) {
-	s.RegisterService(&_NVMfRemoteController_serviceDesc, srv)
+func RegisterNVMfRemoteControllerServiceServer(s *grpc.Server, srv NVMfRemoteControllerServiceServer) {
+	s.RegisterService(&_NVMfRemoteControllerService_serviceDesc, srv)
 }
 
-func _NVMfRemoteController_NVMfRemoteControllerConnect_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _NVMfRemoteControllerService_NVMfRemoteControllerConnect_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(NVMfRemoteControllerConnectRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(NVMfRemoteControllerServer).NVMfRemoteControllerConnect(ctx, in)
+		return srv.(NVMfRemoteControllerServiceServer).NVMfRemoteControllerConnect(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/opi.storage.v1.NVMfRemoteController/NVMfRemoteControllerConnect",
+		FullMethod: "/opi.storage.v1.NVMfRemoteControllerService/NVMfRemoteControllerConnect",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(NVMfRemoteControllerServer).NVMfRemoteControllerConnect(ctx, req.(*NVMfRemoteControllerConnectRequest))
+		return srv.(NVMfRemoteControllerServiceServer).NVMfRemoteControllerConnect(ctx, req.(*NVMfRemoteControllerConnectRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _NVMfRemoteController_NVMfRemoteControllerDisconnect_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _NVMfRemoteControllerService_NVMfRemoteControllerDisconnect_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(NVMfRemoteControllerDisconnectRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(NVMfRemoteControllerServer).NVMfRemoteControllerDisconnect(ctx, in)
+		return srv.(NVMfRemoteControllerServiceServer).NVMfRemoteControllerDisconnect(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/opi.storage.v1.NVMfRemoteController/NVMfRemoteControllerDisconnect",
+		FullMethod: "/opi.storage.v1.NVMfRemoteControllerService/NVMfRemoteControllerDisconnect",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(NVMfRemoteControllerServer).NVMfRemoteControllerDisconnect(ctx, req.(*NVMfRemoteControllerDisconnectRequest))
+		return srv.(NVMfRemoteControllerServiceServer).NVMfRemoteControllerDisconnect(ctx, req.(*NVMfRemoteControllerDisconnectRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _NVMfRemoteController_NVMfRemoteControllerReset_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _NVMfRemoteControllerService_NVMfRemoteControllerReset_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(NVMfRemoteControllerResetRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(NVMfRemoteControllerServer).NVMfRemoteControllerReset(ctx, in)
+		return srv.(NVMfRemoteControllerServiceServer).NVMfRemoteControllerReset(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/opi.storage.v1.NVMfRemoteController/NVMfRemoteControllerReset",
+		FullMethod: "/opi.storage.v1.NVMfRemoteControllerService/NVMfRemoteControllerReset",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(NVMfRemoteControllerServer).NVMfRemoteControllerReset(ctx, req.(*NVMfRemoteControllerResetRequest))
+		return srv.(NVMfRemoteControllerServiceServer).NVMfRemoteControllerReset(ctx, req.(*NVMfRemoteControllerResetRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _NVMfRemoteController_NVMfRemoteControllerList_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _NVMfRemoteControllerService_NVMfRemoteControllerList_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(NVMfRemoteControllerListRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(NVMfRemoteControllerServer).NVMfRemoteControllerList(ctx, in)
+		return srv.(NVMfRemoteControllerServiceServer).NVMfRemoteControllerList(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/opi.storage.v1.NVMfRemoteController/NVMfRemoteControllerList",
+		FullMethod: "/opi.storage.v1.NVMfRemoteControllerService/NVMfRemoteControllerList",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(NVMfRemoteControllerServer).NVMfRemoteControllerList(ctx, req.(*NVMfRemoteControllerListRequest))
+		return srv.(NVMfRemoteControllerServiceServer).NVMfRemoteControllerList(ctx, req.(*NVMfRemoteControllerListRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _NVMfRemoteController_NVMfRemoteControllerGet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _NVMfRemoteControllerService_NVMfRemoteControllerGet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(NVMfRemoteControllerGetRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(NVMfRemoteControllerServer).NVMfRemoteControllerGet(ctx, in)
+		return srv.(NVMfRemoteControllerServiceServer).NVMfRemoteControllerGet(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/opi.storage.v1.NVMfRemoteController/NVMfRemoteControllerGet",
+		FullMethod: "/opi.storage.v1.NVMfRemoteControllerService/NVMfRemoteControllerGet",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(NVMfRemoteControllerServer).NVMfRemoteControllerGet(ctx, req.(*NVMfRemoteControllerGetRequest))
+		return srv.(NVMfRemoteControllerServiceServer).NVMfRemoteControllerGet(ctx, req.(*NVMfRemoteControllerGetRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _NVMfRemoteController_NVMfRemoteControllerStats_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _NVMfRemoteControllerService_NVMfRemoteControllerStats_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(NVMfRemoteControllerStatsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(NVMfRemoteControllerServer).NVMfRemoteControllerStats(ctx, in)
+		return srv.(NVMfRemoteControllerServiceServer).NVMfRemoteControllerStats(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/opi.storage.v1.NVMfRemoteController/NVMfRemoteControllerStats",
+		FullMethod: "/opi.storage.v1.NVMfRemoteControllerService/NVMfRemoteControllerStats",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(NVMfRemoteControllerServer).NVMfRemoteControllerStats(ctx, req.(*NVMfRemoteControllerStatsRequest))
+		return srv.(NVMfRemoteControllerServiceServer).NVMfRemoteControllerStats(ctx, req.(*NVMfRemoteControllerStatsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-var _NVMfRemoteController_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "opi.storage.v1.NVMfRemoteController",
-	HandlerType: (*NVMfRemoteControllerServer)(nil),
+var _NVMfRemoteControllerService_serviceDesc = grpc.ServiceDesc{
+	ServiceName: "opi.storage.v1.NVMfRemoteControllerService",
+	HandlerType: (*NVMfRemoteControllerServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "NVMfRemoteControllerConnect",
-			Handler:    _NVMfRemoteController_NVMfRemoteControllerConnect_Handler,
+			Handler:    _NVMfRemoteControllerService_NVMfRemoteControllerConnect_Handler,
 		},
 		{
 			MethodName: "NVMfRemoteControllerDisconnect",
-			Handler:    _NVMfRemoteController_NVMfRemoteControllerDisconnect_Handler,
+			Handler:    _NVMfRemoteControllerService_NVMfRemoteControllerDisconnect_Handler,
 		},
 		{
 			MethodName: "NVMfRemoteControllerReset",
-			Handler:    _NVMfRemoteController_NVMfRemoteControllerReset_Handler,
+			Handler:    _NVMfRemoteControllerService_NVMfRemoteControllerReset_Handler,
 		},
 		{
 			MethodName: "NVMfRemoteControllerList",
-			Handler:    _NVMfRemoteController_NVMfRemoteControllerList_Handler,
+			Handler:    _NVMfRemoteControllerService_NVMfRemoteControllerList_Handler,
 		},
 		{
 			MethodName: "NVMfRemoteControllerGet",
-			Handler:    _NVMfRemoteController_NVMfRemoteControllerGet_Handler,
+			Handler:    _NVMfRemoteControllerService_NVMfRemoteControllerGet_Handler,
 		},
 		{
 			MethodName: "NVMfRemoteControllerStats",
-			Handler:    _NVMfRemoteController_NVMfRemoteControllerStats_Handler,
+			Handler:    _NVMfRemoteControllerService_NVMfRemoteControllerStats_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
