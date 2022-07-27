@@ -16,12 +16,12 @@ The focus of the subgroup is:
   - Capabilities/Capacity Advertisement API
     - Information such as Processor Cores available, Bandwidth, Memory, etc.
 - Create a Taxonomy for services:
-  - Networking
-  - Security
-  - Storage
+  - [Networking](network/README.md)
+  - [Security](security/README.md)
+  - [Storage](storage/README.md)
   - Gateway
   - Telemetry
-  - AI/ML
+  - [AI/ML](aiml/README.md)
   - others
 - Create/Define the Backend/Southbound facing interface APIs
 
