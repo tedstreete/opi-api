@@ -4,7 +4,7 @@
 // 	protoc        v3.19.4
 // source: frontend.proto
 
-package opi_storage_v1
+package proto
 
 import (
 	context "context"
@@ -24,19 +24,327 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+type NVMeSubsystem struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Id           int64  `protobuf:"varint,1,opt,name=Id,proto3" json:"Id,omitempty"`
+	NQN          string `protobuf:"bytes,3,opt,name=NQN,proto3" json:"NQN,omitempty"`
+	SerialNumber string `protobuf:"bytes,4,opt,name=SerialNumber,proto3" json:"SerialNumber,omitempty"`
+	ModelNumber  string `protobuf:"bytes,5,opt,name=ModelNumber,proto3" json:"ModelNumber,omitempty"`
+	MaxNs        int64  `protobuf:"varint,6,opt,name=MaxNs,proto3" json:"MaxNs,omitempty"`
+}
+
+func (x *NVMeSubsystem) Reset() {
+	*x = NVMeSubsystem{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_frontend_proto_msgTypes[0]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *NVMeSubsystem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*NVMeSubsystem) ProtoMessage() {}
+
+func (x *NVMeSubsystem) ProtoReflect() protoreflect.Message {
+	mi := &file_frontend_proto_msgTypes[0]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use NVMeSubsystem.ProtoReflect.Descriptor instead.
+func (*NVMeSubsystem) Descriptor() ([]byte, []int) {
+	return file_frontend_proto_rawDescGZIP(), []int{0}
+}
+
+func (x *NVMeSubsystem) GetId() int64 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
+}
+
+func (x *NVMeSubsystem) GetNQN() string {
+	if x != nil {
+		return x.NQN
+	}
+	return ""
+}
+
+func (x *NVMeSubsystem) GetSerialNumber() string {
+	if x != nil {
+		return x.SerialNumber
+	}
+	return ""
+}
+
+func (x *NVMeSubsystem) GetModelNumber() string {
+	if x != nil {
+		return x.ModelNumber
+	}
+	return ""
+}
+
+func (x *NVMeSubsystem) GetMaxNs() int64 {
+	if x != nil {
+		return x.MaxNs
+	}
+	return 0
+}
+
+type NVMeController struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Id          int64  `protobuf:"varint,1,opt,name=Id,proto3" json:"Id,omitempty"`
+	Name        string `protobuf:"bytes,2,opt,name=Name,proto3" json:"Name,omitempty"`
+	SubsystemId string `protobuf:"bytes,3,opt,name=SubsystemId,proto3" json:"SubsystemId,omitempty"`
+	PCIeID      string `protobuf:"bytes,4,opt,name=PCIeID,proto3" json:"PCIeID,omitempty"`
+	MaxIOQPs    int64  `protobuf:"varint,5,opt,name=MaxIOQPs,proto3" json:"MaxIOQPs,omitempty"`
+	MaxNs       int64  `protobuf:"varint,6,opt,name=MaxNs,proto3" json:"MaxNs,omitempty"`
+}
+
+func (x *NVMeController) Reset() {
+	*x = NVMeController{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_frontend_proto_msgTypes[1]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *NVMeController) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*NVMeController) ProtoMessage() {}
+
+func (x *NVMeController) ProtoReflect() protoreflect.Message {
+	mi := &file_frontend_proto_msgTypes[1]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use NVMeController.ProtoReflect.Descriptor instead.
+func (*NVMeController) Descriptor() ([]byte, []int) {
+	return file_frontend_proto_rawDescGZIP(), []int{1}
+}
+
+func (x *NVMeController) GetId() int64 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
+}
+
+func (x *NVMeController) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *NVMeController) GetSubsystemId() string {
+	if x != nil {
+		return x.SubsystemId
+	}
+	return ""
+}
+
+func (x *NVMeController) GetPCIeID() string {
+	if x != nil {
+		return x.PCIeID
+	}
+	return ""
+}
+
+func (x *NVMeController) GetMaxIOQPs() int64 {
+	if x != nil {
+		return x.MaxIOQPs
+	}
+	return 0
+}
+
+func (x *NVMeController) GetMaxNs() int64 {
+	if x != nil {
+		return x.MaxNs
+	}
+	return 0
+}
+
+type NVMeNamespace struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Id             int64  `protobuf:"varint,1,opt,name=Id,proto3" json:"Id,omitempty"`
+	Name           string `protobuf:"bytes,2,opt,name=Name,proto3" json:"Name,omitempty"`
+	SubsystemId    string `protobuf:"bytes,3,opt,name=SubsystemId,proto3" json:"SubsystemId,omitempty"`
+	ControllerId   int64  `protobuf:"varint,4,opt,name=ControllerId,proto3" json:"ControllerId,omitempty"`
+	NsId           int64  `protobuf:"varint,5,opt,name=NsId,proto3" json:"NsId,omitempty"`
+	Bdev           string `protobuf:"bytes,6,opt,name=Bdev,proto3" json:"Bdev,omitempty"`
+	BlockSize      int64  `protobuf:"varint,7,opt,name=BlockSize,proto3" json:"BlockSize,omitempty"`
+	NumBlocks      int64  `protobuf:"varint,8,opt,name=NumBlocks,proto3" json:"NumBlocks,omitempty"`
+	NGUID          string `protobuf:"bytes,9,opt,name=NGUID,proto3" json:"NGUID,omitempty"`
+	EUI64          string `protobuf:"bytes,10,opt,name=EUI64,proto3" json:"EUI64,omitempty"`
+	UUID           string `protobuf:"bytes,11,opt,name=UUID,proto3" json:"UUID,omitempty"`
+	Multipath      string `protobuf:"bytes,12,opt,name=Multipath,proto3" json:"Multipath,omitempty"`
+	Authentication string `protobuf:"bytes,13,opt,name=Authentication,proto3" json:"Authentication,omitempty"`
+}
+
+func (x *NVMeNamespace) Reset() {
+	*x = NVMeNamespace{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_frontend_proto_msgTypes[2]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *NVMeNamespace) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*NVMeNamespace) ProtoMessage() {}
+
+func (x *NVMeNamespace) ProtoReflect() protoreflect.Message {
+	mi := &file_frontend_proto_msgTypes[2]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use NVMeNamespace.ProtoReflect.Descriptor instead.
+func (*NVMeNamespace) Descriptor() ([]byte, []int) {
+	return file_frontend_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *NVMeNamespace) GetId() int64 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
+}
+
+func (x *NVMeNamespace) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *NVMeNamespace) GetSubsystemId() string {
+	if x != nil {
+		return x.SubsystemId
+	}
+	return ""
+}
+
+func (x *NVMeNamespace) GetControllerId() int64 {
+	if x != nil {
+		return x.ControllerId
+	}
+	return 0
+}
+
+func (x *NVMeNamespace) GetNsId() int64 {
+	if x != nil {
+		return x.NsId
+	}
+	return 0
+}
+
+func (x *NVMeNamespace) GetBdev() string {
+	if x != nil {
+		return x.Bdev
+	}
+	return ""
+}
+
+func (x *NVMeNamespace) GetBlockSize() int64 {
+	if x != nil {
+		return x.BlockSize
+	}
+	return 0
+}
+
+func (x *NVMeNamespace) GetNumBlocks() int64 {
+	if x != nil {
+		return x.NumBlocks
+	}
+	return 0
+}
+
+func (x *NVMeNamespace) GetNGUID() string {
+	if x != nil {
+		return x.NGUID
+	}
+	return ""
+}
+
+func (x *NVMeNamespace) GetEUI64() string {
+	if x != nil {
+		return x.EUI64
+	}
+	return ""
+}
+
+func (x *NVMeNamespace) GetUUID() string {
+	if x != nil {
+		return x.UUID
+	}
+	return ""
+}
+
+func (x *NVMeNamespace) GetMultipath() string {
+	if x != nil {
+		return x.Multipath
+	}
+	return ""
+}
+
+func (x *NVMeNamespace) GetAuthentication() string {
+	if x != nil {
+		return x.Authentication
+	}
+	return ""
+}
+
 type NVMeSubsystemCreateRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
-	Id   int64  `protobuf:"varint,2,opt,name=id,proto3" json:"id,omitempty"`
+	Subsystem *NVMeSubsystem `protobuf:"bytes,1,opt,name=Subsystem,proto3" json:"Subsystem,omitempty"`
 }
 
 func (x *NVMeSubsystemCreateRequest) Reset() {
 	*x = NVMeSubsystemCreateRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_frontend_proto_msgTypes[0]
+		mi := &file_frontend_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -49,7 +357,7 @@ func (x *NVMeSubsystemCreateRequest) String() string {
 func (*NVMeSubsystemCreateRequest) ProtoMessage() {}
 
 func (x *NVMeSubsystemCreateRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_frontend_proto_msgTypes[0]
+	mi := &file_frontend_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -62,36 +370,26 @@ func (x *NVMeSubsystemCreateRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NVMeSubsystemCreateRequest.ProtoReflect.Descriptor instead.
 func (*NVMeSubsystemCreateRequest) Descriptor() ([]byte, []int) {
-	return file_frontend_proto_rawDescGZIP(), []int{0}
+	return file_frontend_proto_rawDescGZIP(), []int{3}
 }
 
-func (x *NVMeSubsystemCreateRequest) GetName() string {
+func (x *NVMeSubsystemCreateRequest) GetSubsystem() *NVMeSubsystem {
 	if x != nil {
-		return x.Name
+		return x.Subsystem
 	}
-	return ""
-}
-
-func (x *NVMeSubsystemCreateRequest) GetId() int64 {
-	if x != nil {
-		return x.Id
-	}
-	return 0
+	return nil
 }
 
 type NVMeSubsystemCreateResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
-
-	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
-	Id   int64  `protobuf:"varint,2,opt,name=id,proto3" json:"id,omitempty"`
 }
 
 func (x *NVMeSubsystemCreateResponse) Reset() {
 	*x = NVMeSubsystemCreateResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_frontend_proto_msgTypes[1]
+		mi := &file_frontend_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -104,7 +402,7 @@ func (x *NVMeSubsystemCreateResponse) String() string {
 func (*NVMeSubsystemCreateResponse) ProtoMessage() {}
 
 func (x *NVMeSubsystemCreateResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_frontend_proto_msgTypes[1]
+	mi := &file_frontend_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -117,21 +415,7 @@ func (x *NVMeSubsystemCreateResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NVMeSubsystemCreateResponse.ProtoReflect.Descriptor instead.
 func (*NVMeSubsystemCreateResponse) Descriptor() ([]byte, []int) {
-	return file_frontend_proto_rawDescGZIP(), []int{1}
-}
-
-func (x *NVMeSubsystemCreateResponse) GetName() string {
-	if x != nil {
-		return x.Name
-	}
-	return ""
-}
-
-func (x *NVMeSubsystemCreateResponse) GetId() int64 {
-	if x != nil {
-		return x.Id
-	}
-	return 0
+	return file_frontend_proto_rawDescGZIP(), []int{4}
 }
 
 type NVMeSubsystemDeleteRequest struct {
@@ -139,14 +423,13 @@ type NVMeSubsystemDeleteRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
-	Id   int64  `protobuf:"varint,2,opt,name=id,proto3" json:"id,omitempty"`
+	Id int64 `protobuf:"varint,1,opt,name=Id,proto3" json:"Id,omitempty"`
 }
 
 func (x *NVMeSubsystemDeleteRequest) Reset() {
 	*x = NVMeSubsystemDeleteRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_frontend_proto_msgTypes[2]
+		mi := &file_frontend_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -159,7 +442,7 @@ func (x *NVMeSubsystemDeleteRequest) String() string {
 func (*NVMeSubsystemDeleteRequest) ProtoMessage() {}
 
 func (x *NVMeSubsystemDeleteRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_frontend_proto_msgTypes[2]
+	mi := &file_frontend_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -172,14 +455,7 @@ func (x *NVMeSubsystemDeleteRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NVMeSubsystemDeleteRequest.ProtoReflect.Descriptor instead.
 func (*NVMeSubsystemDeleteRequest) Descriptor() ([]byte, []int) {
-	return file_frontend_proto_rawDescGZIP(), []int{2}
-}
-
-func (x *NVMeSubsystemDeleteRequest) GetName() string {
-	if x != nil {
-		return x.Name
-	}
-	return ""
+	return file_frontend_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *NVMeSubsystemDeleteRequest) GetId() int64 {
@@ -193,15 +469,12 @@ type NVMeSubsystemDeleteResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
-
-	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
-	Id   int64  `protobuf:"varint,2,opt,name=id,proto3" json:"id,omitempty"`
 }
 
 func (x *NVMeSubsystemDeleteResponse) Reset() {
 	*x = NVMeSubsystemDeleteResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_frontend_proto_msgTypes[3]
+		mi := &file_frontend_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -214,7 +487,7 @@ func (x *NVMeSubsystemDeleteResponse) String() string {
 func (*NVMeSubsystemDeleteResponse) ProtoMessage() {}
 
 func (x *NVMeSubsystemDeleteResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_frontend_proto_msgTypes[3]
+	mi := &file_frontend_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -227,21 +500,7 @@ func (x *NVMeSubsystemDeleteResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NVMeSubsystemDeleteResponse.ProtoReflect.Descriptor instead.
 func (*NVMeSubsystemDeleteResponse) Descriptor() ([]byte, []int) {
-	return file_frontend_proto_rawDescGZIP(), []int{3}
-}
-
-func (x *NVMeSubsystemDeleteResponse) GetName() string {
-	if x != nil {
-		return x.Name
-	}
-	return ""
-}
-
-func (x *NVMeSubsystemDeleteResponse) GetId() int64 {
-	if x != nil {
-		return x.Id
-	}
-	return 0
+	return file_frontend_proto_rawDescGZIP(), []int{6}
 }
 
 type NVMeSubsystemUpdateRequest struct {
@@ -249,14 +508,13 @@ type NVMeSubsystemUpdateRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
-	Id   int64  `protobuf:"varint,2,opt,name=id,proto3" json:"id,omitempty"`
+	Subsystem *NVMeSubsystem `protobuf:"bytes,1,opt,name=Subsystem,proto3" json:"Subsystem,omitempty"`
 }
 
 func (x *NVMeSubsystemUpdateRequest) Reset() {
 	*x = NVMeSubsystemUpdateRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_frontend_proto_msgTypes[4]
+		mi := &file_frontend_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -269,7 +527,7 @@ func (x *NVMeSubsystemUpdateRequest) String() string {
 func (*NVMeSubsystemUpdateRequest) ProtoMessage() {}
 
 func (x *NVMeSubsystemUpdateRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_frontend_proto_msgTypes[4]
+	mi := &file_frontend_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -282,36 +540,26 @@ func (x *NVMeSubsystemUpdateRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NVMeSubsystemUpdateRequest.ProtoReflect.Descriptor instead.
 func (*NVMeSubsystemUpdateRequest) Descriptor() ([]byte, []int) {
-	return file_frontend_proto_rawDescGZIP(), []int{4}
+	return file_frontend_proto_rawDescGZIP(), []int{7}
 }
 
-func (x *NVMeSubsystemUpdateRequest) GetName() string {
+func (x *NVMeSubsystemUpdateRequest) GetSubsystem() *NVMeSubsystem {
 	if x != nil {
-		return x.Name
+		return x.Subsystem
 	}
-	return ""
-}
-
-func (x *NVMeSubsystemUpdateRequest) GetId() int64 {
-	if x != nil {
-		return x.Id
-	}
-	return 0
+	return nil
 }
 
 type NVMeSubsystemUpdateResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
-
-	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
-	Id   int64  `protobuf:"varint,2,opt,name=id,proto3" json:"id,omitempty"`
 }
 
 func (x *NVMeSubsystemUpdateResponse) Reset() {
 	*x = NVMeSubsystemUpdateResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_frontend_proto_msgTypes[5]
+		mi := &file_frontend_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -324,7 +572,7 @@ func (x *NVMeSubsystemUpdateResponse) String() string {
 func (*NVMeSubsystemUpdateResponse) ProtoMessage() {}
 
 func (x *NVMeSubsystemUpdateResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_frontend_proto_msgTypes[5]
+	mi := &file_frontend_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -337,36 +585,19 @@ func (x *NVMeSubsystemUpdateResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NVMeSubsystemUpdateResponse.ProtoReflect.Descriptor instead.
 func (*NVMeSubsystemUpdateResponse) Descriptor() ([]byte, []int) {
-	return file_frontend_proto_rawDescGZIP(), []int{5}
-}
-
-func (x *NVMeSubsystemUpdateResponse) GetName() string {
-	if x != nil {
-		return x.Name
-	}
-	return ""
-}
-
-func (x *NVMeSubsystemUpdateResponse) GetId() int64 {
-	if x != nil {
-		return x.Id
-	}
-	return 0
+	return file_frontend_proto_rawDescGZIP(), []int{8}
 }
 
 type NVMeSubsystemListRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
-
-	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
-	Id   int64  `protobuf:"varint,2,opt,name=id,proto3" json:"id,omitempty"`
 }
 
 func (x *NVMeSubsystemListRequest) Reset() {
 	*x = NVMeSubsystemListRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_frontend_proto_msgTypes[6]
+		mi := &file_frontend_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -379,7 +610,7 @@ func (x *NVMeSubsystemListRequest) String() string {
 func (*NVMeSubsystemListRequest) ProtoMessage() {}
 
 func (x *NVMeSubsystemListRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_frontend_proto_msgTypes[6]
+	mi := &file_frontend_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -392,21 +623,7 @@ func (x *NVMeSubsystemListRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NVMeSubsystemListRequest.ProtoReflect.Descriptor instead.
 func (*NVMeSubsystemListRequest) Descriptor() ([]byte, []int) {
-	return file_frontend_proto_rawDescGZIP(), []int{6}
-}
-
-func (x *NVMeSubsystemListRequest) GetName() string {
-	if x != nil {
-		return x.Name
-	}
-	return ""
-}
-
-func (x *NVMeSubsystemListRequest) GetId() int64 {
-	if x != nil {
-		return x.Id
-	}
-	return 0
+	return file_frontend_proto_rawDescGZIP(), []int{9}
 }
 
 type NVMeSubsystemListResponse struct {
@@ -414,14 +631,13 @@ type NVMeSubsystemListResponse struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
-	Id   int64  `protobuf:"varint,2,opt,name=id,proto3" json:"id,omitempty"`
+	Subsystem []*NVMeSubsystem `protobuf:"bytes,1,rep,name=Subsystem,proto3" json:"Subsystem,omitempty"`
 }
 
 func (x *NVMeSubsystemListResponse) Reset() {
 	*x = NVMeSubsystemListResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_frontend_proto_msgTypes[7]
+		mi := &file_frontend_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -434,7 +650,7 @@ func (x *NVMeSubsystemListResponse) String() string {
 func (*NVMeSubsystemListResponse) ProtoMessage() {}
 
 func (x *NVMeSubsystemListResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_frontend_proto_msgTypes[7]
+	mi := &file_frontend_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -447,21 +663,14 @@ func (x *NVMeSubsystemListResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NVMeSubsystemListResponse.ProtoReflect.Descriptor instead.
 func (*NVMeSubsystemListResponse) Descriptor() ([]byte, []int) {
-	return file_frontend_proto_rawDescGZIP(), []int{7}
+	return file_frontend_proto_rawDescGZIP(), []int{10}
 }
 
-func (x *NVMeSubsystemListResponse) GetName() string {
+func (x *NVMeSubsystemListResponse) GetSubsystem() []*NVMeSubsystem {
 	if x != nil {
-		return x.Name
+		return x.Subsystem
 	}
-	return ""
-}
-
-func (x *NVMeSubsystemListResponse) GetId() int64 {
-	if x != nil {
-		return x.Id
-	}
-	return 0
+	return nil
 }
 
 type NVMeSubsystemGetRequest struct {
@@ -469,14 +678,13 @@ type NVMeSubsystemGetRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
-	Id   int64  `protobuf:"varint,2,opt,name=id,proto3" json:"id,omitempty"`
+	Id int64 `protobuf:"varint,1,opt,name=Id,proto3" json:"Id,omitempty"`
 }
 
 func (x *NVMeSubsystemGetRequest) Reset() {
 	*x = NVMeSubsystemGetRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_frontend_proto_msgTypes[8]
+		mi := &file_frontend_proto_msgTypes[11]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -489,7 +697,7 @@ func (x *NVMeSubsystemGetRequest) String() string {
 func (*NVMeSubsystemGetRequest) ProtoMessage() {}
 
 func (x *NVMeSubsystemGetRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_frontend_proto_msgTypes[8]
+	mi := &file_frontend_proto_msgTypes[11]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -502,14 +710,7 @@ func (x *NVMeSubsystemGetRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NVMeSubsystemGetRequest.ProtoReflect.Descriptor instead.
 func (*NVMeSubsystemGetRequest) Descriptor() ([]byte, []int) {
-	return file_frontend_proto_rawDescGZIP(), []int{8}
-}
-
-func (x *NVMeSubsystemGetRequest) GetName() string {
-	if x != nil {
-		return x.Name
-	}
-	return ""
+	return file_frontend_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *NVMeSubsystemGetRequest) GetId() int64 {
@@ -524,14 +725,13 @@ type NVMeSubsystemGetResponse struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
-	Id   int64  `protobuf:"varint,2,opt,name=id,proto3" json:"id,omitempty"`
+	Subsystem *NVMeSubsystem `protobuf:"bytes,1,opt,name=Subsystem,proto3" json:"Subsystem,omitempty"`
 }
 
 func (x *NVMeSubsystemGetResponse) Reset() {
 	*x = NVMeSubsystemGetResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_frontend_proto_msgTypes[9]
+		mi := &file_frontend_proto_msgTypes[12]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -544,7 +744,7 @@ func (x *NVMeSubsystemGetResponse) String() string {
 func (*NVMeSubsystemGetResponse) ProtoMessage() {}
 
 func (x *NVMeSubsystemGetResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_frontend_proto_msgTypes[9]
+	mi := &file_frontend_proto_msgTypes[12]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -557,21 +757,14 @@ func (x *NVMeSubsystemGetResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NVMeSubsystemGetResponse.ProtoReflect.Descriptor instead.
 func (*NVMeSubsystemGetResponse) Descriptor() ([]byte, []int) {
-	return file_frontend_proto_rawDescGZIP(), []int{9}
+	return file_frontend_proto_rawDescGZIP(), []int{12}
 }
 
-func (x *NVMeSubsystemGetResponse) GetName() string {
+func (x *NVMeSubsystemGetResponse) GetSubsystem() *NVMeSubsystem {
 	if x != nil {
-		return x.Name
+		return x.Subsystem
 	}
-	return ""
-}
-
-func (x *NVMeSubsystemGetResponse) GetId() int64 {
-	if x != nil {
-		return x.Id
-	}
-	return 0
+	return nil
 }
 
 type NVMeSubsystemStatsRequest struct {
@@ -579,14 +772,13 @@ type NVMeSubsystemStatsRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
-	Id   int64  `protobuf:"varint,2,opt,name=id,proto3" json:"id,omitempty"`
+	Id int64 `protobuf:"varint,1,opt,name=Id,proto3" json:"Id,omitempty"`
 }
 
 func (x *NVMeSubsystemStatsRequest) Reset() {
 	*x = NVMeSubsystemStatsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_frontend_proto_msgTypes[10]
+		mi := &file_frontend_proto_msgTypes[13]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -599,7 +791,7 @@ func (x *NVMeSubsystemStatsRequest) String() string {
 func (*NVMeSubsystemStatsRequest) ProtoMessage() {}
 
 func (x *NVMeSubsystemStatsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_frontend_proto_msgTypes[10]
+	mi := &file_frontend_proto_msgTypes[13]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -612,14 +804,7 @@ func (x *NVMeSubsystemStatsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NVMeSubsystemStatsRequest.ProtoReflect.Descriptor instead.
 func (*NVMeSubsystemStatsRequest) Descriptor() ([]byte, []int) {
-	return file_frontend_proto_rawDescGZIP(), []int{10}
-}
-
-func (x *NVMeSubsystemStatsRequest) GetName() string {
-	if x != nil {
-		return x.Name
-	}
-	return ""
+	return file_frontend_proto_rawDescGZIP(), []int{13}
 }
 
 func (x *NVMeSubsystemStatsRequest) GetId() int64 {
@@ -634,14 +819,14 @@ type NVMeSubsystemStatsResponse struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
-	Id   int64  `protobuf:"varint,2,opt,name=id,proto3" json:"id,omitempty"`
+	Id    int64  `protobuf:"varint,1,opt,name=Id,proto3" json:"Id,omitempty"`
+	Stats string `protobuf:"bytes,2,opt,name=Stats,proto3" json:"Stats,omitempty"`
 }
 
 func (x *NVMeSubsystemStatsResponse) Reset() {
 	*x = NVMeSubsystemStatsResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_frontend_proto_msgTypes[11]
+		mi := &file_frontend_proto_msgTypes[14]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -654,7 +839,7 @@ func (x *NVMeSubsystemStatsResponse) String() string {
 func (*NVMeSubsystemStatsResponse) ProtoMessage() {}
 
 func (x *NVMeSubsystemStatsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_frontend_proto_msgTypes[11]
+	mi := &file_frontend_proto_msgTypes[14]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -667,14 +852,7 @@ func (x *NVMeSubsystemStatsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NVMeSubsystemStatsResponse.ProtoReflect.Descriptor instead.
 func (*NVMeSubsystemStatsResponse) Descriptor() ([]byte, []int) {
-	return file_frontend_proto_rawDescGZIP(), []int{11}
-}
-
-func (x *NVMeSubsystemStatsResponse) GetName() string {
-	if x != nil {
-		return x.Name
-	}
-	return ""
+	return file_frontend_proto_rawDescGZIP(), []int{14}
 }
 
 func (x *NVMeSubsystemStatsResponse) GetId() int64 {
@@ -684,19 +862,25 @@ func (x *NVMeSubsystemStatsResponse) GetId() int64 {
 	return 0
 }
 
+func (x *NVMeSubsystemStatsResponse) GetStats() string {
+	if x != nil {
+		return x.Stats
+	}
+	return ""
+}
+
 type NVMeControllerCreateRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
-	Id   int64  `protobuf:"varint,2,opt,name=id,proto3" json:"id,omitempty"`
+	Controller *NVMeController `protobuf:"bytes,1,opt,name=Controller,proto3" json:"Controller,omitempty"`
 }
 
 func (x *NVMeControllerCreateRequest) Reset() {
 	*x = NVMeControllerCreateRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_frontend_proto_msgTypes[12]
+		mi := &file_frontend_proto_msgTypes[15]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -709,7 +893,7 @@ func (x *NVMeControllerCreateRequest) String() string {
 func (*NVMeControllerCreateRequest) ProtoMessage() {}
 
 func (x *NVMeControllerCreateRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_frontend_proto_msgTypes[12]
+	mi := &file_frontend_proto_msgTypes[15]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -722,36 +906,26 @@ func (x *NVMeControllerCreateRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NVMeControllerCreateRequest.ProtoReflect.Descriptor instead.
 func (*NVMeControllerCreateRequest) Descriptor() ([]byte, []int) {
-	return file_frontend_proto_rawDescGZIP(), []int{12}
+	return file_frontend_proto_rawDescGZIP(), []int{15}
 }
 
-func (x *NVMeControllerCreateRequest) GetName() string {
+func (x *NVMeControllerCreateRequest) GetController() *NVMeController {
 	if x != nil {
-		return x.Name
+		return x.Controller
 	}
-	return ""
-}
-
-func (x *NVMeControllerCreateRequest) GetId() int64 {
-	if x != nil {
-		return x.Id
-	}
-	return 0
+	return nil
 }
 
 type NVMeControllerCreateResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
-
-	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
-	Id   int64  `protobuf:"varint,2,opt,name=id,proto3" json:"id,omitempty"`
 }
 
 func (x *NVMeControllerCreateResponse) Reset() {
 	*x = NVMeControllerCreateResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_frontend_proto_msgTypes[13]
+		mi := &file_frontend_proto_msgTypes[16]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -764,7 +938,7 @@ func (x *NVMeControllerCreateResponse) String() string {
 func (*NVMeControllerCreateResponse) ProtoMessage() {}
 
 func (x *NVMeControllerCreateResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_frontend_proto_msgTypes[13]
+	mi := &file_frontend_proto_msgTypes[16]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -777,21 +951,7 @@ func (x *NVMeControllerCreateResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NVMeControllerCreateResponse.ProtoReflect.Descriptor instead.
 func (*NVMeControllerCreateResponse) Descriptor() ([]byte, []int) {
-	return file_frontend_proto_rawDescGZIP(), []int{13}
-}
-
-func (x *NVMeControllerCreateResponse) GetName() string {
-	if x != nil {
-		return x.Name
-	}
-	return ""
-}
-
-func (x *NVMeControllerCreateResponse) GetId() int64 {
-	if x != nil {
-		return x.Id
-	}
-	return 0
+	return file_frontend_proto_rawDescGZIP(), []int{16}
 }
 
 type NVMeControllerDeleteRequest struct {
@@ -799,14 +959,14 @@ type NVMeControllerDeleteRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
-	Id   int64  `protobuf:"varint,2,opt,name=id,proto3" json:"id,omitempty"`
+	SubsystemId  int64 `protobuf:"varint,1,opt,name=SubsystemId,proto3" json:"SubsystemId,omitempty"`
+	ControllerId int64 `protobuf:"varint,2,opt,name=ControllerId,proto3" json:"ControllerId,omitempty"`
 }
 
 func (x *NVMeControllerDeleteRequest) Reset() {
 	*x = NVMeControllerDeleteRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_frontend_proto_msgTypes[14]
+		mi := &file_frontend_proto_msgTypes[17]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -819,7 +979,7 @@ func (x *NVMeControllerDeleteRequest) String() string {
 func (*NVMeControllerDeleteRequest) ProtoMessage() {}
 
 func (x *NVMeControllerDeleteRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_frontend_proto_msgTypes[14]
+	mi := &file_frontend_proto_msgTypes[17]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -832,19 +992,19 @@ func (x *NVMeControllerDeleteRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NVMeControllerDeleteRequest.ProtoReflect.Descriptor instead.
 func (*NVMeControllerDeleteRequest) Descriptor() ([]byte, []int) {
-	return file_frontend_proto_rawDescGZIP(), []int{14}
+	return file_frontend_proto_rawDescGZIP(), []int{17}
 }
 
-func (x *NVMeControllerDeleteRequest) GetName() string {
+func (x *NVMeControllerDeleteRequest) GetSubsystemId() int64 {
 	if x != nil {
-		return x.Name
+		return x.SubsystemId
 	}
-	return ""
+	return 0
 }
 
-func (x *NVMeControllerDeleteRequest) GetId() int64 {
+func (x *NVMeControllerDeleteRequest) GetControllerId() int64 {
 	if x != nil {
-		return x.Id
+		return x.ControllerId
 	}
 	return 0
 }
@@ -853,15 +1013,12 @@ type NVMeControllerDeleteResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
-
-	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
-	Id   int64  `protobuf:"varint,2,opt,name=id,proto3" json:"id,omitempty"`
 }
 
 func (x *NVMeControllerDeleteResponse) Reset() {
 	*x = NVMeControllerDeleteResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_frontend_proto_msgTypes[15]
+		mi := &file_frontend_proto_msgTypes[18]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -874,7 +1031,7 @@ func (x *NVMeControllerDeleteResponse) String() string {
 func (*NVMeControllerDeleteResponse) ProtoMessage() {}
 
 func (x *NVMeControllerDeleteResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_frontend_proto_msgTypes[15]
+	mi := &file_frontend_proto_msgTypes[18]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -887,21 +1044,7 @@ func (x *NVMeControllerDeleteResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NVMeControllerDeleteResponse.ProtoReflect.Descriptor instead.
 func (*NVMeControllerDeleteResponse) Descriptor() ([]byte, []int) {
-	return file_frontend_proto_rawDescGZIP(), []int{15}
-}
-
-func (x *NVMeControllerDeleteResponse) GetName() string {
-	if x != nil {
-		return x.Name
-	}
-	return ""
-}
-
-func (x *NVMeControllerDeleteResponse) GetId() int64 {
-	if x != nil {
-		return x.Id
-	}
-	return 0
+	return file_frontend_proto_rawDescGZIP(), []int{18}
 }
 
 type NVMeControllerUpdateRequest struct {
@@ -909,14 +1052,13 @@ type NVMeControllerUpdateRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
-	Id   int64  `protobuf:"varint,2,opt,name=id,proto3" json:"id,omitempty"`
+	Controller *NVMeController `protobuf:"bytes,1,opt,name=Controller,proto3" json:"Controller,omitempty"`
 }
 
 func (x *NVMeControllerUpdateRequest) Reset() {
 	*x = NVMeControllerUpdateRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_frontend_proto_msgTypes[16]
+		mi := &file_frontend_proto_msgTypes[19]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -929,7 +1071,7 @@ func (x *NVMeControllerUpdateRequest) String() string {
 func (*NVMeControllerUpdateRequest) ProtoMessage() {}
 
 func (x *NVMeControllerUpdateRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_frontend_proto_msgTypes[16]
+	mi := &file_frontend_proto_msgTypes[19]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -942,36 +1084,26 @@ func (x *NVMeControllerUpdateRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NVMeControllerUpdateRequest.ProtoReflect.Descriptor instead.
 func (*NVMeControllerUpdateRequest) Descriptor() ([]byte, []int) {
-	return file_frontend_proto_rawDescGZIP(), []int{16}
+	return file_frontend_proto_rawDescGZIP(), []int{19}
 }
 
-func (x *NVMeControllerUpdateRequest) GetName() string {
+func (x *NVMeControllerUpdateRequest) GetController() *NVMeController {
 	if x != nil {
-		return x.Name
+		return x.Controller
 	}
-	return ""
-}
-
-func (x *NVMeControllerUpdateRequest) GetId() int64 {
-	if x != nil {
-		return x.Id
-	}
-	return 0
+	return nil
 }
 
 type NVMeControllerUpdateResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
-
-	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
-	Id   int64  `protobuf:"varint,2,opt,name=id,proto3" json:"id,omitempty"`
 }
 
 func (x *NVMeControllerUpdateResponse) Reset() {
 	*x = NVMeControllerUpdateResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_frontend_proto_msgTypes[17]
+		mi := &file_frontend_proto_msgTypes[20]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -984,7 +1116,7 @@ func (x *NVMeControllerUpdateResponse) String() string {
 func (*NVMeControllerUpdateResponse) ProtoMessage() {}
 
 func (x *NVMeControllerUpdateResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_frontend_proto_msgTypes[17]
+	mi := &file_frontend_proto_msgTypes[20]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -997,21 +1129,7 @@ func (x *NVMeControllerUpdateResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NVMeControllerUpdateResponse.ProtoReflect.Descriptor instead.
 func (*NVMeControllerUpdateResponse) Descriptor() ([]byte, []int) {
-	return file_frontend_proto_rawDescGZIP(), []int{17}
-}
-
-func (x *NVMeControllerUpdateResponse) GetName() string {
-	if x != nil {
-		return x.Name
-	}
-	return ""
-}
-
-func (x *NVMeControllerUpdateResponse) GetId() int64 {
-	if x != nil {
-		return x.Id
-	}
-	return 0
+	return file_frontend_proto_rawDescGZIP(), []int{20}
 }
 
 type NVMeControllerListRequest struct {
@@ -1019,14 +1137,13 @@ type NVMeControllerListRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
-	Id   int64  `protobuf:"varint,2,opt,name=id,proto3" json:"id,omitempty"`
+	SubsystemId int64 `protobuf:"varint,1,opt,name=SubsystemId,proto3" json:"SubsystemId,omitempty"`
 }
 
 func (x *NVMeControllerListRequest) Reset() {
 	*x = NVMeControllerListRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_frontend_proto_msgTypes[18]
+		mi := &file_frontend_proto_msgTypes[21]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1039,7 +1156,7 @@ func (x *NVMeControllerListRequest) String() string {
 func (*NVMeControllerListRequest) ProtoMessage() {}
 
 func (x *NVMeControllerListRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_frontend_proto_msgTypes[18]
+	mi := &file_frontend_proto_msgTypes[21]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1052,19 +1169,12 @@ func (x *NVMeControllerListRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NVMeControllerListRequest.ProtoReflect.Descriptor instead.
 func (*NVMeControllerListRequest) Descriptor() ([]byte, []int) {
-	return file_frontend_proto_rawDescGZIP(), []int{18}
+	return file_frontend_proto_rawDescGZIP(), []int{21}
 }
 
-func (x *NVMeControllerListRequest) GetName() string {
+func (x *NVMeControllerListRequest) GetSubsystemId() int64 {
 	if x != nil {
-		return x.Name
-	}
-	return ""
-}
-
-func (x *NVMeControllerListRequest) GetId() int64 {
-	if x != nil {
-		return x.Id
+		return x.SubsystemId
 	}
 	return 0
 }
@@ -1074,14 +1184,13 @@ type NVMeControllerListResponse struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
-	Id   int64  `protobuf:"varint,2,opt,name=id,proto3" json:"id,omitempty"`
+	Controller []*NVMeController `protobuf:"bytes,1,rep,name=Controller,proto3" json:"Controller,omitempty"`
 }
 
 func (x *NVMeControllerListResponse) Reset() {
 	*x = NVMeControllerListResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_frontend_proto_msgTypes[19]
+		mi := &file_frontend_proto_msgTypes[22]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1094,7 +1203,7 @@ func (x *NVMeControllerListResponse) String() string {
 func (*NVMeControllerListResponse) ProtoMessage() {}
 
 func (x *NVMeControllerListResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_frontend_proto_msgTypes[19]
+	mi := &file_frontend_proto_msgTypes[22]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1107,21 +1216,14 @@ func (x *NVMeControllerListResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NVMeControllerListResponse.ProtoReflect.Descriptor instead.
 func (*NVMeControllerListResponse) Descriptor() ([]byte, []int) {
-	return file_frontend_proto_rawDescGZIP(), []int{19}
+	return file_frontend_proto_rawDescGZIP(), []int{22}
 }
 
-func (x *NVMeControllerListResponse) GetName() string {
+func (x *NVMeControllerListResponse) GetController() []*NVMeController {
 	if x != nil {
-		return x.Name
+		return x.Controller
 	}
-	return ""
-}
-
-func (x *NVMeControllerListResponse) GetId() int64 {
-	if x != nil {
-		return x.Id
-	}
-	return 0
+	return nil
 }
 
 type NVMeControllerGetRequest struct {
@@ -1129,14 +1231,14 @@ type NVMeControllerGetRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
-	Id   int64  `protobuf:"varint,2,opt,name=id,proto3" json:"id,omitempty"`
+	SubsystemId  int64 `protobuf:"varint,1,opt,name=SubsystemId,proto3" json:"SubsystemId,omitempty"`
+	ControllerId int64 `protobuf:"varint,2,opt,name=ControllerId,proto3" json:"ControllerId,omitempty"`
 }
 
 func (x *NVMeControllerGetRequest) Reset() {
 	*x = NVMeControllerGetRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_frontend_proto_msgTypes[20]
+		mi := &file_frontend_proto_msgTypes[23]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1149,7 +1251,7 @@ func (x *NVMeControllerGetRequest) String() string {
 func (*NVMeControllerGetRequest) ProtoMessage() {}
 
 func (x *NVMeControllerGetRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_frontend_proto_msgTypes[20]
+	mi := &file_frontend_proto_msgTypes[23]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1162,19 +1264,19 @@ func (x *NVMeControllerGetRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NVMeControllerGetRequest.ProtoReflect.Descriptor instead.
 func (*NVMeControllerGetRequest) Descriptor() ([]byte, []int) {
-	return file_frontend_proto_rawDescGZIP(), []int{20}
+	return file_frontend_proto_rawDescGZIP(), []int{23}
 }
 
-func (x *NVMeControllerGetRequest) GetName() string {
+func (x *NVMeControllerGetRequest) GetSubsystemId() int64 {
 	if x != nil {
-		return x.Name
+		return x.SubsystemId
 	}
-	return ""
+	return 0
 }
 
-func (x *NVMeControllerGetRequest) GetId() int64 {
+func (x *NVMeControllerGetRequest) GetControllerId() int64 {
 	if x != nil {
-		return x.Id
+		return x.ControllerId
 	}
 	return 0
 }
@@ -1184,14 +1286,13 @@ type NVMeControllerGetResponse struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
-	Id   int64  `protobuf:"varint,2,opt,name=id,proto3" json:"id,omitempty"`
+	Controller *NVMeController `protobuf:"bytes,1,opt,name=Controller,proto3" json:"Controller,omitempty"`
 }
 
 func (x *NVMeControllerGetResponse) Reset() {
 	*x = NVMeControllerGetResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_frontend_proto_msgTypes[21]
+		mi := &file_frontend_proto_msgTypes[24]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1204,7 +1305,7 @@ func (x *NVMeControllerGetResponse) String() string {
 func (*NVMeControllerGetResponse) ProtoMessage() {}
 
 func (x *NVMeControllerGetResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_frontend_proto_msgTypes[21]
+	mi := &file_frontend_proto_msgTypes[24]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1217,21 +1318,14 @@ func (x *NVMeControllerGetResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NVMeControllerGetResponse.ProtoReflect.Descriptor instead.
 func (*NVMeControllerGetResponse) Descriptor() ([]byte, []int) {
-	return file_frontend_proto_rawDescGZIP(), []int{21}
+	return file_frontend_proto_rawDescGZIP(), []int{24}
 }
 
-func (x *NVMeControllerGetResponse) GetName() string {
+func (x *NVMeControllerGetResponse) GetController() *NVMeController {
 	if x != nil {
-		return x.Name
+		return x.Controller
 	}
-	return ""
-}
-
-func (x *NVMeControllerGetResponse) GetId() int64 {
-	if x != nil {
-		return x.Id
-	}
-	return 0
+	return nil
 }
 
 type NVMeControllerStatsRequest struct {
@@ -1239,14 +1333,14 @@ type NVMeControllerStatsRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
-	Id   int64  `protobuf:"varint,2,opt,name=id,proto3" json:"id,omitempty"`
+	SubsystemId  int64 `protobuf:"varint,1,opt,name=SubsystemId,proto3" json:"SubsystemId,omitempty"`
+	ControllerId int64 `protobuf:"varint,2,opt,name=ControllerId,proto3" json:"ControllerId,omitempty"`
 }
 
 func (x *NVMeControllerStatsRequest) Reset() {
 	*x = NVMeControllerStatsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_frontend_proto_msgTypes[22]
+		mi := &file_frontend_proto_msgTypes[25]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1259,7 +1353,7 @@ func (x *NVMeControllerStatsRequest) String() string {
 func (*NVMeControllerStatsRequest) ProtoMessage() {}
 
 func (x *NVMeControllerStatsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_frontend_proto_msgTypes[22]
+	mi := &file_frontend_proto_msgTypes[25]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1272,19 +1366,19 @@ func (x *NVMeControllerStatsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NVMeControllerStatsRequest.ProtoReflect.Descriptor instead.
 func (*NVMeControllerStatsRequest) Descriptor() ([]byte, []int) {
-	return file_frontend_proto_rawDescGZIP(), []int{22}
+	return file_frontend_proto_rawDescGZIP(), []int{25}
 }
 
-func (x *NVMeControllerStatsRequest) GetName() string {
+func (x *NVMeControllerStatsRequest) GetSubsystemId() int64 {
 	if x != nil {
-		return x.Name
+		return x.SubsystemId
 	}
-	return ""
+	return 0
 }
 
-func (x *NVMeControllerStatsRequest) GetId() int64 {
+func (x *NVMeControllerStatsRequest) GetControllerId() int64 {
 	if x != nil {
-		return x.Id
+		return x.ControllerId
 	}
 	return 0
 }
@@ -1294,14 +1388,14 @@ type NVMeControllerStatsResponse struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
-	Id   int64  `protobuf:"varint,2,opt,name=id,proto3" json:"id,omitempty"`
+	Id    int64  `protobuf:"varint,1,opt,name=Id,proto3" json:"Id,omitempty"`
+	Stats string `protobuf:"bytes,2,opt,name=Stats,proto3" json:"Stats,omitempty"`
 }
 
 func (x *NVMeControllerStatsResponse) Reset() {
 	*x = NVMeControllerStatsResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_frontend_proto_msgTypes[23]
+		mi := &file_frontend_proto_msgTypes[26]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1314,7 +1408,7 @@ func (x *NVMeControllerStatsResponse) String() string {
 func (*NVMeControllerStatsResponse) ProtoMessage() {}
 
 func (x *NVMeControllerStatsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_frontend_proto_msgTypes[23]
+	mi := &file_frontend_proto_msgTypes[26]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1327,14 +1421,7 @@ func (x *NVMeControllerStatsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NVMeControllerStatsResponse.ProtoReflect.Descriptor instead.
 func (*NVMeControllerStatsResponse) Descriptor() ([]byte, []int) {
-	return file_frontend_proto_rawDescGZIP(), []int{23}
-}
-
-func (x *NVMeControllerStatsResponse) GetName() string {
-	if x != nil {
-		return x.Name
-	}
-	return ""
+	return file_frontend_proto_rawDescGZIP(), []int{26}
 }
 
 func (x *NVMeControllerStatsResponse) GetId() int64 {
@@ -1344,19 +1431,25 @@ func (x *NVMeControllerStatsResponse) GetId() int64 {
 	return 0
 }
 
+func (x *NVMeControllerStatsResponse) GetStats() string {
+	if x != nil {
+		return x.Stats
+	}
+	return ""
+}
+
 type NVMeNamespaceCreateRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
-	Id   int64  `protobuf:"varint,2,opt,name=id,proto3" json:"id,omitempty"`
+	Namespace *NVMeNamespace `protobuf:"bytes,1,opt,name=Namespace,proto3" json:"Namespace,omitempty"`
 }
 
 func (x *NVMeNamespaceCreateRequest) Reset() {
 	*x = NVMeNamespaceCreateRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_frontend_proto_msgTypes[24]
+		mi := &file_frontend_proto_msgTypes[27]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1369,7 +1462,7 @@ func (x *NVMeNamespaceCreateRequest) String() string {
 func (*NVMeNamespaceCreateRequest) ProtoMessage() {}
 
 func (x *NVMeNamespaceCreateRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_frontend_proto_msgTypes[24]
+	mi := &file_frontend_proto_msgTypes[27]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1382,36 +1475,26 @@ func (x *NVMeNamespaceCreateRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NVMeNamespaceCreateRequest.ProtoReflect.Descriptor instead.
 func (*NVMeNamespaceCreateRequest) Descriptor() ([]byte, []int) {
-	return file_frontend_proto_rawDescGZIP(), []int{24}
+	return file_frontend_proto_rawDescGZIP(), []int{27}
 }
 
-func (x *NVMeNamespaceCreateRequest) GetName() string {
+func (x *NVMeNamespaceCreateRequest) GetNamespace() *NVMeNamespace {
 	if x != nil {
-		return x.Name
+		return x.Namespace
 	}
-	return ""
-}
-
-func (x *NVMeNamespaceCreateRequest) GetId() int64 {
-	if x != nil {
-		return x.Id
-	}
-	return 0
+	return nil
 }
 
 type NVMeNamespaceCreateResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
-
-	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
-	Id   int64  `protobuf:"varint,2,opt,name=id,proto3" json:"id,omitempty"`
 }
 
 func (x *NVMeNamespaceCreateResponse) Reset() {
 	*x = NVMeNamespaceCreateResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_frontend_proto_msgTypes[25]
+		mi := &file_frontend_proto_msgTypes[28]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1424,7 +1507,7 @@ func (x *NVMeNamespaceCreateResponse) String() string {
 func (*NVMeNamespaceCreateResponse) ProtoMessage() {}
 
 func (x *NVMeNamespaceCreateResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_frontend_proto_msgTypes[25]
+	mi := &file_frontend_proto_msgTypes[28]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1437,21 +1520,7 @@ func (x *NVMeNamespaceCreateResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NVMeNamespaceCreateResponse.ProtoReflect.Descriptor instead.
 func (*NVMeNamespaceCreateResponse) Descriptor() ([]byte, []int) {
-	return file_frontend_proto_rawDescGZIP(), []int{25}
-}
-
-func (x *NVMeNamespaceCreateResponse) GetName() string {
-	if x != nil {
-		return x.Name
-	}
-	return ""
-}
-
-func (x *NVMeNamespaceCreateResponse) GetId() int64 {
-	if x != nil {
-		return x.Id
-	}
-	return 0
+	return file_frontend_proto_rawDescGZIP(), []int{28}
 }
 
 type NVMeNamespaceDeleteRequest struct {
@@ -1459,14 +1528,15 @@ type NVMeNamespaceDeleteRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
-	Id   int64  `protobuf:"varint,2,opt,name=id,proto3" json:"id,omitempty"`
+	SubsystemId  int64 `protobuf:"varint,1,opt,name=SubsystemId,proto3" json:"SubsystemId,omitempty"`
+	ControllerId int64 `protobuf:"varint,2,opt,name=ControllerId,proto3" json:"ControllerId,omitempty"`
+	NamespaceId  int64 `protobuf:"varint,3,opt,name=NamespaceId,proto3" json:"NamespaceId,omitempty"`
 }
 
 func (x *NVMeNamespaceDeleteRequest) Reset() {
 	*x = NVMeNamespaceDeleteRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_frontend_proto_msgTypes[26]
+		mi := &file_frontend_proto_msgTypes[29]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1479,7 +1549,7 @@ func (x *NVMeNamespaceDeleteRequest) String() string {
 func (*NVMeNamespaceDeleteRequest) ProtoMessage() {}
 
 func (x *NVMeNamespaceDeleteRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_frontend_proto_msgTypes[26]
+	mi := &file_frontend_proto_msgTypes[29]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1492,19 +1562,26 @@ func (x *NVMeNamespaceDeleteRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NVMeNamespaceDeleteRequest.ProtoReflect.Descriptor instead.
 func (*NVMeNamespaceDeleteRequest) Descriptor() ([]byte, []int) {
-	return file_frontend_proto_rawDescGZIP(), []int{26}
+	return file_frontend_proto_rawDescGZIP(), []int{29}
 }
 
-func (x *NVMeNamespaceDeleteRequest) GetName() string {
+func (x *NVMeNamespaceDeleteRequest) GetSubsystemId() int64 {
 	if x != nil {
-		return x.Name
+		return x.SubsystemId
 	}
-	return ""
+	return 0
 }
 
-func (x *NVMeNamespaceDeleteRequest) GetId() int64 {
+func (x *NVMeNamespaceDeleteRequest) GetControllerId() int64 {
 	if x != nil {
-		return x.Id
+		return x.ControllerId
+	}
+	return 0
+}
+
+func (x *NVMeNamespaceDeleteRequest) GetNamespaceId() int64 {
+	if x != nil {
+		return x.NamespaceId
 	}
 	return 0
 }
@@ -1513,15 +1590,12 @@ type NVMeNamespaceDeleteResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
-
-	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
-	Id   int64  `protobuf:"varint,2,opt,name=id,proto3" json:"id,omitempty"`
 }
 
 func (x *NVMeNamespaceDeleteResponse) Reset() {
 	*x = NVMeNamespaceDeleteResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_frontend_proto_msgTypes[27]
+		mi := &file_frontend_proto_msgTypes[30]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1534,7 +1608,7 @@ func (x *NVMeNamespaceDeleteResponse) String() string {
 func (*NVMeNamespaceDeleteResponse) ProtoMessage() {}
 
 func (x *NVMeNamespaceDeleteResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_frontend_proto_msgTypes[27]
+	mi := &file_frontend_proto_msgTypes[30]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1547,21 +1621,7 @@ func (x *NVMeNamespaceDeleteResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NVMeNamespaceDeleteResponse.ProtoReflect.Descriptor instead.
 func (*NVMeNamespaceDeleteResponse) Descriptor() ([]byte, []int) {
-	return file_frontend_proto_rawDescGZIP(), []int{27}
-}
-
-func (x *NVMeNamespaceDeleteResponse) GetName() string {
-	if x != nil {
-		return x.Name
-	}
-	return ""
-}
-
-func (x *NVMeNamespaceDeleteResponse) GetId() int64 {
-	if x != nil {
-		return x.Id
-	}
-	return 0
+	return file_frontend_proto_rawDescGZIP(), []int{30}
 }
 
 type NVMeNamespaceUpdateRequest struct {
@@ -1569,14 +1629,13 @@ type NVMeNamespaceUpdateRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
-	Id   int64  `protobuf:"varint,2,opt,name=id,proto3" json:"id,omitempty"`
+	Namespace *NVMeNamespace `protobuf:"bytes,1,opt,name=Namespace,proto3" json:"Namespace,omitempty"`
 }
 
 func (x *NVMeNamespaceUpdateRequest) Reset() {
 	*x = NVMeNamespaceUpdateRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_frontend_proto_msgTypes[28]
+		mi := &file_frontend_proto_msgTypes[31]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1589,7 +1648,7 @@ func (x *NVMeNamespaceUpdateRequest) String() string {
 func (*NVMeNamespaceUpdateRequest) ProtoMessage() {}
 
 func (x *NVMeNamespaceUpdateRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_frontend_proto_msgTypes[28]
+	mi := &file_frontend_proto_msgTypes[31]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1602,36 +1661,26 @@ func (x *NVMeNamespaceUpdateRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NVMeNamespaceUpdateRequest.ProtoReflect.Descriptor instead.
 func (*NVMeNamespaceUpdateRequest) Descriptor() ([]byte, []int) {
-	return file_frontend_proto_rawDescGZIP(), []int{28}
+	return file_frontend_proto_rawDescGZIP(), []int{31}
 }
 
-func (x *NVMeNamespaceUpdateRequest) GetName() string {
+func (x *NVMeNamespaceUpdateRequest) GetNamespace() *NVMeNamespace {
 	if x != nil {
-		return x.Name
+		return x.Namespace
 	}
-	return ""
-}
-
-func (x *NVMeNamespaceUpdateRequest) GetId() int64 {
-	if x != nil {
-		return x.Id
-	}
-	return 0
+	return nil
 }
 
 type NVMeNamespaceUpdateResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
-
-	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
-	Id   int64  `protobuf:"varint,2,opt,name=id,proto3" json:"id,omitempty"`
 }
 
 func (x *NVMeNamespaceUpdateResponse) Reset() {
 	*x = NVMeNamespaceUpdateResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_frontend_proto_msgTypes[29]
+		mi := &file_frontend_proto_msgTypes[32]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1644,7 +1693,7 @@ func (x *NVMeNamespaceUpdateResponse) String() string {
 func (*NVMeNamespaceUpdateResponse) ProtoMessage() {}
 
 func (x *NVMeNamespaceUpdateResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_frontend_proto_msgTypes[29]
+	mi := &file_frontend_proto_msgTypes[32]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1657,21 +1706,7 @@ func (x *NVMeNamespaceUpdateResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NVMeNamespaceUpdateResponse.ProtoReflect.Descriptor instead.
 func (*NVMeNamespaceUpdateResponse) Descriptor() ([]byte, []int) {
-	return file_frontend_proto_rawDescGZIP(), []int{29}
-}
-
-func (x *NVMeNamespaceUpdateResponse) GetName() string {
-	if x != nil {
-		return x.Name
-	}
-	return ""
-}
-
-func (x *NVMeNamespaceUpdateResponse) GetId() int64 {
-	if x != nil {
-		return x.Id
-	}
-	return 0
+	return file_frontend_proto_rawDescGZIP(), []int{32}
 }
 
 type NVMeNamespaceListRequest struct {
@@ -1679,14 +1714,14 @@ type NVMeNamespaceListRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
-	Id   int64  `protobuf:"varint,2,opt,name=id,proto3" json:"id,omitempty"`
+	SubsystemId  int64 `protobuf:"varint,1,opt,name=SubsystemId,proto3" json:"SubsystemId,omitempty"`
+	ControllerId int64 `protobuf:"varint,2,opt,name=ControllerId,proto3" json:"ControllerId,omitempty"`
 }
 
 func (x *NVMeNamespaceListRequest) Reset() {
 	*x = NVMeNamespaceListRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_frontend_proto_msgTypes[30]
+		mi := &file_frontend_proto_msgTypes[33]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1699,7 +1734,7 @@ func (x *NVMeNamespaceListRequest) String() string {
 func (*NVMeNamespaceListRequest) ProtoMessage() {}
 
 func (x *NVMeNamespaceListRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_frontend_proto_msgTypes[30]
+	mi := &file_frontend_proto_msgTypes[33]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1712,19 +1747,19 @@ func (x *NVMeNamespaceListRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NVMeNamespaceListRequest.ProtoReflect.Descriptor instead.
 func (*NVMeNamespaceListRequest) Descriptor() ([]byte, []int) {
-	return file_frontend_proto_rawDescGZIP(), []int{30}
+	return file_frontend_proto_rawDescGZIP(), []int{33}
 }
 
-func (x *NVMeNamespaceListRequest) GetName() string {
+func (x *NVMeNamespaceListRequest) GetSubsystemId() int64 {
 	if x != nil {
-		return x.Name
+		return x.SubsystemId
 	}
-	return ""
+	return 0
 }
 
-func (x *NVMeNamespaceListRequest) GetId() int64 {
+func (x *NVMeNamespaceListRequest) GetControllerId() int64 {
 	if x != nil {
-		return x.Id
+		return x.ControllerId
 	}
 	return 0
 }
@@ -1734,14 +1769,13 @@ type NVMeNamespaceListResponse struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
-	Id   int64  `protobuf:"varint,2,opt,name=id,proto3" json:"id,omitempty"`
+	Namespace []*NVMeNamespace `protobuf:"bytes,1,rep,name=Namespace,proto3" json:"Namespace,omitempty"`
 }
 
 func (x *NVMeNamespaceListResponse) Reset() {
 	*x = NVMeNamespaceListResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_frontend_proto_msgTypes[31]
+		mi := &file_frontend_proto_msgTypes[34]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1754,7 +1788,7 @@ func (x *NVMeNamespaceListResponse) String() string {
 func (*NVMeNamespaceListResponse) ProtoMessage() {}
 
 func (x *NVMeNamespaceListResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_frontend_proto_msgTypes[31]
+	mi := &file_frontend_proto_msgTypes[34]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1767,21 +1801,14 @@ func (x *NVMeNamespaceListResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NVMeNamespaceListResponse.ProtoReflect.Descriptor instead.
 func (*NVMeNamespaceListResponse) Descriptor() ([]byte, []int) {
-	return file_frontend_proto_rawDescGZIP(), []int{31}
+	return file_frontend_proto_rawDescGZIP(), []int{34}
 }
 
-func (x *NVMeNamespaceListResponse) GetName() string {
+func (x *NVMeNamespaceListResponse) GetNamespace() []*NVMeNamespace {
 	if x != nil {
-		return x.Name
+		return x.Namespace
 	}
-	return ""
-}
-
-func (x *NVMeNamespaceListResponse) GetId() int64 {
-	if x != nil {
-		return x.Id
-	}
-	return 0
+	return nil
 }
 
 type NVMeNamespaceGetRequest struct {
@@ -1789,14 +1816,15 @@ type NVMeNamespaceGetRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
-	Id   int64  `protobuf:"varint,2,opt,name=id,proto3" json:"id,omitempty"`
+	SubsystemId  int64 `protobuf:"varint,1,opt,name=SubsystemId,proto3" json:"SubsystemId,omitempty"`
+	ControllerId int64 `protobuf:"varint,2,opt,name=ControllerId,proto3" json:"ControllerId,omitempty"`
+	NamespaceId  int64 `protobuf:"varint,3,opt,name=NamespaceId,proto3" json:"NamespaceId,omitempty"`
 }
 
 func (x *NVMeNamespaceGetRequest) Reset() {
 	*x = NVMeNamespaceGetRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_frontend_proto_msgTypes[32]
+		mi := &file_frontend_proto_msgTypes[35]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1809,7 +1837,7 @@ func (x *NVMeNamespaceGetRequest) String() string {
 func (*NVMeNamespaceGetRequest) ProtoMessage() {}
 
 func (x *NVMeNamespaceGetRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_frontend_proto_msgTypes[32]
+	mi := &file_frontend_proto_msgTypes[35]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1822,19 +1850,26 @@ func (x *NVMeNamespaceGetRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NVMeNamespaceGetRequest.ProtoReflect.Descriptor instead.
 func (*NVMeNamespaceGetRequest) Descriptor() ([]byte, []int) {
-	return file_frontend_proto_rawDescGZIP(), []int{32}
+	return file_frontend_proto_rawDescGZIP(), []int{35}
 }
 
-func (x *NVMeNamespaceGetRequest) GetName() string {
+func (x *NVMeNamespaceGetRequest) GetSubsystemId() int64 {
 	if x != nil {
-		return x.Name
+		return x.SubsystemId
 	}
-	return ""
+	return 0
 }
 
-func (x *NVMeNamespaceGetRequest) GetId() int64 {
+func (x *NVMeNamespaceGetRequest) GetControllerId() int64 {
 	if x != nil {
-		return x.Id
+		return x.ControllerId
+	}
+	return 0
+}
+
+func (x *NVMeNamespaceGetRequest) GetNamespaceId() int64 {
+	if x != nil {
+		return x.NamespaceId
 	}
 	return 0
 }
@@ -1844,14 +1879,13 @@ type NVMeNamespaceGetResponse struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
-	Id   int64  `protobuf:"varint,2,opt,name=id,proto3" json:"id,omitempty"`
+	Namespace *NVMeNamespace `protobuf:"bytes,1,opt,name=Namespace,proto3" json:"Namespace,omitempty"`
 }
 
 func (x *NVMeNamespaceGetResponse) Reset() {
 	*x = NVMeNamespaceGetResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_frontend_proto_msgTypes[33]
+		mi := &file_frontend_proto_msgTypes[36]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1864,7 +1898,7 @@ func (x *NVMeNamespaceGetResponse) String() string {
 func (*NVMeNamespaceGetResponse) ProtoMessage() {}
 
 func (x *NVMeNamespaceGetResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_frontend_proto_msgTypes[33]
+	mi := &file_frontend_proto_msgTypes[36]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1877,21 +1911,14 @@ func (x *NVMeNamespaceGetResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NVMeNamespaceGetResponse.ProtoReflect.Descriptor instead.
 func (*NVMeNamespaceGetResponse) Descriptor() ([]byte, []int) {
-	return file_frontend_proto_rawDescGZIP(), []int{33}
+	return file_frontend_proto_rawDescGZIP(), []int{36}
 }
 
-func (x *NVMeNamespaceGetResponse) GetName() string {
+func (x *NVMeNamespaceGetResponse) GetNamespace() *NVMeNamespace {
 	if x != nil {
-		return x.Name
+		return x.Namespace
 	}
-	return ""
-}
-
-func (x *NVMeNamespaceGetResponse) GetId() int64 {
-	if x != nil {
-		return x.Id
-	}
-	return 0
+	return nil
 }
 
 type NVMeNamespaceStatsRequest struct {
@@ -1899,14 +1926,15 @@ type NVMeNamespaceStatsRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
-	Id   int64  `protobuf:"varint,2,opt,name=id,proto3" json:"id,omitempty"`
+	SubsystemId  int64 `protobuf:"varint,1,opt,name=SubsystemId,proto3" json:"SubsystemId,omitempty"`
+	ControllerId int64 `protobuf:"varint,2,opt,name=ControllerId,proto3" json:"ControllerId,omitempty"`
+	NamespaceId  int64 `protobuf:"varint,3,opt,name=NamespaceId,proto3" json:"NamespaceId,omitempty"`
 }
 
 func (x *NVMeNamespaceStatsRequest) Reset() {
 	*x = NVMeNamespaceStatsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_frontend_proto_msgTypes[34]
+		mi := &file_frontend_proto_msgTypes[37]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1919,7 +1947,7 @@ func (x *NVMeNamespaceStatsRequest) String() string {
 func (*NVMeNamespaceStatsRequest) ProtoMessage() {}
 
 func (x *NVMeNamespaceStatsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_frontend_proto_msgTypes[34]
+	mi := &file_frontend_proto_msgTypes[37]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1932,19 +1960,26 @@ func (x *NVMeNamespaceStatsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NVMeNamespaceStatsRequest.ProtoReflect.Descriptor instead.
 func (*NVMeNamespaceStatsRequest) Descriptor() ([]byte, []int) {
-	return file_frontend_proto_rawDescGZIP(), []int{34}
+	return file_frontend_proto_rawDescGZIP(), []int{37}
 }
 
-func (x *NVMeNamespaceStatsRequest) GetName() string {
+func (x *NVMeNamespaceStatsRequest) GetSubsystemId() int64 {
 	if x != nil {
-		return x.Name
+		return x.SubsystemId
 	}
-	return ""
+	return 0
 }
 
-func (x *NVMeNamespaceStatsRequest) GetId() int64 {
+func (x *NVMeNamespaceStatsRequest) GetControllerId() int64 {
 	if x != nil {
-		return x.Id
+		return x.ControllerId
+	}
+	return 0
+}
+
+func (x *NVMeNamespaceStatsRequest) GetNamespaceId() int64 {
+	if x != nil {
+		return x.NamespaceId
 	}
 	return 0
 }
@@ -1954,14 +1989,14 @@ type NVMeNamespaceStatsResponse struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
-	Id   int64  `protobuf:"varint,2,opt,name=id,proto3" json:"id,omitempty"`
+	Id    int64  `protobuf:"varint,1,opt,name=Id,proto3" json:"Id,omitempty"`
+	Stats string `protobuf:"bytes,2,opt,name=Stats,proto3" json:"Stats,omitempty"`
 }
 
 func (x *NVMeNamespaceStatsResponse) Reset() {
 	*x = NVMeNamespaceStatsResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_frontend_proto_msgTypes[35]
+		mi := &file_frontend_proto_msgTypes[38]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1974,7 +2009,7 @@ func (x *NVMeNamespaceStatsResponse) String() string {
 func (*NVMeNamespaceStatsResponse) ProtoMessage() {}
 
 func (x *NVMeNamespaceStatsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_frontend_proto_msgTypes[35]
+	mi := &file_frontend_proto_msgTypes[38]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1987,14 +2022,7 @@ func (x *NVMeNamespaceStatsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NVMeNamespaceStatsResponse.ProtoReflect.Descriptor instead.
 func (*NVMeNamespaceStatsResponse) Descriptor() ([]byte, []int) {
-	return file_frontend_proto_rawDescGZIP(), []int{35}
-}
-
-func (x *NVMeNamespaceStatsResponse) GetName() string {
-	if x != nil {
-		return x.Name
-	}
-	return ""
+	return file_frontend_proto_rawDescGZIP(), []int{38}
 }
 
 func (x *NVMeNamespaceStatsResponse) GetId() int64 {
@@ -2004,291 +2032,357 @@ func (x *NVMeNamespaceStatsResponse) GetId() int64 {
 	return 0
 }
 
+func (x *NVMeNamespaceStatsResponse) GetStats() string {
+	if x != nil {
+		return x.Stats
+	}
+	return ""
+}
+
 var File_frontend_proto protoreflect.FileDescriptor
 
 var file_frontend_proto_rawDesc = []byte{
 	0x0a, 0x0e, 0x66, 0x72, 0x6f, 0x6e, 0x74, 0x65, 0x6e, 0x64, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f,
 	0x12, 0x0e, 0x6f, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31,
-	0x22, 0x40, 0x0a, 0x1a, 0x4e, 0x56, 0x4d, 0x65, 0x53, 0x75, 0x62, 0x73, 0x79, 0x73, 0x74, 0x65,
-	0x6d, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x12,
-	0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61,
-	0x6d, 0x65, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x52, 0x02,
-	0x69, 0x64, 0x22, 0x41, 0x0a, 0x1b, 0x4e, 0x56, 0x4d, 0x65, 0x53, 0x75, 0x62, 0x73, 0x79, 0x73,
-	0x74, 0x65, 0x6d, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
-	0x65, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52,
-	0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28,
-	0x03, 0x52, 0x02, 0x69, 0x64, 0x22, 0x40, 0x0a, 0x1a, 0x4e, 0x56, 0x4d, 0x65, 0x53, 0x75, 0x62,
-	0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x52, 0x65, 0x71, 0x75,
-	0x65, 0x73, 0x74, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28,
-	0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x02, 0x20,
-	0x01, 0x28, 0x03, 0x52, 0x02, 0x69, 0x64, 0x22, 0x41, 0x0a, 0x1b, 0x4e, 0x56, 0x4d, 0x65, 0x53,
-	0x75, 0x62, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x52, 0x65,
-	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01,
-	0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64,
-	0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x52, 0x02, 0x69, 0x64, 0x22, 0x40, 0x0a, 0x1a, 0x4e, 0x56,
-	0x4d, 0x65, 0x53, 0x75, 0x62, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x55, 0x70, 0x64, 0x61, 0x74,
-	0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65,
-	0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12, 0x0e, 0x0a, 0x02,
-	0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x52, 0x02, 0x69, 0x64, 0x22, 0x41, 0x0a, 0x1b,
-	0x4e, 0x56, 0x4d, 0x65, 0x53, 0x75, 0x62, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x55, 0x70, 0x64,
-	0x61, 0x74, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x12, 0x0a, 0x04, 0x6e,
-	0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12,
-	0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x52, 0x02, 0x69, 0x64, 0x22,
-	0x3e, 0x0a, 0x18, 0x4e, 0x56, 0x4d, 0x65, 0x53, 0x75, 0x62, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d,
-	0x4c, 0x69, 0x73, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x12, 0x0a, 0x04, 0x6e,
-	0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12,
-	0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x52, 0x02, 0x69, 0x64, 0x22,
-	0x3f, 0x0a, 0x19, 0x4e, 0x56, 0x4d, 0x65, 0x53, 0x75, 0x62, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d,
-	0x4c, 0x69, 0x73, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x12, 0x0a, 0x04,
-	0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65,
-	0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x52, 0x02, 0x69, 0x64,
-	0x22, 0x3d, 0x0a, 0x17, 0x4e, 0x56, 0x4d, 0x65, 0x53, 0x75, 0x62, 0x73, 0x79, 0x73, 0x74, 0x65,
-	0x6d, 0x47, 0x65, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x12, 0x0a, 0x04, 0x6e,
-	0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12,
-	0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x52, 0x02, 0x69, 0x64, 0x22,
-	0x3e, 0x0a, 0x18, 0x4e, 0x56, 0x4d, 0x65, 0x53, 0x75, 0x62, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d,
-	0x47, 0x65, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x12, 0x0a, 0x04, 0x6e,
-	0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12,
-	0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x52, 0x02, 0x69, 0x64, 0x22,
-	0x3f, 0x0a, 0x19, 0x4e, 0x56, 0x4d, 0x65, 0x53, 0x75, 0x62, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d,
-	0x53, 0x74, 0x61, 0x74, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x12, 0x0a, 0x04,
-	0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65,
-	0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x52, 0x02, 0x69, 0x64,
-	0x22, 0x40, 0x0a, 0x1a, 0x4e, 0x56, 0x4d, 0x65, 0x53, 0x75, 0x62, 0x73, 0x79, 0x73, 0x74, 0x65,
-	0x6d, 0x53, 0x74, 0x61, 0x74, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x12,
-	0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61,
-	0x6d, 0x65, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x52, 0x02,
-	0x69, 0x64, 0x22, 0x41, 0x0a, 0x1b, 0x4e, 0x56, 0x4d, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f,
-	0x6c, 0x6c, 0x65, 0x72, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
-	0x74, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52,
-	0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28,
-	0x03, 0x52, 0x02, 0x69, 0x64, 0x22, 0x42, 0x0a, 0x1c, 0x4e, 0x56, 0x4d, 0x65, 0x43, 0x6f, 0x6e,
-	0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x52, 0x65, 0x73,
-	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20,
-	0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18,
-	0x02, 0x20, 0x01, 0x28, 0x03, 0x52, 0x02, 0x69, 0x64, 0x22, 0x41, 0x0a, 0x1b, 0x4e, 0x56, 0x4d,
-	0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x44, 0x65, 0x6c, 0x65, 0x74,
-	0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65,
-	0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12, 0x0e, 0x0a, 0x02,
-	0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x52, 0x02, 0x69, 0x64, 0x22, 0x42, 0x0a, 0x1c,
-	0x4e, 0x56, 0x4d, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x44, 0x65,
-	0x6c, 0x65, 0x74, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x12, 0x0a, 0x04,
-	0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65,
-	0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x52, 0x02, 0x69, 0x64,
-	0x22, 0x41, 0x0a, 0x1b, 0x4e, 0x56, 0x4d, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c,
-	0x65, 0x72, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12,
-	0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e,
-	0x61, 0x6d, 0x65, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x52,
-	0x02, 0x69, 0x64, 0x22, 0x42, 0x0a, 0x1c, 0x4e, 0x56, 0x4d, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72,
-	0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f,
-	0x6e, 0x73, 0x65, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28,
-	0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x02, 0x20,
-	0x01, 0x28, 0x03, 0x52, 0x02, 0x69, 0x64, 0x22, 0x3f, 0x0a, 0x19, 0x4e, 0x56, 0x4d, 0x65, 0x43,
-	0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x4c, 0x69, 0x73, 0x74, 0x52, 0x65, 0x71,
-	0x75, 0x65, 0x73, 0x74, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01,
-	0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x02,
-	0x20, 0x01, 0x28, 0x03, 0x52, 0x02, 0x69, 0x64, 0x22, 0x40, 0x0a, 0x1a, 0x4e, 0x56, 0x4d, 0x65,
-	0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x4c, 0x69, 0x73, 0x74, 0x52, 0x65,
-	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01,
-	0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64,
-	0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x52, 0x02, 0x69, 0x64, 0x22, 0x3e, 0x0a, 0x18, 0x4e, 0x56,
-	0x4d, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x47, 0x65, 0x74, 0x52,
-	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01,
-	0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64,
-	0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x52, 0x02, 0x69, 0x64, 0x22, 0x3f, 0x0a, 0x19, 0x4e, 0x56,
-	0x4d, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x47, 0x65, 0x74, 0x52,
-	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18,
-	0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12, 0x0e, 0x0a, 0x02, 0x69,
-	0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x52, 0x02, 0x69, 0x64, 0x22, 0x40, 0x0a, 0x1a, 0x4e,
-	0x56, 0x4d, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x53, 0x74, 0x61,
-	0x74, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d,
-	0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12, 0x0e, 0x0a,
-	0x02, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x52, 0x02, 0x69, 0x64, 0x22, 0x41, 0x0a,
-	0x1b, 0x4e, 0x56, 0x4d, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x53,
-	0x74, 0x61, 0x74, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x12, 0x0a, 0x04,
-	0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65,
-	0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x52, 0x02, 0x69, 0x64,
-	0x22, 0x40, 0x0a, 0x1a, 0x4e, 0x56, 0x4d, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63,
-	0x65, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x12,
-	0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61,
-	0x6d, 0x65, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x52, 0x02,
-	0x69, 0x64, 0x22, 0x41, 0x0a, 0x1b, 0x4e, 0x56, 0x4d, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70,
-	0x61, 0x63, 0x65, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
-	0x65, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52,
-	0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28,
-	0x03, 0x52, 0x02, 0x69, 0x64, 0x22, 0x40, 0x0a, 0x1a, 0x4e, 0x56, 0x4d, 0x65, 0x4e, 0x61, 0x6d,
-	0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x52, 0x65, 0x71, 0x75,
-	0x65, 0x73, 0x74, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28,
-	0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x02, 0x20,
-	0x01, 0x28, 0x03, 0x52, 0x02, 0x69, 0x64, 0x22, 0x41, 0x0a, 0x1b, 0x4e, 0x56, 0x4d, 0x65, 0x4e,
-	0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x52, 0x65,
-	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01,
-	0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64,
-	0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x52, 0x02, 0x69, 0x64, 0x22, 0x40, 0x0a, 0x1a, 0x4e, 0x56,
-	0x4d, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x55, 0x70, 0x64, 0x61, 0x74,
-	0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65,
-	0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12, 0x0e, 0x0a, 0x02,
-	0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x52, 0x02, 0x69, 0x64, 0x22, 0x41, 0x0a, 0x1b,
-	0x4e, 0x56, 0x4d, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x55, 0x70, 0x64,
-	0x61, 0x74, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x12, 0x0a, 0x04, 0x6e,
-	0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12,
-	0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x52, 0x02, 0x69, 0x64, 0x22,
-	0x3e, 0x0a, 0x18, 0x4e, 0x56, 0x4d, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65,
-	0x4c, 0x69, 0x73, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x12, 0x0a, 0x04, 0x6e,
-	0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12,
-	0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x52, 0x02, 0x69, 0x64, 0x22,
-	0x3f, 0x0a, 0x19, 0x4e, 0x56, 0x4d, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65,
-	0x4c, 0x69, 0x73, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x12, 0x0a, 0x04,
-	0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65,
-	0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x52, 0x02, 0x69, 0x64,
-	0x22, 0x3d, 0x0a, 0x17, 0x4e, 0x56, 0x4d, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63,
-	0x65, 0x47, 0x65, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x12, 0x0a, 0x04, 0x6e,
-	0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12,
-	0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x52, 0x02, 0x69, 0x64, 0x22,
-	0x3e, 0x0a, 0x18, 0x4e, 0x56, 0x4d, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65,
-	0x47, 0x65, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x12, 0x0a, 0x04, 0x6e,
-	0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12,
-	0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x52, 0x02, 0x69, 0x64, 0x22,
-	0x3f, 0x0a, 0x19, 0x4e, 0x56, 0x4d, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65,
-	0x53, 0x74, 0x61, 0x74, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x12, 0x0a, 0x04,
-	0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65,
-	0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x52, 0x02, 0x69, 0x64,
-	0x22, 0x40, 0x0a, 0x1a, 0x4e, 0x56, 0x4d, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63,
-	0x65, 0x53, 0x74, 0x61, 0x74, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x12,
-	0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61,
-	0x6d, 0x65, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x52, 0x02,
-	0x69, 0x64, 0x32, 0xa9, 0x05, 0x0a, 0x0d, 0x4e, 0x56, 0x4d, 0x65, 0x53, 0x75, 0x62, 0x73, 0x79,
-	0x73, 0x74, 0x65, 0x6d, 0x12, 0x70, 0x0a, 0x13, 0x4e, 0x56, 0x4d, 0x65, 0x53, 0x75, 0x62, 0x73,
-	0x79, 0x73, 0x74, 0x65, 0x6d, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x12, 0x2a, 0x2e, 0x6f, 0x70,
-	0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x56, 0x4d,
+	0x22, 0x8d, 0x01, 0x0a, 0x0d, 0x4e, 0x56, 0x4d, 0x65, 0x53, 0x75, 0x62, 0x73, 0x79, 0x73, 0x74,
+	0x65, 0x6d, 0x12, 0x0e, 0x0a, 0x02, 0x49, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x02,
+	0x49, 0x64, 0x12, 0x10, 0x0a, 0x03, 0x4e, 0x51, 0x4e, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52,
+	0x03, 0x4e, 0x51, 0x4e, 0x12, 0x22, 0x0a, 0x0c, 0x53, 0x65, 0x72, 0x69, 0x61, 0x6c, 0x4e, 0x75,
+	0x6d, 0x62, 0x65, 0x72, 0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0c, 0x53, 0x65, 0x72, 0x69,
+	0x61, 0x6c, 0x4e, 0x75, 0x6d, 0x62, 0x65, 0x72, 0x12, 0x20, 0x0a, 0x0b, 0x4d, 0x6f, 0x64, 0x65,
+	0x6c, 0x4e, 0x75, 0x6d, 0x62, 0x65, 0x72, 0x18, 0x05, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x4d,
+	0x6f, 0x64, 0x65, 0x6c, 0x4e, 0x75, 0x6d, 0x62, 0x65, 0x72, 0x12, 0x14, 0x0a, 0x05, 0x4d, 0x61,
+	0x78, 0x4e, 0x73, 0x18, 0x06, 0x20, 0x01, 0x28, 0x03, 0x52, 0x05, 0x4d, 0x61, 0x78, 0x4e, 0x73,
+	0x22, 0xa0, 0x01, 0x0a, 0x0e, 0x4e, 0x56, 0x4d, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c,
+	0x6c, 0x65, 0x72, 0x12, 0x0e, 0x0a, 0x02, 0x49, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x03, 0x52,
+	0x02, 0x49, 0x64, 0x12, 0x12, 0x0a, 0x04, 0x4e, 0x61, 0x6d, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28,
+	0x09, 0x52, 0x04, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x20, 0x0a, 0x0b, 0x53, 0x75, 0x62, 0x73, 0x79,
+	0x73, 0x74, 0x65, 0x6d, 0x49, 0x64, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x53, 0x75,
+	0x62, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x49, 0x64, 0x12, 0x16, 0x0a, 0x06, 0x50, 0x43, 0x49,
+	0x65, 0x49, 0x44, 0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x50, 0x43, 0x49, 0x65, 0x49,
+	0x44, 0x12, 0x1a, 0x0a, 0x08, 0x4d, 0x61, 0x78, 0x49, 0x4f, 0x51, 0x50, 0x73, 0x18, 0x05, 0x20,
+	0x01, 0x28, 0x03, 0x52, 0x08, 0x4d, 0x61, 0x78, 0x49, 0x4f, 0x51, 0x50, 0x73, 0x12, 0x14, 0x0a,
+	0x05, 0x4d, 0x61, 0x78, 0x4e, 0x73, 0x18, 0x06, 0x20, 0x01, 0x28, 0x03, 0x52, 0x05, 0x4d, 0x61,
+	0x78, 0x4e, 0x73, 0x22, 0xe3, 0x02, 0x0a, 0x0d, 0x4e, 0x56, 0x4d, 0x65, 0x4e, 0x61, 0x6d, 0x65,
+	0x73, 0x70, 0x61, 0x63, 0x65, 0x12, 0x0e, 0x0a, 0x02, 0x49, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28,
+	0x03, 0x52, 0x02, 0x49, 0x64, 0x12, 0x12, 0x0a, 0x04, 0x4e, 0x61, 0x6d, 0x65, 0x18, 0x02, 0x20,
+	0x01, 0x28, 0x09, 0x52, 0x04, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x20, 0x0a, 0x0b, 0x53, 0x75, 0x62,
+	0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x49, 0x64, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b,
+	0x53, 0x75, 0x62, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x49, 0x64, 0x12, 0x22, 0x0a, 0x0c, 0x43,
+	0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x49, 0x64, 0x18, 0x04, 0x20, 0x01, 0x28,
+	0x03, 0x52, 0x0c, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x49, 0x64, 0x12,
+	0x12, 0x0a, 0x04, 0x4e, 0x73, 0x49, 0x64, 0x18, 0x05, 0x20, 0x01, 0x28, 0x03, 0x52, 0x04, 0x4e,
+	0x73, 0x49, 0x64, 0x12, 0x12, 0x0a, 0x04, 0x42, 0x64, 0x65, 0x76, 0x18, 0x06, 0x20, 0x01, 0x28,
+	0x09, 0x52, 0x04, 0x42, 0x64, 0x65, 0x76, 0x12, 0x1c, 0x0a, 0x09, 0x42, 0x6c, 0x6f, 0x63, 0x6b,
+	0x53, 0x69, 0x7a, 0x65, 0x18, 0x07, 0x20, 0x01, 0x28, 0x03, 0x52, 0x09, 0x42, 0x6c, 0x6f, 0x63,
+	0x6b, 0x53, 0x69, 0x7a, 0x65, 0x12, 0x1c, 0x0a, 0x09, 0x4e, 0x75, 0x6d, 0x42, 0x6c, 0x6f, 0x63,
+	0x6b, 0x73, 0x18, 0x08, 0x20, 0x01, 0x28, 0x03, 0x52, 0x09, 0x4e, 0x75, 0x6d, 0x42, 0x6c, 0x6f,
+	0x63, 0x6b, 0x73, 0x12, 0x14, 0x0a, 0x05, 0x4e, 0x47, 0x55, 0x49, 0x44, 0x18, 0x09, 0x20, 0x01,
+	0x28, 0x09, 0x52, 0x05, 0x4e, 0x47, 0x55, 0x49, 0x44, 0x12, 0x14, 0x0a, 0x05, 0x45, 0x55, 0x49,
+	0x36, 0x34, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x45, 0x55, 0x49, 0x36, 0x34, 0x12,
+	0x12, 0x0a, 0x04, 0x55, 0x55, 0x49, 0x44, 0x18, 0x0b, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x55,
+	0x55, 0x49, 0x44, 0x12, 0x1c, 0x0a, 0x09, 0x4d, 0x75, 0x6c, 0x74, 0x69, 0x70, 0x61, 0x74, 0x68,
+	0x18, 0x0c, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09, 0x4d, 0x75, 0x6c, 0x74, 0x69, 0x70, 0x61, 0x74,
+	0x68, 0x12, 0x26, 0x0a, 0x0e, 0x41, 0x75, 0x74, 0x68, 0x65, 0x6e, 0x74, 0x69, 0x63, 0x61, 0x74,
+	0x69, 0x6f, 0x6e, 0x18, 0x0d, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0e, 0x41, 0x75, 0x74, 0x68, 0x65,
+	0x6e, 0x74, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x22, 0x59, 0x0a, 0x1a, 0x4e, 0x56, 0x4d,
 	0x65, 0x53, 0x75, 0x62, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65,
-	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2b, 0x2e, 0x6f, 0x70, 0x69, 0x2e, 0x73, 0x74,
-	0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x56, 0x4d, 0x65, 0x53, 0x75, 0x62,
-	0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x52, 0x65, 0x73, 0x70,
-	0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x70, 0x0a, 0x13, 0x4e, 0x56, 0x4d, 0x65, 0x53, 0x75,
-	0x62, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x12, 0x2a, 0x2e,
-	0x6f, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e,
-	0x56, 0x4d, 0x65, 0x53, 0x75, 0x62, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x44, 0x65, 0x6c, 0x65,
-	0x74, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2b, 0x2e, 0x6f, 0x70, 0x69, 0x2e,
-	0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x56, 0x4d, 0x65, 0x53,
-	0x75, 0x62, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x52, 0x65,
-	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x70, 0x0a, 0x13, 0x4e, 0x56, 0x4d, 0x65,
-	0x53, 0x75, 0x62, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x12,
-	0x2a, 0x2e, 0x6f, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31,
-	0x2e, 0x4e, 0x56, 0x4d, 0x65, 0x53, 0x75, 0x62, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x55, 0x70,
-	0x64, 0x61, 0x74, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2b, 0x2e, 0x6f, 0x70,
-	0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x56, 0x4d,
-	0x65, 0x53, 0x75, 0x62, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65,
-	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x6a, 0x0a, 0x11, 0x4e, 0x56,
-	0x4d, 0x65, 0x53, 0x75, 0x62, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x4c, 0x69, 0x73, 0x74, 0x12,
-	0x28, 0x2e, 0x6f, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31,
-	0x2e, 0x4e, 0x56, 0x4d, 0x65, 0x53, 0x75, 0x62, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x4c, 0x69,
-	0x73, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x29, 0x2e, 0x6f, 0x70, 0x69, 0x2e,
-	0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x56, 0x4d, 0x65, 0x53,
-	0x75, 0x62, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x4c, 0x69, 0x73, 0x74, 0x52, 0x65, 0x73, 0x70,
-	0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x67, 0x0a, 0x10, 0x4e, 0x56, 0x4d, 0x65, 0x53, 0x75,
-	0x62, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x47, 0x65, 0x74, 0x12, 0x27, 0x2e, 0x6f, 0x70, 0x69,
+	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x3b, 0x0a, 0x09, 0x53, 0x75, 0x62, 0x73, 0x79,
+	0x73, 0x74, 0x65, 0x6d, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1d, 0x2e, 0x6f, 0x70, 0x69,
 	0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x56, 0x4d, 0x65,
-	0x53, 0x75, 0x62, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x47, 0x65, 0x74, 0x52, 0x65, 0x71, 0x75,
-	0x65, 0x73, 0x74, 0x1a, 0x28, 0x2e, 0x6f, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67,
-	0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x56, 0x4d, 0x65, 0x53, 0x75, 0x62, 0x73, 0x79, 0x73, 0x74,
-	0x65, 0x6d, 0x47, 0x65, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12,
-	0x6d, 0x0a, 0x12, 0x4e, 0x56, 0x4d, 0x65, 0x53, 0x75, 0x62, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d,
-	0x53, 0x74, 0x61, 0x74, 0x73, 0x12, 0x29, 0x2e, 0x6f, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72,
-	0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x56, 0x4d, 0x65, 0x53, 0x75, 0x62, 0x73, 0x79,
-	0x73, 0x74, 0x65, 0x6d, 0x53, 0x74, 0x61, 0x74, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
-	0x1a, 0x2a, 0x2e, 0x6f, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76,
-	0x31, 0x2e, 0x4e, 0x56, 0x4d, 0x65, 0x53, 0x75, 0x62, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x53,
-	0x74, 0x61, 0x74, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x32, 0xbc,
-	0x05, 0x0a, 0x0e, 0x4e, 0x56, 0x4d, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65,
-	0x72, 0x12, 0x73, 0x0a, 0x14, 0x4e, 0x56, 0x4d, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c,
-	0x6c, 0x65, 0x72, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x12, 0x2b, 0x2e, 0x6f, 0x70, 0x69, 0x2e,
+	0x53, 0x75, 0x62, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x52, 0x09, 0x53, 0x75, 0x62, 0x73, 0x79,
+	0x73, 0x74, 0x65, 0x6d, 0x22, 0x1d, 0x0a, 0x1b, 0x4e, 0x56, 0x4d, 0x65, 0x53, 0x75, 0x62, 0x73,
+	0x79, 0x73, 0x74, 0x65, 0x6d, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f,
+	0x6e, 0x73, 0x65, 0x22, 0x2c, 0x0a, 0x1a, 0x4e, 0x56, 0x4d, 0x65, 0x53, 0x75, 0x62, 0x73, 0x79,
+	0x73, 0x74, 0x65, 0x6d, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
+	0x74, 0x12, 0x0e, 0x0a, 0x02, 0x49, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x02, 0x49,
+	0x64, 0x22, 0x1d, 0x0a, 0x1b, 0x4e, 0x56, 0x4d, 0x65, 0x53, 0x75, 0x62, 0x73, 0x79, 0x73, 0x74,
+	0x65, 0x6d, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
+	0x22, 0x59, 0x0a, 0x1a, 0x4e, 0x56, 0x4d, 0x65, 0x53, 0x75, 0x62, 0x73, 0x79, 0x73, 0x74, 0x65,
+	0x6d, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x3b,
+	0x0a, 0x09, 0x53, 0x75, 0x62, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x18, 0x01, 0x20, 0x01, 0x28,
+	0x0b, 0x32, 0x1d, 0x2e, 0x6f, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e,
+	0x76, 0x31, 0x2e, 0x4e, 0x56, 0x4d, 0x65, 0x53, 0x75, 0x62, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d,
+	0x52, 0x09, 0x53, 0x75, 0x62, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x22, 0x1d, 0x0a, 0x1b, 0x4e,
+	0x56, 0x4d, 0x65, 0x53, 0x75, 0x62, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x55, 0x70, 0x64, 0x61,
+	0x74, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x1a, 0x0a, 0x18, 0x4e, 0x56,
+	0x4d, 0x65, 0x53, 0x75, 0x62, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x4c, 0x69, 0x73, 0x74, 0x52,
+	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x22, 0x58, 0x0a, 0x19, 0x4e, 0x56, 0x4d, 0x65, 0x53, 0x75,
+	0x62, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x4c, 0x69, 0x73, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f,
+	0x6e, 0x73, 0x65, 0x12, 0x3b, 0x0a, 0x09, 0x53, 0x75, 0x62, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d,
+	0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x1d, 0x2e, 0x6f, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f,
+	0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x56, 0x4d, 0x65, 0x53, 0x75, 0x62, 0x73,
+	0x79, 0x73, 0x74, 0x65, 0x6d, 0x52, 0x09, 0x53, 0x75, 0x62, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d,
+	0x22, 0x29, 0x0a, 0x17, 0x4e, 0x56, 0x4d, 0x65, 0x53, 0x75, 0x62, 0x73, 0x79, 0x73, 0x74, 0x65,
+	0x6d, 0x47, 0x65, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x0e, 0x0a, 0x02, 0x49,
+	0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x02, 0x49, 0x64, 0x22, 0x57, 0x0a, 0x18, 0x4e,
+	0x56, 0x4d, 0x65, 0x53, 0x75, 0x62, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x47, 0x65, 0x74, 0x52,
+	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x3b, 0x0a, 0x09, 0x53, 0x75, 0x62, 0x73, 0x79,
+	0x73, 0x74, 0x65, 0x6d, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1d, 0x2e, 0x6f, 0x70, 0x69,
+	0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x56, 0x4d, 0x65,
+	0x53, 0x75, 0x62, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x52, 0x09, 0x53, 0x75, 0x62, 0x73, 0x79,
+	0x73, 0x74, 0x65, 0x6d, 0x22, 0x2b, 0x0a, 0x19, 0x4e, 0x56, 0x4d, 0x65, 0x53, 0x75, 0x62, 0x73,
+	0x79, 0x73, 0x74, 0x65, 0x6d, 0x53, 0x74, 0x61, 0x74, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
+	0x74, 0x12, 0x0e, 0x0a, 0x02, 0x49, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x02, 0x49,
+	0x64, 0x22, 0x42, 0x0a, 0x1a, 0x4e, 0x56, 0x4d, 0x65, 0x53, 0x75, 0x62, 0x73, 0x79, 0x73, 0x74,
+	0x65, 0x6d, 0x53, 0x74, 0x61, 0x74, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12,
+	0x0e, 0x0a, 0x02, 0x49, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x02, 0x49, 0x64, 0x12,
+	0x14, 0x0a, 0x05, 0x53, 0x74, 0x61, 0x74, 0x73, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05,
+	0x53, 0x74, 0x61, 0x74, 0x73, 0x22, 0x5d, 0x0a, 0x1b, 0x4e, 0x56, 0x4d, 0x65, 0x43, 0x6f, 0x6e,
+	0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x52, 0x65, 0x71,
+	0x75, 0x65, 0x73, 0x74, 0x12, 0x3e, 0x0a, 0x0a, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c,
+	0x65, 0x72, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1e, 0x2e, 0x6f, 0x70, 0x69, 0x2e, 0x73,
+	0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x56, 0x4d, 0x65, 0x43, 0x6f,
+	0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x52, 0x0a, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f,
+	0x6c, 0x6c, 0x65, 0x72, 0x22, 0x1e, 0x0a, 0x1c, 0x4e, 0x56, 0x4d, 0x65, 0x43, 0x6f, 0x6e, 0x74,
+	0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x52, 0x65, 0x73, 0x70,
+	0x6f, 0x6e, 0x73, 0x65, 0x22, 0x63, 0x0a, 0x1b, 0x4e, 0x56, 0x4d, 0x65, 0x43, 0x6f, 0x6e, 0x74,
+	0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x52, 0x65, 0x71, 0x75,
+	0x65, 0x73, 0x74, 0x12, 0x20, 0x0a, 0x0b, 0x53, 0x75, 0x62, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d,
+	0x49, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x0b, 0x53, 0x75, 0x62, 0x73, 0x79, 0x73,
+	0x74, 0x65, 0x6d, 0x49, 0x64, 0x12, 0x22, 0x0a, 0x0c, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c,
+	0x6c, 0x65, 0x72, 0x49, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x52, 0x0c, 0x43, 0x6f, 0x6e,
+	0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x49, 0x64, 0x22, 0x1e, 0x0a, 0x1c, 0x4e, 0x56, 0x4d,
+	0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x44, 0x65, 0x6c, 0x65, 0x74,
+	0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x5d, 0x0a, 0x1b, 0x4e, 0x56, 0x4d,
+	0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x55, 0x70, 0x64, 0x61, 0x74,
+	0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x3e, 0x0a, 0x0a, 0x43, 0x6f, 0x6e, 0x74,
+	0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1e, 0x2e, 0x6f,
+	0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x56,
+	0x4d, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x52, 0x0a, 0x43, 0x6f,
+	0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x22, 0x1e, 0x0a, 0x1c, 0x4e, 0x56, 0x4d, 0x65,
+	0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65,
+	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x3d, 0x0a, 0x19, 0x4e, 0x56, 0x4d, 0x65,
+	0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x4c, 0x69, 0x73, 0x74, 0x52, 0x65,
+	0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x20, 0x0a, 0x0b, 0x53, 0x75, 0x62, 0x73, 0x79, 0x73, 0x74,
+	0x65, 0x6d, 0x49, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x0b, 0x53, 0x75, 0x62, 0x73,
+	0x79, 0x73, 0x74, 0x65, 0x6d, 0x49, 0x64, 0x22, 0x5c, 0x0a, 0x1a, 0x4e, 0x56, 0x4d, 0x65, 0x43,
+	0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x4c, 0x69, 0x73, 0x74, 0x52, 0x65, 0x73,
+	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x3e, 0x0a, 0x0a, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c,
+	0x6c, 0x65, 0x72, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x1e, 0x2e, 0x6f, 0x70, 0x69, 0x2e,
 	0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x56, 0x4d, 0x65, 0x43,
-	0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x52,
+	0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x52, 0x0a, 0x43, 0x6f, 0x6e, 0x74, 0x72,
+	0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x22, 0x60, 0x0a, 0x18, 0x4e, 0x56, 0x4d, 0x65, 0x43, 0x6f, 0x6e,
+	0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x47, 0x65, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
+	0x74, 0x12, 0x20, 0x0a, 0x0b, 0x53, 0x75, 0x62, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x49, 0x64,
+	0x18, 0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x0b, 0x53, 0x75, 0x62, 0x73, 0x79, 0x73, 0x74, 0x65,
+	0x6d, 0x49, 0x64, 0x12, 0x22, 0x0a, 0x0c, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65,
+	0x72, 0x49, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x52, 0x0c, 0x43, 0x6f, 0x6e, 0x74, 0x72,
+	0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x49, 0x64, 0x22, 0x5b, 0x0a, 0x19, 0x4e, 0x56, 0x4d, 0x65, 0x43,
+	0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x47, 0x65, 0x74, 0x52, 0x65, 0x73, 0x70,
+	0x6f, 0x6e, 0x73, 0x65, 0x12, 0x3e, 0x0a, 0x0a, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c,
+	0x65, 0x72, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1e, 0x2e, 0x6f, 0x70, 0x69, 0x2e, 0x73,
+	0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x56, 0x4d, 0x65, 0x43, 0x6f,
+	0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x52, 0x0a, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f,
+	0x6c, 0x6c, 0x65, 0x72, 0x22, 0x62, 0x0a, 0x1a, 0x4e, 0x56, 0x4d, 0x65, 0x43, 0x6f, 0x6e, 0x74,
+	0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x53, 0x74, 0x61, 0x74, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65,
+	0x73, 0x74, 0x12, 0x20, 0x0a, 0x0b, 0x53, 0x75, 0x62, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x49,
+	0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x0b, 0x53, 0x75, 0x62, 0x73, 0x79, 0x73, 0x74,
+	0x65, 0x6d, 0x49, 0x64, 0x12, 0x22, 0x0a, 0x0c, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c,
+	0x65, 0x72, 0x49, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x52, 0x0c, 0x43, 0x6f, 0x6e, 0x74,
+	0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x49, 0x64, 0x22, 0x43, 0x0a, 0x1b, 0x4e, 0x56, 0x4d, 0x65,
+	0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x53, 0x74, 0x61, 0x74, 0x73, 0x52,
+	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x0e, 0x0a, 0x02, 0x49, 0x64, 0x18, 0x01, 0x20,
+	0x01, 0x28, 0x03, 0x52, 0x02, 0x49, 0x64, 0x12, 0x14, 0x0a, 0x05, 0x53, 0x74, 0x61, 0x74, 0x73,
+	0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x53, 0x74, 0x61, 0x74, 0x73, 0x22, 0x59, 0x0a,
+	0x1a, 0x4e, 0x56, 0x4d, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x43, 0x72,
+	0x65, 0x61, 0x74, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x3b, 0x0a, 0x09, 0x4e,
+	0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1d,
+	0x2e, 0x6f, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e,
+	0x4e, 0x56, 0x4d, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x52, 0x09, 0x4e,
+	0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x22, 0x1d, 0x0a, 0x1b, 0x4e, 0x56, 0x4d, 0x65,
+	0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x52,
+	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x84, 0x01, 0x0a, 0x1a, 0x4e, 0x56, 0x4d, 0x65,
+	0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x52,
+	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x20, 0x0a, 0x0b, 0x53, 0x75, 0x62, 0x73, 0x79, 0x73,
+	0x74, 0x65, 0x6d, 0x49, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x0b, 0x53, 0x75, 0x62,
+	0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x49, 0x64, 0x12, 0x22, 0x0a, 0x0c, 0x43, 0x6f, 0x6e, 0x74,
+	0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x49, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x52, 0x0c,
+	0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x49, 0x64, 0x12, 0x20, 0x0a, 0x0b,
+	0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x49, 0x64, 0x18, 0x03, 0x20, 0x01, 0x28,
+	0x03, 0x52, 0x0b, 0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x49, 0x64, 0x22, 0x1d,
+	0x0a, 0x1b, 0x4e, 0x56, 0x4d, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x44,
+	0x65, 0x6c, 0x65, 0x74, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x59, 0x0a,
+	0x1a, 0x4e, 0x56, 0x4d, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x55, 0x70,
+	0x64, 0x61, 0x74, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x3b, 0x0a, 0x09, 0x4e,
+	0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1d,
+	0x2e, 0x6f, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e,
+	0x4e, 0x56, 0x4d, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x52, 0x09, 0x4e,
+	0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x22, 0x1d, 0x0a, 0x1b, 0x4e, 0x56, 0x4d, 0x65,
+	0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x52,
+	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x60, 0x0a, 0x18, 0x4e, 0x56, 0x4d, 0x65, 0x4e,
+	0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x4c, 0x69, 0x73, 0x74, 0x52, 0x65, 0x71, 0x75,
+	0x65, 0x73, 0x74, 0x12, 0x20, 0x0a, 0x0b, 0x53, 0x75, 0x62, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d,
+	0x49, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x0b, 0x53, 0x75, 0x62, 0x73, 0x79, 0x73,
+	0x74, 0x65, 0x6d, 0x49, 0x64, 0x12, 0x22, 0x0a, 0x0c, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c,
+	0x6c, 0x65, 0x72, 0x49, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x52, 0x0c, 0x43, 0x6f, 0x6e,
+	0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x49, 0x64, 0x22, 0x58, 0x0a, 0x19, 0x4e, 0x56, 0x4d,
+	0x65, 0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x4c, 0x69, 0x73, 0x74, 0x52, 0x65,
+	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x3b, 0x0a, 0x09, 0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70,
+	0x61, 0x63, 0x65, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x1d, 0x2e, 0x6f, 0x70, 0x69, 0x2e,
+	0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x56, 0x4d, 0x65, 0x4e,
+	0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x52, 0x09, 0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70,
+	0x61, 0x63, 0x65, 0x22, 0x81, 0x01, 0x0a, 0x17, 0x4e, 0x56, 0x4d, 0x65, 0x4e, 0x61, 0x6d, 0x65,
+	0x73, 0x70, 0x61, 0x63, 0x65, 0x47, 0x65, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12,
+	0x20, 0x0a, 0x0b, 0x53, 0x75, 0x62, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x49, 0x64, 0x18, 0x01,
+	0x20, 0x01, 0x28, 0x03, 0x52, 0x0b, 0x53, 0x75, 0x62, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x49,
+	0x64, 0x12, 0x22, 0x0a, 0x0c, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x49,
+	0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x52, 0x0c, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c,
+	0x6c, 0x65, 0x72, 0x49, 0x64, 0x12, 0x20, 0x0a, 0x0b, 0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61,
+	0x63, 0x65, 0x49, 0x64, 0x18, 0x03, 0x20, 0x01, 0x28, 0x03, 0x52, 0x0b, 0x4e, 0x61, 0x6d, 0x65,
+	0x73, 0x70, 0x61, 0x63, 0x65, 0x49, 0x64, 0x22, 0x57, 0x0a, 0x18, 0x4e, 0x56, 0x4d, 0x65, 0x4e,
+	0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x47, 0x65, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f,
+	0x6e, 0x73, 0x65, 0x12, 0x3b, 0x0a, 0x09, 0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65,
+	0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1d, 0x2e, 0x6f, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f,
+	0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x56, 0x4d, 0x65, 0x4e, 0x61, 0x6d, 0x65,
+	0x73, 0x70, 0x61, 0x63, 0x65, 0x52, 0x09, 0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65,
+	0x22, 0x83, 0x01, 0x0a, 0x19, 0x4e, 0x56, 0x4d, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61,
+	0x63, 0x65, 0x53, 0x74, 0x61, 0x74, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x20,
+	0x0a, 0x0b, 0x53, 0x75, 0x62, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x49, 0x64, 0x18, 0x01, 0x20,
+	0x01, 0x28, 0x03, 0x52, 0x0b, 0x53, 0x75, 0x62, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x49, 0x64,
+	0x12, 0x22, 0x0a, 0x0c, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x49, 0x64,
+	0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x52, 0x0c, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c,
+	0x65, 0x72, 0x49, 0x64, 0x12, 0x20, 0x0a, 0x0b, 0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63,
+	0x65, 0x49, 0x64, 0x18, 0x03, 0x20, 0x01, 0x28, 0x03, 0x52, 0x0b, 0x4e, 0x61, 0x6d, 0x65, 0x73,
+	0x70, 0x61, 0x63, 0x65, 0x49, 0x64, 0x22, 0x42, 0x0a, 0x1a, 0x4e, 0x56, 0x4d, 0x65, 0x4e, 0x61,
+	0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x53, 0x74, 0x61, 0x74, 0x73, 0x52, 0x65, 0x73, 0x70,
+	0x6f, 0x6e, 0x73, 0x65, 0x12, 0x0e, 0x0a, 0x02, 0x49, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x03,
+	0x52, 0x02, 0x49, 0x64, 0x12, 0x14, 0x0a, 0x05, 0x53, 0x74, 0x61, 0x74, 0x73, 0x18, 0x02, 0x20,
+	0x01, 0x28, 0x09, 0x52, 0x05, 0x53, 0x74, 0x61, 0x74, 0x73, 0x32, 0xb0, 0x05, 0x0a, 0x14, 0x4e,
+	0x56, 0x4d, 0x65, 0x53, 0x75, 0x62, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x53, 0x65, 0x72, 0x76,
+	0x69, 0x63, 0x65, 0x12, 0x70, 0x0a, 0x13, 0x4e, 0x56, 0x4d, 0x65, 0x53, 0x75, 0x62, 0x73, 0x79,
+	0x73, 0x74, 0x65, 0x6d, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x12, 0x2a, 0x2e, 0x6f, 0x70, 0x69,
+	0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x56, 0x4d, 0x65,
+	0x53, 0x75, 0x62, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x52,
+	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2b, 0x2e, 0x6f, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f,
+	0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x56, 0x4d, 0x65, 0x53, 0x75, 0x62, 0x73,
+	0x79, 0x73, 0x74, 0x65, 0x6d, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f,
+	0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x70, 0x0a, 0x13, 0x4e, 0x56, 0x4d, 0x65, 0x53, 0x75, 0x62,
+	0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x12, 0x2a, 0x2e, 0x6f,
+	0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x56,
+	0x4d, 0x65, 0x53, 0x75, 0x62, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x44, 0x65, 0x6c, 0x65, 0x74,
+	0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2b, 0x2e, 0x6f, 0x70, 0x69, 0x2e, 0x73,
+	0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x56, 0x4d, 0x65, 0x53, 0x75,
+	0x62, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x52, 0x65, 0x73,
+	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x70, 0x0a, 0x13, 0x4e, 0x56, 0x4d, 0x65, 0x53,
+	0x75, 0x62, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x12, 0x2a,
+	0x2e, 0x6f, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e,
+	0x4e, 0x56, 0x4d, 0x65, 0x53, 0x75, 0x62, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x55, 0x70, 0x64,
+	0x61, 0x74, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2b, 0x2e, 0x6f, 0x70, 0x69,
+	0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x56, 0x4d, 0x65,
+	0x53, 0x75, 0x62, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x52,
+	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x6a, 0x0a, 0x11, 0x4e, 0x56, 0x4d,
+	0x65, 0x53, 0x75, 0x62, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x4c, 0x69, 0x73, 0x74, 0x12, 0x28,
+	0x2e, 0x6f, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e,
+	0x4e, 0x56, 0x4d, 0x65, 0x53, 0x75, 0x62, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x4c, 0x69, 0x73,
+	0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x29, 0x2e, 0x6f, 0x70, 0x69, 0x2e, 0x73,
+	0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x56, 0x4d, 0x65, 0x53, 0x75,
+	0x62, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x4c, 0x69, 0x73, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f,
+	0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x67, 0x0a, 0x10, 0x4e, 0x56, 0x4d, 0x65, 0x53, 0x75, 0x62,
+	0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x47, 0x65, 0x74, 0x12, 0x27, 0x2e, 0x6f, 0x70, 0x69, 0x2e,
+	0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x56, 0x4d, 0x65, 0x53,
+	0x75, 0x62, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x47, 0x65, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65,
+	0x73, 0x74, 0x1a, 0x28, 0x2e, 0x6f, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65,
+	0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x56, 0x4d, 0x65, 0x53, 0x75, 0x62, 0x73, 0x79, 0x73, 0x74, 0x65,
+	0x6d, 0x47, 0x65, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x6d,
+	0x0a, 0x12, 0x4e, 0x56, 0x4d, 0x65, 0x53, 0x75, 0x62, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x53,
+	0x74, 0x61, 0x74, 0x73, 0x12, 0x29, 0x2e, 0x6f, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61,
+	0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x56, 0x4d, 0x65, 0x53, 0x75, 0x62, 0x73, 0x79, 0x73,
+	0x74, 0x65, 0x6d, 0x53, 0x74, 0x61, 0x74, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
+	0x2a, 0x2e, 0x6f, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31,
+	0x2e, 0x4e, 0x56, 0x4d, 0x65, 0x53, 0x75, 0x62, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x53, 0x74,
+	0x61, 0x74, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x32, 0xc3, 0x05,
+	0x0a, 0x15, 0x4e, 0x56, 0x4d, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72,
+	0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0x73, 0x0a, 0x14, 0x4e, 0x56, 0x4d, 0x65, 0x43,
+	0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x12,
+	0x2b, 0x2e, 0x6f, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31,
+	0x2e, 0x4e, 0x56, 0x4d, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x43,
+	0x72, 0x65, 0x61, 0x74, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2c, 0x2e, 0x6f,
+	0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x56,
+	0x4d, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x43, 0x72, 0x65, 0x61,
+	0x74, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x73, 0x0a, 0x14,
+	0x4e, 0x56, 0x4d, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x44, 0x65,
+	0x6c, 0x65, 0x74, 0x65, 0x12, 0x2b, 0x2e, 0x6f, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61,
+	0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x56, 0x4d, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f,
+	0x6c, 0x6c, 0x65, 0x72, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
+	0x74, 0x1a, 0x2c, 0x2e, 0x6f, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e,
+	0x76, 0x31, 0x2e, 0x4e, 0x56, 0x4d, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65,
+	0x72, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22,
+	0x00, 0x12, 0x73, 0x0a, 0x14, 0x4e, 0x56, 0x4d, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c,
+	0x6c, 0x65, 0x72, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x12, 0x2b, 0x2e, 0x6f, 0x70, 0x69, 0x2e,
+	0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x56, 0x4d, 0x65, 0x43,
+	0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x52,
 	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2c, 0x2e, 0x6f, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f,
 	0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x56, 0x4d, 0x65, 0x43, 0x6f, 0x6e, 0x74,
-	0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x52, 0x65, 0x73, 0x70,
-	0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x73, 0x0a, 0x14, 0x4e, 0x56, 0x4d, 0x65, 0x43, 0x6f,
-	0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x12, 0x2b,
-	0x2e, 0x6f, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e,
-	0x4e, 0x56, 0x4d, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x44, 0x65,
-	0x6c, 0x65, 0x74, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2c, 0x2e, 0x6f, 0x70,
-	0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x56, 0x4d,
-	0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x44, 0x65, 0x6c, 0x65, 0x74,
-	0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x73, 0x0a, 0x14, 0x4e,
-	0x56, 0x4d, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x55, 0x70, 0x64,
-	0x61, 0x74, 0x65, 0x12, 0x2b, 0x2e, 0x6f, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67,
-	0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x56, 0x4d, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c,
-	0x6c, 0x65, 0x72, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
-	0x1a, 0x2c, 0x2e, 0x6f, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76,
-	0x31, 0x2e, 0x4e, 0x56, 0x4d, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72,
-	0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00,
-	0x12, 0x6d, 0x0a, 0x12, 0x4e, 0x56, 0x4d, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c,
-	0x65, 0x72, 0x4c, 0x69, 0x73, 0x74, 0x12, 0x29, 0x2e, 0x6f, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f,
-	0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x56, 0x4d, 0x65, 0x43, 0x6f, 0x6e, 0x74,
-	0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x4c, 0x69, 0x73, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
-	0x74, 0x1a, 0x2a, 0x2e, 0x6f, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e,
-	0x76, 0x31, 0x2e, 0x4e, 0x56, 0x4d, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65,
-	0x72, 0x4c, 0x69, 0x73, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12,
-	0x6a, 0x0a, 0x11, 0x4e, 0x56, 0x4d, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65,
-	0x72, 0x47, 0x65, 0x74, 0x12, 0x28, 0x2e, 0x6f, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61,
-	0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x56, 0x4d, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f,
-	0x6c, 0x6c, 0x65, 0x72, 0x47, 0x65, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x29,
-	0x2e, 0x6f, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e,
-	0x4e, 0x56, 0x4d, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x47, 0x65,
-	0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x70, 0x0a, 0x13, 0x4e,
-	0x56, 0x4d, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x53, 0x74, 0x61,
-	0x74, 0x73, 0x12, 0x2a, 0x2e, 0x6f, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65,
-	0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x56, 0x4d, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c,
-	0x65, 0x72, 0x53, 0x74, 0x61, 0x74, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2b,
-	0x2e, 0x6f, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e,
-	0x4e, 0x56, 0x4d, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x53, 0x74,
-	0x61, 0x74, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x32, 0xa9, 0x05,
-	0x0a, 0x0d, 0x4e, 0x56, 0x4d, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x12,
-	0x70, 0x0a, 0x13, 0x4e, 0x56, 0x4d, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65,
-	0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x12, 0x2a, 0x2e, 0x6f, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f,
-	0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x56, 0x4d, 0x65, 0x4e, 0x61, 0x6d, 0x65,
-	0x73, 0x70, 0x61, 0x63, 0x65, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65,
-	0x73, 0x74, 0x1a, 0x2b, 0x2e, 0x6f, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65,
-	0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x56, 0x4d, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63,
-	0x65, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22,
-	0x00, 0x12, 0x70, 0x0a, 0x13, 0x4e, 0x56, 0x4d, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61,
-	0x63, 0x65, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x12, 0x2a, 0x2e, 0x6f, 0x70, 0x69, 0x2e, 0x73,
-	0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x56, 0x4d, 0x65, 0x4e, 0x61,
-	0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x52, 0x65, 0x71,
-	0x75, 0x65, 0x73, 0x74, 0x1a, 0x2b, 0x2e, 0x6f, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61,
-	0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x56, 0x4d, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70,
-	0x61, 0x63, 0x65, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
-	0x65, 0x22, 0x00, 0x12, 0x70, 0x0a, 0x13, 0x4e, 0x56, 0x4d, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x73,
-	0x70, 0x61, 0x63, 0x65, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x12, 0x2a, 0x2e, 0x6f, 0x70, 0x69,
+	0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x52, 0x65, 0x73, 0x70,
+	0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x6d, 0x0a, 0x12, 0x4e, 0x56, 0x4d, 0x65, 0x43, 0x6f,
+	0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x4c, 0x69, 0x73, 0x74, 0x12, 0x29, 0x2e, 0x6f,
+	0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x56,
+	0x4d, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x4c, 0x69, 0x73, 0x74,
+	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2a, 0x2e, 0x6f, 0x70, 0x69, 0x2e, 0x73, 0x74,
+	0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x56, 0x4d, 0x65, 0x43, 0x6f, 0x6e,
+	0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x4c, 0x69, 0x73, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f,
+	0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x6a, 0x0a, 0x11, 0x4e, 0x56, 0x4d, 0x65, 0x43, 0x6f, 0x6e,
+	0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x47, 0x65, 0x74, 0x12, 0x28, 0x2e, 0x6f, 0x70, 0x69,
 	0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x56, 0x4d, 0x65,
-	0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x52,
-	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2b, 0x2e, 0x6f, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f,
-	0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x56, 0x4d, 0x65, 0x4e, 0x61, 0x6d, 0x65,
-	0x73, 0x70, 0x61, 0x63, 0x65, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f,
-	0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x6a, 0x0a, 0x11, 0x4e, 0x56, 0x4d, 0x65, 0x4e, 0x61, 0x6d,
-	0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x4c, 0x69, 0x73, 0x74, 0x12, 0x28, 0x2e, 0x6f, 0x70, 0x69,
-	0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x56, 0x4d, 0x65,
-	0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x4c, 0x69, 0x73, 0x74, 0x52, 0x65, 0x71,
+	0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x47, 0x65, 0x74, 0x52, 0x65, 0x71,
 	0x75, 0x65, 0x73, 0x74, 0x1a, 0x29, 0x2e, 0x6f, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61,
-	0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x56, 0x4d, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70,
-	0x61, 0x63, 0x65, 0x4c, 0x69, 0x73, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22,
-	0x00, 0x12, 0x67, 0x0a, 0x10, 0x4e, 0x56, 0x4d, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61,
-	0x63, 0x65, 0x47, 0x65, 0x74, 0x12, 0x27, 0x2e, 0x6f, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72,
+	0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x56, 0x4d, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f,
+	0x6c, 0x6c, 0x65, 0x72, 0x47, 0x65, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22,
+	0x00, 0x12, 0x70, 0x0a, 0x13, 0x4e, 0x56, 0x4d, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c,
+	0x6c, 0x65, 0x72, 0x53, 0x74, 0x61, 0x74, 0x73, 0x12, 0x2a, 0x2e, 0x6f, 0x70, 0x69, 0x2e, 0x73,
+	0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x56, 0x4d, 0x65, 0x43, 0x6f,
+	0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x53, 0x74, 0x61, 0x74, 0x73, 0x52, 0x65, 0x71,
+	0x75, 0x65, 0x73, 0x74, 0x1a, 0x2b, 0x2e, 0x6f, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61,
+	0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x56, 0x4d, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f,
+	0x6c, 0x6c, 0x65, 0x72, 0x53, 0x74, 0x61, 0x74, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
+	0x65, 0x22, 0x00, 0x32, 0xb0, 0x05, 0x0a, 0x14, 0x4e, 0x56, 0x4d, 0x65, 0x4e, 0x61, 0x6d, 0x65,
+	0x73, 0x70, 0x61, 0x63, 0x65, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0x70, 0x0a, 0x13,
+	0x4e, 0x56, 0x4d, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x43, 0x72, 0x65,
+	0x61, 0x74, 0x65, 0x12, 0x2a, 0x2e, 0x6f, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67,
+	0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x56, 0x4d, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61,
+	0x63, 0x65, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
+	0x2b, 0x2e, 0x6f, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31,
+	0x2e, 0x4e, 0x56, 0x4d, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x43, 0x72,
+	0x65, 0x61, 0x74, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x70,
+	0x0a, 0x13, 0x4e, 0x56, 0x4d, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x44,
+	0x65, 0x6c, 0x65, 0x74, 0x65, 0x12, 0x2a, 0x2e, 0x6f, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72,
 	0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x56, 0x4d, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x73,
-	0x70, 0x61, 0x63, 0x65, 0x47, 0x65, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x28,
-	0x2e, 0x6f, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e,
-	0x4e, 0x56, 0x4d, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x47, 0x65, 0x74,
-	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x6d, 0x0a, 0x12, 0x4e, 0x56,
-	0x4d, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x53, 0x74, 0x61, 0x74, 0x73,
-	0x12, 0x29, 0x2e, 0x6f, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76,
-	0x31, 0x2e, 0x4e, 0x56, 0x4d, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x53,
-	0x74, 0x61, 0x74, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2a, 0x2e, 0x6f, 0x70,
+	0x70, 0x61, 0x63, 0x65, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
+	0x74, 0x1a, 0x2b, 0x2e, 0x6f, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e,
+	0x76, 0x31, 0x2e, 0x4e, 0x56, 0x4d, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65,
+	0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00,
+	0x12, 0x70, 0x0a, 0x13, 0x4e, 0x56, 0x4d, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63,
+	0x65, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x12, 0x2a, 0x2e, 0x6f, 0x70, 0x69, 0x2e, 0x73, 0x74,
+	0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x56, 0x4d, 0x65, 0x4e, 0x61, 0x6d,
+	0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x52, 0x65, 0x71, 0x75,
+	0x65, 0x73, 0x74, 0x1a, 0x2b, 0x2e, 0x6f, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67,
+	0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x56, 0x4d, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61,
+	0x63, 0x65, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
+	0x22, 0x00, 0x12, 0x6a, 0x0a, 0x11, 0x4e, 0x56, 0x4d, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70,
+	0x61, 0x63, 0x65, 0x4c, 0x69, 0x73, 0x74, 0x12, 0x28, 0x2e, 0x6f, 0x70, 0x69, 0x2e, 0x73, 0x74,
+	0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x56, 0x4d, 0x65, 0x4e, 0x61, 0x6d,
+	0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x4c, 0x69, 0x73, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
+	0x74, 0x1a, 0x29, 0x2e, 0x6f, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e,
+	0x76, 0x31, 0x2e, 0x4e, 0x56, 0x4d, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65,
+	0x4c, 0x69, 0x73, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x67,
+	0x0a, 0x10, 0x4e, 0x56, 0x4d, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x47,
+	0x65, 0x74, 0x12, 0x27, 0x2e, 0x6f, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65,
+	0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x56, 0x4d, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63,
+	0x65, 0x47, 0x65, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x28, 0x2e, 0x6f, 0x70,
 	0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x56, 0x4d,
-	0x65, 0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x53, 0x74, 0x61, 0x74, 0x73, 0x52,
-	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x42, 0x12, 0x5a, 0x10, 0x2e, 0x2f, 0x6f,
-	0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x62, 0x06, 0x70,
-	0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x65, 0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x47, 0x65, 0x74, 0x52, 0x65, 0x73,
+	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x6d, 0x0a, 0x12, 0x4e, 0x56, 0x4d, 0x65, 0x4e,
+	0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x53, 0x74, 0x61, 0x74, 0x73, 0x12, 0x29, 0x2e,
+	0x6f, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e,
+	0x56, 0x4d, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x53, 0x74, 0x61, 0x74,
+	0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2a, 0x2e, 0x6f, 0x70, 0x69, 0x2e, 0x73,
+	0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x56, 0x4d, 0x65, 0x4e, 0x61,
+	0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x53, 0x74, 0x61, 0x74, 0x73, 0x52, 0x65, 0x73, 0x70,
+	0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x42, 0x2d, 0x5a, 0x2b, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62,
+	0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6f, 0x70, 0x69, 0x70, 0x72, 0x6f, 0x6a, 0x65, 0x63, 0x74, 0x2f,
+	0x6f, 0x70, 0x69, 0x2d, 0x61, 0x70, 0x69, 0x2f, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2f,
+	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -2303,87 +2397,102 @@ func file_frontend_proto_rawDescGZIP() []byte {
 	return file_frontend_proto_rawDescData
 }
 
-var file_frontend_proto_msgTypes = make([]protoimpl.MessageInfo, 36)
+var file_frontend_proto_msgTypes = make([]protoimpl.MessageInfo, 39)
 var file_frontend_proto_goTypes = []interface{}{
-	(*NVMeSubsystemCreateRequest)(nil),   // 0: opi.storage.v1.NVMeSubsystemCreateRequest
-	(*NVMeSubsystemCreateResponse)(nil),  // 1: opi.storage.v1.NVMeSubsystemCreateResponse
-	(*NVMeSubsystemDeleteRequest)(nil),   // 2: opi.storage.v1.NVMeSubsystemDeleteRequest
-	(*NVMeSubsystemDeleteResponse)(nil),  // 3: opi.storage.v1.NVMeSubsystemDeleteResponse
-	(*NVMeSubsystemUpdateRequest)(nil),   // 4: opi.storage.v1.NVMeSubsystemUpdateRequest
-	(*NVMeSubsystemUpdateResponse)(nil),  // 5: opi.storage.v1.NVMeSubsystemUpdateResponse
-	(*NVMeSubsystemListRequest)(nil),     // 6: opi.storage.v1.NVMeSubsystemListRequest
-	(*NVMeSubsystemListResponse)(nil),    // 7: opi.storage.v1.NVMeSubsystemListResponse
-	(*NVMeSubsystemGetRequest)(nil),      // 8: opi.storage.v1.NVMeSubsystemGetRequest
-	(*NVMeSubsystemGetResponse)(nil),     // 9: opi.storage.v1.NVMeSubsystemGetResponse
-	(*NVMeSubsystemStatsRequest)(nil),    // 10: opi.storage.v1.NVMeSubsystemStatsRequest
-	(*NVMeSubsystemStatsResponse)(nil),   // 11: opi.storage.v1.NVMeSubsystemStatsResponse
-	(*NVMeControllerCreateRequest)(nil),  // 12: opi.storage.v1.NVMeControllerCreateRequest
-	(*NVMeControllerCreateResponse)(nil), // 13: opi.storage.v1.NVMeControllerCreateResponse
-	(*NVMeControllerDeleteRequest)(nil),  // 14: opi.storage.v1.NVMeControllerDeleteRequest
-	(*NVMeControllerDeleteResponse)(nil), // 15: opi.storage.v1.NVMeControllerDeleteResponse
-	(*NVMeControllerUpdateRequest)(nil),  // 16: opi.storage.v1.NVMeControllerUpdateRequest
-	(*NVMeControllerUpdateResponse)(nil), // 17: opi.storage.v1.NVMeControllerUpdateResponse
-	(*NVMeControllerListRequest)(nil),    // 18: opi.storage.v1.NVMeControllerListRequest
-	(*NVMeControllerListResponse)(nil),   // 19: opi.storage.v1.NVMeControllerListResponse
-	(*NVMeControllerGetRequest)(nil),     // 20: opi.storage.v1.NVMeControllerGetRequest
-	(*NVMeControllerGetResponse)(nil),    // 21: opi.storage.v1.NVMeControllerGetResponse
-	(*NVMeControllerStatsRequest)(nil),   // 22: opi.storage.v1.NVMeControllerStatsRequest
-	(*NVMeControllerStatsResponse)(nil),  // 23: opi.storage.v1.NVMeControllerStatsResponse
-	(*NVMeNamespaceCreateRequest)(nil),   // 24: opi.storage.v1.NVMeNamespaceCreateRequest
-	(*NVMeNamespaceCreateResponse)(nil),  // 25: opi.storage.v1.NVMeNamespaceCreateResponse
-	(*NVMeNamespaceDeleteRequest)(nil),   // 26: opi.storage.v1.NVMeNamespaceDeleteRequest
-	(*NVMeNamespaceDeleteResponse)(nil),  // 27: opi.storage.v1.NVMeNamespaceDeleteResponse
-	(*NVMeNamespaceUpdateRequest)(nil),   // 28: opi.storage.v1.NVMeNamespaceUpdateRequest
-	(*NVMeNamespaceUpdateResponse)(nil),  // 29: opi.storage.v1.NVMeNamespaceUpdateResponse
-	(*NVMeNamespaceListRequest)(nil),     // 30: opi.storage.v1.NVMeNamespaceListRequest
-	(*NVMeNamespaceListResponse)(nil),    // 31: opi.storage.v1.NVMeNamespaceListResponse
-	(*NVMeNamespaceGetRequest)(nil),      // 32: opi.storage.v1.NVMeNamespaceGetRequest
-	(*NVMeNamespaceGetResponse)(nil),     // 33: opi.storage.v1.NVMeNamespaceGetResponse
-	(*NVMeNamespaceStatsRequest)(nil),    // 34: opi.storage.v1.NVMeNamespaceStatsRequest
-	(*NVMeNamespaceStatsResponse)(nil),   // 35: opi.storage.v1.NVMeNamespaceStatsResponse
+	(*NVMeSubsystem)(nil),                // 0: opi.storage.v1.NVMeSubsystem
+	(*NVMeController)(nil),               // 1: opi.storage.v1.NVMeController
+	(*NVMeNamespace)(nil),                // 2: opi.storage.v1.NVMeNamespace
+	(*NVMeSubsystemCreateRequest)(nil),   // 3: opi.storage.v1.NVMeSubsystemCreateRequest
+	(*NVMeSubsystemCreateResponse)(nil),  // 4: opi.storage.v1.NVMeSubsystemCreateResponse
+	(*NVMeSubsystemDeleteRequest)(nil),   // 5: opi.storage.v1.NVMeSubsystemDeleteRequest
+	(*NVMeSubsystemDeleteResponse)(nil),  // 6: opi.storage.v1.NVMeSubsystemDeleteResponse
+	(*NVMeSubsystemUpdateRequest)(nil),   // 7: opi.storage.v1.NVMeSubsystemUpdateRequest
+	(*NVMeSubsystemUpdateResponse)(nil),  // 8: opi.storage.v1.NVMeSubsystemUpdateResponse
+	(*NVMeSubsystemListRequest)(nil),     // 9: opi.storage.v1.NVMeSubsystemListRequest
+	(*NVMeSubsystemListResponse)(nil),    // 10: opi.storage.v1.NVMeSubsystemListResponse
+	(*NVMeSubsystemGetRequest)(nil),      // 11: opi.storage.v1.NVMeSubsystemGetRequest
+	(*NVMeSubsystemGetResponse)(nil),     // 12: opi.storage.v1.NVMeSubsystemGetResponse
+	(*NVMeSubsystemStatsRequest)(nil),    // 13: opi.storage.v1.NVMeSubsystemStatsRequest
+	(*NVMeSubsystemStatsResponse)(nil),   // 14: opi.storage.v1.NVMeSubsystemStatsResponse
+	(*NVMeControllerCreateRequest)(nil),  // 15: opi.storage.v1.NVMeControllerCreateRequest
+	(*NVMeControllerCreateResponse)(nil), // 16: opi.storage.v1.NVMeControllerCreateResponse
+	(*NVMeControllerDeleteRequest)(nil),  // 17: opi.storage.v1.NVMeControllerDeleteRequest
+	(*NVMeControllerDeleteResponse)(nil), // 18: opi.storage.v1.NVMeControllerDeleteResponse
+	(*NVMeControllerUpdateRequest)(nil),  // 19: opi.storage.v1.NVMeControllerUpdateRequest
+	(*NVMeControllerUpdateResponse)(nil), // 20: opi.storage.v1.NVMeControllerUpdateResponse
+	(*NVMeControllerListRequest)(nil),    // 21: opi.storage.v1.NVMeControllerListRequest
+	(*NVMeControllerListResponse)(nil),   // 22: opi.storage.v1.NVMeControllerListResponse
+	(*NVMeControllerGetRequest)(nil),     // 23: opi.storage.v1.NVMeControllerGetRequest
+	(*NVMeControllerGetResponse)(nil),    // 24: opi.storage.v1.NVMeControllerGetResponse
+	(*NVMeControllerStatsRequest)(nil),   // 25: opi.storage.v1.NVMeControllerStatsRequest
+	(*NVMeControllerStatsResponse)(nil),  // 26: opi.storage.v1.NVMeControllerStatsResponse
+	(*NVMeNamespaceCreateRequest)(nil),   // 27: opi.storage.v1.NVMeNamespaceCreateRequest
+	(*NVMeNamespaceCreateResponse)(nil),  // 28: opi.storage.v1.NVMeNamespaceCreateResponse
+	(*NVMeNamespaceDeleteRequest)(nil),   // 29: opi.storage.v1.NVMeNamespaceDeleteRequest
+	(*NVMeNamespaceDeleteResponse)(nil),  // 30: opi.storage.v1.NVMeNamespaceDeleteResponse
+	(*NVMeNamespaceUpdateRequest)(nil),   // 31: opi.storage.v1.NVMeNamespaceUpdateRequest
+	(*NVMeNamespaceUpdateResponse)(nil),  // 32: opi.storage.v1.NVMeNamespaceUpdateResponse
+	(*NVMeNamespaceListRequest)(nil),     // 33: opi.storage.v1.NVMeNamespaceListRequest
+	(*NVMeNamespaceListResponse)(nil),    // 34: opi.storage.v1.NVMeNamespaceListResponse
+	(*NVMeNamespaceGetRequest)(nil),      // 35: opi.storage.v1.NVMeNamespaceGetRequest
+	(*NVMeNamespaceGetResponse)(nil),     // 36: opi.storage.v1.NVMeNamespaceGetResponse
+	(*NVMeNamespaceStatsRequest)(nil),    // 37: opi.storage.v1.NVMeNamespaceStatsRequest
+	(*NVMeNamespaceStatsResponse)(nil),   // 38: opi.storage.v1.NVMeNamespaceStatsResponse
 }
 var file_frontend_proto_depIdxs = []int32{
-	0,  // 0: opi.storage.v1.NVMeSubsystem.NVMeSubsystemCreate:input_type -> opi.storage.v1.NVMeSubsystemCreateRequest
-	2,  // 1: opi.storage.v1.NVMeSubsystem.NVMeSubsystemDelete:input_type -> opi.storage.v1.NVMeSubsystemDeleteRequest
-	4,  // 2: opi.storage.v1.NVMeSubsystem.NVMeSubsystemUpdate:input_type -> opi.storage.v1.NVMeSubsystemUpdateRequest
-	6,  // 3: opi.storage.v1.NVMeSubsystem.NVMeSubsystemList:input_type -> opi.storage.v1.NVMeSubsystemListRequest
-	8,  // 4: opi.storage.v1.NVMeSubsystem.NVMeSubsystemGet:input_type -> opi.storage.v1.NVMeSubsystemGetRequest
-	10, // 5: opi.storage.v1.NVMeSubsystem.NVMeSubsystemStats:input_type -> opi.storage.v1.NVMeSubsystemStatsRequest
-	12, // 6: opi.storage.v1.NVMeController.NVMeControllerCreate:input_type -> opi.storage.v1.NVMeControllerCreateRequest
-	14, // 7: opi.storage.v1.NVMeController.NVMeControllerDelete:input_type -> opi.storage.v1.NVMeControllerDeleteRequest
-	16, // 8: opi.storage.v1.NVMeController.NVMeControllerUpdate:input_type -> opi.storage.v1.NVMeControllerUpdateRequest
-	18, // 9: opi.storage.v1.NVMeController.NVMeControllerList:input_type -> opi.storage.v1.NVMeControllerListRequest
-	20, // 10: opi.storage.v1.NVMeController.NVMeControllerGet:input_type -> opi.storage.v1.NVMeControllerGetRequest
-	22, // 11: opi.storage.v1.NVMeController.NVMeControllerStats:input_type -> opi.storage.v1.NVMeControllerStatsRequest
-	24, // 12: opi.storage.v1.NVMeNamespace.NVMeNamespaceCreate:input_type -> opi.storage.v1.NVMeNamespaceCreateRequest
-	26, // 13: opi.storage.v1.NVMeNamespace.NVMeNamespaceDelete:input_type -> opi.storage.v1.NVMeNamespaceDeleteRequest
-	28, // 14: opi.storage.v1.NVMeNamespace.NVMeNamespaceUpdate:input_type -> opi.storage.v1.NVMeNamespaceUpdateRequest
-	30, // 15: opi.storage.v1.NVMeNamespace.NVMeNamespaceList:input_type -> opi.storage.v1.NVMeNamespaceListRequest
-	32, // 16: opi.storage.v1.NVMeNamespace.NVMeNamespaceGet:input_type -> opi.storage.v1.NVMeNamespaceGetRequest
-	34, // 17: opi.storage.v1.NVMeNamespace.NVMeNamespaceStats:input_type -> opi.storage.v1.NVMeNamespaceStatsRequest
-	1,  // 18: opi.storage.v1.NVMeSubsystem.NVMeSubsystemCreate:output_type -> opi.storage.v1.NVMeSubsystemCreateResponse
-	3,  // 19: opi.storage.v1.NVMeSubsystem.NVMeSubsystemDelete:output_type -> opi.storage.v1.NVMeSubsystemDeleteResponse
-	5,  // 20: opi.storage.v1.NVMeSubsystem.NVMeSubsystemUpdate:output_type -> opi.storage.v1.NVMeSubsystemUpdateResponse
-	7,  // 21: opi.storage.v1.NVMeSubsystem.NVMeSubsystemList:output_type -> opi.storage.v1.NVMeSubsystemListResponse
-	9,  // 22: opi.storage.v1.NVMeSubsystem.NVMeSubsystemGet:output_type -> opi.storage.v1.NVMeSubsystemGetResponse
-	11, // 23: opi.storage.v1.NVMeSubsystem.NVMeSubsystemStats:output_type -> opi.storage.v1.NVMeSubsystemStatsResponse
-	13, // 24: opi.storage.v1.NVMeController.NVMeControllerCreate:output_type -> opi.storage.v1.NVMeControllerCreateResponse
-	15, // 25: opi.storage.v1.NVMeController.NVMeControllerDelete:output_type -> opi.storage.v1.NVMeControllerDeleteResponse
-	17, // 26: opi.storage.v1.NVMeController.NVMeControllerUpdate:output_type -> opi.storage.v1.NVMeControllerUpdateResponse
-	19, // 27: opi.storage.v1.NVMeController.NVMeControllerList:output_type -> opi.storage.v1.NVMeControllerListResponse
-	21, // 28: opi.storage.v1.NVMeController.NVMeControllerGet:output_type -> opi.storage.v1.NVMeControllerGetResponse
-	23, // 29: opi.storage.v1.NVMeController.NVMeControllerStats:output_type -> opi.storage.v1.NVMeControllerStatsResponse
-	25, // 30: opi.storage.v1.NVMeNamespace.NVMeNamespaceCreate:output_type -> opi.storage.v1.NVMeNamespaceCreateResponse
-	27, // 31: opi.storage.v1.NVMeNamespace.NVMeNamespaceDelete:output_type -> opi.storage.v1.NVMeNamespaceDeleteResponse
-	29, // 32: opi.storage.v1.NVMeNamespace.NVMeNamespaceUpdate:output_type -> opi.storage.v1.NVMeNamespaceUpdateResponse
-	31, // 33: opi.storage.v1.NVMeNamespace.NVMeNamespaceList:output_type -> opi.storage.v1.NVMeNamespaceListResponse
-	33, // 34: opi.storage.v1.NVMeNamespace.NVMeNamespaceGet:output_type -> opi.storage.v1.NVMeNamespaceGetResponse
-	35, // 35: opi.storage.v1.NVMeNamespace.NVMeNamespaceStats:output_type -> opi.storage.v1.NVMeNamespaceStatsResponse
-	18, // [18:36] is the sub-list for method output_type
-	0,  // [0:18] is the sub-list for method input_type
-	0,  // [0:0] is the sub-list for extension type_name
-	0,  // [0:0] is the sub-list for extension extendee
-	0,  // [0:0] is the sub-list for field type_name
+	0,  // 0: opi.storage.v1.NVMeSubsystemCreateRequest.Subsystem:type_name -> opi.storage.v1.NVMeSubsystem
+	0,  // 1: opi.storage.v1.NVMeSubsystemUpdateRequest.Subsystem:type_name -> opi.storage.v1.NVMeSubsystem
+	0,  // 2: opi.storage.v1.NVMeSubsystemListResponse.Subsystem:type_name -> opi.storage.v1.NVMeSubsystem
+	0,  // 3: opi.storage.v1.NVMeSubsystemGetResponse.Subsystem:type_name -> opi.storage.v1.NVMeSubsystem
+	1,  // 4: opi.storage.v1.NVMeControllerCreateRequest.Controller:type_name -> opi.storage.v1.NVMeController
+	1,  // 5: opi.storage.v1.NVMeControllerUpdateRequest.Controller:type_name -> opi.storage.v1.NVMeController
+	1,  // 6: opi.storage.v1.NVMeControllerListResponse.Controller:type_name -> opi.storage.v1.NVMeController
+	1,  // 7: opi.storage.v1.NVMeControllerGetResponse.Controller:type_name -> opi.storage.v1.NVMeController
+	2,  // 8: opi.storage.v1.NVMeNamespaceCreateRequest.Namespace:type_name -> opi.storage.v1.NVMeNamespace
+	2,  // 9: opi.storage.v1.NVMeNamespaceUpdateRequest.Namespace:type_name -> opi.storage.v1.NVMeNamespace
+	2,  // 10: opi.storage.v1.NVMeNamespaceListResponse.Namespace:type_name -> opi.storage.v1.NVMeNamespace
+	2,  // 11: opi.storage.v1.NVMeNamespaceGetResponse.Namespace:type_name -> opi.storage.v1.NVMeNamespace
+	3,  // 12: opi.storage.v1.NVMeSubsystemService.NVMeSubsystemCreate:input_type -> opi.storage.v1.NVMeSubsystemCreateRequest
+	5,  // 13: opi.storage.v1.NVMeSubsystemService.NVMeSubsystemDelete:input_type -> opi.storage.v1.NVMeSubsystemDeleteRequest
+	7,  // 14: opi.storage.v1.NVMeSubsystemService.NVMeSubsystemUpdate:input_type -> opi.storage.v1.NVMeSubsystemUpdateRequest
+	9,  // 15: opi.storage.v1.NVMeSubsystemService.NVMeSubsystemList:input_type -> opi.storage.v1.NVMeSubsystemListRequest
+	11, // 16: opi.storage.v1.NVMeSubsystemService.NVMeSubsystemGet:input_type -> opi.storage.v1.NVMeSubsystemGetRequest
+	13, // 17: opi.storage.v1.NVMeSubsystemService.NVMeSubsystemStats:input_type -> opi.storage.v1.NVMeSubsystemStatsRequest
+	15, // 18: opi.storage.v1.NVMeControllerService.NVMeControllerCreate:input_type -> opi.storage.v1.NVMeControllerCreateRequest
+	17, // 19: opi.storage.v1.NVMeControllerService.NVMeControllerDelete:input_type -> opi.storage.v1.NVMeControllerDeleteRequest
+	19, // 20: opi.storage.v1.NVMeControllerService.NVMeControllerUpdate:input_type -> opi.storage.v1.NVMeControllerUpdateRequest
+	21, // 21: opi.storage.v1.NVMeControllerService.NVMeControllerList:input_type -> opi.storage.v1.NVMeControllerListRequest
+	23, // 22: opi.storage.v1.NVMeControllerService.NVMeControllerGet:input_type -> opi.storage.v1.NVMeControllerGetRequest
+	25, // 23: opi.storage.v1.NVMeControllerService.NVMeControllerStats:input_type -> opi.storage.v1.NVMeControllerStatsRequest
+	27, // 24: opi.storage.v1.NVMeNamespaceService.NVMeNamespaceCreate:input_type -> opi.storage.v1.NVMeNamespaceCreateRequest
+	29, // 25: opi.storage.v1.NVMeNamespaceService.NVMeNamespaceDelete:input_type -> opi.storage.v1.NVMeNamespaceDeleteRequest
+	31, // 26: opi.storage.v1.NVMeNamespaceService.NVMeNamespaceUpdate:input_type -> opi.storage.v1.NVMeNamespaceUpdateRequest
+	33, // 27: opi.storage.v1.NVMeNamespaceService.NVMeNamespaceList:input_type -> opi.storage.v1.NVMeNamespaceListRequest
+	35, // 28: opi.storage.v1.NVMeNamespaceService.NVMeNamespaceGet:input_type -> opi.storage.v1.NVMeNamespaceGetRequest
+	37, // 29: opi.storage.v1.NVMeNamespaceService.NVMeNamespaceStats:input_type -> opi.storage.v1.NVMeNamespaceStatsRequest
+	4,  // 30: opi.storage.v1.NVMeSubsystemService.NVMeSubsystemCreate:output_type -> opi.storage.v1.NVMeSubsystemCreateResponse
+	6,  // 31: opi.storage.v1.NVMeSubsystemService.NVMeSubsystemDelete:output_type -> opi.storage.v1.NVMeSubsystemDeleteResponse
+	8,  // 32: opi.storage.v1.NVMeSubsystemService.NVMeSubsystemUpdate:output_type -> opi.storage.v1.NVMeSubsystemUpdateResponse
+	10, // 33: opi.storage.v1.NVMeSubsystemService.NVMeSubsystemList:output_type -> opi.storage.v1.NVMeSubsystemListResponse
+	12, // 34: opi.storage.v1.NVMeSubsystemService.NVMeSubsystemGet:output_type -> opi.storage.v1.NVMeSubsystemGetResponse
+	14, // 35: opi.storage.v1.NVMeSubsystemService.NVMeSubsystemStats:output_type -> opi.storage.v1.NVMeSubsystemStatsResponse
+	16, // 36: opi.storage.v1.NVMeControllerService.NVMeControllerCreate:output_type -> opi.storage.v1.NVMeControllerCreateResponse
+	18, // 37: opi.storage.v1.NVMeControllerService.NVMeControllerDelete:output_type -> opi.storage.v1.NVMeControllerDeleteResponse
+	20, // 38: opi.storage.v1.NVMeControllerService.NVMeControllerUpdate:output_type -> opi.storage.v1.NVMeControllerUpdateResponse
+	22, // 39: opi.storage.v1.NVMeControllerService.NVMeControllerList:output_type -> opi.storage.v1.NVMeControllerListResponse
+	24, // 40: opi.storage.v1.NVMeControllerService.NVMeControllerGet:output_type -> opi.storage.v1.NVMeControllerGetResponse
+	26, // 41: opi.storage.v1.NVMeControllerService.NVMeControllerStats:output_type -> opi.storage.v1.NVMeControllerStatsResponse
+	28, // 42: opi.storage.v1.NVMeNamespaceService.NVMeNamespaceCreate:output_type -> opi.storage.v1.NVMeNamespaceCreateResponse
+	30, // 43: opi.storage.v1.NVMeNamespaceService.NVMeNamespaceDelete:output_type -> opi.storage.v1.NVMeNamespaceDeleteResponse
+	32, // 44: opi.storage.v1.NVMeNamespaceService.NVMeNamespaceUpdate:output_type -> opi.storage.v1.NVMeNamespaceUpdateResponse
+	34, // 45: opi.storage.v1.NVMeNamespaceService.NVMeNamespaceList:output_type -> opi.storage.v1.NVMeNamespaceListResponse
+	36, // 46: opi.storage.v1.NVMeNamespaceService.NVMeNamespaceGet:output_type -> opi.storage.v1.NVMeNamespaceGetResponse
+	38, // 47: opi.storage.v1.NVMeNamespaceService.NVMeNamespaceStats:output_type -> opi.storage.v1.NVMeNamespaceStatsResponse
+	30, // [30:48] is the sub-list for method output_type
+	12, // [12:30] is the sub-list for method input_type
+	12, // [12:12] is the sub-list for extension type_name
+	12, // [12:12] is the sub-list for extension extendee
+	0,  // [0:12] is the sub-list for field type_name
 }
 
 func init() { file_frontend_proto_init() }
@@ -2393,7 +2502,7 @@ func file_frontend_proto_init() {
 	}
 	if !protoimpl.UnsafeEnabled {
 		file_frontend_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*NVMeSubsystemCreateRequest); i {
+			switch v := v.(*NVMeSubsystem); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2405,7 +2514,7 @@ func file_frontend_proto_init() {
 			}
 		}
 		file_frontend_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*NVMeSubsystemCreateResponse); i {
+			switch v := v.(*NVMeController); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2417,7 +2526,7 @@ func file_frontend_proto_init() {
 			}
 		}
 		file_frontend_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*NVMeSubsystemDeleteRequest); i {
+			switch v := v.(*NVMeNamespace); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2429,7 +2538,7 @@ func file_frontend_proto_init() {
 			}
 		}
 		file_frontend_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*NVMeSubsystemDeleteResponse); i {
+			switch v := v.(*NVMeSubsystemCreateRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2441,7 +2550,7 @@ func file_frontend_proto_init() {
 			}
 		}
 		file_frontend_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*NVMeSubsystemUpdateRequest); i {
+			switch v := v.(*NVMeSubsystemCreateResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2453,7 +2562,7 @@ func file_frontend_proto_init() {
 			}
 		}
 		file_frontend_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*NVMeSubsystemUpdateResponse); i {
+			switch v := v.(*NVMeSubsystemDeleteRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2465,7 +2574,7 @@ func file_frontend_proto_init() {
 			}
 		}
 		file_frontend_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*NVMeSubsystemListRequest); i {
+			switch v := v.(*NVMeSubsystemDeleteResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2477,7 +2586,7 @@ func file_frontend_proto_init() {
 			}
 		}
 		file_frontend_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*NVMeSubsystemListResponse); i {
+			switch v := v.(*NVMeSubsystemUpdateRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2489,7 +2598,7 @@ func file_frontend_proto_init() {
 			}
 		}
 		file_frontend_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*NVMeSubsystemGetRequest); i {
+			switch v := v.(*NVMeSubsystemUpdateResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2501,7 +2610,7 @@ func file_frontend_proto_init() {
 			}
 		}
 		file_frontend_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*NVMeSubsystemGetResponse); i {
+			switch v := v.(*NVMeSubsystemListRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2513,7 +2622,7 @@ func file_frontend_proto_init() {
 			}
 		}
 		file_frontend_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*NVMeSubsystemStatsRequest); i {
+			switch v := v.(*NVMeSubsystemListResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2525,7 +2634,7 @@ func file_frontend_proto_init() {
 			}
 		}
 		file_frontend_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*NVMeSubsystemStatsResponse); i {
+			switch v := v.(*NVMeSubsystemGetRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2537,7 +2646,7 @@ func file_frontend_proto_init() {
 			}
 		}
 		file_frontend_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*NVMeControllerCreateRequest); i {
+			switch v := v.(*NVMeSubsystemGetResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2549,7 +2658,7 @@ func file_frontend_proto_init() {
 			}
 		}
 		file_frontend_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*NVMeControllerCreateResponse); i {
+			switch v := v.(*NVMeSubsystemStatsRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2561,7 +2670,7 @@ func file_frontend_proto_init() {
 			}
 		}
 		file_frontend_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*NVMeControllerDeleteRequest); i {
+			switch v := v.(*NVMeSubsystemStatsResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2573,7 +2682,7 @@ func file_frontend_proto_init() {
 			}
 		}
 		file_frontend_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*NVMeControllerDeleteResponse); i {
+			switch v := v.(*NVMeControllerCreateRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2585,7 +2694,7 @@ func file_frontend_proto_init() {
 			}
 		}
 		file_frontend_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*NVMeControllerUpdateRequest); i {
+			switch v := v.(*NVMeControllerCreateResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2597,7 +2706,7 @@ func file_frontend_proto_init() {
 			}
 		}
 		file_frontend_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*NVMeControllerUpdateResponse); i {
+			switch v := v.(*NVMeControllerDeleteRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2609,7 +2718,7 @@ func file_frontend_proto_init() {
 			}
 		}
 		file_frontend_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*NVMeControllerListRequest); i {
+			switch v := v.(*NVMeControllerDeleteResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2621,7 +2730,7 @@ func file_frontend_proto_init() {
 			}
 		}
 		file_frontend_proto_msgTypes[19].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*NVMeControllerListResponse); i {
+			switch v := v.(*NVMeControllerUpdateRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2633,7 +2742,7 @@ func file_frontend_proto_init() {
 			}
 		}
 		file_frontend_proto_msgTypes[20].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*NVMeControllerGetRequest); i {
+			switch v := v.(*NVMeControllerUpdateResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2645,7 +2754,7 @@ func file_frontend_proto_init() {
 			}
 		}
 		file_frontend_proto_msgTypes[21].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*NVMeControllerGetResponse); i {
+			switch v := v.(*NVMeControllerListRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2657,7 +2766,7 @@ func file_frontend_proto_init() {
 			}
 		}
 		file_frontend_proto_msgTypes[22].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*NVMeControllerStatsRequest); i {
+			switch v := v.(*NVMeControllerListResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2669,7 +2778,7 @@ func file_frontend_proto_init() {
 			}
 		}
 		file_frontend_proto_msgTypes[23].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*NVMeControllerStatsResponse); i {
+			switch v := v.(*NVMeControllerGetRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2681,7 +2790,7 @@ func file_frontend_proto_init() {
 			}
 		}
 		file_frontend_proto_msgTypes[24].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*NVMeNamespaceCreateRequest); i {
+			switch v := v.(*NVMeControllerGetResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2693,7 +2802,7 @@ func file_frontend_proto_init() {
 			}
 		}
 		file_frontend_proto_msgTypes[25].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*NVMeNamespaceCreateResponse); i {
+			switch v := v.(*NVMeControllerStatsRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2705,7 +2814,7 @@ func file_frontend_proto_init() {
 			}
 		}
 		file_frontend_proto_msgTypes[26].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*NVMeNamespaceDeleteRequest); i {
+			switch v := v.(*NVMeControllerStatsResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2717,7 +2826,7 @@ func file_frontend_proto_init() {
 			}
 		}
 		file_frontend_proto_msgTypes[27].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*NVMeNamespaceDeleteResponse); i {
+			switch v := v.(*NVMeNamespaceCreateRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2729,7 +2838,7 @@ func file_frontend_proto_init() {
 			}
 		}
 		file_frontend_proto_msgTypes[28].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*NVMeNamespaceUpdateRequest); i {
+			switch v := v.(*NVMeNamespaceCreateResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2741,7 +2850,7 @@ func file_frontend_proto_init() {
 			}
 		}
 		file_frontend_proto_msgTypes[29].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*NVMeNamespaceUpdateResponse); i {
+			switch v := v.(*NVMeNamespaceDeleteRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2753,7 +2862,7 @@ func file_frontend_proto_init() {
 			}
 		}
 		file_frontend_proto_msgTypes[30].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*NVMeNamespaceListRequest); i {
+			switch v := v.(*NVMeNamespaceDeleteResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2765,7 +2874,7 @@ func file_frontend_proto_init() {
 			}
 		}
 		file_frontend_proto_msgTypes[31].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*NVMeNamespaceListResponse); i {
+			switch v := v.(*NVMeNamespaceUpdateRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2777,7 +2886,7 @@ func file_frontend_proto_init() {
 			}
 		}
 		file_frontend_proto_msgTypes[32].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*NVMeNamespaceGetRequest); i {
+			switch v := v.(*NVMeNamespaceUpdateResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2789,7 +2898,7 @@ func file_frontend_proto_init() {
 			}
 		}
 		file_frontend_proto_msgTypes[33].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*NVMeNamespaceGetResponse); i {
+			switch v := v.(*NVMeNamespaceListRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2801,7 +2910,7 @@ func file_frontend_proto_init() {
 			}
 		}
 		file_frontend_proto_msgTypes[34].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*NVMeNamespaceStatsRequest); i {
+			switch v := v.(*NVMeNamespaceListResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2813,6 +2922,42 @@ func file_frontend_proto_init() {
 			}
 		}
 		file_frontend_proto_msgTypes[35].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*NVMeNamespaceGetRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_frontend_proto_msgTypes[36].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*NVMeNamespaceGetResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_frontend_proto_msgTypes[37].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*NVMeNamespaceStatsRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_frontend_proto_msgTypes[38].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*NVMeNamespaceStatsResponse); i {
 			case 0:
 				return &v.state
@@ -2831,7 +2976,7 @@ func file_frontend_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_frontend_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   36,
+			NumMessages:   39,
 			NumExtensions: 0,
 			NumServices:   3,
 		},
@@ -2853,10 +2998,10 @@ var _ grpc.ClientConnInterface
 // is compatible with the grpc package it is being compiled against.
 const _ = grpc.SupportPackageIsVersion6
 
-// NVMeSubsystemClient is the client API for NVMeSubsystem service.
+// NVMeSubsystemServiceClient is the client API for NVMeSubsystemService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
-type NVMeSubsystemClient interface {
+type NVMeSubsystemServiceClient interface {
 	NVMeSubsystemCreate(ctx context.Context, in *NVMeSubsystemCreateRequest, opts ...grpc.CallOption) (*NVMeSubsystemCreateResponse, error)
 	NVMeSubsystemDelete(ctx context.Context, in *NVMeSubsystemDeleteRequest, opts ...grpc.CallOption) (*NVMeSubsystemDeleteResponse, error)
 	NVMeSubsystemUpdate(ctx context.Context, in *NVMeSubsystemUpdateRequest, opts ...grpc.CallOption) (*NVMeSubsystemUpdateResponse, error)
@@ -2865,70 +3010,70 @@ type NVMeSubsystemClient interface {
 	NVMeSubsystemStats(ctx context.Context, in *NVMeSubsystemStatsRequest, opts ...grpc.CallOption) (*NVMeSubsystemStatsResponse, error)
 }
 
-type nVMeSubsystemClient struct {
+type nVMeSubsystemServiceClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewNVMeSubsystemClient(cc grpc.ClientConnInterface) NVMeSubsystemClient {
-	return &nVMeSubsystemClient{cc}
+func NewNVMeSubsystemServiceClient(cc grpc.ClientConnInterface) NVMeSubsystemServiceClient {
+	return &nVMeSubsystemServiceClient{cc}
 }
 
-func (c *nVMeSubsystemClient) NVMeSubsystemCreate(ctx context.Context, in *NVMeSubsystemCreateRequest, opts ...grpc.CallOption) (*NVMeSubsystemCreateResponse, error) {
+func (c *nVMeSubsystemServiceClient) NVMeSubsystemCreate(ctx context.Context, in *NVMeSubsystemCreateRequest, opts ...grpc.CallOption) (*NVMeSubsystemCreateResponse, error) {
 	out := new(NVMeSubsystemCreateResponse)
-	err := c.cc.Invoke(ctx, "/opi.storage.v1.NVMeSubsystem/NVMeSubsystemCreate", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/opi.storage.v1.NVMeSubsystemService/NVMeSubsystemCreate", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *nVMeSubsystemClient) NVMeSubsystemDelete(ctx context.Context, in *NVMeSubsystemDeleteRequest, opts ...grpc.CallOption) (*NVMeSubsystemDeleteResponse, error) {
+func (c *nVMeSubsystemServiceClient) NVMeSubsystemDelete(ctx context.Context, in *NVMeSubsystemDeleteRequest, opts ...grpc.CallOption) (*NVMeSubsystemDeleteResponse, error) {
 	out := new(NVMeSubsystemDeleteResponse)
-	err := c.cc.Invoke(ctx, "/opi.storage.v1.NVMeSubsystem/NVMeSubsystemDelete", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/opi.storage.v1.NVMeSubsystemService/NVMeSubsystemDelete", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *nVMeSubsystemClient) NVMeSubsystemUpdate(ctx context.Context, in *NVMeSubsystemUpdateRequest, opts ...grpc.CallOption) (*NVMeSubsystemUpdateResponse, error) {
+func (c *nVMeSubsystemServiceClient) NVMeSubsystemUpdate(ctx context.Context, in *NVMeSubsystemUpdateRequest, opts ...grpc.CallOption) (*NVMeSubsystemUpdateResponse, error) {
 	out := new(NVMeSubsystemUpdateResponse)
-	err := c.cc.Invoke(ctx, "/opi.storage.v1.NVMeSubsystem/NVMeSubsystemUpdate", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/opi.storage.v1.NVMeSubsystemService/NVMeSubsystemUpdate", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *nVMeSubsystemClient) NVMeSubsystemList(ctx context.Context, in *NVMeSubsystemListRequest, opts ...grpc.CallOption) (*NVMeSubsystemListResponse, error) {
+func (c *nVMeSubsystemServiceClient) NVMeSubsystemList(ctx context.Context, in *NVMeSubsystemListRequest, opts ...grpc.CallOption) (*NVMeSubsystemListResponse, error) {
 	out := new(NVMeSubsystemListResponse)
-	err := c.cc.Invoke(ctx, "/opi.storage.v1.NVMeSubsystem/NVMeSubsystemList", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/opi.storage.v1.NVMeSubsystemService/NVMeSubsystemList", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *nVMeSubsystemClient) NVMeSubsystemGet(ctx context.Context, in *NVMeSubsystemGetRequest, opts ...grpc.CallOption) (*NVMeSubsystemGetResponse, error) {
+func (c *nVMeSubsystemServiceClient) NVMeSubsystemGet(ctx context.Context, in *NVMeSubsystemGetRequest, opts ...grpc.CallOption) (*NVMeSubsystemGetResponse, error) {
 	out := new(NVMeSubsystemGetResponse)
-	err := c.cc.Invoke(ctx, "/opi.storage.v1.NVMeSubsystem/NVMeSubsystemGet", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/opi.storage.v1.NVMeSubsystemService/NVMeSubsystemGet", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *nVMeSubsystemClient) NVMeSubsystemStats(ctx context.Context, in *NVMeSubsystemStatsRequest, opts ...grpc.CallOption) (*NVMeSubsystemStatsResponse, error) {
+func (c *nVMeSubsystemServiceClient) NVMeSubsystemStats(ctx context.Context, in *NVMeSubsystemStatsRequest, opts ...grpc.CallOption) (*NVMeSubsystemStatsResponse, error) {
 	out := new(NVMeSubsystemStatsResponse)
-	err := c.cc.Invoke(ctx, "/opi.storage.v1.NVMeSubsystem/NVMeSubsystemStats", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/opi.storage.v1.NVMeSubsystemService/NVMeSubsystemStats", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// NVMeSubsystemServer is the server API for NVMeSubsystem service.
-type NVMeSubsystemServer interface {
+// NVMeSubsystemServiceServer is the server API for NVMeSubsystemService service.
+type NVMeSubsystemServiceServer interface {
 	NVMeSubsystemCreate(context.Context, *NVMeSubsystemCreateRequest) (*NVMeSubsystemCreateResponse, error)
 	NVMeSubsystemDelete(context.Context, *NVMeSubsystemDeleteRequest) (*NVMeSubsystemDeleteResponse, error)
 	NVMeSubsystemUpdate(context.Context, *NVMeSubsystemUpdateRequest) (*NVMeSubsystemUpdateResponse, error)
@@ -2937,178 +3082,178 @@ type NVMeSubsystemServer interface {
 	NVMeSubsystemStats(context.Context, *NVMeSubsystemStatsRequest) (*NVMeSubsystemStatsResponse, error)
 }
 
-// UnimplementedNVMeSubsystemServer can be embedded to have forward compatible implementations.
-type UnimplementedNVMeSubsystemServer struct {
+// UnimplementedNVMeSubsystemServiceServer can be embedded to have forward compatible implementations.
+type UnimplementedNVMeSubsystemServiceServer struct {
 }
 
-func (*UnimplementedNVMeSubsystemServer) NVMeSubsystemCreate(context.Context, *NVMeSubsystemCreateRequest) (*NVMeSubsystemCreateResponse, error) {
+func (*UnimplementedNVMeSubsystemServiceServer) NVMeSubsystemCreate(context.Context, *NVMeSubsystemCreateRequest) (*NVMeSubsystemCreateResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method NVMeSubsystemCreate not implemented")
 }
-func (*UnimplementedNVMeSubsystemServer) NVMeSubsystemDelete(context.Context, *NVMeSubsystemDeleteRequest) (*NVMeSubsystemDeleteResponse, error) {
+func (*UnimplementedNVMeSubsystemServiceServer) NVMeSubsystemDelete(context.Context, *NVMeSubsystemDeleteRequest) (*NVMeSubsystemDeleteResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method NVMeSubsystemDelete not implemented")
 }
-func (*UnimplementedNVMeSubsystemServer) NVMeSubsystemUpdate(context.Context, *NVMeSubsystemUpdateRequest) (*NVMeSubsystemUpdateResponse, error) {
+func (*UnimplementedNVMeSubsystemServiceServer) NVMeSubsystemUpdate(context.Context, *NVMeSubsystemUpdateRequest) (*NVMeSubsystemUpdateResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method NVMeSubsystemUpdate not implemented")
 }
-func (*UnimplementedNVMeSubsystemServer) NVMeSubsystemList(context.Context, *NVMeSubsystemListRequest) (*NVMeSubsystemListResponse, error) {
+func (*UnimplementedNVMeSubsystemServiceServer) NVMeSubsystemList(context.Context, *NVMeSubsystemListRequest) (*NVMeSubsystemListResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method NVMeSubsystemList not implemented")
 }
-func (*UnimplementedNVMeSubsystemServer) NVMeSubsystemGet(context.Context, *NVMeSubsystemGetRequest) (*NVMeSubsystemGetResponse, error) {
+func (*UnimplementedNVMeSubsystemServiceServer) NVMeSubsystemGet(context.Context, *NVMeSubsystemGetRequest) (*NVMeSubsystemGetResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method NVMeSubsystemGet not implemented")
 }
-func (*UnimplementedNVMeSubsystemServer) NVMeSubsystemStats(context.Context, *NVMeSubsystemStatsRequest) (*NVMeSubsystemStatsResponse, error) {
+func (*UnimplementedNVMeSubsystemServiceServer) NVMeSubsystemStats(context.Context, *NVMeSubsystemStatsRequest) (*NVMeSubsystemStatsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method NVMeSubsystemStats not implemented")
 }
 
-func RegisterNVMeSubsystemServer(s *grpc.Server, srv NVMeSubsystemServer) {
-	s.RegisterService(&_NVMeSubsystem_serviceDesc, srv)
+func RegisterNVMeSubsystemServiceServer(s *grpc.Server, srv NVMeSubsystemServiceServer) {
+	s.RegisterService(&_NVMeSubsystemService_serviceDesc, srv)
 }
 
-func _NVMeSubsystem_NVMeSubsystemCreate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _NVMeSubsystemService_NVMeSubsystemCreate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(NVMeSubsystemCreateRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(NVMeSubsystemServer).NVMeSubsystemCreate(ctx, in)
+		return srv.(NVMeSubsystemServiceServer).NVMeSubsystemCreate(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/opi.storage.v1.NVMeSubsystem/NVMeSubsystemCreate",
+		FullMethod: "/opi.storage.v1.NVMeSubsystemService/NVMeSubsystemCreate",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(NVMeSubsystemServer).NVMeSubsystemCreate(ctx, req.(*NVMeSubsystemCreateRequest))
+		return srv.(NVMeSubsystemServiceServer).NVMeSubsystemCreate(ctx, req.(*NVMeSubsystemCreateRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _NVMeSubsystem_NVMeSubsystemDelete_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _NVMeSubsystemService_NVMeSubsystemDelete_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(NVMeSubsystemDeleteRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(NVMeSubsystemServer).NVMeSubsystemDelete(ctx, in)
+		return srv.(NVMeSubsystemServiceServer).NVMeSubsystemDelete(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/opi.storage.v1.NVMeSubsystem/NVMeSubsystemDelete",
+		FullMethod: "/opi.storage.v1.NVMeSubsystemService/NVMeSubsystemDelete",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(NVMeSubsystemServer).NVMeSubsystemDelete(ctx, req.(*NVMeSubsystemDeleteRequest))
+		return srv.(NVMeSubsystemServiceServer).NVMeSubsystemDelete(ctx, req.(*NVMeSubsystemDeleteRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _NVMeSubsystem_NVMeSubsystemUpdate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _NVMeSubsystemService_NVMeSubsystemUpdate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(NVMeSubsystemUpdateRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(NVMeSubsystemServer).NVMeSubsystemUpdate(ctx, in)
+		return srv.(NVMeSubsystemServiceServer).NVMeSubsystemUpdate(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/opi.storage.v1.NVMeSubsystem/NVMeSubsystemUpdate",
+		FullMethod: "/opi.storage.v1.NVMeSubsystemService/NVMeSubsystemUpdate",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(NVMeSubsystemServer).NVMeSubsystemUpdate(ctx, req.(*NVMeSubsystemUpdateRequest))
+		return srv.(NVMeSubsystemServiceServer).NVMeSubsystemUpdate(ctx, req.(*NVMeSubsystemUpdateRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _NVMeSubsystem_NVMeSubsystemList_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _NVMeSubsystemService_NVMeSubsystemList_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(NVMeSubsystemListRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(NVMeSubsystemServer).NVMeSubsystemList(ctx, in)
+		return srv.(NVMeSubsystemServiceServer).NVMeSubsystemList(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/opi.storage.v1.NVMeSubsystem/NVMeSubsystemList",
+		FullMethod: "/opi.storage.v1.NVMeSubsystemService/NVMeSubsystemList",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(NVMeSubsystemServer).NVMeSubsystemList(ctx, req.(*NVMeSubsystemListRequest))
+		return srv.(NVMeSubsystemServiceServer).NVMeSubsystemList(ctx, req.(*NVMeSubsystemListRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _NVMeSubsystem_NVMeSubsystemGet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _NVMeSubsystemService_NVMeSubsystemGet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(NVMeSubsystemGetRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(NVMeSubsystemServer).NVMeSubsystemGet(ctx, in)
+		return srv.(NVMeSubsystemServiceServer).NVMeSubsystemGet(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/opi.storage.v1.NVMeSubsystem/NVMeSubsystemGet",
+		FullMethod: "/opi.storage.v1.NVMeSubsystemService/NVMeSubsystemGet",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(NVMeSubsystemServer).NVMeSubsystemGet(ctx, req.(*NVMeSubsystemGetRequest))
+		return srv.(NVMeSubsystemServiceServer).NVMeSubsystemGet(ctx, req.(*NVMeSubsystemGetRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _NVMeSubsystem_NVMeSubsystemStats_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _NVMeSubsystemService_NVMeSubsystemStats_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(NVMeSubsystemStatsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(NVMeSubsystemServer).NVMeSubsystemStats(ctx, in)
+		return srv.(NVMeSubsystemServiceServer).NVMeSubsystemStats(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/opi.storage.v1.NVMeSubsystem/NVMeSubsystemStats",
+		FullMethod: "/opi.storage.v1.NVMeSubsystemService/NVMeSubsystemStats",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(NVMeSubsystemServer).NVMeSubsystemStats(ctx, req.(*NVMeSubsystemStatsRequest))
+		return srv.(NVMeSubsystemServiceServer).NVMeSubsystemStats(ctx, req.(*NVMeSubsystemStatsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-var _NVMeSubsystem_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "opi.storage.v1.NVMeSubsystem",
-	HandlerType: (*NVMeSubsystemServer)(nil),
+var _NVMeSubsystemService_serviceDesc = grpc.ServiceDesc{
+	ServiceName: "opi.storage.v1.NVMeSubsystemService",
+	HandlerType: (*NVMeSubsystemServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "NVMeSubsystemCreate",
-			Handler:    _NVMeSubsystem_NVMeSubsystemCreate_Handler,
+			Handler:    _NVMeSubsystemService_NVMeSubsystemCreate_Handler,
 		},
 		{
 			MethodName: "NVMeSubsystemDelete",
-			Handler:    _NVMeSubsystem_NVMeSubsystemDelete_Handler,
+			Handler:    _NVMeSubsystemService_NVMeSubsystemDelete_Handler,
 		},
 		{
 			MethodName: "NVMeSubsystemUpdate",
-			Handler:    _NVMeSubsystem_NVMeSubsystemUpdate_Handler,
+			Handler:    _NVMeSubsystemService_NVMeSubsystemUpdate_Handler,
 		},
 		{
 			MethodName: "NVMeSubsystemList",
-			Handler:    _NVMeSubsystem_NVMeSubsystemList_Handler,
+			Handler:    _NVMeSubsystemService_NVMeSubsystemList_Handler,
 		},
 		{
 			MethodName: "NVMeSubsystemGet",
-			Handler:    _NVMeSubsystem_NVMeSubsystemGet_Handler,
+			Handler:    _NVMeSubsystemService_NVMeSubsystemGet_Handler,
 		},
 		{
 			MethodName: "NVMeSubsystemStats",
-			Handler:    _NVMeSubsystem_NVMeSubsystemStats_Handler,
+			Handler:    _NVMeSubsystemService_NVMeSubsystemStats_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
 	Metadata: "frontend.proto",
 }
 
-// NVMeControllerClient is the client API for NVMeController service.
+// NVMeControllerServiceClient is the client API for NVMeControllerService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
-type NVMeControllerClient interface {
+type NVMeControllerServiceClient interface {
 	NVMeControllerCreate(ctx context.Context, in *NVMeControllerCreateRequest, opts ...grpc.CallOption) (*NVMeControllerCreateResponse, error)
 	NVMeControllerDelete(ctx context.Context, in *NVMeControllerDeleteRequest, opts ...grpc.CallOption) (*NVMeControllerDeleteResponse, error)
 	NVMeControllerUpdate(ctx context.Context, in *NVMeControllerUpdateRequest, opts ...grpc.CallOption) (*NVMeControllerUpdateResponse, error)
@@ -3117,70 +3262,70 @@ type NVMeControllerClient interface {
 	NVMeControllerStats(ctx context.Context, in *NVMeControllerStatsRequest, opts ...grpc.CallOption) (*NVMeControllerStatsResponse, error)
 }
 
-type nVMeControllerClient struct {
+type nVMeControllerServiceClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewNVMeControllerClient(cc grpc.ClientConnInterface) NVMeControllerClient {
-	return &nVMeControllerClient{cc}
+func NewNVMeControllerServiceClient(cc grpc.ClientConnInterface) NVMeControllerServiceClient {
+	return &nVMeControllerServiceClient{cc}
 }
 
-func (c *nVMeControllerClient) NVMeControllerCreate(ctx context.Context, in *NVMeControllerCreateRequest, opts ...grpc.CallOption) (*NVMeControllerCreateResponse, error) {
+func (c *nVMeControllerServiceClient) NVMeControllerCreate(ctx context.Context, in *NVMeControllerCreateRequest, opts ...grpc.CallOption) (*NVMeControllerCreateResponse, error) {
 	out := new(NVMeControllerCreateResponse)
-	err := c.cc.Invoke(ctx, "/opi.storage.v1.NVMeController/NVMeControllerCreate", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/opi.storage.v1.NVMeControllerService/NVMeControllerCreate", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *nVMeControllerClient) NVMeControllerDelete(ctx context.Context, in *NVMeControllerDeleteRequest, opts ...grpc.CallOption) (*NVMeControllerDeleteResponse, error) {
+func (c *nVMeControllerServiceClient) NVMeControllerDelete(ctx context.Context, in *NVMeControllerDeleteRequest, opts ...grpc.CallOption) (*NVMeControllerDeleteResponse, error) {
 	out := new(NVMeControllerDeleteResponse)
-	err := c.cc.Invoke(ctx, "/opi.storage.v1.NVMeController/NVMeControllerDelete", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/opi.storage.v1.NVMeControllerService/NVMeControllerDelete", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *nVMeControllerClient) NVMeControllerUpdate(ctx context.Context, in *NVMeControllerUpdateRequest, opts ...grpc.CallOption) (*NVMeControllerUpdateResponse, error) {
+func (c *nVMeControllerServiceClient) NVMeControllerUpdate(ctx context.Context, in *NVMeControllerUpdateRequest, opts ...grpc.CallOption) (*NVMeControllerUpdateResponse, error) {
 	out := new(NVMeControllerUpdateResponse)
-	err := c.cc.Invoke(ctx, "/opi.storage.v1.NVMeController/NVMeControllerUpdate", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/opi.storage.v1.NVMeControllerService/NVMeControllerUpdate", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *nVMeControllerClient) NVMeControllerList(ctx context.Context, in *NVMeControllerListRequest, opts ...grpc.CallOption) (*NVMeControllerListResponse, error) {
+func (c *nVMeControllerServiceClient) NVMeControllerList(ctx context.Context, in *NVMeControllerListRequest, opts ...grpc.CallOption) (*NVMeControllerListResponse, error) {
 	out := new(NVMeControllerListResponse)
-	err := c.cc.Invoke(ctx, "/opi.storage.v1.NVMeController/NVMeControllerList", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/opi.storage.v1.NVMeControllerService/NVMeControllerList", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *nVMeControllerClient) NVMeControllerGet(ctx context.Context, in *NVMeControllerGetRequest, opts ...grpc.CallOption) (*NVMeControllerGetResponse, error) {
+func (c *nVMeControllerServiceClient) NVMeControllerGet(ctx context.Context, in *NVMeControllerGetRequest, opts ...grpc.CallOption) (*NVMeControllerGetResponse, error) {
 	out := new(NVMeControllerGetResponse)
-	err := c.cc.Invoke(ctx, "/opi.storage.v1.NVMeController/NVMeControllerGet", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/opi.storage.v1.NVMeControllerService/NVMeControllerGet", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *nVMeControllerClient) NVMeControllerStats(ctx context.Context, in *NVMeControllerStatsRequest, opts ...grpc.CallOption) (*NVMeControllerStatsResponse, error) {
+func (c *nVMeControllerServiceClient) NVMeControllerStats(ctx context.Context, in *NVMeControllerStatsRequest, opts ...grpc.CallOption) (*NVMeControllerStatsResponse, error) {
 	out := new(NVMeControllerStatsResponse)
-	err := c.cc.Invoke(ctx, "/opi.storage.v1.NVMeController/NVMeControllerStats", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/opi.storage.v1.NVMeControllerService/NVMeControllerStats", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// NVMeControllerServer is the server API for NVMeController service.
-type NVMeControllerServer interface {
+// NVMeControllerServiceServer is the server API for NVMeControllerService service.
+type NVMeControllerServiceServer interface {
 	NVMeControllerCreate(context.Context, *NVMeControllerCreateRequest) (*NVMeControllerCreateResponse, error)
 	NVMeControllerDelete(context.Context, *NVMeControllerDeleteRequest) (*NVMeControllerDeleteResponse, error)
 	NVMeControllerUpdate(context.Context, *NVMeControllerUpdateRequest) (*NVMeControllerUpdateResponse, error)
@@ -3189,178 +3334,178 @@ type NVMeControllerServer interface {
 	NVMeControllerStats(context.Context, *NVMeControllerStatsRequest) (*NVMeControllerStatsResponse, error)
 }
 
-// UnimplementedNVMeControllerServer can be embedded to have forward compatible implementations.
-type UnimplementedNVMeControllerServer struct {
+// UnimplementedNVMeControllerServiceServer can be embedded to have forward compatible implementations.
+type UnimplementedNVMeControllerServiceServer struct {
 }
 
-func (*UnimplementedNVMeControllerServer) NVMeControllerCreate(context.Context, *NVMeControllerCreateRequest) (*NVMeControllerCreateResponse, error) {
+func (*UnimplementedNVMeControllerServiceServer) NVMeControllerCreate(context.Context, *NVMeControllerCreateRequest) (*NVMeControllerCreateResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method NVMeControllerCreate not implemented")
 }
-func (*UnimplementedNVMeControllerServer) NVMeControllerDelete(context.Context, *NVMeControllerDeleteRequest) (*NVMeControllerDeleteResponse, error) {
+func (*UnimplementedNVMeControllerServiceServer) NVMeControllerDelete(context.Context, *NVMeControllerDeleteRequest) (*NVMeControllerDeleteResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method NVMeControllerDelete not implemented")
 }
-func (*UnimplementedNVMeControllerServer) NVMeControllerUpdate(context.Context, *NVMeControllerUpdateRequest) (*NVMeControllerUpdateResponse, error) {
+func (*UnimplementedNVMeControllerServiceServer) NVMeControllerUpdate(context.Context, *NVMeControllerUpdateRequest) (*NVMeControllerUpdateResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method NVMeControllerUpdate not implemented")
 }
-func (*UnimplementedNVMeControllerServer) NVMeControllerList(context.Context, *NVMeControllerListRequest) (*NVMeControllerListResponse, error) {
+func (*UnimplementedNVMeControllerServiceServer) NVMeControllerList(context.Context, *NVMeControllerListRequest) (*NVMeControllerListResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method NVMeControllerList not implemented")
 }
-func (*UnimplementedNVMeControllerServer) NVMeControllerGet(context.Context, *NVMeControllerGetRequest) (*NVMeControllerGetResponse, error) {
+func (*UnimplementedNVMeControllerServiceServer) NVMeControllerGet(context.Context, *NVMeControllerGetRequest) (*NVMeControllerGetResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method NVMeControllerGet not implemented")
 }
-func (*UnimplementedNVMeControllerServer) NVMeControllerStats(context.Context, *NVMeControllerStatsRequest) (*NVMeControllerStatsResponse, error) {
+func (*UnimplementedNVMeControllerServiceServer) NVMeControllerStats(context.Context, *NVMeControllerStatsRequest) (*NVMeControllerStatsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method NVMeControllerStats not implemented")
 }
 
-func RegisterNVMeControllerServer(s *grpc.Server, srv NVMeControllerServer) {
-	s.RegisterService(&_NVMeController_serviceDesc, srv)
+func RegisterNVMeControllerServiceServer(s *grpc.Server, srv NVMeControllerServiceServer) {
+	s.RegisterService(&_NVMeControllerService_serviceDesc, srv)
 }
 
-func _NVMeController_NVMeControllerCreate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _NVMeControllerService_NVMeControllerCreate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(NVMeControllerCreateRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(NVMeControllerServer).NVMeControllerCreate(ctx, in)
+		return srv.(NVMeControllerServiceServer).NVMeControllerCreate(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/opi.storage.v1.NVMeController/NVMeControllerCreate",
+		FullMethod: "/opi.storage.v1.NVMeControllerService/NVMeControllerCreate",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(NVMeControllerServer).NVMeControllerCreate(ctx, req.(*NVMeControllerCreateRequest))
+		return srv.(NVMeControllerServiceServer).NVMeControllerCreate(ctx, req.(*NVMeControllerCreateRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _NVMeController_NVMeControllerDelete_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _NVMeControllerService_NVMeControllerDelete_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(NVMeControllerDeleteRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(NVMeControllerServer).NVMeControllerDelete(ctx, in)
+		return srv.(NVMeControllerServiceServer).NVMeControllerDelete(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/opi.storage.v1.NVMeController/NVMeControllerDelete",
+		FullMethod: "/opi.storage.v1.NVMeControllerService/NVMeControllerDelete",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(NVMeControllerServer).NVMeControllerDelete(ctx, req.(*NVMeControllerDeleteRequest))
+		return srv.(NVMeControllerServiceServer).NVMeControllerDelete(ctx, req.(*NVMeControllerDeleteRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _NVMeController_NVMeControllerUpdate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _NVMeControllerService_NVMeControllerUpdate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(NVMeControllerUpdateRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(NVMeControllerServer).NVMeControllerUpdate(ctx, in)
+		return srv.(NVMeControllerServiceServer).NVMeControllerUpdate(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/opi.storage.v1.NVMeController/NVMeControllerUpdate",
+		FullMethod: "/opi.storage.v1.NVMeControllerService/NVMeControllerUpdate",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(NVMeControllerServer).NVMeControllerUpdate(ctx, req.(*NVMeControllerUpdateRequest))
+		return srv.(NVMeControllerServiceServer).NVMeControllerUpdate(ctx, req.(*NVMeControllerUpdateRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _NVMeController_NVMeControllerList_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _NVMeControllerService_NVMeControllerList_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(NVMeControllerListRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(NVMeControllerServer).NVMeControllerList(ctx, in)
+		return srv.(NVMeControllerServiceServer).NVMeControllerList(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/opi.storage.v1.NVMeController/NVMeControllerList",
+		FullMethod: "/opi.storage.v1.NVMeControllerService/NVMeControllerList",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(NVMeControllerServer).NVMeControllerList(ctx, req.(*NVMeControllerListRequest))
+		return srv.(NVMeControllerServiceServer).NVMeControllerList(ctx, req.(*NVMeControllerListRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _NVMeController_NVMeControllerGet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _NVMeControllerService_NVMeControllerGet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(NVMeControllerGetRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(NVMeControllerServer).NVMeControllerGet(ctx, in)
+		return srv.(NVMeControllerServiceServer).NVMeControllerGet(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/opi.storage.v1.NVMeController/NVMeControllerGet",
+		FullMethod: "/opi.storage.v1.NVMeControllerService/NVMeControllerGet",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(NVMeControllerServer).NVMeControllerGet(ctx, req.(*NVMeControllerGetRequest))
+		return srv.(NVMeControllerServiceServer).NVMeControllerGet(ctx, req.(*NVMeControllerGetRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _NVMeController_NVMeControllerStats_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _NVMeControllerService_NVMeControllerStats_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(NVMeControllerStatsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(NVMeControllerServer).NVMeControllerStats(ctx, in)
+		return srv.(NVMeControllerServiceServer).NVMeControllerStats(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/opi.storage.v1.NVMeController/NVMeControllerStats",
+		FullMethod: "/opi.storage.v1.NVMeControllerService/NVMeControllerStats",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(NVMeControllerServer).NVMeControllerStats(ctx, req.(*NVMeControllerStatsRequest))
+		return srv.(NVMeControllerServiceServer).NVMeControllerStats(ctx, req.(*NVMeControllerStatsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-var _NVMeController_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "opi.storage.v1.NVMeController",
-	HandlerType: (*NVMeControllerServer)(nil),
+var _NVMeControllerService_serviceDesc = grpc.ServiceDesc{
+	ServiceName: "opi.storage.v1.NVMeControllerService",
+	HandlerType: (*NVMeControllerServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "NVMeControllerCreate",
-			Handler:    _NVMeController_NVMeControllerCreate_Handler,
+			Handler:    _NVMeControllerService_NVMeControllerCreate_Handler,
 		},
 		{
 			MethodName: "NVMeControllerDelete",
-			Handler:    _NVMeController_NVMeControllerDelete_Handler,
+			Handler:    _NVMeControllerService_NVMeControllerDelete_Handler,
 		},
 		{
 			MethodName: "NVMeControllerUpdate",
-			Handler:    _NVMeController_NVMeControllerUpdate_Handler,
+			Handler:    _NVMeControllerService_NVMeControllerUpdate_Handler,
 		},
 		{
 			MethodName: "NVMeControllerList",
-			Handler:    _NVMeController_NVMeControllerList_Handler,
+			Handler:    _NVMeControllerService_NVMeControllerList_Handler,
 		},
 		{
 			MethodName: "NVMeControllerGet",
-			Handler:    _NVMeController_NVMeControllerGet_Handler,
+			Handler:    _NVMeControllerService_NVMeControllerGet_Handler,
 		},
 		{
 			MethodName: "NVMeControllerStats",
-			Handler:    _NVMeController_NVMeControllerStats_Handler,
+			Handler:    _NVMeControllerService_NVMeControllerStats_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
 	Metadata: "frontend.proto",
 }
 
-// NVMeNamespaceClient is the client API for NVMeNamespace service.
+// NVMeNamespaceServiceClient is the client API for NVMeNamespaceService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
-type NVMeNamespaceClient interface {
+type NVMeNamespaceServiceClient interface {
 	NVMeNamespaceCreate(ctx context.Context, in *NVMeNamespaceCreateRequest, opts ...grpc.CallOption) (*NVMeNamespaceCreateResponse, error)
 	NVMeNamespaceDelete(ctx context.Context, in *NVMeNamespaceDeleteRequest, opts ...grpc.CallOption) (*NVMeNamespaceDeleteResponse, error)
 	NVMeNamespaceUpdate(ctx context.Context, in *NVMeNamespaceUpdateRequest, opts ...grpc.CallOption) (*NVMeNamespaceUpdateResponse, error)
@@ -3369,70 +3514,70 @@ type NVMeNamespaceClient interface {
 	NVMeNamespaceStats(ctx context.Context, in *NVMeNamespaceStatsRequest, opts ...grpc.CallOption) (*NVMeNamespaceStatsResponse, error)
 }
 
-type nVMeNamespaceClient struct {
+type nVMeNamespaceServiceClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewNVMeNamespaceClient(cc grpc.ClientConnInterface) NVMeNamespaceClient {
-	return &nVMeNamespaceClient{cc}
+func NewNVMeNamespaceServiceClient(cc grpc.ClientConnInterface) NVMeNamespaceServiceClient {
+	return &nVMeNamespaceServiceClient{cc}
 }
 
-func (c *nVMeNamespaceClient) NVMeNamespaceCreate(ctx context.Context, in *NVMeNamespaceCreateRequest, opts ...grpc.CallOption) (*NVMeNamespaceCreateResponse, error) {
+func (c *nVMeNamespaceServiceClient) NVMeNamespaceCreate(ctx context.Context, in *NVMeNamespaceCreateRequest, opts ...grpc.CallOption) (*NVMeNamespaceCreateResponse, error) {
 	out := new(NVMeNamespaceCreateResponse)
-	err := c.cc.Invoke(ctx, "/opi.storage.v1.NVMeNamespace/NVMeNamespaceCreate", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/opi.storage.v1.NVMeNamespaceService/NVMeNamespaceCreate", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *nVMeNamespaceClient) NVMeNamespaceDelete(ctx context.Context, in *NVMeNamespaceDeleteRequest, opts ...grpc.CallOption) (*NVMeNamespaceDeleteResponse, error) {
+func (c *nVMeNamespaceServiceClient) NVMeNamespaceDelete(ctx context.Context, in *NVMeNamespaceDeleteRequest, opts ...grpc.CallOption) (*NVMeNamespaceDeleteResponse, error) {
 	out := new(NVMeNamespaceDeleteResponse)
-	err := c.cc.Invoke(ctx, "/opi.storage.v1.NVMeNamespace/NVMeNamespaceDelete", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/opi.storage.v1.NVMeNamespaceService/NVMeNamespaceDelete", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *nVMeNamespaceClient) NVMeNamespaceUpdate(ctx context.Context, in *NVMeNamespaceUpdateRequest, opts ...grpc.CallOption) (*NVMeNamespaceUpdateResponse, error) {
+func (c *nVMeNamespaceServiceClient) NVMeNamespaceUpdate(ctx context.Context, in *NVMeNamespaceUpdateRequest, opts ...grpc.CallOption) (*NVMeNamespaceUpdateResponse, error) {
 	out := new(NVMeNamespaceUpdateResponse)
-	err := c.cc.Invoke(ctx, "/opi.storage.v1.NVMeNamespace/NVMeNamespaceUpdate", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/opi.storage.v1.NVMeNamespaceService/NVMeNamespaceUpdate", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *nVMeNamespaceClient) NVMeNamespaceList(ctx context.Context, in *NVMeNamespaceListRequest, opts ...grpc.CallOption) (*NVMeNamespaceListResponse, error) {
+func (c *nVMeNamespaceServiceClient) NVMeNamespaceList(ctx context.Context, in *NVMeNamespaceListRequest, opts ...grpc.CallOption) (*NVMeNamespaceListResponse, error) {
 	out := new(NVMeNamespaceListResponse)
-	err := c.cc.Invoke(ctx, "/opi.storage.v1.NVMeNamespace/NVMeNamespaceList", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/opi.storage.v1.NVMeNamespaceService/NVMeNamespaceList", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *nVMeNamespaceClient) NVMeNamespaceGet(ctx context.Context, in *NVMeNamespaceGetRequest, opts ...grpc.CallOption) (*NVMeNamespaceGetResponse, error) {
+func (c *nVMeNamespaceServiceClient) NVMeNamespaceGet(ctx context.Context, in *NVMeNamespaceGetRequest, opts ...grpc.CallOption) (*NVMeNamespaceGetResponse, error) {
 	out := new(NVMeNamespaceGetResponse)
-	err := c.cc.Invoke(ctx, "/opi.storage.v1.NVMeNamespace/NVMeNamespaceGet", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/opi.storage.v1.NVMeNamespaceService/NVMeNamespaceGet", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *nVMeNamespaceClient) NVMeNamespaceStats(ctx context.Context, in *NVMeNamespaceStatsRequest, opts ...grpc.CallOption) (*NVMeNamespaceStatsResponse, error) {
+func (c *nVMeNamespaceServiceClient) NVMeNamespaceStats(ctx context.Context, in *NVMeNamespaceStatsRequest, opts ...grpc.CallOption) (*NVMeNamespaceStatsResponse, error) {
 	out := new(NVMeNamespaceStatsResponse)
-	err := c.cc.Invoke(ctx, "/opi.storage.v1.NVMeNamespace/NVMeNamespaceStats", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/opi.storage.v1.NVMeNamespaceService/NVMeNamespaceStats", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// NVMeNamespaceServer is the server API for NVMeNamespace service.
-type NVMeNamespaceServer interface {
+// NVMeNamespaceServiceServer is the server API for NVMeNamespaceService service.
+type NVMeNamespaceServiceServer interface {
 	NVMeNamespaceCreate(context.Context, *NVMeNamespaceCreateRequest) (*NVMeNamespaceCreateResponse, error)
 	NVMeNamespaceDelete(context.Context, *NVMeNamespaceDeleteRequest) (*NVMeNamespaceDeleteResponse, error)
 	NVMeNamespaceUpdate(context.Context, *NVMeNamespaceUpdateRequest) (*NVMeNamespaceUpdateResponse, error)
@@ -3441,168 +3586,168 @@ type NVMeNamespaceServer interface {
 	NVMeNamespaceStats(context.Context, *NVMeNamespaceStatsRequest) (*NVMeNamespaceStatsResponse, error)
 }
 
-// UnimplementedNVMeNamespaceServer can be embedded to have forward compatible implementations.
-type UnimplementedNVMeNamespaceServer struct {
+// UnimplementedNVMeNamespaceServiceServer can be embedded to have forward compatible implementations.
+type UnimplementedNVMeNamespaceServiceServer struct {
 }
 
-func (*UnimplementedNVMeNamespaceServer) NVMeNamespaceCreate(context.Context, *NVMeNamespaceCreateRequest) (*NVMeNamespaceCreateResponse, error) {
+func (*UnimplementedNVMeNamespaceServiceServer) NVMeNamespaceCreate(context.Context, *NVMeNamespaceCreateRequest) (*NVMeNamespaceCreateResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method NVMeNamespaceCreate not implemented")
 }
-func (*UnimplementedNVMeNamespaceServer) NVMeNamespaceDelete(context.Context, *NVMeNamespaceDeleteRequest) (*NVMeNamespaceDeleteResponse, error) {
+func (*UnimplementedNVMeNamespaceServiceServer) NVMeNamespaceDelete(context.Context, *NVMeNamespaceDeleteRequest) (*NVMeNamespaceDeleteResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method NVMeNamespaceDelete not implemented")
 }
-func (*UnimplementedNVMeNamespaceServer) NVMeNamespaceUpdate(context.Context, *NVMeNamespaceUpdateRequest) (*NVMeNamespaceUpdateResponse, error) {
+func (*UnimplementedNVMeNamespaceServiceServer) NVMeNamespaceUpdate(context.Context, *NVMeNamespaceUpdateRequest) (*NVMeNamespaceUpdateResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method NVMeNamespaceUpdate not implemented")
 }
-func (*UnimplementedNVMeNamespaceServer) NVMeNamespaceList(context.Context, *NVMeNamespaceListRequest) (*NVMeNamespaceListResponse, error) {
+func (*UnimplementedNVMeNamespaceServiceServer) NVMeNamespaceList(context.Context, *NVMeNamespaceListRequest) (*NVMeNamespaceListResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method NVMeNamespaceList not implemented")
 }
-func (*UnimplementedNVMeNamespaceServer) NVMeNamespaceGet(context.Context, *NVMeNamespaceGetRequest) (*NVMeNamespaceGetResponse, error) {
+func (*UnimplementedNVMeNamespaceServiceServer) NVMeNamespaceGet(context.Context, *NVMeNamespaceGetRequest) (*NVMeNamespaceGetResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method NVMeNamespaceGet not implemented")
 }
-func (*UnimplementedNVMeNamespaceServer) NVMeNamespaceStats(context.Context, *NVMeNamespaceStatsRequest) (*NVMeNamespaceStatsResponse, error) {
+func (*UnimplementedNVMeNamespaceServiceServer) NVMeNamespaceStats(context.Context, *NVMeNamespaceStatsRequest) (*NVMeNamespaceStatsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method NVMeNamespaceStats not implemented")
 }
 
-func RegisterNVMeNamespaceServer(s *grpc.Server, srv NVMeNamespaceServer) {
-	s.RegisterService(&_NVMeNamespace_serviceDesc, srv)
+func RegisterNVMeNamespaceServiceServer(s *grpc.Server, srv NVMeNamespaceServiceServer) {
+	s.RegisterService(&_NVMeNamespaceService_serviceDesc, srv)
 }
 
-func _NVMeNamespace_NVMeNamespaceCreate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _NVMeNamespaceService_NVMeNamespaceCreate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(NVMeNamespaceCreateRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(NVMeNamespaceServer).NVMeNamespaceCreate(ctx, in)
+		return srv.(NVMeNamespaceServiceServer).NVMeNamespaceCreate(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/opi.storage.v1.NVMeNamespace/NVMeNamespaceCreate",
+		FullMethod: "/opi.storage.v1.NVMeNamespaceService/NVMeNamespaceCreate",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(NVMeNamespaceServer).NVMeNamespaceCreate(ctx, req.(*NVMeNamespaceCreateRequest))
+		return srv.(NVMeNamespaceServiceServer).NVMeNamespaceCreate(ctx, req.(*NVMeNamespaceCreateRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _NVMeNamespace_NVMeNamespaceDelete_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _NVMeNamespaceService_NVMeNamespaceDelete_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(NVMeNamespaceDeleteRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(NVMeNamespaceServer).NVMeNamespaceDelete(ctx, in)
+		return srv.(NVMeNamespaceServiceServer).NVMeNamespaceDelete(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/opi.storage.v1.NVMeNamespace/NVMeNamespaceDelete",
+		FullMethod: "/opi.storage.v1.NVMeNamespaceService/NVMeNamespaceDelete",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(NVMeNamespaceServer).NVMeNamespaceDelete(ctx, req.(*NVMeNamespaceDeleteRequest))
+		return srv.(NVMeNamespaceServiceServer).NVMeNamespaceDelete(ctx, req.(*NVMeNamespaceDeleteRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _NVMeNamespace_NVMeNamespaceUpdate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _NVMeNamespaceService_NVMeNamespaceUpdate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(NVMeNamespaceUpdateRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(NVMeNamespaceServer).NVMeNamespaceUpdate(ctx, in)
+		return srv.(NVMeNamespaceServiceServer).NVMeNamespaceUpdate(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/opi.storage.v1.NVMeNamespace/NVMeNamespaceUpdate",
+		FullMethod: "/opi.storage.v1.NVMeNamespaceService/NVMeNamespaceUpdate",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(NVMeNamespaceServer).NVMeNamespaceUpdate(ctx, req.(*NVMeNamespaceUpdateRequest))
+		return srv.(NVMeNamespaceServiceServer).NVMeNamespaceUpdate(ctx, req.(*NVMeNamespaceUpdateRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _NVMeNamespace_NVMeNamespaceList_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _NVMeNamespaceService_NVMeNamespaceList_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(NVMeNamespaceListRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(NVMeNamespaceServer).NVMeNamespaceList(ctx, in)
+		return srv.(NVMeNamespaceServiceServer).NVMeNamespaceList(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/opi.storage.v1.NVMeNamespace/NVMeNamespaceList",
+		FullMethod: "/opi.storage.v1.NVMeNamespaceService/NVMeNamespaceList",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(NVMeNamespaceServer).NVMeNamespaceList(ctx, req.(*NVMeNamespaceListRequest))
+		return srv.(NVMeNamespaceServiceServer).NVMeNamespaceList(ctx, req.(*NVMeNamespaceListRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _NVMeNamespace_NVMeNamespaceGet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _NVMeNamespaceService_NVMeNamespaceGet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(NVMeNamespaceGetRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(NVMeNamespaceServer).NVMeNamespaceGet(ctx, in)
+		return srv.(NVMeNamespaceServiceServer).NVMeNamespaceGet(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/opi.storage.v1.NVMeNamespace/NVMeNamespaceGet",
+		FullMethod: "/opi.storage.v1.NVMeNamespaceService/NVMeNamespaceGet",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(NVMeNamespaceServer).NVMeNamespaceGet(ctx, req.(*NVMeNamespaceGetRequest))
+		return srv.(NVMeNamespaceServiceServer).NVMeNamespaceGet(ctx, req.(*NVMeNamespaceGetRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _NVMeNamespace_NVMeNamespaceStats_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _NVMeNamespaceService_NVMeNamespaceStats_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(NVMeNamespaceStatsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(NVMeNamespaceServer).NVMeNamespaceStats(ctx, in)
+		return srv.(NVMeNamespaceServiceServer).NVMeNamespaceStats(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/opi.storage.v1.NVMeNamespace/NVMeNamespaceStats",
+		FullMethod: "/opi.storage.v1.NVMeNamespaceService/NVMeNamespaceStats",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(NVMeNamespaceServer).NVMeNamespaceStats(ctx, req.(*NVMeNamespaceStatsRequest))
+		return srv.(NVMeNamespaceServiceServer).NVMeNamespaceStats(ctx, req.(*NVMeNamespaceStatsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-var _NVMeNamespace_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "opi.storage.v1.NVMeNamespace",
-	HandlerType: (*NVMeNamespaceServer)(nil),
+var _NVMeNamespaceService_serviceDesc = grpc.ServiceDesc{
+	ServiceName: "opi.storage.v1.NVMeNamespaceService",
+	HandlerType: (*NVMeNamespaceServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "NVMeNamespaceCreate",
-			Handler:    _NVMeNamespace_NVMeNamespaceCreate_Handler,
+			Handler:    _NVMeNamespaceService_NVMeNamespaceCreate_Handler,
 		},
 		{
 			MethodName: "NVMeNamespaceDelete",
-			Handler:    _NVMeNamespace_NVMeNamespaceDelete_Handler,
+			Handler:    _NVMeNamespaceService_NVMeNamespaceDelete_Handler,
 		},
 		{
 			MethodName: "NVMeNamespaceUpdate",
-			Handler:    _NVMeNamespace_NVMeNamespaceUpdate_Handler,
+			Handler:    _NVMeNamespaceService_NVMeNamespaceUpdate_Handler,
 		},
 		{
 			MethodName: "NVMeNamespaceList",
-			Handler:    _NVMeNamespace_NVMeNamespaceList_Handler,
+			Handler:    _NVMeNamespaceService_NVMeNamespaceList_Handler,
 		},
 		{
 			MethodName: "NVMeNamespaceGet",
-			Handler:    _NVMeNamespace_NVMeNamespaceGet_Handler,
+			Handler:    _NVMeNamespaceService_NVMeNamespaceGet_Handler,
 		},
 		{
 			MethodName: "NVMeNamespaceStats",
-			Handler:    _NVMeNamespace_NVMeNamespaceStats_Handler,
+			Handler:    _NVMeNamespaceService_NVMeNamespaceStats_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

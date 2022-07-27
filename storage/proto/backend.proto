@@ -1,12 +1,12 @@
 syntax = "proto3";
 package opi.storage.v1;
-option go_package = "./opi.storage.v1";
+option go_package = "github.com/opiproject/opi-api/storage/proto";
 
 // Back End (network-facing) APIs.
 
 // NVMe/TCP and NVMe/RoCEv2
 
-service NVMfRemoteController {
+service NVMfRemoteControllerService {
     rpc NVMfRemoteControllerConnect (NVMfRemoteControllerConnectRequest) returns (NVMfRemoteControllerConnectResponse) {}
     rpc NVMfRemoteControllerDisconnect (NVMfRemoteControllerDisconnectRequest) returns (NVMfRemoteControllerDisconnectResponse) {}
     rpc NVMfRemoteControllerReset (NVMfRemoteControllerResetRequest) returns (NVMfRemoteControllerResetResponse) {}
@@ -21,63 +21,89 @@ service NVMfRemoteController {
 
 // TODO: NULL - for debug
 
+message NVMfRemoteController {
+    int64 Id = 1;
+    NvmeTransportType trtype = 2;
+    NvmeAddressFamily adrfam = 3;
+    string traddr = 4;
+    int64 trsvcid = 5;
+    string subnqn = 6;
+    bool hdgst = 7;
+    bool ddgst = 8;
+    NvmeMultipath multipath = 9;
+    int64 num_io_queues = 10;
+    int64 queue_size = 11;
+
+}
+
+enum NvmeTransportType {
+    NVME_TRANSPORT_FC     = 0;
+    NVME_TRANSPORT_PCIE   = 1;
+    NVME_TRANSPORT_RDMA   = 2;
+    NVME_TRANSPORT_TCP    = 3;
+    NVME_TRANSPORT_CUSTOM = 4;
+}
+
+enum NvmeAddressFamily {
+    NVMF_ADRFAM_IPV4       = 0;
+    NVMF_ADRFAM_IPV6       = 1;
+    NVMF_ADRFAM_IB         = 2;
+    NVMF_ADRFAM_FC         = 3;
+    NVMF_ADRFAM_INTRA_HOST = 4;
+}
+
+enum NvmeMultipath {
+    NVME_MPIO_DISABLE       = 0;
+    NVME_MPIO_FAILOVER      = 1;
+    NVME_MPIO_MULTIPATH     = 2;
+}
+
 message NVMfRemoteControllerConnectRequest {
-    string name = 1;
-    int64 id = 2;
+    NVMfRemoteController Controller = 1;
 }
 
 message NVMfRemoteControllerConnectResponse {
-    string name = 1;
-    int64 id = 2;
+    // Intentionally empty.
 }
 
 message NVMfRemoteControllerDisconnectRequest {
-    string name = 1;
-    int64 id = 2;
+    int64 Id = 1;
 }
 
 message NVMfRemoteControllerDisconnectResponse {
-    string name = 1;
-    int64 id = 2;
+    // Intentionally empty.
 }
 
 message NVMfRemoteControllerResetRequest {
-    string name = 1;
-    int64 id = 2;
+    int64 Id = 1;
 }
 
 message NVMfRemoteControllerResetResponse {
-    string name = 1;
-    int64 id = 2;
+    // Intentionally empty.
 }
 
 message NVMfRemoteControllerListRequest {
-    string name = 1;
-    int64 id = 2;
+    int64 Id = 1;
 }
 
 message NVMfRemoteControllerListResponse {
-    string name = 1;
-    int64 id = 2;
+    repeated NVMfRemoteController Controller = 1;
 }
 
 message NVMfRemoteControllerGetRequest {
-    string name = 1;
-    int64 id = 2;
+    int64 Id = 1;
 }
 
 message NVMfRemoteControllerGetResponse {
-    string name = 1;
-    int64 id = 2;
+    NVMfRemoteController Controller = 1;
 }
 
 message NVMfRemoteControllerStatsRequest {
-    string name = 1;
-    int64 id = 2;
+    int64 Id = 1;
 }
 
 message NVMfRemoteControllerStatsResponse {
-    string name = 1;
-    int64 id = 2;
+    int64 Id = 1;
+    string Stats = 2;
 }
 
