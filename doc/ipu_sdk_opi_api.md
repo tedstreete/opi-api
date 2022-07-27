@@ -1,6 +1,6 @@
 # Comparing OPI APIs to IPU SDK
 
-The IPU SDK adheres to the [Target Abstraction Interface](https://ipdk.io/documentation/Interfaces/TargetAbstraction/) from [IPDK](ipdk.io).
+The IPU SDK adheres to the [Target Abstraction Interface](https://ipdk.io/documentation/Interfaces/TargetAbstraction/) from [IPDK](https://ipdk.io).
 
 At a high level the TAI is well aligned with the direction the OPI APIs are going.  Where there is good alignment with the SDK shim aspects of the OPI APIs:
 
