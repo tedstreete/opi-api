@@ -12,6 +12,7 @@ At a high level the TAI is well aligned with the direction the OPI APIs are goin
 - Target Abstraction Layer Alignment:  The TAI uses both SAI and TDI for networking and this is aligned to the slide.
 
 Where there is possible divergence between TAI and the OPI APIs are:
+
 - Driver & Library Basis: The TAI is based on running a shared library that links with an application to control the underlying devices. If the OPI Target Abstraction Layer is defined in a different manner (for example a protobuf) then some translation will be required.  For dataplane functions, including trapping exception packets or sending out control plane messages, the TAI relies on drivers, including when data is moved to/from attached hosts (similar to the backend of vhost).
 - API Definition: Since the TAI is a library interface, different library-based APIs are represented in C header files (for example SAI and TDI look the same here).  There are translation layers where there is overlap, for example pragmas used from the [PINS project](https://opennetworking.org/pins/) to map from SAI to TDI.  It would be good to define that the OPI API Target Abstraction Layers as header files (even if they are ultimately derived from protobuf representations).
 - Application vs. Target Separation: The OPI APIs do not have an explicit delineation between what is a Target API vs. an Application API.  There is a concept of NB APIs and Target Interfaces in the API conglomerate diagram but this doesn't match well with the protobuf definitions which mix the two together.
