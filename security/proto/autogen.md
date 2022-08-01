@@ -4,17 +4,17 @@
 ## Table of Contents
 
 - [ipsec.proto](#ipsec-proto)
-    - [IPSec](#opi-security-v1-IPSec)
-    - [IPSecServiceCreateRequest](#opi-security-v1-IPSecServiceCreateRequest)
-    - [IPSecServiceCreateResponse](#opi-security-v1-IPSecServiceCreateResponse)
-    - [IPSecServiceDeleteRequest](#opi-security-v1-IPSecServiceDeleteRequest)
-    - [IPSecServiceDeleteResponse](#opi-security-v1-IPSecServiceDeleteResponse)
-    - [IPSecServiceGetRequest](#opi-security-v1-IPSecServiceGetRequest)
-    - [IPSecServiceGetResponse](#opi-security-v1-IPSecServiceGetResponse)
-    - [IPSecServiceListRequest](#opi-security-v1-IPSecServiceListRequest)
-    - [IPSecServiceListResponse](#opi-security-v1-IPSecServiceListResponse)
-    - [IPSecServiceUpdateRequest](#opi-security-v1-IPSecServiceUpdateRequest)
-    - [IPSecServiceUpdateResponse](#opi-security-v1-IPSecServiceUpdateResponse)
+    - [IPsecCreateRequest](#opi-security-v1-IPsecCreateRequest)
+    - [IPsecCreateResponse](#opi-security-v1-IPsecCreateResponse)
+    - [IPsecData](#opi-security-v1-IPsecData)
+    - [IPsecDeleteRequest](#opi-security-v1-IPsecDeleteRequest)
+    - [IPsecDeleteResponse](#opi-security-v1-IPsecDeleteResponse)
+    - [IPsecGetRequest](#opi-security-v1-IPsecGetRequest)
+    - [IPsecGetResponse](#opi-security-v1-IPsecGetResponse)
+    - [IPsecListRequest](#opi-security-v1-IPsecListRequest)
+    - [IPsecListResponse](#opi-security-v1-IPsecListResponse)
+    - [IPsecUpdateRequest](#opi-security-v1-IPsecUpdateRequest)
+    - [IPsecUpdateResponse](#opi-security-v1-IPsecUpdateResponse)
     - [ResyncRequest](#opi-security-v1-ResyncRequest)
     - [SecurityAssociations](#opi-security-v1-SecurityAssociations)
     - [SecurityAssociations.SA](#opi-security-v1-SecurityAssociations-SA)
@@ -26,11 +26,12 @@
     - [TunnelInterfaces.Tunnel](#opi-security-v1-TunnelInterfaces-Tunnel)
   
     - [CryptoAlgorithm](#opi-security-v1-CryptoAlgorithm)
+    - [IPsecMode](#opi-security-v1-IPsecMode)
     - [IntegAlgorithm](#opi-security-v1-IntegAlgorithm)
-    - [SecurityAssociations.SA.IPSecProtocol](#opi-security-v1-SecurityAssociations-SA-IPSecProtocol)
+    - [SecurityAssociations.SA.IPsecProtocol](#opi-security-v1-SecurityAssociations-SA-IPsecProtocol)
     - [SecurityPolicyDatabases.SPD.PolicyEntry.Action](#opi-security-v1-SecurityPolicyDatabases-SPD-PolicyEntry-Action)
   
-    - [IPSecService](#opi-security-v1-IPSecService)
+    - [IPsec](#opi-security-v1-IPsec)
   
 - [Scalar Value Types](#scalar-value-types)
 
@@ -43,12 +44,38 @@
 Copyright (C) 2021 Intel Corporation
 SPDX-License-Identifier: Apache-2.0
 
-Piece taken from https://github.com/ligato/cn-infra/blob/master/examples/cryptodata-proto-plugin/ipsec/ipsec.proto
+Major pieces taken from:
+https://github.com/ligato/cn-infra/blob/master/examples/cryptodata-proto-plugin/ipsec/ipsec.proto
 
 
-<a name="opi-security-v1-IPSec"></a>
+<a name="opi-security-v1-IPsecCreateRequest"></a>
 
-### IPSec
+### IPsecCreateRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ipsec | [IPsecData](#opi-security-v1-IPsecData) |  |  |
+
+
+
+
+
+
+<a name="opi-security-v1-IPsecCreateResponse"></a>
+
+### IPsecCreateResponse
+Intentionally empty for now
+
+
+
+
+
+
+<a name="opi-security-v1-IPsecData"></a>
+
+### IPsecData
 
 
 
@@ -64,34 +91,9 @@ Piece taken from https://github.com/ligato/cn-infra/blob/master/examples/cryptod
 
 
 
-<a name="opi-security-v1-IPSecServiceCreateRequest"></a>
+<a name="opi-security-v1-IPsecDeleteRequest"></a>
 
-### IPSecServiceCreateRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| ipsec | [IPSec](#opi-security-v1-IPSec) |  |  |
-
-
-
-
-
-
-<a name="opi-security-v1-IPSecServiceCreateResponse"></a>
-
-### IPSecServiceCreateResponse
-Intentionally empty for now
-
-
-
-
-
-
-<a name="opi-security-v1-IPSecServiceDeleteRequest"></a>
-
-### IPSecServiceDeleteRequest
+### IPsecDeleteRequest
 
 
 
@@ -104,9 +106,9 @@ Intentionally empty for now
 
 
 
-<a name="opi-security-v1-IPSecServiceDeleteResponse"></a>
+<a name="opi-security-v1-IPsecDeleteResponse"></a>
 
-### IPSecServiceDeleteResponse
+### IPsecDeleteResponse
 Intentionally empty for now
 
 
@@ -114,9 +116,9 @@ Intentionally empty for now
 
 
 
-<a name="opi-security-v1-IPSecServiceGetRequest"></a>
+<a name="opi-security-v1-IPsecGetRequest"></a>
 
-### IPSecServiceGetRequest
+### IPsecGetRequest
 
 
 
@@ -129,64 +131,69 @@ Intentionally empty for now
 
 
 
-<a name="opi-security-v1-IPSecServiceGetResponse"></a>
+<a name="opi-security-v1-IPsecGetResponse"></a>
 
-### IPSecServiceGetResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| ipsec | [IPSec](#opi-security-v1-IPSec) |  |  |
-
-
-
-
-
-
-<a name="opi-security-v1-IPSecServiceListRequest"></a>
-
-### IPSecServiceListRequest
-Intentionally empty for now
-
-
-
-
-
-
-<a name="opi-security-v1-IPSecServiceListResponse"></a>
-
-### IPSecServiceListResponse
+### IPsecGetResponse
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| ipsec | [IPSec](#opi-security-v1-IPSec) | repeated |  |
+| ipsec | [IPsecData](#opi-security-v1-IPsecData) |  |  |
 
 
 
 
 
 
-<a name="opi-security-v1-IPSecServiceUpdateRequest"></a>
+<a name="opi-security-v1-IPsecListRequest"></a>
 
-### IPSecServiceUpdateRequest
+### IPsecListRequest
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| ipsec | [IPSec](#opi-security-v1-IPSec) |  |  |
+| ID | [int64](#int64) |  |  |
 
 
 
 
 
 
-<a name="opi-security-v1-IPSecServiceUpdateResponse"></a>
+<a name="opi-security-v1-IPsecListResponse"></a>
 
-### IPSecServiceUpdateResponse
+### IPsecListResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ipsec | [IPsecData](#opi-security-v1-IPsecData) | repeated |  |
+
+
+
+
+
+
+<a name="opi-security-v1-IPsecUpdateRequest"></a>
+
+### IPsecUpdateRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ipsec | [IPsecData](#opi-security-v1-IPsecData) |  |  |
+
+
+
+
+
+
+<a name="opi-security-v1-IPsecUpdateResponse"></a>
+
+### IPsecUpdateResponse
 Intentionally empty for now
 
 
@@ -236,7 +243,7 @@ Security Association (SA)
 | ----- | ---- | ----- | ----------- |
 | name | [string](#string) |  | security association name |
 | spi | [uint32](#uint32) |  | security parameter index |
-| protocol | [SecurityAssociations.SA.IPSecProtocol](#opi-security-v1-SecurityAssociations-SA-IPSecProtocol) |  |  |
+| protocol | [SecurityAssociations.SA.IPsecProtocol](#opi-security-v1-SecurityAssociations-SA-IPsecProtocol) |  |  |
 | crypto_alg | [CryptoAlgorithm](#opi-security-v1-CryptoAlgorithm) |  |  |
 | crypto_key | [string](#string) |  |  |
 | integ_alg | [IntegAlgorithm](#opi-security-v1-IntegAlgorithm) |  |  |
@@ -362,6 +369,7 @@ Tunnel Interfaces
 | integ_alg | [IntegAlgorithm](#opi-security-v1-IntegAlgorithm) |  |  |
 | local_integ_key | [string](#string) |  |  |
 | remote_integ_key | [string](#string) |  |  |
+| mode | [IPsecMode](#opi-security-v1-IPsecMode) |  | Tunnel or transport mode |
 | enabled | [bool](#bool) |  | Extra fields related to interface |
 | ip_addresses | [string](#string) | repeated |  |
 | vrf | [uint32](#uint32) |  |  |
@@ -384,6 +392,22 @@ Cryptographic algorithm for encryption
 | AES_CBC_128 | 1 |  |
 | AES_CBC_192 | 2 |  |
 | AES_CBC_256 | 3 |  |
+| AES_GCM_128 | 4 |  |
+| AES_GCM_256 | 5 |  |
+| AES_GMAC_128 | 6 |  |
+| AES_GMAC_256 | 7 |  |
+
+
+
+<a name="opi-security-v1-IPsecMode"></a>
+
+### IPsecMode
+Tunnel mode
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| TUNNEL_MODE | 0 |  |
+| TRANSPORT_MODE | 1 |  |
 
 
 
@@ -404,10 +428,10 @@ Cryptographic algorithm for authentication
 
 
 
-<a name="opi-security-v1-SecurityAssociations-SA-IPSecProtocol"></a>
+<a name="opi-security-v1-SecurityAssociations-SA-IPsecProtocol"></a>
 
-### SecurityAssociations.SA.IPSecProtocol
-IPSec protocol
+### SecurityAssociations.SA.IPsecProtocol
+IPsec protocol
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
@@ -433,18 +457,18 @@ Policy action
  
 
 
-<a name="opi-security-v1-IPSecService"></a>
+<a name="opi-security-v1-IPsec"></a>
 
-### IPSecService
+### IPsec
 
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| IPSecServiceCreate | [IPSecServiceCreateRequest](#opi-security-v1-IPSecServiceCreateRequest) | [IPSecServiceCreateResponse](#opi-security-v1-IPSecServiceCreateResponse) |  |
-| IPSecServiceDelete | [IPSecServiceDeleteRequest](#opi-security-v1-IPSecServiceDeleteRequest) | [IPSecServiceDeleteResponse](#opi-security-v1-IPSecServiceDeleteResponse) |  |
-| IPSecServiceUpdate | [IPSecServiceUpdateRequest](#opi-security-v1-IPSecServiceUpdateRequest) | [IPSecServiceUpdateResponse](#opi-security-v1-IPSecServiceUpdateResponse) |  |
-| IPSecServiceList | [IPSecServiceListRequest](#opi-security-v1-IPSecServiceListRequest) | [IPSecServiceListResponse](#opi-security-v1-IPSecServiceListResponse) |  |
-| IPSecServiceGet | [IPSecServiceGetRequest](#opi-security-v1-IPSecServiceGetRequest) | [IPSecServiceGetResponse](#opi-security-v1-IPSecServiceGetResponse) |  |
+| IPsecCreate | [IPsecCreateRequest](#opi-security-v1-IPsecCreateRequest) | [IPsecCreateResponse](#opi-security-v1-IPsecCreateResponse) |  |
+| IPsecDelete | [IPsecDeleteRequest](#opi-security-v1-IPsecDeleteRequest) | [IPsecDeleteResponse](#opi-security-v1-IPsecDeleteResponse) |  |
+| IPsecUpdate | [IPsecUpdateRequest](#opi-security-v1-IPsecUpdateRequest) | [IPsecUpdateResponse](#opi-security-v1-IPsecUpdateResponse) |  |
+| IPsecList | [IPsecListRequest](#opi-security-v1-IPsecListRequest) | [IPsecListResponse](#opi-security-v1-IPsecListResponse) |  |
+| IPsecGet | [IPsecGetRequest](#opi-security-v1-IPsecGetRequest) | [IPsecGetResponse](#opi-security-v1-IPsecGetResponse) |  |
 
  
 

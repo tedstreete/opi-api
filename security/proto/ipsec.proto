@@ -9,12 +9,12 @@ syntax = "proto3";
 package opi.security.v1;
 option go_package = "github.com/opiproject/opi-api/security/proto";
 
-service IPSecService {
-	rpc IPSecServiceCreate (IPSecServiceCreateRequest) returns (IPSecServiceCreateResponse) {}
-	rpc IPSecServiceDelete (IPSecServiceDeleteRequest) returns (IPSecServiceDeleteResponse) {}
-	rpc IPSecServiceUpdate (IPSecServiceUpdateRequest) returns (IPSecServiceUpdateResponse) {}
-	rpc IPSecServiceList   (IPSecServiceListRequest)   returns (IPSecServiceListResponse)   {}
-	rpc IPSecServiceGet    (IPSecServiceGetRequest)    returns (IPSecServiceGetResponse)    {}
+service IPsec {
+	rpc IPsecCreate (IPsecCreateRequest) returns (IPsecCreateResponse) {}
+	rpc IPsecDelete (IPsecDeleteRequest) returns (IPsecDeleteResponse) {}
+	rpc IPsecUpdate (IPsecUpdateRequest) returns (IPsecUpdateResponse) {}
+	rpc IPsecList   (IPsecListRequest)   returns (IPsecListResponse)   {}
+	rpc IPsecGet    (IPsecGetRequest)    returns (IPsecGetResponse)    {}
 }
 
 /* Cryptographic algorithm for encryption */
@@ -23,6 +23,10 @@ enum CryptoAlgorithm {
 	AES_CBC_128 = 1;
 	AES_CBC_192 = 2;
 	AES_CBC_256 = 3;
+	AES_GCM_128 = 4;
+	AES_GCM_256 = 5;
+	AES_GMAC_128 = 6;
+	AES_GMAC_256 = 7;
 }
 /* Cryptographic algorithm for authentication */
 enum IntegAlgorithm {
@@ -33,6 +37,11 @@ enum IntegAlgorithm {
 	SHA_256_128 = 4;
 	SHA_384_192 = 5;
 	SHA_512_256 = 6;
+}
+/* Tunnel mode */
+enum IPsecMode {
+	TUNNEL_MODE = 0;
+	TRANSPORT_MODE = 1;
 }
 
 /* Tunnel Interfaces */
@@ -55,6 +64,9 @@ message TunnelInterfaces {
 		IntegAlgorithm integ_alg = 11;
 		string local_integ_key = 12;
 		string remote_integ_key = 13;
+
+		/* Tunnel or transport mode */
+		IPsecMode mode = 14;
 
 		/* Extra fields related to interface */
 		bool enabled = 100;
@@ -114,12 +126,12 @@ message SecurityAssociations {
 		string name = 1;    /* security association name */
 		uint32 spi = 2;     /* security parameter index */
 
-		/* IPSec protocol */
-		enum IPSecProtocol {
+		/* IPsec protocol */
+		enum IPsecProtocol {
 			AH = 0;
 			ESP = 1;
 		}
-		IPSecProtocol protocol = 3;
+		IPsecProtocol protocol = 3;
 
 		CryptoAlgorithm crypto_alg = 4;
 		string crypto_key = 5;
@@ -144,49 +156,49 @@ message ResyncRequest {
 	repeated SecurityAssociations.SA sas = 3;
 }
 
-message IPSec {
+message IPsecData {
 	int64 ID = 1;
 	TunnelInterfaces tunnel = 2;
 	SecurityPolicyDatabases policy = 3;
 	SecurityAssociations sa = 4;
 }
 
-message IPSecServiceCreateRequest {
-	IPSec ipsec = 1;
+message IPsecCreateRequest {
+	IPsecData ipsec = 1;
 }
 
-message IPSecServiceCreateResponse {
+message IPsecCreateResponse {
 	// Intentionally empty for now
 }
 
-message IPSecServiceDeleteRequest {
+message IPsecDeleteRequest {
 	int64 ID = 1;
 }
 
-message IPSecServiceDeleteResponse {
+message IPsecDeleteResponse {
 	// Intentionally empty for now
 }
 
-message IPSecServiceUpdateRequest {
-	IPSec ipsec = 1;
+message IPsecUpdateRequest {
+	IPsecData ipsec = 1;
 }
 
-message IPSecServiceUpdateResponse {
+message IPsecUpdateResponse {
 	// Intentionally empty for now
 }
 
-message IPSecServiceListRequest {
-	// Intentionally empty for now
+message IPsecListRequest {
+	int64 ID = 1;
 }
 
-message IPSecServiceListResponse {
-	repeated IPSec ipsec = 1;
+message IPsecListResponse {
+	repeated IPsecData ipsec = 1;
 }
 
-message IPSecServiceGetRequest {
+message IPsecGetRequest {
 	int64 id = 1;
 }
 
-message IPSecServiceGetResponse {
-	IPSec ipsec = 1;
+message IPsecGetResponse {
+	IPsecData ipsec = 1;
 }
