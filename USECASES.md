@@ -38,7 +38,15 @@ What are the Security API boundary implications to create the air gap?
 
 ## API Abstraction Layer
 
-The API Abstraction Layer provides the interface set for the capabilities provided by the xPU.  The layer diagram below illustrates the deployment on the local xPU where the API gateway and load balancer which provides the gRPC/REST interface to the client (client can be an orchestration agent).  As part of the abstraction layer, the Authentication and Authorization service is needed to verify the user/agent access and authorization for the service.
+The API Abstraction Layer provides the interface set for the capabilities provided by the xPU.  This abastraction layer consists of two areas; specifically, a control plane layer to address the configuration aspect and a data plane layer which provides the information flow for the configured capabilities.
+
+### Control Plane Layer
+
+  At a high level the control plane of the abstraction layer is essentially a shim that has the gateway function, a fan-out mechanism for the specific configuration capability, and the protobuf definitions that are used for the configuration.  Separately there is a vendor extension interface to allow for a direct connection to the SDK functions.
+
+  ![API Control Plane Stacking](doc/images/Control%20Path%20Stacking%20Diagram.png)
+
+  A detailed conceptial diagram below illustrates the deployment on the local xPU where the API gateway and load balancer which provides the gRPC/REST interface to the client (client can be an orchestration agent).  As part of the abstraction layer, the Authentication and Authorization service is needed to verify the user/agent access and authorization for the service.
 
 ![API Abstraction Layer](doc/images/API-Detailed-Abstraction-Layer-Local.png)
 
