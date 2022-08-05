@@ -13,7 +13,7 @@ Diagrams discussed:
 These diagrams are editable by importing into draw.io
 
 Use Case Diagram
-![Use Case Diagram](../images/Use-Case-1.png)
+![Use Case Diagram](../images/API-Network-Use-Case.png)
 
 High Level Diagram
 ![High Level View](../images/High-Level.png)
