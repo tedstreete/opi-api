@@ -25,13 +25,21 @@ OPI subgroup dealing with APIs.  The focus of the subgroup is:
   - [AI/ML](aiml/README.md)
   - others
 - Define recommended industry APIs to be used.
-  - Examples (OVS DB, OpenConfig, VPP)
+  - For Example in Networking there are (OVS DB, OpenConfig, VPP, etc.)
 - Identify gaps in APIs and recommend extensions for those capabilities
 - Create/Define the Backend/Southbound facing interface APIs
 - Produce protocol buffer (protobuf) definitions.
 - Produce reference orchestration client to support testing of the API.
 
 The API subgroup does not want to re-invent any industry standard APIs that already exist.  Standard APIs such as OVS DB, OpenConfig, VPP, etc. that are used for configuration of service capabilities will be reviewed and examined for gaps.  Gaps in capabilities will be addressed either by defining extensions to existing APIs or new APIs will need to be defined (such as Storage APIs).
+
+## OPI API Boundary
+
+The OPI API boundary for the configuration interface will end at the protobuf as shown in the diagram below.
+
+![Config API Boundary](doc/images/Config-API-Boundary.png)
+
+The OPI API boundary for the consumption interface will provide the exposed VF/PF capabilities to be used by the Host platform and/or the compute cores on the xPU.
 
 ---
 
@@ -43,6 +51,8 @@ The API subgroup does not want to re-invent any industry standard APIs that alre
   - [open-api-subgroup](https://opi-project.slack.com/archives/C0344KMEAKB)
 - Status
   - Active
+- Agenda
+  - [Topics](Agenda.md)
 
 ## I Want To Contribute
 
