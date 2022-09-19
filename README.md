@@ -35,9 +35,18 @@ The API subgroup does not want to re-invent any industry standard APIs that alre
 
 ## OPI API Boundary
 
-The OPI API boundary for the configuration interface will end at the protobuf as shown in the diagram below.
+The OPI API boundary for the configuration/control interface will end at the protobuf as shown in the diagram below.
 
 ![Config API Boundary](doc/images/Config-API-Boundary.png)
+
+The use of gRPC is the preferred mechanism for the config/control interface, with the protobuf containing the information to be used by the underlying shim.  This allows for implementations to provide:
+
+- A mechanism where the gRPC can setup separate control flows for REST/OVS or other specific traffic mechanisms
+- The use of an API Gateway that can
+  - Utilize gRPC messages and deliver to the appropriate shim
+  - Provide a gRPC to REST translation
+  - Support gNMI and gNOI traffic over the gRPC
+  ![API Gateway](doc/images/API-GW-Layers.png)
 
 The OPI API boundary for the consumption interface will provide the exposed VF/PF capabilities to be used by the Host platform and/or the compute cores on the xPU.
 
