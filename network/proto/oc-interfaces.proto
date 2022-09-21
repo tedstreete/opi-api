@@ -17,13 +17,13 @@ service NetInterface {
 
 // Data Types
 enum InterfaceType {
-    Ethernet = 0;
-    Loopback = 1;
+    ETHERNET = 0;
+    LOOPBACK = 1;
 }
 
 enum InterfaceState {
-    Down = 0;
-    Up = 1;
+    DOWN = 0;
+    UP = 1;
 }
 
 //Main Data Structure
