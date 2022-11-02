@@ -83,6 +83,7 @@ It consists of SAN/NAS (Network Attached Storage) Array/Applience/Controllers or
 ![Storage Services Offload Use Case](doc/images/API-Storage-Use-Case.png)
 
 ### VNIC and NVME Offload
+
 The diagram below shows the packet pipeline and packet processing layers and their attachment points. This diagram illustrates points of convergence between VNIC and NVME Offloads and elements of security are different attachment points and all these paths are required at the same time. The chaining of various packet processing stages such as bridging, tunneling, encryption dictates the table configurations required at each processing stage.
 
 ![VNIC and NVME Offload](doc/images/API-VNIC-NVME-Use-Case.png)
