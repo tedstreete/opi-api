@@ -77,7 +77,25 @@ Subsequent use cases can be built upon the network services offload.
 
 ### Storage Services Offload
 
-The The basic topology is shown in the diagram.
+The basic topology is shown in the diagram.
 It consists of SAN/NAS (Network Attached Storage) Array/Applience/Controllers or JBOF/EBOF and a Initiator server, with D/IPUs that are connected through a network switch.
 
 ![Storage Services Offload Use Case](doc/images/API-Storage-Use-Case.png)
+
+### VNIC and NVME Offload
+The diagram below shows the packet pipeline and packet processing layers and their attachment points. This diagram illustrates points of convergence between VNIC and NVME Offloads and elements of security are different attachment points and all these paths are required at the same time. The chaining of various packet processing stages such as bridging, tunneling, encryption dictates the table configurations required at each processing stage.
+
+![VNIC and NVME Offload](doc/images/API-VNIC-NVME-Use-Case.png)
+
+The table below provides the datapaths where each one has a specific objective and combining all of these objectives results in the above diagram.
+|   | Objective    | Datapath Service Chain                                        |
+| - | :--------    | :---------------------                                        |
+| 1 | Basic NIC    | Host ↔ VNIC ↔ IP ↔ Eth ↔ Wire                                 |
+| 2 | + VLAN       | Host ↔ VNIC ↔ IP ↔ VLAN ↔ Eth ↔ Wire                          |
+| 3 | + Tunnel     | Host ↔ VNIC ↔ VxLAN ↔ IP ↔ VLAN ↔ Eth ↔ Wire                  |
+| 4 | + L3Security | Host ↔ VNIC ↔ VxLAN ↔ IP ↔ IPsec ↔ VLAN ↔ Eth ↔ Wire          |
+| 5 | + MultiHost  | Host ↔ VNIC ↔ Bridge ↔ VxLAN ↔ IP ↔ IPsec ↔ VLAN ↔ Eth ↔ Wire |
+| 6 | NVMe + Local | Host ↔ NVMe ↔ Local Disk                                      |
+| 7 | NVMe + TCP   | Host ↔ NVMe ↔ NVMe-i ↔ TCP ↔ IP ↔ Eth ↔ Wire                  |
+| 8 | + L4Security | Host ↔ NVMe ↔ NVMe-i ↔ TLS ↔ TCP ↔ IP ↔ Eth ↔ Wire            |
+| 9 | + VLAN       | Host ↔ NVMe ↔ NVMe-i ↔ TLS ↔ TCP ↔ IP ↔ VLAN ↔ Eth ↔ Wire     |
