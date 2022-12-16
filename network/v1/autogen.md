@@ -3,6 +3,7 @@
 
 ## Table of Contents
 
+- [ip.proto](#ip-proto)
 - [oc_interfaces.proto](#oc_interfaces-proto)
     - [Interface](#opi_api-network-v1-Interface)
     - [Interface.Config](#opi_api-network-v1-Interface-Config)
@@ -29,7 +30,36 @@
   
     - [NetInterface](#opi_api-network-v1-NetInterface)
   
+- [inventory.proto](#inventory-proto)
+    - [DeviceInfo](#opi_api-inventory-v1-DeviceInfo)
+    - [InventoryGetRequest](#opi_api-inventory-v1-InventoryGetRequest)
+    - [InventoryGetResponse](#opi_api-inventory-v1-InventoryGetResponse)
+  
+    - [InventorySvc](#opi_api-inventory-v1-InventorySvc)
+  
+- [object_key.proto](#object_key-proto)
+    - [ObjectKey](#opi_api-common-v1-ObjectKey)
+  
+- [uuid.proto](#uuid-proto)
+    - [Uuid](#opi_api-common-v1-Uuid)
+  
 - [Scalar Value Types](#scalar-value-types)
+
+
+
+<a name="ip-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## ip.proto
+
+
+ 
+
+ 
+
+ 
+
+ 
 
 
 
@@ -435,6 +465,147 @@ Service functions for Network Interface exported by the server
 | NetInterfaceGet | [NetInterfaceGetRequest](#opi_api-network-v1-NetInterfaceGetRequest) | [NetInterfaceGetResponse](#opi_api-network-v1-NetInterfaceGetResponse) | Retrieves the interface information for a given interface |
 | NetInterfaceList | [NetInterfaceListRequest](#opi_api-network-v1-NetInterfaceListRequest) | [NetInterfaceListResponse](#opi_api-network-v1-NetInterfaceListResponse) | Retrieves the set of interfaces on the device |
 | NetInterfaceUpdate | [NetInterfaceUpdateRequest](#opi_api-network-v1-NetInterfaceUpdateRequest) | [NetInterfaceUpdateResponse](#opi_api-network-v1-NetInterfaceUpdateResponse) | A method for setting or changing configuration of an interface |
+
+ 
+
+
+
+<a name="inventory-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## inventory.proto
+
+
+
+<a name="opi_api-inventory-v1-DeviceInfo"></a>
+
+### DeviceInfo
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| id | [string](#string) |  |  |
+| mfg_name | [string](#string) |  |  |
+| mfg_date | [string](#string) |  |  |
+| hw_version | [string](#string) |  |  |
+| fw_version | [string](#string) |  |  |
+| sw_version | [string](#string) |  |  |
+| serial_no | [string](#string) |  |  |
+| part_no | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="opi_api-inventory-v1-InventoryGetRequest"></a>
+
+### InventoryGetRequest
+Empty
+
+
+
+
+
+
+<a name="opi_api-inventory-v1-InventoryGetResponse"></a>
+
+### InventoryGetResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| devinfo | [DeviceInfo](#opi_api-inventory-v1-DeviceInfo) |  |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+
+<a name="opi_api-inventory-v1-InventorySvc"></a>
+
+### InventorySvc
+Service functions for the device inventory data
+
+| Method Name | Request Type | Response Type | Description |
+| ----------- | ------------ | ------------- | ------------|
+| InventoryGet | [InventoryGetRequest](#opi_api-inventory-v1-InventoryGetRequest) | [InventoryGetResponse](#opi_api-inventory-v1-InventoryGetResponse) | retrieves the inventory data for the device |
+
+ 
+
+
+
+<a name="object_key-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## object_key.proto
+
+
+
+<a name="opi_api-common-v1-ObjectKey"></a>
+
+### ObjectKey
+Object Keys are opaque values. The object key uniquely
+identifies a given configuration object. The key used must be unique within
+the agent&#39;s context for the give object type and must be non-zero. No other
+restrictions apply on the usage of the key.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| value | [string](#string) |  | The value of the ObjectKey |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="uuid-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## uuid.proto
+
+
+
+<a name="opi_api-common-v1-Uuid"></a>
+
+### Uuid
+A universally unique identifier (UUID) is a 128-bit label
+When generated according to the standard methods, UUIDs are, for practical purposes, unique.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| value | [string](#string) |  | The value of the UUID |
+
+
+
+
+
+ 
+
+ 
+
+ 
 
  
 
