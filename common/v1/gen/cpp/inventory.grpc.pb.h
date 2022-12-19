@@ -2,10 +2,8 @@
 // If you make any local change, they will be lost.
 // source: inventory.proto
 // Original file comments:
-// -----------------------------------------------------
-// Copyright (c)
-// protobuf specification for inventory object
-// inventory.proto file
+// SPDX-License-Identifier: Apache-2.0
+// Copyright (c) 2022 Dell Inc, or its subsidiaries.
 //
 #ifndef GRPC_inventory_2eproto__INCLUDED
 #define GRPC_inventory_2eproto__INCLUDED

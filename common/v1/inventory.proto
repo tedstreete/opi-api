@@ -1,11 +1,13 @@
-//-----------------------------------------------------
-// Copyright (c)
-// protobuf specification for inventory object
-// inventory.proto file
+// SPDX-License-Identifier: Apache-2.0
+// Copyright (c) 2022 Dell Inc, or its subsidiaries.
 
 syntax = "proto3";
-
 package opi_api.inventory.v1;
+
+option java_package = "opi_api.inventory.v1";
+option java_multiple_files = true;
+option java_outer_classname = "InventoryProto";
+
 option go_package = "github.com/opiproject/opi-api/common/v1/gen/go";
 
 // Service functions for the device inventory data
@@ -14,6 +16,38 @@ service InventorySvc {
     rpc InventoryGet (InventoryGetRequest) returns (InventoryGetResponse) {}
 }
 
+message BIOSInfo {
+    string vendor = 1;
+    string version = 2;
+    string date = 3;
+}
+
+message ChassisInfo{
+    string asset_tag = 1;
+    string serial_number = 2;
+    string type = 3;
+    string type_description = 4;
+    string vendor = 5;
+    string version = 6;
+}
+
+message BaseboardInfo{
+    string asset_tag = 1;
+    string serial_number = 2;
+    string vendor = 3;
+    string version = 4;
+    string product = 5;
+}
+
+message CPUInfo{
+    int32 total_cores = 1;
+    int32 total_threads = 2;
+}
+
+message MemoryInfo{
+    int64 total_physical_bytes = 1;
+    int64 total_usable_bytes = 2;
+}
 message DeviceInfo {
     string name = 1;
     string description = 2;
@@ -32,5 +66,11 @@ message InventoryGetRequest {
 }
 
 message InventoryGetResponse {
-    DeviceInfo devinfo = 1;
+    BIOSInfo bios = 1;
+    // SystemInfo system = 2;
+    BaseboardInfo baseboard = 3;
+    ChassisInfo chassis = 4;
+    CPUInfo processor = 5;
+    MemoryInfo memory = 6;
+    DeviceInfo devinfo = 7;
 }

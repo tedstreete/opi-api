@@ -4,9 +4,14 @@
 ## Table of Contents
 
 - [inventory.proto](#inventory-proto)
+    - [BIOSInfo](#opi_api-inventory-v1-BIOSInfo)
+    - [BaseboardInfo](#opi_api-inventory-v1-BaseboardInfo)
+    - [CPUInfo](#opi_api-inventory-v1-CPUInfo)
+    - [ChassisInfo](#opi_api-inventory-v1-ChassisInfo)
     - [DeviceInfo](#opi_api-inventory-v1-DeviceInfo)
     - [InventoryGetRequest](#opi_api-inventory-v1-InventoryGetRequest)
     - [InventoryGetResponse](#opi_api-inventory-v1-InventoryGetResponse)
+    - [MemoryInfo](#opi_api-inventory-v1-MemoryInfo)
   
     - [InventorySvc](#opi_api-inventory-v1-InventorySvc)
   
@@ -24,6 +29,78 @@
 <p align="right"><a href="#top">Top</a></p>
 
 ## inventory.proto
+
+
+
+<a name="opi_api-inventory-v1-BIOSInfo"></a>
+
+### BIOSInfo
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| vendor | [string](#string) |  |  |
+| version | [string](#string) |  |  |
+| date | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="opi_api-inventory-v1-BaseboardInfo"></a>
+
+### BaseboardInfo
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| asset_tag | [string](#string) |  |  |
+| serial_number | [string](#string) |  |  |
+| vendor | [string](#string) |  |  |
+| version | [string](#string) |  |  |
+| product | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="opi_api-inventory-v1-CPUInfo"></a>
+
+### CPUInfo
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| total_cores | [int32](#int32) |  |  |
+| total_threads | [int32](#int32) |  |  |
+
+
+
+
+
+
+<a name="opi_api-inventory-v1-ChassisInfo"></a>
+
+### ChassisInfo
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| asset_tag | [string](#string) |  |  |
+| serial_number | [string](#string) |  |  |
+| type | [string](#string) |  |  |
+| type_description | [string](#string) |  |  |
+| vendor | [string](#string) |  |  |
+| version | [string](#string) |  |  |
+
+
+
 
 
 
@@ -69,7 +146,28 @@ Empty
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| bios | [BIOSInfo](#opi_api-inventory-v1-BIOSInfo) |  |  |
+| baseboard | [BaseboardInfo](#opi_api-inventory-v1-BaseboardInfo) |  | SystemInfo system = 2; |
+| chassis | [ChassisInfo](#opi_api-inventory-v1-ChassisInfo) |  |  |
+| processor | [CPUInfo](#opi_api-inventory-v1-CPUInfo) |  |  |
+| memory | [MemoryInfo](#opi_api-inventory-v1-MemoryInfo) |  |  |
 | devinfo | [DeviceInfo](#opi_api-inventory-v1-DeviceInfo) |  |  |
+
+
+
+
+
+
+<a name="opi_api-inventory-v1-MemoryInfo"></a>
+
+### MemoryInfo
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| total_physical_bytes | [int64](#int64) |  |  |
+| total_usable_bytes | [int64](#int64) |  |  |
 
 
 
