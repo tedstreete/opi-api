@@ -14,11 +14,12 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0finventory.proto\x12\x14opi_api.inventory.v1\"9\n\x08\x42IOSInfo\x12\x0e\n\x06vendor\x18\x01 \x01(\t\x12\x0f\n\x07version\x18\x02 \x01(\t\x12\x0c\n\x04\x64\x61te\x18\x03 \x01(\t\"\x80\x01\n\x0b\x43hassisInfo\x12\x11\n\tasset_tag\x18\x01 \x01(\t\x12\x15\n\rserial_number\x18\x02 \x01(\t\x12\x0c\n\x04type\x18\x03 \x01(\t\x12\x18\n\x10type_description\x18\x04 \x01(\t\x12\x0e\n\x06vendor\x18\x05 \x01(\t\x12\x0f\n\x07version\x18\x06 \x01(\t\"k\n\rBaseboardInfo\x12\x11\n\tasset_tag\x18\x01 \x01(\t\x12\x15\n\rserial_number\x18\x02 \x01(\t\x12\x0e\n\x06vendor\x18\x03 \x01(\t\x12\x0f\n\x07version\x18\x04 \x01(\t\x12\x0f\n\x07product\x18\x05 \x01(\t\"5\n\x07\x43PUInfo\x12\x13\n\x0btotal_cores\x18\x01 \x01(\x05\x12\x15\n\rtotal_threads\x18\x02 \x01(\x05\"F\n\nMemoryInfo\x12\x1c\n\x14total_physical_bytes\x18\x01 \x01(\x03\x12\x1a\n\x12total_usable_bytes\x18\x02 \x01(\x03\"\xbf\x01\n\nDeviceInfo\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\n\n\x02id\x18\x03 \x01(\t\x12\x10\n\x08mfg_name\x18\x04 \x01(\t\x12\x10\n\x08mfg_date\x18\x05 \x01(\t\x12\x12\n\nhw_version\x18\x06 \x01(\t\x12\x12\n\nfw_version\x18\x07 \x01(\t\x12\x12\n\nsw_version\x18\x08 \x01(\t\x12\x11\n\tserial_no\x18\t \x01(\t\x12\x0f\n\x07part_no\x18\n \x01(\t\"\x15\n\x13InventoryGetRequest\"\xc7\x02\n\x14InventoryGetResponse\x12,\n\x04\x62ios\x18\x01 \x01(\x0b\x32\x1e.opi_api.inventory.v1.BIOSInfo\x12\x36\n\tbaseboard\x18\x03 \x01(\x0b\x32#.opi_api.inventory.v1.BaseboardInfo\x12\x32\n\x07\x63hassis\x18\x04 \x01(\x0b\x32!.opi_api.inventory.v1.ChassisInfo\x12\x30\n\tprocessor\x18\x05 \x01(\x0b\x32\x1d.opi_api.inventory.v1.CPUInfo\x12\x30\n\x06memory\x18\x06 \x01(\x0b\x32 .opi_api.inventory.v1.MemoryInfo\x12\x31\n\x07\x64\x65vinfo\x18\x07 \x01(\x0b\x32 .opi_api.inventory.v1.DeviceInfo2w\n\x0cInventorySvc\x12g\n\x0cInventoryGet\x12).opi_api.inventory.v1.InventoryGetRequest\x1a*.opi_api.inventory.v1.InventoryGetResponse\"\x00\x42X\n\x14opi_api.inventory.v1B\x0eInventoryProtoP\x01Z.github.com/opiproject/opi-api/common/v1/gen/gob\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0finventory.proto\x12\x14opi_api.inventory.v1\"9\n\x08\x42IOSInfo\x12\x0e\n\x06vendor\x18\x01 \x01(\t\x12\x0f\n\x07version\x18\x02 \x01(\t\x12\x0c\n\x04\x64\x61te\x18\x03 \x01(\t\"}\n\nSystemInfo\x12\x0e\n\x06\x66\x61mily\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0e\n\x06vendor\x18\x03 \x01(\t\x12\x15\n\rserial_number\x18\x04 \x01(\t\x12\x0c\n\x04uuid\x18\x05 \x01(\t\x12\x0b\n\x03sku\x18\x06 \x01(\t\x12\x0f\n\x07version\x18\x07 \x01(\t\"\x80\x01\n\x0b\x43hassisInfo\x12\x11\n\tasset_tag\x18\x01 \x01(\t\x12\x15\n\rserial_number\x18\x02 \x01(\t\x12\x0c\n\x04type\x18\x03 \x01(\t\x12\x18\n\x10type_description\x18\x04 \x01(\t\x12\x0e\n\x06vendor\x18\x05 \x01(\t\x12\x0f\n\x07version\x18\x06 \x01(\t\"k\n\rBaseboardInfo\x12\x11\n\tasset_tag\x18\x01 \x01(\t\x12\x15\n\rserial_number\x18\x02 \x01(\t\x12\x0e\n\x06vendor\x18\x03 \x01(\t\x12\x0f\n\x07version\x18\x04 \x01(\t\x12\x0f\n\x07product\x18\x05 \x01(\t\"5\n\x07\x43PUInfo\x12\x13\n\x0btotal_cores\x18\x01 \x01(\x05\x12\x15\n\rtotal_threads\x18\x02 \x01(\x05\"F\n\nMemoryInfo\x12\x1c\n\x14total_physical_bytes\x18\x01 \x01(\x03\x12\x1a\n\x12total_usable_bytes\x18\x02 \x01(\x03\"\xbf\x01\n\nDeviceInfo\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\n\n\x02id\x18\x03 \x01(\t\x12\x10\n\x08mfg_name\x18\x04 \x01(\t\x12\x10\n\x08mfg_date\x18\x05 \x01(\t\x12\x12\n\nhw_version\x18\x06 \x01(\t\x12\x12\n\nfw_version\x18\x07 \x01(\t\x12\x12\n\nsw_version\x18\x08 \x01(\t\x12\x11\n\tserial_no\x18\t \x01(\t\x12\x0f\n\x07part_no\x18\n \x01(\t\"\x15\n\x13InventoryGetRequest\"\xf9\x02\n\x14InventoryGetResponse\x12,\n\x04\x62ios\x18\x01 \x01(\x0b\x32\x1e.opi_api.inventory.v1.BIOSInfo\x12\x30\n\x06system\x18\x02 \x01(\x0b\x32 .opi_api.inventory.v1.SystemInfo\x12\x36\n\tbaseboard\x18\x03 \x01(\x0b\x32#.opi_api.inventory.v1.BaseboardInfo\x12\x32\n\x07\x63hassis\x18\x04 \x01(\x0b\x32!.opi_api.inventory.v1.ChassisInfo\x12\x30\n\tprocessor\x18\x05 \x01(\x0b\x32\x1d.opi_api.inventory.v1.CPUInfo\x12\x30\n\x06memory\x18\x06 \x01(\x0b\x32 .opi_api.inventory.v1.MemoryInfo\x12\x31\n\x07\x64\x65vinfo\x18\x07 \x01(\x0b\x32 .opi_api.inventory.v1.DeviceInfo2w\n\x0cInventorySvc\x12g\n\x0cInventoryGet\x12).opi_api.inventory.v1.InventoryGetRequest\x1a*.opi_api.inventory.v1.InventoryGetResponse\"\x00\x42X\n\x14opi_api.inventory.v1B\x0eInventoryProtoP\x01Z.github.com/opiproject/opi-api/common/v1/gen/gob\x06proto3')
 
 
 
 _BIOSINFO = DESCRIPTOR.message_types_by_name['BIOSInfo']
+_SYSTEMINFO = DESCRIPTOR.message_types_by_name['SystemInfo']
 _CHASSISINFO = DESCRIPTOR.message_types_by_name['ChassisInfo']
 _BASEBOARDINFO = DESCRIPTOR.message_types_by_name['BaseboardInfo']
 _CPUINFO = DESCRIPTOR.message_types_by_name['CPUInfo']
@@ -32,6 +33,13 @@ BIOSInfo = _reflection.GeneratedProtocolMessageType('BIOSInfo', (_message.Messag
   # @@protoc_insertion_point(class_scope:opi_api.inventory.v1.BIOSInfo)
   })
 _sym_db.RegisterMessage(BIOSInfo)
+
+SystemInfo = _reflection.GeneratedProtocolMessageType('SystemInfo', (_message.Message,), {
+  'DESCRIPTOR' : _SYSTEMINFO,
+  '__module__' : 'inventory_pb2'
+  # @@protoc_insertion_point(class_scope:opi_api.inventory.v1.SystemInfo)
+  })
+_sym_db.RegisterMessage(SystemInfo)
 
 ChassisInfo = _reflection.GeneratedProtocolMessageType('ChassisInfo', (_message.Message,), {
   'DESCRIPTOR' : _CHASSISINFO,
@@ -89,20 +97,22 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._serialized_options = b'\n\024opi_api.inventory.v1B\016InventoryProtoP\001Z.github.com/opiproject/opi-api/common/v1/gen/go'
   _BIOSINFO._serialized_start=41
   _BIOSINFO._serialized_end=98
-  _CHASSISINFO._serialized_start=101
-  _CHASSISINFO._serialized_end=229
-  _BASEBOARDINFO._serialized_start=231
-  _BASEBOARDINFO._serialized_end=338
-  _CPUINFO._serialized_start=340
-  _CPUINFO._serialized_end=393
-  _MEMORYINFO._serialized_start=395
-  _MEMORYINFO._serialized_end=465
-  _DEVICEINFO._serialized_start=468
-  _DEVICEINFO._serialized_end=659
-  _INVENTORYGETREQUEST._serialized_start=661
-  _INVENTORYGETREQUEST._serialized_end=682
-  _INVENTORYGETRESPONSE._serialized_start=685
-  _INVENTORYGETRESPONSE._serialized_end=1012
-  _INVENTORYSVC._serialized_start=1014
-  _INVENTORYSVC._serialized_end=1133
+  _SYSTEMINFO._serialized_start=100
+  _SYSTEMINFO._serialized_end=225
+  _CHASSISINFO._serialized_start=228
+  _CHASSISINFO._serialized_end=356
+  _BASEBOARDINFO._serialized_start=358
+  _BASEBOARDINFO._serialized_end=465
+  _CPUINFO._serialized_start=467
+  _CPUINFO._serialized_end=520
+  _MEMORYINFO._serialized_start=522
+  _MEMORYINFO._serialized_end=592
+  _DEVICEINFO._serialized_start=595
+  _DEVICEINFO._serialized_end=786
+  _INVENTORYGETREQUEST._serialized_start=788
+  _INVENTORYGETREQUEST._serialized_end=809
+  _INVENTORYGETRESPONSE._serialized_start=812
+  _INVENTORYGETRESPONSE._serialized_end=1189
+  _INVENTORYSVC._serialized_start=1191
+  _INVENTORYSVC._serialized_end=1310
 # @@protoc_insertion_point(module_scope)

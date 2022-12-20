@@ -61,6 +61,19 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 18: {
+            opi_api.inventory.v1.SystemInfo.Builder subBuilder = null;
+            if (system_ != null) {
+              subBuilder = system_.toBuilder();
+            }
+            system_ = input.readMessage(opi_api.inventory.v1.SystemInfo.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(system_);
+              system_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           case 26: {
             opi_api.inventory.v1.BaseboardInfo.Builder subBuilder = null;
             if (baseboard_ != null) {
@@ -184,13 +197,35 @@ private static final long serialVersionUID = 0L;
     return getBios();
   }
 
+  public static final int SYSTEM_FIELD_NUMBER = 2;
+  private opi_api.inventory.v1.SystemInfo system_;
+  /**
+   * <code>.opi_api.inventory.v1.SystemInfo system = 2;</code>
+   * @return Whether the system field is set.
+   */
+  @java.lang.Override
+  public boolean hasSystem() {
+    return system_ != null;
+  }
+  /**
+   * <code>.opi_api.inventory.v1.SystemInfo system = 2;</code>
+   * @return The system.
+   */
+  @java.lang.Override
+  public opi_api.inventory.v1.SystemInfo getSystem() {
+    return system_ == null ? opi_api.inventory.v1.SystemInfo.getDefaultInstance() : system_;
+  }
+  /**
+   * <code>.opi_api.inventory.v1.SystemInfo system = 2;</code>
+   */
+  @java.lang.Override
+  public opi_api.inventory.v1.SystemInfoOrBuilder getSystemOrBuilder() {
+    return getSystem();
+  }
+
   public static final int BASEBOARD_FIELD_NUMBER = 3;
   private opi_api.inventory.v1.BaseboardInfo baseboard_;
   /**
-   * <pre>
-   * SystemInfo system = 2;
-   * </pre>
-   *
    * <code>.opi_api.inventory.v1.BaseboardInfo baseboard = 3;</code>
    * @return Whether the baseboard field is set.
    */
@@ -199,10 +234,6 @@ private static final long serialVersionUID = 0L;
     return baseboard_ != null;
   }
   /**
-   * <pre>
-   * SystemInfo system = 2;
-   * </pre>
-   *
    * <code>.opi_api.inventory.v1.BaseboardInfo baseboard = 3;</code>
    * @return The baseboard.
    */
@@ -211,10 +242,6 @@ private static final long serialVersionUID = 0L;
     return baseboard_ == null ? opi_api.inventory.v1.BaseboardInfo.getDefaultInstance() : baseboard_;
   }
   /**
-   * <pre>
-   * SystemInfo system = 2;
-   * </pre>
-   *
    * <code>.opi_api.inventory.v1.BaseboardInfo baseboard = 3;</code>
    */
   @java.lang.Override
@@ -343,6 +370,9 @@ private static final long serialVersionUID = 0L;
     if (bios_ != null) {
       output.writeMessage(1, getBios());
     }
+    if (system_ != null) {
+      output.writeMessage(2, getSystem());
+    }
     if (baseboard_ != null) {
       output.writeMessage(3, getBaseboard());
     }
@@ -370,6 +400,10 @@ private static final long serialVersionUID = 0L;
     if (bios_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBios());
+    }
+    if (system_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(2, getSystem());
     }
     if (baseboard_ != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -411,6 +445,11 @@ private static final long serialVersionUID = 0L;
       if (!getBios()
           .equals(other.getBios())) return false;
     }
+    if (hasSystem() != other.hasSystem()) return false;
+    if (hasSystem()) {
+      if (!getSystem()
+          .equals(other.getSystem())) return false;
+    }
     if (hasBaseboard() != other.hasBaseboard()) return false;
     if (hasBaseboard()) {
       if (!getBaseboard()
@@ -450,6 +489,10 @@ private static final long serialVersionUID = 0L;
     if (hasBios()) {
       hash = (37 * hash) + BIOS_FIELD_NUMBER;
       hash = (53 * hash) + getBios().hashCode();
+    }
+    if (hasSystem()) {
+      hash = (37 * hash) + SYSTEM_FIELD_NUMBER;
+      hash = (53 * hash) + getSystem().hashCode();
     }
     if (hasBaseboard()) {
       hash = (37 * hash) + BASEBOARD_FIELD_NUMBER;
@@ -610,6 +653,12 @@ private static final long serialVersionUID = 0L;
         bios_ = null;
         biosBuilder_ = null;
       }
+      if (systemBuilder_ == null) {
+        system_ = null;
+      } else {
+        system_ = null;
+        systemBuilder_ = null;
+      }
       if (baseboardBuilder_ == null) {
         baseboard_ = null;
       } else {
@@ -670,6 +719,11 @@ private static final long serialVersionUID = 0L;
         result.bios_ = bios_;
       } else {
         result.bios_ = biosBuilder_.build();
+      }
+      if (systemBuilder_ == null) {
+        result.system_ = system_;
+      } else {
+        result.system_ = systemBuilder_.build();
       }
       if (baseboardBuilder_ == null) {
         result.baseboard_ = baseboard_;
@@ -746,6 +800,9 @@ private static final long serialVersionUID = 0L;
       if (other == opi_api.inventory.v1.InventoryGetResponse.getDefaultInstance()) return this;
       if (other.hasBios()) {
         mergeBios(other.getBios());
+      }
+      if (other.hasSystem()) {
+        mergeSystem(other.getSystem());
       }
       if (other.hasBaseboard()) {
         mergeBaseboard(other.getBaseboard());
@@ -910,14 +967,129 @@ private static final long serialVersionUID = 0L;
       return biosBuilder_;
     }
 
+    private opi_api.inventory.v1.SystemInfo system_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        opi_api.inventory.v1.SystemInfo, opi_api.inventory.v1.SystemInfo.Builder, opi_api.inventory.v1.SystemInfoOrBuilder> systemBuilder_;
+    /**
+     * <code>.opi_api.inventory.v1.SystemInfo system = 2;</code>
+     * @return Whether the system field is set.
+     */
+    public boolean hasSystem() {
+      return systemBuilder_ != null || system_ != null;
+    }
+    /**
+     * <code>.opi_api.inventory.v1.SystemInfo system = 2;</code>
+     * @return The system.
+     */
+    public opi_api.inventory.v1.SystemInfo getSystem() {
+      if (systemBuilder_ == null) {
+        return system_ == null ? opi_api.inventory.v1.SystemInfo.getDefaultInstance() : system_;
+      } else {
+        return systemBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.opi_api.inventory.v1.SystemInfo system = 2;</code>
+     */
+    public Builder setSystem(opi_api.inventory.v1.SystemInfo value) {
+      if (systemBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        system_ = value;
+        onChanged();
+      } else {
+        systemBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.opi_api.inventory.v1.SystemInfo system = 2;</code>
+     */
+    public Builder setSystem(
+        opi_api.inventory.v1.SystemInfo.Builder builderForValue) {
+      if (systemBuilder_ == null) {
+        system_ = builderForValue.build();
+        onChanged();
+      } else {
+        systemBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.opi_api.inventory.v1.SystemInfo system = 2;</code>
+     */
+    public Builder mergeSystem(opi_api.inventory.v1.SystemInfo value) {
+      if (systemBuilder_ == null) {
+        if (system_ != null) {
+          system_ =
+            opi_api.inventory.v1.SystemInfo.newBuilder(system_).mergeFrom(value).buildPartial();
+        } else {
+          system_ = value;
+        }
+        onChanged();
+      } else {
+        systemBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.opi_api.inventory.v1.SystemInfo system = 2;</code>
+     */
+    public Builder clearSystem() {
+      if (systemBuilder_ == null) {
+        system_ = null;
+        onChanged();
+      } else {
+        system_ = null;
+        systemBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.opi_api.inventory.v1.SystemInfo system = 2;</code>
+     */
+    public opi_api.inventory.v1.SystemInfo.Builder getSystemBuilder() {
+      
+      onChanged();
+      return getSystemFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.opi_api.inventory.v1.SystemInfo system = 2;</code>
+     */
+    public opi_api.inventory.v1.SystemInfoOrBuilder getSystemOrBuilder() {
+      if (systemBuilder_ != null) {
+        return systemBuilder_.getMessageOrBuilder();
+      } else {
+        return system_ == null ?
+            opi_api.inventory.v1.SystemInfo.getDefaultInstance() : system_;
+      }
+    }
+    /**
+     * <code>.opi_api.inventory.v1.SystemInfo system = 2;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        opi_api.inventory.v1.SystemInfo, opi_api.inventory.v1.SystemInfo.Builder, opi_api.inventory.v1.SystemInfoOrBuilder> 
+        getSystemFieldBuilder() {
+      if (systemBuilder_ == null) {
+        systemBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            opi_api.inventory.v1.SystemInfo, opi_api.inventory.v1.SystemInfo.Builder, opi_api.inventory.v1.SystemInfoOrBuilder>(
+                getSystem(),
+                getParentForChildren(),
+                isClean());
+        system_ = null;
+      }
+      return systemBuilder_;
+    }
+
     private opi_api.inventory.v1.BaseboardInfo baseboard_;
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.inventory.v1.BaseboardInfo, opi_api.inventory.v1.BaseboardInfo.Builder, opi_api.inventory.v1.BaseboardInfoOrBuilder> baseboardBuilder_;
     /**
-     * <pre>
-     * SystemInfo system = 2;
-     * </pre>
-     *
      * <code>.opi_api.inventory.v1.BaseboardInfo baseboard = 3;</code>
      * @return Whether the baseboard field is set.
      */
@@ -925,10 +1097,6 @@ private static final long serialVersionUID = 0L;
       return baseboardBuilder_ != null || baseboard_ != null;
     }
     /**
-     * <pre>
-     * SystemInfo system = 2;
-     * </pre>
-     *
      * <code>.opi_api.inventory.v1.BaseboardInfo baseboard = 3;</code>
      * @return The baseboard.
      */
@@ -940,10 +1108,6 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     * SystemInfo system = 2;
-     * </pre>
-     *
      * <code>.opi_api.inventory.v1.BaseboardInfo baseboard = 3;</code>
      */
     public Builder setBaseboard(opi_api.inventory.v1.BaseboardInfo value) {
@@ -960,10 +1124,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * SystemInfo system = 2;
-     * </pre>
-     *
      * <code>.opi_api.inventory.v1.BaseboardInfo baseboard = 3;</code>
      */
     public Builder setBaseboard(
@@ -978,10 +1138,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * SystemInfo system = 2;
-     * </pre>
-     *
      * <code>.opi_api.inventory.v1.BaseboardInfo baseboard = 3;</code>
      */
     public Builder mergeBaseboard(opi_api.inventory.v1.BaseboardInfo value) {
@@ -1000,10 +1156,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * SystemInfo system = 2;
-     * </pre>
-     *
      * <code>.opi_api.inventory.v1.BaseboardInfo baseboard = 3;</code>
      */
     public Builder clearBaseboard() {
@@ -1018,10 +1170,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * SystemInfo system = 2;
-     * </pre>
-     *
      * <code>.opi_api.inventory.v1.BaseboardInfo baseboard = 3;</code>
      */
     public opi_api.inventory.v1.BaseboardInfo.Builder getBaseboardBuilder() {
@@ -1030,10 +1178,6 @@ private static final long serialVersionUID = 0L;
       return getBaseboardFieldBuilder().getBuilder();
     }
     /**
-     * <pre>
-     * SystemInfo system = 2;
-     * </pre>
-     *
      * <code>.opi_api.inventory.v1.BaseboardInfo baseboard = 3;</code>
      */
     public opi_api.inventory.v1.BaseboardInfoOrBuilder getBaseboardOrBuilder() {
@@ -1045,10 +1189,6 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     * SystemInfo system = 2;
-     * </pre>
-     *
      * <code>.opi_api.inventory.v1.BaseboardInfo baseboard = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

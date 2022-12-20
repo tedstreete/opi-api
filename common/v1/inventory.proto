@@ -22,6 +22,16 @@ message BIOSInfo {
     string date = 3;
 }
 
+message SystemInfo {
+    string family = 1;
+    string name = 2;
+    string vendor = 3;
+    string serial_number = 4;
+    string uuid = 5;
+    string sku = 6;
+    string version = 7;
+}
+
 message ChassisInfo{
     string asset_tag = 1;
     string serial_number = 2;
@@ -67,7 +77,7 @@ message InventoryGetRequest {
 
 message InventoryGetResponse {
     BIOSInfo bios = 1;
-    // SystemInfo system = 2;
+    SystemInfo system = 2;
     BaseboardInfo baseboard = 3;
     ChassisInfo chassis = 4;
     CPUInfo processor = 5;

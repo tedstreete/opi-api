@@ -47,7 +47,7 @@ struct TableStruct_inventory_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[8]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[9]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -81,6 +81,9 @@ extern InventoryGetResponseDefaultTypeInternal _InventoryGetResponse_default_ins
 class MemoryInfo;
 struct MemoryInfoDefaultTypeInternal;
 extern MemoryInfoDefaultTypeInternal _MemoryInfo_default_instance_;
+class SystemInfo;
+struct SystemInfoDefaultTypeInternal;
+extern SystemInfoDefaultTypeInternal _SystemInfo_default_instance_;
 }  // namespace v1
 }  // namespace inventory
 }  // namespace opi_api
@@ -93,6 +96,7 @@ template<> ::opi_api::inventory::v1::DeviceInfo* Arena::CreateMaybeMessage<::opi
 template<> ::opi_api::inventory::v1::InventoryGetRequest* Arena::CreateMaybeMessage<::opi_api::inventory::v1::InventoryGetRequest>(Arena*);
 template<> ::opi_api::inventory::v1::InventoryGetResponse* Arena::CreateMaybeMessage<::opi_api::inventory::v1::InventoryGetResponse>(Arena*);
 template<> ::opi_api::inventory::v1::MemoryInfo* Arena::CreateMaybeMessage<::opi_api::inventory::v1::MemoryInfo>(Arena*);
+template<> ::opi_api::inventory::v1::SystemInfo* Arena::CreateMaybeMessage<::opi_api::inventory::v1::SystemInfo>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace opi_api {
 namespace inventory {
@@ -283,6 +287,253 @@ class BIOSInfo final :
 };
 // -------------------------------------------------------------------
 
+class SystemInfo final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.inventory.v1.SystemInfo) */ {
+ public:
+  inline SystemInfo() : SystemInfo(nullptr) {}
+  ~SystemInfo() override;
+  explicit constexpr SystemInfo(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  SystemInfo(const SystemInfo& from);
+  SystemInfo(SystemInfo&& from) noexcept
+    : SystemInfo() {
+    *this = ::std::move(from);
+  }
+
+  inline SystemInfo& operator=(const SystemInfo& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline SystemInfo& operator=(SystemInfo&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const SystemInfo& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const SystemInfo* internal_default_instance() {
+    return reinterpret_cast<const SystemInfo*>(
+               &_SystemInfo_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    1;
+
+  friend void swap(SystemInfo& a, SystemInfo& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(SystemInfo* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(SystemInfo* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  SystemInfo* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<SystemInfo>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const SystemInfo& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const SystemInfo& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(SystemInfo* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "opi_api.inventory.v1.SystemInfo";
+  }
+  protected:
+  explicit SystemInfo(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kFamilyFieldNumber = 1,
+    kNameFieldNumber = 2,
+    kVendorFieldNumber = 3,
+    kSerialNumberFieldNumber = 4,
+    kUuidFieldNumber = 5,
+    kSkuFieldNumber = 6,
+    kVersionFieldNumber = 7,
+  };
+  // string family = 1;
+  void clear_family();
+  const std::string& family() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_family(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_family();
+  PROTOBUF_NODISCARD std::string* release_family();
+  void set_allocated_family(std::string* family);
+  private:
+  const std::string& _internal_family() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_family(const std::string& value);
+  std::string* _internal_mutable_family();
+  public:
+
+  // string name = 2;
+  void clear_name();
+  const std::string& name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name();
+  PROTOBUF_NODISCARD std::string* release_name();
+  void set_allocated_name(std::string* name);
+  private:
+  const std::string& _internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
+  public:
+
+  // string vendor = 3;
+  void clear_vendor();
+  const std::string& vendor() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_vendor(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_vendor();
+  PROTOBUF_NODISCARD std::string* release_vendor();
+  void set_allocated_vendor(std::string* vendor);
+  private:
+  const std::string& _internal_vendor() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_vendor(const std::string& value);
+  std::string* _internal_mutable_vendor();
+  public:
+
+  // string serial_number = 4;
+  void clear_serial_number();
+  const std::string& serial_number() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_serial_number(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_serial_number();
+  PROTOBUF_NODISCARD std::string* release_serial_number();
+  void set_allocated_serial_number(std::string* serial_number);
+  private:
+  const std::string& _internal_serial_number() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_serial_number(const std::string& value);
+  std::string* _internal_mutable_serial_number();
+  public:
+
+  // string uuid = 5;
+  void clear_uuid();
+  const std::string& uuid() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_uuid(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_uuid();
+  PROTOBUF_NODISCARD std::string* release_uuid();
+  void set_allocated_uuid(std::string* uuid);
+  private:
+  const std::string& _internal_uuid() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_uuid(const std::string& value);
+  std::string* _internal_mutable_uuid();
+  public:
+
+  // string sku = 6;
+  void clear_sku();
+  const std::string& sku() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_sku(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_sku();
+  PROTOBUF_NODISCARD std::string* release_sku();
+  void set_allocated_sku(std::string* sku);
+  private:
+  const std::string& _internal_sku() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_sku(const std::string& value);
+  std::string* _internal_mutable_sku();
+  public:
+
+  // string version = 7;
+  void clear_version();
+  const std::string& version() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_version(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_version();
+  PROTOBUF_NODISCARD std::string* release_version();
+  void set_allocated_version(std::string* version);
+  private:
+  const std::string& _internal_version() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_version(const std::string& value);
+  std::string* _internal_mutable_version();
+  public:
+
+  // @@protoc_insertion_point(class_scope:opi_api.inventory.v1.SystemInfo)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr family_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr vendor_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr serial_number_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr uuid_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr sku_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr version_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_inventory_2eproto;
+};
+// -------------------------------------------------------------------
+
 class ChassisInfo final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.inventory.v1.ChassisInfo) */ {
  public:
@@ -331,7 +582,7 @@ class ChassisInfo final :
                &_ChassisInfo_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    2;
 
   friend void swap(ChassisInfo& a, ChassisInfo& b) {
     a.Swap(&b);
@@ -562,7 +813,7 @@ class BaseboardInfo final :
                &_BaseboardInfo_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    3;
 
   friend void swap(BaseboardInfo& a, BaseboardInfo& b) {
     a.Swap(&b);
@@ -777,7 +1028,7 @@ class CPUInfo final :
                &_CPUInfo_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    4;
 
   friend void swap(CPUInfo& a, CPUInfo& b) {
     a.Swap(&b);
@@ -934,7 +1185,7 @@ class MemoryInfo final :
                &_MemoryInfo_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    5;
 
   friend void swap(MemoryInfo& a, MemoryInfo& b) {
     a.Swap(&b);
@@ -1091,7 +1342,7 @@ class DeviceInfo final :
                &_DeviceInfo_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    6;
 
   friend void swap(DeviceInfo& a, DeviceInfo& b) {
     a.Swap(&b);
@@ -1385,7 +1636,7 @@ class InventoryGetRequest final :
                &_InventoryGetRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    7;
 
   friend void swap(InventoryGetRequest& a, InventoryGetRequest& b) {
     a.Swap(&b);
@@ -1504,7 +1755,7 @@ class InventoryGetResponse final :
                &_InventoryGetResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    8;
 
   friend void swap(InventoryGetResponse& a, InventoryGetResponse& b) {
     a.Swap(&b);
@@ -1579,6 +1830,7 @@ class InventoryGetResponse final :
 
   enum : int {
     kBiosFieldNumber = 1,
+    kSystemFieldNumber = 2,
     kBaseboardFieldNumber = 3,
     kChassisFieldNumber = 4,
     kProcessorFieldNumber = 5,
@@ -1602,6 +1854,24 @@ class InventoryGetResponse final :
   void unsafe_arena_set_allocated_bios(
       ::opi_api::inventory::v1::BIOSInfo* bios);
   ::opi_api::inventory::v1::BIOSInfo* unsafe_arena_release_bios();
+
+  // .opi_api.inventory.v1.SystemInfo system = 2;
+  bool has_system() const;
+  private:
+  bool _internal_has_system() const;
+  public:
+  void clear_system();
+  const ::opi_api::inventory::v1::SystemInfo& system() const;
+  PROTOBUF_NODISCARD ::opi_api::inventory::v1::SystemInfo* release_system();
+  ::opi_api::inventory::v1::SystemInfo* mutable_system();
+  void set_allocated_system(::opi_api::inventory::v1::SystemInfo* system);
+  private:
+  const ::opi_api::inventory::v1::SystemInfo& _internal_system() const;
+  ::opi_api::inventory::v1::SystemInfo* _internal_mutable_system();
+  public:
+  void unsafe_arena_set_allocated_system(
+      ::opi_api::inventory::v1::SystemInfo* system);
+  ::opi_api::inventory::v1::SystemInfo* unsafe_arena_release_system();
 
   // .opi_api.inventory.v1.BaseboardInfo baseboard = 3;
   bool has_baseboard() const;
@@ -1701,6 +1971,7 @@ class InventoryGetResponse final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::opi_api::inventory::v1::BIOSInfo* bios_;
+  ::opi_api::inventory::v1::SystemInfo* system_;
   ::opi_api::inventory::v1::BaseboardInfo* baseboard_;
   ::opi_api::inventory::v1::ChassisInfo* chassis_;
   ::opi_api::inventory::v1::CPUInfo* processor_;
@@ -1871,6 +2142,367 @@ inline void BIOSInfo::set_allocated_date(std::string* date) {
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   // @@protoc_insertion_point(field_set_allocated:opi_api.inventory.v1.BIOSInfo.date)
+}
+
+// -------------------------------------------------------------------
+
+// SystemInfo
+
+// string family = 1;
+inline void SystemInfo::clear_family() {
+  family_.ClearToEmpty();
+}
+inline const std::string& SystemInfo::family() const {
+  // @@protoc_insertion_point(field_get:opi_api.inventory.v1.SystemInfo.family)
+  return _internal_family();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void SystemInfo::set_family(ArgT0&& arg0, ArgT... args) {
+ 
+ family_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.inventory.v1.SystemInfo.family)
+}
+inline std::string* SystemInfo::mutable_family() {
+  std::string* _s = _internal_mutable_family();
+  // @@protoc_insertion_point(field_mutable:opi_api.inventory.v1.SystemInfo.family)
+  return _s;
+}
+inline const std::string& SystemInfo::_internal_family() const {
+  return family_.Get();
+}
+inline void SystemInfo::_internal_set_family(const std::string& value) {
+  
+  family_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* SystemInfo::_internal_mutable_family() {
+  
+  return family_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* SystemInfo::release_family() {
+  // @@protoc_insertion_point(field_release:opi_api.inventory.v1.SystemInfo.family)
+  return family_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void SystemInfo::set_allocated_family(std::string* family) {
+  if (family != nullptr) {
+    
+  } else {
+    
+  }
+  family_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), family,
+      GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (family_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    family_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:opi_api.inventory.v1.SystemInfo.family)
+}
+
+// string name = 2;
+inline void SystemInfo::clear_name() {
+  name_.ClearToEmpty();
+}
+inline const std::string& SystemInfo::name() const {
+  // @@protoc_insertion_point(field_get:opi_api.inventory.v1.SystemInfo.name)
+  return _internal_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void SystemInfo::set_name(ArgT0&& arg0, ArgT... args) {
+ 
+ name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.inventory.v1.SystemInfo.name)
+}
+inline std::string* SystemInfo::mutable_name() {
+  std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:opi_api.inventory.v1.SystemInfo.name)
+  return _s;
+}
+inline const std::string& SystemInfo::_internal_name() const {
+  return name_.Get();
+}
+inline void SystemInfo::_internal_set_name(const std::string& value) {
+  
+  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* SystemInfo::_internal_mutable_name() {
+  
+  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* SystemInfo::release_name() {
+  // @@protoc_insertion_point(field_release:opi_api.inventory.v1.SystemInfo.name)
+  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void SystemInfo::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
+    
+  } else {
+    
+  }
+  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
+      GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (name_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:opi_api.inventory.v1.SystemInfo.name)
+}
+
+// string vendor = 3;
+inline void SystemInfo::clear_vendor() {
+  vendor_.ClearToEmpty();
+}
+inline const std::string& SystemInfo::vendor() const {
+  // @@protoc_insertion_point(field_get:opi_api.inventory.v1.SystemInfo.vendor)
+  return _internal_vendor();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void SystemInfo::set_vendor(ArgT0&& arg0, ArgT... args) {
+ 
+ vendor_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.inventory.v1.SystemInfo.vendor)
+}
+inline std::string* SystemInfo::mutable_vendor() {
+  std::string* _s = _internal_mutable_vendor();
+  // @@protoc_insertion_point(field_mutable:opi_api.inventory.v1.SystemInfo.vendor)
+  return _s;
+}
+inline const std::string& SystemInfo::_internal_vendor() const {
+  return vendor_.Get();
+}
+inline void SystemInfo::_internal_set_vendor(const std::string& value) {
+  
+  vendor_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* SystemInfo::_internal_mutable_vendor() {
+  
+  return vendor_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* SystemInfo::release_vendor() {
+  // @@protoc_insertion_point(field_release:opi_api.inventory.v1.SystemInfo.vendor)
+  return vendor_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void SystemInfo::set_allocated_vendor(std::string* vendor) {
+  if (vendor != nullptr) {
+    
+  } else {
+    
+  }
+  vendor_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), vendor,
+      GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (vendor_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    vendor_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:opi_api.inventory.v1.SystemInfo.vendor)
+}
+
+// string serial_number = 4;
+inline void SystemInfo::clear_serial_number() {
+  serial_number_.ClearToEmpty();
+}
+inline const std::string& SystemInfo::serial_number() const {
+  // @@protoc_insertion_point(field_get:opi_api.inventory.v1.SystemInfo.serial_number)
+  return _internal_serial_number();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void SystemInfo::set_serial_number(ArgT0&& arg0, ArgT... args) {
+ 
+ serial_number_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.inventory.v1.SystemInfo.serial_number)
+}
+inline std::string* SystemInfo::mutable_serial_number() {
+  std::string* _s = _internal_mutable_serial_number();
+  // @@protoc_insertion_point(field_mutable:opi_api.inventory.v1.SystemInfo.serial_number)
+  return _s;
+}
+inline const std::string& SystemInfo::_internal_serial_number() const {
+  return serial_number_.Get();
+}
+inline void SystemInfo::_internal_set_serial_number(const std::string& value) {
+  
+  serial_number_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* SystemInfo::_internal_mutable_serial_number() {
+  
+  return serial_number_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* SystemInfo::release_serial_number() {
+  // @@protoc_insertion_point(field_release:opi_api.inventory.v1.SystemInfo.serial_number)
+  return serial_number_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void SystemInfo::set_allocated_serial_number(std::string* serial_number) {
+  if (serial_number != nullptr) {
+    
+  } else {
+    
+  }
+  serial_number_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), serial_number,
+      GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (serial_number_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    serial_number_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:opi_api.inventory.v1.SystemInfo.serial_number)
+}
+
+// string uuid = 5;
+inline void SystemInfo::clear_uuid() {
+  uuid_.ClearToEmpty();
+}
+inline const std::string& SystemInfo::uuid() const {
+  // @@protoc_insertion_point(field_get:opi_api.inventory.v1.SystemInfo.uuid)
+  return _internal_uuid();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void SystemInfo::set_uuid(ArgT0&& arg0, ArgT... args) {
+ 
+ uuid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.inventory.v1.SystemInfo.uuid)
+}
+inline std::string* SystemInfo::mutable_uuid() {
+  std::string* _s = _internal_mutable_uuid();
+  // @@protoc_insertion_point(field_mutable:opi_api.inventory.v1.SystemInfo.uuid)
+  return _s;
+}
+inline const std::string& SystemInfo::_internal_uuid() const {
+  return uuid_.Get();
+}
+inline void SystemInfo::_internal_set_uuid(const std::string& value) {
+  
+  uuid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* SystemInfo::_internal_mutable_uuid() {
+  
+  return uuid_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* SystemInfo::release_uuid() {
+  // @@protoc_insertion_point(field_release:opi_api.inventory.v1.SystemInfo.uuid)
+  return uuid_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void SystemInfo::set_allocated_uuid(std::string* uuid) {
+  if (uuid != nullptr) {
+    
+  } else {
+    
+  }
+  uuid_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), uuid,
+      GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (uuid_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    uuid_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:opi_api.inventory.v1.SystemInfo.uuid)
+}
+
+// string sku = 6;
+inline void SystemInfo::clear_sku() {
+  sku_.ClearToEmpty();
+}
+inline const std::string& SystemInfo::sku() const {
+  // @@protoc_insertion_point(field_get:opi_api.inventory.v1.SystemInfo.sku)
+  return _internal_sku();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void SystemInfo::set_sku(ArgT0&& arg0, ArgT... args) {
+ 
+ sku_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.inventory.v1.SystemInfo.sku)
+}
+inline std::string* SystemInfo::mutable_sku() {
+  std::string* _s = _internal_mutable_sku();
+  // @@protoc_insertion_point(field_mutable:opi_api.inventory.v1.SystemInfo.sku)
+  return _s;
+}
+inline const std::string& SystemInfo::_internal_sku() const {
+  return sku_.Get();
+}
+inline void SystemInfo::_internal_set_sku(const std::string& value) {
+  
+  sku_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* SystemInfo::_internal_mutable_sku() {
+  
+  return sku_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* SystemInfo::release_sku() {
+  // @@protoc_insertion_point(field_release:opi_api.inventory.v1.SystemInfo.sku)
+  return sku_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void SystemInfo::set_allocated_sku(std::string* sku) {
+  if (sku != nullptr) {
+    
+  } else {
+    
+  }
+  sku_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), sku,
+      GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (sku_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    sku_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:opi_api.inventory.v1.SystemInfo.sku)
+}
+
+// string version = 7;
+inline void SystemInfo::clear_version() {
+  version_.ClearToEmpty();
+}
+inline const std::string& SystemInfo::version() const {
+  // @@protoc_insertion_point(field_get:opi_api.inventory.v1.SystemInfo.version)
+  return _internal_version();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void SystemInfo::set_version(ArgT0&& arg0, ArgT... args) {
+ 
+ version_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.inventory.v1.SystemInfo.version)
+}
+inline std::string* SystemInfo::mutable_version() {
+  std::string* _s = _internal_mutable_version();
+  // @@protoc_insertion_point(field_mutable:opi_api.inventory.v1.SystemInfo.version)
+  return _s;
+}
+inline const std::string& SystemInfo::_internal_version() const {
+  return version_.Get();
+}
+inline void SystemInfo::_internal_set_version(const std::string& value) {
+  
+  version_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* SystemInfo::_internal_mutable_version() {
+  
+  return version_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* SystemInfo::release_version() {
+  // @@protoc_insertion_point(field_release:opi_api.inventory.v1.SystemInfo.version)
+  return version_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void SystemInfo::set_allocated_version(std::string* version) {
+  if (version != nullptr) {
+    
+  } else {
+    
+  }
+  version_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), version,
+      GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (version_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    version_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:opi_api.inventory.v1.SystemInfo.version)
 }
 
 // -------------------------------------------------------------------
@@ -3142,6 +3774,96 @@ inline void InventoryGetResponse::set_allocated_bios(::opi_api::inventory::v1::B
   // @@protoc_insertion_point(field_set_allocated:opi_api.inventory.v1.InventoryGetResponse.bios)
 }
 
+// .opi_api.inventory.v1.SystemInfo system = 2;
+inline bool InventoryGetResponse::_internal_has_system() const {
+  return this != internal_default_instance() && system_ != nullptr;
+}
+inline bool InventoryGetResponse::has_system() const {
+  return _internal_has_system();
+}
+inline void InventoryGetResponse::clear_system() {
+  if (GetArenaForAllocation() == nullptr && system_ != nullptr) {
+    delete system_;
+  }
+  system_ = nullptr;
+}
+inline const ::opi_api::inventory::v1::SystemInfo& InventoryGetResponse::_internal_system() const {
+  const ::opi_api::inventory::v1::SystemInfo* p = system_;
+  return p != nullptr ? *p : reinterpret_cast<const ::opi_api::inventory::v1::SystemInfo&>(
+      ::opi_api::inventory::v1::_SystemInfo_default_instance_);
+}
+inline const ::opi_api::inventory::v1::SystemInfo& InventoryGetResponse::system() const {
+  // @@protoc_insertion_point(field_get:opi_api.inventory.v1.InventoryGetResponse.system)
+  return _internal_system();
+}
+inline void InventoryGetResponse::unsafe_arena_set_allocated_system(
+    ::opi_api::inventory::v1::SystemInfo* system) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(system_);
+  }
+  system_ = system;
+  if (system) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.inventory.v1.InventoryGetResponse.system)
+}
+inline ::opi_api::inventory::v1::SystemInfo* InventoryGetResponse::release_system() {
+  
+  ::opi_api::inventory::v1::SystemInfo* temp = system_;
+  system_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::opi_api::inventory::v1::SystemInfo* InventoryGetResponse::unsafe_arena_release_system() {
+  // @@protoc_insertion_point(field_release:opi_api.inventory.v1.InventoryGetResponse.system)
+  
+  ::opi_api::inventory::v1::SystemInfo* temp = system_;
+  system_ = nullptr;
+  return temp;
+}
+inline ::opi_api::inventory::v1::SystemInfo* InventoryGetResponse::_internal_mutable_system() {
+  
+  if (system_ == nullptr) {
+    auto* p = CreateMaybeMessage<::opi_api::inventory::v1::SystemInfo>(GetArenaForAllocation());
+    system_ = p;
+  }
+  return system_;
+}
+inline ::opi_api::inventory::v1::SystemInfo* InventoryGetResponse::mutable_system() {
+  ::opi_api::inventory::v1::SystemInfo* _msg = _internal_mutable_system();
+  // @@protoc_insertion_point(field_mutable:opi_api.inventory.v1.InventoryGetResponse.system)
+  return _msg;
+}
+inline void InventoryGetResponse::set_allocated_system(::opi_api::inventory::v1::SystemInfo* system) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete system_;
+  }
+  if (system) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::opi_api::inventory::v1::SystemInfo>::GetOwningArena(system);
+    if (message_arena != submessage_arena) {
+      system = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, system, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  system_ = system;
+  // @@protoc_insertion_point(field_set_allocated:opi_api.inventory.v1.InventoryGetResponse.system)
+}
+
 // .opi_api.inventory.v1.BaseboardInfo baseboard = 3;
 inline bool InventoryGetResponse::_internal_has_baseboard() const {
   return this != internal_default_instance() && baseboard_ != nullptr;
@@ -3595,6 +4317,8 @@ inline void InventoryGetResponse::set_allocated_devinfo(::opi_api::inventory::v1
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

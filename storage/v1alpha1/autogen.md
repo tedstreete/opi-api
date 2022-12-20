@@ -162,6 +162,7 @@
     - [InventoryGetRequest](#opi_api-inventory-v1-InventoryGetRequest)
     - [InventoryGetResponse](#opi_api-inventory-v1-InventoryGetResponse)
     - [MemoryInfo](#opi_api-inventory-v1-MemoryInfo)
+    - [SystemInfo](#opi_api-inventory-v1-SystemInfo)
   
     - [InventorySvc](#opi_api-inventory-v1-InventorySvc)
   
@@ -2457,7 +2458,8 @@ Empty
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | bios | [BIOSInfo](#opi_api-inventory-v1-BIOSInfo) |  |  |
-| baseboard | [BaseboardInfo](#opi_api-inventory-v1-BaseboardInfo) |  | SystemInfo system = 2; |
+| system | [SystemInfo](#opi_api-inventory-v1-SystemInfo) |  |  |
+| baseboard | [BaseboardInfo](#opi_api-inventory-v1-BaseboardInfo) |  |  |
 | chassis | [ChassisInfo](#opi_api-inventory-v1-ChassisInfo) |  |  |
 | processor | [CPUInfo](#opi_api-inventory-v1-CPUInfo) |  |  |
 | memory | [MemoryInfo](#opi_api-inventory-v1-MemoryInfo) |  |  |
@@ -2478,6 +2480,27 @@ Empty
 | ----- | ---- | ----- | ----------- |
 | total_physical_bytes | [int64](#int64) |  |  |
 | total_usable_bytes | [int64](#int64) |  |  |
+
+
+
+
+
+
+<a name="opi_api-inventory-v1-SystemInfo"></a>
+
+### SystemInfo
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| family | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| vendor | [string](#string) |  |  |
+| serial_number | [string](#string) |  |  |
+| uuid | [string](#string) |  |  |
+| sku | [string](#string) |  |  |
+| version | [string](#string) |  |  |
 
 
 

@@ -33,6 +33,24 @@ struct BIOSInfoDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT BIOSInfoDefaultTypeInternal _BIOSInfo_default_instance_;
+constexpr SystemInfo::SystemInfo(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : family_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , vendor_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , serial_number_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , uuid_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , sku_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , version_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct SystemInfoDefaultTypeInternal {
+  constexpr SystemInfoDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~SystemInfoDefaultTypeInternal() {}
+  union {
+    SystemInfo _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SystemInfoDefaultTypeInternal _SystemInfo_default_instance_;
 constexpr ChassisInfo::ChassisInfo(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : asset_tag_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
@@ -127,6 +145,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT InventoryGetRequestDefaultTypeI
 constexpr InventoryGetResponse::InventoryGetResponse(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : bios_(nullptr)
+  , system_(nullptr)
   , baseboard_(nullptr)
   , chassis_(nullptr)
   , processor_(nullptr)
@@ -144,7 +163,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT InventoryGetResponseDefaultType
 }  // namespace v1
 }  // namespace inventory
 }  // namespace opi_api
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_inventory_2eproto[8];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_inventory_2eproto[9];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_inventory_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_inventory_2eproto = nullptr;
 
@@ -158,6 +177,19 @@ const uint32_t TableStruct_inventory_2eproto::offsets[] PROTOBUF_SECTION_VARIABL
   PROTOBUF_FIELD_OFFSET(::opi_api::inventory::v1::BIOSInfo, vendor_),
   PROTOBUF_FIELD_OFFSET(::opi_api::inventory::v1::BIOSInfo, version_),
   PROTOBUF_FIELD_OFFSET(::opi_api::inventory::v1::BIOSInfo, date_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::opi_api::inventory::v1::SystemInfo, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::opi_api::inventory::v1::SystemInfo, family_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::inventory::v1::SystemInfo, name_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::inventory::v1::SystemInfo, vendor_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::inventory::v1::SystemInfo, serial_number_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::inventory::v1::SystemInfo, uuid_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::inventory::v1::SystemInfo, sku_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::inventory::v1::SystemInfo, version_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::inventory::v1::ChassisInfo, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -226,6 +258,7 @@ const uint32_t TableStruct_inventory_2eproto::offsets[] PROTOBUF_SECTION_VARIABL
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::opi_api::inventory::v1::InventoryGetResponse, bios_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::inventory::v1::InventoryGetResponse, system_),
   PROTOBUF_FIELD_OFFSET(::opi_api::inventory::v1::InventoryGetResponse, baseboard_),
   PROTOBUF_FIELD_OFFSET(::opi_api::inventory::v1::InventoryGetResponse, chassis_),
   PROTOBUF_FIELD_OFFSET(::opi_api::inventory::v1::InventoryGetResponse, processor_),
@@ -234,17 +267,19 @@ const uint32_t TableStruct_inventory_2eproto::offsets[] PROTOBUF_SECTION_VARIABL
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::opi_api::inventory::v1::BIOSInfo)},
-  { 9, -1, -1, sizeof(::opi_api::inventory::v1::ChassisInfo)},
-  { 21, -1, -1, sizeof(::opi_api::inventory::v1::BaseboardInfo)},
-  { 32, -1, -1, sizeof(::opi_api::inventory::v1::CPUInfo)},
-  { 40, -1, -1, sizeof(::opi_api::inventory::v1::MemoryInfo)},
-  { 48, -1, -1, sizeof(::opi_api::inventory::v1::DeviceInfo)},
-  { 64, -1, -1, sizeof(::opi_api::inventory::v1::InventoryGetRequest)},
-  { 70, -1, -1, sizeof(::opi_api::inventory::v1::InventoryGetResponse)},
+  { 9, -1, -1, sizeof(::opi_api::inventory::v1::SystemInfo)},
+  { 22, -1, -1, sizeof(::opi_api::inventory::v1::ChassisInfo)},
+  { 34, -1, -1, sizeof(::opi_api::inventory::v1::BaseboardInfo)},
+  { 45, -1, -1, sizeof(::opi_api::inventory::v1::CPUInfo)},
+  { 53, -1, -1, sizeof(::opi_api::inventory::v1::MemoryInfo)},
+  { 61, -1, -1, sizeof(::opi_api::inventory::v1::DeviceInfo)},
+  { 77, -1, -1, sizeof(::opi_api::inventory::v1::InventoryGetRequest)},
+  { 83, -1, -1, sizeof(::opi_api::inventory::v1::InventoryGetResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::inventory::v1::_BIOSInfo_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::inventory::v1::_SystemInfo_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::inventory::v1::_ChassisInfo_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::inventory::v1::_BaseboardInfo_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::inventory::v1::_CPUInfo_default_instance_),
@@ -257,40 +292,45 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 const char descriptor_table_protodef_inventory_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\017inventory.proto\022\024opi_api.inventory.v1\""
   "9\n\010BIOSInfo\022\016\n\006vendor\030\001 \001(\t\022\017\n\007version\030\002"
-  " \001(\t\022\014\n\004date\030\003 \001(\t\"\200\001\n\013ChassisInfo\022\021\n\tas"
-  "set_tag\030\001 \001(\t\022\025\n\rserial_number\030\002 \001(\t\022\014\n\004"
-  "type\030\003 \001(\t\022\030\n\020type_description\030\004 \001(\t\022\016\n\006"
-  "vendor\030\005 \001(\t\022\017\n\007version\030\006 \001(\t\"k\n\rBaseboa"
-  "rdInfo\022\021\n\tasset_tag\030\001 \001(\t\022\025\n\rserial_numb"
-  "er\030\002 \001(\t\022\016\n\006vendor\030\003 \001(\t\022\017\n\007version\030\004 \001("
-  "\t\022\017\n\007product\030\005 \001(\t\"5\n\007CPUInfo\022\023\n\013total_c"
-  "ores\030\001 \001(\005\022\025\n\rtotal_threads\030\002 \001(\005\"F\n\nMem"
-  "oryInfo\022\034\n\024total_physical_bytes\030\001 \001(\003\022\032\n"
-  "\022total_usable_bytes\030\002 \001(\003\"\277\001\n\nDeviceInfo"
-  "\022\014\n\004name\030\001 \001(\t\022\023\n\013description\030\002 \001(\t\022\n\n\002i"
-  "d\030\003 \001(\t\022\020\n\010mfg_name\030\004 \001(\t\022\020\n\010mfg_date\030\005 "
-  "\001(\t\022\022\n\nhw_version\030\006 \001(\t\022\022\n\nfw_version\030\007 "
-  "\001(\t\022\022\n\nsw_version\030\010 \001(\t\022\021\n\tserial_no\030\t \001"
-  "(\t\022\017\n\007part_no\030\n \001(\t\"\025\n\023InventoryGetReque"
-  "st\"\307\002\n\024InventoryGetResponse\022,\n\004bios\030\001 \001("
-  "\0132\036.opi_api.inventory.v1.BIOSInfo\0226\n\tbas"
-  "eboard\030\003 \001(\0132#.opi_api.inventory.v1.Base"
-  "boardInfo\0222\n\007chassis\030\004 \001(\0132!.opi_api.inv"
-  "entory.v1.ChassisInfo\0220\n\tprocessor\030\005 \001(\013"
-  "2\035.opi_api.inventory.v1.CPUInfo\0220\n\006memor"
-  "y\030\006 \001(\0132 .opi_api.inventory.v1.MemoryInf"
-  "o\0221\n\007devinfo\030\007 \001(\0132 .opi_api.inventory.v"
-  "1.DeviceInfo2w\n\014InventorySvc\022g\n\014Inventor"
-  "yGet\022).opi_api.inventory.v1.InventoryGet"
-  "Request\032*.opi_api.inventory.v1.Inventory"
-  "GetResponse\"\000BX\n\024opi_api.inventory.v1B\016I"
-  "nventoryProtoP\001Z.github.com/opiproject/o"
-  "pi-api/common/v1/gen/gob\006proto3"
+  " \001(\t\022\014\n\004date\030\003 \001(\t\"}\n\nSystemInfo\022\016\n\006fami"
+  "ly\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\016\n\006vendor\030\003 \001(\t\022\025"
+  "\n\rserial_number\030\004 \001(\t\022\014\n\004uuid\030\005 \001(\t\022\013\n\003s"
+  "ku\030\006 \001(\t\022\017\n\007version\030\007 \001(\t\"\200\001\n\013ChassisInf"
+  "o\022\021\n\tasset_tag\030\001 \001(\t\022\025\n\rserial_number\030\002 "
+  "\001(\t\022\014\n\004type\030\003 \001(\t\022\030\n\020type_description\030\004 "
+  "\001(\t\022\016\n\006vendor\030\005 \001(\t\022\017\n\007version\030\006 \001(\t\"k\n\r"
+  "BaseboardInfo\022\021\n\tasset_tag\030\001 \001(\t\022\025\n\rseri"
+  "al_number\030\002 \001(\t\022\016\n\006vendor\030\003 \001(\t\022\017\n\007versi"
+  "on\030\004 \001(\t\022\017\n\007product\030\005 \001(\t\"5\n\007CPUInfo\022\023\n\013"
+  "total_cores\030\001 \001(\005\022\025\n\rtotal_threads\030\002 \001(\005"
+  "\"F\n\nMemoryInfo\022\034\n\024total_physical_bytes\030\001"
+  " \001(\003\022\032\n\022total_usable_bytes\030\002 \001(\003\"\277\001\n\nDev"
+  "iceInfo\022\014\n\004name\030\001 \001(\t\022\023\n\013description\030\002 \001"
+  "(\t\022\n\n\002id\030\003 \001(\t\022\020\n\010mfg_name\030\004 \001(\t\022\020\n\010mfg_"
+  "date\030\005 \001(\t\022\022\n\nhw_version\030\006 \001(\t\022\022\n\nfw_ver"
+  "sion\030\007 \001(\t\022\022\n\nsw_version\030\010 \001(\t\022\021\n\tserial"
+  "_no\030\t \001(\t\022\017\n\007part_no\030\n \001(\t\"\025\n\023InventoryG"
+  "etRequest\"\371\002\n\024InventoryGetResponse\022,\n\004bi"
+  "os\030\001 \001(\0132\036.opi_api.inventory.v1.BIOSInfo"
+  "\0220\n\006system\030\002 \001(\0132 .opi_api.inventory.v1."
+  "SystemInfo\0226\n\tbaseboard\030\003 \001(\0132#.opi_api."
+  "inventory.v1.BaseboardInfo\0222\n\007chassis\030\004 "
+  "\001(\0132!.opi_api.inventory.v1.ChassisInfo\0220"
+  "\n\tprocessor\030\005 \001(\0132\035.opi_api.inventory.v1"
+  ".CPUInfo\0220\n\006memory\030\006 \001(\0132 .opi_api.inven"
+  "tory.v1.MemoryInfo\0221\n\007devinfo\030\007 \001(\0132 .op"
+  "i_api.inventory.v1.DeviceInfo2w\n\014Invento"
+  "rySvc\022g\n\014InventoryGet\022).opi_api.inventor"
+  "y.v1.InventoryGetRequest\032*.opi_api.inven"
+  "tory.v1.InventoryGetResponse\"\000BX\n\024opi_ap"
+  "i.inventory.v1B\016InventoryProtoP\001Z.github"
+  ".com/opiproject/opi-api/common/v1/gen/go"
+  "b\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_inventory_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_inventory_2eproto = {
-  false, false, 1231, descriptor_table_protodef_inventory_2eproto, "inventory.proto", 
-  &descriptor_table_inventory_2eproto_once, nullptr, 0, 8,
+  false, false, 1408, descriptor_table_protodef_inventory_2eproto, "inventory.proto", 
+  &descriptor_table_inventory_2eproto_once, nullptr, 0, 9,
   schemas, file_default_instances, TableStruct_inventory_2eproto::offsets,
   file_level_metadata_inventory_2eproto, file_level_enum_descriptors_inventory_2eproto, file_level_service_descriptors_inventory_2eproto,
 };
@@ -603,6 +643,503 @@ void BIOSInfo::InternalSwap(BIOSInfo* other) {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_inventory_2eproto_getter, &descriptor_table_inventory_2eproto_once,
       file_level_metadata_inventory_2eproto[0]);
+}
+
+// ===================================================================
+
+class SystemInfo::_Internal {
+ public:
+};
+
+SystemInfo::SystemInfo(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:opi_api.inventory.v1.SystemInfo)
+}
+SystemInfo::SystemInfo(const SystemInfo& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  family_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    family_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_family().empty()) {
+    family_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_family(), 
+      GetArenaForAllocation());
+  }
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_name().empty()) {
+    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
+      GetArenaForAllocation());
+  }
+  vendor_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    vendor_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_vendor().empty()) {
+    vendor_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_vendor(), 
+      GetArenaForAllocation());
+  }
+  serial_number_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    serial_number_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_serial_number().empty()) {
+    serial_number_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_serial_number(), 
+      GetArenaForAllocation());
+  }
+  uuid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    uuid_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_uuid().empty()) {
+    uuid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_uuid(), 
+      GetArenaForAllocation());
+  }
+  sku_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    sku_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_sku().empty()) {
+    sku_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_sku(), 
+      GetArenaForAllocation());
+  }
+  version_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    version_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_version().empty()) {
+    version_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_version(), 
+      GetArenaForAllocation());
+  }
+  // @@protoc_insertion_point(copy_constructor:opi_api.inventory.v1.SystemInfo)
+}
+
+inline void SystemInfo::SharedCtor() {
+family_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  family_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+vendor_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  vendor_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+serial_number_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  serial_number_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+uuid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  uuid_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+sku_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  sku_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+version_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  version_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+}
+
+SystemInfo::~SystemInfo() {
+  // @@protoc_insertion_point(destructor:opi_api.inventory.v1.SystemInfo)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+inline void SystemInfo::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  family_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  vendor_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  serial_number_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  uuid_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  sku_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  version_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void SystemInfo::ArenaDtor(void* object) {
+  SystemInfo* _this = reinterpret_cast< SystemInfo* >(object);
+  (void)_this;
+}
+void SystemInfo::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void SystemInfo::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void SystemInfo::Clear() {
+// @@protoc_insertion_point(message_clear_start:opi_api.inventory.v1.SystemInfo)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  family_.ClearToEmpty();
+  name_.ClearToEmpty();
+  vendor_.ClearToEmpty();
+  serial_number_.ClearToEmpty();
+  uuid_.ClearToEmpty();
+  sku_.ClearToEmpty();
+  version_.ClearToEmpty();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* SystemInfo::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // string family = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          auto str = _internal_mutable_family();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.inventory.v1.SystemInfo.family"));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // string name = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          auto str = _internal_mutable_name();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.inventory.v1.SystemInfo.name"));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // string vendor = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+          auto str = _internal_mutable_vendor();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.inventory.v1.SystemInfo.vendor"));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // string serial_number = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
+          auto str = _internal_mutable_serial_number();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.inventory.v1.SystemInfo.serial_number"));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // string uuid = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
+          auto str = _internal_mutable_uuid();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.inventory.v1.SystemInfo.uuid"));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // string sku = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 50)) {
+          auto str = _internal_mutable_sku();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.inventory.v1.SystemInfo.sku"));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // string version = 7;
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 58)) {
+          auto str = _internal_mutable_version();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.inventory.v1.SystemInfo.version"));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* SystemInfo::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:opi_api.inventory.v1.SystemInfo)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string family = 1;
+  if (!this->_internal_family().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_family().data(), static_cast<int>(this->_internal_family().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "opi_api.inventory.v1.SystemInfo.family");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_family(), target);
+  }
+
+  // string name = 2;
+  if (!this->_internal_name().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "opi_api.inventory.v1.SystemInfo.name");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_name(), target);
+  }
+
+  // string vendor = 3;
+  if (!this->_internal_vendor().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_vendor().data(), static_cast<int>(this->_internal_vendor().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "opi_api.inventory.v1.SystemInfo.vendor");
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_vendor(), target);
+  }
+
+  // string serial_number = 4;
+  if (!this->_internal_serial_number().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_serial_number().data(), static_cast<int>(this->_internal_serial_number().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "opi_api.inventory.v1.SystemInfo.serial_number");
+    target = stream->WriteStringMaybeAliased(
+        4, this->_internal_serial_number(), target);
+  }
+
+  // string uuid = 5;
+  if (!this->_internal_uuid().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_uuid().data(), static_cast<int>(this->_internal_uuid().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "opi_api.inventory.v1.SystemInfo.uuid");
+    target = stream->WriteStringMaybeAliased(
+        5, this->_internal_uuid(), target);
+  }
+
+  // string sku = 6;
+  if (!this->_internal_sku().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_sku().data(), static_cast<int>(this->_internal_sku().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "opi_api.inventory.v1.SystemInfo.sku");
+    target = stream->WriteStringMaybeAliased(
+        6, this->_internal_sku(), target);
+  }
+
+  // string version = 7;
+  if (!this->_internal_version().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_version().data(), static_cast<int>(this->_internal_version().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "opi_api.inventory.v1.SystemInfo.version");
+    target = stream->WriteStringMaybeAliased(
+        7, this->_internal_version(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:opi_api.inventory.v1.SystemInfo)
+  return target;
+}
+
+size_t SystemInfo::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:opi_api.inventory.v1.SystemInfo)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string family = 1;
+  if (!this->_internal_family().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_family());
+  }
+
+  // string name = 2;
+  if (!this->_internal_name().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_name());
+  }
+
+  // string vendor = 3;
+  if (!this->_internal_vendor().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_vendor());
+  }
+
+  // string serial_number = 4;
+  if (!this->_internal_serial_number().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_serial_number());
+  }
+
+  // string uuid = 5;
+  if (!this->_internal_uuid().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_uuid());
+  }
+
+  // string sku = 6;
+  if (!this->_internal_sku().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_sku());
+  }
+
+  // string version = 7;
+  if (!this->_internal_version().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_version());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData SystemInfo::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    SystemInfo::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*SystemInfo::GetClassData() const { return &_class_data_; }
+
+void SystemInfo::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<SystemInfo *>(to)->MergeFrom(
+      static_cast<const SystemInfo &>(from));
+}
+
+
+void SystemInfo::MergeFrom(const SystemInfo& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.inventory.v1.SystemInfo)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_family().empty()) {
+    _internal_set_family(from._internal_family());
+  }
+  if (!from._internal_name().empty()) {
+    _internal_set_name(from._internal_name());
+  }
+  if (!from._internal_vendor().empty()) {
+    _internal_set_vendor(from._internal_vendor());
+  }
+  if (!from._internal_serial_number().empty()) {
+    _internal_set_serial_number(from._internal_serial_number());
+  }
+  if (!from._internal_uuid().empty()) {
+    _internal_set_uuid(from._internal_uuid());
+  }
+  if (!from._internal_sku().empty()) {
+    _internal_set_sku(from._internal_sku());
+  }
+  if (!from._internal_version().empty()) {
+    _internal_set_version(from._internal_version());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void SystemInfo::CopyFrom(const SystemInfo& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:opi_api.inventory.v1.SystemInfo)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool SystemInfo::IsInitialized() const {
+  return true;
+}
+
+void SystemInfo::InternalSwap(SystemInfo* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &family_, lhs_arena,
+      &other->family_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &name_, lhs_arena,
+      &other->name_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &vendor_, lhs_arena,
+      &other->vendor_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &serial_number_, lhs_arena,
+      &other->serial_number_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &uuid_, lhs_arena,
+      &other->uuid_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &sku_, lhs_arena,
+      &other->sku_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &version_, lhs_arena,
+      &other->version_, rhs_arena
+  );
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata SystemInfo::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_inventory_2eproto_getter, &descriptor_table_inventory_2eproto_once,
+      file_level_metadata_inventory_2eproto[1]);
 }
 
 // ===================================================================
@@ -1050,7 +1587,7 @@ void ChassisInfo::InternalSwap(ChassisInfo* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata ChassisInfo::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_inventory_2eproto_getter, &descriptor_table_inventory_2eproto_once,
-      file_level_metadata_inventory_2eproto[1]);
+      file_level_metadata_inventory_2eproto[2]);
 }
 
 // ===================================================================
@@ -1449,7 +1986,7 @@ void BaseboardInfo::InternalSwap(BaseboardInfo* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata BaseboardInfo::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_inventory_2eproto_getter, &descriptor_table_inventory_2eproto_once,
-      file_level_metadata_inventory_2eproto[2]);
+      file_level_metadata_inventory_2eproto[3]);
 }
 
 // ===================================================================
@@ -1661,7 +2198,7 @@ void CPUInfo::InternalSwap(CPUInfo* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata CPUInfo::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_inventory_2eproto_getter, &descriptor_table_inventory_2eproto_once,
-      file_level_metadata_inventory_2eproto[3]);
+      file_level_metadata_inventory_2eproto[4]);
 }
 
 // ===================================================================
@@ -1873,7 +2410,7 @@ void MemoryInfo::InternalSwap(MemoryInfo* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata MemoryInfo::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_inventory_2eproto_getter, &descriptor_table_inventory_2eproto_once,
-      file_level_metadata_inventory_2eproto[4]);
+      file_level_metadata_inventory_2eproto[5]);
 }
 
 // ===================================================================
@@ -2517,7 +3054,7 @@ void DeviceInfo::InternalSwap(DeviceInfo* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata DeviceInfo::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_inventory_2eproto_getter, &descriptor_table_inventory_2eproto_once,
-      file_level_metadata_inventory_2eproto[5]);
+      file_level_metadata_inventory_2eproto[6]);
 }
 
 // ===================================================================
@@ -2556,7 +3093,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*InventoryGetRequest::GetClassD
 ::PROTOBUF_NAMESPACE_ID::Metadata InventoryGetRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_inventory_2eproto_getter, &descriptor_table_inventory_2eproto_once,
-      file_level_metadata_inventory_2eproto[6]);
+      file_level_metadata_inventory_2eproto[7]);
 }
 
 // ===================================================================
@@ -2564,6 +3101,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*InventoryGetRequest::GetClassD
 class InventoryGetResponse::_Internal {
  public:
   static const ::opi_api::inventory::v1::BIOSInfo& bios(const InventoryGetResponse* msg);
+  static const ::opi_api::inventory::v1::SystemInfo& system(const InventoryGetResponse* msg);
   static const ::opi_api::inventory::v1::BaseboardInfo& baseboard(const InventoryGetResponse* msg);
   static const ::opi_api::inventory::v1::ChassisInfo& chassis(const InventoryGetResponse* msg);
   static const ::opi_api::inventory::v1::CPUInfo& processor(const InventoryGetResponse* msg);
@@ -2574,6 +3112,10 @@ class InventoryGetResponse::_Internal {
 const ::opi_api::inventory::v1::BIOSInfo&
 InventoryGetResponse::_Internal::bios(const InventoryGetResponse* msg) {
   return *msg->bios_;
+}
+const ::opi_api::inventory::v1::SystemInfo&
+InventoryGetResponse::_Internal::system(const InventoryGetResponse* msg) {
+  return *msg->system_;
 }
 const ::opi_api::inventory::v1::BaseboardInfo&
 InventoryGetResponse::_Internal::baseboard(const InventoryGetResponse* msg) {
@@ -2611,6 +3153,11 @@ InventoryGetResponse::InventoryGetResponse(const InventoryGetResponse& from)
     bios_ = new ::opi_api::inventory::v1::BIOSInfo(*from.bios_);
   } else {
     bios_ = nullptr;
+  }
+  if (from._internal_has_system()) {
+    system_ = new ::opi_api::inventory::v1::SystemInfo(*from.system_);
+  } else {
+    system_ = nullptr;
   }
   if (from._internal_has_baseboard()) {
     baseboard_ = new ::opi_api::inventory::v1::BaseboardInfo(*from.baseboard_);
@@ -2657,6 +3204,7 @@ InventoryGetResponse::~InventoryGetResponse() {
 inline void InventoryGetResponse::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (this != internal_default_instance()) delete bios_;
+  if (this != internal_default_instance()) delete system_;
   if (this != internal_default_instance()) delete baseboard_;
   if (this != internal_default_instance()) delete chassis_;
   if (this != internal_default_instance()) delete processor_;
@@ -2684,6 +3232,10 @@ void InventoryGetResponse::Clear() {
     delete bios_;
   }
   bios_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && system_ != nullptr) {
+    delete system_;
+  }
+  system_ = nullptr;
   if (GetArenaForAllocation() == nullptr && baseboard_ != nullptr) {
     delete baseboard_;
   }
@@ -2717,6 +3269,14 @@ const char* InventoryGetResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAM
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_bios(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .opi_api.inventory.v1.SystemInfo system = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          ptr = ctx->ParseMessage(_internal_mutable_system(), ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -2798,6 +3358,14 @@ uint8_t* InventoryGetResponse::_InternalSerialize(
         1, _Internal::bios(this), target, stream);
   }
 
+  // .opi_api.inventory.v1.SystemInfo system = 2;
+  if (this->_internal_has_system()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        2, _Internal::system(this), target, stream);
+  }
+
   // .opi_api.inventory.v1.BaseboardInfo baseboard = 3;
   if (this->_internal_has_baseboard()) {
     target = stream->EnsureSpace(target);
@@ -2861,6 +3429,13 @@ size_t InventoryGetResponse::ByteSizeLong() const {
         *bios_);
   }
 
+  // .opi_api.inventory.v1.SystemInfo system = 2;
+  if (this->_internal_has_system()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *system_);
+  }
+
   // .opi_api.inventory.v1.BaseboardInfo baseboard = 3;
   if (this->_internal_has_baseboard()) {
     total_size += 1 +
@@ -2921,6 +3496,9 @@ void InventoryGetResponse::MergeFrom(const InventoryGetResponse& from) {
   if (from._internal_has_bios()) {
     _internal_mutable_bios()->::opi_api::inventory::v1::BIOSInfo::MergeFrom(from._internal_bios());
   }
+  if (from._internal_has_system()) {
+    _internal_mutable_system()->::opi_api::inventory::v1::SystemInfo::MergeFrom(from._internal_system());
+  }
   if (from._internal_has_baseboard()) {
     _internal_mutable_baseboard()->::opi_api::inventory::v1::BaseboardInfo::MergeFrom(from._internal_baseboard());
   }
@@ -2964,7 +3542,7 @@ void InventoryGetResponse::InternalSwap(InventoryGetResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata InventoryGetResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_inventory_2eproto_getter, &descriptor_table_inventory_2eproto_once,
-      file_level_metadata_inventory_2eproto[7]);
+      file_level_metadata_inventory_2eproto[8]);
 }
 
 // @@protoc_insertion_point(namespace_scope)
@@ -2974,6 +3552,9 @@ void InventoryGetResponse::InternalSwap(InventoryGetResponse* other) {
 PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::opi_api::inventory::v1::BIOSInfo* Arena::CreateMaybeMessage< ::opi_api::inventory::v1::BIOSInfo >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::inventory::v1::BIOSInfo >(arena);
+}
+template<> PROTOBUF_NOINLINE ::opi_api::inventory::v1::SystemInfo* Arena::CreateMaybeMessage< ::opi_api::inventory::v1::SystemInfo >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::opi_api::inventory::v1::SystemInfo >(arena);
 }
 template<> PROTOBUF_NOINLINE ::opi_api::inventory::v1::ChassisInfo* Arena::CreateMaybeMessage< ::opi_api::inventory::v1::ChassisInfo >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::inventory::v1::ChassisInfo >(arena);

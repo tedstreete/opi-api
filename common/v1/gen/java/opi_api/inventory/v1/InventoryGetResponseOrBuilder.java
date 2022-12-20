@@ -23,28 +23,31 @@ public interface InventoryGetResponseOrBuilder extends
   opi_api.inventory.v1.BIOSInfoOrBuilder getBiosOrBuilder();
 
   /**
-   * <pre>
-   * SystemInfo system = 2;
-   * </pre>
-   *
+   * <code>.opi_api.inventory.v1.SystemInfo system = 2;</code>
+   * @return Whether the system field is set.
+   */
+  boolean hasSystem();
+  /**
+   * <code>.opi_api.inventory.v1.SystemInfo system = 2;</code>
+   * @return The system.
+   */
+  opi_api.inventory.v1.SystemInfo getSystem();
+  /**
+   * <code>.opi_api.inventory.v1.SystemInfo system = 2;</code>
+   */
+  opi_api.inventory.v1.SystemInfoOrBuilder getSystemOrBuilder();
+
+  /**
    * <code>.opi_api.inventory.v1.BaseboardInfo baseboard = 3;</code>
    * @return Whether the baseboard field is set.
    */
   boolean hasBaseboard();
   /**
-   * <pre>
-   * SystemInfo system = 2;
-   * </pre>
-   *
    * <code>.opi_api.inventory.v1.BaseboardInfo baseboard = 3;</code>
    * @return The baseboard.
    */
   opi_api.inventory.v1.BaseboardInfo getBaseboard();
   /**
-   * <pre>
-   * SystemInfo system = 2;
-   * </pre>
-   *
    * <code>.opi_api.inventory.v1.BaseboardInfo baseboard = 3;</code>
    */
   opi_api.inventory.v1.BaseboardInfoOrBuilder getBaseboardOrBuilder();
