@@ -89,14 +89,16 @@ The diagram below shows the packet pipeline and packet processing layers and the
 ![VNIC and NVME Offload](doc/images/API-VNIC-NVME-Use-Case.png)
 
 The table below provides the datapaths where each one has a specific objective and combining all of these objectives results in the above diagram.
-|   | Objective    | Datapath Service Chain                                        |
-| - | :--------    | :---------------------                                        |
-| 1 | Basic NIC    | Host ↔ VNIC ↔ IP ↔ Eth ↔ Wire                                 |
-| 2 | + VLAN       | Host ↔ VNIC ↔ IP ↔ VLAN ↔ Eth ↔ Wire                          |
-| 3 | + Tunnel     | Host ↔ VNIC ↔ VxLAN ↔ IP ↔ VLAN ↔ Eth ↔ Wire                  |
-| 4 | + L3Security | Host ↔ VNIC ↔ VxLAN ↔ IP ↔ IPsec ↔ VLAN ↔ Eth ↔ Wire          |
-| 5 | + MultiHost  | Host ↔ VNIC ↔ Bridge ↔ VxLAN ↔ IP ↔ IPsec ↔ VLAN ↔ Eth ↔ Wire |
-| 6 | NVMe + Local | Host ↔ NVMe ↔ Local Disk                                      |
-| 7 | NVMe + TCP   | Host ↔ NVMe ↔ NVMe-i ↔ TCP ↔ IP ↔ Eth ↔ Wire                  |
-| 8 | + L4Security | Host ↔ NVMe ↔ NVMe-i ↔ TLS ↔ TCP ↔ IP ↔ Eth ↔ Wire            |
-| 9 | + VLAN       | Host ↔ NVMe ↔ NVMe-i ↔ TLS ↔ TCP ↔ IP ↔ VLAN ↔ Eth ↔ Wire     |
+|   | Objective           | Datapath Service Chain                                                   |
+| - | :--------           | :---------------------                                                   |
+| 1 | Basic NIC           | Host ↔ VNIC ↔ IP ↔ Eth ↔ Wire                                            |
+| 2 | + VLAN              | Host ↔ VNIC ↔ IP ↔ VLAN ↔ Eth ↔ Wire                                     |
+| 3 | + Tunnel            | Host ↔ VNIC ↔ VxLAN ↔ IP ↔ VLAN ↔ Eth ↔ Wire                             |
+| 4 | + L3Security        | Host ↔ VNIC ↔ VxLAN ↔ IP ↔ IPsec ↔ VLAN ↔ Eth ↔ Wire                     |
+| 5 | + MultiHost         | Host ↔ VNIC ↔ Bridge ↔ VxLAN ↔ IP ↔ IPsec ↔ VLAN ↔ Eth ↔ Wire            |
+| 6 | NVMe + Local        | Host ↔ NVMe ↔ Local Disk                                                 |
+| 7 | NVMe + TCP          | Host ↔ NVMe ↔ NVMe-i ↔ TCP ↔ IP ↔ Eth ↔ Wire                             |
+| 8 | + L4Security        | Host ↔ NVMe ↔ NVMe-i ↔ TLS ↔ TCP ↔ IP ↔ Eth ↔ Wire                       |
+| 9 | + VLAN              | Host ↔ NVMe ↔ NVMe-i ↔ TLS ↔ TCP ↔ IP ↔ VLAN ↔ Eth ↔ Wire                |
+|10 | NVMe + TCP(Local)   | Host ↔ NVMe ↔ NVMe-i ↔ TCP ↔ IP ↔ Eth ↔ Bridge ↔ Host                    |
+|11 | + Tunnel            | Host ↔ NVMe ↔ NVMe-i ↔ TCP ↔ IP ↔ Eth ↔ Bridge ↔ VxLAN ↔ IP ↔ Eth ↔ Wire |
