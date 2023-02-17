@@ -16,6 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private InventoryGetResponse() {
+    pci_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -38,6 +39,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -127,16 +129,12 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 58: {
-            opi_api.inventory.v1.DeviceInfo.Builder subBuilder = null;
-            if (devinfo_ != null) {
-              subBuilder = devinfo_.toBuilder();
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              pci_ = new java.util.ArrayList<opi_api.inventory.v1.PCIeDeviceInfo>();
+              mutable_bitField0_ |= 0x00000001;
             }
-            devinfo_ = input.readMessage(opi_api.inventory.v1.DeviceInfo.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(devinfo_);
-              devinfo_ = subBuilder.buildPartial();
-            }
-
+            pci_.add(
+                input.readMessage(opi_api.inventory.v1.PCIeDeviceInfo.parser(), extensionRegistry));
             break;
           }
           default: {
@@ -154,6 +152,9 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        pci_ = java.util.Collections.unmodifiableList(pci_);
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -327,30 +328,44 @@ private static final long serialVersionUID = 0L;
     return getMemory();
   }
 
-  public static final int DEVINFO_FIELD_NUMBER = 7;
-  private opi_api.inventory.v1.DeviceInfo devinfo_;
+  public static final int PCI_FIELD_NUMBER = 7;
+  private java.util.List<opi_api.inventory.v1.PCIeDeviceInfo> pci_;
   /**
-   * <code>.opi_api.inventory.v1.DeviceInfo devinfo = 7;</code>
-   * @return Whether the devinfo field is set.
+   * <code>repeated .opi_api.inventory.v1.PCIeDeviceInfo pci = 7;</code>
    */
   @java.lang.Override
-  public boolean hasDevinfo() {
-    return devinfo_ != null;
+  public java.util.List<opi_api.inventory.v1.PCIeDeviceInfo> getPciList() {
+    return pci_;
   }
   /**
-   * <code>.opi_api.inventory.v1.DeviceInfo devinfo = 7;</code>
-   * @return The devinfo.
+   * <code>repeated .opi_api.inventory.v1.PCIeDeviceInfo pci = 7;</code>
    */
   @java.lang.Override
-  public opi_api.inventory.v1.DeviceInfo getDevinfo() {
-    return devinfo_ == null ? opi_api.inventory.v1.DeviceInfo.getDefaultInstance() : devinfo_;
+  public java.util.List<? extends opi_api.inventory.v1.PCIeDeviceInfoOrBuilder> 
+      getPciOrBuilderList() {
+    return pci_;
   }
   /**
-   * <code>.opi_api.inventory.v1.DeviceInfo devinfo = 7;</code>
+   * <code>repeated .opi_api.inventory.v1.PCIeDeviceInfo pci = 7;</code>
    */
   @java.lang.Override
-  public opi_api.inventory.v1.DeviceInfoOrBuilder getDevinfoOrBuilder() {
-    return getDevinfo();
+  public int getPciCount() {
+    return pci_.size();
+  }
+  /**
+   * <code>repeated .opi_api.inventory.v1.PCIeDeviceInfo pci = 7;</code>
+   */
+  @java.lang.Override
+  public opi_api.inventory.v1.PCIeDeviceInfo getPci(int index) {
+    return pci_.get(index);
+  }
+  /**
+   * <code>repeated .opi_api.inventory.v1.PCIeDeviceInfo pci = 7;</code>
+   */
+  @java.lang.Override
+  public opi_api.inventory.v1.PCIeDeviceInfoOrBuilder getPciOrBuilder(
+      int index) {
+    return pci_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -385,8 +400,8 @@ private static final long serialVersionUID = 0L;
     if (memory_ != null) {
       output.writeMessage(6, getMemory());
     }
-    if (devinfo_ != null) {
-      output.writeMessage(7, getDevinfo());
+    for (int i = 0; i < pci_.size(); i++) {
+      output.writeMessage(7, pci_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -421,9 +436,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(6, getMemory());
     }
-    if (devinfo_ != null) {
+    for (int i = 0; i < pci_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(7, getDevinfo());
+        .computeMessageSize(7, pci_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -470,11 +485,8 @@ private static final long serialVersionUID = 0L;
       if (!getMemory()
           .equals(other.getMemory())) return false;
     }
-    if (hasDevinfo() != other.hasDevinfo()) return false;
-    if (hasDevinfo()) {
-      if (!getDevinfo()
-          .equals(other.getDevinfo())) return false;
-    }
+    if (!getPciList()
+        .equals(other.getPciList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -510,9 +522,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + MEMORY_FIELD_NUMBER;
       hash = (53 * hash) + getMemory().hashCode();
     }
-    if (hasDevinfo()) {
-      hash = (37 * hash) + DEVINFO_FIELD_NUMBER;
-      hash = (53 * hash) + getDevinfo().hashCode();
+    if (getPciCount() > 0) {
+      hash = (37 * hash) + PCI_FIELD_NUMBER;
+      hash = (53 * hash) + getPciList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -642,6 +654,7 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
+        getPciFieldBuilder();
       }
     }
     @java.lang.Override
@@ -683,11 +696,11 @@ private static final long serialVersionUID = 0L;
         memory_ = null;
         memoryBuilder_ = null;
       }
-      if (devinfoBuilder_ == null) {
-        devinfo_ = null;
+      if (pciBuilder_ == null) {
+        pci_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
-        devinfo_ = null;
-        devinfoBuilder_ = null;
+        pciBuilder_.clear();
       }
       return this;
     }
@@ -715,6 +728,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public opi_api.inventory.v1.InventoryGetResponse buildPartial() {
       opi_api.inventory.v1.InventoryGetResponse result = new opi_api.inventory.v1.InventoryGetResponse(this);
+      int from_bitField0_ = bitField0_;
       if (biosBuilder_ == null) {
         result.bios_ = bios_;
       } else {
@@ -745,10 +759,14 @@ private static final long serialVersionUID = 0L;
       } else {
         result.memory_ = memoryBuilder_.build();
       }
-      if (devinfoBuilder_ == null) {
-        result.devinfo_ = devinfo_;
+      if (pciBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) != 0)) {
+          pci_ = java.util.Collections.unmodifiableList(pci_);
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.pci_ = pci_;
       } else {
-        result.devinfo_ = devinfoBuilder_.build();
+        result.pci_ = pciBuilder_.build();
       }
       onBuilt();
       return result;
@@ -816,8 +834,31 @@ private static final long serialVersionUID = 0L;
       if (other.hasMemory()) {
         mergeMemory(other.getMemory());
       }
-      if (other.hasDevinfo()) {
-        mergeDevinfo(other.getDevinfo());
+      if (pciBuilder_ == null) {
+        if (!other.pci_.isEmpty()) {
+          if (pci_.isEmpty()) {
+            pci_ = other.pci_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensurePciIsMutable();
+            pci_.addAll(other.pci_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.pci_.isEmpty()) {
+          if (pciBuilder_.isEmpty()) {
+            pciBuilder_.dispose();
+            pciBuilder_ = null;
+            pci_ = other.pci_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+            pciBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getPciFieldBuilder() : null;
+          } else {
+            pciBuilder_.addAllMessages(other.pci_);
+          }
+        }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -847,6 +888,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0_;
 
     private opi_api.inventory.v1.BIOSInfo bios_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1562,123 +1604,244 @@ private static final long serialVersionUID = 0L;
       return memoryBuilder_;
     }
 
-    private opi_api.inventory.v1.DeviceInfo devinfo_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.inventory.v1.DeviceInfo, opi_api.inventory.v1.DeviceInfo.Builder, opi_api.inventory.v1.DeviceInfoOrBuilder> devinfoBuilder_;
-    /**
-     * <code>.opi_api.inventory.v1.DeviceInfo devinfo = 7;</code>
-     * @return Whether the devinfo field is set.
-     */
-    public boolean hasDevinfo() {
-      return devinfoBuilder_ != null || devinfo_ != null;
+    private java.util.List<opi_api.inventory.v1.PCIeDeviceInfo> pci_ =
+      java.util.Collections.emptyList();
+    private void ensurePciIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        pci_ = new java.util.ArrayList<opi_api.inventory.v1.PCIeDeviceInfo>(pci_);
+        bitField0_ |= 0x00000001;
+       }
     }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        opi_api.inventory.v1.PCIeDeviceInfo, opi_api.inventory.v1.PCIeDeviceInfo.Builder, opi_api.inventory.v1.PCIeDeviceInfoOrBuilder> pciBuilder_;
+
     /**
-     * <code>.opi_api.inventory.v1.DeviceInfo devinfo = 7;</code>
-     * @return The devinfo.
+     * <code>repeated .opi_api.inventory.v1.PCIeDeviceInfo pci = 7;</code>
      */
-    public opi_api.inventory.v1.DeviceInfo getDevinfo() {
-      if (devinfoBuilder_ == null) {
-        return devinfo_ == null ? opi_api.inventory.v1.DeviceInfo.getDefaultInstance() : devinfo_;
+    public java.util.List<opi_api.inventory.v1.PCIeDeviceInfo> getPciList() {
+      if (pciBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(pci_);
       } else {
-        return devinfoBuilder_.getMessage();
+        return pciBuilder_.getMessageList();
       }
     }
     /**
-     * <code>.opi_api.inventory.v1.DeviceInfo devinfo = 7;</code>
+     * <code>repeated .opi_api.inventory.v1.PCIeDeviceInfo pci = 7;</code>
      */
-    public Builder setDevinfo(opi_api.inventory.v1.DeviceInfo value) {
-      if (devinfoBuilder_ == null) {
+    public int getPciCount() {
+      if (pciBuilder_ == null) {
+        return pci_.size();
+      } else {
+        return pciBuilder_.getCount();
+      }
+    }
+    /**
+     * <code>repeated .opi_api.inventory.v1.PCIeDeviceInfo pci = 7;</code>
+     */
+    public opi_api.inventory.v1.PCIeDeviceInfo getPci(int index) {
+      if (pciBuilder_ == null) {
+        return pci_.get(index);
+      } else {
+        return pciBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <code>repeated .opi_api.inventory.v1.PCIeDeviceInfo pci = 7;</code>
+     */
+    public Builder setPci(
+        int index, opi_api.inventory.v1.PCIeDeviceInfo value) {
+      if (pciBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        devinfo_ = value;
+        ensurePciIsMutable();
+        pci_.set(index, value);
         onChanged();
       } else {
-        devinfoBuilder_.setMessage(value);
+        pciBuilder_.setMessage(index, value);
       }
-
       return this;
     }
     /**
-     * <code>.opi_api.inventory.v1.DeviceInfo devinfo = 7;</code>
+     * <code>repeated .opi_api.inventory.v1.PCIeDeviceInfo pci = 7;</code>
      */
-    public Builder setDevinfo(
-        opi_api.inventory.v1.DeviceInfo.Builder builderForValue) {
-      if (devinfoBuilder_ == null) {
-        devinfo_ = builderForValue.build();
+    public Builder setPci(
+        int index, opi_api.inventory.v1.PCIeDeviceInfo.Builder builderForValue) {
+      if (pciBuilder_ == null) {
+        ensurePciIsMutable();
+        pci_.set(index, builderForValue.build());
         onChanged();
       } else {
-        devinfoBuilder_.setMessage(builderForValue.build());
+        pciBuilder_.setMessage(index, builderForValue.build());
       }
-
       return this;
     }
     /**
-     * <code>.opi_api.inventory.v1.DeviceInfo devinfo = 7;</code>
+     * <code>repeated .opi_api.inventory.v1.PCIeDeviceInfo pci = 7;</code>
      */
-    public Builder mergeDevinfo(opi_api.inventory.v1.DeviceInfo value) {
-      if (devinfoBuilder_ == null) {
-        if (devinfo_ != null) {
-          devinfo_ =
-            opi_api.inventory.v1.DeviceInfo.newBuilder(devinfo_).mergeFrom(value).buildPartial();
-        } else {
-          devinfo_ = value;
+    public Builder addPci(opi_api.inventory.v1.PCIeDeviceInfo value) {
+      if (pciBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
         }
+        ensurePciIsMutable();
+        pci_.add(value);
         onChanged();
       } else {
-        devinfoBuilder_.mergeFrom(value);
+        pciBuilder_.addMessage(value);
       }
-
       return this;
     }
     /**
-     * <code>.opi_api.inventory.v1.DeviceInfo devinfo = 7;</code>
+     * <code>repeated .opi_api.inventory.v1.PCIeDeviceInfo pci = 7;</code>
      */
-    public Builder clearDevinfo() {
-      if (devinfoBuilder_ == null) {
-        devinfo_ = null;
+    public Builder addPci(
+        int index, opi_api.inventory.v1.PCIeDeviceInfo value) {
+      if (pciBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePciIsMutable();
+        pci_.add(index, value);
         onChanged();
       } else {
-        devinfo_ = null;
-        devinfoBuilder_ = null;
+        pciBuilder_.addMessage(index, value);
       }
-
       return this;
     }
     /**
-     * <code>.opi_api.inventory.v1.DeviceInfo devinfo = 7;</code>
+     * <code>repeated .opi_api.inventory.v1.PCIeDeviceInfo pci = 7;</code>
      */
-    public opi_api.inventory.v1.DeviceInfo.Builder getDevinfoBuilder() {
-      
-      onChanged();
-      return getDevinfoFieldBuilder().getBuilder();
+    public Builder addPci(
+        opi_api.inventory.v1.PCIeDeviceInfo.Builder builderForValue) {
+      if (pciBuilder_ == null) {
+        ensurePciIsMutable();
+        pci_.add(builderForValue.build());
+        onChanged();
+      } else {
+        pciBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
     }
     /**
-     * <code>.opi_api.inventory.v1.DeviceInfo devinfo = 7;</code>
+     * <code>repeated .opi_api.inventory.v1.PCIeDeviceInfo pci = 7;</code>
      */
-    public opi_api.inventory.v1.DeviceInfoOrBuilder getDevinfoOrBuilder() {
-      if (devinfoBuilder_ != null) {
-        return devinfoBuilder_.getMessageOrBuilder();
+    public Builder addPci(
+        int index, opi_api.inventory.v1.PCIeDeviceInfo.Builder builderForValue) {
+      if (pciBuilder_ == null) {
+        ensurePciIsMutable();
+        pci_.add(index, builderForValue.build());
+        onChanged();
       } else {
-        return devinfo_ == null ?
-            opi_api.inventory.v1.DeviceInfo.getDefaultInstance() : devinfo_;
+        pciBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .opi_api.inventory.v1.PCIeDeviceInfo pci = 7;</code>
+     */
+    public Builder addAllPci(
+        java.lang.Iterable<? extends opi_api.inventory.v1.PCIeDeviceInfo> values) {
+      if (pciBuilder_ == null) {
+        ensurePciIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, pci_);
+        onChanged();
+      } else {
+        pciBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .opi_api.inventory.v1.PCIeDeviceInfo pci = 7;</code>
+     */
+    public Builder clearPci() {
+      if (pciBuilder_ == null) {
+        pci_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+      } else {
+        pciBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .opi_api.inventory.v1.PCIeDeviceInfo pci = 7;</code>
+     */
+    public Builder removePci(int index) {
+      if (pciBuilder_ == null) {
+        ensurePciIsMutable();
+        pci_.remove(index);
+        onChanged();
+      } else {
+        pciBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .opi_api.inventory.v1.PCIeDeviceInfo pci = 7;</code>
+     */
+    public opi_api.inventory.v1.PCIeDeviceInfo.Builder getPciBuilder(
+        int index) {
+      return getPciFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <code>repeated .opi_api.inventory.v1.PCIeDeviceInfo pci = 7;</code>
+     */
+    public opi_api.inventory.v1.PCIeDeviceInfoOrBuilder getPciOrBuilder(
+        int index) {
+      if (pciBuilder_ == null) {
+        return pci_.get(index);  } else {
+        return pciBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
-     * <code>.opi_api.inventory.v1.DeviceInfo devinfo = 7;</code>
+     * <code>repeated .opi_api.inventory.v1.PCIeDeviceInfo pci = 7;</code>
      */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.inventory.v1.DeviceInfo, opi_api.inventory.v1.DeviceInfo.Builder, opi_api.inventory.v1.DeviceInfoOrBuilder> 
-        getDevinfoFieldBuilder() {
-      if (devinfoBuilder_ == null) {
-        devinfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            opi_api.inventory.v1.DeviceInfo, opi_api.inventory.v1.DeviceInfo.Builder, opi_api.inventory.v1.DeviceInfoOrBuilder>(
-                getDevinfo(),
+    public java.util.List<? extends opi_api.inventory.v1.PCIeDeviceInfoOrBuilder> 
+         getPciOrBuilderList() {
+      if (pciBuilder_ != null) {
+        return pciBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(pci_);
+      }
+    }
+    /**
+     * <code>repeated .opi_api.inventory.v1.PCIeDeviceInfo pci = 7;</code>
+     */
+    public opi_api.inventory.v1.PCIeDeviceInfo.Builder addPciBuilder() {
+      return getPciFieldBuilder().addBuilder(
+          opi_api.inventory.v1.PCIeDeviceInfo.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .opi_api.inventory.v1.PCIeDeviceInfo pci = 7;</code>
+     */
+    public opi_api.inventory.v1.PCIeDeviceInfo.Builder addPciBuilder(
+        int index) {
+      return getPciFieldBuilder().addBuilder(
+          index, opi_api.inventory.v1.PCIeDeviceInfo.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .opi_api.inventory.v1.PCIeDeviceInfo pci = 7;</code>
+     */
+    public java.util.List<opi_api.inventory.v1.PCIeDeviceInfo.Builder> 
+         getPciBuilderList() {
+      return getPciFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        opi_api.inventory.v1.PCIeDeviceInfo, opi_api.inventory.v1.PCIeDeviceInfo.Builder, opi_api.inventory.v1.PCIeDeviceInfoOrBuilder> 
+        getPciFieldBuilder() {
+      if (pciBuilder_ == null) {
+        pciBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            opi_api.inventory.v1.PCIeDeviceInfo, opi_api.inventory.v1.PCIeDeviceInfo.Builder, opi_api.inventory.v1.PCIeDeviceInfoOrBuilder>(
+                pci_,
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
-        devinfo_ = null;
+        pci_ = null;
       }
-      return devinfoBuilder_;
+      return pciBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

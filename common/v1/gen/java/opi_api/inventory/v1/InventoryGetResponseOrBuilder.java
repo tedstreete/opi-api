@@ -98,17 +98,26 @@ public interface InventoryGetResponseOrBuilder extends
   opi_api.inventory.v1.MemoryInfoOrBuilder getMemoryOrBuilder();
 
   /**
-   * <code>.opi_api.inventory.v1.DeviceInfo devinfo = 7;</code>
-   * @return Whether the devinfo field is set.
+   * <code>repeated .opi_api.inventory.v1.PCIeDeviceInfo pci = 7;</code>
    */
-  boolean hasDevinfo();
+  java.util.List<opi_api.inventory.v1.PCIeDeviceInfo> 
+      getPciList();
   /**
-   * <code>.opi_api.inventory.v1.DeviceInfo devinfo = 7;</code>
-   * @return The devinfo.
+   * <code>repeated .opi_api.inventory.v1.PCIeDeviceInfo pci = 7;</code>
    */
-  opi_api.inventory.v1.DeviceInfo getDevinfo();
+  opi_api.inventory.v1.PCIeDeviceInfo getPci(int index);
   /**
-   * <code>.opi_api.inventory.v1.DeviceInfo devinfo = 7;</code>
+   * <code>repeated .opi_api.inventory.v1.PCIeDeviceInfo pci = 7;</code>
    */
-  opi_api.inventory.v1.DeviceInfoOrBuilder getDevinfoOrBuilder();
+  int getPciCount();
+  /**
+   * <code>repeated .opi_api.inventory.v1.PCIeDeviceInfo pci = 7;</code>
+   */
+  java.util.List<? extends opi_api.inventory.v1.PCIeDeviceInfoOrBuilder> 
+      getPciOrBuilderList();
+  /**
+   * <code>repeated .opi_api.inventory.v1.PCIeDeviceInfo pci = 7;</code>
+   */
+  opi_api.inventory.v1.PCIeDeviceInfoOrBuilder getPciOrBuilder(
+      int index);
 }

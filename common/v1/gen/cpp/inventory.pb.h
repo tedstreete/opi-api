@@ -69,9 +69,6 @@ extern CPUInfoDefaultTypeInternal _CPUInfo_default_instance_;
 class ChassisInfo;
 struct ChassisInfoDefaultTypeInternal;
 extern ChassisInfoDefaultTypeInternal _ChassisInfo_default_instance_;
-class DeviceInfo;
-struct DeviceInfoDefaultTypeInternal;
-extern DeviceInfoDefaultTypeInternal _DeviceInfo_default_instance_;
 class InventoryGetRequest;
 struct InventoryGetRequestDefaultTypeInternal;
 extern InventoryGetRequestDefaultTypeInternal _InventoryGetRequest_default_instance_;
@@ -81,6 +78,9 @@ extern InventoryGetResponseDefaultTypeInternal _InventoryGetResponse_default_ins
 class MemoryInfo;
 struct MemoryInfoDefaultTypeInternal;
 extern MemoryInfoDefaultTypeInternal _MemoryInfo_default_instance_;
+class PCIeDeviceInfo;
+struct PCIeDeviceInfoDefaultTypeInternal;
+extern PCIeDeviceInfoDefaultTypeInternal _PCIeDeviceInfo_default_instance_;
 class SystemInfo;
 struct SystemInfoDefaultTypeInternal;
 extern SystemInfoDefaultTypeInternal _SystemInfo_default_instance_;
@@ -92,10 +92,10 @@ template<> ::opi_api::inventory::v1::BIOSInfo* Arena::CreateMaybeMessage<::opi_a
 template<> ::opi_api::inventory::v1::BaseboardInfo* Arena::CreateMaybeMessage<::opi_api::inventory::v1::BaseboardInfo>(Arena*);
 template<> ::opi_api::inventory::v1::CPUInfo* Arena::CreateMaybeMessage<::opi_api::inventory::v1::CPUInfo>(Arena*);
 template<> ::opi_api::inventory::v1::ChassisInfo* Arena::CreateMaybeMessage<::opi_api::inventory::v1::ChassisInfo>(Arena*);
-template<> ::opi_api::inventory::v1::DeviceInfo* Arena::CreateMaybeMessage<::opi_api::inventory::v1::DeviceInfo>(Arena*);
 template<> ::opi_api::inventory::v1::InventoryGetRequest* Arena::CreateMaybeMessage<::opi_api::inventory::v1::InventoryGetRequest>(Arena*);
 template<> ::opi_api::inventory::v1::InventoryGetResponse* Arena::CreateMaybeMessage<::opi_api::inventory::v1::InventoryGetResponse>(Arena*);
 template<> ::opi_api::inventory::v1::MemoryInfo* Arena::CreateMaybeMessage<::opi_api::inventory::v1::MemoryInfo>(Arena*);
+template<> ::opi_api::inventory::v1::PCIeDeviceInfo* Arena::CreateMaybeMessage<::opi_api::inventory::v1::PCIeDeviceInfo>(Arena*);
 template<> ::opi_api::inventory::v1::SystemInfo* Arena::CreateMaybeMessage<::opi_api::inventory::v1::SystemInfo>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace opi_api {
@@ -1294,24 +1294,24 @@ class MemoryInfo final :
 };
 // -------------------------------------------------------------------
 
-class DeviceInfo final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.inventory.v1.DeviceInfo) */ {
+class PCIeDeviceInfo final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.inventory.v1.PCIeDeviceInfo) */ {
  public:
-  inline DeviceInfo() : DeviceInfo(nullptr) {}
-  ~DeviceInfo() override;
-  explicit constexpr DeviceInfo(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline PCIeDeviceInfo() : PCIeDeviceInfo(nullptr) {}
+  ~PCIeDeviceInfo() override;
+  explicit constexpr PCIeDeviceInfo(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  DeviceInfo(const DeviceInfo& from);
-  DeviceInfo(DeviceInfo&& from) noexcept
-    : DeviceInfo() {
+  PCIeDeviceInfo(const PCIeDeviceInfo& from);
+  PCIeDeviceInfo(PCIeDeviceInfo&& from) noexcept
+    : PCIeDeviceInfo() {
     *this = ::std::move(from);
   }
 
-  inline DeviceInfo& operator=(const DeviceInfo& from) {
+  inline PCIeDeviceInfo& operator=(const PCIeDeviceInfo& from) {
     CopyFrom(from);
     return *this;
   }
-  inline DeviceInfo& operator=(DeviceInfo&& from) noexcept {
+  inline PCIeDeviceInfo& operator=(PCIeDeviceInfo&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()
   #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
@@ -1334,20 +1334,20 @@ class DeviceInfo final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const DeviceInfo& default_instance() {
+  static const PCIeDeviceInfo& default_instance() {
     return *internal_default_instance();
   }
-  static inline const DeviceInfo* internal_default_instance() {
-    return reinterpret_cast<const DeviceInfo*>(
-               &_DeviceInfo_default_instance_);
+  static inline const PCIeDeviceInfo* internal_default_instance() {
+    return reinterpret_cast<const PCIeDeviceInfo*>(
+               &_PCIeDeviceInfo_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     6;
 
-  friend void swap(DeviceInfo& a, DeviceInfo& b) {
+  friend void swap(PCIeDeviceInfo& a, PCIeDeviceInfo& b) {
     a.Swap(&b);
   }
-  inline void Swap(DeviceInfo* other) {
+  inline void Swap(PCIeDeviceInfo* other) {
     if (other == this) return;
   #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
     if (GetOwningArena() != nullptr &&
@@ -1360,7 +1360,7 @@ class DeviceInfo final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(DeviceInfo* other) {
+  void UnsafeArenaSwap(PCIeDeviceInfo* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -1368,13 +1368,13 @@ class DeviceInfo final :
 
   // implements Message ----------------------------------------------
 
-  DeviceInfo* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<DeviceInfo>(arena);
+  PCIeDeviceInfo* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<PCIeDeviceInfo>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const DeviceInfo& from);
+  void CopyFrom(const PCIeDeviceInfo& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const DeviceInfo& from);
+  void MergeFrom(const PCIeDeviceInfo& from);
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
   public:
@@ -1391,15 +1391,15 @@ class DeviceInfo final :
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(DeviceInfo* other);
+  void InternalSwap(PCIeDeviceInfo* other);
 
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "opi_api.inventory.v1.DeviceInfo";
+    return "opi_api.inventory.v1.PCIeDeviceInfo";
   }
   protected:
-  explicit DeviceInfo(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit PCIeDeviceInfo(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   private:
   static void ArenaDtor(void* object);
@@ -1416,174 +1416,142 @@ class DeviceInfo final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kNameFieldNumber = 1,
-    kDescriptionFieldNumber = 2,
-    kIdFieldNumber = 3,
-    kMfgNameFieldNumber = 4,
-    kMfgDateFieldNumber = 5,
-    kHwVersionFieldNumber = 6,
-    kFwVersionFieldNumber = 7,
-    kSwVersionFieldNumber = 8,
-    kSerialNoFieldNumber = 9,
-    kPartNoFieldNumber = 10,
+    kDriverFieldNumber = 1,
+    kAddressFieldNumber = 2,
+    kVendorFieldNumber = 3,
+    kProductFieldNumber = 4,
+    kRevisionFieldNumber = 5,
+    kSubsystemFieldNumber = 6,
+    kClassFieldNumber = 7,
+    kSubclassFieldNumber = 8,
   };
-  // string name = 1;
-  void clear_name();
-  const std::string& name() const;
+  // string driver = 1;
+  void clear_driver();
+  const std::string& driver() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_name(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_name();
-  PROTOBUF_NODISCARD std::string* release_name();
-  void set_allocated_name(std::string* name);
+  void set_driver(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_driver();
+  PROTOBUF_NODISCARD std::string* release_driver();
+  void set_allocated_driver(std::string* driver);
   private:
-  const std::string& _internal_name() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
-  std::string* _internal_mutable_name();
+  const std::string& _internal_driver() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_driver(const std::string& value);
+  std::string* _internal_mutable_driver();
   public:
 
-  // string description = 2;
-  void clear_description();
-  const std::string& description() const;
+  // string address = 2;
+  void clear_address();
+  const std::string& address() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_description(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_description();
-  PROTOBUF_NODISCARD std::string* release_description();
-  void set_allocated_description(std::string* description);
+  void set_address(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_address();
+  PROTOBUF_NODISCARD std::string* release_address();
+  void set_allocated_address(std::string* address);
   private:
-  const std::string& _internal_description() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_description(const std::string& value);
-  std::string* _internal_mutable_description();
+  const std::string& _internal_address() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_address(const std::string& value);
+  std::string* _internal_mutable_address();
   public:
 
-  // string id = 3;
-  void clear_id();
-  const std::string& id() const;
+  // string vendor = 3;
+  void clear_vendor();
+  const std::string& vendor() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_id(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_id();
-  PROTOBUF_NODISCARD std::string* release_id();
-  void set_allocated_id(std::string* id);
+  void set_vendor(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_vendor();
+  PROTOBUF_NODISCARD std::string* release_vendor();
+  void set_allocated_vendor(std::string* vendor);
   private:
-  const std::string& _internal_id() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_id(const std::string& value);
-  std::string* _internal_mutable_id();
+  const std::string& _internal_vendor() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_vendor(const std::string& value);
+  std::string* _internal_mutable_vendor();
   public:
 
-  // string mfg_name = 4;
-  void clear_mfg_name();
-  const std::string& mfg_name() const;
+  // string product = 4;
+  void clear_product();
+  const std::string& product() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_mfg_name(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_mfg_name();
-  PROTOBUF_NODISCARD std::string* release_mfg_name();
-  void set_allocated_mfg_name(std::string* mfg_name);
+  void set_product(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_product();
+  PROTOBUF_NODISCARD std::string* release_product();
+  void set_allocated_product(std::string* product);
   private:
-  const std::string& _internal_mfg_name() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_mfg_name(const std::string& value);
-  std::string* _internal_mutable_mfg_name();
+  const std::string& _internal_product() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_product(const std::string& value);
+  std::string* _internal_mutable_product();
   public:
 
-  // string mfg_date = 5;
-  void clear_mfg_date();
-  const std::string& mfg_date() const;
+  // string revision = 5;
+  void clear_revision();
+  const std::string& revision() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_mfg_date(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_mfg_date();
-  PROTOBUF_NODISCARD std::string* release_mfg_date();
-  void set_allocated_mfg_date(std::string* mfg_date);
+  void set_revision(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_revision();
+  PROTOBUF_NODISCARD std::string* release_revision();
+  void set_allocated_revision(std::string* revision);
   private:
-  const std::string& _internal_mfg_date() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_mfg_date(const std::string& value);
-  std::string* _internal_mutable_mfg_date();
+  const std::string& _internal_revision() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_revision(const std::string& value);
+  std::string* _internal_mutable_revision();
   public:
 
-  // string hw_version = 6;
-  void clear_hw_version();
-  const std::string& hw_version() const;
+  // string subsystem = 6;
+  void clear_subsystem();
+  const std::string& subsystem() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_hw_version(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_hw_version();
-  PROTOBUF_NODISCARD std::string* release_hw_version();
-  void set_allocated_hw_version(std::string* hw_version);
+  void set_subsystem(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_subsystem();
+  PROTOBUF_NODISCARD std::string* release_subsystem();
+  void set_allocated_subsystem(std::string* subsystem);
   private:
-  const std::string& _internal_hw_version() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_hw_version(const std::string& value);
-  std::string* _internal_mutable_hw_version();
+  const std::string& _internal_subsystem() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_subsystem(const std::string& value);
+  std::string* _internal_mutable_subsystem();
   public:
 
-  // string fw_version = 7;
-  void clear_fw_version();
-  const std::string& fw_version() const;
+  // string class = 7;
+  void clear_class_();
+  const std::string& class_() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_fw_version(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_fw_version();
-  PROTOBUF_NODISCARD std::string* release_fw_version();
-  void set_allocated_fw_version(std::string* fw_version);
+  void set_class_(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_class_();
+  PROTOBUF_NODISCARD std::string* release_class_();
+  void set_allocated_class_(std::string* class_);
   private:
-  const std::string& _internal_fw_version() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_fw_version(const std::string& value);
-  std::string* _internal_mutable_fw_version();
+  const std::string& _internal_class_() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_class_(const std::string& value);
+  std::string* _internal_mutable_class_();
   public:
 
-  // string sw_version = 8;
-  void clear_sw_version();
-  const std::string& sw_version() const;
+  // string subclass = 8;
+  void clear_subclass();
+  const std::string& subclass() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_sw_version(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_sw_version();
-  PROTOBUF_NODISCARD std::string* release_sw_version();
-  void set_allocated_sw_version(std::string* sw_version);
+  void set_subclass(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_subclass();
+  PROTOBUF_NODISCARD std::string* release_subclass();
+  void set_allocated_subclass(std::string* subclass);
   private:
-  const std::string& _internal_sw_version() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_sw_version(const std::string& value);
-  std::string* _internal_mutable_sw_version();
+  const std::string& _internal_subclass() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_subclass(const std::string& value);
+  std::string* _internal_mutable_subclass();
   public:
 
-  // string serial_no = 9;
-  void clear_serial_no();
-  const std::string& serial_no() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_serial_no(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_serial_no();
-  PROTOBUF_NODISCARD std::string* release_serial_no();
-  void set_allocated_serial_no(std::string* serial_no);
-  private:
-  const std::string& _internal_serial_no() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_serial_no(const std::string& value);
-  std::string* _internal_mutable_serial_no();
-  public:
-
-  // string part_no = 10;
-  void clear_part_no();
-  const std::string& part_no() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_part_no(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_part_no();
-  PROTOBUF_NODISCARD std::string* release_part_no();
-  void set_allocated_part_no(std::string* part_no);
-  private:
-  const std::string& _internal_part_no() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_part_no(const std::string& value);
-  std::string* _internal_mutable_part_no();
-  public:
-
-  // @@protoc_insertion_point(class_scope:opi_api.inventory.v1.DeviceInfo)
+  // @@protoc_insertion_point(class_scope:opi_api.inventory.v1.PCIeDeviceInfo)
  private:
   class _Internal;
 
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr description_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr mfg_name_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr mfg_date_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr hw_version_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr fw_version_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr sw_version_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr serial_no_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr part_no_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr driver_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr address_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr vendor_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr product_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr revision_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr subsystem_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr class__;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr subclass_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_inventory_2eproto;
 };
@@ -1829,14 +1797,32 @@ class InventoryGetResponse final :
   // accessors -------------------------------------------------------
 
   enum : int {
+    kPciFieldNumber = 7,
     kBiosFieldNumber = 1,
     kSystemFieldNumber = 2,
     kBaseboardFieldNumber = 3,
     kChassisFieldNumber = 4,
     kProcessorFieldNumber = 5,
     kMemoryFieldNumber = 6,
-    kDevinfoFieldNumber = 7,
   };
+  // repeated .opi_api.inventory.v1.PCIeDeviceInfo pci = 7;
+  int pci_size() const;
+  private:
+  int _internal_pci_size() const;
+  public:
+  void clear_pci();
+  ::opi_api::inventory::v1::PCIeDeviceInfo* mutable_pci(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::opi_api::inventory::v1::PCIeDeviceInfo >*
+      mutable_pci();
+  private:
+  const ::opi_api::inventory::v1::PCIeDeviceInfo& _internal_pci(int index) const;
+  ::opi_api::inventory::v1::PCIeDeviceInfo* _internal_add_pci();
+  public:
+  const ::opi_api::inventory::v1::PCIeDeviceInfo& pci(int index) const;
+  ::opi_api::inventory::v1::PCIeDeviceInfo* add_pci();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::opi_api::inventory::v1::PCIeDeviceInfo >&
+      pci() const;
+
   // .opi_api.inventory.v1.BIOSInfo bios = 1;
   bool has_bios() const;
   private:
@@ -1945,24 +1931,6 @@ class InventoryGetResponse final :
       ::opi_api::inventory::v1::MemoryInfo* memory);
   ::opi_api::inventory::v1::MemoryInfo* unsafe_arena_release_memory();
 
-  // .opi_api.inventory.v1.DeviceInfo devinfo = 7;
-  bool has_devinfo() const;
-  private:
-  bool _internal_has_devinfo() const;
-  public:
-  void clear_devinfo();
-  const ::opi_api::inventory::v1::DeviceInfo& devinfo() const;
-  PROTOBUF_NODISCARD ::opi_api::inventory::v1::DeviceInfo* release_devinfo();
-  ::opi_api::inventory::v1::DeviceInfo* mutable_devinfo();
-  void set_allocated_devinfo(::opi_api::inventory::v1::DeviceInfo* devinfo);
-  private:
-  const ::opi_api::inventory::v1::DeviceInfo& _internal_devinfo() const;
-  ::opi_api::inventory::v1::DeviceInfo* _internal_mutable_devinfo();
-  public:
-  void unsafe_arena_set_allocated_devinfo(
-      ::opi_api::inventory::v1::DeviceInfo* devinfo);
-  ::opi_api::inventory::v1::DeviceInfo* unsafe_arena_release_devinfo();
-
   // @@protoc_insertion_point(class_scope:opi_api.inventory.v1.InventoryGetResponse)
  private:
   class _Internal;
@@ -1970,13 +1938,13 @@ class InventoryGetResponse final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::opi_api::inventory::v1::PCIeDeviceInfo > pci_;
   ::opi_api::inventory::v1::BIOSInfo* bios_;
   ::opi_api::inventory::v1::SystemInfo* system_;
   ::opi_api::inventory::v1::BaseboardInfo* baseboard_;
   ::opi_api::inventory::v1::ChassisInfo* chassis_;
   ::opi_api::inventory::v1::CPUInfo* processor_;
   ::opi_api::inventory::v1::MemoryInfo* memory_;
-  ::opi_api::inventory::v1::DeviceInfo* devinfo_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_inventory_2eproto;
 };
@@ -3164,516 +3132,414 @@ inline void MemoryInfo::set_total_usable_bytes(int64_t value) {
 
 // -------------------------------------------------------------------
 
-// DeviceInfo
+// PCIeDeviceInfo
 
-// string name = 1;
-inline void DeviceInfo::clear_name() {
-  name_.ClearToEmpty();
+// string driver = 1;
+inline void PCIeDeviceInfo::clear_driver() {
+  driver_.ClearToEmpty();
 }
-inline const std::string& DeviceInfo::name() const {
-  // @@protoc_insertion_point(field_get:opi_api.inventory.v1.DeviceInfo.name)
-  return _internal_name();
+inline const std::string& PCIeDeviceInfo::driver() const {
+  // @@protoc_insertion_point(field_get:opi_api.inventory.v1.PCIeDeviceInfo.driver)
+  return _internal_driver();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void DeviceInfo::set_name(ArgT0&& arg0, ArgT... args) {
+void PCIeDeviceInfo::set_driver(ArgT0&& arg0, ArgT... args) {
  
- name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.inventory.v1.DeviceInfo.name)
+ driver_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.inventory.v1.PCIeDeviceInfo.driver)
 }
-inline std::string* DeviceInfo::mutable_name() {
-  std::string* _s = _internal_mutable_name();
-  // @@protoc_insertion_point(field_mutable:opi_api.inventory.v1.DeviceInfo.name)
+inline std::string* PCIeDeviceInfo::mutable_driver() {
+  std::string* _s = _internal_mutable_driver();
+  // @@protoc_insertion_point(field_mutable:opi_api.inventory.v1.PCIeDeviceInfo.driver)
   return _s;
 }
-inline const std::string& DeviceInfo::_internal_name() const {
-  return name_.Get();
+inline const std::string& PCIeDeviceInfo::_internal_driver() const {
+  return driver_.Get();
 }
-inline void DeviceInfo::_internal_set_name(const std::string& value) {
+inline void PCIeDeviceInfo::_internal_set_driver(const std::string& value) {
   
-  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  driver_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* DeviceInfo::_internal_mutable_name() {
+inline std::string* PCIeDeviceInfo::_internal_mutable_driver() {
   
-  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  return driver_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* DeviceInfo::release_name() {
-  // @@protoc_insertion_point(field_release:opi_api.inventory.v1.DeviceInfo.name)
-  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline std::string* PCIeDeviceInfo::release_driver() {
+  // @@protoc_insertion_point(field_release:opi_api.inventory.v1.PCIeDeviceInfo.driver)
+  return driver_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void DeviceInfo::set_allocated_name(std::string* name) {
-  if (name != nullptr) {
+inline void PCIeDeviceInfo::set_allocated_driver(std::string* driver) {
+  if (driver != nullptr) {
     
   } else {
     
   }
-  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
+  driver_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), driver,
       GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (name_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  if (driver_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    driver_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.inventory.v1.DeviceInfo.name)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.inventory.v1.PCIeDeviceInfo.driver)
 }
 
-// string description = 2;
-inline void DeviceInfo::clear_description() {
-  description_.ClearToEmpty();
+// string address = 2;
+inline void PCIeDeviceInfo::clear_address() {
+  address_.ClearToEmpty();
 }
-inline const std::string& DeviceInfo::description() const {
-  // @@protoc_insertion_point(field_get:opi_api.inventory.v1.DeviceInfo.description)
-  return _internal_description();
+inline const std::string& PCIeDeviceInfo::address() const {
+  // @@protoc_insertion_point(field_get:opi_api.inventory.v1.PCIeDeviceInfo.address)
+  return _internal_address();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void DeviceInfo::set_description(ArgT0&& arg0, ArgT... args) {
+void PCIeDeviceInfo::set_address(ArgT0&& arg0, ArgT... args) {
  
- description_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.inventory.v1.DeviceInfo.description)
+ address_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.inventory.v1.PCIeDeviceInfo.address)
 }
-inline std::string* DeviceInfo::mutable_description() {
-  std::string* _s = _internal_mutable_description();
-  // @@protoc_insertion_point(field_mutable:opi_api.inventory.v1.DeviceInfo.description)
+inline std::string* PCIeDeviceInfo::mutable_address() {
+  std::string* _s = _internal_mutable_address();
+  // @@protoc_insertion_point(field_mutable:opi_api.inventory.v1.PCIeDeviceInfo.address)
   return _s;
 }
-inline const std::string& DeviceInfo::_internal_description() const {
-  return description_.Get();
+inline const std::string& PCIeDeviceInfo::_internal_address() const {
+  return address_.Get();
 }
-inline void DeviceInfo::_internal_set_description(const std::string& value) {
+inline void PCIeDeviceInfo::_internal_set_address(const std::string& value) {
   
-  description_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  address_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* DeviceInfo::_internal_mutable_description() {
+inline std::string* PCIeDeviceInfo::_internal_mutable_address() {
   
-  return description_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  return address_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* DeviceInfo::release_description() {
-  // @@protoc_insertion_point(field_release:opi_api.inventory.v1.DeviceInfo.description)
-  return description_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline std::string* PCIeDeviceInfo::release_address() {
+  // @@protoc_insertion_point(field_release:opi_api.inventory.v1.PCIeDeviceInfo.address)
+  return address_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void DeviceInfo::set_allocated_description(std::string* description) {
-  if (description != nullptr) {
+inline void PCIeDeviceInfo::set_allocated_address(std::string* address) {
+  if (address != nullptr) {
     
   } else {
     
   }
-  description_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), description,
+  address_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), address,
       GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (description_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    description_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  if (address_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    address_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.inventory.v1.DeviceInfo.description)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.inventory.v1.PCIeDeviceInfo.address)
 }
 
-// string id = 3;
-inline void DeviceInfo::clear_id() {
-  id_.ClearToEmpty();
+// string vendor = 3;
+inline void PCIeDeviceInfo::clear_vendor() {
+  vendor_.ClearToEmpty();
 }
-inline const std::string& DeviceInfo::id() const {
-  // @@protoc_insertion_point(field_get:opi_api.inventory.v1.DeviceInfo.id)
-  return _internal_id();
+inline const std::string& PCIeDeviceInfo::vendor() const {
+  // @@protoc_insertion_point(field_get:opi_api.inventory.v1.PCIeDeviceInfo.vendor)
+  return _internal_vendor();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void DeviceInfo::set_id(ArgT0&& arg0, ArgT... args) {
+void PCIeDeviceInfo::set_vendor(ArgT0&& arg0, ArgT... args) {
  
- id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.inventory.v1.DeviceInfo.id)
+ vendor_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.inventory.v1.PCIeDeviceInfo.vendor)
 }
-inline std::string* DeviceInfo::mutable_id() {
-  std::string* _s = _internal_mutable_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.inventory.v1.DeviceInfo.id)
+inline std::string* PCIeDeviceInfo::mutable_vendor() {
+  std::string* _s = _internal_mutable_vendor();
+  // @@protoc_insertion_point(field_mutable:opi_api.inventory.v1.PCIeDeviceInfo.vendor)
   return _s;
 }
-inline const std::string& DeviceInfo::_internal_id() const {
-  return id_.Get();
+inline const std::string& PCIeDeviceInfo::_internal_vendor() const {
+  return vendor_.Get();
 }
-inline void DeviceInfo::_internal_set_id(const std::string& value) {
+inline void PCIeDeviceInfo::_internal_set_vendor(const std::string& value) {
   
-  id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  vendor_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* DeviceInfo::_internal_mutable_id() {
+inline std::string* PCIeDeviceInfo::_internal_mutable_vendor() {
   
-  return id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  return vendor_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* DeviceInfo::release_id() {
-  // @@protoc_insertion_point(field_release:opi_api.inventory.v1.DeviceInfo.id)
-  return id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline std::string* PCIeDeviceInfo::release_vendor() {
+  // @@protoc_insertion_point(field_release:opi_api.inventory.v1.PCIeDeviceInfo.vendor)
+  return vendor_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void DeviceInfo::set_allocated_id(std::string* id) {
-  if (id != nullptr) {
+inline void PCIeDeviceInfo::set_allocated_vendor(std::string* vendor) {
+  if (vendor != nullptr) {
     
   } else {
     
   }
-  id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), id,
+  vendor_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), vendor,
       GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (id_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  if (vendor_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    vendor_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.inventory.v1.DeviceInfo.id)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.inventory.v1.PCIeDeviceInfo.vendor)
 }
 
-// string mfg_name = 4;
-inline void DeviceInfo::clear_mfg_name() {
-  mfg_name_.ClearToEmpty();
+// string product = 4;
+inline void PCIeDeviceInfo::clear_product() {
+  product_.ClearToEmpty();
 }
-inline const std::string& DeviceInfo::mfg_name() const {
-  // @@protoc_insertion_point(field_get:opi_api.inventory.v1.DeviceInfo.mfg_name)
-  return _internal_mfg_name();
+inline const std::string& PCIeDeviceInfo::product() const {
+  // @@protoc_insertion_point(field_get:opi_api.inventory.v1.PCIeDeviceInfo.product)
+  return _internal_product();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void DeviceInfo::set_mfg_name(ArgT0&& arg0, ArgT... args) {
+void PCIeDeviceInfo::set_product(ArgT0&& arg0, ArgT... args) {
  
- mfg_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.inventory.v1.DeviceInfo.mfg_name)
+ product_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.inventory.v1.PCIeDeviceInfo.product)
 }
-inline std::string* DeviceInfo::mutable_mfg_name() {
-  std::string* _s = _internal_mutable_mfg_name();
-  // @@protoc_insertion_point(field_mutable:opi_api.inventory.v1.DeviceInfo.mfg_name)
+inline std::string* PCIeDeviceInfo::mutable_product() {
+  std::string* _s = _internal_mutable_product();
+  // @@protoc_insertion_point(field_mutable:opi_api.inventory.v1.PCIeDeviceInfo.product)
   return _s;
 }
-inline const std::string& DeviceInfo::_internal_mfg_name() const {
-  return mfg_name_.Get();
+inline const std::string& PCIeDeviceInfo::_internal_product() const {
+  return product_.Get();
 }
-inline void DeviceInfo::_internal_set_mfg_name(const std::string& value) {
+inline void PCIeDeviceInfo::_internal_set_product(const std::string& value) {
   
-  mfg_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  product_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* DeviceInfo::_internal_mutable_mfg_name() {
+inline std::string* PCIeDeviceInfo::_internal_mutable_product() {
   
-  return mfg_name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  return product_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* DeviceInfo::release_mfg_name() {
-  // @@protoc_insertion_point(field_release:opi_api.inventory.v1.DeviceInfo.mfg_name)
-  return mfg_name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline std::string* PCIeDeviceInfo::release_product() {
+  // @@protoc_insertion_point(field_release:opi_api.inventory.v1.PCIeDeviceInfo.product)
+  return product_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void DeviceInfo::set_allocated_mfg_name(std::string* mfg_name) {
-  if (mfg_name != nullptr) {
+inline void PCIeDeviceInfo::set_allocated_product(std::string* product) {
+  if (product != nullptr) {
     
   } else {
     
   }
-  mfg_name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), mfg_name,
+  product_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), product,
       GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (mfg_name_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    mfg_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  if (product_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    product_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.inventory.v1.DeviceInfo.mfg_name)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.inventory.v1.PCIeDeviceInfo.product)
 }
 
-// string mfg_date = 5;
-inline void DeviceInfo::clear_mfg_date() {
-  mfg_date_.ClearToEmpty();
+// string revision = 5;
+inline void PCIeDeviceInfo::clear_revision() {
+  revision_.ClearToEmpty();
 }
-inline const std::string& DeviceInfo::mfg_date() const {
-  // @@protoc_insertion_point(field_get:opi_api.inventory.v1.DeviceInfo.mfg_date)
-  return _internal_mfg_date();
+inline const std::string& PCIeDeviceInfo::revision() const {
+  // @@protoc_insertion_point(field_get:opi_api.inventory.v1.PCIeDeviceInfo.revision)
+  return _internal_revision();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void DeviceInfo::set_mfg_date(ArgT0&& arg0, ArgT... args) {
+void PCIeDeviceInfo::set_revision(ArgT0&& arg0, ArgT... args) {
  
- mfg_date_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.inventory.v1.DeviceInfo.mfg_date)
+ revision_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.inventory.v1.PCIeDeviceInfo.revision)
 }
-inline std::string* DeviceInfo::mutable_mfg_date() {
-  std::string* _s = _internal_mutable_mfg_date();
-  // @@protoc_insertion_point(field_mutable:opi_api.inventory.v1.DeviceInfo.mfg_date)
+inline std::string* PCIeDeviceInfo::mutable_revision() {
+  std::string* _s = _internal_mutable_revision();
+  // @@protoc_insertion_point(field_mutable:opi_api.inventory.v1.PCIeDeviceInfo.revision)
   return _s;
 }
-inline const std::string& DeviceInfo::_internal_mfg_date() const {
-  return mfg_date_.Get();
+inline const std::string& PCIeDeviceInfo::_internal_revision() const {
+  return revision_.Get();
 }
-inline void DeviceInfo::_internal_set_mfg_date(const std::string& value) {
+inline void PCIeDeviceInfo::_internal_set_revision(const std::string& value) {
   
-  mfg_date_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  revision_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* DeviceInfo::_internal_mutable_mfg_date() {
+inline std::string* PCIeDeviceInfo::_internal_mutable_revision() {
   
-  return mfg_date_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  return revision_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* DeviceInfo::release_mfg_date() {
-  // @@protoc_insertion_point(field_release:opi_api.inventory.v1.DeviceInfo.mfg_date)
-  return mfg_date_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline std::string* PCIeDeviceInfo::release_revision() {
+  // @@protoc_insertion_point(field_release:opi_api.inventory.v1.PCIeDeviceInfo.revision)
+  return revision_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void DeviceInfo::set_allocated_mfg_date(std::string* mfg_date) {
-  if (mfg_date != nullptr) {
+inline void PCIeDeviceInfo::set_allocated_revision(std::string* revision) {
+  if (revision != nullptr) {
     
   } else {
     
   }
-  mfg_date_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), mfg_date,
+  revision_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), revision,
       GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (mfg_date_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    mfg_date_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  if (revision_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    revision_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.inventory.v1.DeviceInfo.mfg_date)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.inventory.v1.PCIeDeviceInfo.revision)
 }
 
-// string hw_version = 6;
-inline void DeviceInfo::clear_hw_version() {
-  hw_version_.ClearToEmpty();
+// string subsystem = 6;
+inline void PCIeDeviceInfo::clear_subsystem() {
+  subsystem_.ClearToEmpty();
 }
-inline const std::string& DeviceInfo::hw_version() const {
-  // @@protoc_insertion_point(field_get:opi_api.inventory.v1.DeviceInfo.hw_version)
-  return _internal_hw_version();
+inline const std::string& PCIeDeviceInfo::subsystem() const {
+  // @@protoc_insertion_point(field_get:opi_api.inventory.v1.PCIeDeviceInfo.subsystem)
+  return _internal_subsystem();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void DeviceInfo::set_hw_version(ArgT0&& arg0, ArgT... args) {
+void PCIeDeviceInfo::set_subsystem(ArgT0&& arg0, ArgT... args) {
  
- hw_version_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.inventory.v1.DeviceInfo.hw_version)
+ subsystem_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.inventory.v1.PCIeDeviceInfo.subsystem)
 }
-inline std::string* DeviceInfo::mutable_hw_version() {
-  std::string* _s = _internal_mutable_hw_version();
-  // @@protoc_insertion_point(field_mutable:opi_api.inventory.v1.DeviceInfo.hw_version)
+inline std::string* PCIeDeviceInfo::mutable_subsystem() {
+  std::string* _s = _internal_mutable_subsystem();
+  // @@protoc_insertion_point(field_mutable:opi_api.inventory.v1.PCIeDeviceInfo.subsystem)
   return _s;
 }
-inline const std::string& DeviceInfo::_internal_hw_version() const {
-  return hw_version_.Get();
+inline const std::string& PCIeDeviceInfo::_internal_subsystem() const {
+  return subsystem_.Get();
 }
-inline void DeviceInfo::_internal_set_hw_version(const std::string& value) {
+inline void PCIeDeviceInfo::_internal_set_subsystem(const std::string& value) {
   
-  hw_version_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  subsystem_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* DeviceInfo::_internal_mutable_hw_version() {
+inline std::string* PCIeDeviceInfo::_internal_mutable_subsystem() {
   
-  return hw_version_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  return subsystem_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* DeviceInfo::release_hw_version() {
-  // @@protoc_insertion_point(field_release:opi_api.inventory.v1.DeviceInfo.hw_version)
-  return hw_version_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline std::string* PCIeDeviceInfo::release_subsystem() {
+  // @@protoc_insertion_point(field_release:opi_api.inventory.v1.PCIeDeviceInfo.subsystem)
+  return subsystem_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void DeviceInfo::set_allocated_hw_version(std::string* hw_version) {
-  if (hw_version != nullptr) {
+inline void PCIeDeviceInfo::set_allocated_subsystem(std::string* subsystem) {
+  if (subsystem != nullptr) {
     
   } else {
     
   }
-  hw_version_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), hw_version,
+  subsystem_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), subsystem,
       GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (hw_version_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    hw_version_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  if (subsystem_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    subsystem_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.inventory.v1.DeviceInfo.hw_version)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.inventory.v1.PCIeDeviceInfo.subsystem)
 }
 
-// string fw_version = 7;
-inline void DeviceInfo::clear_fw_version() {
-  fw_version_.ClearToEmpty();
+// string class = 7;
+inline void PCIeDeviceInfo::clear_class_() {
+  class__.ClearToEmpty();
 }
-inline const std::string& DeviceInfo::fw_version() const {
-  // @@protoc_insertion_point(field_get:opi_api.inventory.v1.DeviceInfo.fw_version)
-  return _internal_fw_version();
+inline const std::string& PCIeDeviceInfo::class_() const {
+  // @@protoc_insertion_point(field_get:opi_api.inventory.v1.PCIeDeviceInfo.class)
+  return _internal_class_();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void DeviceInfo::set_fw_version(ArgT0&& arg0, ArgT... args) {
+void PCIeDeviceInfo::set_class_(ArgT0&& arg0, ArgT... args) {
  
- fw_version_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.inventory.v1.DeviceInfo.fw_version)
+ class__.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.inventory.v1.PCIeDeviceInfo.class)
 }
-inline std::string* DeviceInfo::mutable_fw_version() {
-  std::string* _s = _internal_mutable_fw_version();
-  // @@protoc_insertion_point(field_mutable:opi_api.inventory.v1.DeviceInfo.fw_version)
+inline std::string* PCIeDeviceInfo::mutable_class_() {
+  std::string* _s = _internal_mutable_class_();
+  // @@protoc_insertion_point(field_mutable:opi_api.inventory.v1.PCIeDeviceInfo.class)
   return _s;
 }
-inline const std::string& DeviceInfo::_internal_fw_version() const {
-  return fw_version_.Get();
+inline const std::string& PCIeDeviceInfo::_internal_class_() const {
+  return class__.Get();
 }
-inline void DeviceInfo::_internal_set_fw_version(const std::string& value) {
+inline void PCIeDeviceInfo::_internal_set_class_(const std::string& value) {
   
-  fw_version_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  class__.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* DeviceInfo::_internal_mutable_fw_version() {
+inline std::string* PCIeDeviceInfo::_internal_mutable_class_() {
   
-  return fw_version_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  return class__.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* DeviceInfo::release_fw_version() {
-  // @@protoc_insertion_point(field_release:opi_api.inventory.v1.DeviceInfo.fw_version)
-  return fw_version_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline std::string* PCIeDeviceInfo::release_class_() {
+  // @@protoc_insertion_point(field_release:opi_api.inventory.v1.PCIeDeviceInfo.class)
+  return class__.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void DeviceInfo::set_allocated_fw_version(std::string* fw_version) {
-  if (fw_version != nullptr) {
+inline void PCIeDeviceInfo::set_allocated_class_(std::string* class_) {
+  if (class_ != nullptr) {
     
   } else {
     
   }
-  fw_version_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), fw_version,
+  class__.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), class_,
       GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (fw_version_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    fw_version_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  if (class__.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    class__.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.inventory.v1.DeviceInfo.fw_version)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.inventory.v1.PCIeDeviceInfo.class)
 }
 
-// string sw_version = 8;
-inline void DeviceInfo::clear_sw_version() {
-  sw_version_.ClearToEmpty();
+// string subclass = 8;
+inline void PCIeDeviceInfo::clear_subclass() {
+  subclass_.ClearToEmpty();
 }
-inline const std::string& DeviceInfo::sw_version() const {
-  // @@protoc_insertion_point(field_get:opi_api.inventory.v1.DeviceInfo.sw_version)
-  return _internal_sw_version();
+inline const std::string& PCIeDeviceInfo::subclass() const {
+  // @@protoc_insertion_point(field_get:opi_api.inventory.v1.PCIeDeviceInfo.subclass)
+  return _internal_subclass();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void DeviceInfo::set_sw_version(ArgT0&& arg0, ArgT... args) {
+void PCIeDeviceInfo::set_subclass(ArgT0&& arg0, ArgT... args) {
  
- sw_version_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.inventory.v1.DeviceInfo.sw_version)
+ subclass_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.inventory.v1.PCIeDeviceInfo.subclass)
 }
-inline std::string* DeviceInfo::mutable_sw_version() {
-  std::string* _s = _internal_mutable_sw_version();
-  // @@protoc_insertion_point(field_mutable:opi_api.inventory.v1.DeviceInfo.sw_version)
+inline std::string* PCIeDeviceInfo::mutable_subclass() {
+  std::string* _s = _internal_mutable_subclass();
+  // @@protoc_insertion_point(field_mutable:opi_api.inventory.v1.PCIeDeviceInfo.subclass)
   return _s;
 }
-inline const std::string& DeviceInfo::_internal_sw_version() const {
-  return sw_version_.Get();
+inline const std::string& PCIeDeviceInfo::_internal_subclass() const {
+  return subclass_.Get();
 }
-inline void DeviceInfo::_internal_set_sw_version(const std::string& value) {
+inline void PCIeDeviceInfo::_internal_set_subclass(const std::string& value) {
   
-  sw_version_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  subclass_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* DeviceInfo::_internal_mutable_sw_version() {
+inline std::string* PCIeDeviceInfo::_internal_mutable_subclass() {
   
-  return sw_version_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  return subclass_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* DeviceInfo::release_sw_version() {
-  // @@protoc_insertion_point(field_release:opi_api.inventory.v1.DeviceInfo.sw_version)
-  return sw_version_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline std::string* PCIeDeviceInfo::release_subclass() {
+  // @@protoc_insertion_point(field_release:opi_api.inventory.v1.PCIeDeviceInfo.subclass)
+  return subclass_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void DeviceInfo::set_allocated_sw_version(std::string* sw_version) {
-  if (sw_version != nullptr) {
+inline void PCIeDeviceInfo::set_allocated_subclass(std::string* subclass) {
+  if (subclass != nullptr) {
     
   } else {
     
   }
-  sw_version_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), sw_version,
+  subclass_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), subclass,
       GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (sw_version_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    sw_version_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  if (subclass_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    subclass_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.inventory.v1.DeviceInfo.sw_version)
-}
-
-// string serial_no = 9;
-inline void DeviceInfo::clear_serial_no() {
-  serial_no_.ClearToEmpty();
-}
-inline const std::string& DeviceInfo::serial_no() const {
-  // @@protoc_insertion_point(field_get:opi_api.inventory.v1.DeviceInfo.serial_no)
-  return _internal_serial_no();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void DeviceInfo::set_serial_no(ArgT0&& arg0, ArgT... args) {
- 
- serial_no_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.inventory.v1.DeviceInfo.serial_no)
-}
-inline std::string* DeviceInfo::mutable_serial_no() {
-  std::string* _s = _internal_mutable_serial_no();
-  // @@protoc_insertion_point(field_mutable:opi_api.inventory.v1.DeviceInfo.serial_no)
-  return _s;
-}
-inline const std::string& DeviceInfo::_internal_serial_no() const {
-  return serial_no_.Get();
-}
-inline void DeviceInfo::_internal_set_serial_no(const std::string& value) {
-  
-  serial_no_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* DeviceInfo::_internal_mutable_serial_no() {
-  
-  return serial_no_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* DeviceInfo::release_serial_no() {
-  // @@protoc_insertion_point(field_release:opi_api.inventory.v1.DeviceInfo.serial_no)
-  return serial_no_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void DeviceInfo::set_allocated_serial_no(std::string* serial_no) {
-  if (serial_no != nullptr) {
-    
-  } else {
-    
-  }
-  serial_no_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), serial_no,
-      GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (serial_no_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    serial_no_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.inventory.v1.DeviceInfo.serial_no)
-}
-
-// string part_no = 10;
-inline void DeviceInfo::clear_part_no() {
-  part_no_.ClearToEmpty();
-}
-inline const std::string& DeviceInfo::part_no() const {
-  // @@protoc_insertion_point(field_get:opi_api.inventory.v1.DeviceInfo.part_no)
-  return _internal_part_no();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void DeviceInfo::set_part_no(ArgT0&& arg0, ArgT... args) {
- 
- part_no_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.inventory.v1.DeviceInfo.part_no)
-}
-inline std::string* DeviceInfo::mutable_part_no() {
-  std::string* _s = _internal_mutable_part_no();
-  // @@protoc_insertion_point(field_mutable:opi_api.inventory.v1.DeviceInfo.part_no)
-  return _s;
-}
-inline const std::string& DeviceInfo::_internal_part_no() const {
-  return part_no_.Get();
-}
-inline void DeviceInfo::_internal_set_part_no(const std::string& value) {
-  
-  part_no_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* DeviceInfo::_internal_mutable_part_no() {
-  
-  return part_no_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* DeviceInfo::release_part_no() {
-  // @@protoc_insertion_point(field_release:opi_api.inventory.v1.DeviceInfo.part_no)
-  return part_no_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void DeviceInfo::set_allocated_part_no(std::string* part_no) {
-  if (part_no != nullptr) {
-    
-  } else {
-    
-  }
-  part_no_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), part_no,
-      GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (part_no_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    part_no_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.inventory.v1.DeviceInfo.part_no)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.inventory.v1.PCIeDeviceInfo.subclass)
 }
 
 // -------------------------------------------------------------------
@@ -4224,94 +4090,44 @@ inline void InventoryGetResponse::set_allocated_memory(::opi_api::inventory::v1:
   // @@protoc_insertion_point(field_set_allocated:opi_api.inventory.v1.InventoryGetResponse.memory)
 }
 
-// .opi_api.inventory.v1.DeviceInfo devinfo = 7;
-inline bool InventoryGetResponse::_internal_has_devinfo() const {
-  return this != internal_default_instance() && devinfo_ != nullptr;
+// repeated .opi_api.inventory.v1.PCIeDeviceInfo pci = 7;
+inline int InventoryGetResponse::_internal_pci_size() const {
+  return pci_.size();
 }
-inline bool InventoryGetResponse::has_devinfo() const {
-  return _internal_has_devinfo();
+inline int InventoryGetResponse::pci_size() const {
+  return _internal_pci_size();
 }
-inline void InventoryGetResponse::clear_devinfo() {
-  if (GetArenaForAllocation() == nullptr && devinfo_ != nullptr) {
-    delete devinfo_;
-  }
-  devinfo_ = nullptr;
+inline void InventoryGetResponse::clear_pci() {
+  pci_.Clear();
 }
-inline const ::opi_api::inventory::v1::DeviceInfo& InventoryGetResponse::_internal_devinfo() const {
-  const ::opi_api::inventory::v1::DeviceInfo* p = devinfo_;
-  return p != nullptr ? *p : reinterpret_cast<const ::opi_api::inventory::v1::DeviceInfo&>(
-      ::opi_api::inventory::v1::_DeviceInfo_default_instance_);
+inline ::opi_api::inventory::v1::PCIeDeviceInfo* InventoryGetResponse::mutable_pci(int index) {
+  // @@protoc_insertion_point(field_mutable:opi_api.inventory.v1.InventoryGetResponse.pci)
+  return pci_.Mutable(index);
 }
-inline const ::opi_api::inventory::v1::DeviceInfo& InventoryGetResponse::devinfo() const {
-  // @@protoc_insertion_point(field_get:opi_api.inventory.v1.InventoryGetResponse.devinfo)
-  return _internal_devinfo();
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::opi_api::inventory::v1::PCIeDeviceInfo >*
+InventoryGetResponse::mutable_pci() {
+  // @@protoc_insertion_point(field_mutable_list:opi_api.inventory.v1.InventoryGetResponse.pci)
+  return &pci_;
 }
-inline void InventoryGetResponse::unsafe_arena_set_allocated_devinfo(
-    ::opi_api::inventory::v1::DeviceInfo* devinfo) {
-  if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(devinfo_);
-  }
-  devinfo_ = devinfo;
-  if (devinfo) {
-    
-  } else {
-    
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.inventory.v1.InventoryGetResponse.devinfo)
+inline const ::opi_api::inventory::v1::PCIeDeviceInfo& InventoryGetResponse::_internal_pci(int index) const {
+  return pci_.Get(index);
 }
-inline ::opi_api::inventory::v1::DeviceInfo* InventoryGetResponse::release_devinfo() {
-  
-  ::opi_api::inventory::v1::DeviceInfo* temp = devinfo_;
-  devinfo_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
-  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  if (GetArenaForAllocation() == nullptr) { delete old; }
-#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArenaForAllocation() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return temp;
+inline const ::opi_api::inventory::v1::PCIeDeviceInfo& InventoryGetResponse::pci(int index) const {
+  // @@protoc_insertion_point(field_get:opi_api.inventory.v1.InventoryGetResponse.pci)
+  return _internal_pci(index);
 }
-inline ::opi_api::inventory::v1::DeviceInfo* InventoryGetResponse::unsafe_arena_release_devinfo() {
-  // @@protoc_insertion_point(field_release:opi_api.inventory.v1.InventoryGetResponse.devinfo)
-  
-  ::opi_api::inventory::v1::DeviceInfo* temp = devinfo_;
-  devinfo_ = nullptr;
-  return temp;
+inline ::opi_api::inventory::v1::PCIeDeviceInfo* InventoryGetResponse::_internal_add_pci() {
+  return pci_.Add();
 }
-inline ::opi_api::inventory::v1::DeviceInfo* InventoryGetResponse::_internal_mutable_devinfo() {
-  
-  if (devinfo_ == nullptr) {
-    auto* p = CreateMaybeMessage<::opi_api::inventory::v1::DeviceInfo>(GetArenaForAllocation());
-    devinfo_ = p;
-  }
-  return devinfo_;
+inline ::opi_api::inventory::v1::PCIeDeviceInfo* InventoryGetResponse::add_pci() {
+  ::opi_api::inventory::v1::PCIeDeviceInfo* _add = _internal_add_pci();
+  // @@protoc_insertion_point(field_add:opi_api.inventory.v1.InventoryGetResponse.pci)
+  return _add;
 }
-inline ::opi_api::inventory::v1::DeviceInfo* InventoryGetResponse::mutable_devinfo() {
-  ::opi_api::inventory::v1::DeviceInfo* _msg = _internal_mutable_devinfo();
-  // @@protoc_insertion_point(field_mutable:opi_api.inventory.v1.InventoryGetResponse.devinfo)
-  return _msg;
-}
-inline void InventoryGetResponse::set_allocated_devinfo(::opi_api::inventory::v1::DeviceInfo* devinfo) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  if (message_arena == nullptr) {
-    delete devinfo_;
-  }
-  if (devinfo) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::opi_api::inventory::v1::DeviceInfo>::GetOwningArena(devinfo);
-    if (message_arena != submessage_arena) {
-      devinfo = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, devinfo, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  devinfo_ = devinfo;
-  // @@protoc_insertion_point(field_set_allocated:opi_api.inventory.v1.InventoryGetResponse.devinfo)
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::opi_api::inventory::v1::PCIeDeviceInfo >&
+InventoryGetResponse::pci() const {
+  // @@protoc_insertion_point(field_list:opi_api.inventory.v1.InventoryGetResponse.pci)
+  return pci_;
 }
 
 #ifdef __GNUC__
