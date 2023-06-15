@@ -70,4 +70,3 @@ The OPI API boundary for the consumption interface will provide the exposed VF/P
   - Active
 - Agenda
   - [Topics](Agenda.md)
-
