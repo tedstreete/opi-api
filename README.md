@@ -5,6 +5,12 @@
 [![OPI Security API CI](https://github.com/opiproject/opi-api/actions/workflows/security.yml/badge.svg)](https://github.com/opiproject/opi-api/actions/workflows/security.yml)
 [![OPI Network API CI](https://github.com/opiproject/opi-api/actions/workflows/network.yml/badge.svg)](https://github.com/opiproject/opi-api/actions/workflows/network.yml)
 
+## I Want To Contribute
+
+This project welcomes contributions and suggestions.  We are happy to have the Community involved via submission of **Issues and Pull Requests** (with substantive content or even just fixes). We are hoping for the documents, test framework, etc. to become a community process with active engagement.  PRs can be reviewed by by any number of people, and a maintainer may accept.
+
+See [CONTRIBUTING](https://github.com/opiproject/opi/blob/main/CONTRIBUTING.md) and [GitHub Basic Process](https://github.com/opiproject/opi/blob/main/doc-github-rules.md) for more details.
+
 ## Overview
 
 OPI subgroup dealing with APIs.  The focus of the subgroup is:
@@ -65,8 +71,3 @@ The OPI API boundary for the consumption interface will provide the exposed VF/P
 - Agenda
   - [Topics](Agenda.md)
 
-## I Want To Contribute
-
-This project welcomes contributions and suggestions.  We are happy to have the Community involved via submission of **Issues and Pull Requests** (with substantive content or even just fixes). We are hoping for the documents, test framework, etc. to become a community process with active engagement.  PRs can be reviewed by by any number of people, and a maintainer may accept.
-
-See [CONTRIBUTING](https://github.com/opiproject/opi/blob/main/CONTRIBUTING.md) and [GitHub Basic Process](https://github.com/opiproject/opi/blob/main/doc-github-rules.md) for more details.
