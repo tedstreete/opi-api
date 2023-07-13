@@ -20,6 +20,8 @@
     - [LogicalBridge](#opi_api-network-evpn_gw-v1alpha1-LogicalBridge)
     - [LogicalBridgeSpec](#opi_api-network-evpn_gw-v1alpha1-LogicalBridgeSpec)
     - [LogicalBridgeStatus](#opi_api-network-evpn_gw-v1alpha1-LogicalBridgeStatus)
+    - [UpdateBridgePortRequest](#opi_api-network-evpn_gw-v1alpha1-UpdateBridgePortRequest)
+    - [UpdateLogicalBridgeRequest](#opi_api-network-evpn_gw-v1alpha1-UpdateLogicalBridgeRequest)
   
     - [BPOperStatus](#opi_api-network-evpn_gw-v1alpha1-BPOperStatus)
     - [BridgePortType](#opi_api-network-evpn_gw-v1alpha1-BridgePortType)
@@ -42,6 +44,8 @@
     - [Svi](#opi_api-network-evpn_gw-v1alpha1-Svi)
     - [SviSpec](#opi_api-network-evpn_gw-v1alpha1-SviSpec)
     - [SviStatus](#opi_api-network-evpn_gw-v1alpha1-SviStatus)
+    - [UpdateSviRequest](#opi_api-network-evpn_gw-v1alpha1-UpdateSviRequest)
+    - [UpdateVrfRequest](#opi_api-network-evpn_gw-v1alpha1-UpdateVrfRequest)
     - [Vrf](#opi_api-network-evpn_gw-v1alpha1-Vrf)
     - [VrfSpec](#opi_api-network-evpn_gw-v1alpha1-VrfSpec)
     - [VrfStatus](#opi_api-network-evpn_gw-v1alpha1-VrfStatus)
@@ -340,6 +344,40 @@ operational status of a Logical Bridge
 
 
 
+
+<a name="opi_api-network-evpn_gw-v1alpha1-UpdateBridgePortRequest"></a>
+
+### UpdateBridgePortRequest
+UpdateBridgePortRequest structure
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| bridge_port | [BridgePort](#opi_api-network-evpn_gw-v1alpha1-BridgePort) |  | The object&#39;s `name` field is used to identify the object to be updated. |
+| update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | The list of fields to update. |
+| allow_missing | [bool](#bool) |  | If set to true, and the object is not found, a new object will be created. In this situation, `update_mask` is ignored. |
+
+
+
+
+
+
+<a name="opi_api-network-evpn_gw-v1alpha1-UpdateLogicalBridgeRequest"></a>
+
+### UpdateLogicalBridgeRequest
+UpdateLogicalBridgeRequest structure
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| logical_bridge | [LogicalBridge](#opi_api-network-evpn_gw-v1alpha1-LogicalBridge) |  | The object&#39;s `name` field is used to identify the object to be updated. |
+| update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | The list of fields to update. |
+| allow_missing | [bool](#bool) |  | If set to true, and the object is not found, a new object will be created. In this situation, `update_mask` is ignored. |
+
+
+
+
+
  
 
 
@@ -397,6 +435,7 @@ Management of BridgePort resources
 | ListBridgePorts | [ListBridgePortsRequest](#opi_api-network-evpn_gw-v1alpha1-ListBridgePortsRequest) | [ListBridgePortsResponse](#opi_api-network-evpn_gw-v1alpha1-ListBridgePortsResponse) | List Bridge Ports |
 | GetBridgePort | [GetBridgePortRequest](#opi_api-network-evpn_gw-v1alpha1-GetBridgePortRequest) | [BridgePort](#opi_api-network-evpn_gw-v1alpha1-BridgePort) | Retrieve a Bridge Port |
 | DeleteBridgePort | [DeleteBridgePortRequest](#opi_api-network-evpn_gw-v1alpha1-DeleteBridgePortRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) | Delete a Bridge Port |
+| UpdateBridgePort | [UpdateBridgePortRequest](#opi_api-network-evpn_gw-v1alpha1-UpdateBridgePortRequest) | [BridgePort](#opi_api-network-evpn_gw-v1alpha1-BridgePort) | Update a Bridge Port |
 
 
 <a name="opi_api-network-evpn_gw-v1alpha1-LogicalBridgeService"></a>
@@ -410,6 +449,7 @@ Management of LogicalBridge Resources
 | ListLogicalBridges | [ListLogicalBridgesRequest](#opi_api-network-evpn_gw-v1alpha1-ListLogicalBridgesRequest) | [ListLogicalBridgesResponse](#opi_api-network-evpn_gw-v1alpha1-ListLogicalBridgesResponse) | List Logical Bridges |
 | GetLogicalBridge | [GetLogicalBridgeRequest](#opi_api-network-evpn_gw-v1alpha1-GetLogicalBridgeRequest) | [LogicalBridge](#opi_api-network-evpn_gw-v1alpha1-LogicalBridge) | Retrieve a Logical Bridge |
 | DeleteLogicalBridge | [DeleteLogicalBridgeRequest](#opi_api-network-evpn_gw-v1alpha1-DeleteLogicalBridgeRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) | Delete a Logical Bridge |
+| UpdateLogicalBridge | [UpdateLogicalBridgeRequest](#opi_api-network-evpn_gw-v1alpha1-UpdateLogicalBridgeRequest) | [LogicalBridge](#opi_api-network-evpn_gw-v1alpha1-LogicalBridge) | Update a Logical Bridge |
 
  
 
@@ -636,6 +676,40 @@ operational status of a Svi
 
 
 
+<a name="opi_api-network-evpn_gw-v1alpha1-UpdateSviRequest"></a>
+
+### UpdateSviRequest
+UpdateSviRequest structure
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| svi | [Svi](#opi_api-network-evpn_gw-v1alpha1-Svi) |  | The object&#39;s `name` field is used to identify the object to be updated. |
+| update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | The list of fields to update. |
+| allow_missing | [bool](#bool) |  | If set to true, and the object is not found, a new object will be created. In this situation, `update_mask` is ignored. |
+
+
+
+
+
+
+<a name="opi_api-network-evpn_gw-v1alpha1-UpdateVrfRequest"></a>
+
+### UpdateVrfRequest
+UpdateVrfRequest structure
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| vrf | [Vrf](#opi_api-network-evpn_gw-v1alpha1-Vrf) |  | The object&#39;s `name` field is used to identify the object to be updated. |
+| update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | The list of fields to update. |
+| allow_missing | [bool](#bool) |  | If set to true, and the object is not found, a new object will be created. In this situation, `update_mask` is ignored. |
+
+
+
+
+
+
 <a name="opi_api-network-evpn_gw-v1alpha1-Vrf"></a>
 
 ### Vrf
@@ -735,6 +809,7 @@ Management of switch virtual interfaces (SVIs) binding LogicalBridges to VRFs.
 | ListSvis | [ListSvisRequest](#opi_api-network-evpn_gw-v1alpha1-ListSvisRequest) | [ListSvisResponse](#opi_api-network-evpn_gw-v1alpha1-ListSvisResponse) | List Svis |
 | GetSvi | [GetSviRequest](#opi_api-network-evpn_gw-v1alpha1-GetSviRequest) | [Svi](#opi_api-network-evpn_gw-v1alpha1-Svi) | Retrieve a Svi |
 | DeleteSvi | [DeleteSviRequest](#opi_api-network-evpn_gw-v1alpha1-DeleteSviRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) | Delete a Svi |
+| UpdateSvi | [UpdateSviRequest](#opi_api-network-evpn_gw-v1alpha1-UpdateSviRequest) | [Svi](#opi_api-network-evpn_gw-v1alpha1-Svi) | Update a Svi |
 
 
 <a name="opi_api-network-evpn_gw-v1alpha1-VrfService"></a>
@@ -748,6 +823,7 @@ Management of Vrf Resources
 | ListVrfs | [ListVrfsRequest](#opi_api-network-evpn_gw-v1alpha1-ListVrfsRequest) | [ListVrfsResponse](#opi_api-network-evpn_gw-v1alpha1-ListVrfsResponse) | List Vrfs |
 | GetVrf | [GetVrfRequest](#opi_api-network-evpn_gw-v1alpha1-GetVrfRequest) | [Vrf](#opi_api-network-evpn_gw-v1alpha1-Vrf) | Retrieve a Vrf |
 | DeleteVrf | [DeleteVrfRequest](#opi_api-network-evpn_gw-v1alpha1-DeleteVrfRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) | Delete a Vrf |
+| UpdateVrf | [UpdateVrfRequest](#opi_api-network-evpn_gw-v1alpha1-UpdateVrfRequest) | [Vrf](#opi_api-network-evpn_gw-v1alpha1-Vrf) | Update a Vrf |
 
  
 

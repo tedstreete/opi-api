@@ -37,6 +37,7 @@
 #include "google/api/client.pb.h"
 #include <google/protobuf/empty.pb.h>
 #include "google/api/field_behavior.pb.h"
+#include <google/protobuf/field_mask.pb.h>
 #include "google/api/resource.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
@@ -53,7 +54,7 @@ struct TableStruct_l3_5fxpu_5finfra_5fmgr_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[16]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[18]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -103,6 +104,12 @@ extern SviSpecDefaultTypeInternal _SviSpec_default_instance_;
 class SviStatus;
 struct SviStatusDefaultTypeInternal;
 extern SviStatusDefaultTypeInternal _SviStatus_default_instance_;
+class UpdateSviRequest;
+struct UpdateSviRequestDefaultTypeInternal;
+extern UpdateSviRequestDefaultTypeInternal _UpdateSviRequest_default_instance_;
+class UpdateVrfRequest;
+struct UpdateVrfRequestDefaultTypeInternal;
+extern UpdateVrfRequestDefaultTypeInternal _UpdateVrfRequest_default_instance_;
 class Vrf;
 struct VrfDefaultTypeInternal;
 extern VrfDefaultTypeInternal _Vrf_default_instance_;
@@ -130,6 +137,8 @@ template<> ::opi_api::network::evpn_gw::v1alpha1::ListVrfsResponse* Arena::Creat
 template<> ::opi_api::network::evpn_gw::v1alpha1::Svi* Arena::CreateMaybeMessage<::opi_api::network::evpn_gw::v1alpha1::Svi>(Arena*);
 template<> ::opi_api::network::evpn_gw::v1alpha1::SviSpec* Arena::CreateMaybeMessage<::opi_api::network::evpn_gw::v1alpha1::SviSpec>(Arena*);
 template<> ::opi_api::network::evpn_gw::v1alpha1::SviStatus* Arena::CreateMaybeMessage<::opi_api::network::evpn_gw::v1alpha1::SviStatus>(Arena*);
+template<> ::opi_api::network::evpn_gw::v1alpha1::UpdateSviRequest* Arena::CreateMaybeMessage<::opi_api::network::evpn_gw::v1alpha1::UpdateSviRequest>(Arena*);
+template<> ::opi_api::network::evpn_gw::v1alpha1::UpdateVrfRequest* Arena::CreateMaybeMessage<::opi_api::network::evpn_gw::v1alpha1::UpdateVrfRequest>(Arena*);
 template<> ::opi_api::network::evpn_gw::v1alpha1::Vrf* Arena::CreateMaybeMessage<::opi_api::network::evpn_gw::v1alpha1::Vrf>(Arena*);
 template<> ::opi_api::network::evpn_gw::v1alpha1::VrfSpec* Arena::CreateMaybeMessage<::opi_api::network::evpn_gw::v1alpha1::VrfSpec>(Arena*);
 template<> ::opi_api::network::evpn_gw::v1alpha1::VrfStatus* Arena::CreateMaybeMessage<::opi_api::network::evpn_gw::v1alpha1::VrfStatus>(Arena*);
@@ -1665,6 +1674,192 @@ class DeleteVrfRequest final :
 };
 // -------------------------------------------------------------------
 
+class UpdateVrfRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.network.evpn_gw.v1alpha1.UpdateVrfRequest) */ {
+ public:
+  inline UpdateVrfRequest() : UpdateVrfRequest(nullptr) {}
+  ~UpdateVrfRequest() override;
+  explicit constexpr UpdateVrfRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  UpdateVrfRequest(const UpdateVrfRequest& from);
+  UpdateVrfRequest(UpdateVrfRequest&& from) noexcept
+    : UpdateVrfRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline UpdateVrfRequest& operator=(const UpdateVrfRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline UpdateVrfRequest& operator=(UpdateVrfRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const UpdateVrfRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const UpdateVrfRequest* internal_default_instance() {
+    return reinterpret_cast<const UpdateVrfRequest*>(
+               &_UpdateVrfRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    8;
+
+  friend void swap(UpdateVrfRequest& a, UpdateVrfRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(UpdateVrfRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(UpdateVrfRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  UpdateVrfRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<UpdateVrfRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const UpdateVrfRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const UpdateVrfRequest& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(UpdateVrfRequest* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "opi_api.network.evpn_gw.v1alpha1.UpdateVrfRequest";
+  }
+  protected:
+  explicit UpdateVrfRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kVrfFieldNumber = 1,
+    kUpdateMaskFieldNumber = 2,
+    kAllowMissingFieldNumber = 3,
+  };
+  // .opi_api.network.evpn_gw.v1alpha1.Vrf vrf = 1;
+  bool has_vrf() const;
+  private:
+  bool _internal_has_vrf() const;
+  public:
+  void clear_vrf();
+  const ::opi_api::network::evpn_gw::v1alpha1::Vrf& vrf() const;
+  PROTOBUF_NODISCARD ::opi_api::network::evpn_gw::v1alpha1::Vrf* release_vrf();
+  ::opi_api::network::evpn_gw::v1alpha1::Vrf* mutable_vrf();
+  void set_allocated_vrf(::opi_api::network::evpn_gw::v1alpha1::Vrf* vrf);
+  private:
+  const ::opi_api::network::evpn_gw::v1alpha1::Vrf& _internal_vrf() const;
+  ::opi_api::network::evpn_gw::v1alpha1::Vrf* _internal_mutable_vrf();
+  public:
+  void unsafe_arena_set_allocated_vrf(
+      ::opi_api::network::evpn_gw::v1alpha1::Vrf* vrf);
+  ::opi_api::network::evpn_gw::v1alpha1::Vrf* unsafe_arena_release_vrf();
+
+  // .google.protobuf.FieldMask update_mask = 2;
+  bool has_update_mask() const;
+  private:
+  bool _internal_has_update_mask() const;
+  public:
+  void clear_update_mask();
+  const ::PROTOBUF_NAMESPACE_ID::FieldMask& update_mask() const;
+  PROTOBUF_NODISCARD ::PROTOBUF_NAMESPACE_ID::FieldMask* release_update_mask();
+  ::PROTOBUF_NAMESPACE_ID::FieldMask* mutable_update_mask();
+  void set_allocated_update_mask(::PROTOBUF_NAMESPACE_ID::FieldMask* update_mask);
+  private:
+  const ::PROTOBUF_NAMESPACE_ID::FieldMask& _internal_update_mask() const;
+  ::PROTOBUF_NAMESPACE_ID::FieldMask* _internal_mutable_update_mask();
+  public:
+  void unsafe_arena_set_allocated_update_mask(
+      ::PROTOBUF_NAMESPACE_ID::FieldMask* update_mask);
+  ::PROTOBUF_NAMESPACE_ID::FieldMask* unsafe_arena_release_update_mask();
+
+  // bool allow_missing = 3;
+  void clear_allow_missing();
+  bool allow_missing() const;
+  void set_allow_missing(bool value);
+  private:
+  bool _internal_allow_missing() const;
+  void _internal_set_allow_missing(bool value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:opi_api.network.evpn_gw.v1alpha1.UpdateVrfRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::opi_api::network::evpn_gw::v1alpha1::Vrf* vrf_;
+  ::PROTOBUF_NAMESPACE_ID::FieldMask* update_mask_;
+  bool allow_missing_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_l3_5fxpu_5finfra_5fmgr_2eproto;
+};
+// -------------------------------------------------------------------
+
 class Svi final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.network.evpn_gw.v1alpha1.Svi) */ {
  public:
@@ -1713,7 +1908,7 @@ class Svi final :
                &_Svi_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    9;
 
   friend void swap(Svi& a, Svi& b) {
     a.Swap(&b);
@@ -1904,7 +2099,7 @@ class SviSpec final :
                &_SviSpec_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    10;
 
   friend void swap(SviSpec& a, SviSpec& b) {
     a.Swap(&b);
@@ -2129,7 +2324,7 @@ class SviStatus final :
                &_SviStatus_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    11;
 
   friend void swap(SviStatus& a, SviStatus& b) {
     a.Swap(&b);
@@ -2275,7 +2470,7 @@ class CreateSviRequest final :
                &_CreateSviRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    12;
 
   friend void swap(CreateSviRequest& a, CreateSviRequest& b) {
     a.Swap(&b);
@@ -2446,7 +2641,7 @@ class ListSvisRequest final :
                &_ListSvisRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    13;
 
   friend void swap(ListSvisRequest& a, ListSvisRequest& b) {
     a.Swap(&b);
@@ -2608,7 +2803,7 @@ class ListSvisResponse final :
                &_ListSvisResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    14;
 
   friend void swap(ListSvisResponse& a, ListSvisResponse& b) {
     a.Swap(&b);
@@ -2779,7 +2974,7 @@ class GetSviRequest final :
                &_GetSviRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    15;
 
   friend void swap(GetSviRequest& a, GetSviRequest& b) {
     a.Swap(&b);
@@ -2930,7 +3125,7 @@ class DeleteSviRequest final :
                &_DeleteSviRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    15;
+    16;
 
   friend void swap(DeleteSviRequest& a, DeleteSviRequest& b) {
     a.Swap(&b);
@@ -3038,6 +3233,192 @@ class DeleteSviRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
+  bool allow_missing_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_l3_5fxpu_5finfra_5fmgr_2eproto;
+};
+// -------------------------------------------------------------------
+
+class UpdateSviRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.network.evpn_gw.v1alpha1.UpdateSviRequest) */ {
+ public:
+  inline UpdateSviRequest() : UpdateSviRequest(nullptr) {}
+  ~UpdateSviRequest() override;
+  explicit constexpr UpdateSviRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  UpdateSviRequest(const UpdateSviRequest& from);
+  UpdateSviRequest(UpdateSviRequest&& from) noexcept
+    : UpdateSviRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline UpdateSviRequest& operator=(const UpdateSviRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline UpdateSviRequest& operator=(UpdateSviRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const UpdateSviRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const UpdateSviRequest* internal_default_instance() {
+    return reinterpret_cast<const UpdateSviRequest*>(
+               &_UpdateSviRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    17;
+
+  friend void swap(UpdateSviRequest& a, UpdateSviRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(UpdateSviRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(UpdateSviRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  UpdateSviRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<UpdateSviRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const UpdateSviRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const UpdateSviRequest& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(UpdateSviRequest* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "opi_api.network.evpn_gw.v1alpha1.UpdateSviRequest";
+  }
+  protected:
+  explicit UpdateSviRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kSviFieldNumber = 1,
+    kUpdateMaskFieldNumber = 2,
+    kAllowMissingFieldNumber = 3,
+  };
+  // .opi_api.network.evpn_gw.v1alpha1.Svi svi = 1;
+  bool has_svi() const;
+  private:
+  bool _internal_has_svi() const;
+  public:
+  void clear_svi();
+  const ::opi_api::network::evpn_gw::v1alpha1::Svi& svi() const;
+  PROTOBUF_NODISCARD ::opi_api::network::evpn_gw::v1alpha1::Svi* release_svi();
+  ::opi_api::network::evpn_gw::v1alpha1::Svi* mutable_svi();
+  void set_allocated_svi(::opi_api::network::evpn_gw::v1alpha1::Svi* svi);
+  private:
+  const ::opi_api::network::evpn_gw::v1alpha1::Svi& _internal_svi() const;
+  ::opi_api::network::evpn_gw::v1alpha1::Svi* _internal_mutable_svi();
+  public:
+  void unsafe_arena_set_allocated_svi(
+      ::opi_api::network::evpn_gw::v1alpha1::Svi* svi);
+  ::opi_api::network::evpn_gw::v1alpha1::Svi* unsafe_arena_release_svi();
+
+  // .google.protobuf.FieldMask update_mask = 2;
+  bool has_update_mask() const;
+  private:
+  bool _internal_has_update_mask() const;
+  public:
+  void clear_update_mask();
+  const ::PROTOBUF_NAMESPACE_ID::FieldMask& update_mask() const;
+  PROTOBUF_NODISCARD ::PROTOBUF_NAMESPACE_ID::FieldMask* release_update_mask();
+  ::PROTOBUF_NAMESPACE_ID::FieldMask* mutable_update_mask();
+  void set_allocated_update_mask(::PROTOBUF_NAMESPACE_ID::FieldMask* update_mask);
+  private:
+  const ::PROTOBUF_NAMESPACE_ID::FieldMask& _internal_update_mask() const;
+  ::PROTOBUF_NAMESPACE_ID::FieldMask* _internal_mutable_update_mask();
+  public:
+  void unsafe_arena_set_allocated_update_mask(
+      ::PROTOBUF_NAMESPACE_ID::FieldMask* update_mask);
+  ::PROTOBUF_NAMESPACE_ID::FieldMask* unsafe_arena_release_update_mask();
+
+  // bool allow_missing = 3;
+  void clear_allow_missing();
+  bool allow_missing() const;
+  void set_allow_missing(bool value);
+  private:
+  bool _internal_allow_missing() const;
+  void _internal_set_allow_missing(bool value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:opi_api.network.evpn_gw.v1alpha1.UpdateSviRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::opi_api::network::evpn_gw::v1alpha1::Svi* svi_;
+  ::PROTOBUF_NAMESPACE_ID::FieldMask* update_mask_;
   bool allow_missing_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_l3_5fxpu_5finfra_5fmgr_2eproto;
@@ -4318,6 +4699,206 @@ inline void DeleteVrfRequest::set_allow_missing(bool value) {
 
 // -------------------------------------------------------------------
 
+// UpdateVrfRequest
+
+// .opi_api.network.evpn_gw.v1alpha1.Vrf vrf = 1;
+inline bool UpdateVrfRequest::_internal_has_vrf() const {
+  return this != internal_default_instance() && vrf_ != nullptr;
+}
+inline bool UpdateVrfRequest::has_vrf() const {
+  return _internal_has_vrf();
+}
+inline void UpdateVrfRequest::clear_vrf() {
+  if (GetArenaForAllocation() == nullptr && vrf_ != nullptr) {
+    delete vrf_;
+  }
+  vrf_ = nullptr;
+}
+inline const ::opi_api::network::evpn_gw::v1alpha1::Vrf& UpdateVrfRequest::_internal_vrf() const {
+  const ::opi_api::network::evpn_gw::v1alpha1::Vrf* p = vrf_;
+  return p != nullptr ? *p : reinterpret_cast<const ::opi_api::network::evpn_gw::v1alpha1::Vrf&>(
+      ::opi_api::network::evpn_gw::v1alpha1::_Vrf_default_instance_);
+}
+inline const ::opi_api::network::evpn_gw::v1alpha1::Vrf& UpdateVrfRequest::vrf() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.evpn_gw.v1alpha1.UpdateVrfRequest.vrf)
+  return _internal_vrf();
+}
+inline void UpdateVrfRequest::unsafe_arena_set_allocated_vrf(
+    ::opi_api::network::evpn_gw::v1alpha1::Vrf* vrf) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(vrf_);
+  }
+  vrf_ = vrf;
+  if (vrf) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.network.evpn_gw.v1alpha1.UpdateVrfRequest.vrf)
+}
+inline ::opi_api::network::evpn_gw::v1alpha1::Vrf* UpdateVrfRequest::release_vrf() {
+  
+  ::opi_api::network::evpn_gw::v1alpha1::Vrf* temp = vrf_;
+  vrf_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::opi_api::network::evpn_gw::v1alpha1::Vrf* UpdateVrfRequest::unsafe_arena_release_vrf() {
+  // @@protoc_insertion_point(field_release:opi_api.network.evpn_gw.v1alpha1.UpdateVrfRequest.vrf)
+  
+  ::opi_api::network::evpn_gw::v1alpha1::Vrf* temp = vrf_;
+  vrf_ = nullptr;
+  return temp;
+}
+inline ::opi_api::network::evpn_gw::v1alpha1::Vrf* UpdateVrfRequest::_internal_mutable_vrf() {
+  
+  if (vrf_ == nullptr) {
+    auto* p = CreateMaybeMessage<::opi_api::network::evpn_gw::v1alpha1::Vrf>(GetArenaForAllocation());
+    vrf_ = p;
+  }
+  return vrf_;
+}
+inline ::opi_api::network::evpn_gw::v1alpha1::Vrf* UpdateVrfRequest::mutable_vrf() {
+  ::opi_api::network::evpn_gw::v1alpha1::Vrf* _msg = _internal_mutable_vrf();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.evpn_gw.v1alpha1.UpdateVrfRequest.vrf)
+  return _msg;
+}
+inline void UpdateVrfRequest::set_allocated_vrf(::opi_api::network::evpn_gw::v1alpha1::Vrf* vrf) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete vrf_;
+  }
+  if (vrf) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::opi_api::network::evpn_gw::v1alpha1::Vrf>::GetOwningArena(vrf);
+    if (message_arena != submessage_arena) {
+      vrf = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, vrf, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  vrf_ = vrf;
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.evpn_gw.v1alpha1.UpdateVrfRequest.vrf)
+}
+
+// .google.protobuf.FieldMask update_mask = 2;
+inline bool UpdateVrfRequest::_internal_has_update_mask() const {
+  return this != internal_default_instance() && update_mask_ != nullptr;
+}
+inline bool UpdateVrfRequest::has_update_mask() const {
+  return _internal_has_update_mask();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::FieldMask& UpdateVrfRequest::_internal_update_mask() const {
+  const ::PROTOBUF_NAMESPACE_ID::FieldMask* p = update_mask_;
+  return p != nullptr ? *p : reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::FieldMask&>(
+      ::PROTOBUF_NAMESPACE_ID::_FieldMask_default_instance_);
+}
+inline const ::PROTOBUF_NAMESPACE_ID::FieldMask& UpdateVrfRequest::update_mask() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.evpn_gw.v1alpha1.UpdateVrfRequest.update_mask)
+  return _internal_update_mask();
+}
+inline void UpdateVrfRequest::unsafe_arena_set_allocated_update_mask(
+    ::PROTOBUF_NAMESPACE_ID::FieldMask* update_mask) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(update_mask_);
+  }
+  update_mask_ = update_mask;
+  if (update_mask) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.network.evpn_gw.v1alpha1.UpdateVrfRequest.update_mask)
+}
+inline ::PROTOBUF_NAMESPACE_ID::FieldMask* UpdateVrfRequest::release_update_mask() {
+  
+  ::PROTOBUF_NAMESPACE_ID::FieldMask* temp = update_mask_;
+  update_mask_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::PROTOBUF_NAMESPACE_ID::FieldMask* UpdateVrfRequest::unsafe_arena_release_update_mask() {
+  // @@protoc_insertion_point(field_release:opi_api.network.evpn_gw.v1alpha1.UpdateVrfRequest.update_mask)
+  
+  ::PROTOBUF_NAMESPACE_ID::FieldMask* temp = update_mask_;
+  update_mask_ = nullptr;
+  return temp;
+}
+inline ::PROTOBUF_NAMESPACE_ID::FieldMask* UpdateVrfRequest::_internal_mutable_update_mask() {
+  
+  if (update_mask_ == nullptr) {
+    auto* p = CreateMaybeMessage<::PROTOBUF_NAMESPACE_ID::FieldMask>(GetArenaForAllocation());
+    update_mask_ = p;
+  }
+  return update_mask_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::FieldMask* UpdateVrfRequest::mutable_update_mask() {
+  ::PROTOBUF_NAMESPACE_ID::FieldMask* _msg = _internal_mutable_update_mask();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.evpn_gw.v1alpha1.UpdateVrfRequest.update_mask)
+  return _msg;
+}
+inline void UpdateVrfRequest::set_allocated_update_mask(::PROTOBUF_NAMESPACE_ID::FieldMask* update_mask) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(update_mask_);
+  }
+  if (update_mask) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(update_mask));
+    if (message_arena != submessage_arena) {
+      update_mask = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, update_mask, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  update_mask_ = update_mask;
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.evpn_gw.v1alpha1.UpdateVrfRequest.update_mask)
+}
+
+// bool allow_missing = 3;
+inline void UpdateVrfRequest::clear_allow_missing() {
+  allow_missing_ = false;
+}
+inline bool UpdateVrfRequest::_internal_allow_missing() const {
+  return allow_missing_;
+}
+inline bool UpdateVrfRequest::allow_missing() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.evpn_gw.v1alpha1.UpdateVrfRequest.allow_missing)
+  return _internal_allow_missing();
+}
+inline void UpdateVrfRequest::_internal_set_allow_missing(bool value) {
+  
+  allow_missing_ = value;
+}
+inline void UpdateVrfRequest::set_allow_missing(bool value) {
+  _internal_set_allow_missing(value);
+  // @@protoc_insertion_point(field_set:opi_api.network.evpn_gw.v1alpha1.UpdateVrfRequest.allow_missing)
+}
+
+// -------------------------------------------------------------------
+
 // Svi
 
 // string name = 1;
@@ -5254,9 +5835,213 @@ inline void DeleteSviRequest::set_allow_missing(bool value) {
   // @@protoc_insertion_point(field_set:opi_api.network.evpn_gw.v1alpha1.DeleteSviRequest.allow_missing)
 }
 
+// -------------------------------------------------------------------
+
+// UpdateSviRequest
+
+// .opi_api.network.evpn_gw.v1alpha1.Svi svi = 1;
+inline bool UpdateSviRequest::_internal_has_svi() const {
+  return this != internal_default_instance() && svi_ != nullptr;
+}
+inline bool UpdateSviRequest::has_svi() const {
+  return _internal_has_svi();
+}
+inline void UpdateSviRequest::clear_svi() {
+  if (GetArenaForAllocation() == nullptr && svi_ != nullptr) {
+    delete svi_;
+  }
+  svi_ = nullptr;
+}
+inline const ::opi_api::network::evpn_gw::v1alpha1::Svi& UpdateSviRequest::_internal_svi() const {
+  const ::opi_api::network::evpn_gw::v1alpha1::Svi* p = svi_;
+  return p != nullptr ? *p : reinterpret_cast<const ::opi_api::network::evpn_gw::v1alpha1::Svi&>(
+      ::opi_api::network::evpn_gw::v1alpha1::_Svi_default_instance_);
+}
+inline const ::opi_api::network::evpn_gw::v1alpha1::Svi& UpdateSviRequest::svi() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.evpn_gw.v1alpha1.UpdateSviRequest.svi)
+  return _internal_svi();
+}
+inline void UpdateSviRequest::unsafe_arena_set_allocated_svi(
+    ::opi_api::network::evpn_gw::v1alpha1::Svi* svi) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(svi_);
+  }
+  svi_ = svi;
+  if (svi) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.network.evpn_gw.v1alpha1.UpdateSviRequest.svi)
+}
+inline ::opi_api::network::evpn_gw::v1alpha1::Svi* UpdateSviRequest::release_svi() {
+  
+  ::opi_api::network::evpn_gw::v1alpha1::Svi* temp = svi_;
+  svi_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::opi_api::network::evpn_gw::v1alpha1::Svi* UpdateSviRequest::unsafe_arena_release_svi() {
+  // @@protoc_insertion_point(field_release:opi_api.network.evpn_gw.v1alpha1.UpdateSviRequest.svi)
+  
+  ::opi_api::network::evpn_gw::v1alpha1::Svi* temp = svi_;
+  svi_ = nullptr;
+  return temp;
+}
+inline ::opi_api::network::evpn_gw::v1alpha1::Svi* UpdateSviRequest::_internal_mutable_svi() {
+  
+  if (svi_ == nullptr) {
+    auto* p = CreateMaybeMessage<::opi_api::network::evpn_gw::v1alpha1::Svi>(GetArenaForAllocation());
+    svi_ = p;
+  }
+  return svi_;
+}
+inline ::opi_api::network::evpn_gw::v1alpha1::Svi* UpdateSviRequest::mutable_svi() {
+  ::opi_api::network::evpn_gw::v1alpha1::Svi* _msg = _internal_mutable_svi();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.evpn_gw.v1alpha1.UpdateSviRequest.svi)
+  return _msg;
+}
+inline void UpdateSviRequest::set_allocated_svi(::opi_api::network::evpn_gw::v1alpha1::Svi* svi) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete svi_;
+  }
+  if (svi) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::opi_api::network::evpn_gw::v1alpha1::Svi>::GetOwningArena(svi);
+    if (message_arena != submessage_arena) {
+      svi = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, svi, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  svi_ = svi;
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.evpn_gw.v1alpha1.UpdateSviRequest.svi)
+}
+
+// .google.protobuf.FieldMask update_mask = 2;
+inline bool UpdateSviRequest::_internal_has_update_mask() const {
+  return this != internal_default_instance() && update_mask_ != nullptr;
+}
+inline bool UpdateSviRequest::has_update_mask() const {
+  return _internal_has_update_mask();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::FieldMask& UpdateSviRequest::_internal_update_mask() const {
+  const ::PROTOBUF_NAMESPACE_ID::FieldMask* p = update_mask_;
+  return p != nullptr ? *p : reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::FieldMask&>(
+      ::PROTOBUF_NAMESPACE_ID::_FieldMask_default_instance_);
+}
+inline const ::PROTOBUF_NAMESPACE_ID::FieldMask& UpdateSviRequest::update_mask() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.evpn_gw.v1alpha1.UpdateSviRequest.update_mask)
+  return _internal_update_mask();
+}
+inline void UpdateSviRequest::unsafe_arena_set_allocated_update_mask(
+    ::PROTOBUF_NAMESPACE_ID::FieldMask* update_mask) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(update_mask_);
+  }
+  update_mask_ = update_mask;
+  if (update_mask) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.network.evpn_gw.v1alpha1.UpdateSviRequest.update_mask)
+}
+inline ::PROTOBUF_NAMESPACE_ID::FieldMask* UpdateSviRequest::release_update_mask() {
+  
+  ::PROTOBUF_NAMESPACE_ID::FieldMask* temp = update_mask_;
+  update_mask_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::PROTOBUF_NAMESPACE_ID::FieldMask* UpdateSviRequest::unsafe_arena_release_update_mask() {
+  // @@protoc_insertion_point(field_release:opi_api.network.evpn_gw.v1alpha1.UpdateSviRequest.update_mask)
+  
+  ::PROTOBUF_NAMESPACE_ID::FieldMask* temp = update_mask_;
+  update_mask_ = nullptr;
+  return temp;
+}
+inline ::PROTOBUF_NAMESPACE_ID::FieldMask* UpdateSviRequest::_internal_mutable_update_mask() {
+  
+  if (update_mask_ == nullptr) {
+    auto* p = CreateMaybeMessage<::PROTOBUF_NAMESPACE_ID::FieldMask>(GetArenaForAllocation());
+    update_mask_ = p;
+  }
+  return update_mask_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::FieldMask* UpdateSviRequest::mutable_update_mask() {
+  ::PROTOBUF_NAMESPACE_ID::FieldMask* _msg = _internal_mutable_update_mask();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.evpn_gw.v1alpha1.UpdateSviRequest.update_mask)
+  return _msg;
+}
+inline void UpdateSviRequest::set_allocated_update_mask(::PROTOBUF_NAMESPACE_ID::FieldMask* update_mask) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(update_mask_);
+  }
+  if (update_mask) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(update_mask));
+    if (message_arena != submessage_arena) {
+      update_mask = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, update_mask, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  update_mask_ = update_mask;
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.evpn_gw.v1alpha1.UpdateSviRequest.update_mask)
+}
+
+// bool allow_missing = 3;
+inline void UpdateSviRequest::clear_allow_missing() {
+  allow_missing_ = false;
+}
+inline bool UpdateSviRequest::_internal_allow_missing() const {
+  return allow_missing_;
+}
+inline bool UpdateSviRequest::allow_missing() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.evpn_gw.v1alpha1.UpdateSviRequest.allow_missing)
+  return _internal_allow_missing();
+}
+inline void UpdateSviRequest::_internal_set_allow_missing(bool value) {
+  
+  allow_missing_ = value;
+}
+inline void UpdateSviRequest::set_allow_missing(bool value) {
+  _internal_set_allow_missing(value);
+  // @@protoc_insertion_point(field_set:opi_api.network.evpn_gw.v1alpha1.UpdateSviRequest.allow_missing)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

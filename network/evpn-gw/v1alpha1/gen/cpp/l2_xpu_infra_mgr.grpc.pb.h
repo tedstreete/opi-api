@@ -84,6 +84,14 @@ class LogicalBridgeService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>> PrepareAsyncDeleteLogicalBridge(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::DeleteLogicalBridgeRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>>(PrepareAsyncDeleteLogicalBridgeRaw(context, request, cq));
     }
+    // Update a Logical Bridge
+    virtual ::grpc::Status UpdateLogicalBridge(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateLogicalBridgeRequest& request, ::opi_api::network::evpn_gw::v1alpha1::LogicalBridge* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::network::evpn_gw::v1alpha1::LogicalBridge>> AsyncUpdateLogicalBridge(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateLogicalBridgeRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::network::evpn_gw::v1alpha1::LogicalBridge>>(AsyncUpdateLogicalBridgeRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::network::evpn_gw::v1alpha1::LogicalBridge>> PrepareAsyncUpdateLogicalBridge(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateLogicalBridgeRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::network::evpn_gw::v1alpha1::LogicalBridge>>(PrepareAsyncUpdateLogicalBridgeRaw(context, request, cq));
+    }
     class async_interface {
      public:
       virtual ~async_interface() {}
@@ -99,6 +107,9 @@ class LogicalBridgeService final {
       // Delete a Logical Bridge
       virtual void DeleteLogicalBridge(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::DeleteLogicalBridgeRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) = 0;
       virtual void DeleteLogicalBridge(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::DeleteLogicalBridgeRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // Update a Logical Bridge
+      virtual void UpdateLogicalBridge(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateLogicalBridgeRequest* request, ::opi_api::network::evpn_gw::v1alpha1::LogicalBridge* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void UpdateLogicalBridge(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateLogicalBridgeRequest* request, ::opi_api::network::evpn_gw::v1alpha1::LogicalBridge* response, ::grpc::ClientUnaryReactor* reactor) = 0;
     };
     typedef class async_interface experimental_async_interface;
     virtual class async_interface* async() { return nullptr; }
@@ -112,6 +123,8 @@ class LogicalBridgeService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::network::evpn_gw::v1alpha1::LogicalBridge>* PrepareAsyncGetLogicalBridgeRaw(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::GetLogicalBridgeRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>* AsyncDeleteLogicalBridgeRaw(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::DeleteLogicalBridgeRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>* PrepareAsyncDeleteLogicalBridgeRaw(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::DeleteLogicalBridgeRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::network::evpn_gw::v1alpha1::LogicalBridge>* AsyncUpdateLogicalBridgeRaw(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateLogicalBridgeRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::network::evpn_gw::v1alpha1::LogicalBridge>* PrepareAsyncUpdateLogicalBridgeRaw(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateLogicalBridgeRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -144,6 +157,13 @@ class LogicalBridgeService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>> PrepareAsyncDeleteLogicalBridge(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::DeleteLogicalBridgeRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>>(PrepareAsyncDeleteLogicalBridgeRaw(context, request, cq));
     }
+    ::grpc::Status UpdateLogicalBridge(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateLogicalBridgeRequest& request, ::opi_api::network::evpn_gw::v1alpha1::LogicalBridge* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::network::evpn_gw::v1alpha1::LogicalBridge>> AsyncUpdateLogicalBridge(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateLogicalBridgeRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::network::evpn_gw::v1alpha1::LogicalBridge>>(AsyncUpdateLogicalBridgeRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::network::evpn_gw::v1alpha1::LogicalBridge>> PrepareAsyncUpdateLogicalBridge(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateLogicalBridgeRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::network::evpn_gw::v1alpha1::LogicalBridge>>(PrepareAsyncUpdateLogicalBridgeRaw(context, request, cq));
+    }
     class async final :
       public StubInterface::async_interface {
      public:
@@ -155,6 +175,8 @@ class LogicalBridgeService final {
       void GetLogicalBridge(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::GetLogicalBridgeRequest* request, ::opi_api::network::evpn_gw::v1alpha1::LogicalBridge* response, ::grpc::ClientUnaryReactor* reactor) override;
       void DeleteLogicalBridge(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::DeleteLogicalBridgeRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) override;
       void DeleteLogicalBridge(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::DeleteLogicalBridgeRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void UpdateLogicalBridge(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateLogicalBridgeRequest* request, ::opi_api::network::evpn_gw::v1alpha1::LogicalBridge* response, std::function<void(::grpc::Status)>) override;
+      void UpdateLogicalBridge(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateLogicalBridgeRequest* request, ::opi_api::network::evpn_gw::v1alpha1::LogicalBridge* response, ::grpc::ClientUnaryReactor* reactor) override;
      private:
       friend class Stub;
       explicit async(Stub* stub): stub_(stub) { }
@@ -174,10 +196,13 @@ class LogicalBridgeService final {
     ::grpc::ClientAsyncResponseReader< ::opi_api::network::evpn_gw::v1alpha1::LogicalBridge>* PrepareAsyncGetLogicalBridgeRaw(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::GetLogicalBridgeRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* AsyncDeleteLogicalBridgeRaw(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::DeleteLogicalBridgeRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* PrepareAsyncDeleteLogicalBridgeRaw(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::DeleteLogicalBridgeRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::opi_api::network::evpn_gw::v1alpha1::LogicalBridge>* AsyncUpdateLogicalBridgeRaw(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateLogicalBridgeRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::opi_api::network::evpn_gw::v1alpha1::LogicalBridge>* PrepareAsyncUpdateLogicalBridgeRaw(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateLogicalBridgeRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_CreateLogicalBridge_;
     const ::grpc::internal::RpcMethod rpcmethod_ListLogicalBridges_;
     const ::grpc::internal::RpcMethod rpcmethod_GetLogicalBridge_;
     const ::grpc::internal::RpcMethod rpcmethod_DeleteLogicalBridge_;
+    const ::grpc::internal::RpcMethod rpcmethod_UpdateLogicalBridge_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -193,6 +218,8 @@ class LogicalBridgeService final {
     virtual ::grpc::Status GetLogicalBridge(::grpc::ServerContext* context, const ::opi_api::network::evpn_gw::v1alpha1::GetLogicalBridgeRequest* request, ::opi_api::network::evpn_gw::v1alpha1::LogicalBridge* response);
     // Delete a Logical Bridge
     virtual ::grpc::Status DeleteLogicalBridge(::grpc::ServerContext* context, const ::opi_api::network::evpn_gw::v1alpha1::DeleteLogicalBridgeRequest* request, ::google::protobuf::Empty* response);
+    // Update a Logical Bridge
+    virtual ::grpc::Status UpdateLogicalBridge(::grpc::ServerContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateLogicalBridgeRequest* request, ::opi_api::network::evpn_gw::v1alpha1::LogicalBridge* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_CreateLogicalBridge : public BaseClass {
@@ -274,7 +301,27 @@ class LogicalBridgeService final {
       ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_CreateLogicalBridge<WithAsyncMethod_ListLogicalBridges<WithAsyncMethod_GetLogicalBridge<WithAsyncMethod_DeleteLogicalBridge<Service > > > > AsyncService;
+  template <class BaseClass>
+  class WithAsyncMethod_UpdateLogicalBridge : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_UpdateLogicalBridge() {
+      ::grpc::Service::MarkMethodAsync(4);
+    }
+    ~WithAsyncMethod_UpdateLogicalBridge() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status UpdateLogicalBridge(::grpc::ServerContext* /*context*/, const ::opi_api::network::evpn_gw::v1alpha1::UpdateLogicalBridgeRequest* /*request*/, ::opi_api::network::evpn_gw::v1alpha1::LogicalBridge* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestUpdateLogicalBridge(::grpc::ServerContext* context, ::opi_api::network::evpn_gw::v1alpha1::UpdateLogicalBridgeRequest* request, ::grpc::ServerAsyncResponseWriter< ::opi_api::network::evpn_gw::v1alpha1::LogicalBridge>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_CreateLogicalBridge<WithAsyncMethod_ListLogicalBridges<WithAsyncMethod_GetLogicalBridge<WithAsyncMethod_DeleteLogicalBridge<WithAsyncMethod_UpdateLogicalBridge<Service > > > > > AsyncService;
   template <class BaseClass>
   class WithCallbackMethod_CreateLogicalBridge : public BaseClass {
    private:
@@ -383,7 +430,34 @@ class LogicalBridgeService final {
     virtual ::grpc::ServerUnaryReactor* DeleteLogicalBridge(
       ::grpc::CallbackServerContext* /*context*/, const ::opi_api::network::evpn_gw::v1alpha1::DeleteLogicalBridgeRequest* /*request*/, ::google::protobuf::Empty* /*response*/)  { return nullptr; }
   };
-  typedef WithCallbackMethod_CreateLogicalBridge<WithCallbackMethod_ListLogicalBridges<WithCallbackMethod_GetLogicalBridge<WithCallbackMethod_DeleteLogicalBridge<Service > > > > CallbackService;
+  template <class BaseClass>
+  class WithCallbackMethod_UpdateLogicalBridge : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_UpdateLogicalBridge() {
+      ::grpc::Service::MarkMethodCallback(4,
+          new ::grpc::internal::CallbackUnaryHandler< ::opi_api::network::evpn_gw::v1alpha1::UpdateLogicalBridgeRequest, ::opi_api::network::evpn_gw::v1alpha1::LogicalBridge>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateLogicalBridgeRequest* request, ::opi_api::network::evpn_gw::v1alpha1::LogicalBridge* response) { return this->UpdateLogicalBridge(context, request, response); }));}
+    void SetMessageAllocatorFor_UpdateLogicalBridge(
+        ::grpc::MessageAllocator< ::opi_api::network::evpn_gw::v1alpha1::UpdateLogicalBridgeRequest, ::opi_api::network::evpn_gw::v1alpha1::LogicalBridge>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(4);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::opi_api::network::evpn_gw::v1alpha1::UpdateLogicalBridgeRequest, ::opi_api::network::evpn_gw::v1alpha1::LogicalBridge>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_UpdateLogicalBridge() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status UpdateLogicalBridge(::grpc::ServerContext* /*context*/, const ::opi_api::network::evpn_gw::v1alpha1::UpdateLogicalBridgeRequest* /*request*/, ::opi_api::network::evpn_gw::v1alpha1::LogicalBridge* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* UpdateLogicalBridge(
+      ::grpc::CallbackServerContext* /*context*/, const ::opi_api::network::evpn_gw::v1alpha1::UpdateLogicalBridgeRequest* /*request*/, ::opi_api::network::evpn_gw::v1alpha1::LogicalBridge* /*response*/)  { return nullptr; }
+  };
+  typedef WithCallbackMethod_CreateLogicalBridge<WithCallbackMethod_ListLogicalBridges<WithCallbackMethod_GetLogicalBridge<WithCallbackMethod_DeleteLogicalBridge<WithCallbackMethod_UpdateLogicalBridge<Service > > > > > CallbackService;
   typedef CallbackService ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_CreateLogicalBridge : public BaseClass {
@@ -449,6 +523,23 @@ class LogicalBridgeService final {
     }
     // disable synchronous version of this method
     ::grpc::Status DeleteLogicalBridge(::grpc::ServerContext* /*context*/, const ::opi_api::network::evpn_gw::v1alpha1::DeleteLogicalBridgeRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_UpdateLogicalBridge : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_UpdateLogicalBridge() {
+      ::grpc::Service::MarkMethodGeneric(4);
+    }
+    ~WithGenericMethod_UpdateLogicalBridge() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status UpdateLogicalBridge(::grpc::ServerContext* /*context*/, const ::opi_api::network::evpn_gw::v1alpha1::UpdateLogicalBridgeRequest* /*request*/, ::opi_api::network::evpn_gw::v1alpha1::LogicalBridge* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -531,6 +622,26 @@ class LogicalBridgeService final {
     }
     void RequestDeleteLogicalBridge(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_UpdateLogicalBridge : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_UpdateLogicalBridge() {
+      ::grpc::Service::MarkMethodRaw(4);
+    }
+    ~WithRawMethod_UpdateLogicalBridge() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status UpdateLogicalBridge(::grpc::ServerContext* /*context*/, const ::opi_api::network::evpn_gw::v1alpha1::UpdateLogicalBridgeRequest* /*request*/, ::opi_api::network::evpn_gw::v1alpha1::LogicalBridge* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestUpdateLogicalBridge(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -619,6 +730,28 @@ class LogicalBridgeService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     virtual ::grpc::ServerUnaryReactor* DeleteLogicalBridge(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithRawCallbackMethod_UpdateLogicalBridge : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_UpdateLogicalBridge() {
+      ::grpc::Service::MarkMethodRawCallback(4,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->UpdateLogicalBridge(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_UpdateLogicalBridge() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status UpdateLogicalBridge(::grpc::ServerContext* /*context*/, const ::opi_api::network::evpn_gw::v1alpha1::UpdateLogicalBridgeRequest* /*request*/, ::opi_api::network::evpn_gw::v1alpha1::LogicalBridge* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* UpdateLogicalBridge(
       ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
@@ -729,9 +862,36 @@ class LogicalBridgeService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedDeleteLogicalBridge(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::opi_api::network::evpn_gw::v1alpha1::DeleteLogicalBridgeRequest,::google::protobuf::Empty>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_CreateLogicalBridge<WithStreamedUnaryMethod_ListLogicalBridges<WithStreamedUnaryMethod_GetLogicalBridge<WithStreamedUnaryMethod_DeleteLogicalBridge<Service > > > > StreamedUnaryService;
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_UpdateLogicalBridge : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_UpdateLogicalBridge() {
+      ::grpc::Service::MarkMethodStreamed(4,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::opi_api::network::evpn_gw::v1alpha1::UpdateLogicalBridgeRequest, ::opi_api::network::evpn_gw::v1alpha1::LogicalBridge>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::opi_api::network::evpn_gw::v1alpha1::UpdateLogicalBridgeRequest, ::opi_api::network::evpn_gw::v1alpha1::LogicalBridge>* streamer) {
+                       return this->StreamedUpdateLogicalBridge(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_UpdateLogicalBridge() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status UpdateLogicalBridge(::grpc::ServerContext* /*context*/, const ::opi_api::network::evpn_gw::v1alpha1::UpdateLogicalBridgeRequest* /*request*/, ::opi_api::network::evpn_gw::v1alpha1::LogicalBridge* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedUpdateLogicalBridge(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::opi_api::network::evpn_gw::v1alpha1::UpdateLogicalBridgeRequest,::opi_api::network::evpn_gw::v1alpha1::LogicalBridge>* server_unary_streamer) = 0;
+  };
+  typedef WithStreamedUnaryMethod_CreateLogicalBridge<WithStreamedUnaryMethod_ListLogicalBridges<WithStreamedUnaryMethod_GetLogicalBridge<WithStreamedUnaryMethod_DeleteLogicalBridge<WithStreamedUnaryMethod_UpdateLogicalBridge<Service > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_CreateLogicalBridge<WithStreamedUnaryMethod_ListLogicalBridges<WithStreamedUnaryMethod_GetLogicalBridge<WithStreamedUnaryMethod_DeleteLogicalBridge<Service > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_CreateLogicalBridge<WithStreamedUnaryMethod_ListLogicalBridges<WithStreamedUnaryMethod_GetLogicalBridge<WithStreamedUnaryMethod_DeleteLogicalBridge<WithStreamedUnaryMethod_UpdateLogicalBridge<Service > > > > > StreamedService;
 };
 
 // Management of BridgePort resources
@@ -775,6 +935,14 @@ class BridgePortService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>> PrepareAsyncDeleteBridgePort(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::DeleteBridgePortRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>>(PrepareAsyncDeleteBridgePortRaw(context, request, cq));
     }
+    // Update a Bridge Port
+    virtual ::grpc::Status UpdateBridgePort(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateBridgePortRequest& request, ::opi_api::network::evpn_gw::v1alpha1::BridgePort* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::network::evpn_gw::v1alpha1::BridgePort>> AsyncUpdateBridgePort(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateBridgePortRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::network::evpn_gw::v1alpha1::BridgePort>>(AsyncUpdateBridgePortRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::network::evpn_gw::v1alpha1::BridgePort>> PrepareAsyncUpdateBridgePort(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateBridgePortRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::network::evpn_gw::v1alpha1::BridgePort>>(PrepareAsyncUpdateBridgePortRaw(context, request, cq));
+    }
     class async_interface {
      public:
       virtual ~async_interface() {}
@@ -790,6 +958,9 @@ class BridgePortService final {
       // Delete a Bridge Port
       virtual void DeleteBridgePort(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::DeleteBridgePortRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) = 0;
       virtual void DeleteBridgePort(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::DeleteBridgePortRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // Update a Bridge Port
+      virtual void UpdateBridgePort(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateBridgePortRequest* request, ::opi_api::network::evpn_gw::v1alpha1::BridgePort* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void UpdateBridgePort(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateBridgePortRequest* request, ::opi_api::network::evpn_gw::v1alpha1::BridgePort* response, ::grpc::ClientUnaryReactor* reactor) = 0;
     };
     typedef class async_interface experimental_async_interface;
     virtual class async_interface* async() { return nullptr; }
@@ -803,6 +974,8 @@ class BridgePortService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::network::evpn_gw::v1alpha1::BridgePort>* PrepareAsyncGetBridgePortRaw(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::GetBridgePortRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>* AsyncDeleteBridgePortRaw(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::DeleteBridgePortRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>* PrepareAsyncDeleteBridgePortRaw(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::DeleteBridgePortRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::network::evpn_gw::v1alpha1::BridgePort>* AsyncUpdateBridgePortRaw(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateBridgePortRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::network::evpn_gw::v1alpha1::BridgePort>* PrepareAsyncUpdateBridgePortRaw(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateBridgePortRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -835,6 +1008,13 @@ class BridgePortService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>> PrepareAsyncDeleteBridgePort(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::DeleteBridgePortRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>>(PrepareAsyncDeleteBridgePortRaw(context, request, cq));
     }
+    ::grpc::Status UpdateBridgePort(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateBridgePortRequest& request, ::opi_api::network::evpn_gw::v1alpha1::BridgePort* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::network::evpn_gw::v1alpha1::BridgePort>> AsyncUpdateBridgePort(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateBridgePortRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::network::evpn_gw::v1alpha1::BridgePort>>(AsyncUpdateBridgePortRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::network::evpn_gw::v1alpha1::BridgePort>> PrepareAsyncUpdateBridgePort(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateBridgePortRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::network::evpn_gw::v1alpha1::BridgePort>>(PrepareAsyncUpdateBridgePortRaw(context, request, cq));
+    }
     class async final :
       public StubInterface::async_interface {
      public:
@@ -846,6 +1026,8 @@ class BridgePortService final {
       void GetBridgePort(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::GetBridgePortRequest* request, ::opi_api::network::evpn_gw::v1alpha1::BridgePort* response, ::grpc::ClientUnaryReactor* reactor) override;
       void DeleteBridgePort(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::DeleteBridgePortRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) override;
       void DeleteBridgePort(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::DeleteBridgePortRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void UpdateBridgePort(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateBridgePortRequest* request, ::opi_api::network::evpn_gw::v1alpha1::BridgePort* response, std::function<void(::grpc::Status)>) override;
+      void UpdateBridgePort(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateBridgePortRequest* request, ::opi_api::network::evpn_gw::v1alpha1::BridgePort* response, ::grpc::ClientUnaryReactor* reactor) override;
      private:
       friend class Stub;
       explicit async(Stub* stub): stub_(stub) { }
@@ -865,10 +1047,13 @@ class BridgePortService final {
     ::grpc::ClientAsyncResponseReader< ::opi_api::network::evpn_gw::v1alpha1::BridgePort>* PrepareAsyncGetBridgePortRaw(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::GetBridgePortRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* AsyncDeleteBridgePortRaw(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::DeleteBridgePortRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* PrepareAsyncDeleteBridgePortRaw(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::DeleteBridgePortRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::opi_api::network::evpn_gw::v1alpha1::BridgePort>* AsyncUpdateBridgePortRaw(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateBridgePortRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::opi_api::network::evpn_gw::v1alpha1::BridgePort>* PrepareAsyncUpdateBridgePortRaw(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateBridgePortRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_CreateBridgePort_;
     const ::grpc::internal::RpcMethod rpcmethod_ListBridgePorts_;
     const ::grpc::internal::RpcMethod rpcmethod_GetBridgePort_;
     const ::grpc::internal::RpcMethod rpcmethod_DeleteBridgePort_;
+    const ::grpc::internal::RpcMethod rpcmethod_UpdateBridgePort_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -884,6 +1069,8 @@ class BridgePortService final {
     virtual ::grpc::Status GetBridgePort(::grpc::ServerContext* context, const ::opi_api::network::evpn_gw::v1alpha1::GetBridgePortRequest* request, ::opi_api::network::evpn_gw::v1alpha1::BridgePort* response);
     // Delete a Bridge Port
     virtual ::grpc::Status DeleteBridgePort(::grpc::ServerContext* context, const ::opi_api::network::evpn_gw::v1alpha1::DeleteBridgePortRequest* request, ::google::protobuf::Empty* response);
+    // Update a Bridge Port
+    virtual ::grpc::Status UpdateBridgePort(::grpc::ServerContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateBridgePortRequest* request, ::opi_api::network::evpn_gw::v1alpha1::BridgePort* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_CreateBridgePort : public BaseClass {
@@ -965,7 +1152,27 @@ class BridgePortService final {
       ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_CreateBridgePort<WithAsyncMethod_ListBridgePorts<WithAsyncMethod_GetBridgePort<WithAsyncMethod_DeleteBridgePort<Service > > > > AsyncService;
+  template <class BaseClass>
+  class WithAsyncMethod_UpdateBridgePort : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_UpdateBridgePort() {
+      ::grpc::Service::MarkMethodAsync(4);
+    }
+    ~WithAsyncMethod_UpdateBridgePort() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status UpdateBridgePort(::grpc::ServerContext* /*context*/, const ::opi_api::network::evpn_gw::v1alpha1::UpdateBridgePortRequest* /*request*/, ::opi_api::network::evpn_gw::v1alpha1::BridgePort* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestUpdateBridgePort(::grpc::ServerContext* context, ::opi_api::network::evpn_gw::v1alpha1::UpdateBridgePortRequest* request, ::grpc::ServerAsyncResponseWriter< ::opi_api::network::evpn_gw::v1alpha1::BridgePort>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_CreateBridgePort<WithAsyncMethod_ListBridgePorts<WithAsyncMethod_GetBridgePort<WithAsyncMethod_DeleteBridgePort<WithAsyncMethod_UpdateBridgePort<Service > > > > > AsyncService;
   template <class BaseClass>
   class WithCallbackMethod_CreateBridgePort : public BaseClass {
    private:
@@ -1074,7 +1281,34 @@ class BridgePortService final {
     virtual ::grpc::ServerUnaryReactor* DeleteBridgePort(
       ::grpc::CallbackServerContext* /*context*/, const ::opi_api::network::evpn_gw::v1alpha1::DeleteBridgePortRequest* /*request*/, ::google::protobuf::Empty* /*response*/)  { return nullptr; }
   };
-  typedef WithCallbackMethod_CreateBridgePort<WithCallbackMethod_ListBridgePorts<WithCallbackMethod_GetBridgePort<WithCallbackMethod_DeleteBridgePort<Service > > > > CallbackService;
+  template <class BaseClass>
+  class WithCallbackMethod_UpdateBridgePort : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_UpdateBridgePort() {
+      ::grpc::Service::MarkMethodCallback(4,
+          new ::grpc::internal::CallbackUnaryHandler< ::opi_api::network::evpn_gw::v1alpha1::UpdateBridgePortRequest, ::opi_api::network::evpn_gw::v1alpha1::BridgePort>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateBridgePortRequest* request, ::opi_api::network::evpn_gw::v1alpha1::BridgePort* response) { return this->UpdateBridgePort(context, request, response); }));}
+    void SetMessageAllocatorFor_UpdateBridgePort(
+        ::grpc::MessageAllocator< ::opi_api::network::evpn_gw::v1alpha1::UpdateBridgePortRequest, ::opi_api::network::evpn_gw::v1alpha1::BridgePort>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(4);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::opi_api::network::evpn_gw::v1alpha1::UpdateBridgePortRequest, ::opi_api::network::evpn_gw::v1alpha1::BridgePort>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_UpdateBridgePort() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status UpdateBridgePort(::grpc::ServerContext* /*context*/, const ::opi_api::network::evpn_gw::v1alpha1::UpdateBridgePortRequest* /*request*/, ::opi_api::network::evpn_gw::v1alpha1::BridgePort* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* UpdateBridgePort(
+      ::grpc::CallbackServerContext* /*context*/, const ::opi_api::network::evpn_gw::v1alpha1::UpdateBridgePortRequest* /*request*/, ::opi_api::network::evpn_gw::v1alpha1::BridgePort* /*response*/)  { return nullptr; }
+  };
+  typedef WithCallbackMethod_CreateBridgePort<WithCallbackMethod_ListBridgePorts<WithCallbackMethod_GetBridgePort<WithCallbackMethod_DeleteBridgePort<WithCallbackMethod_UpdateBridgePort<Service > > > > > CallbackService;
   typedef CallbackService ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_CreateBridgePort : public BaseClass {
@@ -1140,6 +1374,23 @@ class BridgePortService final {
     }
     // disable synchronous version of this method
     ::grpc::Status DeleteBridgePort(::grpc::ServerContext* /*context*/, const ::opi_api::network::evpn_gw::v1alpha1::DeleteBridgePortRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_UpdateBridgePort : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_UpdateBridgePort() {
+      ::grpc::Service::MarkMethodGeneric(4);
+    }
+    ~WithGenericMethod_UpdateBridgePort() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status UpdateBridgePort(::grpc::ServerContext* /*context*/, const ::opi_api::network::evpn_gw::v1alpha1::UpdateBridgePortRequest* /*request*/, ::opi_api::network::evpn_gw::v1alpha1::BridgePort* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1222,6 +1473,26 @@ class BridgePortService final {
     }
     void RequestDeleteBridgePort(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_UpdateBridgePort : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_UpdateBridgePort() {
+      ::grpc::Service::MarkMethodRaw(4);
+    }
+    ~WithRawMethod_UpdateBridgePort() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status UpdateBridgePort(::grpc::ServerContext* /*context*/, const ::opi_api::network::evpn_gw::v1alpha1::UpdateBridgePortRequest* /*request*/, ::opi_api::network::evpn_gw::v1alpha1::BridgePort* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestUpdateBridgePort(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1310,6 +1581,28 @@ class BridgePortService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     virtual ::grpc::ServerUnaryReactor* DeleteBridgePort(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithRawCallbackMethod_UpdateBridgePort : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_UpdateBridgePort() {
+      ::grpc::Service::MarkMethodRawCallback(4,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->UpdateBridgePort(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_UpdateBridgePort() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status UpdateBridgePort(::grpc::ServerContext* /*context*/, const ::opi_api::network::evpn_gw::v1alpha1::UpdateBridgePortRequest* /*request*/, ::opi_api::network::evpn_gw::v1alpha1::BridgePort* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* UpdateBridgePort(
       ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
@@ -1420,9 +1713,36 @@ class BridgePortService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedDeleteBridgePort(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::opi_api::network::evpn_gw::v1alpha1::DeleteBridgePortRequest,::google::protobuf::Empty>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_CreateBridgePort<WithStreamedUnaryMethod_ListBridgePorts<WithStreamedUnaryMethod_GetBridgePort<WithStreamedUnaryMethod_DeleteBridgePort<Service > > > > StreamedUnaryService;
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_UpdateBridgePort : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_UpdateBridgePort() {
+      ::grpc::Service::MarkMethodStreamed(4,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::opi_api::network::evpn_gw::v1alpha1::UpdateBridgePortRequest, ::opi_api::network::evpn_gw::v1alpha1::BridgePort>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::opi_api::network::evpn_gw::v1alpha1::UpdateBridgePortRequest, ::opi_api::network::evpn_gw::v1alpha1::BridgePort>* streamer) {
+                       return this->StreamedUpdateBridgePort(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_UpdateBridgePort() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status UpdateBridgePort(::grpc::ServerContext* /*context*/, const ::opi_api::network::evpn_gw::v1alpha1::UpdateBridgePortRequest* /*request*/, ::opi_api::network::evpn_gw::v1alpha1::BridgePort* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedUpdateBridgePort(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::opi_api::network::evpn_gw::v1alpha1::UpdateBridgePortRequest,::opi_api::network::evpn_gw::v1alpha1::BridgePort>* server_unary_streamer) = 0;
+  };
+  typedef WithStreamedUnaryMethod_CreateBridgePort<WithStreamedUnaryMethod_ListBridgePorts<WithStreamedUnaryMethod_GetBridgePort<WithStreamedUnaryMethod_DeleteBridgePort<WithStreamedUnaryMethod_UpdateBridgePort<Service > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_CreateBridgePort<WithStreamedUnaryMethod_ListBridgePorts<WithStreamedUnaryMethod_GetBridgePort<WithStreamedUnaryMethod_DeleteBridgePort<Service > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_CreateBridgePort<WithStreamedUnaryMethod_ListBridgePorts<WithStreamedUnaryMethod_GetBridgePort<WithStreamedUnaryMethod_DeleteBridgePort<WithStreamedUnaryMethod_UpdateBridgePort<Service > > > > > StreamedService;
 };
 
 }  // namespace v1alpha1

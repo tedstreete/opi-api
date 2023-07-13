@@ -29,6 +29,7 @@ static const char* LogicalBridgeService_method_names[] = {
   "/opi_api.network.evpn_gw.v1alpha1.LogicalBridgeService/ListLogicalBridges",
   "/opi_api.network.evpn_gw.v1alpha1.LogicalBridgeService/GetLogicalBridge",
   "/opi_api.network.evpn_gw.v1alpha1.LogicalBridgeService/DeleteLogicalBridge",
+  "/opi_api.network.evpn_gw.v1alpha1.LogicalBridgeService/UpdateLogicalBridge",
 };
 
 std::unique_ptr< LogicalBridgeService::Stub> LogicalBridgeService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -42,6 +43,7 @@ LogicalBridgeService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface
   , rpcmethod_ListLogicalBridges_(LogicalBridgeService_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_GetLogicalBridge_(LogicalBridgeService_method_names[2], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_DeleteLogicalBridge_(LogicalBridgeService_method_names[3], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_UpdateLogicalBridge_(LogicalBridgeService_method_names[4], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status LogicalBridgeService::Stub::CreateLogicalBridge(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::CreateLogicalBridgeRequest& request, ::opi_api::network::evpn_gw::v1alpha1::LogicalBridge* response) {
@@ -136,6 +138,29 @@ void LogicalBridgeService::Stub::async::DeleteLogicalBridge(::grpc::ClientContex
   return result;
 }
 
+::grpc::Status LogicalBridgeService::Stub::UpdateLogicalBridge(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateLogicalBridgeRequest& request, ::opi_api::network::evpn_gw::v1alpha1::LogicalBridge* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::opi_api::network::evpn_gw::v1alpha1::UpdateLogicalBridgeRequest, ::opi_api::network::evpn_gw::v1alpha1::LogicalBridge, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_UpdateLogicalBridge_, context, request, response);
+}
+
+void LogicalBridgeService::Stub::async::UpdateLogicalBridge(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateLogicalBridgeRequest* request, ::opi_api::network::evpn_gw::v1alpha1::LogicalBridge* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::opi_api::network::evpn_gw::v1alpha1::UpdateLogicalBridgeRequest, ::opi_api::network::evpn_gw::v1alpha1::LogicalBridge, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_UpdateLogicalBridge_, context, request, response, std::move(f));
+}
+
+void LogicalBridgeService::Stub::async::UpdateLogicalBridge(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateLogicalBridgeRequest* request, ::opi_api::network::evpn_gw::v1alpha1::LogicalBridge* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_UpdateLogicalBridge_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::opi_api::network::evpn_gw::v1alpha1::LogicalBridge>* LogicalBridgeService::Stub::PrepareAsyncUpdateLogicalBridgeRaw(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateLogicalBridgeRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::opi_api::network::evpn_gw::v1alpha1::LogicalBridge, ::opi_api::network::evpn_gw::v1alpha1::UpdateLogicalBridgeRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_UpdateLogicalBridge_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::opi_api::network::evpn_gw::v1alpha1::LogicalBridge>* LogicalBridgeService::Stub::AsyncUpdateLogicalBridgeRaw(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateLogicalBridgeRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncUpdateLogicalBridgeRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
 LogicalBridgeService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       LogicalBridgeService_method_names[0],
@@ -177,6 +202,16 @@ LogicalBridgeService::Service::Service() {
              ::google::protobuf::Empty* resp) {
                return service->DeleteLogicalBridge(ctx, req, resp);
              }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      LogicalBridgeService_method_names[4],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< LogicalBridgeService::Service, ::opi_api::network::evpn_gw::v1alpha1::UpdateLogicalBridgeRequest, ::opi_api::network::evpn_gw::v1alpha1::LogicalBridge, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](LogicalBridgeService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::opi_api::network::evpn_gw::v1alpha1::UpdateLogicalBridgeRequest* req,
+             ::opi_api::network::evpn_gw::v1alpha1::LogicalBridge* resp) {
+               return service->UpdateLogicalBridge(ctx, req, resp);
+             }, this)));
 }
 
 LogicalBridgeService::Service::~Service() {
@@ -210,12 +245,20 @@ LogicalBridgeService::Service::~Service() {
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
+::grpc::Status LogicalBridgeService::Service::UpdateLogicalBridge(::grpc::ServerContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateLogicalBridgeRequest* request, ::opi_api::network::evpn_gw::v1alpha1::LogicalBridge* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
 
 static const char* BridgePortService_method_names[] = {
   "/opi_api.network.evpn_gw.v1alpha1.BridgePortService/CreateBridgePort",
   "/opi_api.network.evpn_gw.v1alpha1.BridgePortService/ListBridgePorts",
   "/opi_api.network.evpn_gw.v1alpha1.BridgePortService/GetBridgePort",
   "/opi_api.network.evpn_gw.v1alpha1.BridgePortService/DeleteBridgePort",
+  "/opi_api.network.evpn_gw.v1alpha1.BridgePortService/UpdateBridgePort",
 };
 
 std::unique_ptr< BridgePortService::Stub> BridgePortService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -229,6 +272,7 @@ BridgePortService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& 
   , rpcmethod_ListBridgePorts_(BridgePortService_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_GetBridgePort_(BridgePortService_method_names[2], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_DeleteBridgePort_(BridgePortService_method_names[3], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_UpdateBridgePort_(BridgePortService_method_names[4], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status BridgePortService::Stub::CreateBridgePort(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::CreateBridgePortRequest& request, ::opi_api::network::evpn_gw::v1alpha1::BridgePort* response) {
@@ -323,6 +367,29 @@ void BridgePortService::Stub::async::DeleteBridgePort(::grpc::ClientContext* con
   return result;
 }
 
+::grpc::Status BridgePortService::Stub::UpdateBridgePort(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateBridgePortRequest& request, ::opi_api::network::evpn_gw::v1alpha1::BridgePort* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::opi_api::network::evpn_gw::v1alpha1::UpdateBridgePortRequest, ::opi_api::network::evpn_gw::v1alpha1::BridgePort, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_UpdateBridgePort_, context, request, response);
+}
+
+void BridgePortService::Stub::async::UpdateBridgePort(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateBridgePortRequest* request, ::opi_api::network::evpn_gw::v1alpha1::BridgePort* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::opi_api::network::evpn_gw::v1alpha1::UpdateBridgePortRequest, ::opi_api::network::evpn_gw::v1alpha1::BridgePort, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_UpdateBridgePort_, context, request, response, std::move(f));
+}
+
+void BridgePortService::Stub::async::UpdateBridgePort(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateBridgePortRequest* request, ::opi_api::network::evpn_gw::v1alpha1::BridgePort* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_UpdateBridgePort_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::opi_api::network::evpn_gw::v1alpha1::BridgePort>* BridgePortService::Stub::PrepareAsyncUpdateBridgePortRaw(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateBridgePortRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::opi_api::network::evpn_gw::v1alpha1::BridgePort, ::opi_api::network::evpn_gw::v1alpha1::UpdateBridgePortRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_UpdateBridgePort_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::opi_api::network::evpn_gw::v1alpha1::BridgePort>* BridgePortService::Stub::AsyncUpdateBridgePortRaw(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateBridgePortRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncUpdateBridgePortRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
 BridgePortService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       BridgePortService_method_names[0],
@@ -364,6 +431,16 @@ BridgePortService::Service::Service() {
              ::google::protobuf::Empty* resp) {
                return service->DeleteBridgePort(ctx, req, resp);
              }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      BridgePortService_method_names[4],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< BridgePortService::Service, ::opi_api::network::evpn_gw::v1alpha1::UpdateBridgePortRequest, ::opi_api::network::evpn_gw::v1alpha1::BridgePort, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](BridgePortService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::opi_api::network::evpn_gw::v1alpha1::UpdateBridgePortRequest* req,
+             ::opi_api::network::evpn_gw::v1alpha1::BridgePort* resp) {
+               return service->UpdateBridgePort(ctx, req, resp);
+             }, this)));
 }
 
 BridgePortService::Service::~Service() {
@@ -391,6 +468,13 @@ BridgePortService::Service::~Service() {
 }
 
 ::grpc::Status BridgePortService::Service::DeleteBridgePort(::grpc::ServerContext* context, const ::opi_api::network::evpn_gw::v1alpha1::DeleteBridgePortRequest* request, ::google::protobuf::Empty* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status BridgePortService::Service::UpdateBridgePort(::grpc::ServerContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateBridgePortRequest* request, ::opi_api::network::evpn_gw::v1alpha1::BridgePort* response) {
   (void) context;
   (void) request;
   (void) response;

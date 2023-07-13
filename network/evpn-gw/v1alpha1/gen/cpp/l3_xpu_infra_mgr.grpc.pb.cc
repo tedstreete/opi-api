@@ -29,6 +29,7 @@ static const char* VrfService_method_names[] = {
   "/opi_api.network.evpn_gw.v1alpha1.VrfService/ListVrfs",
   "/opi_api.network.evpn_gw.v1alpha1.VrfService/GetVrf",
   "/opi_api.network.evpn_gw.v1alpha1.VrfService/DeleteVrf",
+  "/opi_api.network.evpn_gw.v1alpha1.VrfService/UpdateVrf",
 };
 
 std::unique_ptr< VrfService::Stub> VrfService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -42,6 +43,7 @@ VrfService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel
   , rpcmethod_ListVrfs_(VrfService_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_GetVrf_(VrfService_method_names[2], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_DeleteVrf_(VrfService_method_names[3], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_UpdateVrf_(VrfService_method_names[4], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status VrfService::Stub::CreateVrf(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::CreateVrfRequest& request, ::opi_api::network::evpn_gw::v1alpha1::Vrf* response) {
@@ -136,6 +138,29 @@ void VrfService::Stub::async::DeleteVrf(::grpc::ClientContext* context, const ::
   return result;
 }
 
+::grpc::Status VrfService::Stub::UpdateVrf(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateVrfRequest& request, ::opi_api::network::evpn_gw::v1alpha1::Vrf* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::opi_api::network::evpn_gw::v1alpha1::UpdateVrfRequest, ::opi_api::network::evpn_gw::v1alpha1::Vrf, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_UpdateVrf_, context, request, response);
+}
+
+void VrfService::Stub::async::UpdateVrf(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateVrfRequest* request, ::opi_api::network::evpn_gw::v1alpha1::Vrf* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::opi_api::network::evpn_gw::v1alpha1::UpdateVrfRequest, ::opi_api::network::evpn_gw::v1alpha1::Vrf, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_UpdateVrf_, context, request, response, std::move(f));
+}
+
+void VrfService::Stub::async::UpdateVrf(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateVrfRequest* request, ::opi_api::network::evpn_gw::v1alpha1::Vrf* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_UpdateVrf_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::opi_api::network::evpn_gw::v1alpha1::Vrf>* VrfService::Stub::PrepareAsyncUpdateVrfRaw(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateVrfRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::opi_api::network::evpn_gw::v1alpha1::Vrf, ::opi_api::network::evpn_gw::v1alpha1::UpdateVrfRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_UpdateVrf_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::opi_api::network::evpn_gw::v1alpha1::Vrf>* VrfService::Stub::AsyncUpdateVrfRaw(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateVrfRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncUpdateVrfRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
 VrfService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       VrfService_method_names[0],
@@ -177,6 +202,16 @@ VrfService::Service::Service() {
              ::google::protobuf::Empty* resp) {
                return service->DeleteVrf(ctx, req, resp);
              }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      VrfService_method_names[4],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< VrfService::Service, ::opi_api::network::evpn_gw::v1alpha1::UpdateVrfRequest, ::opi_api::network::evpn_gw::v1alpha1::Vrf, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](VrfService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::opi_api::network::evpn_gw::v1alpha1::UpdateVrfRequest* req,
+             ::opi_api::network::evpn_gw::v1alpha1::Vrf* resp) {
+               return service->UpdateVrf(ctx, req, resp);
+             }, this)));
 }
 
 VrfService::Service::~Service() {
@@ -210,12 +245,20 @@ VrfService::Service::~Service() {
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
+::grpc::Status VrfService::Service::UpdateVrf(::grpc::ServerContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateVrfRequest* request, ::opi_api::network::evpn_gw::v1alpha1::Vrf* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
 
 static const char* SviService_method_names[] = {
   "/opi_api.network.evpn_gw.v1alpha1.SviService/CreateSvi",
   "/opi_api.network.evpn_gw.v1alpha1.SviService/ListSvis",
   "/opi_api.network.evpn_gw.v1alpha1.SviService/GetSvi",
   "/opi_api.network.evpn_gw.v1alpha1.SviService/DeleteSvi",
+  "/opi_api.network.evpn_gw.v1alpha1.SviService/UpdateSvi",
 };
 
 std::unique_ptr< SviService::Stub> SviService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -229,6 +272,7 @@ SviService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel
   , rpcmethod_ListSvis_(SviService_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_GetSvi_(SviService_method_names[2], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_DeleteSvi_(SviService_method_names[3], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_UpdateSvi_(SviService_method_names[4], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status SviService::Stub::CreateSvi(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::CreateSviRequest& request, ::opi_api::network::evpn_gw::v1alpha1::Svi* response) {
@@ -323,6 +367,29 @@ void SviService::Stub::async::DeleteSvi(::grpc::ClientContext* context, const ::
   return result;
 }
 
+::grpc::Status SviService::Stub::UpdateSvi(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateSviRequest& request, ::opi_api::network::evpn_gw::v1alpha1::Svi* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::opi_api::network::evpn_gw::v1alpha1::UpdateSviRequest, ::opi_api::network::evpn_gw::v1alpha1::Svi, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_UpdateSvi_, context, request, response);
+}
+
+void SviService::Stub::async::UpdateSvi(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateSviRequest* request, ::opi_api::network::evpn_gw::v1alpha1::Svi* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::opi_api::network::evpn_gw::v1alpha1::UpdateSviRequest, ::opi_api::network::evpn_gw::v1alpha1::Svi, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_UpdateSvi_, context, request, response, std::move(f));
+}
+
+void SviService::Stub::async::UpdateSvi(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateSviRequest* request, ::opi_api::network::evpn_gw::v1alpha1::Svi* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_UpdateSvi_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::opi_api::network::evpn_gw::v1alpha1::Svi>* SviService::Stub::PrepareAsyncUpdateSviRaw(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateSviRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::opi_api::network::evpn_gw::v1alpha1::Svi, ::opi_api::network::evpn_gw::v1alpha1::UpdateSviRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_UpdateSvi_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::opi_api::network::evpn_gw::v1alpha1::Svi>* SviService::Stub::AsyncUpdateSviRaw(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateSviRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncUpdateSviRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
 SviService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       SviService_method_names[0],
@@ -364,6 +431,16 @@ SviService::Service::Service() {
              ::google::protobuf::Empty* resp) {
                return service->DeleteSvi(ctx, req, resp);
              }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      SviService_method_names[4],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< SviService::Service, ::opi_api::network::evpn_gw::v1alpha1::UpdateSviRequest, ::opi_api::network::evpn_gw::v1alpha1::Svi, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](SviService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::opi_api::network::evpn_gw::v1alpha1::UpdateSviRequest* req,
+             ::opi_api::network::evpn_gw::v1alpha1::Svi* resp) {
+               return service->UpdateSvi(ctx, req, resp);
+             }, this)));
 }
 
 SviService::Service::~Service() {
@@ -391,6 +468,13 @@ SviService::Service::~Service() {
 }
 
 ::grpc::Status SviService::Service::DeleteSvi(::grpc::ServerContext* context, const ::opi_api::network::evpn_gw::v1alpha1::DeleteSviRequest* request, ::google::protobuf::Empty* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status SviService::Service::UpdateSvi(::grpc::ServerContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateSviRequest* request, ::opi_api::network::evpn_gw::v1alpha1::Svi* response) {
   (void) context;
   (void) request;
   (void) response;

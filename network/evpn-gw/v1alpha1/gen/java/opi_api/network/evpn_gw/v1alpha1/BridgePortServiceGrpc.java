@@ -142,6 +142,37 @@ public final class BridgePortServiceGrpc {
     return getDeleteBridgePortMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<opi_api.network.evpn_gw.v1alpha1.UpdateBridgePortRequest,
+      opi_api.network.evpn_gw.v1alpha1.BridgePort> getUpdateBridgePortMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateBridgePort",
+      requestType = opi_api.network.evpn_gw.v1alpha1.UpdateBridgePortRequest.class,
+      responseType = opi_api.network.evpn_gw.v1alpha1.BridgePort.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<opi_api.network.evpn_gw.v1alpha1.UpdateBridgePortRequest,
+      opi_api.network.evpn_gw.v1alpha1.BridgePort> getUpdateBridgePortMethod() {
+    io.grpc.MethodDescriptor<opi_api.network.evpn_gw.v1alpha1.UpdateBridgePortRequest, opi_api.network.evpn_gw.v1alpha1.BridgePort> getUpdateBridgePortMethod;
+    if ((getUpdateBridgePortMethod = BridgePortServiceGrpc.getUpdateBridgePortMethod) == null) {
+      synchronized (BridgePortServiceGrpc.class) {
+        if ((getUpdateBridgePortMethod = BridgePortServiceGrpc.getUpdateBridgePortMethod) == null) {
+          BridgePortServiceGrpc.getUpdateBridgePortMethod = getUpdateBridgePortMethod =
+              io.grpc.MethodDescriptor.<opi_api.network.evpn_gw.v1alpha1.UpdateBridgePortRequest, opi_api.network.evpn_gw.v1alpha1.BridgePort>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateBridgePort"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  opi_api.network.evpn_gw.v1alpha1.UpdateBridgePortRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  opi_api.network.evpn_gw.v1alpha1.BridgePort.getDefaultInstance()))
+              .setSchemaDescriptor(new BridgePortServiceMethodDescriptorSupplier("UpdateBridgePort"))
+              .build();
+        }
+      }
+    }
+    return getUpdateBridgePortMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -233,6 +264,16 @@ public final class BridgePortServiceGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteBridgePortMethod(), responseObserver);
     }
 
+    /**
+     * <pre>
+     * Update a Bridge Port
+     * </pre>
+     */
+    public void updateBridgePort(opi_api.network.evpn_gw.v1alpha1.UpdateBridgePortRequest request,
+        io.grpc.stub.StreamObserver<opi_api.network.evpn_gw.v1alpha1.BridgePort> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateBridgePortMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -263,6 +304,13 @@ public final class BridgePortServiceGrpc {
                 opi_api.network.evpn_gw.v1alpha1.DeleteBridgePortRequest,
                 com.google.protobuf.Empty>(
                   this, METHODID_DELETE_BRIDGE_PORT)))
+          .addMethod(
+            getUpdateBridgePortMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                opi_api.network.evpn_gw.v1alpha1.UpdateBridgePortRequest,
+                opi_api.network.evpn_gw.v1alpha1.BridgePort>(
+                  this, METHODID_UPDATE_BRIDGE_PORT)))
           .build();
     }
   }
@@ -327,6 +375,17 @@ public final class BridgePortServiceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteBridgePortMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * Update a Bridge Port
+     * </pre>
+     */
+    public void updateBridgePort(opi_api.network.evpn_gw.v1alpha1.UpdateBridgePortRequest request,
+        io.grpc.stub.StreamObserver<opi_api.network.evpn_gw.v1alpha1.BridgePort> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateBridgePortMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -384,6 +443,16 @@ public final class BridgePortServiceGrpc {
     public com.google.protobuf.Empty deleteBridgePort(opi_api.network.evpn_gw.v1alpha1.DeleteBridgePortRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteBridgePortMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Update a Bridge Port
+     * </pre>
+     */
+    public opi_api.network.evpn_gw.v1alpha1.BridgePort updateBridgePort(opi_api.network.evpn_gw.v1alpha1.UpdateBridgePortRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateBridgePortMethod(), getCallOptions(), request);
     }
   }
 
@@ -447,12 +516,24 @@ public final class BridgePortServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteBridgePortMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * Update a Bridge Port
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<opi_api.network.evpn_gw.v1alpha1.BridgePort> updateBridgePort(
+        opi_api.network.evpn_gw.v1alpha1.UpdateBridgePortRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateBridgePortMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_BRIDGE_PORT = 0;
   private static final int METHODID_LIST_BRIDGE_PORTS = 1;
   private static final int METHODID_GET_BRIDGE_PORT = 2;
   private static final int METHODID_DELETE_BRIDGE_PORT = 3;
+  private static final int METHODID_UPDATE_BRIDGE_PORT = 4;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -486,6 +567,10 @@ public final class BridgePortServiceGrpc {
         case METHODID_DELETE_BRIDGE_PORT:
           serviceImpl.deleteBridgePort((opi_api.network.evpn_gw.v1alpha1.DeleteBridgePortRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_UPDATE_BRIDGE_PORT:
+          serviceImpl.updateBridgePort((opi_api.network.evpn_gw.v1alpha1.UpdateBridgePortRequest) request,
+              (io.grpc.stub.StreamObserver<opi_api.network.evpn_gw.v1alpha1.BridgePort>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -552,6 +637,7 @@ public final class BridgePortServiceGrpc {
               .addMethod(getListBridgePortsMethod())
               .addMethod(getGetBridgePortMethod())
               .addMethod(getDeleteBridgePortMethod())
+              .addMethod(getUpdateBridgePortMethod())
               .build();
         }
       }

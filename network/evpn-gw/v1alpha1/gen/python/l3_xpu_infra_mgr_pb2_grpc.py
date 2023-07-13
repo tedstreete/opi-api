@@ -36,6 +36,11 @@ class VrfServiceStub(object):
                 request_serializer=l3__xpu__infra__mgr__pb2.DeleteVrfRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
+        self.UpdateVrf = channel.unary_unary(
+                '/opi_api.network.evpn_gw.v1alpha1.VrfService/UpdateVrf',
+                request_serializer=l3__xpu__infra__mgr__pb2.UpdateVrfRequest.SerializeToString,
+                response_deserializer=l3__xpu__infra__mgr__pb2.Vrf.FromString,
+                )
 
 
 class VrfServiceServicer(object):
@@ -70,6 +75,13 @@ class VrfServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def UpdateVrf(self, request, context):
+        """Update a Vrf
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_VrfServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -92,6 +104,11 @@ def add_VrfServiceServicer_to_server(servicer, server):
                     servicer.DeleteVrf,
                     request_deserializer=l3__xpu__infra__mgr__pb2.DeleteVrfRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'UpdateVrf': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateVrf,
+                    request_deserializer=l3__xpu__infra__mgr__pb2.UpdateVrfRequest.FromString,
+                    response_serializer=l3__xpu__infra__mgr__pb2.Vrf.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -172,6 +189,23 @@ class VrfService(object):
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
+    @staticmethod
+    def UpdateVrf(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/opi_api.network.evpn_gw.v1alpha1.VrfService/UpdateVrf',
+            l3__xpu__infra__mgr__pb2.UpdateVrfRequest.SerializeToString,
+            l3__xpu__infra__mgr__pb2.Vrf.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
 
 class SviServiceStub(object):
     """Management of switch virtual interfaces (SVIs) binding LogicalBridges to VRFs.
@@ -202,6 +236,11 @@ class SviServiceStub(object):
                 '/opi_api.network.evpn_gw.v1alpha1.SviService/DeleteSvi',
                 request_serializer=l3__xpu__infra__mgr__pb2.DeleteSviRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.UpdateSvi = channel.unary_unary(
+                '/opi_api.network.evpn_gw.v1alpha1.SviService/UpdateSvi',
+                request_serializer=l3__xpu__infra__mgr__pb2.UpdateSviRequest.SerializeToString,
+                response_deserializer=l3__xpu__infra__mgr__pb2.Svi.FromString,
                 )
 
 
@@ -237,6 +276,13 @@ class SviServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def UpdateSvi(self, request, context):
+        """Update a Svi
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_SviServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -259,6 +305,11 @@ def add_SviServiceServicer_to_server(servicer, server):
                     servicer.DeleteSvi,
                     request_deserializer=l3__xpu__infra__mgr__pb2.DeleteSviRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'UpdateSvi': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateSvi,
+                    request_deserializer=l3__xpu__infra__mgr__pb2.UpdateSviRequest.FromString,
+                    response_serializer=l3__xpu__infra__mgr__pb2.Svi.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -336,5 +387,22 @@ class SviService(object):
         return grpc.experimental.unary_unary(request, target, '/opi_api.network.evpn_gw.v1alpha1.SviService/DeleteSvi',
             l3__xpu__infra__mgr__pb2.DeleteSviRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateSvi(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/opi_api.network.evpn_gw.v1alpha1.SviService/UpdateSvi',
+            l3__xpu__infra__mgr__pb2.UpdateSviRequest.SerializeToString,
+            l3__xpu__infra__mgr__pb2.Svi.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

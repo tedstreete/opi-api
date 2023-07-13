@@ -142,6 +142,37 @@ public final class VrfServiceGrpc {
     return getDeleteVrfMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<opi_api.network.evpn_gw.v1alpha1.UpdateVrfRequest,
+      opi_api.network.evpn_gw.v1alpha1.Vrf> getUpdateVrfMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateVrf",
+      requestType = opi_api.network.evpn_gw.v1alpha1.UpdateVrfRequest.class,
+      responseType = opi_api.network.evpn_gw.v1alpha1.Vrf.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<opi_api.network.evpn_gw.v1alpha1.UpdateVrfRequest,
+      opi_api.network.evpn_gw.v1alpha1.Vrf> getUpdateVrfMethod() {
+    io.grpc.MethodDescriptor<opi_api.network.evpn_gw.v1alpha1.UpdateVrfRequest, opi_api.network.evpn_gw.v1alpha1.Vrf> getUpdateVrfMethod;
+    if ((getUpdateVrfMethod = VrfServiceGrpc.getUpdateVrfMethod) == null) {
+      synchronized (VrfServiceGrpc.class) {
+        if ((getUpdateVrfMethod = VrfServiceGrpc.getUpdateVrfMethod) == null) {
+          VrfServiceGrpc.getUpdateVrfMethod = getUpdateVrfMethod =
+              io.grpc.MethodDescriptor.<opi_api.network.evpn_gw.v1alpha1.UpdateVrfRequest, opi_api.network.evpn_gw.v1alpha1.Vrf>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateVrf"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  opi_api.network.evpn_gw.v1alpha1.UpdateVrfRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  opi_api.network.evpn_gw.v1alpha1.Vrf.getDefaultInstance()))
+              .setSchemaDescriptor(new VrfServiceMethodDescriptorSupplier("UpdateVrf"))
+              .build();
+        }
+      }
+    }
+    return getUpdateVrfMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -233,6 +264,16 @@ public final class VrfServiceGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteVrfMethod(), responseObserver);
     }
 
+    /**
+     * <pre>
+     * Update a Vrf
+     * </pre>
+     */
+    public void updateVrf(opi_api.network.evpn_gw.v1alpha1.UpdateVrfRequest request,
+        io.grpc.stub.StreamObserver<opi_api.network.evpn_gw.v1alpha1.Vrf> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateVrfMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -263,6 +304,13 @@ public final class VrfServiceGrpc {
                 opi_api.network.evpn_gw.v1alpha1.DeleteVrfRequest,
                 com.google.protobuf.Empty>(
                   this, METHODID_DELETE_VRF)))
+          .addMethod(
+            getUpdateVrfMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                opi_api.network.evpn_gw.v1alpha1.UpdateVrfRequest,
+                opi_api.network.evpn_gw.v1alpha1.Vrf>(
+                  this, METHODID_UPDATE_VRF)))
           .build();
     }
   }
@@ -327,6 +375,17 @@ public final class VrfServiceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteVrfMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * Update a Vrf
+     * </pre>
+     */
+    public void updateVrf(opi_api.network.evpn_gw.v1alpha1.UpdateVrfRequest request,
+        io.grpc.stub.StreamObserver<opi_api.network.evpn_gw.v1alpha1.Vrf> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateVrfMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -384,6 +443,16 @@ public final class VrfServiceGrpc {
     public com.google.protobuf.Empty deleteVrf(opi_api.network.evpn_gw.v1alpha1.DeleteVrfRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteVrfMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Update a Vrf
+     * </pre>
+     */
+    public opi_api.network.evpn_gw.v1alpha1.Vrf updateVrf(opi_api.network.evpn_gw.v1alpha1.UpdateVrfRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateVrfMethod(), getCallOptions(), request);
     }
   }
 
@@ -447,12 +516,24 @@ public final class VrfServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteVrfMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * Update a Vrf
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<opi_api.network.evpn_gw.v1alpha1.Vrf> updateVrf(
+        opi_api.network.evpn_gw.v1alpha1.UpdateVrfRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateVrfMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_VRF = 0;
   private static final int METHODID_LIST_VRFS = 1;
   private static final int METHODID_GET_VRF = 2;
   private static final int METHODID_DELETE_VRF = 3;
+  private static final int METHODID_UPDATE_VRF = 4;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -486,6 +567,10 @@ public final class VrfServiceGrpc {
         case METHODID_DELETE_VRF:
           serviceImpl.deleteVrf((opi_api.network.evpn_gw.v1alpha1.DeleteVrfRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_UPDATE_VRF:
+          serviceImpl.updateVrf((opi_api.network.evpn_gw.v1alpha1.UpdateVrfRequest) request,
+              (io.grpc.stub.StreamObserver<opi_api.network.evpn_gw.v1alpha1.Vrf>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -552,6 +637,7 @@ public final class VrfServiceGrpc {
               .addMethod(getListVrfsMethod())
               .addMethod(getGetVrfMethod())
               .addMethod(getDeleteVrfMethod())
+              .addMethod(getUpdateVrfMethod())
               .build();
         }
       }

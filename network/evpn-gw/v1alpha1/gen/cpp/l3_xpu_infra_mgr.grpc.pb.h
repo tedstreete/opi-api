@@ -84,6 +84,14 @@ class VrfService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>> PrepareAsyncDeleteVrf(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::DeleteVrfRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>>(PrepareAsyncDeleteVrfRaw(context, request, cq));
     }
+    // Update a Vrf
+    virtual ::grpc::Status UpdateVrf(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateVrfRequest& request, ::opi_api::network::evpn_gw::v1alpha1::Vrf* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::network::evpn_gw::v1alpha1::Vrf>> AsyncUpdateVrf(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateVrfRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::network::evpn_gw::v1alpha1::Vrf>>(AsyncUpdateVrfRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::network::evpn_gw::v1alpha1::Vrf>> PrepareAsyncUpdateVrf(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateVrfRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::network::evpn_gw::v1alpha1::Vrf>>(PrepareAsyncUpdateVrfRaw(context, request, cq));
+    }
     class async_interface {
      public:
       virtual ~async_interface() {}
@@ -99,6 +107,9 @@ class VrfService final {
       // Delete a Vrf
       virtual void DeleteVrf(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::DeleteVrfRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) = 0;
       virtual void DeleteVrf(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::DeleteVrfRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // Update a Vrf
+      virtual void UpdateVrf(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateVrfRequest* request, ::opi_api::network::evpn_gw::v1alpha1::Vrf* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void UpdateVrf(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateVrfRequest* request, ::opi_api::network::evpn_gw::v1alpha1::Vrf* response, ::grpc::ClientUnaryReactor* reactor) = 0;
     };
     typedef class async_interface experimental_async_interface;
     virtual class async_interface* async() { return nullptr; }
@@ -112,6 +123,8 @@ class VrfService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::network::evpn_gw::v1alpha1::Vrf>* PrepareAsyncGetVrfRaw(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::GetVrfRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>* AsyncDeleteVrfRaw(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::DeleteVrfRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>* PrepareAsyncDeleteVrfRaw(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::DeleteVrfRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::network::evpn_gw::v1alpha1::Vrf>* AsyncUpdateVrfRaw(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateVrfRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::network::evpn_gw::v1alpha1::Vrf>* PrepareAsyncUpdateVrfRaw(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateVrfRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -144,6 +157,13 @@ class VrfService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>> PrepareAsyncDeleteVrf(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::DeleteVrfRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>>(PrepareAsyncDeleteVrfRaw(context, request, cq));
     }
+    ::grpc::Status UpdateVrf(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateVrfRequest& request, ::opi_api::network::evpn_gw::v1alpha1::Vrf* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::network::evpn_gw::v1alpha1::Vrf>> AsyncUpdateVrf(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateVrfRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::network::evpn_gw::v1alpha1::Vrf>>(AsyncUpdateVrfRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::network::evpn_gw::v1alpha1::Vrf>> PrepareAsyncUpdateVrf(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateVrfRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::network::evpn_gw::v1alpha1::Vrf>>(PrepareAsyncUpdateVrfRaw(context, request, cq));
+    }
     class async final :
       public StubInterface::async_interface {
      public:
@@ -155,6 +175,8 @@ class VrfService final {
       void GetVrf(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::GetVrfRequest* request, ::opi_api::network::evpn_gw::v1alpha1::Vrf* response, ::grpc::ClientUnaryReactor* reactor) override;
       void DeleteVrf(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::DeleteVrfRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) override;
       void DeleteVrf(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::DeleteVrfRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void UpdateVrf(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateVrfRequest* request, ::opi_api::network::evpn_gw::v1alpha1::Vrf* response, std::function<void(::grpc::Status)>) override;
+      void UpdateVrf(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateVrfRequest* request, ::opi_api::network::evpn_gw::v1alpha1::Vrf* response, ::grpc::ClientUnaryReactor* reactor) override;
      private:
       friend class Stub;
       explicit async(Stub* stub): stub_(stub) { }
@@ -174,10 +196,13 @@ class VrfService final {
     ::grpc::ClientAsyncResponseReader< ::opi_api::network::evpn_gw::v1alpha1::Vrf>* PrepareAsyncGetVrfRaw(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::GetVrfRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* AsyncDeleteVrfRaw(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::DeleteVrfRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* PrepareAsyncDeleteVrfRaw(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::DeleteVrfRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::opi_api::network::evpn_gw::v1alpha1::Vrf>* AsyncUpdateVrfRaw(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateVrfRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::opi_api::network::evpn_gw::v1alpha1::Vrf>* PrepareAsyncUpdateVrfRaw(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateVrfRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_CreateVrf_;
     const ::grpc::internal::RpcMethod rpcmethod_ListVrfs_;
     const ::grpc::internal::RpcMethod rpcmethod_GetVrf_;
     const ::grpc::internal::RpcMethod rpcmethod_DeleteVrf_;
+    const ::grpc::internal::RpcMethod rpcmethod_UpdateVrf_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -193,6 +218,8 @@ class VrfService final {
     virtual ::grpc::Status GetVrf(::grpc::ServerContext* context, const ::opi_api::network::evpn_gw::v1alpha1::GetVrfRequest* request, ::opi_api::network::evpn_gw::v1alpha1::Vrf* response);
     // Delete a Vrf
     virtual ::grpc::Status DeleteVrf(::grpc::ServerContext* context, const ::opi_api::network::evpn_gw::v1alpha1::DeleteVrfRequest* request, ::google::protobuf::Empty* response);
+    // Update a Vrf
+    virtual ::grpc::Status UpdateVrf(::grpc::ServerContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateVrfRequest* request, ::opi_api::network::evpn_gw::v1alpha1::Vrf* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_CreateVrf : public BaseClass {
@@ -274,7 +301,27 @@ class VrfService final {
       ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_CreateVrf<WithAsyncMethod_ListVrfs<WithAsyncMethod_GetVrf<WithAsyncMethod_DeleteVrf<Service > > > > AsyncService;
+  template <class BaseClass>
+  class WithAsyncMethod_UpdateVrf : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_UpdateVrf() {
+      ::grpc::Service::MarkMethodAsync(4);
+    }
+    ~WithAsyncMethod_UpdateVrf() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status UpdateVrf(::grpc::ServerContext* /*context*/, const ::opi_api::network::evpn_gw::v1alpha1::UpdateVrfRequest* /*request*/, ::opi_api::network::evpn_gw::v1alpha1::Vrf* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestUpdateVrf(::grpc::ServerContext* context, ::opi_api::network::evpn_gw::v1alpha1::UpdateVrfRequest* request, ::grpc::ServerAsyncResponseWriter< ::opi_api::network::evpn_gw::v1alpha1::Vrf>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_CreateVrf<WithAsyncMethod_ListVrfs<WithAsyncMethod_GetVrf<WithAsyncMethod_DeleteVrf<WithAsyncMethod_UpdateVrf<Service > > > > > AsyncService;
   template <class BaseClass>
   class WithCallbackMethod_CreateVrf : public BaseClass {
    private:
@@ -383,7 +430,34 @@ class VrfService final {
     virtual ::grpc::ServerUnaryReactor* DeleteVrf(
       ::grpc::CallbackServerContext* /*context*/, const ::opi_api::network::evpn_gw::v1alpha1::DeleteVrfRequest* /*request*/, ::google::protobuf::Empty* /*response*/)  { return nullptr; }
   };
-  typedef WithCallbackMethod_CreateVrf<WithCallbackMethod_ListVrfs<WithCallbackMethod_GetVrf<WithCallbackMethod_DeleteVrf<Service > > > > CallbackService;
+  template <class BaseClass>
+  class WithCallbackMethod_UpdateVrf : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_UpdateVrf() {
+      ::grpc::Service::MarkMethodCallback(4,
+          new ::grpc::internal::CallbackUnaryHandler< ::opi_api::network::evpn_gw::v1alpha1::UpdateVrfRequest, ::opi_api::network::evpn_gw::v1alpha1::Vrf>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateVrfRequest* request, ::opi_api::network::evpn_gw::v1alpha1::Vrf* response) { return this->UpdateVrf(context, request, response); }));}
+    void SetMessageAllocatorFor_UpdateVrf(
+        ::grpc::MessageAllocator< ::opi_api::network::evpn_gw::v1alpha1::UpdateVrfRequest, ::opi_api::network::evpn_gw::v1alpha1::Vrf>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(4);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::opi_api::network::evpn_gw::v1alpha1::UpdateVrfRequest, ::opi_api::network::evpn_gw::v1alpha1::Vrf>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_UpdateVrf() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status UpdateVrf(::grpc::ServerContext* /*context*/, const ::opi_api::network::evpn_gw::v1alpha1::UpdateVrfRequest* /*request*/, ::opi_api::network::evpn_gw::v1alpha1::Vrf* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* UpdateVrf(
+      ::grpc::CallbackServerContext* /*context*/, const ::opi_api::network::evpn_gw::v1alpha1::UpdateVrfRequest* /*request*/, ::opi_api::network::evpn_gw::v1alpha1::Vrf* /*response*/)  { return nullptr; }
+  };
+  typedef WithCallbackMethod_CreateVrf<WithCallbackMethod_ListVrfs<WithCallbackMethod_GetVrf<WithCallbackMethod_DeleteVrf<WithCallbackMethod_UpdateVrf<Service > > > > > CallbackService;
   typedef CallbackService ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_CreateVrf : public BaseClass {
@@ -449,6 +523,23 @@ class VrfService final {
     }
     // disable synchronous version of this method
     ::grpc::Status DeleteVrf(::grpc::ServerContext* /*context*/, const ::opi_api::network::evpn_gw::v1alpha1::DeleteVrfRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_UpdateVrf : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_UpdateVrf() {
+      ::grpc::Service::MarkMethodGeneric(4);
+    }
+    ~WithGenericMethod_UpdateVrf() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status UpdateVrf(::grpc::ServerContext* /*context*/, const ::opi_api::network::evpn_gw::v1alpha1::UpdateVrfRequest* /*request*/, ::opi_api::network::evpn_gw::v1alpha1::Vrf* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -531,6 +622,26 @@ class VrfService final {
     }
     void RequestDeleteVrf(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_UpdateVrf : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_UpdateVrf() {
+      ::grpc::Service::MarkMethodRaw(4);
+    }
+    ~WithRawMethod_UpdateVrf() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status UpdateVrf(::grpc::ServerContext* /*context*/, const ::opi_api::network::evpn_gw::v1alpha1::UpdateVrfRequest* /*request*/, ::opi_api::network::evpn_gw::v1alpha1::Vrf* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestUpdateVrf(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -619,6 +730,28 @@ class VrfService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     virtual ::grpc::ServerUnaryReactor* DeleteVrf(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithRawCallbackMethod_UpdateVrf : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_UpdateVrf() {
+      ::grpc::Service::MarkMethodRawCallback(4,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->UpdateVrf(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_UpdateVrf() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status UpdateVrf(::grpc::ServerContext* /*context*/, const ::opi_api::network::evpn_gw::v1alpha1::UpdateVrfRequest* /*request*/, ::opi_api::network::evpn_gw::v1alpha1::Vrf* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* UpdateVrf(
       ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
@@ -729,9 +862,36 @@ class VrfService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedDeleteVrf(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::opi_api::network::evpn_gw::v1alpha1::DeleteVrfRequest,::google::protobuf::Empty>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_CreateVrf<WithStreamedUnaryMethod_ListVrfs<WithStreamedUnaryMethod_GetVrf<WithStreamedUnaryMethod_DeleteVrf<Service > > > > StreamedUnaryService;
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_UpdateVrf : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_UpdateVrf() {
+      ::grpc::Service::MarkMethodStreamed(4,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::opi_api::network::evpn_gw::v1alpha1::UpdateVrfRequest, ::opi_api::network::evpn_gw::v1alpha1::Vrf>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::opi_api::network::evpn_gw::v1alpha1::UpdateVrfRequest, ::opi_api::network::evpn_gw::v1alpha1::Vrf>* streamer) {
+                       return this->StreamedUpdateVrf(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_UpdateVrf() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status UpdateVrf(::grpc::ServerContext* /*context*/, const ::opi_api::network::evpn_gw::v1alpha1::UpdateVrfRequest* /*request*/, ::opi_api::network::evpn_gw::v1alpha1::Vrf* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedUpdateVrf(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::opi_api::network::evpn_gw::v1alpha1::UpdateVrfRequest,::opi_api::network::evpn_gw::v1alpha1::Vrf>* server_unary_streamer) = 0;
+  };
+  typedef WithStreamedUnaryMethod_CreateVrf<WithStreamedUnaryMethod_ListVrfs<WithStreamedUnaryMethod_GetVrf<WithStreamedUnaryMethod_DeleteVrf<WithStreamedUnaryMethod_UpdateVrf<Service > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_CreateVrf<WithStreamedUnaryMethod_ListVrfs<WithStreamedUnaryMethod_GetVrf<WithStreamedUnaryMethod_DeleteVrf<Service > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_CreateVrf<WithStreamedUnaryMethod_ListVrfs<WithStreamedUnaryMethod_GetVrf<WithStreamedUnaryMethod_DeleteVrf<WithStreamedUnaryMethod_UpdateVrf<Service > > > > > StreamedService;
 };
 
 // Management of switch virtual interfaces (SVIs) binding LogicalBridges to VRFs.
@@ -775,6 +935,14 @@ class SviService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>> PrepareAsyncDeleteSvi(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::DeleteSviRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>>(PrepareAsyncDeleteSviRaw(context, request, cq));
     }
+    // Update a Svi
+    virtual ::grpc::Status UpdateSvi(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateSviRequest& request, ::opi_api::network::evpn_gw::v1alpha1::Svi* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::network::evpn_gw::v1alpha1::Svi>> AsyncUpdateSvi(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateSviRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::network::evpn_gw::v1alpha1::Svi>>(AsyncUpdateSviRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::network::evpn_gw::v1alpha1::Svi>> PrepareAsyncUpdateSvi(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateSviRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::network::evpn_gw::v1alpha1::Svi>>(PrepareAsyncUpdateSviRaw(context, request, cq));
+    }
     class async_interface {
      public:
       virtual ~async_interface() {}
@@ -790,6 +958,9 @@ class SviService final {
       // Delete a Svi
       virtual void DeleteSvi(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::DeleteSviRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) = 0;
       virtual void DeleteSvi(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::DeleteSviRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // Update a Svi
+      virtual void UpdateSvi(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateSviRequest* request, ::opi_api::network::evpn_gw::v1alpha1::Svi* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void UpdateSvi(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateSviRequest* request, ::opi_api::network::evpn_gw::v1alpha1::Svi* response, ::grpc::ClientUnaryReactor* reactor) = 0;
     };
     typedef class async_interface experimental_async_interface;
     virtual class async_interface* async() { return nullptr; }
@@ -803,6 +974,8 @@ class SviService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::network::evpn_gw::v1alpha1::Svi>* PrepareAsyncGetSviRaw(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::GetSviRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>* AsyncDeleteSviRaw(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::DeleteSviRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>* PrepareAsyncDeleteSviRaw(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::DeleteSviRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::network::evpn_gw::v1alpha1::Svi>* AsyncUpdateSviRaw(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateSviRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::network::evpn_gw::v1alpha1::Svi>* PrepareAsyncUpdateSviRaw(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateSviRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -835,6 +1008,13 @@ class SviService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>> PrepareAsyncDeleteSvi(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::DeleteSviRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>>(PrepareAsyncDeleteSviRaw(context, request, cq));
     }
+    ::grpc::Status UpdateSvi(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateSviRequest& request, ::opi_api::network::evpn_gw::v1alpha1::Svi* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::network::evpn_gw::v1alpha1::Svi>> AsyncUpdateSvi(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateSviRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::network::evpn_gw::v1alpha1::Svi>>(AsyncUpdateSviRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::network::evpn_gw::v1alpha1::Svi>> PrepareAsyncUpdateSvi(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateSviRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::network::evpn_gw::v1alpha1::Svi>>(PrepareAsyncUpdateSviRaw(context, request, cq));
+    }
     class async final :
       public StubInterface::async_interface {
      public:
@@ -846,6 +1026,8 @@ class SviService final {
       void GetSvi(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::GetSviRequest* request, ::opi_api::network::evpn_gw::v1alpha1::Svi* response, ::grpc::ClientUnaryReactor* reactor) override;
       void DeleteSvi(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::DeleteSviRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) override;
       void DeleteSvi(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::DeleteSviRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void UpdateSvi(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateSviRequest* request, ::opi_api::network::evpn_gw::v1alpha1::Svi* response, std::function<void(::grpc::Status)>) override;
+      void UpdateSvi(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateSviRequest* request, ::opi_api::network::evpn_gw::v1alpha1::Svi* response, ::grpc::ClientUnaryReactor* reactor) override;
      private:
       friend class Stub;
       explicit async(Stub* stub): stub_(stub) { }
@@ -865,10 +1047,13 @@ class SviService final {
     ::grpc::ClientAsyncResponseReader< ::opi_api::network::evpn_gw::v1alpha1::Svi>* PrepareAsyncGetSviRaw(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::GetSviRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* AsyncDeleteSviRaw(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::DeleteSviRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* PrepareAsyncDeleteSviRaw(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::DeleteSviRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::opi_api::network::evpn_gw::v1alpha1::Svi>* AsyncUpdateSviRaw(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateSviRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::opi_api::network::evpn_gw::v1alpha1::Svi>* PrepareAsyncUpdateSviRaw(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateSviRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_CreateSvi_;
     const ::grpc::internal::RpcMethod rpcmethod_ListSvis_;
     const ::grpc::internal::RpcMethod rpcmethod_GetSvi_;
     const ::grpc::internal::RpcMethod rpcmethod_DeleteSvi_;
+    const ::grpc::internal::RpcMethod rpcmethod_UpdateSvi_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -884,6 +1069,8 @@ class SviService final {
     virtual ::grpc::Status GetSvi(::grpc::ServerContext* context, const ::opi_api::network::evpn_gw::v1alpha1::GetSviRequest* request, ::opi_api::network::evpn_gw::v1alpha1::Svi* response);
     // Delete a Svi
     virtual ::grpc::Status DeleteSvi(::grpc::ServerContext* context, const ::opi_api::network::evpn_gw::v1alpha1::DeleteSviRequest* request, ::google::protobuf::Empty* response);
+    // Update a Svi
+    virtual ::grpc::Status UpdateSvi(::grpc::ServerContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateSviRequest* request, ::opi_api::network::evpn_gw::v1alpha1::Svi* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_CreateSvi : public BaseClass {
@@ -965,7 +1152,27 @@ class SviService final {
       ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_CreateSvi<WithAsyncMethod_ListSvis<WithAsyncMethod_GetSvi<WithAsyncMethod_DeleteSvi<Service > > > > AsyncService;
+  template <class BaseClass>
+  class WithAsyncMethod_UpdateSvi : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_UpdateSvi() {
+      ::grpc::Service::MarkMethodAsync(4);
+    }
+    ~WithAsyncMethod_UpdateSvi() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status UpdateSvi(::grpc::ServerContext* /*context*/, const ::opi_api::network::evpn_gw::v1alpha1::UpdateSviRequest* /*request*/, ::opi_api::network::evpn_gw::v1alpha1::Svi* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestUpdateSvi(::grpc::ServerContext* context, ::opi_api::network::evpn_gw::v1alpha1::UpdateSviRequest* request, ::grpc::ServerAsyncResponseWriter< ::opi_api::network::evpn_gw::v1alpha1::Svi>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_CreateSvi<WithAsyncMethod_ListSvis<WithAsyncMethod_GetSvi<WithAsyncMethod_DeleteSvi<WithAsyncMethod_UpdateSvi<Service > > > > > AsyncService;
   template <class BaseClass>
   class WithCallbackMethod_CreateSvi : public BaseClass {
    private:
@@ -1074,7 +1281,34 @@ class SviService final {
     virtual ::grpc::ServerUnaryReactor* DeleteSvi(
       ::grpc::CallbackServerContext* /*context*/, const ::opi_api::network::evpn_gw::v1alpha1::DeleteSviRequest* /*request*/, ::google::protobuf::Empty* /*response*/)  { return nullptr; }
   };
-  typedef WithCallbackMethod_CreateSvi<WithCallbackMethod_ListSvis<WithCallbackMethod_GetSvi<WithCallbackMethod_DeleteSvi<Service > > > > CallbackService;
+  template <class BaseClass>
+  class WithCallbackMethod_UpdateSvi : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_UpdateSvi() {
+      ::grpc::Service::MarkMethodCallback(4,
+          new ::grpc::internal::CallbackUnaryHandler< ::opi_api::network::evpn_gw::v1alpha1::UpdateSviRequest, ::opi_api::network::evpn_gw::v1alpha1::Svi>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::opi_api::network::evpn_gw::v1alpha1::UpdateSviRequest* request, ::opi_api::network::evpn_gw::v1alpha1::Svi* response) { return this->UpdateSvi(context, request, response); }));}
+    void SetMessageAllocatorFor_UpdateSvi(
+        ::grpc::MessageAllocator< ::opi_api::network::evpn_gw::v1alpha1::UpdateSviRequest, ::opi_api::network::evpn_gw::v1alpha1::Svi>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(4);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::opi_api::network::evpn_gw::v1alpha1::UpdateSviRequest, ::opi_api::network::evpn_gw::v1alpha1::Svi>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_UpdateSvi() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status UpdateSvi(::grpc::ServerContext* /*context*/, const ::opi_api::network::evpn_gw::v1alpha1::UpdateSviRequest* /*request*/, ::opi_api::network::evpn_gw::v1alpha1::Svi* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* UpdateSvi(
+      ::grpc::CallbackServerContext* /*context*/, const ::opi_api::network::evpn_gw::v1alpha1::UpdateSviRequest* /*request*/, ::opi_api::network::evpn_gw::v1alpha1::Svi* /*response*/)  { return nullptr; }
+  };
+  typedef WithCallbackMethod_CreateSvi<WithCallbackMethod_ListSvis<WithCallbackMethod_GetSvi<WithCallbackMethod_DeleteSvi<WithCallbackMethod_UpdateSvi<Service > > > > > CallbackService;
   typedef CallbackService ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_CreateSvi : public BaseClass {
@@ -1140,6 +1374,23 @@ class SviService final {
     }
     // disable synchronous version of this method
     ::grpc::Status DeleteSvi(::grpc::ServerContext* /*context*/, const ::opi_api::network::evpn_gw::v1alpha1::DeleteSviRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_UpdateSvi : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_UpdateSvi() {
+      ::grpc::Service::MarkMethodGeneric(4);
+    }
+    ~WithGenericMethod_UpdateSvi() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status UpdateSvi(::grpc::ServerContext* /*context*/, const ::opi_api::network::evpn_gw::v1alpha1::UpdateSviRequest* /*request*/, ::opi_api::network::evpn_gw::v1alpha1::Svi* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1222,6 +1473,26 @@ class SviService final {
     }
     void RequestDeleteSvi(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_UpdateSvi : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_UpdateSvi() {
+      ::grpc::Service::MarkMethodRaw(4);
+    }
+    ~WithRawMethod_UpdateSvi() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status UpdateSvi(::grpc::ServerContext* /*context*/, const ::opi_api::network::evpn_gw::v1alpha1::UpdateSviRequest* /*request*/, ::opi_api::network::evpn_gw::v1alpha1::Svi* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestUpdateSvi(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1310,6 +1581,28 @@ class SviService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     virtual ::grpc::ServerUnaryReactor* DeleteSvi(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithRawCallbackMethod_UpdateSvi : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_UpdateSvi() {
+      ::grpc::Service::MarkMethodRawCallback(4,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->UpdateSvi(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_UpdateSvi() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status UpdateSvi(::grpc::ServerContext* /*context*/, const ::opi_api::network::evpn_gw::v1alpha1::UpdateSviRequest* /*request*/, ::opi_api::network::evpn_gw::v1alpha1::Svi* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* UpdateSvi(
       ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
@@ -1420,9 +1713,36 @@ class SviService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedDeleteSvi(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::opi_api::network::evpn_gw::v1alpha1::DeleteSviRequest,::google::protobuf::Empty>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_CreateSvi<WithStreamedUnaryMethod_ListSvis<WithStreamedUnaryMethod_GetSvi<WithStreamedUnaryMethod_DeleteSvi<Service > > > > StreamedUnaryService;
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_UpdateSvi : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_UpdateSvi() {
+      ::grpc::Service::MarkMethodStreamed(4,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::opi_api::network::evpn_gw::v1alpha1::UpdateSviRequest, ::opi_api::network::evpn_gw::v1alpha1::Svi>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::opi_api::network::evpn_gw::v1alpha1::UpdateSviRequest, ::opi_api::network::evpn_gw::v1alpha1::Svi>* streamer) {
+                       return this->StreamedUpdateSvi(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_UpdateSvi() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status UpdateSvi(::grpc::ServerContext* /*context*/, const ::opi_api::network::evpn_gw::v1alpha1::UpdateSviRequest* /*request*/, ::opi_api::network::evpn_gw::v1alpha1::Svi* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedUpdateSvi(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::opi_api::network::evpn_gw::v1alpha1::UpdateSviRequest,::opi_api::network::evpn_gw::v1alpha1::Svi>* server_unary_streamer) = 0;
+  };
+  typedef WithStreamedUnaryMethod_CreateSvi<WithStreamedUnaryMethod_ListSvis<WithStreamedUnaryMethod_GetSvi<WithStreamedUnaryMethod_DeleteSvi<WithStreamedUnaryMethod_UpdateSvi<Service > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_CreateSvi<WithStreamedUnaryMethod_ListSvis<WithStreamedUnaryMethod_GetSvi<WithStreamedUnaryMethod_DeleteSvi<Service > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_CreateSvi<WithStreamedUnaryMethod_ListSvis<WithStreamedUnaryMethod_GetSvi<WithStreamedUnaryMethod_DeleteSvi<WithStreamedUnaryMethod_UpdateSvi<Service > > > > > StreamedService;
 };
 
 }  // namespace v1alpha1

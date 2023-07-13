@@ -142,6 +142,37 @@ public final class LogicalBridgeServiceGrpc {
     return getDeleteLogicalBridgeMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<opi_api.network.evpn_gw.v1alpha1.UpdateLogicalBridgeRequest,
+      opi_api.network.evpn_gw.v1alpha1.LogicalBridge> getUpdateLogicalBridgeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateLogicalBridge",
+      requestType = opi_api.network.evpn_gw.v1alpha1.UpdateLogicalBridgeRequest.class,
+      responseType = opi_api.network.evpn_gw.v1alpha1.LogicalBridge.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<opi_api.network.evpn_gw.v1alpha1.UpdateLogicalBridgeRequest,
+      opi_api.network.evpn_gw.v1alpha1.LogicalBridge> getUpdateLogicalBridgeMethod() {
+    io.grpc.MethodDescriptor<opi_api.network.evpn_gw.v1alpha1.UpdateLogicalBridgeRequest, opi_api.network.evpn_gw.v1alpha1.LogicalBridge> getUpdateLogicalBridgeMethod;
+    if ((getUpdateLogicalBridgeMethod = LogicalBridgeServiceGrpc.getUpdateLogicalBridgeMethod) == null) {
+      synchronized (LogicalBridgeServiceGrpc.class) {
+        if ((getUpdateLogicalBridgeMethod = LogicalBridgeServiceGrpc.getUpdateLogicalBridgeMethod) == null) {
+          LogicalBridgeServiceGrpc.getUpdateLogicalBridgeMethod = getUpdateLogicalBridgeMethod =
+              io.grpc.MethodDescriptor.<opi_api.network.evpn_gw.v1alpha1.UpdateLogicalBridgeRequest, opi_api.network.evpn_gw.v1alpha1.LogicalBridge>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateLogicalBridge"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  opi_api.network.evpn_gw.v1alpha1.UpdateLogicalBridgeRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  opi_api.network.evpn_gw.v1alpha1.LogicalBridge.getDefaultInstance()))
+              .setSchemaDescriptor(new LogicalBridgeServiceMethodDescriptorSupplier("UpdateLogicalBridge"))
+              .build();
+        }
+      }
+    }
+    return getUpdateLogicalBridgeMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -233,6 +264,16 @@ public final class LogicalBridgeServiceGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteLogicalBridgeMethod(), responseObserver);
     }
 
+    /**
+     * <pre>
+     * Update a Logical Bridge
+     * </pre>
+     */
+    public void updateLogicalBridge(opi_api.network.evpn_gw.v1alpha1.UpdateLogicalBridgeRequest request,
+        io.grpc.stub.StreamObserver<opi_api.network.evpn_gw.v1alpha1.LogicalBridge> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateLogicalBridgeMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -263,6 +304,13 @@ public final class LogicalBridgeServiceGrpc {
                 opi_api.network.evpn_gw.v1alpha1.DeleteLogicalBridgeRequest,
                 com.google.protobuf.Empty>(
                   this, METHODID_DELETE_LOGICAL_BRIDGE)))
+          .addMethod(
+            getUpdateLogicalBridgeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                opi_api.network.evpn_gw.v1alpha1.UpdateLogicalBridgeRequest,
+                opi_api.network.evpn_gw.v1alpha1.LogicalBridge>(
+                  this, METHODID_UPDATE_LOGICAL_BRIDGE)))
           .build();
     }
   }
@@ -327,6 +375,17 @@ public final class LogicalBridgeServiceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteLogicalBridgeMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * Update a Logical Bridge
+     * </pre>
+     */
+    public void updateLogicalBridge(opi_api.network.evpn_gw.v1alpha1.UpdateLogicalBridgeRequest request,
+        io.grpc.stub.StreamObserver<opi_api.network.evpn_gw.v1alpha1.LogicalBridge> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateLogicalBridgeMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -384,6 +443,16 @@ public final class LogicalBridgeServiceGrpc {
     public com.google.protobuf.Empty deleteLogicalBridge(opi_api.network.evpn_gw.v1alpha1.DeleteLogicalBridgeRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteLogicalBridgeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Update a Logical Bridge
+     * </pre>
+     */
+    public opi_api.network.evpn_gw.v1alpha1.LogicalBridge updateLogicalBridge(opi_api.network.evpn_gw.v1alpha1.UpdateLogicalBridgeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateLogicalBridgeMethod(), getCallOptions(), request);
     }
   }
 
@@ -447,12 +516,24 @@ public final class LogicalBridgeServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteLogicalBridgeMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * Update a Logical Bridge
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<opi_api.network.evpn_gw.v1alpha1.LogicalBridge> updateLogicalBridge(
+        opi_api.network.evpn_gw.v1alpha1.UpdateLogicalBridgeRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateLogicalBridgeMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_LOGICAL_BRIDGE = 0;
   private static final int METHODID_LIST_LOGICAL_BRIDGES = 1;
   private static final int METHODID_GET_LOGICAL_BRIDGE = 2;
   private static final int METHODID_DELETE_LOGICAL_BRIDGE = 3;
+  private static final int METHODID_UPDATE_LOGICAL_BRIDGE = 4;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -486,6 +567,10 @@ public final class LogicalBridgeServiceGrpc {
         case METHODID_DELETE_LOGICAL_BRIDGE:
           serviceImpl.deleteLogicalBridge((opi_api.network.evpn_gw.v1alpha1.DeleteLogicalBridgeRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_UPDATE_LOGICAL_BRIDGE:
+          serviceImpl.updateLogicalBridge((opi_api.network.evpn_gw.v1alpha1.UpdateLogicalBridgeRequest) request,
+              (io.grpc.stub.StreamObserver<opi_api.network.evpn_gw.v1alpha1.LogicalBridge>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -552,6 +637,7 @@ public final class LogicalBridgeServiceGrpc {
               .addMethod(getListLogicalBridgesMethod())
               .addMethod(getGetLogicalBridgeMethod())
               .addMethod(getDeleteLogicalBridgeMethod())
+              .addMethod(getUpdateLogicalBridgeMethod())
               .build();
         }
       }

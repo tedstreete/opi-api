@@ -36,6 +36,11 @@ class LogicalBridgeServiceStub(object):
                 request_serializer=l2__xpu__infra__mgr__pb2.DeleteLogicalBridgeRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
+        self.UpdateLogicalBridge = channel.unary_unary(
+                '/opi_api.network.evpn_gw.v1alpha1.LogicalBridgeService/UpdateLogicalBridge',
+                request_serializer=l2__xpu__infra__mgr__pb2.UpdateLogicalBridgeRequest.SerializeToString,
+                response_deserializer=l2__xpu__infra__mgr__pb2.LogicalBridge.FromString,
+                )
 
 
 class LogicalBridgeServiceServicer(object):
@@ -70,6 +75,13 @@ class LogicalBridgeServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def UpdateLogicalBridge(self, request, context):
+        """Update a Logical Bridge
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_LogicalBridgeServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -92,6 +104,11 @@ def add_LogicalBridgeServiceServicer_to_server(servicer, server):
                     servicer.DeleteLogicalBridge,
                     request_deserializer=l2__xpu__infra__mgr__pb2.DeleteLogicalBridgeRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'UpdateLogicalBridge': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateLogicalBridge,
+                    request_deserializer=l2__xpu__infra__mgr__pb2.UpdateLogicalBridgeRequest.FromString,
+                    response_serializer=l2__xpu__infra__mgr__pb2.LogicalBridge.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -172,6 +189,23 @@ class LogicalBridgeService(object):
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
+    @staticmethod
+    def UpdateLogicalBridge(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/opi_api.network.evpn_gw.v1alpha1.LogicalBridgeService/UpdateLogicalBridge',
+            l2__xpu__infra__mgr__pb2.UpdateLogicalBridgeRequest.SerializeToString,
+            l2__xpu__infra__mgr__pb2.LogicalBridge.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
 
 class BridgePortServiceStub(object):
     """Management of BridgePort resources
@@ -202,6 +236,11 @@ class BridgePortServiceStub(object):
                 '/opi_api.network.evpn_gw.v1alpha1.BridgePortService/DeleteBridgePort',
                 request_serializer=l2__xpu__infra__mgr__pb2.DeleteBridgePortRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.UpdateBridgePort = channel.unary_unary(
+                '/opi_api.network.evpn_gw.v1alpha1.BridgePortService/UpdateBridgePort',
+                request_serializer=l2__xpu__infra__mgr__pb2.UpdateBridgePortRequest.SerializeToString,
+                response_deserializer=l2__xpu__infra__mgr__pb2.BridgePort.FromString,
                 )
 
 
@@ -237,6 +276,13 @@ class BridgePortServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def UpdateBridgePort(self, request, context):
+        """Update a Bridge Port
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_BridgePortServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -259,6 +305,11 @@ def add_BridgePortServiceServicer_to_server(servicer, server):
                     servicer.DeleteBridgePort,
                     request_deserializer=l2__xpu__infra__mgr__pb2.DeleteBridgePortRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'UpdateBridgePort': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateBridgePort,
+                    request_deserializer=l2__xpu__infra__mgr__pb2.UpdateBridgePortRequest.FromString,
+                    response_serializer=l2__xpu__infra__mgr__pb2.BridgePort.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -336,5 +387,22 @@ class BridgePortService(object):
         return grpc.experimental.unary_unary(request, target, '/opi_api.network.evpn_gw.v1alpha1.BridgePortService/DeleteBridgePort',
             l2__xpu__infra__mgr__pb2.DeleteBridgePortRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateBridgePort(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/opi_api.network.evpn_gw.v1alpha1.BridgePortService/UpdateBridgePort',
+            l2__xpu__infra__mgr__pb2.UpdateBridgePortRequest.SerializeToString,
+            l2__xpu__infra__mgr__pb2.BridgePort.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

@@ -142,6 +142,37 @@ public final class SviServiceGrpc {
     return getDeleteSviMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<opi_api.network.evpn_gw.v1alpha1.UpdateSviRequest,
+      opi_api.network.evpn_gw.v1alpha1.Svi> getUpdateSviMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateSvi",
+      requestType = opi_api.network.evpn_gw.v1alpha1.UpdateSviRequest.class,
+      responseType = opi_api.network.evpn_gw.v1alpha1.Svi.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<opi_api.network.evpn_gw.v1alpha1.UpdateSviRequest,
+      opi_api.network.evpn_gw.v1alpha1.Svi> getUpdateSviMethod() {
+    io.grpc.MethodDescriptor<opi_api.network.evpn_gw.v1alpha1.UpdateSviRequest, opi_api.network.evpn_gw.v1alpha1.Svi> getUpdateSviMethod;
+    if ((getUpdateSviMethod = SviServiceGrpc.getUpdateSviMethod) == null) {
+      synchronized (SviServiceGrpc.class) {
+        if ((getUpdateSviMethod = SviServiceGrpc.getUpdateSviMethod) == null) {
+          SviServiceGrpc.getUpdateSviMethod = getUpdateSviMethod =
+              io.grpc.MethodDescriptor.<opi_api.network.evpn_gw.v1alpha1.UpdateSviRequest, opi_api.network.evpn_gw.v1alpha1.Svi>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateSvi"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  opi_api.network.evpn_gw.v1alpha1.UpdateSviRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  opi_api.network.evpn_gw.v1alpha1.Svi.getDefaultInstance()))
+              .setSchemaDescriptor(new SviServiceMethodDescriptorSupplier("UpdateSvi"))
+              .build();
+        }
+      }
+    }
+    return getUpdateSviMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -233,6 +264,16 @@ public final class SviServiceGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteSviMethod(), responseObserver);
     }
 
+    /**
+     * <pre>
+     * Update a Svi
+     * </pre>
+     */
+    public void updateSvi(opi_api.network.evpn_gw.v1alpha1.UpdateSviRequest request,
+        io.grpc.stub.StreamObserver<opi_api.network.evpn_gw.v1alpha1.Svi> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateSviMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -263,6 +304,13 @@ public final class SviServiceGrpc {
                 opi_api.network.evpn_gw.v1alpha1.DeleteSviRequest,
                 com.google.protobuf.Empty>(
                   this, METHODID_DELETE_SVI)))
+          .addMethod(
+            getUpdateSviMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                opi_api.network.evpn_gw.v1alpha1.UpdateSviRequest,
+                opi_api.network.evpn_gw.v1alpha1.Svi>(
+                  this, METHODID_UPDATE_SVI)))
           .build();
     }
   }
@@ -327,6 +375,17 @@ public final class SviServiceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteSviMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * Update a Svi
+     * </pre>
+     */
+    public void updateSvi(opi_api.network.evpn_gw.v1alpha1.UpdateSviRequest request,
+        io.grpc.stub.StreamObserver<opi_api.network.evpn_gw.v1alpha1.Svi> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateSviMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -384,6 +443,16 @@ public final class SviServiceGrpc {
     public com.google.protobuf.Empty deleteSvi(opi_api.network.evpn_gw.v1alpha1.DeleteSviRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteSviMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Update a Svi
+     * </pre>
+     */
+    public opi_api.network.evpn_gw.v1alpha1.Svi updateSvi(opi_api.network.evpn_gw.v1alpha1.UpdateSviRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateSviMethod(), getCallOptions(), request);
     }
   }
 
@@ -447,12 +516,24 @@ public final class SviServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteSviMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * Update a Svi
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<opi_api.network.evpn_gw.v1alpha1.Svi> updateSvi(
+        opi_api.network.evpn_gw.v1alpha1.UpdateSviRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateSviMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_SVI = 0;
   private static final int METHODID_LIST_SVIS = 1;
   private static final int METHODID_GET_SVI = 2;
   private static final int METHODID_DELETE_SVI = 3;
+  private static final int METHODID_UPDATE_SVI = 4;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -486,6 +567,10 @@ public final class SviServiceGrpc {
         case METHODID_DELETE_SVI:
           serviceImpl.deleteSvi((opi_api.network.evpn_gw.v1alpha1.DeleteSviRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_UPDATE_SVI:
+          serviceImpl.updateSvi((opi_api.network.evpn_gw.v1alpha1.UpdateSviRequest) request,
+              (io.grpc.stub.StreamObserver<opi_api.network.evpn_gw.v1alpha1.Svi>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -552,6 +637,7 @@ public final class SviServiceGrpc {
               .addMethod(getListSvisMethod())
               .addMethod(getGetSviMethod())
               .addMethod(getDeleteSviMethod())
+              .addMethod(getUpdateSviMethod())
               .build();
         }
       }
