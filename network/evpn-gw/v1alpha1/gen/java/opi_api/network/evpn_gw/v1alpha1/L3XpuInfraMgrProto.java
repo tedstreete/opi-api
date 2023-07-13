@@ -131,69 +131,70 @@ public final class L3XpuInfraMgrProto {
       "\003(\0132%.opi_api.network.evpn_gw.v1alpha1.V" +
       "rf\022\027\n\017next_page_token\030\002 \001(\t\"K\n\rGetVrfReq" +
       "uest\022:\n\004name\030\001 \001(\tB,\340A\002\372A&\n$opi_api.netw" +
-      "ork.evpn_gw.v1alpha1/Vrf\"N\n\020DeleteVrfReq" +
+      "ork.evpn_gw.v1alpha1/Vrf\"e\n\020DeleteVrfReq" +
       "uest\022:\n\004name\030\001 \001(\tB,\340A\002\372A&\n$opi_api.netw" +
-      "ork.evpn_gw.v1alpha1/Vrf\"\305\001\n\003Svi\022\014\n\004name" +
-      "\030\001 \001(\t\022<\n\004spec\030\002 \001(\0132).opi_api.network.e" +
-      "vpn_gw.v1alpha1.SviSpecB\003\340A\002\022;\n\006status\030\003" +
-      " \001(\0132+.opi_api.network.evpn_gw.v1alpha1." +
-      "SviStatus:5\352A2\n$opi_api.network.evpn_gw." +
-      "v1alpha1/Svi\022\nsvis/{svi}\"\241\002\n\007SviSpec\0229\n\003" +
-      "vrf\030\001 \001(\tB,\340A\002\372A&\n$opi_api.network.evpn_" +
-      "gw.v1alpha1/Vrf\022N\n\016logical_bridge\030\002 \001(\tB" +
-      "6\340A\002\372A0\n.opi_api.network.evpn_gw.v1alpha" +
-      "1/LogicalBridge\022\030\n\013mac_address\030\003 \001(\014B\003\340A" +
-      "\002\022J\n\014gw_ip_prefix\030\004 \003(\0132/.opi_api.networ" +
-      "k.opinetcommon.v1alpha1.IPPrefixB\003\340A\002\022\022\n" +
-      "\nenable_bgp\030\005 \001(\010\022\021\n\tremote_as\030\006 \001(\r\"Q\n\t" +
-      "SviStatus\022D\n\013oper_status\030\001 \001(\0162/.opi_api" +
-      ".network.evpn_gw.v1alpha1.SVIOperStatus\"" +
-      "[\n\020CreateSviRequest\022\016\n\006svi_id\030\001 \001(\t\0227\n\003s" +
-      "vi\030\002 \001(\0132%.opi_api.network.evpn_gw.v1alp" +
-      "ha1.SviB\003\340A\002\"8\n\017ListSvisRequest\022\021\n\tpage_" +
-      "size\030\001 \001(\005\022\022\n\npage_token\030\002 \001(\t\"`\n\020ListSv" +
-      "isResponse\0223\n\004svis\030\001 \003(\0132%.opi_api.netwo" +
-      "rk.evpn_gw.v1alpha1.Svi\022\027\n\017next_page_tok" +
-      "en\030\002 \001(\t\"K\n\rGetSviRequest\022:\n\004name\030\001 \001(\tB" +
-      ",\340A\002\372A&\n$opi_api.network.evpn_gw.v1alpha" +
-      "1/Svi\"N\n\020DeleteSviRequest\022:\n\004name\030\001 \001(\tB" +
-      ",\340A\002\372A&\n$opi_api.network.evpn_gw.v1alpha" +
-      "1/Svi*b\n\rVRFOperStatus\022\037\n\033VRF_OPER_STATU" +
-      "S_UNSPECIFIED\020\000\022\026\n\022VRF_OPER_STATUS_UP\020\001\022" +
-      "\030\n\024VRF_OPER_STATUS_DOWN\020\002*b\n\rSVIOperStat" +
-      "us\022\037\n\033SVI_OPER_STATUS_UNSPECIFIED\020\000\022\026\n\022S" +
-      "VI_OPER_STATUS_UP\020\001\022\030\n\024SVI_OPER_STATUS_D" +
-      "OWN\020\0022\237\004\n\nVrfService\022\212\001\n\tCreateVrf\0222.opi" +
-      "_api.network.evpn_gw.v1alpha1.CreateVrfR" +
-      "equest\032%.opi_api.network.evpn_gw.v1alpha" +
-      "1.Vrf\"\"\202\323\344\223\002\017\"\010/v1/vrfs:\003vrf\332A\nvrf,vrf_i" +
-      "d\022\203\001\n\010ListVrfs\0221.opi_api.network.evpn_gw" +
-      ".v1alpha1.ListVrfsRequest\0322.opi_api.netw" +
-      "ork.evpn_gw.v1alpha1.ListVrfsResponse\"\020\202" +
-      "\323\344\223\002\n\022\010/v1/vrfs\022\202\001\n\006GetVrf\022/.opi_api.net" +
-      "work.evpn_gw.v1alpha1.GetVrfRequest\032%.op" +
-      "i_api.network.evpn_gw.v1alpha1.Vrf\" \202\323\344\223" +
-      "\002\023\022\021/v1/{name=vrfs/*}\332A\004name\022y\n\tDeleteVr" +
-      "f\0222.opi_api.network.evpn_gw.v1alpha1.Del" +
-      "eteVrfRequest\032\026.google.protobuf.Empty\" \202" +
-      "\323\344\223\002\023*\021/v1/{name=vrfs/*}\332A\004name2\237\004\n\nSviS" +
-      "ervice\022\212\001\n\tCreateSvi\0222.opi_api.network.e" +
-      "vpn_gw.v1alpha1.CreateSviRequest\032%.opi_a" +
-      "pi.network.evpn_gw.v1alpha1.Svi\"\"\202\323\344\223\002\017\"" +
-      "\010/v1/svis:\003svi\332A\nsvi,svi_id\022\203\001\n\010ListSvis" +
-      "\0221.opi_api.network.evpn_gw.v1alpha1.List" +
-      "SvisRequest\0322.opi_api.network.evpn_gw.v1" +
-      "alpha1.ListSvisResponse\"\020\202\323\344\223\002\n\022\010/v1/svi" +
-      "s\022\202\001\n\006GetSvi\022/.opi_api.network.evpn_gw.v" +
-      "1alpha1.GetSviRequest\032%.opi_api.network." +
-      "evpn_gw.v1alpha1.Svi\" \202\323\344\223\002\023\022\021/v1/{name=" +
-      "svis/*}\332A\004name\022y\n\tDeleteSvi\0222.opi_api.ne" +
-      "twork.evpn_gw.v1alpha1.DeleteSviRequest\032" +
-      "\026.google.protobuf.Empty\" \202\323\344\223\002\023*\021/v1/{na" +
-      "me=svis/*}\332A\004nameBw\n opi_api.network.evp" +
-      "n_gw.v1alpha1B\022L3XpuInfraMgrProtoP\001Z=git" +
-      "hub.com/opiproject/opi-api/network/evpn-" +
-      "gw/v1alpha1/gen/gob\006proto3"
+      "ork.evpn_gw.v1alpha1/Vrf\022\025\n\rallow_missin" +
+      "g\030\002 \001(\010\"\305\001\n\003Svi\022\014\n\004name\030\001 \001(\t\022<\n\004spec\030\002 " +
+      "\001(\0132).opi_api.network.evpn_gw.v1alpha1.S" +
+      "viSpecB\003\340A\002\022;\n\006status\030\003 \001(\0132+.opi_api.ne" +
+      "twork.evpn_gw.v1alpha1.SviStatus:5\352A2\n$o" +
+      "pi_api.network.evpn_gw.v1alpha1/Svi\022\nsvi" +
+      "s/{svi}\"\241\002\n\007SviSpec\0229\n\003vrf\030\001 \001(\tB,\340A\002\372A&" +
+      "\n$opi_api.network.evpn_gw.v1alpha1/Vrf\022N" +
+      "\n\016logical_bridge\030\002 \001(\tB6\340A\002\372A0\n.opi_api." +
+      "network.evpn_gw.v1alpha1/LogicalBridge\022\030" +
+      "\n\013mac_address\030\003 \001(\014B\003\340A\002\022J\n\014gw_ip_prefix" +
+      "\030\004 \003(\0132/.opi_api.network.opinetcommon.v1" +
+      "alpha1.IPPrefixB\003\340A\002\022\022\n\nenable_bgp\030\005 \001(\010" +
+      "\022\021\n\tremote_as\030\006 \001(\r\"Q\n\tSviStatus\022D\n\013oper" +
+      "_status\030\001 \001(\0162/.opi_api.network.evpn_gw." +
+      "v1alpha1.SVIOperStatus\"[\n\020CreateSviReque" +
+      "st\022\016\n\006svi_id\030\001 \001(\t\0227\n\003svi\030\002 \001(\0132%.opi_ap" +
+      "i.network.evpn_gw.v1alpha1.SviB\003\340A\002\"8\n\017L" +
+      "istSvisRequest\022\021\n\tpage_size\030\001 \001(\005\022\022\n\npag" +
+      "e_token\030\002 \001(\t\"`\n\020ListSvisResponse\0223\n\004svi" +
+      "s\030\001 \003(\0132%.opi_api.network.evpn_gw.v1alph" +
+      "a1.Svi\022\027\n\017next_page_token\030\002 \001(\t\"K\n\rGetSv" +
+      "iRequest\022:\n\004name\030\001 \001(\tB,\340A\002\372A&\n$opi_api." +
+      "network.evpn_gw.v1alpha1/Svi\"e\n\020DeleteSv" +
+      "iRequest\022:\n\004name\030\001 \001(\tB,\340A\002\372A&\n$opi_api." +
+      "network.evpn_gw.v1alpha1/Svi\022\025\n\rallow_mi" +
+      "ssing\030\002 \001(\010*b\n\rVRFOperStatus\022\037\n\033VRF_OPER" +
+      "_STATUS_UNSPECIFIED\020\000\022\026\n\022VRF_OPER_STATUS" +
+      "_UP\020\001\022\030\n\024VRF_OPER_STATUS_DOWN\020\002*b\n\rSVIOp" +
+      "erStatus\022\037\n\033SVI_OPER_STATUS_UNSPECIFIED\020" +
+      "\000\022\026\n\022SVI_OPER_STATUS_UP\020\001\022\030\n\024SVI_OPER_ST" +
+      "ATUS_DOWN\020\0022\237\004\n\nVrfService\022\212\001\n\tCreateVrf" +
+      "\0222.opi_api.network.evpn_gw.v1alpha1.Crea" +
+      "teVrfRequest\032%.opi_api.network.evpn_gw.v" +
+      "1alpha1.Vrf\"\"\202\323\344\223\002\017\"\010/v1/vrfs:\003vrf\332A\nvrf" +
+      ",vrf_id\022\203\001\n\010ListVrfs\0221.opi_api.network.e" +
+      "vpn_gw.v1alpha1.ListVrfsRequest\0322.opi_ap" +
+      "i.network.evpn_gw.v1alpha1.ListVrfsRespo" +
+      "nse\"\020\202\323\344\223\002\n\022\010/v1/vrfs\022\202\001\n\006GetVrf\022/.opi_a" +
+      "pi.network.evpn_gw.v1alpha1.GetVrfReques" +
+      "t\032%.opi_api.network.evpn_gw.v1alpha1.Vrf" +
+      "\" \202\323\344\223\002\023\022\021/v1/{name=vrfs/*}\332A\004name\022y\n\tDe" +
+      "leteVrf\0222.opi_api.network.evpn_gw.v1alph" +
+      "a1.DeleteVrfRequest\032\026.google.protobuf.Em" +
+      "pty\" \202\323\344\223\002\023*\021/v1/{name=vrfs/*}\332A\004name2\237\004" +
+      "\n\nSviService\022\212\001\n\tCreateSvi\0222.opi_api.net" +
+      "work.evpn_gw.v1alpha1.CreateSviRequest\032%" +
+      ".opi_api.network.evpn_gw.v1alpha1.Svi\"\"\202" +
+      "\323\344\223\002\017\"\010/v1/svis:\003svi\332A\nsvi,svi_id\022\203\001\n\010Li" +
+      "stSvis\0221.opi_api.network.evpn_gw.v1alpha" +
+      "1.ListSvisRequest\0322.opi_api.network.evpn" +
+      "_gw.v1alpha1.ListSvisResponse\"\020\202\323\344\223\002\n\022\010/" +
+      "v1/svis\022\202\001\n\006GetSvi\022/.opi_api.network.evp" +
+      "n_gw.v1alpha1.GetSviRequest\032%.opi_api.ne" +
+      "twork.evpn_gw.v1alpha1.Svi\" \202\323\344\223\002\023\022\021/v1/" +
+      "{name=svis/*}\332A\004name\022y\n\tDeleteSvi\0222.opi_" +
+      "api.network.evpn_gw.v1alpha1.DeleteSviRe" +
+      "quest\032\026.google.protobuf.Empty\" \202\323\344\223\002\023*\021/" +
+      "v1/{name=svis/*}\332A\004nameBw\n opi_api.netwo" +
+      "rk.evpn_gw.v1alpha1B\022L3XpuInfraMgrProtoP" +
+      "\001Z=github.com/opiproject/opi-api/network" +
+      "/evpn-gw/v1alpha1/gen/gob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -252,7 +253,7 @@ public final class L3XpuInfraMgrProto {
     internal_static_opi_api_network_evpn_gw_v1alpha1_DeleteVrfRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_network_evpn_gw_v1alpha1_DeleteVrfRequest_descriptor,
-        new java.lang.String[] { "Name", });
+        new java.lang.String[] { "Name", "AllowMissing", });
     internal_static_opi_api_network_evpn_gw_v1alpha1_Svi_descriptor =
       getDescriptor().getMessageTypes().get(8);
     internal_static_opi_api_network_evpn_gw_v1alpha1_Svi_fieldAccessorTable = new
@@ -300,7 +301,7 @@ public final class L3XpuInfraMgrProto {
     internal_static_opi_api_network_evpn_gw_v1alpha1_DeleteSviRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_network_evpn_gw_v1alpha1_DeleteSviRequest_descriptor,
-        new java.lang.String[] { "Name", });
+        new java.lang.String[] { "Name", "AllowMissing", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);

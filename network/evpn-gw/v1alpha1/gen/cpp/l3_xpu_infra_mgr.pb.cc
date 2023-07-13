@@ -121,7 +121,8 @@ struct GetVrfRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GetVrfRequestDefaultTypeInternal _GetVrfRequest_default_instance_;
 constexpr DeleteVrfRequest::DeleteVrfRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , allow_missing_(false){}
 struct DeleteVrfRequestDefaultTypeInternal {
   constexpr DeleteVrfRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -228,7 +229,8 @@ struct GetSviRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GetSviRequestDefaultTypeInternal _GetSviRequest_default_instance_;
 constexpr DeleteSviRequest::DeleteSviRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , allow_missing_(false){}
 struct DeleteSviRequestDefaultTypeInternal {
   constexpr DeleteSviRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -317,6 +319,7 @@ const uint32_t TableStruct_l3_5fxpu_5finfra_5fmgr_2eproto::offsets[] PROTOBUF_SE
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::evpn_gw::v1alpha1::DeleteVrfRequest, name_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::evpn_gw::v1alpha1::DeleteVrfRequest, allow_missing_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::evpn_gw::v1alpha1::Svi, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -383,6 +386,7 @@ const uint32_t TableStruct_l3_5fxpu_5finfra_5fmgr_2eproto::offsets[] PROTOBUF_SE
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::evpn_gw::v1alpha1::DeleteSviRequest, name_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::evpn_gw::v1alpha1::DeleteSviRequest, allow_missing_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::opi_api::network::evpn_gw::v1alpha1::Vrf)},
@@ -393,14 +397,14 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 48, -1, -1, sizeof(::opi_api::network::evpn_gw::v1alpha1::ListVrfsResponse)},
   { 56, -1, -1, sizeof(::opi_api::network::evpn_gw::v1alpha1::GetVrfRequest)},
   { 63, -1, -1, sizeof(::opi_api::network::evpn_gw::v1alpha1::DeleteVrfRequest)},
-  { 70, -1, -1, sizeof(::opi_api::network::evpn_gw::v1alpha1::Svi)},
-  { 79, -1, -1, sizeof(::opi_api::network::evpn_gw::v1alpha1::SviSpec)},
-  { 91, -1, -1, sizeof(::opi_api::network::evpn_gw::v1alpha1::SviStatus)},
-  { 98, -1, -1, sizeof(::opi_api::network::evpn_gw::v1alpha1::CreateSviRequest)},
-  { 106, -1, -1, sizeof(::opi_api::network::evpn_gw::v1alpha1::ListSvisRequest)},
-  { 114, -1, -1, sizeof(::opi_api::network::evpn_gw::v1alpha1::ListSvisResponse)},
-  { 122, -1, -1, sizeof(::opi_api::network::evpn_gw::v1alpha1::GetSviRequest)},
-  { 129, -1, -1, sizeof(::opi_api::network::evpn_gw::v1alpha1::DeleteSviRequest)},
+  { 71, -1, -1, sizeof(::opi_api::network::evpn_gw::v1alpha1::Svi)},
+  { 80, -1, -1, sizeof(::opi_api::network::evpn_gw::v1alpha1::SviSpec)},
+  { 92, -1, -1, sizeof(::opi_api::network::evpn_gw::v1alpha1::SviStatus)},
+  { 99, -1, -1, sizeof(::opi_api::network::evpn_gw::v1alpha1::CreateSviRequest)},
+  { 107, -1, -1, sizeof(::opi_api::network::evpn_gw::v1alpha1::ListSvisRequest)},
+  { 115, -1, -1, sizeof(::opi_api::network::evpn_gw::v1alpha1::ListSvisResponse)},
+  { 123, -1, -1, sizeof(::opi_api::network::evpn_gw::v1alpha1::GetSviRequest)},
+  { 130, -1, -1, sizeof(::opi_api::network::evpn_gw::v1alpha1::DeleteSviRequest)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -451,69 +455,70 @@ const char descriptor_table_protodef_l3_5fxpu_5finfra_5fmgr_2eproto[] PROTOBUF_S
   "\003(\0132%.opi_api.network.evpn_gw.v1alpha1.V"
   "rf\022\027\n\017next_page_token\030\002 \001(\t\"K\n\rGetVrfReq"
   "uest\022:\n\004name\030\001 \001(\tB,\340A\002\372A&\n$opi_api.netw"
-  "ork.evpn_gw.v1alpha1/Vrf\"N\n\020DeleteVrfReq"
+  "ork.evpn_gw.v1alpha1/Vrf\"e\n\020DeleteVrfReq"
   "uest\022:\n\004name\030\001 \001(\tB,\340A\002\372A&\n$opi_api.netw"
-  "ork.evpn_gw.v1alpha1/Vrf\"\305\001\n\003Svi\022\014\n\004name"
-  "\030\001 \001(\t\022<\n\004spec\030\002 \001(\0132).opi_api.network.e"
-  "vpn_gw.v1alpha1.SviSpecB\003\340A\002\022;\n\006status\030\003"
-  " \001(\0132+.opi_api.network.evpn_gw.v1alpha1."
-  "SviStatus:5\352A2\n$opi_api.network.evpn_gw."
-  "v1alpha1/Svi\022\nsvis/{svi}\"\241\002\n\007SviSpec\0229\n\003"
-  "vrf\030\001 \001(\tB,\340A\002\372A&\n$opi_api.network.evpn_"
-  "gw.v1alpha1/Vrf\022N\n\016logical_bridge\030\002 \001(\tB"
-  "6\340A\002\372A0\n.opi_api.network.evpn_gw.v1alpha"
-  "1/LogicalBridge\022\030\n\013mac_address\030\003 \001(\014B\003\340A"
-  "\002\022J\n\014gw_ip_prefix\030\004 \003(\0132/.opi_api.networ"
-  "k.opinetcommon.v1alpha1.IPPrefixB\003\340A\002\022\022\n"
-  "\nenable_bgp\030\005 \001(\010\022\021\n\tremote_as\030\006 \001(\r\"Q\n\t"
-  "SviStatus\022D\n\013oper_status\030\001 \001(\0162/.opi_api"
-  ".network.evpn_gw.v1alpha1.SVIOperStatus\""
-  "[\n\020CreateSviRequest\022\016\n\006svi_id\030\001 \001(\t\0227\n\003s"
-  "vi\030\002 \001(\0132%.opi_api.network.evpn_gw.v1alp"
-  "ha1.SviB\003\340A\002\"8\n\017ListSvisRequest\022\021\n\tpage_"
-  "size\030\001 \001(\005\022\022\n\npage_token\030\002 \001(\t\"`\n\020ListSv"
-  "isResponse\0223\n\004svis\030\001 \003(\0132%.opi_api.netwo"
-  "rk.evpn_gw.v1alpha1.Svi\022\027\n\017next_page_tok"
-  "en\030\002 \001(\t\"K\n\rGetSviRequest\022:\n\004name\030\001 \001(\tB"
-  ",\340A\002\372A&\n$opi_api.network.evpn_gw.v1alpha"
-  "1/Svi\"N\n\020DeleteSviRequest\022:\n\004name\030\001 \001(\tB"
-  ",\340A\002\372A&\n$opi_api.network.evpn_gw.v1alpha"
-  "1/Svi*b\n\rVRFOperStatus\022\037\n\033VRF_OPER_STATU"
-  "S_UNSPECIFIED\020\000\022\026\n\022VRF_OPER_STATUS_UP\020\001\022"
-  "\030\n\024VRF_OPER_STATUS_DOWN\020\002*b\n\rSVIOperStat"
-  "us\022\037\n\033SVI_OPER_STATUS_UNSPECIFIED\020\000\022\026\n\022S"
-  "VI_OPER_STATUS_UP\020\001\022\030\n\024SVI_OPER_STATUS_D"
-  "OWN\020\0022\237\004\n\nVrfService\022\212\001\n\tCreateVrf\0222.opi"
-  "_api.network.evpn_gw.v1alpha1.CreateVrfR"
-  "equest\032%.opi_api.network.evpn_gw.v1alpha"
-  "1.Vrf\"\"\202\323\344\223\002\017\"\010/v1/vrfs:\003vrf\332A\nvrf,vrf_i"
-  "d\022\203\001\n\010ListVrfs\0221.opi_api.network.evpn_gw"
-  ".v1alpha1.ListVrfsRequest\0322.opi_api.netw"
-  "ork.evpn_gw.v1alpha1.ListVrfsResponse\"\020\202"
-  "\323\344\223\002\n\022\010/v1/vrfs\022\202\001\n\006GetVrf\022/.opi_api.net"
-  "work.evpn_gw.v1alpha1.GetVrfRequest\032%.op"
-  "i_api.network.evpn_gw.v1alpha1.Vrf\" \202\323\344\223"
-  "\002\023\022\021/v1/{name=vrfs/*}\332A\004name\022y\n\tDeleteVr"
-  "f\0222.opi_api.network.evpn_gw.v1alpha1.Del"
-  "eteVrfRequest\032\026.google.protobuf.Empty\" \202"
-  "\323\344\223\002\023*\021/v1/{name=vrfs/*}\332A\004name2\237\004\n\nSviS"
-  "ervice\022\212\001\n\tCreateSvi\0222.opi_api.network.e"
-  "vpn_gw.v1alpha1.CreateSviRequest\032%.opi_a"
-  "pi.network.evpn_gw.v1alpha1.Svi\"\"\202\323\344\223\002\017\""
-  "\010/v1/svis:\003svi\332A\nsvi,svi_id\022\203\001\n\010ListSvis"
-  "\0221.opi_api.network.evpn_gw.v1alpha1.List"
-  "SvisRequest\0322.opi_api.network.evpn_gw.v1"
-  "alpha1.ListSvisResponse\"\020\202\323\344\223\002\n\022\010/v1/svi"
-  "s\022\202\001\n\006GetSvi\022/.opi_api.network.evpn_gw.v"
-  "1alpha1.GetSviRequest\032%.opi_api.network."
-  "evpn_gw.v1alpha1.Svi\" \202\323\344\223\002\023\022\021/v1/{name="
-  "svis/*}\332A\004name\022y\n\tDeleteSvi\0222.opi_api.ne"
-  "twork.evpn_gw.v1alpha1.DeleteSviRequest\032"
-  "\026.google.protobuf.Empty\" \202\323\344\223\002\023*\021/v1/{na"
-  "me=svis/*}\332A\004nameBw\n opi_api.network.evp"
-  "n_gw.v1alpha1B\022L3XpuInfraMgrProtoP\001Z=git"
-  "hub.com/opiproject/opi-api/network/evpn-"
-  "gw/v1alpha1/gen/gob\006proto3"
+  "ork.evpn_gw.v1alpha1/Vrf\022\025\n\rallow_missin"
+  "g\030\002 \001(\010\"\305\001\n\003Svi\022\014\n\004name\030\001 \001(\t\022<\n\004spec\030\002 "
+  "\001(\0132).opi_api.network.evpn_gw.v1alpha1.S"
+  "viSpecB\003\340A\002\022;\n\006status\030\003 \001(\0132+.opi_api.ne"
+  "twork.evpn_gw.v1alpha1.SviStatus:5\352A2\n$o"
+  "pi_api.network.evpn_gw.v1alpha1/Svi\022\nsvi"
+  "s/{svi}\"\241\002\n\007SviSpec\0229\n\003vrf\030\001 \001(\tB,\340A\002\372A&"
+  "\n$opi_api.network.evpn_gw.v1alpha1/Vrf\022N"
+  "\n\016logical_bridge\030\002 \001(\tB6\340A\002\372A0\n.opi_api."
+  "network.evpn_gw.v1alpha1/LogicalBridge\022\030"
+  "\n\013mac_address\030\003 \001(\014B\003\340A\002\022J\n\014gw_ip_prefix"
+  "\030\004 \003(\0132/.opi_api.network.opinetcommon.v1"
+  "alpha1.IPPrefixB\003\340A\002\022\022\n\nenable_bgp\030\005 \001(\010"
+  "\022\021\n\tremote_as\030\006 \001(\r\"Q\n\tSviStatus\022D\n\013oper"
+  "_status\030\001 \001(\0162/.opi_api.network.evpn_gw."
+  "v1alpha1.SVIOperStatus\"[\n\020CreateSviReque"
+  "st\022\016\n\006svi_id\030\001 \001(\t\0227\n\003svi\030\002 \001(\0132%.opi_ap"
+  "i.network.evpn_gw.v1alpha1.SviB\003\340A\002\"8\n\017L"
+  "istSvisRequest\022\021\n\tpage_size\030\001 \001(\005\022\022\n\npag"
+  "e_token\030\002 \001(\t\"`\n\020ListSvisResponse\0223\n\004svi"
+  "s\030\001 \003(\0132%.opi_api.network.evpn_gw.v1alph"
+  "a1.Svi\022\027\n\017next_page_token\030\002 \001(\t\"K\n\rGetSv"
+  "iRequest\022:\n\004name\030\001 \001(\tB,\340A\002\372A&\n$opi_api."
+  "network.evpn_gw.v1alpha1/Svi\"e\n\020DeleteSv"
+  "iRequest\022:\n\004name\030\001 \001(\tB,\340A\002\372A&\n$opi_api."
+  "network.evpn_gw.v1alpha1/Svi\022\025\n\rallow_mi"
+  "ssing\030\002 \001(\010*b\n\rVRFOperStatus\022\037\n\033VRF_OPER"
+  "_STATUS_UNSPECIFIED\020\000\022\026\n\022VRF_OPER_STATUS"
+  "_UP\020\001\022\030\n\024VRF_OPER_STATUS_DOWN\020\002*b\n\rSVIOp"
+  "erStatus\022\037\n\033SVI_OPER_STATUS_UNSPECIFIED\020"
+  "\000\022\026\n\022SVI_OPER_STATUS_UP\020\001\022\030\n\024SVI_OPER_ST"
+  "ATUS_DOWN\020\0022\237\004\n\nVrfService\022\212\001\n\tCreateVrf"
+  "\0222.opi_api.network.evpn_gw.v1alpha1.Crea"
+  "teVrfRequest\032%.opi_api.network.evpn_gw.v"
+  "1alpha1.Vrf\"\"\202\323\344\223\002\017\"\010/v1/vrfs:\003vrf\332A\nvrf"
+  ",vrf_id\022\203\001\n\010ListVrfs\0221.opi_api.network.e"
+  "vpn_gw.v1alpha1.ListVrfsRequest\0322.opi_ap"
+  "i.network.evpn_gw.v1alpha1.ListVrfsRespo"
+  "nse\"\020\202\323\344\223\002\n\022\010/v1/vrfs\022\202\001\n\006GetVrf\022/.opi_a"
+  "pi.network.evpn_gw.v1alpha1.GetVrfReques"
+  "t\032%.opi_api.network.evpn_gw.v1alpha1.Vrf"
+  "\" \202\323\344\223\002\023\022\021/v1/{name=vrfs/*}\332A\004name\022y\n\tDe"
+  "leteVrf\0222.opi_api.network.evpn_gw.v1alph"
+  "a1.DeleteVrfRequest\032\026.google.protobuf.Em"
+  "pty\" \202\323\344\223\002\023*\021/v1/{name=vrfs/*}\332A\004name2\237\004"
+  "\n\nSviService\022\212\001\n\tCreateSvi\0222.opi_api.net"
+  "work.evpn_gw.v1alpha1.CreateSviRequest\032%"
+  ".opi_api.network.evpn_gw.v1alpha1.Svi\"\"\202"
+  "\323\344\223\002\017\"\010/v1/svis:\003svi\332A\nsvi,svi_id\022\203\001\n\010Li"
+  "stSvis\0221.opi_api.network.evpn_gw.v1alpha"
+  "1.ListSvisRequest\0322.opi_api.network.evpn"
+  "_gw.v1alpha1.ListSvisResponse\"\020\202\323\344\223\002\n\022\010/"
+  "v1/svis\022\202\001\n\006GetSvi\022/.opi_api.network.evp"
+  "n_gw.v1alpha1.GetSviRequest\032%.opi_api.ne"
+  "twork.evpn_gw.v1alpha1.Svi\" \202\323\344\223\002\023\022\021/v1/"
+  "{name=svis/*}\332A\004name\022y\n\tDeleteSvi\0222.opi_"
+  "api.network.evpn_gw.v1alpha1.DeleteSviRe"
+  "quest\032\026.google.protobuf.Empty\" \202\323\344\223\002\023*\021/"
+  "v1/{name=svis/*}\332A\004nameBw\n opi_api.netwo"
+  "rk.evpn_gw.v1alpha1B\022L3XpuInfraMgrProtoP"
+  "\001Z=github.com/opiproject/opi-api/network"
+  "/evpn-gw/v1alpha1/gen/gob\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_l3_5fxpu_5finfra_5fmgr_2eproto_deps[6] = {
   &::descriptor_table_google_2fapi_2fannotations_2eproto,
@@ -525,7 +530,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_l3_5fxpu_5finfra_5fmgr_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_l3_5fxpu_5finfra_5fmgr_2eproto = {
-  false, false, 3626, descriptor_table_protodef_l3_5fxpu_5finfra_5fmgr_2eproto, "l3_xpu_infra_mgr.proto", 
+  false, false, 3672, descriptor_table_protodef_l3_5fxpu_5finfra_5fmgr_2eproto, "l3_xpu_infra_mgr.proto", 
   &descriptor_table_l3_5fxpu_5finfra_5fmgr_2eproto_once, descriptor_table_l3_5fxpu_5finfra_5fmgr_2eproto_deps, 6, 16,
   schemas, file_default_instances, TableStruct_l3_5fxpu_5finfra_5fmgr_2eproto::offsets,
   file_level_metadata_l3_5fxpu_5finfra_5fmgr_2eproto, file_level_enum_descriptors_l3_5fxpu_5finfra_5fmgr_2eproto, file_level_service_descriptors_l3_5fxpu_5finfra_5fmgr_2eproto,
@@ -2532,6 +2537,7 @@ DeleteVrfRequest::DeleteVrfRequest(const DeleteVrfRequest& from)
     name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
       GetArenaForAllocation());
   }
+  allow_missing_ = from.allow_missing_;
   // @@protoc_insertion_point(copy_constructor:opi_api.network.evpn_gw.v1alpha1.DeleteVrfRequest)
 }
 
@@ -2540,6 +2546,7 @@ name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlready
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
   name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+allow_missing_ = false;
 }
 
 DeleteVrfRequest::~DeleteVrfRequest() {
@@ -2571,6 +2578,7 @@ void DeleteVrfRequest::Clear() {
   (void) cached_has_bits;
 
   name_.ClearToEmpty();
+  allow_missing_ = false;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2586,6 +2594,14 @@ const char* DeleteVrfRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPA
           auto str = _internal_mutable_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.evpn_gw.v1alpha1.DeleteVrfRequest.name"));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // bool allow_missing = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          allow_missing_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -2629,6 +2645,12 @@ uint8_t* DeleteVrfRequest::_InternalSerialize(
         1, this->_internal_name(), target);
   }
 
+  // bool allow_missing = 2;
+  if (this->_internal_allow_missing() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(2, this->_internal_allow_missing(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -2650,6 +2672,11 @@ size_t DeleteVrfRequest::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_name());
+  }
+
+  // bool allow_missing = 2;
+  if (this->_internal_allow_missing() != 0) {
+    total_size += 1 + 1;
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -2677,6 +2704,9 @@ void DeleteVrfRequest::MergeFrom(const DeleteVrfRequest& from) {
   if (!from._internal_name().empty()) {
     _internal_set_name(from._internal_name());
   }
+  if (from._internal_allow_missing() != 0) {
+    _internal_set_allow_missing(from._internal_allow_missing());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -2701,6 +2731,7 @@ void DeleteVrfRequest::InternalSwap(DeleteVrfRequest* other) {
       &name_, lhs_arena,
       &other->name_, rhs_arena
   );
+  swap(allow_missing_, other->allow_missing_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata DeleteVrfRequest::GetMetadata() const {
@@ -4517,6 +4548,7 @@ DeleteSviRequest::DeleteSviRequest(const DeleteSviRequest& from)
     name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
       GetArenaForAllocation());
   }
+  allow_missing_ = from.allow_missing_;
   // @@protoc_insertion_point(copy_constructor:opi_api.network.evpn_gw.v1alpha1.DeleteSviRequest)
 }
 
@@ -4525,6 +4557,7 @@ name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlready
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
   name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+allow_missing_ = false;
 }
 
 DeleteSviRequest::~DeleteSviRequest() {
@@ -4556,6 +4589,7 @@ void DeleteSviRequest::Clear() {
   (void) cached_has_bits;
 
   name_.ClearToEmpty();
+  allow_missing_ = false;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -4571,6 +4605,14 @@ const char* DeleteSviRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPA
           auto str = _internal_mutable_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.evpn_gw.v1alpha1.DeleteSviRequest.name"));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // bool allow_missing = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          allow_missing_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -4614,6 +4656,12 @@ uint8_t* DeleteSviRequest::_InternalSerialize(
         1, this->_internal_name(), target);
   }
 
+  // bool allow_missing = 2;
+  if (this->_internal_allow_missing() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(2, this->_internal_allow_missing(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -4635,6 +4683,11 @@ size_t DeleteSviRequest::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_name());
+  }
+
+  // bool allow_missing = 2;
+  if (this->_internal_allow_missing() != 0) {
+    total_size += 1 + 1;
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -4662,6 +4715,9 @@ void DeleteSviRequest::MergeFrom(const DeleteSviRequest& from) {
   if (!from._internal_name().empty()) {
     _internal_set_name(from._internal_name());
   }
+  if (from._internal_allow_missing() != 0) {
+    _internal_set_allow_missing(from._internal_allow_missing());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -4686,6 +4742,7 @@ void DeleteSviRequest::InternalSwap(DeleteSviRequest* other) {
       &name_, lhs_arena,
       &other->name_, rhs_arena
   );
+  swap(allow_missing_, other->allow_missing_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata DeleteSviRequest::GetMetadata() const {

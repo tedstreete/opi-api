@@ -1490,6 +1490,7 @@ class DeleteLogicalBridgeRequest final :
 
   enum : int {
     kNameFieldNumber = 1,
+    kAllowMissingFieldNumber = 2,
   };
   // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
   void clear_name();
@@ -1505,6 +1506,15 @@ class DeleteLogicalBridgeRequest final :
   std::string* _internal_mutable_name();
   public:
 
+  // bool allow_missing = 2;
+  void clear_allow_missing();
+  bool allow_missing() const;
+  void set_allow_missing(bool value);
+  private:
+  bool _internal_allow_missing() const;
+  void _internal_set_allow_missing(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:opi_api.network.evpn_gw.v1alpha1.DeleteLogicalBridgeRequest)
  private:
   class _Internal;
@@ -1513,6 +1523,7 @@ class DeleteLogicalBridgeRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
+  bool allow_missing_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_l2_5fxpu_5finfra_5fmgr_2eproto;
 };
@@ -2821,6 +2832,7 @@ class DeleteBridgePortRequest final :
 
   enum : int {
     kNameFieldNumber = 1,
+    kAllowMissingFieldNumber = 2,
   };
   // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
   void clear_name();
@@ -2836,6 +2848,15 @@ class DeleteBridgePortRequest final :
   std::string* _internal_mutable_name();
   public:
 
+  // bool allow_missing = 2;
+  void clear_allow_missing();
+  bool allow_missing() const;
+  void set_allow_missing(bool value);
+  private:
+  bool _internal_allow_missing() const;
+  void _internal_set_allow_missing(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:opi_api.network.evpn_gw.v1alpha1.DeleteBridgePortRequest)
  private:
   class _Internal;
@@ -2844,6 +2865,7 @@ class DeleteBridgePortRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
+  bool allow_missing_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_l2_5fxpu_5finfra_5fmgr_2eproto;
 };
@@ -3580,6 +3602,26 @@ inline void DeleteLogicalBridgeRequest::set_allocated_name(std::string* name) {
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.evpn_gw.v1alpha1.DeleteLogicalBridgeRequest.name)
+}
+
+// bool allow_missing = 2;
+inline void DeleteLogicalBridgeRequest::clear_allow_missing() {
+  allow_missing_ = false;
+}
+inline bool DeleteLogicalBridgeRequest::_internal_allow_missing() const {
+  return allow_missing_;
+}
+inline bool DeleteLogicalBridgeRequest::allow_missing() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.evpn_gw.v1alpha1.DeleteLogicalBridgeRequest.allow_missing)
+  return _internal_allow_missing();
+}
+inline void DeleteLogicalBridgeRequest::_internal_set_allow_missing(bool value) {
+  
+  allow_missing_ = value;
+}
+inline void DeleteLogicalBridgeRequest::set_allow_missing(bool value) {
+  _internal_set_allow_missing(value);
+  // @@protoc_insertion_point(field_set:opi_api.network.evpn_gw.v1alpha1.DeleteLogicalBridgeRequest.allow_missing)
 }
 
 // -------------------------------------------------------------------
@@ -4414,6 +4456,26 @@ inline void DeleteBridgePortRequest::set_allocated_name(std::string* name) {
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.evpn_gw.v1alpha1.DeleteBridgePortRequest.name)
+}
+
+// bool allow_missing = 2;
+inline void DeleteBridgePortRequest::clear_allow_missing() {
+  allow_missing_ = false;
+}
+inline bool DeleteBridgePortRequest::_internal_allow_missing() const {
+  return allow_missing_;
+}
+inline bool DeleteBridgePortRequest::allow_missing() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.evpn_gw.v1alpha1.DeleteBridgePortRequest.allow_missing)
+  return _internal_allow_missing();
+}
+inline void DeleteBridgePortRequest::_internal_set_allow_missing(bool value) {
+  
+  allow_missing_ = value;
+}
+inline void DeleteBridgePortRequest::set_allow_missing(bool value) {
+  _internal_set_allow_missing(value);
+  // @@protoc_insertion_point(field_set:opi_api.network.evpn_gw.v1alpha1.DeleteBridgePortRequest.allow_missing)
 }
 
 #ifdef __GNUC__

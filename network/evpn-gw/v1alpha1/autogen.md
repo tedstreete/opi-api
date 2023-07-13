@@ -176,6 +176,7 @@ DeleteBridgePortRequest structure
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | name | [string](#string) |  | The name of the bridge port to retrieve Format: bridgePorts/{bridge_port} |
+| allow_missing | [bool](#bool) |  | If set to true, and the resource is not found, the request will succeed but no action will be taken on the server |
 
 
 
@@ -191,6 +192,7 @@ DeleteLogicalBridgeRequest structure
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | name | [string](#string) |  | The name of the logical bridge to retrieve Format: logicalBridges/{logical_bridge} |
+| allow_missing | [bool](#bool) |  | If set to true, and the resource is not found, the request will succeed but no action will be taken on the server |
 
 
 
@@ -465,6 +467,7 @@ DeleteSviRequest structure
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | name | [string](#string) |  | The name of the svi to delete Format: svis/{svi} |
+| allow_missing | [bool](#bool) |  | If set to true, and the resource is not found, the request will succeed but no action will be taken on the server |
 
 
 
@@ -480,6 +483,7 @@ DeleteVrfRequest structure
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | name | [string](#string) |  | The name of the vrf to delete Format: vrfs/{vrf} |
+| allow_missing | [bool](#bool) |  | If set to true, and the resource is not found, the request will succeed but no action will be taken on the server |
 
 
 

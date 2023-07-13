@@ -1626,6 +1626,7 @@ class DeleteVrfRequest final :
 
   enum : int {
     kNameFieldNumber = 1,
+    kAllowMissingFieldNumber = 2,
   };
   // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
   void clear_name();
@@ -1641,6 +1642,15 @@ class DeleteVrfRequest final :
   std::string* _internal_mutable_name();
   public:
 
+  // bool allow_missing = 2;
+  void clear_allow_missing();
+  bool allow_missing() const;
+  void set_allow_missing(bool value);
+  private:
+  bool _internal_allow_missing() const;
+  void _internal_set_allow_missing(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:opi_api.network.evpn_gw.v1alpha1.DeleteVrfRequest)
  private:
   class _Internal;
@@ -1649,6 +1659,7 @@ class DeleteVrfRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
+  bool allow_missing_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_l3_5fxpu_5finfra_5fmgr_2eproto;
 };
@@ -2994,6 +3005,7 @@ class DeleteSviRequest final :
 
   enum : int {
     kNameFieldNumber = 1,
+    kAllowMissingFieldNumber = 2,
   };
   // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
   void clear_name();
@@ -3009,6 +3021,15 @@ class DeleteSviRequest final :
   std::string* _internal_mutable_name();
   public:
 
+  // bool allow_missing = 2;
+  void clear_allow_missing();
+  bool allow_missing() const;
+  void set_allow_missing(bool value);
+  private:
+  bool _internal_allow_missing() const;
+  void _internal_set_allow_missing(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:opi_api.network.evpn_gw.v1alpha1.DeleteSviRequest)
  private:
   class _Internal;
@@ -3017,6 +3038,7 @@ class DeleteSviRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
+  bool allow_missing_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_l3_5fxpu_5finfra_5fmgr_2eproto;
 };
@@ -4274,6 +4296,26 @@ inline void DeleteVrfRequest::set_allocated_name(std::string* name) {
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.evpn_gw.v1alpha1.DeleteVrfRequest.name)
 }
 
+// bool allow_missing = 2;
+inline void DeleteVrfRequest::clear_allow_missing() {
+  allow_missing_ = false;
+}
+inline bool DeleteVrfRequest::_internal_allow_missing() const {
+  return allow_missing_;
+}
+inline bool DeleteVrfRequest::allow_missing() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.evpn_gw.v1alpha1.DeleteVrfRequest.allow_missing)
+  return _internal_allow_missing();
+}
+inline void DeleteVrfRequest::_internal_set_allow_missing(bool value) {
+  
+  allow_missing_ = value;
+}
+inline void DeleteVrfRequest::set_allow_missing(bool value) {
+  _internal_set_allow_missing(value);
+  // @@protoc_insertion_point(field_set:opi_api.network.evpn_gw.v1alpha1.DeleteVrfRequest.allow_missing)
+}
+
 // -------------------------------------------------------------------
 
 // Svi
@@ -5190,6 +5232,26 @@ inline void DeleteSviRequest::set_allocated_name(std::string* name) {
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.evpn_gw.v1alpha1.DeleteSviRequest.name)
+}
+
+// bool allow_missing = 2;
+inline void DeleteSviRequest::clear_allow_missing() {
+  allow_missing_ = false;
+}
+inline bool DeleteSviRequest::_internal_allow_missing() const {
+  return allow_missing_;
+}
+inline bool DeleteSviRequest::allow_missing() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.evpn_gw.v1alpha1.DeleteSviRequest.allow_missing)
+  return _internal_allow_missing();
+}
+inline void DeleteSviRequest::_internal_set_allow_missing(bool value) {
+  
+  allow_missing_ = value;
+}
+inline void DeleteSviRequest::set_allow_missing(bool value) {
+  _internal_set_allow_missing(value);
+  // @@protoc_insertion_point(field_set:opi_api.network.evpn_gw.v1alpha1.DeleteSviRequest.allow_missing)
 }
 
 #ifdef __GNUC__
