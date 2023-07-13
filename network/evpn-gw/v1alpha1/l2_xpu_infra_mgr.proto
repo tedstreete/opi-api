@@ -23,6 +23,7 @@ import "google/api/annotations.proto";
 import "google/api/client.proto";
 import "google/protobuf/empty.proto";
 import "google/api/field_behavior.proto";
+import "google/protobuf/field_mask.proto";
 import "google/api/resource.proto";
 
 // Management of LogicalBridge Resources
@@ -55,6 +56,14 @@ service LogicalBridgeService {
         };
         option (google.api.method_signature) = "name";
     }
+    // Update a Logical Bridge
+    rpc UpdateLogicalBridge(UpdateLogicalBridgeRequest) returns (LogicalBridge){
+        option (google.api.http) = {
+          patch: "/v1/{logical_bridge.name=logicalBridges/*}"
+          body: "logical_bridge"
+        };
+        option (google.api.method_signature) = "logical_bridge,update_mask";
+    }
 }
 
 // Management of BridgePort resources
@@ -86,6 +95,14 @@ service BridgePortService {
           delete: "/v1/{name=bridgePorts/*}"
         };
         option (google.api.method_signature) = "name";
+    }
+    // Update a Bridge Port
+    rpc UpdateBridgePort(UpdateBridgePortRequest) returns (BridgePort){
+        option (google.api.http) = {
+          patch: "/v1/{bridge_port.name=bridgePorts/*}"
+          body: "bridge_port"
+        };
+        option (google.api.method_signature) = "bridge_port,update_mask";
     }
 }
 
@@ -179,6 +196,17 @@ message DeleteLogicalBridgeRequest {
     bool allow_missing = 2;
 }
 
+// UpdateLogicalBridgeRequest structure
+message UpdateLogicalBridgeRequest {
+    // The object's `name` field is used to identify the object to be updated.
+    LogicalBridge logical_bridge = 1;
+    // The list of fields to update.
+    google.protobuf.FieldMask update_mask = 2;
+    // If set to true, and the object is not found, a new object will be created.
+    // In this situation, `update_mask` is ignored.
+    bool allow_missing = 3;
+}
+
 // Bridge Port network configuration and status
 message BridgePort {
     option (google.api.resource) = {
@@ -265,6 +293,17 @@ message DeleteBridgePortRequest {
     // If set to true, and the resource is not found, the request will succeed
     // but no action will be taken on the server
     bool allow_missing = 2;
+}
+
+// UpdateBridgePortRequest structure
+message UpdateBridgePortRequest {
+    // The object's `name` field is used to identify the object to be updated.
+    BridgePort bridge_port = 1;
+    // The list of fields to update.
+    google.protobuf.FieldMask update_mask = 2;
+    // If set to true, and the object is not found, a new object will be created.
+    // In this situation, `update_mask` is ignored.
+    bool allow_missing = 3;
 }
 
 // LBOperStatus status reflects the operational status of a Logical Bridge

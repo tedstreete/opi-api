@@ -25,6 +25,7 @@ import "google/api/annotations.proto";
 import "google/api/client.proto";
 import "google/protobuf/empty.proto";
 import "google/api/field_behavior.proto";
+import "google/protobuf/field_mask.proto";
 import "google/api/resource.proto";
 
 // Management of Vrf Resources
@@ -57,6 +58,14 @@ service VrfService {
         };
         option (google.api.method_signature) = "name";
     }
+    // Update a Vrf
+    rpc UpdateVrf(UpdateVrfRequest) returns (Vrf){
+        option (google.api.http) = {
+          patch: "/v1/{vrf.name=vrfs/*}"
+          body: "vrf"
+        };
+        option (google.api.method_signature) = "vrf,update_mask";
+    }
 }
 
 // Management of switch virtual interfaces (SVIs) binding LogicalBridges to VRFs.
@@ -88,6 +97,14 @@ service SviService {
           delete: "/v1/{name=svis/*}"
         };
         option (google.api.method_signature) = "name";
+    }
+    // Update a Svi
+    rpc UpdateSvi(UpdateSviRequest) returns (Svi){
+        option (google.api.http) = {
+          patch: "/v1/{svi.name=svis/*}"
+          body: "svi"
+        };
+        option (google.api.method_signature) = "svi,update_mask";
     }
 }
 
@@ -201,6 +218,17 @@ message DeleteVrfRequest {
     bool allow_missing = 2;
 }
 
+// UpdateVrfRequest structure
+message UpdateVrfRequest {
+    // The object's `name` field is used to identify the object to be updated.
+    Vrf vrf = 1;
+    // The list of fields to update.
+    google.protobuf.FieldMask update_mask = 2;
+    // If set to true, and the object is not found, a new object will be created.
+    // In this situation, `update_mask` is ignored.
+    bool allow_missing = 3;
+}
+
 // Svi network configuration
 message Svi {
     option (google.api.resource) = {
@@ -302,6 +330,17 @@ message DeleteSviRequest {
     // If set to true, and the resource is not found, the request will succeed
     // but no action will be taken on the server
     bool allow_missing = 2;
+}
+
+// UpdateSviRequest structure
+message UpdateSviRequest {
+    // The object's `name` field is used to identify the object to be updated.
+    Svi svi = 1;
+    // The list of fields to update.
+    google.protobuf.FieldMask update_mask = 2;
+    // If set to true, and the object is not found, a new object will be created.
+    // In this situation, `update_mask` is ignored.
+    bool allow_missing = 3;
 }
 
 // VRFOperStatus status reflects the operational status of a Vrf
