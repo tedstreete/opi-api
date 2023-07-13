@@ -196,6 +196,9 @@ message DeleteVrfRequest {
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.network.evpn_gw.v1alpha1/Vrf"
     ];
+    // If set to true, and the resource is not found, the request will succeed
+    // but no action will be taken on the server
+    bool allow_missing = 2;
 }
 
 // Svi network configuration
@@ -296,6 +299,9 @@ message DeleteSviRequest {
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.network.evpn_gw.v1alpha1/Svi"
     ];
+    // If set to true, and the resource is not found, the request will succeed
+    // but no action will be taken on the server
+    bool allow_missing = 2;
 }
 
 // VRFOperStatus status reflects the operational status of a Vrf
