@@ -5,5 +5,13 @@
   ],
   "schedule": [
     "every weekend"
+  ],
+  "regexManagers": [
+    {
+      "fileMatch": ["^Makefile$"],
+      "matchStrings": ["namely/protoc-all:(?<currentValue>.*?)"],
+      "datasourceTemplate": "docker",
+      "depNameTemplate": "docker.io/namely/protoc-all",
+    }
   ]
 }
