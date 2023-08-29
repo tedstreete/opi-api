@@ -12,6 +12,12 @@
       "matchStrings": ["namely/protoc-all:(?<currentValue>.*?)\\s"],
       "datasourceTemplate": "docker",
       "depNameTemplate": "namely/protoc-all"
+    },
+    {
+      "fileMatch": ["(^|\\/)Makefile$"],
+      "matchStrings": ["google-api-linter:(?<currentValue>.*?)\\s"],
+      "datasourceTemplate": "docker",
+      "depNameTemplate": "ghcr.io/docker-multiarch/google-api-linter"
     }
   ]
 }
