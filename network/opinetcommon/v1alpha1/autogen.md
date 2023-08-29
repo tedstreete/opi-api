@@ -788,7 +788,8 @@ Update Interface Request
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | net_interface | [NetInterface](#opi_api-network-v1alpha1-NetInterface) |  | Interface update settings |
-| update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | list of fields to update |
+| update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | The list of fields to update. |
+| allow_missing | [bool](#bool) |  | If set to true, and the object is not found, a new object will be created. In this situation, `update_mask` is ignored. |
 
 
 

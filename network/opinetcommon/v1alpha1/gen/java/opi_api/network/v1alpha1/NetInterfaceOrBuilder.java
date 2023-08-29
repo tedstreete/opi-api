@@ -13,7 +13,7 @@ public interface NetInterfaceOrBuilder extends
    * user settable.  It is returned by the created object
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
    * @return The name.
    */
   java.lang.String getName();
@@ -23,7 +23,7 @@ public interface NetInterfaceOrBuilder extends
    * user settable.  It is returned by the created object
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString
@@ -34,7 +34,7 @@ public interface NetInterfaceOrBuilder extends
    * Configuration settings - rw
    * </pre>
    *
-   * <code>.opi_api.network.v1alpha1.Config config = 2;</code>
+   * <code>.opi_api.network.v1alpha1.Config config = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the config field is set.
    */
   boolean hasConfig();
@@ -43,7 +43,7 @@ public interface NetInterfaceOrBuilder extends
    * Configuration settings - rw
    * </pre>
    *
-   * <code>.opi_api.network.v1alpha1.Config config = 2;</code>
+   * <code>.opi_api.network.v1alpha1.Config config = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The config.
    */
   opi_api.network.v1alpha1.Config getConfig();
@@ -52,7 +52,7 @@ public interface NetInterfaceOrBuilder extends
    * Configuration settings - rw
    * </pre>
    *
-   * <code>.opi_api.network.v1alpha1.Config config = 2;</code>
+   * <code>.opi_api.network.v1alpha1.Config config = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   opi_api.network.v1alpha1.ConfigOrBuilder getConfigOrBuilder();
 
@@ -61,7 +61,7 @@ public interface NetInterfaceOrBuilder extends
    * Interface State and Statistics - ro
    * </pre>
    *
-   * <code>.opi_api.network.v1alpha1.State state = 3;</code>
+   * <code>.opi_api.network.v1alpha1.State state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return Whether the state field is set.
    */
   boolean hasState();
@@ -70,7 +70,7 @@ public interface NetInterfaceOrBuilder extends
    * Interface State and Statistics - ro
    * </pre>
    *
-   * <code>.opi_api.network.v1alpha1.State state = 3;</code>
+   * <code>.opi_api.network.v1alpha1.State state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The state.
    */
   opi_api.network.v1alpha1.State getState();
@@ -79,7 +79,7 @@ public interface NetInterfaceOrBuilder extends
    * Interface State and Statistics - ro
    * </pre>
    *
-   * <code>.opi_api.network.v1alpha1.State state = 3;</code>
+   * <code>.opi_api.network.v1alpha1.State state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   opi_api.network.v1alpha1.StateOrBuilder getStateOrBuilder();
 
@@ -88,7 +88,7 @@ public interface NetInterfaceOrBuilder extends
    * Hold Time Settings
    * </pre>
    *
-   * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime holdtime = 4;</code>
+   * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime holdtime = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return Whether the holdtime field is set.
    */
   boolean hasHoldtime();
@@ -97,7 +97,7 @@ public interface NetInterfaceOrBuilder extends
    * Hold Time Settings
    * </pre>
    *
-   * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime holdtime = 4;</code>
+   * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime holdtime = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The holdtime.
    */
   opi_api.network.v1alpha1.NetInterface.HoldTime getHoldtime();
@@ -106,7 +106,7 @@ public interface NetInterfaceOrBuilder extends
    * Hold Time Settings
    * </pre>
    *
-   * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime holdtime = 4;</code>
+   * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime holdtime = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   opi_api.network.v1alpha1.NetInterface.HoldTimeOrBuilder getHoldtimeOrBuilder();
 
@@ -115,7 +115,7 @@ public interface NetInterfaceOrBuilder extends
    * Subinterfaces assigned to the interface
    * </pre>
    *
-   * <code>.opi_api.network.v1alpha1.NetInterface.Subinterfaces subinterfaces = 5;</code>
+   * <code>.opi_api.network.v1alpha1.NetInterface.Subinterfaces subinterfaces = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return Whether the subinterfaces field is set.
    */
   boolean hasSubinterfaces();
@@ -124,7 +124,7 @@ public interface NetInterfaceOrBuilder extends
    * Subinterfaces assigned to the interface
    * </pre>
    *
-   * <code>.opi_api.network.v1alpha1.NetInterface.Subinterfaces subinterfaces = 5;</code>
+   * <code>.opi_api.network.v1alpha1.NetInterface.Subinterfaces subinterfaces = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The subinterfaces.
    */
   opi_api.network.v1alpha1.NetInterface.Subinterfaces getSubinterfaces();
@@ -133,7 +133,7 @@ public interface NetInterfaceOrBuilder extends
    * Subinterfaces assigned to the interface
    * </pre>
    *
-   * <code>.opi_api.network.v1alpha1.NetInterface.Subinterfaces subinterfaces = 5;</code>
+   * <code>.opi_api.network.v1alpha1.NetInterface.Subinterfaces subinterfaces = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   opi_api.network.v1alpha1.NetInterface.SubinterfacesOrBuilder getSubinterfacesOrBuilder();
 }

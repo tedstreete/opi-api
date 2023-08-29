@@ -132,7 +132,7 @@ private static final long serialVersionUID = 0L;
    * used for designating the created interface.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The name.
    */
   @java.lang.Override
@@ -154,7 +154,7 @@ private static final long serialVersionUID = 0L;
    * used for designating the created interface.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The bytes for name.
    */
   @java.lang.Override
@@ -179,7 +179,7 @@ private static final long serialVersionUID = 0L;
    * Type of interface - Ethernet and others
    * </pre>
    *
-   * <code>.opi_api.network.v1alpha1.InterfaceType type = 2;</code>
+   * <code>.opi_api.network.v1alpha1.InterfaceType type = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The enum numeric value on the wire for type.
    */
   @java.lang.Override public int getTypeValue() {
@@ -190,7 +190,7 @@ private static final long serialVersionUID = 0L;
    * Type of interface - Ethernet and others
    * </pre>
    *
-   * <code>.opi_api.network.v1alpha1.InterfaceType type = 2;</code>
+   * <code>.opi_api.network.v1alpha1.InterfaceType type = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The type.
    */
   @java.lang.Override public opi_api.network.v1alpha1.InterfaceType getType() {
@@ -206,7 +206,7 @@ private static final long serialVersionUID = 0L;
    * MTU for the interface that can be configured
    * </pre>
    *
-   * <code>uint32 mtu = 3;</code>
+   * <code>uint32 mtu = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The mtu.
    */
   @java.lang.Override
@@ -221,7 +221,7 @@ private static final long serialVersionUID = 0L;
    * Setting the loopback mode of the interface
    * </pre>
    *
-   * <code>bool loopback_mode = 4;</code>
+   * <code>bool loopback_mode = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The loopbackMode.
    */
   @java.lang.Override
@@ -236,7 +236,7 @@ private static final long serialVersionUID = 0L;
    * Description of the interface and usage
    * </pre>
    *
-   * <code>string description = 5;</code>
+   * <code>string description = 5 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The description.
    */
   @java.lang.Override
@@ -257,7 +257,7 @@ private static final long serialVersionUID = 0L;
    * Description of the interface and usage
    * </pre>
    *
-   * <code>string description = 5;</code>
+   * <code>string description = 5 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The bytes for description.
    */
   @java.lang.Override
@@ -282,7 +282,7 @@ private static final long serialVersionUID = 0L;
    * Setting for enabling/disabling the interface
    * </pre>
    *
-   * <code>bool enabled = 6;</code>
+   * <code>bool enabled = 6 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The enabled.
    */
   @java.lang.Override
@@ -691,7 +691,7 @@ private static final long serialVersionUID = 0L;
      * used for designating the created interface.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The name.
      */
     public java.lang.String getName() {
@@ -712,7 +712,7 @@ private static final long serialVersionUID = 0L;
      * used for designating the created interface.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
@@ -734,7 +734,7 @@ private static final long serialVersionUID = 0L;
      * used for designating the created interface.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param value The name to set.
      * @return This builder for chaining.
      */
@@ -754,7 +754,7 @@ private static final long serialVersionUID = 0L;
      * used for designating the created interface.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return This builder for chaining.
      */
     public Builder clearName() {
@@ -769,7 +769,7 @@ private static final long serialVersionUID = 0L;
      * used for designating the created interface.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param value The bytes for name to set.
      * @return This builder for chaining.
      */
@@ -791,7 +791,7 @@ private static final long serialVersionUID = 0L;
      * Type of interface - Ethernet and others
      * </pre>
      *
-     * <code>.opi_api.network.v1alpha1.InterfaceType type = 2;</code>
+     * <code>.opi_api.network.v1alpha1.InterfaceType type = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The enum numeric value on the wire for type.
      */
     @java.lang.Override public int getTypeValue() {
@@ -802,7 +802,7 @@ private static final long serialVersionUID = 0L;
      * Type of interface - Ethernet and others
      * </pre>
      *
-     * <code>.opi_api.network.v1alpha1.InterfaceType type = 2;</code>
+     * <code>.opi_api.network.v1alpha1.InterfaceType type = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param value The enum numeric value on the wire for type to set.
      * @return This builder for chaining.
      */
@@ -817,7 +817,7 @@ private static final long serialVersionUID = 0L;
      * Type of interface - Ethernet and others
      * </pre>
      *
-     * <code>.opi_api.network.v1alpha1.InterfaceType type = 2;</code>
+     * <code>.opi_api.network.v1alpha1.InterfaceType type = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The type.
      */
     @java.lang.Override
@@ -831,7 +831,7 @@ private static final long serialVersionUID = 0L;
      * Type of interface - Ethernet and others
      * </pre>
      *
-     * <code>.opi_api.network.v1alpha1.InterfaceType type = 2;</code>
+     * <code>.opi_api.network.v1alpha1.InterfaceType type = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param value The type to set.
      * @return This builder for chaining.
      */
@@ -849,7 +849,7 @@ private static final long serialVersionUID = 0L;
      * Type of interface - Ethernet and others
      * </pre>
      *
-     * <code>.opi_api.network.v1alpha1.InterfaceType type = 2;</code>
+     * <code>.opi_api.network.v1alpha1.InterfaceType type = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return This builder for chaining.
      */
     public Builder clearType() {
@@ -865,7 +865,7 @@ private static final long serialVersionUID = 0L;
      * MTU for the interface that can be configured
      * </pre>
      *
-     * <code>uint32 mtu = 3;</code>
+     * <code>uint32 mtu = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The mtu.
      */
     @java.lang.Override
@@ -877,7 +877,7 @@ private static final long serialVersionUID = 0L;
      * MTU for the interface that can be configured
      * </pre>
      *
-     * <code>uint32 mtu = 3;</code>
+     * <code>uint32 mtu = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param value The mtu to set.
      * @return This builder for chaining.
      */
@@ -892,7 +892,7 @@ private static final long serialVersionUID = 0L;
      * MTU for the interface that can be configured
      * </pre>
      *
-     * <code>uint32 mtu = 3;</code>
+     * <code>uint32 mtu = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return This builder for chaining.
      */
     public Builder clearMtu() {
@@ -908,7 +908,7 @@ private static final long serialVersionUID = 0L;
      * Setting the loopback mode of the interface
      * </pre>
      *
-     * <code>bool loopback_mode = 4;</code>
+     * <code>bool loopback_mode = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The loopbackMode.
      */
     @java.lang.Override
@@ -920,7 +920,7 @@ private static final long serialVersionUID = 0L;
      * Setting the loopback mode of the interface
      * </pre>
      *
-     * <code>bool loopback_mode = 4;</code>
+     * <code>bool loopback_mode = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param value The loopbackMode to set.
      * @return This builder for chaining.
      */
@@ -935,7 +935,7 @@ private static final long serialVersionUID = 0L;
      * Setting the loopback mode of the interface
      * </pre>
      *
-     * <code>bool loopback_mode = 4;</code>
+     * <code>bool loopback_mode = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return This builder for chaining.
      */
     public Builder clearLoopbackMode() {
@@ -951,7 +951,7 @@ private static final long serialVersionUID = 0L;
      * Description of the interface and usage
      * </pre>
      *
-     * <code>string description = 5;</code>
+     * <code>string description = 5 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The description.
      */
     public java.lang.String getDescription() {
@@ -971,7 +971,7 @@ private static final long serialVersionUID = 0L;
      * Description of the interface and usage
      * </pre>
      *
-     * <code>string description = 5;</code>
+     * <code>string description = 5 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The bytes for description.
      */
     public com.google.protobuf.ByteString
@@ -992,7 +992,7 @@ private static final long serialVersionUID = 0L;
      * Description of the interface and usage
      * </pre>
      *
-     * <code>string description = 5;</code>
+     * <code>string description = 5 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param value The description to set.
      * @return This builder for chaining.
      */
@@ -1011,7 +1011,7 @@ private static final long serialVersionUID = 0L;
      * Description of the interface and usage
      * </pre>
      *
-     * <code>string description = 5;</code>
+     * <code>string description = 5 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
@@ -1025,7 +1025,7 @@ private static final long serialVersionUID = 0L;
      * Description of the interface and usage
      * </pre>
      *
-     * <code>string description = 5;</code>
+     * <code>string description = 5 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param value The bytes for description to set.
      * @return This builder for chaining.
      */
@@ -1047,7 +1047,7 @@ private static final long serialVersionUID = 0L;
      * Setting for enabling/disabling the interface
      * </pre>
      *
-     * <code>bool enabled = 6;</code>
+     * <code>bool enabled = 6 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The enabled.
      */
     @java.lang.Override
@@ -1059,7 +1059,7 @@ private static final long serialVersionUID = 0L;
      * Setting for enabling/disabling the interface
      * </pre>
      *
-     * <code>bool enabled = 6;</code>
+     * <code>bool enabled = 6 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param value The enabled to set.
      * @return This builder for chaining.
      */
@@ -1074,7 +1074,7 @@ private static final long serialVersionUID = 0L;
      * Setting for enabling/disabling the interface
      * </pre>
      *
-     * <code>bool enabled = 6;</code>
+     * <code>bool enabled = 6 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return This builder for chaining.
      */
     public Builder clearEnabled() {

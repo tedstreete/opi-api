@@ -183,7 +183,7 @@ private static final long serialVersionUID = 0L;
    * Received Octet counter
    * </pre>
    *
-   * <code>uint64 rx_octets = 1;</code>
+   * <code>uint64 rx_octets = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The rxOctets.
    */
   @java.lang.Override
@@ -198,7 +198,7 @@ private static final long serialVersionUID = 0L;
    * Received Packet counter
    * </pre>
    *
-   * <code>uint64 rx_packets = 2;</code>
+   * <code>uint64 rx_packets = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The rxPackets.
    */
   @java.lang.Override
@@ -213,7 +213,7 @@ private static final long serialVersionUID = 0L;
    * Unicast packets received counter
    * </pre>
    *
-   * <code>uint64 rx_unicast_pkts = 3;</code>
+   * <code>uint64 rx_unicast_pkts = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The rxUnicastPkts.
    */
   @java.lang.Override
@@ -228,7 +228,7 @@ private static final long serialVersionUID = 0L;
    * Broadcast packets received counter
    * </pre>
    *
-   * <code>uint64 rx_broadcast_pkts = 4;</code>
+   * <code>uint64 rx_broadcast_pkts = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The rxBroadcastPkts.
    */
   @java.lang.Override
@@ -243,7 +243,7 @@ private static final long serialVersionUID = 0L;
    * multicast packets received counter
    * </pre>
    *
-   * <code>uint64 rx_multicast_pkts = 5;</code>
+   * <code>uint64 rx_multicast_pkts = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The rxMulticastPkts.
    */
   @java.lang.Override
@@ -258,7 +258,7 @@ private static final long serialVersionUID = 0L;
    * discarded received packets counter
    * </pre>
    *
-   * <code>uint64 rx_discards = 6;</code>
+   * <code>uint64 rx_discards = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The rxDiscards.
    */
   @java.lang.Override
@@ -273,7 +273,7 @@ private static final long serialVersionUID = 0L;
    * Receive error counter
    * </pre>
    *
-   * <code>uint64 rx_errors = 7;</code>
+   * <code>uint64 rx_errors = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The rxErrors.
    */
   @java.lang.Override
@@ -288,7 +288,7 @@ private static final long serialVersionUID = 0L;
    * Unknown received protocol counter
    * </pre>
    *
-   * <code>uint64 rx_unknown_protos = 8;</code>
+   * <code>uint64 rx_unknown_protos = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The rxUnknownProtos.
    */
   @java.lang.Override
@@ -303,7 +303,7 @@ private static final long serialVersionUID = 0L;
    * Received FCS error counter
    * </pre>
    *
-   * <code>uint64 rx_fcs_errors = 9;</code>
+   * <code>uint64 rx_fcs_errors = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The rxFcsErrors.
    */
   @java.lang.Override
@@ -318,7 +318,7 @@ private static final long serialVersionUID = 0L;
    * Transmit octet counter
    * </pre>
    *
-   * <code>uint64 out_octets = 10;</code>
+   * <code>uint64 out_octets = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The outOctets.
    */
   @java.lang.Override
@@ -333,7 +333,7 @@ private static final long serialVersionUID = 0L;
    * Transmit packet counter
    * </pre>
    *
-   * <code>uint64 out_packets = 11;</code>
+   * <code>uint64 out_packets = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The outPackets.
    */
   @java.lang.Override
@@ -348,7 +348,7 @@ private static final long serialVersionUID = 0L;
    * Unicast packet transmit counter
    * </pre>
    *
-   * <code>uint64 out_unicast_pkts = 12;</code>
+   * <code>uint64 out_unicast_pkts = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The outUnicastPkts.
    */
   @java.lang.Override
@@ -363,7 +363,7 @@ private static final long serialVersionUID = 0L;
    * Broadcast packet transmit counter
    * </pre>
    *
-   * <code>uint64 out_broadcast_pkts = 13;</code>
+   * <code>uint64 out_broadcast_pkts = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The outBroadcastPkts.
    */
   @java.lang.Override
@@ -378,7 +378,7 @@ private static final long serialVersionUID = 0L;
    * Multicast packet transmit counter
    * </pre>
    *
-   * <code>uint64 out_multicast_pkts = 14;</code>
+   * <code>uint64 out_multicast_pkts = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The outMulticastPkts.
    */
   @java.lang.Override
@@ -393,7 +393,7 @@ private static final long serialVersionUID = 0L;
    * Discarded transmit packet counter
    * </pre>
    *
-   * <code>uint64 out_discards = 15;</code>
+   * <code>uint64 out_discards = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The outDiscards.
    */
   @java.lang.Override
@@ -408,7 +408,7 @@ private static final long serialVersionUID = 0L;
    * Transmit error counter
    * </pre>
    *
-   * <code>uint64 out_errors = 16;</code>
+   * <code>uint64 out_errors = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The outErrors.
    */
   @java.lang.Override
@@ -423,7 +423,7 @@ private static final long serialVersionUID = 0L;
    * Carrier transition count
    * </pre>
    *
-   * <code>uint64 carrier_transitions = 17;</code>
+   * <code>uint64 carrier_transitions = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The carrierTransitions.
    */
   @java.lang.Override
@@ -438,7 +438,7 @@ private static final long serialVersionUID = 0L;
    * Last Clear
    * </pre>
    *
-   * <code>uint64 last_clear = 18;</code>
+   * <code>uint64 last_clear = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The lastClear.
    */
   @java.lang.Override
@@ -1065,7 +1065,7 @@ private static final long serialVersionUID = 0L;
      * Received Octet counter
      * </pre>
      *
-     * <code>uint64 rx_octets = 1;</code>
+     * <code>uint64 rx_octets = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The rxOctets.
      */
     @java.lang.Override
@@ -1077,7 +1077,7 @@ private static final long serialVersionUID = 0L;
      * Received Octet counter
      * </pre>
      *
-     * <code>uint64 rx_octets = 1;</code>
+     * <code>uint64 rx_octets = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The rxOctets to set.
      * @return This builder for chaining.
      */
@@ -1092,7 +1092,7 @@ private static final long serialVersionUID = 0L;
      * Received Octet counter
      * </pre>
      *
-     * <code>uint64 rx_octets = 1;</code>
+     * <code>uint64 rx_octets = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearRxOctets() {
@@ -1108,7 +1108,7 @@ private static final long serialVersionUID = 0L;
      * Received Packet counter
      * </pre>
      *
-     * <code>uint64 rx_packets = 2;</code>
+     * <code>uint64 rx_packets = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The rxPackets.
      */
     @java.lang.Override
@@ -1120,7 +1120,7 @@ private static final long serialVersionUID = 0L;
      * Received Packet counter
      * </pre>
      *
-     * <code>uint64 rx_packets = 2;</code>
+     * <code>uint64 rx_packets = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The rxPackets to set.
      * @return This builder for chaining.
      */
@@ -1135,7 +1135,7 @@ private static final long serialVersionUID = 0L;
      * Received Packet counter
      * </pre>
      *
-     * <code>uint64 rx_packets = 2;</code>
+     * <code>uint64 rx_packets = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearRxPackets() {
@@ -1151,7 +1151,7 @@ private static final long serialVersionUID = 0L;
      * Unicast packets received counter
      * </pre>
      *
-     * <code>uint64 rx_unicast_pkts = 3;</code>
+     * <code>uint64 rx_unicast_pkts = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The rxUnicastPkts.
      */
     @java.lang.Override
@@ -1163,7 +1163,7 @@ private static final long serialVersionUID = 0L;
      * Unicast packets received counter
      * </pre>
      *
-     * <code>uint64 rx_unicast_pkts = 3;</code>
+     * <code>uint64 rx_unicast_pkts = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The rxUnicastPkts to set.
      * @return This builder for chaining.
      */
@@ -1178,7 +1178,7 @@ private static final long serialVersionUID = 0L;
      * Unicast packets received counter
      * </pre>
      *
-     * <code>uint64 rx_unicast_pkts = 3;</code>
+     * <code>uint64 rx_unicast_pkts = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearRxUnicastPkts() {
@@ -1194,7 +1194,7 @@ private static final long serialVersionUID = 0L;
      * Broadcast packets received counter
      * </pre>
      *
-     * <code>uint64 rx_broadcast_pkts = 4;</code>
+     * <code>uint64 rx_broadcast_pkts = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The rxBroadcastPkts.
      */
     @java.lang.Override
@@ -1206,7 +1206,7 @@ private static final long serialVersionUID = 0L;
      * Broadcast packets received counter
      * </pre>
      *
-     * <code>uint64 rx_broadcast_pkts = 4;</code>
+     * <code>uint64 rx_broadcast_pkts = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The rxBroadcastPkts to set.
      * @return This builder for chaining.
      */
@@ -1221,7 +1221,7 @@ private static final long serialVersionUID = 0L;
      * Broadcast packets received counter
      * </pre>
      *
-     * <code>uint64 rx_broadcast_pkts = 4;</code>
+     * <code>uint64 rx_broadcast_pkts = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearRxBroadcastPkts() {
@@ -1237,7 +1237,7 @@ private static final long serialVersionUID = 0L;
      * multicast packets received counter
      * </pre>
      *
-     * <code>uint64 rx_multicast_pkts = 5;</code>
+     * <code>uint64 rx_multicast_pkts = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The rxMulticastPkts.
      */
     @java.lang.Override
@@ -1249,7 +1249,7 @@ private static final long serialVersionUID = 0L;
      * multicast packets received counter
      * </pre>
      *
-     * <code>uint64 rx_multicast_pkts = 5;</code>
+     * <code>uint64 rx_multicast_pkts = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The rxMulticastPkts to set.
      * @return This builder for chaining.
      */
@@ -1264,7 +1264,7 @@ private static final long serialVersionUID = 0L;
      * multicast packets received counter
      * </pre>
      *
-     * <code>uint64 rx_multicast_pkts = 5;</code>
+     * <code>uint64 rx_multicast_pkts = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearRxMulticastPkts() {
@@ -1280,7 +1280,7 @@ private static final long serialVersionUID = 0L;
      * discarded received packets counter
      * </pre>
      *
-     * <code>uint64 rx_discards = 6;</code>
+     * <code>uint64 rx_discards = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The rxDiscards.
      */
     @java.lang.Override
@@ -1292,7 +1292,7 @@ private static final long serialVersionUID = 0L;
      * discarded received packets counter
      * </pre>
      *
-     * <code>uint64 rx_discards = 6;</code>
+     * <code>uint64 rx_discards = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The rxDiscards to set.
      * @return This builder for chaining.
      */
@@ -1307,7 +1307,7 @@ private static final long serialVersionUID = 0L;
      * discarded received packets counter
      * </pre>
      *
-     * <code>uint64 rx_discards = 6;</code>
+     * <code>uint64 rx_discards = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearRxDiscards() {
@@ -1323,7 +1323,7 @@ private static final long serialVersionUID = 0L;
      * Receive error counter
      * </pre>
      *
-     * <code>uint64 rx_errors = 7;</code>
+     * <code>uint64 rx_errors = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The rxErrors.
      */
     @java.lang.Override
@@ -1335,7 +1335,7 @@ private static final long serialVersionUID = 0L;
      * Receive error counter
      * </pre>
      *
-     * <code>uint64 rx_errors = 7;</code>
+     * <code>uint64 rx_errors = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The rxErrors to set.
      * @return This builder for chaining.
      */
@@ -1350,7 +1350,7 @@ private static final long serialVersionUID = 0L;
      * Receive error counter
      * </pre>
      *
-     * <code>uint64 rx_errors = 7;</code>
+     * <code>uint64 rx_errors = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearRxErrors() {
@@ -1366,7 +1366,7 @@ private static final long serialVersionUID = 0L;
      * Unknown received protocol counter
      * </pre>
      *
-     * <code>uint64 rx_unknown_protos = 8;</code>
+     * <code>uint64 rx_unknown_protos = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The rxUnknownProtos.
      */
     @java.lang.Override
@@ -1378,7 +1378,7 @@ private static final long serialVersionUID = 0L;
      * Unknown received protocol counter
      * </pre>
      *
-     * <code>uint64 rx_unknown_protos = 8;</code>
+     * <code>uint64 rx_unknown_protos = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The rxUnknownProtos to set.
      * @return This builder for chaining.
      */
@@ -1393,7 +1393,7 @@ private static final long serialVersionUID = 0L;
      * Unknown received protocol counter
      * </pre>
      *
-     * <code>uint64 rx_unknown_protos = 8;</code>
+     * <code>uint64 rx_unknown_protos = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearRxUnknownProtos() {
@@ -1409,7 +1409,7 @@ private static final long serialVersionUID = 0L;
      * Received FCS error counter
      * </pre>
      *
-     * <code>uint64 rx_fcs_errors = 9;</code>
+     * <code>uint64 rx_fcs_errors = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The rxFcsErrors.
      */
     @java.lang.Override
@@ -1421,7 +1421,7 @@ private static final long serialVersionUID = 0L;
      * Received FCS error counter
      * </pre>
      *
-     * <code>uint64 rx_fcs_errors = 9;</code>
+     * <code>uint64 rx_fcs_errors = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The rxFcsErrors to set.
      * @return This builder for chaining.
      */
@@ -1436,7 +1436,7 @@ private static final long serialVersionUID = 0L;
      * Received FCS error counter
      * </pre>
      *
-     * <code>uint64 rx_fcs_errors = 9;</code>
+     * <code>uint64 rx_fcs_errors = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearRxFcsErrors() {
@@ -1452,7 +1452,7 @@ private static final long serialVersionUID = 0L;
      * Transmit octet counter
      * </pre>
      *
-     * <code>uint64 out_octets = 10;</code>
+     * <code>uint64 out_octets = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The outOctets.
      */
     @java.lang.Override
@@ -1464,7 +1464,7 @@ private static final long serialVersionUID = 0L;
      * Transmit octet counter
      * </pre>
      *
-     * <code>uint64 out_octets = 10;</code>
+     * <code>uint64 out_octets = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The outOctets to set.
      * @return This builder for chaining.
      */
@@ -1479,7 +1479,7 @@ private static final long serialVersionUID = 0L;
      * Transmit octet counter
      * </pre>
      *
-     * <code>uint64 out_octets = 10;</code>
+     * <code>uint64 out_octets = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearOutOctets() {
@@ -1495,7 +1495,7 @@ private static final long serialVersionUID = 0L;
      * Transmit packet counter
      * </pre>
      *
-     * <code>uint64 out_packets = 11;</code>
+     * <code>uint64 out_packets = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The outPackets.
      */
     @java.lang.Override
@@ -1507,7 +1507,7 @@ private static final long serialVersionUID = 0L;
      * Transmit packet counter
      * </pre>
      *
-     * <code>uint64 out_packets = 11;</code>
+     * <code>uint64 out_packets = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The outPackets to set.
      * @return This builder for chaining.
      */
@@ -1522,7 +1522,7 @@ private static final long serialVersionUID = 0L;
      * Transmit packet counter
      * </pre>
      *
-     * <code>uint64 out_packets = 11;</code>
+     * <code>uint64 out_packets = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearOutPackets() {
@@ -1538,7 +1538,7 @@ private static final long serialVersionUID = 0L;
      * Unicast packet transmit counter
      * </pre>
      *
-     * <code>uint64 out_unicast_pkts = 12;</code>
+     * <code>uint64 out_unicast_pkts = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The outUnicastPkts.
      */
     @java.lang.Override
@@ -1550,7 +1550,7 @@ private static final long serialVersionUID = 0L;
      * Unicast packet transmit counter
      * </pre>
      *
-     * <code>uint64 out_unicast_pkts = 12;</code>
+     * <code>uint64 out_unicast_pkts = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The outUnicastPkts to set.
      * @return This builder for chaining.
      */
@@ -1565,7 +1565,7 @@ private static final long serialVersionUID = 0L;
      * Unicast packet transmit counter
      * </pre>
      *
-     * <code>uint64 out_unicast_pkts = 12;</code>
+     * <code>uint64 out_unicast_pkts = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearOutUnicastPkts() {
@@ -1581,7 +1581,7 @@ private static final long serialVersionUID = 0L;
      * Broadcast packet transmit counter
      * </pre>
      *
-     * <code>uint64 out_broadcast_pkts = 13;</code>
+     * <code>uint64 out_broadcast_pkts = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The outBroadcastPkts.
      */
     @java.lang.Override
@@ -1593,7 +1593,7 @@ private static final long serialVersionUID = 0L;
      * Broadcast packet transmit counter
      * </pre>
      *
-     * <code>uint64 out_broadcast_pkts = 13;</code>
+     * <code>uint64 out_broadcast_pkts = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The outBroadcastPkts to set.
      * @return This builder for chaining.
      */
@@ -1608,7 +1608,7 @@ private static final long serialVersionUID = 0L;
      * Broadcast packet transmit counter
      * </pre>
      *
-     * <code>uint64 out_broadcast_pkts = 13;</code>
+     * <code>uint64 out_broadcast_pkts = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearOutBroadcastPkts() {
@@ -1624,7 +1624,7 @@ private static final long serialVersionUID = 0L;
      * Multicast packet transmit counter
      * </pre>
      *
-     * <code>uint64 out_multicast_pkts = 14;</code>
+     * <code>uint64 out_multicast_pkts = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The outMulticastPkts.
      */
     @java.lang.Override
@@ -1636,7 +1636,7 @@ private static final long serialVersionUID = 0L;
      * Multicast packet transmit counter
      * </pre>
      *
-     * <code>uint64 out_multicast_pkts = 14;</code>
+     * <code>uint64 out_multicast_pkts = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The outMulticastPkts to set.
      * @return This builder for chaining.
      */
@@ -1651,7 +1651,7 @@ private static final long serialVersionUID = 0L;
      * Multicast packet transmit counter
      * </pre>
      *
-     * <code>uint64 out_multicast_pkts = 14;</code>
+     * <code>uint64 out_multicast_pkts = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearOutMulticastPkts() {
@@ -1667,7 +1667,7 @@ private static final long serialVersionUID = 0L;
      * Discarded transmit packet counter
      * </pre>
      *
-     * <code>uint64 out_discards = 15;</code>
+     * <code>uint64 out_discards = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The outDiscards.
      */
     @java.lang.Override
@@ -1679,7 +1679,7 @@ private static final long serialVersionUID = 0L;
      * Discarded transmit packet counter
      * </pre>
      *
-     * <code>uint64 out_discards = 15;</code>
+     * <code>uint64 out_discards = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The outDiscards to set.
      * @return This builder for chaining.
      */
@@ -1694,7 +1694,7 @@ private static final long serialVersionUID = 0L;
      * Discarded transmit packet counter
      * </pre>
      *
-     * <code>uint64 out_discards = 15;</code>
+     * <code>uint64 out_discards = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearOutDiscards() {
@@ -1710,7 +1710,7 @@ private static final long serialVersionUID = 0L;
      * Transmit error counter
      * </pre>
      *
-     * <code>uint64 out_errors = 16;</code>
+     * <code>uint64 out_errors = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The outErrors.
      */
     @java.lang.Override
@@ -1722,7 +1722,7 @@ private static final long serialVersionUID = 0L;
      * Transmit error counter
      * </pre>
      *
-     * <code>uint64 out_errors = 16;</code>
+     * <code>uint64 out_errors = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The outErrors to set.
      * @return This builder for chaining.
      */
@@ -1737,7 +1737,7 @@ private static final long serialVersionUID = 0L;
      * Transmit error counter
      * </pre>
      *
-     * <code>uint64 out_errors = 16;</code>
+     * <code>uint64 out_errors = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearOutErrors() {
@@ -1753,7 +1753,7 @@ private static final long serialVersionUID = 0L;
      * Carrier transition count
      * </pre>
      *
-     * <code>uint64 carrier_transitions = 17;</code>
+     * <code>uint64 carrier_transitions = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The carrierTransitions.
      */
     @java.lang.Override
@@ -1765,7 +1765,7 @@ private static final long serialVersionUID = 0L;
      * Carrier transition count
      * </pre>
      *
-     * <code>uint64 carrier_transitions = 17;</code>
+     * <code>uint64 carrier_transitions = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The carrierTransitions to set.
      * @return This builder for chaining.
      */
@@ -1780,7 +1780,7 @@ private static final long serialVersionUID = 0L;
      * Carrier transition count
      * </pre>
      *
-     * <code>uint64 carrier_transitions = 17;</code>
+     * <code>uint64 carrier_transitions = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearCarrierTransitions() {
@@ -1796,7 +1796,7 @@ private static final long serialVersionUID = 0L;
      * Last Clear
      * </pre>
      *
-     * <code>uint64 last_clear = 18;</code>
+     * <code>uint64 last_clear = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The lastClear.
      */
     @java.lang.Override
@@ -1808,7 +1808,7 @@ private static final long serialVersionUID = 0L;
      * Last Clear
      * </pre>
      *
-     * <code>uint64 last_clear = 18;</code>
+     * <code>uint64 last_clear = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The lastClear to set.
      * @return This builder for chaining.
      */
@@ -1823,7 +1823,7 @@ private static final long serialVersionUID = 0L;
      * Last Clear
      * </pre>
      *
-     * <code>uint64 last_clear = 18;</code>
+     * <code>uint64 last_clear = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearLastClear() {

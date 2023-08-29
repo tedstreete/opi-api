@@ -158,7 +158,7 @@ private static final long serialVersionUID = 0L;
    * page size
    * </pre>
    *
-   * <code>int32 page_size = 2;</code>
+   * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The pageSize.
    */
   @java.lang.Override
@@ -173,7 +173,7 @@ private static final long serialVersionUID = 0L;
    * page token
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The pageToken.
    */
   @java.lang.Override
@@ -194,7 +194,7 @@ private static final long serialVersionUID = 0L;
    * page token
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for pageToken.
    */
   @java.lang.Override
@@ -654,7 +654,7 @@ private static final long serialVersionUID = 0L;
      * page size
      * </pre>
      *
-     * <code>int32 page_size = 2;</code>
+     * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The pageSize.
      */
     @java.lang.Override
@@ -666,7 +666,7 @@ private static final long serialVersionUID = 0L;
      * page size
      * </pre>
      *
-     * <code>int32 page_size = 2;</code>
+     * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The pageSize to set.
      * @return This builder for chaining.
      */
@@ -681,7 +681,7 @@ private static final long serialVersionUID = 0L;
      * page size
      * </pre>
      *
-     * <code>int32 page_size = 2;</code>
+     * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearPageSize() {
@@ -697,7 +697,7 @@ private static final long serialVersionUID = 0L;
      * page token
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The pageToken.
      */
     public java.lang.String getPageToken() {
@@ -717,7 +717,7 @@ private static final long serialVersionUID = 0L;
      * page token
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The bytes for pageToken.
      */
     public com.google.protobuf.ByteString
@@ -738,7 +738,7 @@ private static final long serialVersionUID = 0L;
      * page token
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The pageToken to set.
      * @return This builder for chaining.
      */
@@ -757,7 +757,7 @@ private static final long serialVersionUID = 0L;
      * page token
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearPageToken() {
@@ -771,7 +771,7 @@ private static final long serialVersionUID = 0L;
      * page token
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The bytes for pageToken to set.
      * @return This builder for chaining.
      */

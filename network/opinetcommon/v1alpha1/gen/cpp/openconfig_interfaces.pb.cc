@@ -245,6 +245,7 @@ PROTOBUF_CONSTEXPR UpdateNetInterfaceRequest::UpdateNetInterfaceRequest(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.net_interface_)*/nullptr
   , /*decltype(_impl_.update_mask_)*/nullptr
+  , /*decltype(_impl_.allow_missing_)*/false
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct UpdateNetInterfaceRequestDefaultTypeInternal {
   PROTOBUF_CONSTEXPR UpdateNetInterfaceRequestDefaultTypeInternal()
@@ -411,6 +412,7 @@ const uint32_t TableStruct_openconfig_5finterfaces_2eproto::offsets[] PROTOBUF_S
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::UpdateNetInterfaceRequest, _impl_.net_interface_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::UpdateNetInterfaceRequest, _impl_.update_mask_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::v1alpha1::UpdateNetInterfaceRequest, _impl_.allow_missing_),
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::opi_api::network::v1alpha1::Config)},
@@ -452,91 +454,101 @@ const char descriptor_table_protodef_openconfig_5finterfaces_2eproto[] PROTOBUF_
   "gle/api/client.proto\032\031google/api/resourc"
   "e.proto\032\034google/api/annotations.proto\032\037g"
   "oogle/api/field_behavior.proto\032 google/p"
-  "rotobuf/field_mask.proto\"\227\001\n\006Config\022\014\n\004n"
-  "ame\030\001 \001(\t\0225\n\004type\030\002 \001(\0162\'.opi_api.networ"
-  "k.v1alpha1.InterfaceType\022\013\n\003mtu\030\003 \001(\r\022\025\n"
-  "\rloopback_mode\030\004 \001(\010\022\023\n\013description\030\005 \001("
-  "\t\022\017\n\007enabled\030\006 \001(\010\"\260\003\n\010Counters\022\021\n\trx_oc"
-  "tets\030\001 \001(\004\022\022\n\nrx_packets\030\002 \001(\004\022\027\n\017rx_uni"
-  "cast_pkts\030\003 \001(\004\022\031\n\021rx_broadcast_pkts\030\004 \001"
-  "(\004\022\031\n\021rx_multicast_pkts\030\005 \001(\004\022\023\n\013rx_disc"
-  "ards\030\006 \001(\004\022\021\n\trx_errors\030\007 \001(\004\022\031\n\021rx_unkn"
-  "own_protos\030\010 \001(\004\022\025\n\rrx_fcs_errors\030\t \001(\004\022"
-  "\022\n\nout_octets\030\n \001(\004\022\023\n\013out_packets\030\013 \001(\004"
-  "\022\030\n\020out_unicast_pkts\030\014 \001(\004\022\032\n\022out_broadc"
-  "ast_pkts\030\r \001(\004\022\032\n\022out_multicast_pkts\030\016 \001"
-  "(\004\022\024\n\014out_discards\030\017 \001(\004\022\022\n\nout_errors\030\020"
-  " \001(\004\022\033\n\023carrier_transitions\030\021 \001(\004\022\022\n\nlas"
-  "t_clear\030\022 \001(\004\"\245\003\n\005State\022\014\n\004name\030\001 \001(\t\0225\n"
-  "\004type\030\002 \001(\0162\'.opi_api.network.v1alpha1.I"
-  "nterfaceType\022\013\n\003mtu\030\003 \001(\r\022\025\n\rloopback_mo"
-  "de\030\004 \001(\010\022\023\n\013description\030\005 \001(\t\022\017\n\007enabled"
-  "\030\006 \001(\010\022\017\n\007ifindex\030\007 \001(\r\022F\n\013admin_state\030\010"
-  " \001(\01621.opi_api.network.opinetcommon.v1al"
-  "pha1.AdminState\0227\n\noper_state\030\t \001(\0162#.op"
-  "i_api.network.v1alpha1.OperState\022\023\n\013last"
-  "_change\030\n \001(\004\022\017\n\007logical\030\013 \001(\010\022\022\n\nmanage"
-  "ment\030\014 \001(\010\022\013\n\003cpu\030\r \001(\010\0224\n\010counters\030\016 \001("
-  "\0132\".opi_api.network.v1alpha1.Counters\"\356\006"
-  "\n\014NetInterface\022\014\n\004name\030\001 \001(\t\0220\n\006config\030\002"
-  " \001(\0132 .opi_api.network.v1alpha1.Config\022."
-  "\n\005state\030\003 \001(\0132\037.opi_api.network.v1alpha1"
-  ".State\022A\n\010holdtime\030\004 \001(\0132/.opi_api.netwo"
-  "rk.v1alpha1.NetInterface.HoldTime\022K\n\rsub"
-  "interfaces\030\005 \001(\01324.opi_api.network.v1alp"
-  "ha1.NetInterface.Subinterfaces\032\371\001\n\010HoldT"
-  "ime\022O\n\013hold_config\030\001 \001(\0132:.opi_api.netwo"
-  "rk.v1alpha1.NetInterface.HoldTime.HoldCo"
-  "nfig\022M\n\nhold_state\030\002 \001(\01329.opi_api.netwo"
-  "rk.v1alpha1.NetInterface.HoldTime.HoldSt"
-  "ate\032&\n\nHoldConfig\022\n\n\002up\030\001 \001(\r\022\014\n\004down\030\002 "
-  "\001(\r\032%\n\tHoldState\022\n\n\002up\030\001 \001(\r\022\014\n\004down\030\002 \001"
-  "(\r\032\341\002\n\rSubinterfaces\022W\n\014subinterface\030\002 \003"
-  "(\0132A.opi_api.network.v1alpha1.NetInterfa"
-  "ce.Subinterfaces.Subinterface\032\366\001\n\014Subint"
-  "erface\022\r\n\005index\030\001 \001(\003\022c\n\014subif_config\030\002 "
-  "\001(\0132M.opi_api.network.v1alpha1.NetInterf"
-  "ace.Subinterfaces.Subinterface.SubifConf"
-  "ig\022.\n\005state\030\003 \001(\0132\037.opi_api.network.v1al"
-  "pha1.State\032B\n\013SubifConfig\022\r\n\005index\030\001 \001(\004"
-  "\022\023\n\013description\030\002 \001(\t\022\017\n\007enabled\030\003 \001(\010\"M"
-  "\n\026GetNetInterfaceRequest\0223\n\004name\030\001 \001(\tB%"
-  "\340A\002\372A\037\n\035opi_api.network.v1/Interfaces\"x\n"
-  "\030ListNetInterfacesRequest\0225\n\006parent\030\001 \001("
-  "\tB%\340A\002\372A\037\n\035opi_api.network.v1/Interfaces"
-  "\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\""
-  "t\n\031ListNetInterfacesResponse\022>\n\016net_inte"
-  "rfaces\030\001 \003(\0132&.opi_api.network.v1alpha1."
-  "NetInterface\022\027\n\017next_page_token\030\002 \001(\t\"\213\001"
-  "\n\031UpdateNetInterfaceRequest\022=\n\rnet_inter"
-  "face\030\001 \001(\0132&.opi_api.network.v1alpha1.Ne"
-  "tInterface\022/\n\013update_mask\030\002 \001(\0132\032.google"
-  ".protobuf.FieldMask*K\n\rInterfaceType\022\036\n\032"
-  "INTERFACE_TYPE_UNSPECIFIED\020\000\022\014\n\010ETHERNET"
-  "\020\001\022\014\n\010LOOPBACK\020\002*\324\001\n\tOperState\022\032\n\026OPER_S"
-  "TATE_UNSPECIFIED\020\000\022\021\n\rOPER_STATE_UP\020\002\022\023\n"
-  "\017OPER_STATE_DOWN\020\003\022\026\n\022OPER_STATE_TESTING"
-  "\020\004\022\026\n\022OPER_STATE_UNKNOWN\020\005\022\026\n\022OPER_STATE"
-  "_DORMANT\020\006\022\032\n\026OPER_STATE_NOT_PRESENT\020\007\022\037"
-  "\n\033OPER_STATE_LOWER_LAYER_DOWN\020\0102\272\004\n\023NetI"
-  "nterfaceService\022\237\001\n\017GetNetInterface\0220.op"
-  "i_api.network.v1alpha1.GetNetInterfaceRe"
-  "quest\032&.opi_api.network.v1alpha1.NetInte"
-  "rface\"2\202\323\344\223\002%\022#/v1/{name=interfaces/*/in"
-  "terface/*}\332A\004name\022\246\001\n\021ListNetInterfaces\022"
-  "2.opi_api.network.v1alpha1.ListNetInterf"
-  "acesRequest\0323.opi_api.network.v1alpha1.L"
-  "istNetInterfacesResponse\"(\202\323\344\223\002\031\022\027/v1/{p"
-  "arent=interfaces}\332A\006parent\022\327\001\n\022UpdateNet"
-  "Interface\0223.opi_api.network.v1alpha1.Upd"
-  "ateNetInterfaceRequest\032&.opi_api.network"
-  ".v1alpha1.NetInterface\"d\202\323\344\223\002B21/v1/{net"
-  "_interface.name=interfaces/*/interface/*"
-  "}:\rnet_interface\332A\031net_interface,update_"
-  "maskB{\n\030opi_api.network.v1alpha1B\031Openco"
-  "nfigInterfacesProtoP\001ZBgithub.com/opipro"
-  "ject/opi-api/network/opinetcommon/v1alph"
-  "a1/gen/gob\006proto3"
+  "rotobuf/field_mask.proto\"\265\001\n\006Config\022\021\n\004n"
+  "ame\030\001 \001(\tB\003\340A\002\022:\n\004type\030\002 \001(\0162\'.opi_api.n"
+  "etwork.v1alpha1.InterfaceTypeB\003\340A\002\022\020\n\003mt"
+  "u\030\003 \001(\rB\003\340A\002\022\032\n\rloopback_mode\030\004 \001(\010B\003\340A\002"
+  "\022\030\n\013description\030\005 \001(\tB\003\340A\002\022\024\n\007enabled\030\006 "
+  "\001(\010B\003\340A\002\"\212\004\n\010Counters\022\026\n\trx_octets\030\001 \001(\004"
+  "B\003\340A\003\022\027\n\nrx_packets\030\002 \001(\004B\003\340A\003\022\034\n\017rx_uni"
+  "cast_pkts\030\003 \001(\004B\003\340A\003\022\036\n\021rx_broadcast_pkt"
+  "s\030\004 \001(\004B\003\340A\003\022\036\n\021rx_multicast_pkts\030\005 \001(\004B"
+  "\003\340A\003\022\030\n\013rx_discards\030\006 \001(\004B\003\340A\003\022\026\n\trx_err"
+  "ors\030\007 \001(\004B\003\340A\003\022\036\n\021rx_unknown_protos\030\010 \001("
+  "\004B\003\340A\003\022\032\n\rrx_fcs_errors\030\t \001(\004B\003\340A\003\022\027\n\nou"
+  "t_octets\030\n \001(\004B\003\340A\003\022\030\n\013out_packets\030\013 \001(\004"
+  "B\003\340A\003\022\035\n\020out_unicast_pkts\030\014 \001(\004B\003\340A\003\022\037\n\022"
+  "out_broadcast_pkts\030\r \001(\004B\003\340A\003\022\037\n\022out_mul"
+  "ticast_pkts\030\016 \001(\004B\003\340A\003\022\031\n\014out_discards\030\017"
+  " \001(\004B\003\340A\003\022\027\n\nout_errors\030\020 \001(\004B\003\340A\003\022 \n\023ca"
+  "rrier_transitions\030\021 \001(\004B\003\340A\003\022\027\n\nlast_cle"
+  "ar\030\022 \001(\004B\003\340A\003\"\353\003\n\005State\022\021\n\004name\030\001 \001(\tB\003\340"
+  "A\003\022:\n\004type\030\002 \001(\0162\'.opi_api.network.v1alp"
+  "ha1.InterfaceTypeB\003\340A\003\022\020\n\003mtu\030\003 \001(\rB\003\340A\003"
+  "\022\032\n\rloopback_mode\030\004 \001(\010B\003\340A\003\022\030\n\013descript"
+  "ion\030\005 \001(\tB\003\340A\003\022\024\n\007enabled\030\006 \001(\010B\003\340A\003\022\024\n\007"
+  "ifindex\030\007 \001(\rB\003\340A\003\022K\n\013admin_state\030\010 \001(\0162"
+  "1.opi_api.network.opinetcommon.v1alpha1."
+  "AdminStateB\003\340A\003\022<\n\noper_state\030\t \001(\0162#.op"
+  "i_api.network.v1alpha1.OperStateB\003\340A\003\022\030\n"
+  "\013last_change\030\n \001(\004B\003\340A\003\022\024\n\007logical\030\013 \001(\010"
+  "B\003\340A\003\022\027\n\nmanagement\030\014 \001(\010B\003\340A\003\022\020\n\003cpu\030\r "
+  "\001(\010B\003\340A\003\0229\n\010counters\030\016 \001(\0132\".opi_api.net"
+  "work.v1alpha1.CountersB\003\340A\003\"\202\010\n\014NetInter"
+  "face\022K\n\004name\030\001 \001(\tB=\340A\003\340A\005\372A4\n2opi_api.n"
+  "etwork.opinetcommon.v1alpha1/NetInterfac"
+  "e\0225\n\006config\030\002 \001(\0132 .opi_api.network.v1al"
+  "pha1.ConfigB\003\340A\002\0223\n\005state\030\003 \001(\0132\037.opi_ap"
+  "i.network.v1alpha1.StateB\003\340A\003\022F\n\010holdtim"
+  "e\030\004 \001(\0132/.opi_api.network.v1alpha1.NetIn"
+  "terface.HoldTimeB\003\340A\001\022P\n\rsubinterfaces\030\005"
+  " \001(\01324.opi_api.network.v1alpha1.NetInter"
+  "face.SubinterfacesB\003\340A\001\032\227\002\n\010HoldTime\022T\n\013"
+  "hold_config\030\001 \001(\0132:.opi_api.network.v1al"
+  "pha1.NetInterface.HoldTime.HoldConfigB\003\340"
+  "A\001\022R\n\nhold_state\030\002 \001(\01329.opi_api.network"
+  ".v1alpha1.NetInterface.HoldTime.HoldStat"
+  "eB\003\340A\003\0320\n\nHoldConfig\022\017\n\002up\030\001 \001(\rB\003\340A\001\022\021\n"
+  "\004down\030\002 \001(\rB\003\340A\001\032/\n\tHoldState\022\017\n\002up\030\001 \001("
+  "\rB\003\340A\003\022\021\n\004down\030\002 \001(\rB\003\340A\003\032\204\003\n\rSubinterfa"
+  "ces\022\\\n\014subinterface\030\002 \003(\0132A.opi_api.netw"
+  "ork.v1alpha1.NetInterface.Subinterfaces."
+  "SubinterfaceB\003\340A\001\032\224\002\n\014Subinterface\022\022\n\005in"
+  "dex\030\001 \001(\003B\003\340A\001\022h\n\014subif_config\030\002 \001(\0132M.o"
+  "pi_api.network.v1alpha1.NetInterface.Sub"
+  "interfaces.Subinterface.SubifConfigB\003\340A\001"
+  "\0223\n\005state\030\003 \001(\0132\037.opi_api.network.v1alph"
+  "a1.StateB\003\340A\003\032Q\n\013SubifConfig\022\022\n\005index\030\001 "
+  "\001(\004B\003\340A\001\022\030\n\013description\030\002 \001(\tB\003\340A\001\022\024\n\007en"
+  "abled\030\003 \001(\010B\003\340A\001\"M\n\026GetNetInterfaceReque"
+  "st\0223\n\004name\030\001 \001(\tB%\340A\002\372A\037\n\035opi_api.networ"
+  "k.v1/Interfaces\"\202\001\n\030ListNetInterfacesReq"
+  "uest\0225\n\006parent\030\001 \001(\tB%\340A\002\372A\037\n\035opi_api.ne"
+  "twork.v1/Interfaces\022\026\n\tpage_size\030\002 \001(\005B\003"
+  "\340A\001\022\027\n\npage_token\030\003 \001(\tB\003\340A\001\"t\n\031ListNetI"
+  "nterfacesResponse\022>\n\016net_interfaces\030\001 \003("
+  "\0132&.opi_api.network.v1alpha1.NetInterfac"
+  "e\022\027\n\017next_page_token\030\002 \001(\t\"\261\001\n\031UpdateNet"
+  "InterfaceRequest\022B\n\rnet_interface\030\001 \001(\0132"
+  "&.opi_api.network.v1alpha1.NetInterfaceB"
+  "\003\340A\002\0224\n\013update_mask\030\002 \001(\0132\032.google.proto"
+  "buf.FieldMaskB\003\340A\001\022\032\n\rallow_missing\030\003 \001("
+  "\010B\003\340A\001*K\n\rInterfaceType\022\036\n\032INTERFACE_TYP"
+  "E_UNSPECIFIED\020\000\022\014\n\010ETHERNET\020\001\022\014\n\010LOOPBAC"
+  "K\020\002*\324\001\n\tOperState\022\032\n\026OPER_STATE_UNSPECIF"
+  "IED\020\000\022\021\n\rOPER_STATE_UP\020\002\022\023\n\017OPER_STATE_D"
+  "OWN\020\003\022\026\n\022OPER_STATE_TESTING\020\004\022\026\n\022OPER_ST"
+  "ATE_UNKNOWN\020\005\022\026\n\022OPER_STATE_DORMANT\020\006\022\032\n"
+  "\026OPER_STATE_NOT_PRESENT\020\007\022\037\n\033OPER_STATE_"
+  "LOWER_LAYER_DOWN\020\0102\272\004\n\023NetInterfaceServi"
+  "ce\022\237\001\n\017GetNetInterface\0220.opi_api.network"
+  ".v1alpha1.GetNetInterfaceRequest\032&.opi_a"
+  "pi.network.v1alpha1.NetInterface\"2\202\323\344\223\002%"
+  "\022#/v1/{name=interfaces/*/interface/*}\332A\004"
+  "name\022\246\001\n\021ListNetInterfaces\0222.opi_api.net"
+  "work.v1alpha1.ListNetInterfacesRequest\0323"
+  ".opi_api.network.v1alpha1.ListNetInterfa"
+  "cesResponse\"(\202\323\344\223\002\031\022\027/v1/{parent=interfa"
+  "ces}\332A\006parent\022\327\001\n\022UpdateNetInterface\0223.o"
+  "pi_api.network.v1alpha1.UpdateNetInterfa"
+  "ceRequest\032&.opi_api.network.v1alpha1.Net"
+  "Interface\"d\202\323\344\223\002B21/v1/{net_interface.na"
+  "me=interfaces/*/interface/*}:\rnet_interf"
+  "ace\332A\031net_interface,update_maskB{\n\030opi_a"
+  "pi.network.v1alpha1B\031OpenconfigInterface"
+  "sProtoP\001ZBgithub.com/opiproject/opi-api/"
+  "network/opinetcommon/v1alpha1/gen/gob\006pr"
+  "oto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_openconfig_5finterfaces_2eproto_deps[6] = {
   &::descriptor_table_google_2fapi_2fannotations_2eproto,
@@ -548,7 +560,7 @@ static const ::_pbi::DescriptorTable* const descriptor_table_openconfig_5finterf
 };
 static ::_pbi::once_flag descriptor_table_openconfig_5finterfaces_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_openconfig_5finterfaces_2eproto = {
-    false, false, 3577, descriptor_table_protodef_openconfig_5finterfaces_2eproto,
+    false, false, 3964, descriptor_table_protodef_openconfig_5finterfaces_2eproto,
     "openconfig_interfaces.proto",
     &descriptor_table_openconfig_5finterfaces_2eproto_once, descriptor_table_openconfig_5finterfaces_2eproto_deps, 6, 14,
     schemas, file_default_instances, TableStruct_openconfig_5finterfaces_2eproto::offsets,
@@ -709,7 +721,7 @@ const char* Config::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // string name = 1;
+      // string name = 1 [(.google.api.field_behavior) = REQUIRED];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_name();
@@ -719,7 +731,7 @@ const char* Config::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
         } else
           goto handle_unusual;
         continue;
-      // .opi_api.network.v1alpha1.InterfaceType type = 2;
+      // .opi_api.network.v1alpha1.InterfaceType type = 2 [(.google.api.field_behavior) = REQUIRED];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
           uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
@@ -728,7 +740,7 @@ const char* Config::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
         } else
           goto handle_unusual;
         continue;
-      // uint32 mtu = 3;
+      // uint32 mtu = 3 [(.google.api.field_behavior) = REQUIRED];
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
           _impl_.mtu_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
@@ -736,7 +748,7 @@ const char* Config::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
         } else
           goto handle_unusual;
         continue;
-      // bool loopback_mode = 4;
+      // bool loopback_mode = 4 [(.google.api.field_behavior) = REQUIRED];
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
           _impl_.loopback_mode_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
@@ -744,7 +756,7 @@ const char* Config::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
         } else
           goto handle_unusual;
         continue;
-      // string description = 5;
+      // string description = 5 [(.google.api.field_behavior) = REQUIRED];
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
           auto str = _internal_mutable_description();
@@ -754,7 +766,7 @@ const char* Config::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
         } else
           goto handle_unusual;
         continue;
-      // bool enabled = 6;
+      // bool enabled = 6 [(.google.api.field_behavior) = REQUIRED];
       case 6:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
           _impl_.enabled_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
@@ -791,7 +803,7 @@ uint8_t* Config::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string name = 1;
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED];
   if (!this->_internal_name().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
@@ -801,26 +813,26 @@ uint8_t* Config::_InternalSerialize(
         1, this->_internal_name(), target);
   }
 
-  // .opi_api.network.v1alpha1.InterfaceType type = 2;
+  // .opi_api.network.v1alpha1.InterfaceType type = 2 [(.google.api.field_behavior) = REQUIRED];
   if (this->_internal_type() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteEnumToArray(
       2, this->_internal_type(), target);
   }
 
-  // uint32 mtu = 3;
+  // uint32 mtu = 3 [(.google.api.field_behavior) = REQUIRED];
   if (this->_internal_mtu() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(3, this->_internal_mtu(), target);
   }
 
-  // bool loopback_mode = 4;
+  // bool loopback_mode = 4 [(.google.api.field_behavior) = REQUIRED];
   if (this->_internal_loopback_mode() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteBoolToArray(4, this->_internal_loopback_mode(), target);
   }
 
-  // string description = 5;
+  // string description = 5 [(.google.api.field_behavior) = REQUIRED];
   if (!this->_internal_description().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_description().data(), static_cast<int>(this->_internal_description().length()),
@@ -830,7 +842,7 @@ uint8_t* Config::_InternalSerialize(
         5, this->_internal_description(), target);
   }
 
-  // bool enabled = 6;
+  // bool enabled = 6 [(.google.api.field_behavior) = REQUIRED];
   if (this->_internal_enabled() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteBoolToArray(6, this->_internal_enabled(), target);
@@ -852,37 +864,37 @@ size_t Config::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string name = 1;
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED];
   if (!this->_internal_name().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_name());
   }
 
-  // string description = 5;
+  // string description = 5 [(.google.api.field_behavior) = REQUIRED];
   if (!this->_internal_description().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_description());
   }
 
-  // .opi_api.network.v1alpha1.InterfaceType type = 2;
+  // .opi_api.network.v1alpha1.InterfaceType type = 2 [(.google.api.field_behavior) = REQUIRED];
   if (this->_internal_type() != 0) {
     total_size += 1 +
       ::_pbi::WireFormatLite::EnumSize(this->_internal_type());
   }
 
-  // uint32 mtu = 3;
+  // uint32 mtu = 3 [(.google.api.field_behavior) = REQUIRED];
   if (this->_internal_mtu() != 0) {
     total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_mtu());
   }
 
-  // bool loopback_mode = 4;
+  // bool loopback_mode = 4 [(.google.api.field_behavior) = REQUIRED];
   if (this->_internal_loopback_mode() != 0) {
     total_size += 1 + 1;
   }
 
-  // bool enabled = 6;
+  // bool enabled = 6 [(.google.api.field_behavior) = REQUIRED];
   if (this->_internal_enabled() != 0) {
     total_size += 1 + 1;
   }
@@ -1069,7 +1081,7 @@ const char* Counters::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx)
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // uint64 rx_octets = 1;
+      // uint64 rx_octets = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
           _impl_.rx_octets_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
@@ -1077,7 +1089,7 @@ const char* Counters::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx)
         } else
           goto handle_unusual;
         continue;
-      // uint64 rx_packets = 2;
+      // uint64 rx_packets = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
           _impl_.rx_packets_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
@@ -1085,7 +1097,7 @@ const char* Counters::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx)
         } else
           goto handle_unusual;
         continue;
-      // uint64 rx_unicast_pkts = 3;
+      // uint64 rx_unicast_pkts = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
           _impl_.rx_unicast_pkts_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
@@ -1093,7 +1105,7 @@ const char* Counters::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx)
         } else
           goto handle_unusual;
         continue;
-      // uint64 rx_broadcast_pkts = 4;
+      // uint64 rx_broadcast_pkts = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
           _impl_.rx_broadcast_pkts_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
@@ -1101,7 +1113,7 @@ const char* Counters::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx)
         } else
           goto handle_unusual;
         continue;
-      // uint64 rx_multicast_pkts = 5;
+      // uint64 rx_multicast_pkts = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
           _impl_.rx_multicast_pkts_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
@@ -1109,7 +1121,7 @@ const char* Counters::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx)
         } else
           goto handle_unusual;
         continue;
-      // uint64 rx_discards = 6;
+      // uint64 rx_discards = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
       case 6:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
           _impl_.rx_discards_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
@@ -1117,7 +1129,7 @@ const char* Counters::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx)
         } else
           goto handle_unusual;
         continue;
-      // uint64 rx_errors = 7;
+      // uint64 rx_errors = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
       case 7:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 56)) {
           _impl_.rx_errors_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
@@ -1125,7 +1137,7 @@ const char* Counters::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx)
         } else
           goto handle_unusual;
         continue;
-      // uint64 rx_unknown_protos = 8;
+      // uint64 rx_unknown_protos = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
       case 8:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 64)) {
           _impl_.rx_unknown_protos_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
@@ -1133,7 +1145,7 @@ const char* Counters::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx)
         } else
           goto handle_unusual;
         continue;
-      // uint64 rx_fcs_errors = 9;
+      // uint64 rx_fcs_errors = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
       case 9:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 72)) {
           _impl_.rx_fcs_errors_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
@@ -1141,7 +1153,7 @@ const char* Counters::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx)
         } else
           goto handle_unusual;
         continue;
-      // uint64 out_octets = 10;
+      // uint64 out_octets = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
       case 10:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 80)) {
           _impl_.out_octets_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
@@ -1149,7 +1161,7 @@ const char* Counters::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx)
         } else
           goto handle_unusual;
         continue;
-      // uint64 out_packets = 11;
+      // uint64 out_packets = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
       case 11:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 88)) {
           _impl_.out_packets_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
@@ -1157,7 +1169,7 @@ const char* Counters::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx)
         } else
           goto handle_unusual;
         continue;
-      // uint64 out_unicast_pkts = 12;
+      // uint64 out_unicast_pkts = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
       case 12:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 96)) {
           _impl_.out_unicast_pkts_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
@@ -1165,7 +1177,7 @@ const char* Counters::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx)
         } else
           goto handle_unusual;
         continue;
-      // uint64 out_broadcast_pkts = 13;
+      // uint64 out_broadcast_pkts = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
       case 13:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 104)) {
           _impl_.out_broadcast_pkts_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
@@ -1173,7 +1185,7 @@ const char* Counters::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx)
         } else
           goto handle_unusual;
         continue;
-      // uint64 out_multicast_pkts = 14;
+      // uint64 out_multicast_pkts = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
       case 14:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 112)) {
           _impl_.out_multicast_pkts_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
@@ -1181,7 +1193,7 @@ const char* Counters::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx)
         } else
           goto handle_unusual;
         continue;
-      // uint64 out_discards = 15;
+      // uint64 out_discards = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
       case 15:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 120)) {
           _impl_.out_discards_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
@@ -1189,7 +1201,7 @@ const char* Counters::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx)
         } else
           goto handle_unusual;
         continue;
-      // uint64 out_errors = 16;
+      // uint64 out_errors = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
       case 16:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 128)) {
           _impl_.out_errors_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
@@ -1197,7 +1209,7 @@ const char* Counters::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx)
         } else
           goto handle_unusual;
         continue;
-      // uint64 carrier_transitions = 17;
+      // uint64 carrier_transitions = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
       case 17:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 136)) {
           _impl_.carrier_transitions_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
@@ -1205,7 +1217,7 @@ const char* Counters::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx)
         } else
           goto handle_unusual;
         continue;
-      // uint64 last_clear = 18;
+      // uint64 last_clear = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
       case 18:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 144)) {
           _impl_.last_clear_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
@@ -1242,109 +1254,109 @@ uint8_t* Counters::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint64 rx_octets = 1;
+  // uint64 rx_octets = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_rx_octets() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt64ToArray(1, this->_internal_rx_octets(), target);
   }
 
-  // uint64 rx_packets = 2;
+  // uint64 rx_packets = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_rx_packets() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt64ToArray(2, this->_internal_rx_packets(), target);
   }
 
-  // uint64 rx_unicast_pkts = 3;
+  // uint64 rx_unicast_pkts = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_rx_unicast_pkts() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt64ToArray(3, this->_internal_rx_unicast_pkts(), target);
   }
 
-  // uint64 rx_broadcast_pkts = 4;
+  // uint64 rx_broadcast_pkts = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_rx_broadcast_pkts() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt64ToArray(4, this->_internal_rx_broadcast_pkts(), target);
   }
 
-  // uint64 rx_multicast_pkts = 5;
+  // uint64 rx_multicast_pkts = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_rx_multicast_pkts() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt64ToArray(5, this->_internal_rx_multicast_pkts(), target);
   }
 
-  // uint64 rx_discards = 6;
+  // uint64 rx_discards = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_rx_discards() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt64ToArray(6, this->_internal_rx_discards(), target);
   }
 
-  // uint64 rx_errors = 7;
+  // uint64 rx_errors = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_rx_errors() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt64ToArray(7, this->_internal_rx_errors(), target);
   }
 
-  // uint64 rx_unknown_protos = 8;
+  // uint64 rx_unknown_protos = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_rx_unknown_protos() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt64ToArray(8, this->_internal_rx_unknown_protos(), target);
   }
 
-  // uint64 rx_fcs_errors = 9;
+  // uint64 rx_fcs_errors = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_rx_fcs_errors() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt64ToArray(9, this->_internal_rx_fcs_errors(), target);
   }
 
-  // uint64 out_octets = 10;
+  // uint64 out_octets = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_out_octets() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt64ToArray(10, this->_internal_out_octets(), target);
   }
 
-  // uint64 out_packets = 11;
+  // uint64 out_packets = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_out_packets() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt64ToArray(11, this->_internal_out_packets(), target);
   }
 
-  // uint64 out_unicast_pkts = 12;
+  // uint64 out_unicast_pkts = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_out_unicast_pkts() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt64ToArray(12, this->_internal_out_unicast_pkts(), target);
   }
 
-  // uint64 out_broadcast_pkts = 13;
+  // uint64 out_broadcast_pkts = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_out_broadcast_pkts() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt64ToArray(13, this->_internal_out_broadcast_pkts(), target);
   }
 
-  // uint64 out_multicast_pkts = 14;
+  // uint64 out_multicast_pkts = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_out_multicast_pkts() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt64ToArray(14, this->_internal_out_multicast_pkts(), target);
   }
 
-  // uint64 out_discards = 15;
+  // uint64 out_discards = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_out_discards() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt64ToArray(15, this->_internal_out_discards(), target);
   }
 
-  // uint64 out_errors = 16;
+  // uint64 out_errors = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_out_errors() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt64ToArray(16, this->_internal_out_errors(), target);
   }
 
-  // uint64 carrier_transitions = 17;
+  // uint64 carrier_transitions = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_carrier_transitions() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt64ToArray(17, this->_internal_carrier_transitions(), target);
   }
 
-  // uint64 last_clear = 18;
+  // uint64 last_clear = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_last_clear() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt64ToArray(18, this->_internal_last_clear(), target);
@@ -1366,96 +1378,96 @@ size_t Counters::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint64 rx_octets = 1;
+  // uint64 rx_octets = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_rx_octets() != 0) {
     total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_rx_octets());
   }
 
-  // uint64 rx_packets = 2;
+  // uint64 rx_packets = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_rx_packets() != 0) {
     total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_rx_packets());
   }
 
-  // uint64 rx_unicast_pkts = 3;
+  // uint64 rx_unicast_pkts = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_rx_unicast_pkts() != 0) {
     total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_rx_unicast_pkts());
   }
 
-  // uint64 rx_broadcast_pkts = 4;
+  // uint64 rx_broadcast_pkts = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_rx_broadcast_pkts() != 0) {
     total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_rx_broadcast_pkts());
   }
 
-  // uint64 rx_multicast_pkts = 5;
+  // uint64 rx_multicast_pkts = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_rx_multicast_pkts() != 0) {
     total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_rx_multicast_pkts());
   }
 
-  // uint64 rx_discards = 6;
+  // uint64 rx_discards = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_rx_discards() != 0) {
     total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_rx_discards());
   }
 
-  // uint64 rx_errors = 7;
+  // uint64 rx_errors = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_rx_errors() != 0) {
     total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_rx_errors());
   }
 
-  // uint64 rx_unknown_protos = 8;
+  // uint64 rx_unknown_protos = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_rx_unknown_protos() != 0) {
     total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_rx_unknown_protos());
   }
 
-  // uint64 rx_fcs_errors = 9;
+  // uint64 rx_fcs_errors = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_rx_fcs_errors() != 0) {
     total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_rx_fcs_errors());
   }
 
-  // uint64 out_octets = 10;
+  // uint64 out_octets = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_out_octets() != 0) {
     total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_out_octets());
   }
 
-  // uint64 out_packets = 11;
+  // uint64 out_packets = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_out_packets() != 0) {
     total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_out_packets());
   }
 
-  // uint64 out_unicast_pkts = 12;
+  // uint64 out_unicast_pkts = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_out_unicast_pkts() != 0) {
     total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_out_unicast_pkts());
   }
 
-  // uint64 out_broadcast_pkts = 13;
+  // uint64 out_broadcast_pkts = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_out_broadcast_pkts() != 0) {
     total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_out_broadcast_pkts());
   }
 
-  // uint64 out_multicast_pkts = 14;
+  // uint64 out_multicast_pkts = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_out_multicast_pkts() != 0) {
     total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_out_multicast_pkts());
   }
 
-  // uint64 out_discards = 15;
+  // uint64 out_discards = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_out_discards() != 0) {
     total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_out_discards());
   }
 
-  // uint64 out_errors = 16;
+  // uint64 out_errors = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_out_errors() != 0) {
     total_size += 2 +
       ::_pbi::WireFormatLite::UInt64Size(
         this->_internal_out_errors());
   }
 
-  // uint64 carrier_transitions = 17;
+  // uint64 carrier_transitions = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_carrier_transitions() != 0) {
     total_size += 2 +
       ::_pbi::WireFormatLite::UInt64Size(
         this->_internal_carrier_transitions());
   }
 
-  // uint64 last_clear = 18;
+  // uint64 last_clear = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_last_clear() != 0) {
     total_size += 2 +
       ::_pbi::WireFormatLite::UInt64Size(
@@ -1703,7 +1715,7 @@ const char* State::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // string name = 1;
+      // string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_name();
@@ -1713,7 +1725,7 @@ const char* State::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
         } else
           goto handle_unusual;
         continue;
-      // .opi_api.network.v1alpha1.InterfaceType type = 2;
+      // .opi_api.network.v1alpha1.InterfaceType type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
           uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
@@ -1722,7 +1734,7 @@ const char* State::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
         } else
           goto handle_unusual;
         continue;
-      // uint32 mtu = 3;
+      // uint32 mtu = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
           _impl_.mtu_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
@@ -1730,7 +1742,7 @@ const char* State::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
         } else
           goto handle_unusual;
         continue;
-      // bool loopback_mode = 4;
+      // bool loopback_mode = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
           _impl_.loopback_mode_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
@@ -1738,7 +1750,7 @@ const char* State::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
         } else
           goto handle_unusual;
         continue;
-      // string description = 5;
+      // string description = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
           auto str = _internal_mutable_description();
@@ -1748,7 +1760,7 @@ const char* State::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
         } else
           goto handle_unusual;
         continue;
-      // bool enabled = 6;
+      // bool enabled = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
       case 6:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
           _impl_.enabled_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
@@ -1756,7 +1768,7 @@ const char* State::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
         } else
           goto handle_unusual;
         continue;
-      // uint32 ifindex = 7;
+      // uint32 ifindex = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
       case 7:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 56)) {
           _impl_.ifindex_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
@@ -1764,7 +1776,7 @@ const char* State::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
         } else
           goto handle_unusual;
         continue;
-      // .opi_api.network.opinetcommon.v1alpha1.AdminState admin_state = 8;
+      // .opi_api.network.opinetcommon.v1alpha1.AdminState admin_state = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
       case 8:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 64)) {
           uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
@@ -1773,7 +1785,7 @@ const char* State::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
         } else
           goto handle_unusual;
         continue;
-      // .opi_api.network.v1alpha1.OperState oper_state = 9;
+      // .opi_api.network.v1alpha1.OperState oper_state = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
       case 9:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 72)) {
           uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
@@ -1782,7 +1794,7 @@ const char* State::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
         } else
           goto handle_unusual;
         continue;
-      // uint64 last_change = 10;
+      // uint64 last_change = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
       case 10:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 80)) {
           _impl_.last_change_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
@@ -1790,7 +1802,7 @@ const char* State::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
         } else
           goto handle_unusual;
         continue;
-      // bool logical = 11;
+      // bool logical = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
       case 11:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 88)) {
           _impl_.logical_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
@@ -1798,7 +1810,7 @@ const char* State::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
         } else
           goto handle_unusual;
         continue;
-      // bool management = 12;
+      // bool management = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
       case 12:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 96)) {
           _impl_.management_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
@@ -1806,7 +1818,7 @@ const char* State::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
         } else
           goto handle_unusual;
         continue;
-      // bool cpu = 13;
+      // bool cpu = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
       case 13:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 104)) {
           _impl_.cpu_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
@@ -1814,7 +1826,7 @@ const char* State::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
         } else
           goto handle_unusual;
         continue;
-      // .opi_api.network.v1alpha1.Counters counters = 14;
+      // .opi_api.network.v1alpha1.Counters counters = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
       case 14:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 114)) {
           ptr = ctx->ParseMessage(_internal_mutable_counters(), ptr);
@@ -1851,7 +1863,7 @@ uint8_t* State::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string name = 1;
+  // string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (!this->_internal_name().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
@@ -1861,26 +1873,26 @@ uint8_t* State::_InternalSerialize(
         1, this->_internal_name(), target);
   }
 
-  // .opi_api.network.v1alpha1.InterfaceType type = 2;
+  // .opi_api.network.v1alpha1.InterfaceType type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_type() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteEnumToArray(
       2, this->_internal_type(), target);
   }
 
-  // uint32 mtu = 3;
+  // uint32 mtu = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_mtu() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(3, this->_internal_mtu(), target);
   }
 
-  // bool loopback_mode = 4;
+  // bool loopback_mode = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_loopback_mode() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteBoolToArray(4, this->_internal_loopback_mode(), target);
   }
 
-  // string description = 5;
+  // string description = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (!this->_internal_description().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_description().data(), static_cast<int>(this->_internal_description().length()),
@@ -1890,57 +1902,57 @@ uint8_t* State::_InternalSerialize(
         5, this->_internal_description(), target);
   }
 
-  // bool enabled = 6;
+  // bool enabled = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_enabled() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteBoolToArray(6, this->_internal_enabled(), target);
   }
 
-  // uint32 ifindex = 7;
+  // uint32 ifindex = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_ifindex() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(7, this->_internal_ifindex(), target);
   }
 
-  // .opi_api.network.opinetcommon.v1alpha1.AdminState admin_state = 8;
+  // .opi_api.network.opinetcommon.v1alpha1.AdminState admin_state = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_admin_state() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteEnumToArray(
       8, this->_internal_admin_state(), target);
   }
 
-  // .opi_api.network.v1alpha1.OperState oper_state = 9;
+  // .opi_api.network.v1alpha1.OperState oper_state = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_oper_state() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteEnumToArray(
       9, this->_internal_oper_state(), target);
   }
 
-  // uint64 last_change = 10;
+  // uint64 last_change = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_last_change() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt64ToArray(10, this->_internal_last_change(), target);
   }
 
-  // bool logical = 11;
+  // bool logical = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_logical() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteBoolToArray(11, this->_internal_logical(), target);
   }
 
-  // bool management = 12;
+  // bool management = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_management() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteBoolToArray(12, this->_internal_management(), target);
   }
 
-  // bool cpu = 13;
+  // bool cpu = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_cpu() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteBoolToArray(13, this->_internal_cpu(), target);
   }
 
-  // .opi_api.network.v1alpha1.Counters counters = 14;
+  // .opi_api.network.v1alpha1.Counters counters = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_has_counters()) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(14, _Internal::counters(this),
@@ -1963,81 +1975,81 @@ size_t State::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string name = 1;
+  // string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (!this->_internal_name().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_name());
   }
 
-  // string description = 5;
+  // string description = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (!this->_internal_description().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_description());
   }
 
-  // .opi_api.network.v1alpha1.Counters counters = 14;
+  // .opi_api.network.v1alpha1.Counters counters = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_has_counters()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *_impl_.counters_);
   }
 
-  // .opi_api.network.v1alpha1.InterfaceType type = 2;
+  // .opi_api.network.v1alpha1.InterfaceType type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_type() != 0) {
     total_size += 1 +
       ::_pbi::WireFormatLite::EnumSize(this->_internal_type());
   }
 
-  // uint32 mtu = 3;
+  // uint32 mtu = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_mtu() != 0) {
     total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_mtu());
   }
 
-  // uint32 ifindex = 7;
+  // uint32 ifindex = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_ifindex() != 0) {
     total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_ifindex());
   }
 
-  // .opi_api.network.opinetcommon.v1alpha1.AdminState admin_state = 8;
+  // .opi_api.network.opinetcommon.v1alpha1.AdminState admin_state = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_admin_state() != 0) {
     total_size += 1 +
       ::_pbi::WireFormatLite::EnumSize(this->_internal_admin_state());
   }
 
-  // bool loopback_mode = 4;
+  // bool loopback_mode = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_loopback_mode() != 0) {
     total_size += 1 + 1;
   }
 
-  // bool enabled = 6;
+  // bool enabled = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_enabled() != 0) {
     total_size += 1 + 1;
   }
 
-  // bool logical = 11;
+  // bool logical = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_logical() != 0) {
     total_size += 1 + 1;
   }
 
-  // bool management = 12;
+  // bool management = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_management() != 0) {
     total_size += 1 + 1;
   }
 
-  // .opi_api.network.v1alpha1.OperState oper_state = 9;
+  // .opi_api.network.v1alpha1.OperState oper_state = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_oper_state() != 0) {
     total_size += 1 +
       ::_pbi::WireFormatLite::EnumSize(this->_internal_oper_state());
   }
 
-  // uint64 last_change = 10;
+  // uint64 last_change = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_last_change() != 0) {
     total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_last_change());
   }
 
-  // bool cpu = 13;
+  // bool cpu = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_cpu() != 0) {
     total_size += 1 + 1;
   }
@@ -2217,7 +2229,7 @@ const char* NetInterface_HoldTime_HoldConfig::_InternalParse(const char* ptr, ::
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // uint32 up = 1;
+      // uint32 up = 1 [(.google.api.field_behavior) = OPTIONAL];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
           _impl_.up_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
@@ -2225,7 +2237,7 @@ const char* NetInterface_HoldTime_HoldConfig::_InternalParse(const char* ptr, ::
         } else
           goto handle_unusual;
         continue;
-      // uint32 down = 2;
+      // uint32 down = 2 [(.google.api.field_behavior) = OPTIONAL];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
           _impl_.down_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
@@ -2262,13 +2274,13 @@ uint8_t* NetInterface_HoldTime_HoldConfig::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 up = 1;
+  // uint32 up = 1 [(.google.api.field_behavior) = OPTIONAL];
   if (this->_internal_up() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_up(), target);
   }
 
-  // uint32 down = 2;
+  // uint32 down = 2 [(.google.api.field_behavior) = OPTIONAL];
   if (this->_internal_down() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(2, this->_internal_down(), target);
@@ -2290,12 +2302,12 @@ size_t NetInterface_HoldTime_HoldConfig::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint32 up = 1;
+  // uint32 up = 1 [(.google.api.field_behavior) = OPTIONAL];
   if (this->_internal_up() != 0) {
     total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_up());
   }
 
-  // uint32 down = 2;
+  // uint32 down = 2 [(.google.api.field_behavior) = OPTIONAL];
   if (this->_internal_down() != 0) {
     total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_down());
   }
@@ -2428,7 +2440,7 @@ const char* NetInterface_HoldTime_HoldState::_InternalParse(const char* ptr, ::_
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // uint32 up = 1;
+      // uint32 up = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
           _impl_.up_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
@@ -2436,7 +2448,7 @@ const char* NetInterface_HoldTime_HoldState::_InternalParse(const char* ptr, ::_
         } else
           goto handle_unusual;
         continue;
-      // uint32 down = 2;
+      // uint32 down = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
           _impl_.down_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
@@ -2473,13 +2485,13 @@ uint8_t* NetInterface_HoldTime_HoldState::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 up = 1;
+  // uint32 up = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_up() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_up(), target);
   }
 
-  // uint32 down = 2;
+  // uint32 down = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_down() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(2, this->_internal_down(), target);
@@ -2501,12 +2513,12 @@ size_t NetInterface_HoldTime_HoldState::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint32 up = 1;
+  // uint32 up = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_up() != 0) {
     total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_up());
   }
 
-  // uint32 down = 2;
+  // uint32 down = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_down() != 0) {
     total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_down());
   }
@@ -2659,7 +2671,7 @@ const char* NetInterface_HoldTime::_InternalParse(const char* ptr, ::_pbi::Parse
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .opi_api.network.v1alpha1.NetInterface.HoldTime.HoldConfig hold_config = 1;
+      // .opi_api.network.v1alpha1.NetInterface.HoldTime.HoldConfig hold_config = 1 [(.google.api.field_behavior) = OPTIONAL];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_hold_config(), ptr);
@@ -2667,7 +2679,7 @@ const char* NetInterface_HoldTime::_InternalParse(const char* ptr, ::_pbi::Parse
         } else
           goto handle_unusual;
         continue;
-      // .opi_api.network.v1alpha1.NetInterface.HoldTime.HoldState hold_state = 2;
+      // .opi_api.network.v1alpha1.NetInterface.HoldTime.HoldState hold_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_hold_state(), ptr);
@@ -2704,14 +2716,14 @@ uint8_t* NetInterface_HoldTime::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .opi_api.network.v1alpha1.NetInterface.HoldTime.HoldConfig hold_config = 1;
+  // .opi_api.network.v1alpha1.NetInterface.HoldTime.HoldConfig hold_config = 1 [(.google.api.field_behavior) = OPTIONAL];
   if (this->_internal_has_hold_config()) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(1, _Internal::hold_config(this),
         _Internal::hold_config(this).GetCachedSize(), target, stream);
   }
 
-  // .opi_api.network.v1alpha1.NetInterface.HoldTime.HoldState hold_state = 2;
+  // .opi_api.network.v1alpha1.NetInterface.HoldTime.HoldState hold_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_has_hold_state()) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(2, _Internal::hold_state(this),
@@ -2734,14 +2746,14 @@ size_t NetInterface_HoldTime::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .opi_api.network.v1alpha1.NetInterface.HoldTime.HoldConfig hold_config = 1;
+  // .opi_api.network.v1alpha1.NetInterface.HoldTime.HoldConfig hold_config = 1 [(.google.api.field_behavior) = OPTIONAL];
   if (this->_internal_has_hold_config()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *_impl_.hold_config_);
   }
 
-  // .opi_api.network.v1alpha1.NetInterface.HoldTime.HoldState hold_state = 2;
+  // .opi_api.network.v1alpha1.NetInterface.HoldTime.HoldState hold_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_has_hold_state()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -2894,7 +2906,7 @@ const char* NetInterface_Subinterfaces_Subinterface_SubifConfig::_InternalParse(
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // uint64 index = 1;
+      // uint64 index = 1 [(.google.api.field_behavior) = OPTIONAL];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
           _impl_.index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
@@ -2902,7 +2914,7 @@ const char* NetInterface_Subinterfaces_Subinterface_SubifConfig::_InternalParse(
         } else
           goto handle_unusual;
         continue;
-      // string description = 2;
+      // string description = 2 [(.google.api.field_behavior) = OPTIONAL];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           auto str = _internal_mutable_description();
@@ -2912,7 +2924,7 @@ const char* NetInterface_Subinterfaces_Subinterface_SubifConfig::_InternalParse(
         } else
           goto handle_unusual;
         continue;
-      // bool enabled = 3;
+      // bool enabled = 3 [(.google.api.field_behavior) = OPTIONAL];
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
           _impl_.enabled_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
@@ -2949,13 +2961,13 @@ uint8_t* NetInterface_Subinterfaces_Subinterface_SubifConfig::_InternalSerialize
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint64 index = 1;
+  // uint64 index = 1 [(.google.api.field_behavior) = OPTIONAL];
   if (this->_internal_index() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt64ToArray(1, this->_internal_index(), target);
   }
 
-  // string description = 2;
+  // string description = 2 [(.google.api.field_behavior) = OPTIONAL];
   if (!this->_internal_description().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_description().data(), static_cast<int>(this->_internal_description().length()),
@@ -2965,7 +2977,7 @@ uint8_t* NetInterface_Subinterfaces_Subinterface_SubifConfig::_InternalSerialize
         2, this->_internal_description(), target);
   }
 
-  // bool enabled = 3;
+  // bool enabled = 3 [(.google.api.field_behavior) = OPTIONAL];
   if (this->_internal_enabled() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteBoolToArray(3, this->_internal_enabled(), target);
@@ -2987,19 +2999,19 @@ size_t NetInterface_Subinterfaces_Subinterface_SubifConfig::ByteSizeLong() const
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string description = 2;
+  // string description = 2 [(.google.api.field_behavior) = OPTIONAL];
   if (!this->_internal_description().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_description());
   }
 
-  // uint64 index = 1;
+  // uint64 index = 1 [(.google.api.field_behavior) = OPTIONAL];
   if (this->_internal_index() != 0) {
     total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_index());
   }
 
-  // bool enabled = 3;
+  // bool enabled = 3 [(.google.api.field_behavior) = OPTIONAL];
   if (this->_internal_enabled() != 0) {
     total_size += 1 + 1;
   }
@@ -3165,7 +3177,7 @@ const char* NetInterface_Subinterfaces_Subinterface::_InternalParse(const char* 
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // int64 index = 1;
+      // int64 index = 1 [(.google.api.field_behavior) = OPTIONAL];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
           _impl_.index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
@@ -3173,7 +3185,7 @@ const char* NetInterface_Subinterfaces_Subinterface::_InternalParse(const char* 
         } else
           goto handle_unusual;
         continue;
-      // .opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface.SubifConfig subif_config = 2;
+      // .opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface.SubifConfig subif_config = 2 [(.google.api.field_behavior) = OPTIONAL];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_subif_config(), ptr);
@@ -3181,7 +3193,7 @@ const char* NetInterface_Subinterfaces_Subinterface::_InternalParse(const char* 
         } else
           goto handle_unusual;
         continue;
-      // .opi_api.network.v1alpha1.State state = 3;
+      // .opi_api.network.v1alpha1.State state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           ptr = ctx->ParseMessage(_internal_mutable_state(), ptr);
@@ -3218,20 +3230,20 @@ uint8_t* NetInterface_Subinterfaces_Subinterface::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // int64 index = 1;
+  // int64 index = 1 [(.google.api.field_behavior) = OPTIONAL];
   if (this->_internal_index() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteInt64ToArray(1, this->_internal_index(), target);
   }
 
-  // .opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface.SubifConfig subif_config = 2;
+  // .opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface.SubifConfig subif_config = 2 [(.google.api.field_behavior) = OPTIONAL];
   if (this->_internal_has_subif_config()) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(2, _Internal::subif_config(this),
         _Internal::subif_config(this).GetCachedSize(), target, stream);
   }
 
-  // .opi_api.network.v1alpha1.State state = 3;
+  // .opi_api.network.v1alpha1.State state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_has_state()) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(3, _Internal::state(this),
@@ -3254,21 +3266,21 @@ size_t NetInterface_Subinterfaces_Subinterface::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface.SubifConfig subif_config = 2;
+  // .opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface.SubifConfig subif_config = 2 [(.google.api.field_behavior) = OPTIONAL];
   if (this->_internal_has_subif_config()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *_impl_.subif_config_);
   }
 
-  // .opi_api.network.v1alpha1.State state = 3;
+  // .opi_api.network.v1alpha1.State state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_has_state()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *_impl_.state_);
   }
 
-  // int64 index = 1;
+  // int64 index = 1 [(.google.api.field_behavior) = OPTIONAL];
   if (this->_internal_index() != 0) {
     total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(this->_internal_index());
   }
@@ -3400,7 +3412,7 @@ const char* NetInterface_Subinterfaces::_InternalParse(const char* ptr, ::_pbi::
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // repeated .opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface subinterface = 2;
+      // repeated .opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface subinterface = 2 [(.google.api.field_behavior) = OPTIONAL];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr -= 1;
@@ -3442,7 +3454,7 @@ uint8_t* NetInterface_Subinterfaces::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated .opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface subinterface = 2;
+  // repeated .opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface subinterface = 2 [(.google.api.field_behavior) = OPTIONAL];
   for (unsigned i = 0,
       n = static_cast<unsigned>(this->_internal_subinterface_size()); i < n; i++) {
     const auto& repfield = this->_internal_subinterface(i);
@@ -3466,7 +3478,7 @@ size_t NetInterface_Subinterfaces::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface subinterface = 2;
+  // repeated .opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface subinterface = 2 [(.google.api.field_behavior) = OPTIONAL];
   total_size += 1UL * this->_internal_subinterface_size();
   for (const auto& msg : this->_impl_.subinterface_) {
     total_size +=
@@ -3657,7 +3669,7 @@ const char* NetInterface::_InternalParse(const char* ptr, ::_pbi::ParseContext* 
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // string name = 1;
+      // string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_name();
@@ -3667,7 +3679,7 @@ const char* NetInterface::_InternalParse(const char* ptr, ::_pbi::ParseContext* 
         } else
           goto handle_unusual;
         continue;
-      // .opi_api.network.v1alpha1.Config config = 2;
+      // .opi_api.network.v1alpha1.Config config = 2 [(.google.api.field_behavior) = REQUIRED];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_config(), ptr);
@@ -3675,7 +3687,7 @@ const char* NetInterface::_InternalParse(const char* ptr, ::_pbi::ParseContext* 
         } else
           goto handle_unusual;
         continue;
-      // .opi_api.network.v1alpha1.State state = 3;
+      // .opi_api.network.v1alpha1.State state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           ptr = ctx->ParseMessage(_internal_mutable_state(), ptr);
@@ -3683,7 +3695,7 @@ const char* NetInterface::_InternalParse(const char* ptr, ::_pbi::ParseContext* 
         } else
           goto handle_unusual;
         continue;
-      // .opi_api.network.v1alpha1.NetInterface.HoldTime holdtime = 4;
+      // .opi_api.network.v1alpha1.NetInterface.HoldTime holdtime = 4 [(.google.api.field_behavior) = OPTIONAL];
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
           ptr = ctx->ParseMessage(_internal_mutable_holdtime(), ptr);
@@ -3691,7 +3703,7 @@ const char* NetInterface::_InternalParse(const char* ptr, ::_pbi::ParseContext* 
         } else
           goto handle_unusual;
         continue;
-      // .opi_api.network.v1alpha1.NetInterface.Subinterfaces subinterfaces = 5;
+      // .opi_api.network.v1alpha1.NetInterface.Subinterfaces subinterfaces = 5 [(.google.api.field_behavior) = OPTIONAL];
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
           ptr = ctx->ParseMessage(_internal_mutable_subinterfaces(), ptr);
@@ -3728,7 +3740,7 @@ uint8_t* NetInterface::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string name = 1;
+  // string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {
   if (!this->_internal_name().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
@@ -3738,28 +3750,28 @@ uint8_t* NetInterface::_InternalSerialize(
         1, this->_internal_name(), target);
   }
 
-  // .opi_api.network.v1alpha1.Config config = 2;
+  // .opi_api.network.v1alpha1.Config config = 2 [(.google.api.field_behavior) = REQUIRED];
   if (this->_internal_has_config()) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(2, _Internal::config(this),
         _Internal::config(this).GetCachedSize(), target, stream);
   }
 
-  // .opi_api.network.v1alpha1.State state = 3;
+  // .opi_api.network.v1alpha1.State state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_has_state()) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(3, _Internal::state(this),
         _Internal::state(this).GetCachedSize(), target, stream);
   }
 
-  // .opi_api.network.v1alpha1.NetInterface.HoldTime holdtime = 4;
+  // .opi_api.network.v1alpha1.NetInterface.HoldTime holdtime = 4 [(.google.api.field_behavior) = OPTIONAL];
   if (this->_internal_has_holdtime()) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(4, _Internal::holdtime(this),
         _Internal::holdtime(this).GetCachedSize(), target, stream);
   }
 
-  // .opi_api.network.v1alpha1.NetInterface.Subinterfaces subinterfaces = 5;
+  // .opi_api.network.v1alpha1.NetInterface.Subinterfaces subinterfaces = 5 [(.google.api.field_behavior) = OPTIONAL];
   if (this->_internal_has_subinterfaces()) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(5, _Internal::subinterfaces(this),
@@ -3782,35 +3794,35 @@ size_t NetInterface::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string name = 1;
+  // string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {
   if (!this->_internal_name().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_name());
   }
 
-  // .opi_api.network.v1alpha1.Config config = 2;
+  // .opi_api.network.v1alpha1.Config config = 2 [(.google.api.field_behavior) = REQUIRED];
   if (this->_internal_has_config()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *_impl_.config_);
   }
 
-  // .opi_api.network.v1alpha1.State state = 3;
+  // .opi_api.network.v1alpha1.State state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
   if (this->_internal_has_state()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *_impl_.state_);
   }
 
-  // .opi_api.network.v1alpha1.NetInterface.HoldTime holdtime = 4;
+  // .opi_api.network.v1alpha1.NetInterface.HoldTime holdtime = 4 [(.google.api.field_behavior) = OPTIONAL];
   if (this->_internal_has_holdtime()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *_impl_.holdtime_);
   }
 
-  // .opi_api.network.v1alpha1.NetInterface.Subinterfaces subinterfaces = 5;
+  // .opi_api.network.v1alpha1.NetInterface.Subinterfaces subinterfaces = 5 [(.google.api.field_behavior) = OPTIONAL];
   if (this->_internal_has_subinterfaces()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -4203,7 +4215,7 @@ const char* ListNetInterfacesRequest::_InternalParse(const char* ptr, ::_pbi::Pa
         } else
           goto handle_unusual;
         continue;
-      // int32 page_size = 2;
+      // int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
           _impl_.page_size_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
@@ -4211,7 +4223,7 @@ const char* ListNetInterfacesRequest::_InternalParse(const char* ptr, ::_pbi::Pa
         } else
           goto handle_unusual;
         continue;
-      // string page_token = 3;
+      // string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           auto str = _internal_mutable_page_token();
@@ -4260,13 +4272,13 @@ uint8_t* ListNetInterfacesRequest::_InternalSerialize(
         1, this->_internal_parent(), target);
   }
 
-  // int32 page_size = 2;
+  // int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];
   if (this->_internal_page_size() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteInt32ToArray(2, this->_internal_page_size(), target);
   }
 
-  // string page_token = 3;
+  // string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];
   if (!this->_internal_page_token().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_page_token().data(), static_cast<int>(this->_internal_page_token().length()),
@@ -4299,14 +4311,14 @@ size_t ListNetInterfacesRequest::ByteSizeLong() const {
         this->_internal_parent());
   }
 
-  // string page_token = 3;
+  // string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];
   if (!this->_internal_page_token().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_page_token());
   }
 
-  // int32 page_size = 2;
+  // int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];
   if (this->_internal_page_size() != 0) {
     total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_page_size());
   }
@@ -4645,6 +4657,7 @@ UpdateNetInterfaceRequest::UpdateNetInterfaceRequest(const UpdateNetInterfaceReq
   new (&_impl_) Impl_{
       decltype(_impl_.net_interface_){nullptr}
     , decltype(_impl_.update_mask_){nullptr}
+    , decltype(_impl_.allow_missing_){}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
@@ -4654,6 +4667,7 @@ UpdateNetInterfaceRequest::UpdateNetInterfaceRequest(const UpdateNetInterfaceReq
   if (from._internal_has_update_mask()) {
     _this->_impl_.update_mask_ = new ::PROTOBUF_NAMESPACE_ID::FieldMask(*from._impl_.update_mask_);
   }
+  _this->_impl_.allow_missing_ = from._impl_.allow_missing_;
   // @@protoc_insertion_point(copy_constructor:opi_api.network.v1alpha1.UpdateNetInterfaceRequest)
 }
 
@@ -4664,6 +4678,7 @@ inline void UpdateNetInterfaceRequest::SharedCtor(
   new (&_impl_) Impl_{
       decltype(_impl_.net_interface_){nullptr}
     , decltype(_impl_.update_mask_){nullptr}
+    , decltype(_impl_.allow_missing_){false}
     , /*decltype(_impl_._cached_size_)*/{}
   };
 }
@@ -4701,6 +4716,7 @@ void UpdateNetInterfaceRequest::Clear() {
     delete _impl_.update_mask_;
   }
   _impl_.update_mask_ = nullptr;
+  _impl_.allow_missing_ = false;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -4710,7 +4726,7 @@ const char* UpdateNetInterfaceRequest::_InternalParse(const char* ptr, ::_pbi::P
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .opi_api.network.v1alpha1.NetInterface net_interface = 1;
+      // .opi_api.network.v1alpha1.NetInterface net_interface = 1 [(.google.api.field_behavior) = REQUIRED];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_net_interface(), ptr);
@@ -4718,10 +4734,18 @@ const char* UpdateNetInterfaceRequest::_InternalParse(const char* ptr, ::_pbi::P
         } else
           goto handle_unusual;
         continue;
-      // .google.protobuf.FieldMask update_mask = 2;
+      // .google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_update_mask(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // bool allow_missing = 3 [(.google.api.field_behavior) = OPTIONAL];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
+          _impl_.allow_missing_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -4755,18 +4779,24 @@ uint8_t* UpdateNetInterfaceRequest::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .opi_api.network.v1alpha1.NetInterface net_interface = 1;
+  // .opi_api.network.v1alpha1.NetInterface net_interface = 1 [(.google.api.field_behavior) = REQUIRED];
   if (this->_internal_has_net_interface()) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(1, _Internal::net_interface(this),
         _Internal::net_interface(this).GetCachedSize(), target, stream);
   }
 
-  // .google.protobuf.FieldMask update_mask = 2;
+  // .google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
   if (this->_internal_has_update_mask()) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(2, _Internal::update_mask(this),
         _Internal::update_mask(this).GetCachedSize(), target, stream);
+  }
+
+  // bool allow_missing = 3 [(.google.api.field_behavior) = OPTIONAL];
+  if (this->_internal_allow_missing() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(3, this->_internal_allow_missing(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -4785,18 +4815,23 @@ size_t UpdateNetInterfaceRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .opi_api.network.v1alpha1.NetInterface net_interface = 1;
+  // .opi_api.network.v1alpha1.NetInterface net_interface = 1 [(.google.api.field_behavior) = REQUIRED];
   if (this->_internal_has_net_interface()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *_impl_.net_interface_);
   }
 
-  // .google.protobuf.FieldMask update_mask = 2;
+  // .google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
   if (this->_internal_has_update_mask()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *_impl_.update_mask_);
+  }
+
+  // bool allow_missing = 3 [(.google.api.field_behavior) = OPTIONAL];
+  if (this->_internal_allow_missing() != 0) {
+    total_size += 1 + 1;
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
@@ -4825,6 +4860,9 @@ void UpdateNetInterfaceRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_m
     _this->_internal_mutable_update_mask()->::PROTOBUF_NAMESPACE_ID::FieldMask::MergeFrom(
         from._internal_update_mask());
   }
+  if (from._internal_allow_missing() != 0) {
+    _this->_internal_set_allow_missing(from._internal_allow_missing());
+  }
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -4843,8 +4881,8 @@ void UpdateNetInterfaceRequest::InternalSwap(UpdateNetInterfaceRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(UpdateNetInterfaceRequest, _impl_.update_mask_)
-      + sizeof(UpdateNetInterfaceRequest::_impl_.update_mask_)
+      PROTOBUF_FIELD_OFFSET(UpdateNetInterfaceRequest, _impl_.allow_missing_)
+      + sizeof(UpdateNetInterfaceRequest::_impl_.allow_missing_)
       - PROTOBUF_FIELD_OFFSET(UpdateNetInterfaceRequest, _impl_.net_interface_)>(
           reinterpret_cast<char*>(&_impl_.net_interface_),
           reinterpret_cast<char*>(&other->_impl_.net_interface_));

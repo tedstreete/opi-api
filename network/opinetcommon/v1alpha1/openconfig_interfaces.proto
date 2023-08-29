@@ -54,57 +54,57 @@ service NetInterfaceService {
 message Config {
     // Name of the interface.  This is the opaque object
     // used for designating the created interface.
-    string name = 1;
+    string name = 1 [(google.api.field_behavior) = REQUIRED];
     // Type of interface - Ethernet and others
-    InterfaceType type = 2;
+    InterfaceType type = 2 [(google.api.field_behavior) = REQUIRED];
     // MTU for the interface that can be configured
-    uint32 mtu = 3;
+    uint32 mtu = 3 [(google.api.field_behavior) = REQUIRED];
     // Setting the loopback mode of the interface
-    bool loopback_mode = 4;
+    bool loopback_mode = 4 [(google.api.field_behavior) = REQUIRED];
     // Description of the interface and usage
-    string description = 5;
+    string description = 5 [(google.api.field_behavior) = REQUIRED];
     // Setting for enabling/disabling the interface
-    bool enabled = 6;
+    bool enabled = 6 [(google.api.field_behavior) = REQUIRED];
 }
 
 // Statistics Counters for the interface - ro
 message Counters {
     // Received Octet counter
-    uint64 rx_octets = 1;
+    uint64 rx_octets = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
     // Received Packet counter
-    uint64 rx_packets = 2;
+    uint64 rx_packets = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
     // Unicast packets received counter
-    uint64 rx_unicast_pkts = 3;
+    uint64 rx_unicast_pkts = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
     // Broadcast packets received counter
-    uint64 rx_broadcast_pkts = 4;
+    uint64 rx_broadcast_pkts = 4 [(google.api.field_behavior) = OUTPUT_ONLY];
     // multicast packets received counter
-    uint64 rx_multicast_pkts = 5;
+    uint64 rx_multicast_pkts = 5 [(google.api.field_behavior) = OUTPUT_ONLY];
     // discarded received packets counter
-    uint64 rx_discards = 6;
+    uint64 rx_discards = 6 [(google.api.field_behavior) = OUTPUT_ONLY];
     // Receive error counter
-    uint64 rx_errors = 7;
+    uint64 rx_errors = 7 [(google.api.field_behavior) = OUTPUT_ONLY];
     // Unknown received protocol counter
-    uint64 rx_unknown_protos = 8;
+    uint64 rx_unknown_protos = 8 [(google.api.field_behavior) = OUTPUT_ONLY];
     // Received FCS error counter
-    uint64 rx_fcs_errors = 9;
+    uint64 rx_fcs_errors = 9 [(google.api.field_behavior) = OUTPUT_ONLY];
     // Transmit octet counter
-    uint64 out_octets = 10;
+    uint64 out_octets = 10 [(google.api.field_behavior) = OUTPUT_ONLY];
     // Transmit packet counter
-    uint64 out_packets = 11;
+    uint64 out_packets = 11 [(google.api.field_behavior) = OUTPUT_ONLY];
     // Unicast packet transmit counter
-    uint64 out_unicast_pkts = 12;
+    uint64 out_unicast_pkts = 12 [(google.api.field_behavior) = OUTPUT_ONLY];
     // Broadcast packet transmit counter
-    uint64 out_broadcast_pkts = 13;
+    uint64 out_broadcast_pkts = 13 [(google.api.field_behavior) = OUTPUT_ONLY];
     // Multicast packet transmit counter
-    uint64 out_multicast_pkts = 14;
+    uint64 out_multicast_pkts = 14 [(google.api.field_behavior) = OUTPUT_ONLY];
     // Discarded transmit packet counter
-    uint64 out_discards = 15;
+    uint64 out_discards = 15 [(google.api.field_behavior) = OUTPUT_ONLY];
     // Transmit error counter
-    uint64 out_errors = 16;
+    uint64 out_errors = 16 [(google.api.field_behavior) = OUTPUT_ONLY];
     // Carrier transition count
-    uint64 carrier_transitions = 17;
+    uint64 carrier_transitions = 17 [(google.api.field_behavior) = OUTPUT_ONLY];
     // Last Clear
-    uint64 last_clear = 18;
+    uint64 last_clear = 18 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
 // Interface State information - ro
@@ -113,33 +113,33 @@ message Counters {
 message State {
     // Name of the interface.  This is the opaque object
     // used for designating the created interface.
-    string name = 1;
+    string name = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
     // Interface type indicator
-    InterfaceType type = 2;
+    InterfaceType type = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
     // Configured MTU size
-    uint32 mtu = 3;
+    uint32 mtu = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
     // Configured Loopback mode
-    bool loopback_mode = 4;
+    bool loopback_mode = 4 [(google.api.field_behavior) = OUTPUT_ONLY];
     // Interface description
-    string description = 5;
+    string description = 5 [(google.api.field_behavior) = OUTPUT_ONLY];
     // Interface enabled indicator
-    bool enabled = 6;
+    bool enabled = 6 [(google.api.field_behavior) = OUTPUT_ONLY];
     // Interface Index
-    uint32 ifindex = 7;
+    uint32 ifindex = 7 [(google.api.field_behavior) = OUTPUT_ONLY];
     // Admin State
-    network.opinetcommon.v1alpha1.AdminState admin_state = 8;
+    network.opinetcommon.v1alpha1.AdminState admin_state = 8 [(google.api.field_behavior) = OUTPUT_ONLY];
     // Operational State
-    OperState oper_state = 9;
+    OperState oper_state = 9 [(google.api.field_behavior) = OUTPUT_ONLY];
     // Last Change
-    uint64 last_change = 10;
+    uint64 last_change = 10 [(google.api.field_behavior) = OUTPUT_ONLY];
     // Logical interface
-    bool logical = 11;
+    bool logical = 11 [(google.api.field_behavior) = OUTPUT_ONLY];
     // Management interface indicator
-    bool management = 12;
+    bool management = 12 [(google.api.field_behavior) = OUTPUT_ONLY];
     // CPU
-    bool cpu = 13;
+    bool cpu = 13 [(google.api.field_behavior) = OUTPUT_ONLY];
     // Interface Statistics Counters
-    Counters counters = 14;
+    Counters counters = 14 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
 //Interface - physical or virtual interface reported
@@ -148,64 +148,68 @@ message State {
 message NetInterface {
     // Name of the interface.  This is an opaque object that is not
     // user settable.  It is returned by the created object
-    string name = 1;
+    string name             = 1 [
+        (google.api.field_behavior) = OUTPUT_ONLY,
+        (google.api.field_behavior) = IMMUTABLE,
+        (google.api.resource_reference).type = "opi_api.network.opinetcommon.v1alpha1/NetInterface"
+    ];
     // Configuration settings - rw
-    Config config = 2;
+    Config config = 2 [(google.api.field_behavior) = REQUIRED];
     // Interface State and Statistics - ro
-    State state = 3;
+    State state = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
 
     // Hold Time Settings
     message HoldTime {
         // Hold Time Config - rw
         message HoldConfig {
             // Hold time up
-            uint32 up = 1;
+            uint32 up = 1 [(google.api.field_behavior) = OPTIONAL];
             // Hold time down
-            uint32 down = 2;
+            uint32 down = 2 [(google.api.field_behavior) = OPTIONAL];
         }
         // Hold Time Config
-        HoldConfig hold_config = 1;
+        HoldConfig hold_config = 1 [(google.api.field_behavior) = OPTIONAL];
 
         // Hold State Settings - ro
         message HoldState {
             // Hold state up
-            uint32 up = 1;
+            uint32 up = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
             // Hold state down
-            uint32 down = 2;
+            uint32 down = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
         }
         // Hold State Settings
-        HoldState hold_state = 2;
+        HoldState hold_state = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
     }
     // Hold Time Settings
-    HoldTime holdtime = 4;
+    HoldTime holdtime = 4 [(google.api.field_behavior) = OPTIONAL];
 
     // Subinterfaces settings - VLAN, etc.
     message Subinterfaces {
         // Subinterface settings
         message Subinterface {
             // Subinterface index
-            int64 index = 1;
+            int64 index = 1 [(google.api.field_behavior) = OPTIONAL];
 
             // Subinterface configuration
             message SubifConfig {
                 // Subinterface Index
-                uint64 index = 1;
+                uint64 index = 1 [(google.api.field_behavior) = OPTIONAL];
                 // Subinterface description
-                string description = 2;
+                string description = 2 [(google.api.field_behavior) = OPTIONAL];
                 // Subinterface enabled
-                bool enabled = 3;
+                bool enabled = 3 [(google.api.field_behavior) = OPTIONAL];
             }
             // Subinterface Configuration
-            SubifConfig subif_config = 2;
+            SubifConfig subif_config = 2 [(google.api.field_behavior) = OPTIONAL];
 
             // Subinterface State and Statistics
-            State state = 3;
+            State state = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
         }
         // Subinterface Settings
-        repeated Subinterface subinterface = 2;
+        repeated Subinterface subinterface = 2 [(google.api.field_behavior) = OPTIONAL];
     }
     // Subinterfaces assigned to the interface
-    Subinterfaces subinterfaces = 5;
+    Subinterfaces subinterfaces = 5 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Get Interface Request
@@ -225,9 +229,9 @@ message ListNetInterfacesRequest {
         (google.api.resource_reference).type = "opi_api.network.v1/Interfaces"
     ];
     // page size
-    int32 page_size = 2;
+    int32 page_size = 2 [(google.api.field_behavior) = OPTIONAL];
     // page token
-    string page_token = 3;
+    string page_token = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // List of Interfaces Response
@@ -241,9 +245,12 @@ message ListNetInterfacesResponse {
 // Update Interface Request
 message UpdateNetInterfaceRequest {
     // Interface update settings
-    NetInterface net_interface = 1;
-    // list of fields to update
-    google.protobuf.FieldMask update_mask = 2;
+    NetInterface net_interface = 1 [(google.api.field_behavior) = REQUIRED];
+    // The list of fields to update.
+    google.protobuf.FieldMask update_mask = 2  [(google.api.field_behavior) = OPTIONAL];
+    // If set to true, and the object is not found, a new object will be created.
+    // In this situation, `update_mask` is ignored.
+    bool allow_missing = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Interface Types Enumeration

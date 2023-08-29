@@ -13,7 +13,7 @@ public interface StateOrBuilder extends
    * used for designating the created interface.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The name.
    */
   java.lang.String getName();
@@ -23,7 +23,7 @@ public interface StateOrBuilder extends
    * used for designating the created interface.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString
@@ -34,7 +34,7 @@ public interface StateOrBuilder extends
    * Interface type indicator
    * </pre>
    *
-   * <code>.opi_api.network.v1alpha1.InterfaceType type = 2;</code>
+   * <code>.opi_api.network.v1alpha1.InterfaceType type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
@@ -43,7 +43,7 @@ public interface StateOrBuilder extends
    * Interface type indicator
    * </pre>
    *
-   * <code>.opi_api.network.v1alpha1.InterfaceType type = 2;</code>
+   * <code>.opi_api.network.v1alpha1.InterfaceType type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The type.
    */
   opi_api.network.v1alpha1.InterfaceType getType();
@@ -53,7 +53,7 @@ public interface StateOrBuilder extends
    * Configured MTU size
    * </pre>
    *
-   * <code>uint32 mtu = 3;</code>
+   * <code>uint32 mtu = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The mtu.
    */
   int getMtu();
@@ -63,7 +63,7 @@ public interface StateOrBuilder extends
    * Configured Loopback mode
    * </pre>
    *
-   * <code>bool loopback_mode = 4;</code>
+   * <code>bool loopback_mode = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The loopbackMode.
    */
   boolean getLoopbackMode();
@@ -73,7 +73,7 @@ public interface StateOrBuilder extends
    * Interface description
    * </pre>
    *
-   * <code>string description = 5;</code>
+   * <code>string description = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The description.
    */
   java.lang.String getDescription();
@@ -82,7 +82,7 @@ public interface StateOrBuilder extends
    * Interface description
    * </pre>
    *
-   * <code>string description = 5;</code>
+   * <code>string description = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The bytes for description.
    */
   com.google.protobuf.ByteString
@@ -93,7 +93,7 @@ public interface StateOrBuilder extends
    * Interface enabled indicator
    * </pre>
    *
-   * <code>bool enabled = 6;</code>
+   * <code>bool enabled = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The enabled.
    */
   boolean getEnabled();
@@ -103,7 +103,7 @@ public interface StateOrBuilder extends
    * Interface Index
    * </pre>
    *
-   * <code>uint32 ifindex = 7;</code>
+   * <code>uint32 ifindex = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The ifindex.
    */
   int getIfindex();
@@ -113,7 +113,7 @@ public interface StateOrBuilder extends
    * Admin State
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.AdminState admin_state = 8;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.AdminState admin_state = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The enum numeric value on the wire for adminState.
    */
   int getAdminStateValue();
@@ -122,7 +122,7 @@ public interface StateOrBuilder extends
    * Admin State
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.AdminState admin_state = 8;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.AdminState admin_state = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The adminState.
    */
   opi_api.network.opinetcommon.v1alpha1.AdminState getAdminState();
@@ -132,7 +132,7 @@ public interface StateOrBuilder extends
    * Operational State
    * </pre>
    *
-   * <code>.opi_api.network.v1alpha1.OperState oper_state = 9;</code>
+   * <code>.opi_api.network.v1alpha1.OperState oper_state = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The enum numeric value on the wire for operState.
    */
   int getOperStateValue();
@@ -141,7 +141,7 @@ public interface StateOrBuilder extends
    * Operational State
    * </pre>
    *
-   * <code>.opi_api.network.v1alpha1.OperState oper_state = 9;</code>
+   * <code>.opi_api.network.v1alpha1.OperState oper_state = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The operState.
    */
   opi_api.network.v1alpha1.OperState getOperState();
@@ -151,7 +151,7 @@ public interface StateOrBuilder extends
    * Last Change
    * </pre>
    *
-   * <code>uint64 last_change = 10;</code>
+   * <code>uint64 last_change = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The lastChange.
    */
   long getLastChange();
@@ -161,7 +161,7 @@ public interface StateOrBuilder extends
    * Logical interface
    * </pre>
    *
-   * <code>bool logical = 11;</code>
+   * <code>bool logical = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The logical.
    */
   boolean getLogical();
@@ -171,7 +171,7 @@ public interface StateOrBuilder extends
    * Management interface indicator
    * </pre>
    *
-   * <code>bool management = 12;</code>
+   * <code>bool management = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The management.
    */
   boolean getManagement();
@@ -181,7 +181,7 @@ public interface StateOrBuilder extends
    * CPU
    * </pre>
    *
-   * <code>bool cpu = 13;</code>
+   * <code>bool cpu = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The cpu.
    */
   boolean getCpu();
@@ -191,7 +191,7 @@ public interface StateOrBuilder extends
    * Interface Statistics Counters
    * </pre>
    *
-   * <code>.opi_api.network.v1alpha1.Counters counters = 14;</code>
+   * <code>.opi_api.network.v1alpha1.Counters counters = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return Whether the counters field is set.
    */
   boolean hasCounters();
@@ -200,7 +200,7 @@ public interface StateOrBuilder extends
    * Interface Statistics Counters
    * </pre>
    *
-   * <code>.opi_api.network.v1alpha1.Counters counters = 14;</code>
+   * <code>.opi_api.network.v1alpha1.Counters counters = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The counters.
    */
   opi_api.network.v1alpha1.Counters getCounters();
@@ -209,7 +209,7 @@ public interface StateOrBuilder extends
    * Interface Statistics Counters
    * </pre>
    *
-   * <code>.opi_api.network.v1alpha1.Counters counters = 14;</code>
+   * <code>.opi_api.network.v1alpha1.Counters counters = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   opi_api.network.v1alpha1.CountersOrBuilder getCountersOrBuilder();
 }

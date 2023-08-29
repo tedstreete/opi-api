@@ -12,7 +12,7 @@ public interface UpdateNetInterfaceRequestOrBuilder extends
    * Interface update settings
    * </pre>
    *
-   * <code>.opi_api.network.v1alpha1.NetInterface net_interface = 1;</code>
+   * <code>.opi_api.network.v1alpha1.NetInterface net_interface = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the netInterface field is set.
    */
   boolean hasNetInterface();
@@ -21,7 +21,7 @@ public interface UpdateNetInterfaceRequestOrBuilder extends
    * Interface update settings
    * </pre>
    *
-   * <code>.opi_api.network.v1alpha1.NetInterface net_interface = 1;</code>
+   * <code>.opi_api.network.v1alpha1.NetInterface net_interface = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The netInterface.
    */
   opi_api.network.v1alpha1.NetInterface getNetInterface();
@@ -30,34 +30,45 @@ public interface UpdateNetInterfaceRequestOrBuilder extends
    * Interface update settings
    * </pre>
    *
-   * <code>.opi_api.network.v1alpha1.NetInterface net_interface = 1;</code>
+   * <code>.opi_api.network.v1alpha1.NetInterface net_interface = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   opi_api.network.v1alpha1.NetInterfaceOrBuilder getNetInterfaceOrBuilder();
 
   /**
    * <pre>
-   * list of fields to update
+   * The list of fields to update.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
   /**
    * <pre>
-   * list of fields to update
+   * The list of fields to update.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**
    * <pre>
-   * list of fields to update
+   * The list of fields to update.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
+
+  /**
+   * <pre>
+   * If set to true, and the object is not found, a new object will be created.
+   * In this situation, `update_mask` is ignored.
+   * </pre>
+   *
+   * <code>bool allow_missing = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The allowMissing.
+   */
+  boolean getAllowMissing();
 }

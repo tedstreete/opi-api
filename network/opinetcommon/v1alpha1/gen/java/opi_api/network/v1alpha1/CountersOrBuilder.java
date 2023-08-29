@@ -12,7 +12,7 @@ public interface CountersOrBuilder extends
    * Received Octet counter
    * </pre>
    *
-   * <code>uint64 rx_octets = 1;</code>
+   * <code>uint64 rx_octets = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The rxOctets.
    */
   long getRxOctets();
@@ -22,7 +22,7 @@ public interface CountersOrBuilder extends
    * Received Packet counter
    * </pre>
    *
-   * <code>uint64 rx_packets = 2;</code>
+   * <code>uint64 rx_packets = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The rxPackets.
    */
   long getRxPackets();
@@ -32,7 +32,7 @@ public interface CountersOrBuilder extends
    * Unicast packets received counter
    * </pre>
    *
-   * <code>uint64 rx_unicast_pkts = 3;</code>
+   * <code>uint64 rx_unicast_pkts = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The rxUnicastPkts.
    */
   long getRxUnicastPkts();
@@ -42,7 +42,7 @@ public interface CountersOrBuilder extends
    * Broadcast packets received counter
    * </pre>
    *
-   * <code>uint64 rx_broadcast_pkts = 4;</code>
+   * <code>uint64 rx_broadcast_pkts = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The rxBroadcastPkts.
    */
   long getRxBroadcastPkts();
@@ -52,7 +52,7 @@ public interface CountersOrBuilder extends
    * multicast packets received counter
    * </pre>
    *
-   * <code>uint64 rx_multicast_pkts = 5;</code>
+   * <code>uint64 rx_multicast_pkts = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The rxMulticastPkts.
    */
   long getRxMulticastPkts();
@@ -62,7 +62,7 @@ public interface CountersOrBuilder extends
    * discarded received packets counter
    * </pre>
    *
-   * <code>uint64 rx_discards = 6;</code>
+   * <code>uint64 rx_discards = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The rxDiscards.
    */
   long getRxDiscards();
@@ -72,7 +72,7 @@ public interface CountersOrBuilder extends
    * Receive error counter
    * </pre>
    *
-   * <code>uint64 rx_errors = 7;</code>
+   * <code>uint64 rx_errors = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The rxErrors.
    */
   long getRxErrors();
@@ -82,7 +82,7 @@ public interface CountersOrBuilder extends
    * Unknown received protocol counter
    * </pre>
    *
-   * <code>uint64 rx_unknown_protos = 8;</code>
+   * <code>uint64 rx_unknown_protos = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The rxUnknownProtos.
    */
   long getRxUnknownProtos();
@@ -92,7 +92,7 @@ public interface CountersOrBuilder extends
    * Received FCS error counter
    * </pre>
    *
-   * <code>uint64 rx_fcs_errors = 9;</code>
+   * <code>uint64 rx_fcs_errors = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The rxFcsErrors.
    */
   long getRxFcsErrors();
@@ -102,7 +102,7 @@ public interface CountersOrBuilder extends
    * Transmit octet counter
    * </pre>
    *
-   * <code>uint64 out_octets = 10;</code>
+   * <code>uint64 out_octets = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The outOctets.
    */
   long getOutOctets();
@@ -112,7 +112,7 @@ public interface CountersOrBuilder extends
    * Transmit packet counter
    * </pre>
    *
-   * <code>uint64 out_packets = 11;</code>
+   * <code>uint64 out_packets = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The outPackets.
    */
   long getOutPackets();
@@ -122,7 +122,7 @@ public interface CountersOrBuilder extends
    * Unicast packet transmit counter
    * </pre>
    *
-   * <code>uint64 out_unicast_pkts = 12;</code>
+   * <code>uint64 out_unicast_pkts = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The outUnicastPkts.
    */
   long getOutUnicastPkts();
@@ -132,7 +132,7 @@ public interface CountersOrBuilder extends
    * Broadcast packet transmit counter
    * </pre>
    *
-   * <code>uint64 out_broadcast_pkts = 13;</code>
+   * <code>uint64 out_broadcast_pkts = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The outBroadcastPkts.
    */
   long getOutBroadcastPkts();
@@ -142,7 +142,7 @@ public interface CountersOrBuilder extends
    * Multicast packet transmit counter
    * </pre>
    *
-   * <code>uint64 out_multicast_pkts = 14;</code>
+   * <code>uint64 out_multicast_pkts = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The outMulticastPkts.
    */
   long getOutMulticastPkts();
@@ -152,7 +152,7 @@ public interface CountersOrBuilder extends
    * Discarded transmit packet counter
    * </pre>
    *
-   * <code>uint64 out_discards = 15;</code>
+   * <code>uint64 out_discards = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The outDiscards.
    */
   long getOutDiscards();
@@ -162,7 +162,7 @@ public interface CountersOrBuilder extends
    * Transmit error counter
    * </pre>
    *
-   * <code>uint64 out_errors = 16;</code>
+   * <code>uint64 out_errors = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The outErrors.
    */
   long getOutErrors();
@@ -172,7 +172,7 @@ public interface CountersOrBuilder extends
    * Carrier transition count
    * </pre>
    *
-   * <code>uint64 carrier_transitions = 17;</code>
+   * <code>uint64 carrier_transitions = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The carrierTransitions.
    */
   long getCarrierTransitions();
@@ -182,7 +182,7 @@ public interface CountersOrBuilder extends
    * Last Clear
    * </pre>
    *
-   * <code>uint64 last_clear = 18;</code>
+   * <code>uint64 last_clear = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The lastClear.
    */
   long getLastClear();

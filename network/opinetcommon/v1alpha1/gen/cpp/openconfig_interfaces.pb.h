@@ -306,7 +306,7 @@ class Config final :
     kLoopbackModeFieldNumber = 4,
     kEnabledFieldNumber = 6,
   };
-  // string name = 1;
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED];
   void clear_name();
   const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -320,7 +320,7 @@ class Config final :
   std::string* _internal_mutable_name();
   public:
 
-  // string description = 5;
+  // string description = 5 [(.google.api.field_behavior) = REQUIRED];
   void clear_description();
   const std::string& description() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -334,7 +334,7 @@ class Config final :
   std::string* _internal_mutable_description();
   public:
 
-  // .opi_api.network.v1alpha1.InterfaceType type = 2;
+  // .opi_api.network.v1alpha1.InterfaceType type = 2 [(.google.api.field_behavior) = REQUIRED];
   void clear_type();
   ::opi_api::network::v1alpha1::InterfaceType type() const;
   void set_type(::opi_api::network::v1alpha1::InterfaceType value);
@@ -343,7 +343,7 @@ class Config final :
   void _internal_set_type(::opi_api::network::v1alpha1::InterfaceType value);
   public:
 
-  // uint32 mtu = 3;
+  // uint32 mtu = 3 [(.google.api.field_behavior) = REQUIRED];
   void clear_mtu();
   uint32_t mtu() const;
   void set_mtu(uint32_t value);
@@ -352,7 +352,7 @@ class Config final :
   void _internal_set_mtu(uint32_t value);
   public:
 
-  // bool loopback_mode = 4;
+  // bool loopback_mode = 4 [(.google.api.field_behavior) = REQUIRED];
   void clear_loopback_mode();
   bool loopback_mode() const;
   void set_loopback_mode(bool value);
@@ -361,7 +361,7 @@ class Config final :
   void _internal_set_loopback_mode(bool value);
   public:
 
-  // bool enabled = 6;
+  // bool enabled = 6 [(.google.api.field_behavior) = REQUIRED];
   void clear_enabled();
   bool enabled() const;
   void set_enabled(bool value);
@@ -531,7 +531,7 @@ class Counters final :
     kCarrierTransitionsFieldNumber = 17,
     kLastClearFieldNumber = 18,
   };
-  // uint64 rx_octets = 1;
+  // uint64 rx_octets = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
   void clear_rx_octets();
   uint64_t rx_octets() const;
   void set_rx_octets(uint64_t value);
@@ -540,7 +540,7 @@ class Counters final :
   void _internal_set_rx_octets(uint64_t value);
   public:
 
-  // uint64 rx_packets = 2;
+  // uint64 rx_packets = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
   void clear_rx_packets();
   uint64_t rx_packets() const;
   void set_rx_packets(uint64_t value);
@@ -549,7 +549,7 @@ class Counters final :
   void _internal_set_rx_packets(uint64_t value);
   public:
 
-  // uint64 rx_unicast_pkts = 3;
+  // uint64 rx_unicast_pkts = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
   void clear_rx_unicast_pkts();
   uint64_t rx_unicast_pkts() const;
   void set_rx_unicast_pkts(uint64_t value);
@@ -558,7 +558,7 @@ class Counters final :
   void _internal_set_rx_unicast_pkts(uint64_t value);
   public:
 
-  // uint64 rx_broadcast_pkts = 4;
+  // uint64 rx_broadcast_pkts = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
   void clear_rx_broadcast_pkts();
   uint64_t rx_broadcast_pkts() const;
   void set_rx_broadcast_pkts(uint64_t value);
@@ -567,7 +567,7 @@ class Counters final :
   void _internal_set_rx_broadcast_pkts(uint64_t value);
   public:
 
-  // uint64 rx_multicast_pkts = 5;
+  // uint64 rx_multicast_pkts = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
   void clear_rx_multicast_pkts();
   uint64_t rx_multicast_pkts() const;
   void set_rx_multicast_pkts(uint64_t value);
@@ -576,7 +576,7 @@ class Counters final :
   void _internal_set_rx_multicast_pkts(uint64_t value);
   public:
 
-  // uint64 rx_discards = 6;
+  // uint64 rx_discards = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
   void clear_rx_discards();
   uint64_t rx_discards() const;
   void set_rx_discards(uint64_t value);
@@ -585,7 +585,7 @@ class Counters final :
   void _internal_set_rx_discards(uint64_t value);
   public:
 
-  // uint64 rx_errors = 7;
+  // uint64 rx_errors = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
   void clear_rx_errors();
   uint64_t rx_errors() const;
   void set_rx_errors(uint64_t value);
@@ -594,7 +594,7 @@ class Counters final :
   void _internal_set_rx_errors(uint64_t value);
   public:
 
-  // uint64 rx_unknown_protos = 8;
+  // uint64 rx_unknown_protos = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
   void clear_rx_unknown_protos();
   uint64_t rx_unknown_protos() const;
   void set_rx_unknown_protos(uint64_t value);
@@ -603,7 +603,7 @@ class Counters final :
   void _internal_set_rx_unknown_protos(uint64_t value);
   public:
 
-  // uint64 rx_fcs_errors = 9;
+  // uint64 rx_fcs_errors = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
   void clear_rx_fcs_errors();
   uint64_t rx_fcs_errors() const;
   void set_rx_fcs_errors(uint64_t value);
@@ -612,7 +612,7 @@ class Counters final :
   void _internal_set_rx_fcs_errors(uint64_t value);
   public:
 
-  // uint64 out_octets = 10;
+  // uint64 out_octets = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
   void clear_out_octets();
   uint64_t out_octets() const;
   void set_out_octets(uint64_t value);
@@ -621,7 +621,7 @@ class Counters final :
   void _internal_set_out_octets(uint64_t value);
   public:
 
-  // uint64 out_packets = 11;
+  // uint64 out_packets = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
   void clear_out_packets();
   uint64_t out_packets() const;
   void set_out_packets(uint64_t value);
@@ -630,7 +630,7 @@ class Counters final :
   void _internal_set_out_packets(uint64_t value);
   public:
 
-  // uint64 out_unicast_pkts = 12;
+  // uint64 out_unicast_pkts = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
   void clear_out_unicast_pkts();
   uint64_t out_unicast_pkts() const;
   void set_out_unicast_pkts(uint64_t value);
@@ -639,7 +639,7 @@ class Counters final :
   void _internal_set_out_unicast_pkts(uint64_t value);
   public:
 
-  // uint64 out_broadcast_pkts = 13;
+  // uint64 out_broadcast_pkts = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
   void clear_out_broadcast_pkts();
   uint64_t out_broadcast_pkts() const;
   void set_out_broadcast_pkts(uint64_t value);
@@ -648,7 +648,7 @@ class Counters final :
   void _internal_set_out_broadcast_pkts(uint64_t value);
   public:
 
-  // uint64 out_multicast_pkts = 14;
+  // uint64 out_multicast_pkts = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
   void clear_out_multicast_pkts();
   uint64_t out_multicast_pkts() const;
   void set_out_multicast_pkts(uint64_t value);
@@ -657,7 +657,7 @@ class Counters final :
   void _internal_set_out_multicast_pkts(uint64_t value);
   public:
 
-  // uint64 out_discards = 15;
+  // uint64 out_discards = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
   void clear_out_discards();
   uint64_t out_discards() const;
   void set_out_discards(uint64_t value);
@@ -666,7 +666,7 @@ class Counters final :
   void _internal_set_out_discards(uint64_t value);
   public:
 
-  // uint64 out_errors = 16;
+  // uint64 out_errors = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
   void clear_out_errors();
   uint64_t out_errors() const;
   void set_out_errors(uint64_t value);
@@ -675,7 +675,7 @@ class Counters final :
   void _internal_set_out_errors(uint64_t value);
   public:
 
-  // uint64 carrier_transitions = 17;
+  // uint64 carrier_transitions = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
   void clear_carrier_transitions();
   uint64_t carrier_transitions() const;
   void set_carrier_transitions(uint64_t value);
@@ -684,7 +684,7 @@ class Counters final :
   void _internal_set_carrier_transitions(uint64_t value);
   public:
 
-  // uint64 last_clear = 18;
+  // uint64 last_clear = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
   void clear_last_clear();
   uint64_t last_clear() const;
   void set_last_clear(uint64_t value);
@@ -862,7 +862,7 @@ class State final :
     kLastChangeFieldNumber = 10,
     kCpuFieldNumber = 13,
   };
-  // string name = 1;
+  // string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
   void clear_name();
   const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -876,7 +876,7 @@ class State final :
   std::string* _internal_mutable_name();
   public:
 
-  // string description = 5;
+  // string description = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
   void clear_description();
   const std::string& description() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -890,7 +890,7 @@ class State final :
   std::string* _internal_mutable_description();
   public:
 
-  // .opi_api.network.v1alpha1.Counters counters = 14;
+  // .opi_api.network.v1alpha1.Counters counters = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
   bool has_counters() const;
   private:
   bool _internal_has_counters() const;
@@ -908,7 +908,7 @@ class State final :
       ::opi_api::network::v1alpha1::Counters* counters);
   ::opi_api::network::v1alpha1::Counters* unsafe_arena_release_counters();
 
-  // .opi_api.network.v1alpha1.InterfaceType type = 2;
+  // .opi_api.network.v1alpha1.InterfaceType type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
   void clear_type();
   ::opi_api::network::v1alpha1::InterfaceType type() const;
   void set_type(::opi_api::network::v1alpha1::InterfaceType value);
@@ -917,7 +917,7 @@ class State final :
   void _internal_set_type(::opi_api::network::v1alpha1::InterfaceType value);
   public:
 
-  // uint32 mtu = 3;
+  // uint32 mtu = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
   void clear_mtu();
   uint32_t mtu() const;
   void set_mtu(uint32_t value);
@@ -926,7 +926,7 @@ class State final :
   void _internal_set_mtu(uint32_t value);
   public:
 
-  // uint32 ifindex = 7;
+  // uint32 ifindex = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
   void clear_ifindex();
   uint32_t ifindex() const;
   void set_ifindex(uint32_t value);
@@ -935,7 +935,7 @@ class State final :
   void _internal_set_ifindex(uint32_t value);
   public:
 
-  // .opi_api.network.opinetcommon.v1alpha1.AdminState admin_state = 8;
+  // .opi_api.network.opinetcommon.v1alpha1.AdminState admin_state = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
   void clear_admin_state();
   ::opi_api::network::opinetcommon::v1alpha1::AdminState admin_state() const;
   void set_admin_state(::opi_api::network::opinetcommon::v1alpha1::AdminState value);
@@ -944,7 +944,7 @@ class State final :
   void _internal_set_admin_state(::opi_api::network::opinetcommon::v1alpha1::AdminState value);
   public:
 
-  // bool loopback_mode = 4;
+  // bool loopback_mode = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
   void clear_loopback_mode();
   bool loopback_mode() const;
   void set_loopback_mode(bool value);
@@ -953,7 +953,7 @@ class State final :
   void _internal_set_loopback_mode(bool value);
   public:
 
-  // bool enabled = 6;
+  // bool enabled = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
   void clear_enabled();
   bool enabled() const;
   void set_enabled(bool value);
@@ -962,7 +962,7 @@ class State final :
   void _internal_set_enabled(bool value);
   public:
 
-  // bool logical = 11;
+  // bool logical = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
   void clear_logical();
   bool logical() const;
   void set_logical(bool value);
@@ -971,7 +971,7 @@ class State final :
   void _internal_set_logical(bool value);
   public:
 
-  // bool management = 12;
+  // bool management = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
   void clear_management();
   bool management() const;
   void set_management(bool value);
@@ -980,7 +980,7 @@ class State final :
   void _internal_set_management(bool value);
   public:
 
-  // .opi_api.network.v1alpha1.OperState oper_state = 9;
+  // .opi_api.network.v1alpha1.OperState oper_state = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
   void clear_oper_state();
   ::opi_api::network::v1alpha1::OperState oper_state() const;
   void set_oper_state(::opi_api::network::v1alpha1::OperState value);
@@ -989,7 +989,7 @@ class State final :
   void _internal_set_oper_state(::opi_api::network::v1alpha1::OperState value);
   public:
 
-  // uint64 last_change = 10;
+  // uint64 last_change = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
   void clear_last_change();
   uint64_t last_change() const;
   void set_last_change(uint64_t value);
@@ -998,7 +998,7 @@ class State final :
   void _internal_set_last_change(uint64_t value);
   public:
 
-  // bool cpu = 13;
+  // bool cpu = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
   void clear_cpu();
   bool cpu() const;
   void set_cpu(bool value);
@@ -1160,7 +1160,7 @@ class NetInterface_HoldTime_HoldConfig final :
     kUpFieldNumber = 1,
     kDownFieldNumber = 2,
   };
-  // uint32 up = 1;
+  // uint32 up = 1 [(.google.api.field_behavior) = OPTIONAL];
   void clear_up();
   uint32_t up() const;
   void set_up(uint32_t value);
@@ -1169,7 +1169,7 @@ class NetInterface_HoldTime_HoldConfig final :
   void _internal_set_up(uint32_t value);
   public:
 
-  // uint32 down = 2;
+  // uint32 down = 2 [(.google.api.field_behavior) = OPTIONAL];
   void clear_down();
   uint32_t down() const;
   void set_down(uint32_t value);
@@ -1319,7 +1319,7 @@ class NetInterface_HoldTime_HoldState final :
     kUpFieldNumber = 1,
     kDownFieldNumber = 2,
   };
-  // uint32 up = 1;
+  // uint32 up = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
   void clear_up();
   uint32_t up() const;
   void set_up(uint32_t value);
@@ -1328,7 +1328,7 @@ class NetInterface_HoldTime_HoldState final :
   void _internal_set_up(uint32_t value);
   public:
 
-  // uint32 down = 2;
+  // uint32 down = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
   void clear_down();
   uint32_t down() const;
   void set_down(uint32_t value);
@@ -1481,7 +1481,7 @@ class NetInterface_HoldTime final :
     kHoldConfigFieldNumber = 1,
     kHoldStateFieldNumber = 2,
   };
-  // .opi_api.network.v1alpha1.NetInterface.HoldTime.HoldConfig hold_config = 1;
+  // .opi_api.network.v1alpha1.NetInterface.HoldTime.HoldConfig hold_config = 1 [(.google.api.field_behavior) = OPTIONAL];
   bool has_hold_config() const;
   private:
   bool _internal_has_hold_config() const;
@@ -1499,7 +1499,7 @@ class NetInterface_HoldTime final :
       ::opi_api::network::v1alpha1::NetInterface_HoldTime_HoldConfig* hold_config);
   ::opi_api::network::v1alpha1::NetInterface_HoldTime_HoldConfig* unsafe_arena_release_hold_config();
 
-  // .opi_api.network.v1alpha1.NetInterface.HoldTime.HoldState hold_state = 2;
+  // .opi_api.network.v1alpha1.NetInterface.HoldTime.HoldState hold_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
   bool has_hold_state() const;
   private:
   bool _internal_has_hold_state() const;
@@ -1659,7 +1659,7 @@ class NetInterface_Subinterfaces_Subinterface_SubifConfig final :
     kIndexFieldNumber = 1,
     kEnabledFieldNumber = 3,
   };
-  // string description = 2;
+  // string description = 2 [(.google.api.field_behavior) = OPTIONAL];
   void clear_description();
   const std::string& description() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -1673,7 +1673,7 @@ class NetInterface_Subinterfaces_Subinterface_SubifConfig final :
   std::string* _internal_mutable_description();
   public:
 
-  // uint64 index = 1;
+  // uint64 index = 1 [(.google.api.field_behavior) = OPTIONAL];
   void clear_index();
   uint64_t index() const;
   void set_index(uint64_t value);
@@ -1682,7 +1682,7 @@ class NetInterface_Subinterfaces_Subinterface_SubifConfig final :
   void _internal_set_index(uint64_t value);
   public:
 
-  // bool enabled = 3;
+  // bool enabled = 3 [(.google.api.field_behavior) = OPTIONAL];
   void clear_enabled();
   bool enabled() const;
   void set_enabled(bool value);
@@ -1836,7 +1836,7 @@ class NetInterface_Subinterfaces_Subinterface final :
     kStateFieldNumber = 3,
     kIndexFieldNumber = 1,
   };
-  // .opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface.SubifConfig subif_config = 2;
+  // .opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface.SubifConfig subif_config = 2 [(.google.api.field_behavior) = OPTIONAL];
   bool has_subif_config() const;
   private:
   bool _internal_has_subif_config() const;
@@ -1854,7 +1854,7 @@ class NetInterface_Subinterfaces_Subinterface final :
       ::opi_api::network::v1alpha1::NetInterface_Subinterfaces_Subinterface_SubifConfig* subif_config);
   ::opi_api::network::v1alpha1::NetInterface_Subinterfaces_Subinterface_SubifConfig* unsafe_arena_release_subif_config();
 
-  // .opi_api.network.v1alpha1.State state = 3;
+  // .opi_api.network.v1alpha1.State state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
   bool has_state() const;
   private:
   bool _internal_has_state() const;
@@ -1872,7 +1872,7 @@ class NetInterface_Subinterfaces_Subinterface final :
       ::opi_api::network::v1alpha1::State* state);
   ::opi_api::network::v1alpha1::State* unsafe_arena_release_state();
 
-  // int64 index = 1;
+  // int64 index = 1 [(.google.api.field_behavior) = OPTIONAL];
   void clear_index();
   int64_t index() const;
   void set_index(int64_t value);
@@ -2024,7 +2024,7 @@ class NetInterface_Subinterfaces final :
   enum : int {
     kSubinterfaceFieldNumber = 2,
   };
-  // repeated .opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface subinterface = 2;
+  // repeated .opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface subinterface = 2 [(.google.api.field_behavior) = OPTIONAL];
   int subinterface_size() const;
   private:
   int _internal_subinterface_size() const;
@@ -2188,7 +2188,7 @@ class NetInterface final :
     kHoldtimeFieldNumber = 4,
     kSubinterfacesFieldNumber = 5,
   };
-  // string name = 1;
+  // string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {
   void clear_name();
   const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -2202,7 +2202,7 @@ class NetInterface final :
   std::string* _internal_mutable_name();
   public:
 
-  // .opi_api.network.v1alpha1.Config config = 2;
+  // .opi_api.network.v1alpha1.Config config = 2 [(.google.api.field_behavior) = REQUIRED];
   bool has_config() const;
   private:
   bool _internal_has_config() const;
@@ -2220,7 +2220,7 @@ class NetInterface final :
       ::opi_api::network::v1alpha1::Config* config);
   ::opi_api::network::v1alpha1::Config* unsafe_arena_release_config();
 
-  // .opi_api.network.v1alpha1.State state = 3;
+  // .opi_api.network.v1alpha1.State state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
   bool has_state() const;
   private:
   bool _internal_has_state() const;
@@ -2238,7 +2238,7 @@ class NetInterface final :
       ::opi_api::network::v1alpha1::State* state);
   ::opi_api::network::v1alpha1::State* unsafe_arena_release_state();
 
-  // .opi_api.network.v1alpha1.NetInterface.HoldTime holdtime = 4;
+  // .opi_api.network.v1alpha1.NetInterface.HoldTime holdtime = 4 [(.google.api.field_behavior) = OPTIONAL];
   bool has_holdtime() const;
   private:
   bool _internal_has_holdtime() const;
@@ -2256,7 +2256,7 @@ class NetInterface final :
       ::opi_api::network::v1alpha1::NetInterface_HoldTime* holdtime);
   ::opi_api::network::v1alpha1::NetInterface_HoldTime* unsafe_arena_release_holdtime();
 
-  // .opi_api.network.v1alpha1.NetInterface.Subinterfaces subinterfaces = 5;
+  // .opi_api.network.v1alpha1.NetInterface.Subinterfaces subinterfaces = 5 [(.google.api.field_behavior) = OPTIONAL];
   bool has_subinterfaces() const;
   private:
   bool _internal_has_subinterfaces() const;
@@ -2586,7 +2586,7 @@ class ListNetInterfacesRequest final :
   std::string* _internal_mutable_parent();
   public:
 
-  // string page_token = 3;
+  // string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];
   void clear_page_token();
   const std::string& page_token() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -2600,7 +2600,7 @@ class ListNetInterfacesRequest final :
   std::string* _internal_mutable_page_token();
   public:
 
-  // int32 page_size = 2;
+  // int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];
   void clear_page_size();
   int32_t page_size() const;
   void set_page_size(int32_t value);
@@ -2923,8 +2923,9 @@ class UpdateNetInterfaceRequest final :
   enum : int {
     kNetInterfaceFieldNumber = 1,
     kUpdateMaskFieldNumber = 2,
+    kAllowMissingFieldNumber = 3,
   };
-  // .opi_api.network.v1alpha1.NetInterface net_interface = 1;
+  // .opi_api.network.v1alpha1.NetInterface net_interface = 1 [(.google.api.field_behavior) = REQUIRED];
   bool has_net_interface() const;
   private:
   bool _internal_has_net_interface() const;
@@ -2942,7 +2943,7 @@ class UpdateNetInterfaceRequest final :
       ::opi_api::network::v1alpha1::NetInterface* net_interface);
   ::opi_api::network::v1alpha1::NetInterface* unsafe_arena_release_net_interface();
 
-  // .google.protobuf.FieldMask update_mask = 2;
+  // .google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
   bool has_update_mask() const;
   private:
   bool _internal_has_update_mask() const;
@@ -2960,6 +2961,15 @@ class UpdateNetInterfaceRequest final :
       ::PROTOBUF_NAMESPACE_ID::FieldMask* update_mask);
   ::PROTOBUF_NAMESPACE_ID::FieldMask* unsafe_arena_release_update_mask();
 
+  // bool allow_missing = 3 [(.google.api.field_behavior) = OPTIONAL];
+  void clear_allow_missing();
+  bool allow_missing() const;
+  void set_allow_missing(bool value);
+  private:
+  bool _internal_allow_missing() const;
+  void _internal_set_allow_missing(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:opi_api.network.v1alpha1.UpdateNetInterfaceRequest)
  private:
   class _Internal;
@@ -2970,6 +2980,7 @@ class UpdateNetInterfaceRequest final :
   struct Impl_ {
     ::opi_api::network::v1alpha1::NetInterface* net_interface_;
     ::PROTOBUF_NAMESPACE_ID::FieldMask* update_mask_;
+    bool allow_missing_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -2986,7 +2997,7 @@ class UpdateNetInterfaceRequest final :
 #endif  // __GNUC__
 // Config
 
-// string name = 1;
+// string name = 1 [(.google.api.field_behavior) = REQUIRED];
 inline void Config::clear_name() {
   _impl_.name_.ClearToEmpty();
 }
@@ -3036,7 +3047,7 @@ inline void Config::set_allocated_name(std::string* name) {
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.v1alpha1.Config.name)
 }
 
-// .opi_api.network.v1alpha1.InterfaceType type = 2;
+// .opi_api.network.v1alpha1.InterfaceType type = 2 [(.google.api.field_behavior) = REQUIRED];
 inline void Config::clear_type() {
   _impl_.type_ = 0;
 }
@@ -3056,7 +3067,7 @@ inline void Config::set_type(::opi_api::network::v1alpha1::InterfaceType value) 
   // @@protoc_insertion_point(field_set:opi_api.network.v1alpha1.Config.type)
 }
 
-// uint32 mtu = 3;
+// uint32 mtu = 3 [(.google.api.field_behavior) = REQUIRED];
 inline void Config::clear_mtu() {
   _impl_.mtu_ = 0u;
 }
@@ -3076,7 +3087,7 @@ inline void Config::set_mtu(uint32_t value) {
   // @@protoc_insertion_point(field_set:opi_api.network.v1alpha1.Config.mtu)
 }
 
-// bool loopback_mode = 4;
+// bool loopback_mode = 4 [(.google.api.field_behavior) = REQUIRED];
 inline void Config::clear_loopback_mode() {
   _impl_.loopback_mode_ = false;
 }
@@ -3096,7 +3107,7 @@ inline void Config::set_loopback_mode(bool value) {
   // @@protoc_insertion_point(field_set:opi_api.network.v1alpha1.Config.loopback_mode)
 }
 
-// string description = 5;
+// string description = 5 [(.google.api.field_behavior) = REQUIRED];
 inline void Config::clear_description() {
   _impl_.description_.ClearToEmpty();
 }
@@ -3146,7 +3157,7 @@ inline void Config::set_allocated_description(std::string* description) {
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.v1alpha1.Config.description)
 }
 
-// bool enabled = 6;
+// bool enabled = 6 [(.google.api.field_behavior) = REQUIRED];
 inline void Config::clear_enabled() {
   _impl_.enabled_ = false;
 }
@@ -3170,7 +3181,7 @@ inline void Config::set_enabled(bool value) {
 
 // Counters
 
-// uint64 rx_octets = 1;
+// uint64 rx_octets = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
 inline void Counters::clear_rx_octets() {
   _impl_.rx_octets_ = uint64_t{0u};
 }
@@ -3190,7 +3201,7 @@ inline void Counters::set_rx_octets(uint64_t value) {
   // @@protoc_insertion_point(field_set:opi_api.network.v1alpha1.Counters.rx_octets)
 }
 
-// uint64 rx_packets = 2;
+// uint64 rx_packets = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
 inline void Counters::clear_rx_packets() {
   _impl_.rx_packets_ = uint64_t{0u};
 }
@@ -3210,7 +3221,7 @@ inline void Counters::set_rx_packets(uint64_t value) {
   // @@protoc_insertion_point(field_set:opi_api.network.v1alpha1.Counters.rx_packets)
 }
 
-// uint64 rx_unicast_pkts = 3;
+// uint64 rx_unicast_pkts = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
 inline void Counters::clear_rx_unicast_pkts() {
   _impl_.rx_unicast_pkts_ = uint64_t{0u};
 }
@@ -3230,7 +3241,7 @@ inline void Counters::set_rx_unicast_pkts(uint64_t value) {
   // @@protoc_insertion_point(field_set:opi_api.network.v1alpha1.Counters.rx_unicast_pkts)
 }
 
-// uint64 rx_broadcast_pkts = 4;
+// uint64 rx_broadcast_pkts = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
 inline void Counters::clear_rx_broadcast_pkts() {
   _impl_.rx_broadcast_pkts_ = uint64_t{0u};
 }
@@ -3250,7 +3261,7 @@ inline void Counters::set_rx_broadcast_pkts(uint64_t value) {
   // @@protoc_insertion_point(field_set:opi_api.network.v1alpha1.Counters.rx_broadcast_pkts)
 }
 
-// uint64 rx_multicast_pkts = 5;
+// uint64 rx_multicast_pkts = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
 inline void Counters::clear_rx_multicast_pkts() {
   _impl_.rx_multicast_pkts_ = uint64_t{0u};
 }
@@ -3270,7 +3281,7 @@ inline void Counters::set_rx_multicast_pkts(uint64_t value) {
   // @@protoc_insertion_point(field_set:opi_api.network.v1alpha1.Counters.rx_multicast_pkts)
 }
 
-// uint64 rx_discards = 6;
+// uint64 rx_discards = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
 inline void Counters::clear_rx_discards() {
   _impl_.rx_discards_ = uint64_t{0u};
 }
@@ -3290,7 +3301,7 @@ inline void Counters::set_rx_discards(uint64_t value) {
   // @@protoc_insertion_point(field_set:opi_api.network.v1alpha1.Counters.rx_discards)
 }
 
-// uint64 rx_errors = 7;
+// uint64 rx_errors = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
 inline void Counters::clear_rx_errors() {
   _impl_.rx_errors_ = uint64_t{0u};
 }
@@ -3310,7 +3321,7 @@ inline void Counters::set_rx_errors(uint64_t value) {
   // @@protoc_insertion_point(field_set:opi_api.network.v1alpha1.Counters.rx_errors)
 }
 
-// uint64 rx_unknown_protos = 8;
+// uint64 rx_unknown_protos = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
 inline void Counters::clear_rx_unknown_protos() {
   _impl_.rx_unknown_protos_ = uint64_t{0u};
 }
@@ -3330,7 +3341,7 @@ inline void Counters::set_rx_unknown_protos(uint64_t value) {
   // @@protoc_insertion_point(field_set:opi_api.network.v1alpha1.Counters.rx_unknown_protos)
 }
 
-// uint64 rx_fcs_errors = 9;
+// uint64 rx_fcs_errors = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
 inline void Counters::clear_rx_fcs_errors() {
   _impl_.rx_fcs_errors_ = uint64_t{0u};
 }
@@ -3350,7 +3361,7 @@ inline void Counters::set_rx_fcs_errors(uint64_t value) {
   // @@protoc_insertion_point(field_set:opi_api.network.v1alpha1.Counters.rx_fcs_errors)
 }
 
-// uint64 out_octets = 10;
+// uint64 out_octets = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
 inline void Counters::clear_out_octets() {
   _impl_.out_octets_ = uint64_t{0u};
 }
@@ -3370,7 +3381,7 @@ inline void Counters::set_out_octets(uint64_t value) {
   // @@protoc_insertion_point(field_set:opi_api.network.v1alpha1.Counters.out_octets)
 }
 
-// uint64 out_packets = 11;
+// uint64 out_packets = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
 inline void Counters::clear_out_packets() {
   _impl_.out_packets_ = uint64_t{0u};
 }
@@ -3390,7 +3401,7 @@ inline void Counters::set_out_packets(uint64_t value) {
   // @@protoc_insertion_point(field_set:opi_api.network.v1alpha1.Counters.out_packets)
 }
 
-// uint64 out_unicast_pkts = 12;
+// uint64 out_unicast_pkts = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
 inline void Counters::clear_out_unicast_pkts() {
   _impl_.out_unicast_pkts_ = uint64_t{0u};
 }
@@ -3410,7 +3421,7 @@ inline void Counters::set_out_unicast_pkts(uint64_t value) {
   // @@protoc_insertion_point(field_set:opi_api.network.v1alpha1.Counters.out_unicast_pkts)
 }
 
-// uint64 out_broadcast_pkts = 13;
+// uint64 out_broadcast_pkts = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
 inline void Counters::clear_out_broadcast_pkts() {
   _impl_.out_broadcast_pkts_ = uint64_t{0u};
 }
@@ -3430,7 +3441,7 @@ inline void Counters::set_out_broadcast_pkts(uint64_t value) {
   // @@protoc_insertion_point(field_set:opi_api.network.v1alpha1.Counters.out_broadcast_pkts)
 }
 
-// uint64 out_multicast_pkts = 14;
+// uint64 out_multicast_pkts = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
 inline void Counters::clear_out_multicast_pkts() {
   _impl_.out_multicast_pkts_ = uint64_t{0u};
 }
@@ -3450,7 +3461,7 @@ inline void Counters::set_out_multicast_pkts(uint64_t value) {
   // @@protoc_insertion_point(field_set:opi_api.network.v1alpha1.Counters.out_multicast_pkts)
 }
 
-// uint64 out_discards = 15;
+// uint64 out_discards = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
 inline void Counters::clear_out_discards() {
   _impl_.out_discards_ = uint64_t{0u};
 }
@@ -3470,7 +3481,7 @@ inline void Counters::set_out_discards(uint64_t value) {
   // @@protoc_insertion_point(field_set:opi_api.network.v1alpha1.Counters.out_discards)
 }
 
-// uint64 out_errors = 16;
+// uint64 out_errors = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
 inline void Counters::clear_out_errors() {
   _impl_.out_errors_ = uint64_t{0u};
 }
@@ -3490,7 +3501,7 @@ inline void Counters::set_out_errors(uint64_t value) {
   // @@protoc_insertion_point(field_set:opi_api.network.v1alpha1.Counters.out_errors)
 }
 
-// uint64 carrier_transitions = 17;
+// uint64 carrier_transitions = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
 inline void Counters::clear_carrier_transitions() {
   _impl_.carrier_transitions_ = uint64_t{0u};
 }
@@ -3510,7 +3521,7 @@ inline void Counters::set_carrier_transitions(uint64_t value) {
   // @@protoc_insertion_point(field_set:opi_api.network.v1alpha1.Counters.carrier_transitions)
 }
 
-// uint64 last_clear = 18;
+// uint64 last_clear = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
 inline void Counters::clear_last_clear() {
   _impl_.last_clear_ = uint64_t{0u};
 }
@@ -3534,7 +3545,7 @@ inline void Counters::set_last_clear(uint64_t value) {
 
 // State
 
-// string name = 1;
+// string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
 inline void State::clear_name() {
   _impl_.name_.ClearToEmpty();
 }
@@ -3584,7 +3595,7 @@ inline void State::set_allocated_name(std::string* name) {
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.v1alpha1.State.name)
 }
 
-// .opi_api.network.v1alpha1.InterfaceType type = 2;
+// .opi_api.network.v1alpha1.InterfaceType type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
 inline void State::clear_type() {
   _impl_.type_ = 0;
 }
@@ -3604,7 +3615,7 @@ inline void State::set_type(::opi_api::network::v1alpha1::InterfaceType value) {
   // @@protoc_insertion_point(field_set:opi_api.network.v1alpha1.State.type)
 }
 
-// uint32 mtu = 3;
+// uint32 mtu = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
 inline void State::clear_mtu() {
   _impl_.mtu_ = 0u;
 }
@@ -3624,7 +3635,7 @@ inline void State::set_mtu(uint32_t value) {
   // @@protoc_insertion_point(field_set:opi_api.network.v1alpha1.State.mtu)
 }
 
-// bool loopback_mode = 4;
+// bool loopback_mode = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
 inline void State::clear_loopback_mode() {
   _impl_.loopback_mode_ = false;
 }
@@ -3644,7 +3655,7 @@ inline void State::set_loopback_mode(bool value) {
   // @@protoc_insertion_point(field_set:opi_api.network.v1alpha1.State.loopback_mode)
 }
 
-// string description = 5;
+// string description = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
 inline void State::clear_description() {
   _impl_.description_.ClearToEmpty();
 }
@@ -3694,7 +3705,7 @@ inline void State::set_allocated_description(std::string* description) {
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.v1alpha1.State.description)
 }
 
-// bool enabled = 6;
+// bool enabled = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
 inline void State::clear_enabled() {
   _impl_.enabled_ = false;
 }
@@ -3714,7 +3725,7 @@ inline void State::set_enabled(bool value) {
   // @@protoc_insertion_point(field_set:opi_api.network.v1alpha1.State.enabled)
 }
 
-// uint32 ifindex = 7;
+// uint32 ifindex = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
 inline void State::clear_ifindex() {
   _impl_.ifindex_ = 0u;
 }
@@ -3734,7 +3745,7 @@ inline void State::set_ifindex(uint32_t value) {
   // @@protoc_insertion_point(field_set:opi_api.network.v1alpha1.State.ifindex)
 }
 
-// .opi_api.network.opinetcommon.v1alpha1.AdminState admin_state = 8;
+// .opi_api.network.opinetcommon.v1alpha1.AdminState admin_state = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
 inline void State::clear_admin_state() {
   _impl_.admin_state_ = 0;
 }
@@ -3754,7 +3765,7 @@ inline void State::set_admin_state(::opi_api::network::opinetcommon::v1alpha1::A
   // @@protoc_insertion_point(field_set:opi_api.network.v1alpha1.State.admin_state)
 }
 
-// .opi_api.network.v1alpha1.OperState oper_state = 9;
+// .opi_api.network.v1alpha1.OperState oper_state = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
 inline void State::clear_oper_state() {
   _impl_.oper_state_ = 0;
 }
@@ -3774,7 +3785,7 @@ inline void State::set_oper_state(::opi_api::network::v1alpha1::OperState value)
   // @@protoc_insertion_point(field_set:opi_api.network.v1alpha1.State.oper_state)
 }
 
-// uint64 last_change = 10;
+// uint64 last_change = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
 inline void State::clear_last_change() {
   _impl_.last_change_ = uint64_t{0u};
 }
@@ -3794,7 +3805,7 @@ inline void State::set_last_change(uint64_t value) {
   // @@protoc_insertion_point(field_set:opi_api.network.v1alpha1.State.last_change)
 }
 
-// bool logical = 11;
+// bool logical = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
 inline void State::clear_logical() {
   _impl_.logical_ = false;
 }
@@ -3814,7 +3825,7 @@ inline void State::set_logical(bool value) {
   // @@protoc_insertion_point(field_set:opi_api.network.v1alpha1.State.logical)
 }
 
-// bool management = 12;
+// bool management = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
 inline void State::clear_management() {
   _impl_.management_ = false;
 }
@@ -3834,7 +3845,7 @@ inline void State::set_management(bool value) {
   // @@protoc_insertion_point(field_set:opi_api.network.v1alpha1.State.management)
 }
 
-// bool cpu = 13;
+// bool cpu = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
 inline void State::clear_cpu() {
   _impl_.cpu_ = false;
 }
@@ -3854,7 +3865,7 @@ inline void State::set_cpu(bool value) {
   // @@protoc_insertion_point(field_set:opi_api.network.v1alpha1.State.cpu)
 }
 
-// .opi_api.network.v1alpha1.Counters counters = 14;
+// .opi_api.network.v1alpha1.Counters counters = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
 inline bool State::_internal_has_counters() const {
   return this != internal_default_instance() && _impl_.counters_ != nullptr;
 }
@@ -3948,7 +3959,7 @@ inline void State::set_allocated_counters(::opi_api::network::v1alpha1::Counters
 
 // NetInterface_HoldTime_HoldConfig
 
-// uint32 up = 1;
+// uint32 up = 1 [(.google.api.field_behavior) = OPTIONAL];
 inline void NetInterface_HoldTime_HoldConfig::clear_up() {
   _impl_.up_ = 0u;
 }
@@ -3968,7 +3979,7 @@ inline void NetInterface_HoldTime_HoldConfig::set_up(uint32_t value) {
   // @@protoc_insertion_point(field_set:opi_api.network.v1alpha1.NetInterface.HoldTime.HoldConfig.up)
 }
 
-// uint32 down = 2;
+// uint32 down = 2 [(.google.api.field_behavior) = OPTIONAL];
 inline void NetInterface_HoldTime_HoldConfig::clear_down() {
   _impl_.down_ = 0u;
 }
@@ -3992,7 +4003,7 @@ inline void NetInterface_HoldTime_HoldConfig::set_down(uint32_t value) {
 
 // NetInterface_HoldTime_HoldState
 
-// uint32 up = 1;
+// uint32 up = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
 inline void NetInterface_HoldTime_HoldState::clear_up() {
   _impl_.up_ = 0u;
 }
@@ -4012,7 +4023,7 @@ inline void NetInterface_HoldTime_HoldState::set_up(uint32_t value) {
   // @@protoc_insertion_point(field_set:opi_api.network.v1alpha1.NetInterface.HoldTime.HoldState.up)
 }
 
-// uint32 down = 2;
+// uint32 down = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
 inline void NetInterface_HoldTime_HoldState::clear_down() {
   _impl_.down_ = 0u;
 }
@@ -4036,7 +4047,7 @@ inline void NetInterface_HoldTime_HoldState::set_down(uint32_t value) {
 
 // NetInterface_HoldTime
 
-// .opi_api.network.v1alpha1.NetInterface.HoldTime.HoldConfig hold_config = 1;
+// .opi_api.network.v1alpha1.NetInterface.HoldTime.HoldConfig hold_config = 1 [(.google.api.field_behavior) = OPTIONAL];
 inline bool NetInterface_HoldTime::_internal_has_hold_config() const {
   return this != internal_default_instance() && _impl_.hold_config_ != nullptr;
 }
@@ -4126,7 +4137,7 @@ inline void NetInterface_HoldTime::set_allocated_hold_config(::opi_api::network:
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.v1alpha1.NetInterface.HoldTime.hold_config)
 }
 
-// .opi_api.network.v1alpha1.NetInterface.HoldTime.HoldState hold_state = 2;
+// .opi_api.network.v1alpha1.NetInterface.HoldTime.HoldState hold_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
 inline bool NetInterface_HoldTime::_internal_has_hold_state() const {
   return this != internal_default_instance() && _impl_.hold_state_ != nullptr;
 }
@@ -4220,7 +4231,7 @@ inline void NetInterface_HoldTime::set_allocated_hold_state(::opi_api::network::
 
 // NetInterface_Subinterfaces_Subinterface_SubifConfig
 
-// uint64 index = 1;
+// uint64 index = 1 [(.google.api.field_behavior) = OPTIONAL];
 inline void NetInterface_Subinterfaces_Subinterface_SubifConfig::clear_index() {
   _impl_.index_ = uint64_t{0u};
 }
@@ -4240,7 +4251,7 @@ inline void NetInterface_Subinterfaces_Subinterface_SubifConfig::set_index(uint6
   // @@protoc_insertion_point(field_set:opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface.SubifConfig.index)
 }
 
-// string description = 2;
+// string description = 2 [(.google.api.field_behavior) = OPTIONAL];
 inline void NetInterface_Subinterfaces_Subinterface_SubifConfig::clear_description() {
   _impl_.description_.ClearToEmpty();
 }
@@ -4290,7 +4301,7 @@ inline void NetInterface_Subinterfaces_Subinterface_SubifConfig::set_allocated_d
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface.SubifConfig.description)
 }
 
-// bool enabled = 3;
+// bool enabled = 3 [(.google.api.field_behavior) = OPTIONAL];
 inline void NetInterface_Subinterfaces_Subinterface_SubifConfig::clear_enabled() {
   _impl_.enabled_ = false;
 }
@@ -4314,7 +4325,7 @@ inline void NetInterface_Subinterfaces_Subinterface_SubifConfig::set_enabled(boo
 
 // NetInterface_Subinterfaces_Subinterface
 
-// int64 index = 1;
+// int64 index = 1 [(.google.api.field_behavior) = OPTIONAL];
 inline void NetInterface_Subinterfaces_Subinterface::clear_index() {
   _impl_.index_ = int64_t{0};
 }
@@ -4334,7 +4345,7 @@ inline void NetInterface_Subinterfaces_Subinterface::set_index(int64_t value) {
   // @@protoc_insertion_point(field_set:opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface.index)
 }
 
-// .opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface.SubifConfig subif_config = 2;
+// .opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface.SubifConfig subif_config = 2 [(.google.api.field_behavior) = OPTIONAL];
 inline bool NetInterface_Subinterfaces_Subinterface::_internal_has_subif_config() const {
   return this != internal_default_instance() && _impl_.subif_config_ != nullptr;
 }
@@ -4424,7 +4435,7 @@ inline void NetInterface_Subinterfaces_Subinterface::set_allocated_subif_config(
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface.subif_config)
 }
 
-// .opi_api.network.v1alpha1.State state = 3;
+// .opi_api.network.v1alpha1.State state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
 inline bool NetInterface_Subinterfaces_Subinterface::_internal_has_state() const {
   return this != internal_default_instance() && _impl_.state_ != nullptr;
 }
@@ -4518,7 +4529,7 @@ inline void NetInterface_Subinterfaces_Subinterface::set_allocated_state(::opi_a
 
 // NetInterface_Subinterfaces
 
-// repeated .opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface subinterface = 2;
+// repeated .opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface subinterface = 2 [(.google.api.field_behavior) = OPTIONAL];
 inline int NetInterface_Subinterfaces::_internal_subinterface_size() const {
   return _impl_.subinterface_.size();
 }
@@ -4562,7 +4573,7 @@ NetInterface_Subinterfaces::subinterface() const {
 
 // NetInterface
 
-// string name = 1;
+// string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {
 inline void NetInterface::clear_name() {
   _impl_.name_.ClearToEmpty();
 }
@@ -4612,7 +4623,7 @@ inline void NetInterface::set_allocated_name(std::string* name) {
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.v1alpha1.NetInterface.name)
 }
 
-// .opi_api.network.v1alpha1.Config config = 2;
+// .opi_api.network.v1alpha1.Config config = 2 [(.google.api.field_behavior) = REQUIRED];
 inline bool NetInterface::_internal_has_config() const {
   return this != internal_default_instance() && _impl_.config_ != nullptr;
 }
@@ -4702,7 +4713,7 @@ inline void NetInterface::set_allocated_config(::opi_api::network::v1alpha1::Con
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.v1alpha1.NetInterface.config)
 }
 
-// .opi_api.network.v1alpha1.State state = 3;
+// .opi_api.network.v1alpha1.State state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
 inline bool NetInterface::_internal_has_state() const {
   return this != internal_default_instance() && _impl_.state_ != nullptr;
 }
@@ -4792,7 +4803,7 @@ inline void NetInterface::set_allocated_state(::opi_api::network::v1alpha1::Stat
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.v1alpha1.NetInterface.state)
 }
 
-// .opi_api.network.v1alpha1.NetInterface.HoldTime holdtime = 4;
+// .opi_api.network.v1alpha1.NetInterface.HoldTime holdtime = 4 [(.google.api.field_behavior) = OPTIONAL];
 inline bool NetInterface::_internal_has_holdtime() const {
   return this != internal_default_instance() && _impl_.holdtime_ != nullptr;
 }
@@ -4882,7 +4893,7 @@ inline void NetInterface::set_allocated_holdtime(::opi_api::network::v1alpha1::N
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.v1alpha1.NetInterface.holdtime)
 }
 
-// .opi_api.network.v1alpha1.NetInterface.Subinterfaces subinterfaces = 5;
+// .opi_api.network.v1alpha1.NetInterface.Subinterfaces subinterfaces = 5 [(.google.api.field_behavior) = OPTIONAL];
 inline bool NetInterface::_internal_has_subinterfaces() const {
   return this != internal_default_instance() && _impl_.subinterfaces_ != nullptr;
 }
@@ -5080,7 +5091,7 @@ inline void ListNetInterfacesRequest::set_allocated_parent(std::string* parent) 
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.v1alpha1.ListNetInterfacesRequest.parent)
 }
 
-// int32 page_size = 2;
+// int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];
 inline void ListNetInterfacesRequest::clear_page_size() {
   _impl_.page_size_ = 0;
 }
@@ -5100,7 +5111,7 @@ inline void ListNetInterfacesRequest::set_page_size(int32_t value) {
   // @@protoc_insertion_point(field_set:opi_api.network.v1alpha1.ListNetInterfacesRequest.page_size)
 }
 
-// string page_token = 3;
+// string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];
 inline void ListNetInterfacesRequest::clear_page_token() {
   _impl_.page_token_.ClearToEmpty();
 }
@@ -5248,7 +5259,7 @@ inline void ListNetInterfacesResponse::set_allocated_next_page_token(std::string
 
 // UpdateNetInterfaceRequest
 
-// .opi_api.network.v1alpha1.NetInterface net_interface = 1;
+// .opi_api.network.v1alpha1.NetInterface net_interface = 1 [(.google.api.field_behavior) = REQUIRED];
 inline bool UpdateNetInterfaceRequest::_internal_has_net_interface() const {
   return this != internal_default_instance() && _impl_.net_interface_ != nullptr;
 }
@@ -5338,7 +5349,7 @@ inline void UpdateNetInterfaceRequest::set_allocated_net_interface(::opi_api::ne
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.v1alpha1.UpdateNetInterfaceRequest.net_interface)
 }
 
-// .google.protobuf.FieldMask update_mask = 2;
+// .google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
 inline bool UpdateNetInterfaceRequest::_internal_has_update_mask() const {
   return this != internal_default_instance() && _impl_.update_mask_ != nullptr;
 }
@@ -5421,6 +5432,26 @@ inline void UpdateNetInterfaceRequest::set_allocated_update_mask(::PROTOBUF_NAME
   }
   _impl_.update_mask_ = update_mask;
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.v1alpha1.UpdateNetInterfaceRequest.update_mask)
+}
+
+// bool allow_missing = 3 [(.google.api.field_behavior) = OPTIONAL];
+inline void UpdateNetInterfaceRequest::clear_allow_missing() {
+  _impl_.allow_missing_ = false;
+}
+inline bool UpdateNetInterfaceRequest::_internal_allow_missing() const {
+  return _impl_.allow_missing_;
+}
+inline bool UpdateNetInterfaceRequest::allow_missing() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.v1alpha1.UpdateNetInterfaceRequest.allow_missing)
+  return _internal_allow_missing();
+}
+inline void UpdateNetInterfaceRequest::_internal_set_allow_missing(bool value) {
+  
+  _impl_.allow_missing_ = value;
+}
+inline void UpdateNetInterfaceRequest::set_allow_missing(bool value) {
+  _internal_set_allow_missing(value);
+  // @@protoc_insertion_point(field_set:opi_api.network.v1alpha1.UpdateNetInterfaceRequest.allow_missing)
 }
 
 #ifdef __GNUC__

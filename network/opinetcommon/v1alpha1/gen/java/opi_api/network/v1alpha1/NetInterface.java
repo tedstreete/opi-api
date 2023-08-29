@@ -156,7 +156,7 @@ private static final long serialVersionUID = 0L;
      * Hold Time Config
      * </pre>
      *
-     * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime.HoldConfig hold_config = 1;</code>
+     * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime.HoldConfig hold_config = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return Whether the holdConfig field is set.
      */
     boolean hasHoldConfig();
@@ -165,7 +165,7 @@ private static final long serialVersionUID = 0L;
      * Hold Time Config
      * </pre>
      *
-     * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime.HoldConfig hold_config = 1;</code>
+     * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime.HoldConfig hold_config = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The holdConfig.
      */
     opi_api.network.v1alpha1.NetInterface.HoldTime.HoldConfig getHoldConfig();
@@ -174,7 +174,7 @@ private static final long serialVersionUID = 0L;
      * Hold Time Config
      * </pre>
      *
-     * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime.HoldConfig hold_config = 1;</code>
+     * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime.HoldConfig hold_config = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     opi_api.network.v1alpha1.NetInterface.HoldTime.HoldConfigOrBuilder getHoldConfigOrBuilder();
 
@@ -183,7 +183,7 @@ private static final long serialVersionUID = 0L;
      * Hold State Settings
      * </pre>
      *
-     * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime.HoldState hold_state = 2;</code>
+     * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime.HoldState hold_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return Whether the holdState field is set.
      */
     boolean hasHoldState();
@@ -192,7 +192,7 @@ private static final long serialVersionUID = 0L;
      * Hold State Settings
      * </pre>
      *
-     * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime.HoldState hold_state = 2;</code>
+     * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime.HoldState hold_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The holdState.
      */
     opi_api.network.v1alpha1.NetInterface.HoldTime.HoldState getHoldState();
@@ -201,7 +201,7 @@ private static final long serialVersionUID = 0L;
      * Hold State Settings
      * </pre>
      *
-     * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime.HoldState hold_state = 2;</code>
+     * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime.HoldState hold_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     opi_api.network.v1alpha1.NetInterface.HoldTime.HoldStateOrBuilder getHoldStateOrBuilder();
   }
@@ -323,7 +323,7 @@ private static final long serialVersionUID = 0L;
        * Hold time up
        * </pre>
        *
-       * <code>uint32 up = 1;</code>
+       * <code>uint32 up = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        * @return The up.
        */
       int getUp();
@@ -333,7 +333,7 @@ private static final long serialVersionUID = 0L;
        * Hold time down
        * </pre>
        *
-       * <code>uint32 down = 2;</code>
+       * <code>uint32 down = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        * @return The down.
        */
       int getDown();
@@ -438,7 +438,7 @@ private static final long serialVersionUID = 0L;
        * Hold time up
        * </pre>
        *
-       * <code>uint32 up = 1;</code>
+       * <code>uint32 up = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        * @return The up.
        */
       @java.lang.Override
@@ -453,7 +453,7 @@ private static final long serialVersionUID = 0L;
        * Hold time down
        * </pre>
        *
-       * <code>uint32 down = 2;</code>
+       * <code>uint32 down = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        * @return The down.
        */
       @java.lang.Override
@@ -790,7 +790,7 @@ private static final long serialVersionUID = 0L;
          * Hold time up
          * </pre>
          *
-         * <code>uint32 up = 1;</code>
+         * <code>uint32 up = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
          * @return The up.
          */
         @java.lang.Override
@@ -802,7 +802,7 @@ private static final long serialVersionUID = 0L;
          * Hold time up
          * </pre>
          *
-         * <code>uint32 up = 1;</code>
+         * <code>uint32 up = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
          * @param value The up to set.
          * @return This builder for chaining.
          */
@@ -817,7 +817,7 @@ private static final long serialVersionUID = 0L;
          * Hold time up
          * </pre>
          *
-         * <code>uint32 up = 1;</code>
+         * <code>uint32 up = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
          * @return This builder for chaining.
          */
         public Builder clearUp() {
@@ -833,7 +833,7 @@ private static final long serialVersionUID = 0L;
          * Hold time down
          * </pre>
          *
-         * <code>uint32 down = 2;</code>
+         * <code>uint32 down = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
          * @return The down.
          */
         @java.lang.Override
@@ -845,7 +845,7 @@ private static final long serialVersionUID = 0L;
          * Hold time down
          * </pre>
          *
-         * <code>uint32 down = 2;</code>
+         * <code>uint32 down = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
          * @param value The down to set.
          * @return This builder for chaining.
          */
@@ -860,7 +860,7 @@ private static final long serialVersionUID = 0L;
          * Hold time down
          * </pre>
          *
-         * <code>uint32 down = 2;</code>
+         * <code>uint32 down = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
          * @return This builder for chaining.
          */
         public Builder clearDown() {
@@ -931,7 +931,7 @@ private static final long serialVersionUID = 0L;
        * Hold state up
        * </pre>
        *
-       * <code>uint32 up = 1;</code>
+       * <code>uint32 up = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return The up.
        */
       int getUp();
@@ -941,7 +941,7 @@ private static final long serialVersionUID = 0L;
        * Hold state down
        * </pre>
        *
-       * <code>uint32 down = 2;</code>
+       * <code>uint32 down = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return The down.
        */
       int getDown();
@@ -1046,7 +1046,7 @@ private static final long serialVersionUID = 0L;
        * Hold state up
        * </pre>
        *
-       * <code>uint32 up = 1;</code>
+       * <code>uint32 up = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return The up.
        */
       @java.lang.Override
@@ -1061,7 +1061,7 @@ private static final long serialVersionUID = 0L;
        * Hold state down
        * </pre>
        *
-       * <code>uint32 down = 2;</code>
+       * <code>uint32 down = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return The down.
        */
       @java.lang.Override
@@ -1398,7 +1398,7 @@ private static final long serialVersionUID = 0L;
          * Hold state up
          * </pre>
          *
-         * <code>uint32 up = 1;</code>
+         * <code>uint32 up = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
          * @return The up.
          */
         @java.lang.Override
@@ -1410,7 +1410,7 @@ private static final long serialVersionUID = 0L;
          * Hold state up
          * </pre>
          *
-         * <code>uint32 up = 1;</code>
+         * <code>uint32 up = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
          * @param value The up to set.
          * @return This builder for chaining.
          */
@@ -1425,7 +1425,7 @@ private static final long serialVersionUID = 0L;
          * Hold state up
          * </pre>
          *
-         * <code>uint32 up = 1;</code>
+         * <code>uint32 up = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
          * @return This builder for chaining.
          */
         public Builder clearUp() {
@@ -1441,7 +1441,7 @@ private static final long serialVersionUID = 0L;
          * Hold state down
          * </pre>
          *
-         * <code>uint32 down = 2;</code>
+         * <code>uint32 down = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
          * @return The down.
          */
         @java.lang.Override
@@ -1453,7 +1453,7 @@ private static final long serialVersionUID = 0L;
          * Hold state down
          * </pre>
          *
-         * <code>uint32 down = 2;</code>
+         * <code>uint32 down = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
          * @param value The down to set.
          * @return This builder for chaining.
          */
@@ -1468,7 +1468,7 @@ private static final long serialVersionUID = 0L;
          * Hold state down
          * </pre>
          *
-         * <code>uint32 down = 2;</code>
+         * <code>uint32 down = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
          * @return This builder for chaining.
          */
         public Builder clearDown() {
@@ -1537,7 +1537,7 @@ private static final long serialVersionUID = 0L;
      * Hold Time Config
      * </pre>
      *
-     * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime.HoldConfig hold_config = 1;</code>
+     * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime.HoldConfig hold_config = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return Whether the holdConfig field is set.
      */
     @java.lang.Override
@@ -1549,7 +1549,7 @@ private static final long serialVersionUID = 0L;
      * Hold Time Config
      * </pre>
      *
-     * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime.HoldConfig hold_config = 1;</code>
+     * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime.HoldConfig hold_config = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The holdConfig.
      */
     @java.lang.Override
@@ -1561,7 +1561,7 @@ private static final long serialVersionUID = 0L;
      * Hold Time Config
      * </pre>
      *
-     * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime.HoldConfig hold_config = 1;</code>
+     * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime.HoldConfig hold_config = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public opi_api.network.v1alpha1.NetInterface.HoldTime.HoldConfigOrBuilder getHoldConfigOrBuilder() {
@@ -1575,7 +1575,7 @@ private static final long serialVersionUID = 0L;
      * Hold State Settings
      * </pre>
      *
-     * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime.HoldState hold_state = 2;</code>
+     * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime.HoldState hold_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return Whether the holdState field is set.
      */
     @java.lang.Override
@@ -1587,7 +1587,7 @@ private static final long serialVersionUID = 0L;
      * Hold State Settings
      * </pre>
      *
-     * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime.HoldState hold_state = 2;</code>
+     * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime.HoldState hold_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The holdState.
      */
     @java.lang.Override
@@ -1599,7 +1599,7 @@ private static final long serialVersionUID = 0L;
      * Hold State Settings
      * </pre>
      *
-     * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime.HoldState hold_state = 2;</code>
+     * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime.HoldState hold_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     @java.lang.Override
     public opi_api.network.v1alpha1.NetInterface.HoldTime.HoldStateOrBuilder getHoldStateOrBuilder() {
@@ -1963,7 +1963,7 @@ private static final long serialVersionUID = 0L;
        * Hold Time Config
        * </pre>
        *
-       * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime.HoldConfig hold_config = 1;</code>
+       * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime.HoldConfig hold_config = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        * @return Whether the holdConfig field is set.
        */
       public boolean hasHoldConfig() {
@@ -1974,7 +1974,7 @@ private static final long serialVersionUID = 0L;
        * Hold Time Config
        * </pre>
        *
-       * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime.HoldConfig hold_config = 1;</code>
+       * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime.HoldConfig hold_config = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        * @return The holdConfig.
        */
       public opi_api.network.v1alpha1.NetInterface.HoldTime.HoldConfig getHoldConfig() {
@@ -1989,7 +1989,7 @@ private static final long serialVersionUID = 0L;
        * Hold Time Config
        * </pre>
        *
-       * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime.HoldConfig hold_config = 1;</code>
+       * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime.HoldConfig hold_config = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public Builder setHoldConfig(opi_api.network.v1alpha1.NetInterface.HoldTime.HoldConfig value) {
         if (holdConfigBuilder_ == null) {
@@ -2009,7 +2009,7 @@ private static final long serialVersionUID = 0L;
        * Hold Time Config
        * </pre>
        *
-       * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime.HoldConfig hold_config = 1;</code>
+       * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime.HoldConfig hold_config = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public Builder setHoldConfig(
           opi_api.network.v1alpha1.NetInterface.HoldTime.HoldConfig.Builder builderForValue) {
@@ -2027,7 +2027,7 @@ private static final long serialVersionUID = 0L;
        * Hold Time Config
        * </pre>
        *
-       * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime.HoldConfig hold_config = 1;</code>
+       * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime.HoldConfig hold_config = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public Builder mergeHoldConfig(opi_api.network.v1alpha1.NetInterface.HoldTime.HoldConfig value) {
         if (holdConfigBuilder_ == null) {
@@ -2049,7 +2049,7 @@ private static final long serialVersionUID = 0L;
        * Hold Time Config
        * </pre>
        *
-       * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime.HoldConfig hold_config = 1;</code>
+       * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime.HoldConfig hold_config = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public Builder clearHoldConfig() {
         if (holdConfigBuilder_ == null) {
@@ -2067,7 +2067,7 @@ private static final long serialVersionUID = 0L;
        * Hold Time Config
        * </pre>
        *
-       * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime.HoldConfig hold_config = 1;</code>
+       * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime.HoldConfig hold_config = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public opi_api.network.v1alpha1.NetInterface.HoldTime.HoldConfig.Builder getHoldConfigBuilder() {
         
@@ -2079,7 +2079,7 @@ private static final long serialVersionUID = 0L;
        * Hold Time Config
        * </pre>
        *
-       * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime.HoldConfig hold_config = 1;</code>
+       * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime.HoldConfig hold_config = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public opi_api.network.v1alpha1.NetInterface.HoldTime.HoldConfigOrBuilder getHoldConfigOrBuilder() {
         if (holdConfigBuilder_ != null) {
@@ -2094,7 +2094,7 @@ private static final long serialVersionUID = 0L;
        * Hold Time Config
        * </pre>
        *
-       * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime.HoldConfig hold_config = 1;</code>
+       * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime.HoldConfig hold_config = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           opi_api.network.v1alpha1.NetInterface.HoldTime.HoldConfig, opi_api.network.v1alpha1.NetInterface.HoldTime.HoldConfig.Builder, opi_api.network.v1alpha1.NetInterface.HoldTime.HoldConfigOrBuilder> 
@@ -2118,7 +2118,7 @@ private static final long serialVersionUID = 0L;
        * Hold State Settings
        * </pre>
        *
-       * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime.HoldState hold_state = 2;</code>
+       * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime.HoldState hold_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return Whether the holdState field is set.
        */
       public boolean hasHoldState() {
@@ -2129,7 +2129,7 @@ private static final long serialVersionUID = 0L;
        * Hold State Settings
        * </pre>
        *
-       * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime.HoldState hold_state = 2;</code>
+       * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime.HoldState hold_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return The holdState.
        */
       public opi_api.network.v1alpha1.NetInterface.HoldTime.HoldState getHoldState() {
@@ -2144,7 +2144,7 @@ private static final long serialVersionUID = 0L;
        * Hold State Settings
        * </pre>
        *
-       * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime.HoldState hold_state = 2;</code>
+       * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime.HoldState hold_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        */
       public Builder setHoldState(opi_api.network.v1alpha1.NetInterface.HoldTime.HoldState value) {
         if (holdStateBuilder_ == null) {
@@ -2164,7 +2164,7 @@ private static final long serialVersionUID = 0L;
        * Hold State Settings
        * </pre>
        *
-       * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime.HoldState hold_state = 2;</code>
+       * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime.HoldState hold_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        */
       public Builder setHoldState(
           opi_api.network.v1alpha1.NetInterface.HoldTime.HoldState.Builder builderForValue) {
@@ -2182,7 +2182,7 @@ private static final long serialVersionUID = 0L;
        * Hold State Settings
        * </pre>
        *
-       * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime.HoldState hold_state = 2;</code>
+       * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime.HoldState hold_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        */
       public Builder mergeHoldState(opi_api.network.v1alpha1.NetInterface.HoldTime.HoldState value) {
         if (holdStateBuilder_ == null) {
@@ -2204,7 +2204,7 @@ private static final long serialVersionUID = 0L;
        * Hold State Settings
        * </pre>
        *
-       * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime.HoldState hold_state = 2;</code>
+       * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime.HoldState hold_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        */
       public Builder clearHoldState() {
         if (holdStateBuilder_ == null) {
@@ -2222,7 +2222,7 @@ private static final long serialVersionUID = 0L;
        * Hold State Settings
        * </pre>
        *
-       * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime.HoldState hold_state = 2;</code>
+       * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime.HoldState hold_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        */
       public opi_api.network.v1alpha1.NetInterface.HoldTime.HoldState.Builder getHoldStateBuilder() {
         
@@ -2234,7 +2234,7 @@ private static final long serialVersionUID = 0L;
        * Hold State Settings
        * </pre>
        *
-       * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime.HoldState hold_state = 2;</code>
+       * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime.HoldState hold_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        */
       public opi_api.network.v1alpha1.NetInterface.HoldTime.HoldStateOrBuilder getHoldStateOrBuilder() {
         if (holdStateBuilder_ != null) {
@@ -2249,7 +2249,7 @@ private static final long serialVersionUID = 0L;
        * Hold State Settings
        * </pre>
        *
-       * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime.HoldState hold_state = 2;</code>
+       * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime.HoldState hold_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           opi_api.network.v1alpha1.NetInterface.HoldTime.HoldState, opi_api.network.v1alpha1.NetInterface.HoldTime.HoldState.Builder, opi_api.network.v1alpha1.NetInterface.HoldTime.HoldStateOrBuilder> 
@@ -2326,7 +2326,7 @@ private static final long serialVersionUID = 0L;
      * Subinterface Settings
      * </pre>
      *
-     * <code>repeated .opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface subinterface = 2;</code>
+     * <code>repeated .opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface subinterface = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     java.util.List<opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface> 
         getSubinterfaceList();
@@ -2335,7 +2335,7 @@ private static final long serialVersionUID = 0L;
      * Subinterface Settings
      * </pre>
      *
-     * <code>repeated .opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface subinterface = 2;</code>
+     * <code>repeated .opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface subinterface = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface getSubinterface(int index);
     /**
@@ -2343,7 +2343,7 @@ private static final long serialVersionUID = 0L;
      * Subinterface Settings
      * </pre>
      *
-     * <code>repeated .opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface subinterface = 2;</code>
+     * <code>repeated .opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface subinterface = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     int getSubinterfaceCount();
     /**
@@ -2351,7 +2351,7 @@ private static final long serialVersionUID = 0L;
      * Subinterface Settings
      * </pre>
      *
-     * <code>repeated .opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface subinterface = 2;</code>
+     * <code>repeated .opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface subinterface = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     java.util.List<? extends opi_api.network.v1alpha1.NetInterface.Subinterfaces.SubinterfaceOrBuilder> 
         getSubinterfaceOrBuilderList();
@@ -2360,7 +2360,7 @@ private static final long serialVersionUID = 0L;
      * Subinterface Settings
      * </pre>
      *
-     * <code>repeated .opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface subinterface = 2;</code>
+     * <code>repeated .opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface subinterface = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     opi_api.network.v1alpha1.NetInterface.Subinterfaces.SubinterfaceOrBuilder getSubinterfaceOrBuilder(
         int index);
@@ -2471,7 +2471,7 @@ private static final long serialVersionUID = 0L;
        * Subinterface index
        * </pre>
        *
-       * <code>int64 index = 1;</code>
+       * <code>int64 index = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        * @return The index.
        */
       long getIndex();
@@ -2481,7 +2481,7 @@ private static final long serialVersionUID = 0L;
        * Subinterface Configuration
        * </pre>
        *
-       * <code>.opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface.SubifConfig subif_config = 2;</code>
+       * <code>.opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface.SubifConfig subif_config = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        * @return Whether the subifConfig field is set.
        */
       boolean hasSubifConfig();
@@ -2490,7 +2490,7 @@ private static final long serialVersionUID = 0L;
        * Subinterface Configuration
        * </pre>
        *
-       * <code>.opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface.SubifConfig subif_config = 2;</code>
+       * <code>.opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface.SubifConfig subif_config = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        * @return The subifConfig.
        */
       opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface.SubifConfig getSubifConfig();
@@ -2499,7 +2499,7 @@ private static final long serialVersionUID = 0L;
        * Subinterface Configuration
        * </pre>
        *
-       * <code>.opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface.SubifConfig subif_config = 2;</code>
+       * <code>.opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface.SubifConfig subif_config = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface.SubifConfigOrBuilder getSubifConfigOrBuilder();
 
@@ -2508,7 +2508,7 @@ private static final long serialVersionUID = 0L;
        * Subinterface State and Statistics
        * </pre>
        *
-       * <code>.opi_api.network.v1alpha1.State state = 3;</code>
+       * <code>.opi_api.network.v1alpha1.State state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return Whether the state field is set.
        */
       boolean hasState();
@@ -2517,7 +2517,7 @@ private static final long serialVersionUID = 0L;
        * Subinterface State and Statistics
        * </pre>
        *
-       * <code>.opi_api.network.v1alpha1.State state = 3;</code>
+       * <code>.opi_api.network.v1alpha1.State state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return The state.
        */
       opi_api.network.v1alpha1.State getState();
@@ -2526,7 +2526,7 @@ private static final long serialVersionUID = 0L;
        * Subinterface State and Statistics
        * </pre>
        *
-       * <code>.opi_api.network.v1alpha1.State state = 3;</code>
+       * <code>.opi_api.network.v1alpha1.State state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        */
       opi_api.network.v1alpha1.StateOrBuilder getStateOrBuilder();
     }
@@ -2653,7 +2653,7 @@ private static final long serialVersionUID = 0L;
          * Subinterface Index
          * </pre>
          *
-         * <code>uint64 index = 1;</code>
+         * <code>uint64 index = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
          * @return The index.
          */
         long getIndex();
@@ -2663,7 +2663,7 @@ private static final long serialVersionUID = 0L;
          * Subinterface description
          * </pre>
          *
-         * <code>string description = 2;</code>
+         * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
          * @return The description.
          */
         java.lang.String getDescription();
@@ -2672,7 +2672,7 @@ private static final long serialVersionUID = 0L;
          * Subinterface description
          * </pre>
          *
-         * <code>string description = 2;</code>
+         * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
          * @return The bytes for description.
          */
         com.google.protobuf.ByteString
@@ -2683,7 +2683,7 @@ private static final long serialVersionUID = 0L;
          * Subinterface enabled
          * </pre>
          *
-         * <code>bool enabled = 3;</code>
+         * <code>bool enabled = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
          * @return The enabled.
          */
         boolean getEnabled();
@@ -2795,7 +2795,7 @@ private static final long serialVersionUID = 0L;
          * Subinterface Index
          * </pre>
          *
-         * <code>uint64 index = 1;</code>
+         * <code>uint64 index = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
          * @return The index.
          */
         @java.lang.Override
@@ -2810,7 +2810,7 @@ private static final long serialVersionUID = 0L;
          * Subinterface description
          * </pre>
          *
-         * <code>string description = 2;</code>
+         * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
          * @return The description.
          */
         @java.lang.Override
@@ -2831,7 +2831,7 @@ private static final long serialVersionUID = 0L;
          * Subinterface description
          * </pre>
          *
-         * <code>string description = 2;</code>
+         * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
          * @return The bytes for description.
          */
         @java.lang.Override
@@ -2856,7 +2856,7 @@ private static final long serialVersionUID = 0L;
          * Subinterface enabled
          * </pre>
          *
-         * <code>bool enabled = 3;</code>
+         * <code>bool enabled = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
          * @return The enabled.
          */
         @java.lang.Override
@@ -3212,7 +3212,7 @@ private static final long serialVersionUID = 0L;
            * Subinterface Index
            * </pre>
            *
-           * <code>uint64 index = 1;</code>
+           * <code>uint64 index = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
            * @return The index.
            */
           @java.lang.Override
@@ -3224,7 +3224,7 @@ private static final long serialVersionUID = 0L;
            * Subinterface Index
            * </pre>
            *
-           * <code>uint64 index = 1;</code>
+           * <code>uint64 index = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
            * @param value The index to set.
            * @return This builder for chaining.
            */
@@ -3239,7 +3239,7 @@ private static final long serialVersionUID = 0L;
            * Subinterface Index
            * </pre>
            *
-           * <code>uint64 index = 1;</code>
+           * <code>uint64 index = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
            * @return This builder for chaining.
            */
           public Builder clearIndex() {
@@ -3255,7 +3255,7 @@ private static final long serialVersionUID = 0L;
            * Subinterface description
            * </pre>
            *
-           * <code>string description = 2;</code>
+           * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
            * @return The description.
            */
           public java.lang.String getDescription() {
@@ -3275,7 +3275,7 @@ private static final long serialVersionUID = 0L;
            * Subinterface description
            * </pre>
            *
-           * <code>string description = 2;</code>
+           * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
            * @return The bytes for description.
            */
           public com.google.protobuf.ByteString
@@ -3296,7 +3296,7 @@ private static final long serialVersionUID = 0L;
            * Subinterface description
            * </pre>
            *
-           * <code>string description = 2;</code>
+           * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
            * @param value The description to set.
            * @return This builder for chaining.
            */
@@ -3315,7 +3315,7 @@ private static final long serialVersionUID = 0L;
            * Subinterface description
            * </pre>
            *
-           * <code>string description = 2;</code>
+           * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
            * @return This builder for chaining.
            */
           public Builder clearDescription() {
@@ -3329,7 +3329,7 @@ private static final long serialVersionUID = 0L;
            * Subinterface description
            * </pre>
            *
-           * <code>string description = 2;</code>
+           * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
            * @param value The bytes for description to set.
            * @return This builder for chaining.
            */
@@ -3351,7 +3351,7 @@ private static final long serialVersionUID = 0L;
            * Subinterface enabled
            * </pre>
            *
-           * <code>bool enabled = 3;</code>
+           * <code>bool enabled = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
            * @return The enabled.
            */
           @java.lang.Override
@@ -3363,7 +3363,7 @@ private static final long serialVersionUID = 0L;
            * Subinterface enabled
            * </pre>
            *
-           * <code>bool enabled = 3;</code>
+           * <code>bool enabled = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
            * @param value The enabled to set.
            * @return This builder for chaining.
            */
@@ -3378,7 +3378,7 @@ private static final long serialVersionUID = 0L;
            * Subinterface enabled
            * </pre>
            *
-           * <code>bool enabled = 3;</code>
+           * <code>bool enabled = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
            * @return This builder for chaining.
            */
           public Builder clearEnabled() {
@@ -3447,7 +3447,7 @@ private static final long serialVersionUID = 0L;
        * Subinterface index
        * </pre>
        *
-       * <code>int64 index = 1;</code>
+       * <code>int64 index = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        * @return The index.
        */
       @java.lang.Override
@@ -3462,7 +3462,7 @@ private static final long serialVersionUID = 0L;
        * Subinterface Configuration
        * </pre>
        *
-       * <code>.opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface.SubifConfig subif_config = 2;</code>
+       * <code>.opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface.SubifConfig subif_config = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        * @return Whether the subifConfig field is set.
        */
       @java.lang.Override
@@ -3474,7 +3474,7 @@ private static final long serialVersionUID = 0L;
        * Subinterface Configuration
        * </pre>
        *
-       * <code>.opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface.SubifConfig subif_config = 2;</code>
+       * <code>.opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface.SubifConfig subif_config = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        * @return The subifConfig.
        */
       @java.lang.Override
@@ -3486,7 +3486,7 @@ private static final long serialVersionUID = 0L;
        * Subinterface Configuration
        * </pre>
        *
-       * <code>.opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface.SubifConfig subif_config = 2;</code>
+       * <code>.opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface.SubifConfig subif_config = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       @java.lang.Override
       public opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface.SubifConfigOrBuilder getSubifConfigOrBuilder() {
@@ -3500,7 +3500,7 @@ private static final long serialVersionUID = 0L;
        * Subinterface State and Statistics
        * </pre>
        *
-       * <code>.opi_api.network.v1alpha1.State state = 3;</code>
+       * <code>.opi_api.network.v1alpha1.State state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return Whether the state field is set.
        */
       @java.lang.Override
@@ -3512,7 +3512,7 @@ private static final long serialVersionUID = 0L;
        * Subinterface State and Statistics
        * </pre>
        *
-       * <code>.opi_api.network.v1alpha1.State state = 3;</code>
+       * <code>.opi_api.network.v1alpha1.State state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return The state.
        */
       @java.lang.Override
@@ -3524,7 +3524,7 @@ private static final long serialVersionUID = 0L;
        * Subinterface State and Statistics
        * </pre>
        *
-       * <code>.opi_api.network.v1alpha1.State state = 3;</code>
+       * <code>.opi_api.network.v1alpha1.State state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        */
       @java.lang.Override
       public opi_api.network.v1alpha1.StateOrBuilder getStateOrBuilder() {
@@ -3904,7 +3904,7 @@ private static final long serialVersionUID = 0L;
          * Subinterface index
          * </pre>
          *
-         * <code>int64 index = 1;</code>
+         * <code>int64 index = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
          * @return The index.
          */
         @java.lang.Override
@@ -3916,7 +3916,7 @@ private static final long serialVersionUID = 0L;
          * Subinterface index
          * </pre>
          *
-         * <code>int64 index = 1;</code>
+         * <code>int64 index = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
          * @param value The index to set.
          * @return This builder for chaining.
          */
@@ -3931,7 +3931,7 @@ private static final long serialVersionUID = 0L;
          * Subinterface index
          * </pre>
          *
-         * <code>int64 index = 1;</code>
+         * <code>int64 index = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
          * @return This builder for chaining.
          */
         public Builder clearIndex() {
@@ -3949,7 +3949,7 @@ private static final long serialVersionUID = 0L;
          * Subinterface Configuration
          * </pre>
          *
-         * <code>.opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface.SubifConfig subif_config = 2;</code>
+         * <code>.opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface.SubifConfig subif_config = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
          * @return Whether the subifConfig field is set.
          */
         public boolean hasSubifConfig() {
@@ -3960,7 +3960,7 @@ private static final long serialVersionUID = 0L;
          * Subinterface Configuration
          * </pre>
          *
-         * <code>.opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface.SubifConfig subif_config = 2;</code>
+         * <code>.opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface.SubifConfig subif_config = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
          * @return The subifConfig.
          */
         public opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface.SubifConfig getSubifConfig() {
@@ -3975,7 +3975,7 @@ private static final long serialVersionUID = 0L;
          * Subinterface Configuration
          * </pre>
          *
-         * <code>.opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface.SubifConfig subif_config = 2;</code>
+         * <code>.opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface.SubifConfig subif_config = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public Builder setSubifConfig(opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface.SubifConfig value) {
           if (subifConfigBuilder_ == null) {
@@ -3995,7 +3995,7 @@ private static final long serialVersionUID = 0L;
          * Subinterface Configuration
          * </pre>
          *
-         * <code>.opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface.SubifConfig subif_config = 2;</code>
+         * <code>.opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface.SubifConfig subif_config = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public Builder setSubifConfig(
             opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface.SubifConfig.Builder builderForValue) {
@@ -4013,7 +4013,7 @@ private static final long serialVersionUID = 0L;
          * Subinterface Configuration
          * </pre>
          *
-         * <code>.opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface.SubifConfig subif_config = 2;</code>
+         * <code>.opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface.SubifConfig subif_config = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public Builder mergeSubifConfig(opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface.SubifConfig value) {
           if (subifConfigBuilder_ == null) {
@@ -4035,7 +4035,7 @@ private static final long serialVersionUID = 0L;
          * Subinterface Configuration
          * </pre>
          *
-         * <code>.opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface.SubifConfig subif_config = 2;</code>
+         * <code>.opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface.SubifConfig subif_config = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public Builder clearSubifConfig() {
           if (subifConfigBuilder_ == null) {
@@ -4053,7 +4053,7 @@ private static final long serialVersionUID = 0L;
          * Subinterface Configuration
          * </pre>
          *
-         * <code>.opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface.SubifConfig subif_config = 2;</code>
+         * <code>.opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface.SubifConfig subif_config = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface.SubifConfig.Builder getSubifConfigBuilder() {
           
@@ -4065,7 +4065,7 @@ private static final long serialVersionUID = 0L;
          * Subinterface Configuration
          * </pre>
          *
-         * <code>.opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface.SubifConfig subif_config = 2;</code>
+         * <code>.opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface.SubifConfig subif_config = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface.SubifConfigOrBuilder getSubifConfigOrBuilder() {
           if (subifConfigBuilder_ != null) {
@@ -4080,7 +4080,7 @@ private static final long serialVersionUID = 0L;
          * Subinterface Configuration
          * </pre>
          *
-         * <code>.opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface.SubifConfig subif_config = 2;</code>
+         * <code>.opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface.SubifConfig subif_config = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         private com.google.protobuf.SingleFieldBuilderV3<
             opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface.SubifConfig, opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface.SubifConfig.Builder, opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface.SubifConfigOrBuilder> 
@@ -4104,7 +4104,7 @@ private static final long serialVersionUID = 0L;
          * Subinterface State and Statistics
          * </pre>
          *
-         * <code>.opi_api.network.v1alpha1.State state = 3;</code>
+         * <code>.opi_api.network.v1alpha1.State state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
          * @return Whether the state field is set.
          */
         public boolean hasState() {
@@ -4115,7 +4115,7 @@ private static final long serialVersionUID = 0L;
          * Subinterface State and Statistics
          * </pre>
          *
-         * <code>.opi_api.network.v1alpha1.State state = 3;</code>
+         * <code>.opi_api.network.v1alpha1.State state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
          * @return The state.
          */
         public opi_api.network.v1alpha1.State getState() {
@@ -4130,7 +4130,7 @@ private static final long serialVersionUID = 0L;
          * Subinterface State and Statistics
          * </pre>
          *
-         * <code>.opi_api.network.v1alpha1.State state = 3;</code>
+         * <code>.opi_api.network.v1alpha1.State state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
          */
         public Builder setState(opi_api.network.v1alpha1.State value) {
           if (stateBuilder_ == null) {
@@ -4150,7 +4150,7 @@ private static final long serialVersionUID = 0L;
          * Subinterface State and Statistics
          * </pre>
          *
-         * <code>.opi_api.network.v1alpha1.State state = 3;</code>
+         * <code>.opi_api.network.v1alpha1.State state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
          */
         public Builder setState(
             opi_api.network.v1alpha1.State.Builder builderForValue) {
@@ -4168,7 +4168,7 @@ private static final long serialVersionUID = 0L;
          * Subinterface State and Statistics
          * </pre>
          *
-         * <code>.opi_api.network.v1alpha1.State state = 3;</code>
+         * <code>.opi_api.network.v1alpha1.State state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
          */
         public Builder mergeState(opi_api.network.v1alpha1.State value) {
           if (stateBuilder_ == null) {
@@ -4190,7 +4190,7 @@ private static final long serialVersionUID = 0L;
          * Subinterface State and Statistics
          * </pre>
          *
-         * <code>.opi_api.network.v1alpha1.State state = 3;</code>
+         * <code>.opi_api.network.v1alpha1.State state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
          */
         public Builder clearState() {
           if (stateBuilder_ == null) {
@@ -4208,7 +4208,7 @@ private static final long serialVersionUID = 0L;
          * Subinterface State and Statistics
          * </pre>
          *
-         * <code>.opi_api.network.v1alpha1.State state = 3;</code>
+         * <code>.opi_api.network.v1alpha1.State state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
          */
         public opi_api.network.v1alpha1.State.Builder getStateBuilder() {
           
@@ -4220,7 +4220,7 @@ private static final long serialVersionUID = 0L;
          * Subinterface State and Statistics
          * </pre>
          *
-         * <code>.opi_api.network.v1alpha1.State state = 3;</code>
+         * <code>.opi_api.network.v1alpha1.State state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
          */
         public opi_api.network.v1alpha1.StateOrBuilder getStateOrBuilder() {
           if (stateBuilder_ != null) {
@@ -4235,7 +4235,7 @@ private static final long serialVersionUID = 0L;
          * Subinterface State and Statistics
          * </pre>
          *
-         * <code>.opi_api.network.v1alpha1.State state = 3;</code>
+         * <code>.opi_api.network.v1alpha1.State state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
          */
         private com.google.protobuf.SingleFieldBuilderV3<
             opi_api.network.v1alpha1.State, opi_api.network.v1alpha1.State.Builder, opi_api.network.v1alpha1.StateOrBuilder> 
@@ -4310,7 +4310,7 @@ private static final long serialVersionUID = 0L;
      * Subinterface Settings
      * </pre>
      *
-     * <code>repeated .opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface subinterface = 2;</code>
+     * <code>repeated .opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface subinterface = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public java.util.List<opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface> getSubinterfaceList() {
@@ -4321,7 +4321,7 @@ private static final long serialVersionUID = 0L;
      * Subinterface Settings
      * </pre>
      *
-     * <code>repeated .opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface subinterface = 2;</code>
+     * <code>repeated .opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface subinterface = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public java.util.List<? extends opi_api.network.v1alpha1.NetInterface.Subinterfaces.SubinterfaceOrBuilder> 
@@ -4333,7 +4333,7 @@ private static final long serialVersionUID = 0L;
      * Subinterface Settings
      * </pre>
      *
-     * <code>repeated .opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface subinterface = 2;</code>
+     * <code>repeated .opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface subinterface = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public int getSubinterfaceCount() {
@@ -4344,7 +4344,7 @@ private static final long serialVersionUID = 0L;
      * Subinterface Settings
      * </pre>
      *
-     * <code>repeated .opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface subinterface = 2;</code>
+     * <code>repeated .opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface subinterface = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface getSubinterface(int index) {
@@ -4355,7 +4355,7 @@ private static final long serialVersionUID = 0L;
      * Subinterface Settings
      * </pre>
      *
-     * <code>repeated .opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface subinterface = 2;</code>
+     * <code>repeated .opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface subinterface = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public opi_api.network.v1alpha1.NetInterface.Subinterfaces.SubinterfaceOrBuilder getSubinterfaceOrBuilder(
@@ -4726,7 +4726,7 @@ private static final long serialVersionUID = 0L;
        * Subinterface Settings
        * </pre>
        *
-       * <code>repeated .opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface subinterface = 2;</code>
+       * <code>repeated .opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface subinterface = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public java.util.List<opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface> getSubinterfaceList() {
         if (subinterfaceBuilder_ == null) {
@@ -4740,7 +4740,7 @@ private static final long serialVersionUID = 0L;
        * Subinterface Settings
        * </pre>
        *
-       * <code>repeated .opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface subinterface = 2;</code>
+       * <code>repeated .opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface subinterface = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public int getSubinterfaceCount() {
         if (subinterfaceBuilder_ == null) {
@@ -4754,7 +4754,7 @@ private static final long serialVersionUID = 0L;
        * Subinterface Settings
        * </pre>
        *
-       * <code>repeated .opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface subinterface = 2;</code>
+       * <code>repeated .opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface subinterface = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface getSubinterface(int index) {
         if (subinterfaceBuilder_ == null) {
@@ -4768,7 +4768,7 @@ private static final long serialVersionUID = 0L;
        * Subinterface Settings
        * </pre>
        *
-       * <code>repeated .opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface subinterface = 2;</code>
+       * <code>repeated .opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface subinterface = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public Builder setSubinterface(
           int index, opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface value) {
@@ -4789,7 +4789,7 @@ private static final long serialVersionUID = 0L;
        * Subinterface Settings
        * </pre>
        *
-       * <code>repeated .opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface subinterface = 2;</code>
+       * <code>repeated .opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface subinterface = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public Builder setSubinterface(
           int index, opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface.Builder builderForValue) {
@@ -4807,7 +4807,7 @@ private static final long serialVersionUID = 0L;
        * Subinterface Settings
        * </pre>
        *
-       * <code>repeated .opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface subinterface = 2;</code>
+       * <code>repeated .opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface subinterface = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public Builder addSubinterface(opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface value) {
         if (subinterfaceBuilder_ == null) {
@@ -4827,7 +4827,7 @@ private static final long serialVersionUID = 0L;
        * Subinterface Settings
        * </pre>
        *
-       * <code>repeated .opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface subinterface = 2;</code>
+       * <code>repeated .opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface subinterface = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public Builder addSubinterface(
           int index, opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface value) {
@@ -4848,7 +4848,7 @@ private static final long serialVersionUID = 0L;
        * Subinterface Settings
        * </pre>
        *
-       * <code>repeated .opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface subinterface = 2;</code>
+       * <code>repeated .opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface subinterface = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public Builder addSubinterface(
           opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface.Builder builderForValue) {
@@ -4866,7 +4866,7 @@ private static final long serialVersionUID = 0L;
        * Subinterface Settings
        * </pre>
        *
-       * <code>repeated .opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface subinterface = 2;</code>
+       * <code>repeated .opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface subinterface = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public Builder addSubinterface(
           int index, opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface.Builder builderForValue) {
@@ -4884,7 +4884,7 @@ private static final long serialVersionUID = 0L;
        * Subinterface Settings
        * </pre>
        *
-       * <code>repeated .opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface subinterface = 2;</code>
+       * <code>repeated .opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface subinterface = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public Builder addAllSubinterface(
           java.lang.Iterable<? extends opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface> values) {
@@ -4903,7 +4903,7 @@ private static final long serialVersionUID = 0L;
        * Subinterface Settings
        * </pre>
        *
-       * <code>repeated .opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface subinterface = 2;</code>
+       * <code>repeated .opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface subinterface = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public Builder clearSubinterface() {
         if (subinterfaceBuilder_ == null) {
@@ -4920,7 +4920,7 @@ private static final long serialVersionUID = 0L;
        * Subinterface Settings
        * </pre>
        *
-       * <code>repeated .opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface subinterface = 2;</code>
+       * <code>repeated .opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface subinterface = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public Builder removeSubinterface(int index) {
         if (subinterfaceBuilder_ == null) {
@@ -4937,7 +4937,7 @@ private static final long serialVersionUID = 0L;
        * Subinterface Settings
        * </pre>
        *
-       * <code>repeated .opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface subinterface = 2;</code>
+       * <code>repeated .opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface subinterface = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface.Builder getSubinterfaceBuilder(
           int index) {
@@ -4948,7 +4948,7 @@ private static final long serialVersionUID = 0L;
        * Subinterface Settings
        * </pre>
        *
-       * <code>repeated .opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface subinterface = 2;</code>
+       * <code>repeated .opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface subinterface = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public opi_api.network.v1alpha1.NetInterface.Subinterfaces.SubinterfaceOrBuilder getSubinterfaceOrBuilder(
           int index) {
@@ -4962,7 +4962,7 @@ private static final long serialVersionUID = 0L;
        * Subinterface Settings
        * </pre>
        *
-       * <code>repeated .opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface subinterface = 2;</code>
+       * <code>repeated .opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface subinterface = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public java.util.List<? extends opi_api.network.v1alpha1.NetInterface.Subinterfaces.SubinterfaceOrBuilder> 
            getSubinterfaceOrBuilderList() {
@@ -4977,7 +4977,7 @@ private static final long serialVersionUID = 0L;
        * Subinterface Settings
        * </pre>
        *
-       * <code>repeated .opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface subinterface = 2;</code>
+       * <code>repeated .opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface subinterface = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface.Builder addSubinterfaceBuilder() {
         return getSubinterfaceFieldBuilder().addBuilder(
@@ -4988,7 +4988,7 @@ private static final long serialVersionUID = 0L;
        * Subinterface Settings
        * </pre>
        *
-       * <code>repeated .opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface subinterface = 2;</code>
+       * <code>repeated .opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface subinterface = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface.Builder addSubinterfaceBuilder(
           int index) {
@@ -5000,7 +5000,7 @@ private static final long serialVersionUID = 0L;
        * Subinterface Settings
        * </pre>
        *
-       * <code>repeated .opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface subinterface = 2;</code>
+       * <code>repeated .opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface subinterface = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public java.util.List<opi_api.network.v1alpha1.NetInterface.Subinterfaces.Subinterface.Builder> 
            getSubinterfaceBuilderList() {
@@ -5081,7 +5081,7 @@ private static final long serialVersionUID = 0L;
    * user settable.  It is returned by the created object
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
    * @return The name.
    */
   @java.lang.Override
@@ -5103,7 +5103,7 @@ private static final long serialVersionUID = 0L;
    * user settable.  It is returned by the created object
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
    * @return The bytes for name.
    */
   @java.lang.Override
@@ -5128,7 +5128,7 @@ private static final long serialVersionUID = 0L;
    * Configuration settings - rw
    * </pre>
    *
-   * <code>.opi_api.network.v1alpha1.Config config = 2;</code>
+   * <code>.opi_api.network.v1alpha1.Config config = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the config field is set.
    */
   @java.lang.Override
@@ -5140,7 +5140,7 @@ private static final long serialVersionUID = 0L;
    * Configuration settings - rw
    * </pre>
    *
-   * <code>.opi_api.network.v1alpha1.Config config = 2;</code>
+   * <code>.opi_api.network.v1alpha1.Config config = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The config.
    */
   @java.lang.Override
@@ -5152,7 +5152,7 @@ private static final long serialVersionUID = 0L;
    * Configuration settings - rw
    * </pre>
    *
-   * <code>.opi_api.network.v1alpha1.Config config = 2;</code>
+   * <code>.opi_api.network.v1alpha1.Config config = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   @java.lang.Override
   public opi_api.network.v1alpha1.ConfigOrBuilder getConfigOrBuilder() {
@@ -5166,7 +5166,7 @@ private static final long serialVersionUID = 0L;
    * Interface State and Statistics - ro
    * </pre>
    *
-   * <code>.opi_api.network.v1alpha1.State state = 3;</code>
+   * <code>.opi_api.network.v1alpha1.State state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return Whether the state field is set.
    */
   @java.lang.Override
@@ -5178,7 +5178,7 @@ private static final long serialVersionUID = 0L;
    * Interface State and Statistics - ro
    * </pre>
    *
-   * <code>.opi_api.network.v1alpha1.State state = 3;</code>
+   * <code>.opi_api.network.v1alpha1.State state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The state.
    */
   @java.lang.Override
@@ -5190,7 +5190,7 @@ private static final long serialVersionUID = 0L;
    * Interface State and Statistics - ro
    * </pre>
    *
-   * <code>.opi_api.network.v1alpha1.State state = 3;</code>
+   * <code>.opi_api.network.v1alpha1.State state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   @java.lang.Override
   public opi_api.network.v1alpha1.StateOrBuilder getStateOrBuilder() {
@@ -5204,7 +5204,7 @@ private static final long serialVersionUID = 0L;
    * Hold Time Settings
    * </pre>
    *
-   * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime holdtime = 4;</code>
+   * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime holdtime = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return Whether the holdtime field is set.
    */
   @java.lang.Override
@@ -5216,7 +5216,7 @@ private static final long serialVersionUID = 0L;
    * Hold Time Settings
    * </pre>
    *
-   * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime holdtime = 4;</code>
+   * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime holdtime = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The holdtime.
    */
   @java.lang.Override
@@ -5228,7 +5228,7 @@ private static final long serialVersionUID = 0L;
    * Hold Time Settings
    * </pre>
    *
-   * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime holdtime = 4;</code>
+   * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime holdtime = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public opi_api.network.v1alpha1.NetInterface.HoldTimeOrBuilder getHoldtimeOrBuilder() {
@@ -5242,7 +5242,7 @@ private static final long serialVersionUID = 0L;
    * Subinterfaces assigned to the interface
    * </pre>
    *
-   * <code>.opi_api.network.v1alpha1.NetInterface.Subinterfaces subinterfaces = 5;</code>
+   * <code>.opi_api.network.v1alpha1.NetInterface.Subinterfaces subinterfaces = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return Whether the subinterfaces field is set.
    */
   @java.lang.Override
@@ -5254,7 +5254,7 @@ private static final long serialVersionUID = 0L;
    * Subinterfaces assigned to the interface
    * </pre>
    *
-   * <code>.opi_api.network.v1alpha1.NetInterface.Subinterfaces subinterfaces = 5;</code>
+   * <code>.opi_api.network.v1alpha1.NetInterface.Subinterfaces subinterfaces = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The subinterfaces.
    */
   @java.lang.Override
@@ -5266,7 +5266,7 @@ private static final long serialVersionUID = 0L;
    * Subinterfaces assigned to the interface
    * </pre>
    *
-   * <code>.opi_api.network.v1alpha1.NetInterface.Subinterfaces subinterfaces = 5;</code>
+   * <code>.opi_api.network.v1alpha1.NetInterface.Subinterfaces subinterfaces = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public opi_api.network.v1alpha1.NetInterface.SubinterfacesOrBuilder getSubinterfacesOrBuilder() {
@@ -5708,7 +5708,7 @@ private static final long serialVersionUID = 0L;
      * user settable.  It is returned by the created object
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
      * @return The name.
      */
     public java.lang.String getName() {
@@ -5729,7 +5729,7 @@ private static final long serialVersionUID = 0L;
      * user settable.  It is returned by the created object
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
      * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
@@ -5751,7 +5751,7 @@ private static final long serialVersionUID = 0L;
      * user settable.  It is returned by the created object
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
      * @param value The name to set.
      * @return This builder for chaining.
      */
@@ -5771,7 +5771,7 @@ private static final long serialVersionUID = 0L;
      * user settable.  It is returned by the created object
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearName() {
@@ -5786,7 +5786,7 @@ private static final long serialVersionUID = 0L;
      * user settable.  It is returned by the created object
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
      * @param value The bytes for name to set.
      * @return This builder for chaining.
      */
@@ -5810,7 +5810,7 @@ private static final long serialVersionUID = 0L;
      * Configuration settings - rw
      * </pre>
      *
-     * <code>.opi_api.network.v1alpha1.Config config = 2;</code>
+     * <code>.opi_api.network.v1alpha1.Config config = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return Whether the config field is set.
      */
     public boolean hasConfig() {
@@ -5821,7 +5821,7 @@ private static final long serialVersionUID = 0L;
      * Configuration settings - rw
      * </pre>
      *
-     * <code>.opi_api.network.v1alpha1.Config config = 2;</code>
+     * <code>.opi_api.network.v1alpha1.Config config = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The config.
      */
     public opi_api.network.v1alpha1.Config getConfig() {
@@ -5836,7 +5836,7 @@ private static final long serialVersionUID = 0L;
      * Configuration settings - rw
      * </pre>
      *
-     * <code>.opi_api.network.v1alpha1.Config config = 2;</code>
+     * <code>.opi_api.network.v1alpha1.Config config = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setConfig(opi_api.network.v1alpha1.Config value) {
       if (configBuilder_ == null) {
@@ -5856,7 +5856,7 @@ private static final long serialVersionUID = 0L;
      * Configuration settings - rw
      * </pre>
      *
-     * <code>.opi_api.network.v1alpha1.Config config = 2;</code>
+     * <code>.opi_api.network.v1alpha1.Config config = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setConfig(
         opi_api.network.v1alpha1.Config.Builder builderForValue) {
@@ -5874,7 +5874,7 @@ private static final long serialVersionUID = 0L;
      * Configuration settings - rw
      * </pre>
      *
-     * <code>.opi_api.network.v1alpha1.Config config = 2;</code>
+     * <code>.opi_api.network.v1alpha1.Config config = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder mergeConfig(opi_api.network.v1alpha1.Config value) {
       if (configBuilder_ == null) {
@@ -5896,7 +5896,7 @@ private static final long serialVersionUID = 0L;
      * Configuration settings - rw
      * </pre>
      *
-     * <code>.opi_api.network.v1alpha1.Config config = 2;</code>
+     * <code>.opi_api.network.v1alpha1.Config config = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearConfig() {
       if (configBuilder_ == null) {
@@ -5914,7 +5914,7 @@ private static final long serialVersionUID = 0L;
      * Configuration settings - rw
      * </pre>
      *
-     * <code>.opi_api.network.v1alpha1.Config config = 2;</code>
+     * <code>.opi_api.network.v1alpha1.Config config = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public opi_api.network.v1alpha1.Config.Builder getConfigBuilder() {
       
@@ -5926,7 +5926,7 @@ private static final long serialVersionUID = 0L;
      * Configuration settings - rw
      * </pre>
      *
-     * <code>.opi_api.network.v1alpha1.Config config = 2;</code>
+     * <code>.opi_api.network.v1alpha1.Config config = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public opi_api.network.v1alpha1.ConfigOrBuilder getConfigOrBuilder() {
       if (configBuilder_ != null) {
@@ -5941,7 +5941,7 @@ private static final long serialVersionUID = 0L;
      * Configuration settings - rw
      * </pre>
      *
-     * <code>.opi_api.network.v1alpha1.Config config = 2;</code>
+     * <code>.opi_api.network.v1alpha1.Config config = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.network.v1alpha1.Config, opi_api.network.v1alpha1.Config.Builder, opi_api.network.v1alpha1.ConfigOrBuilder> 
@@ -5965,7 +5965,7 @@ private static final long serialVersionUID = 0L;
      * Interface State and Statistics - ro
      * </pre>
      *
-     * <code>.opi_api.network.v1alpha1.State state = 3;</code>
+     * <code>.opi_api.network.v1alpha1.State state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return Whether the state field is set.
      */
     public boolean hasState() {
@@ -5976,7 +5976,7 @@ private static final long serialVersionUID = 0L;
      * Interface State and Statistics - ro
      * </pre>
      *
-     * <code>.opi_api.network.v1alpha1.State state = 3;</code>
+     * <code>.opi_api.network.v1alpha1.State state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The state.
      */
     public opi_api.network.v1alpha1.State getState() {
@@ -5991,7 +5991,7 @@ private static final long serialVersionUID = 0L;
      * Interface State and Statistics - ro
      * </pre>
      *
-     * <code>.opi_api.network.v1alpha1.State state = 3;</code>
+     * <code>.opi_api.network.v1alpha1.State state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setState(opi_api.network.v1alpha1.State value) {
       if (stateBuilder_ == null) {
@@ -6011,7 +6011,7 @@ private static final long serialVersionUID = 0L;
      * Interface State and Statistics - ro
      * </pre>
      *
-     * <code>.opi_api.network.v1alpha1.State state = 3;</code>
+     * <code>.opi_api.network.v1alpha1.State state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setState(
         opi_api.network.v1alpha1.State.Builder builderForValue) {
@@ -6029,7 +6029,7 @@ private static final long serialVersionUID = 0L;
      * Interface State and Statistics - ro
      * </pre>
      *
-     * <code>.opi_api.network.v1alpha1.State state = 3;</code>
+     * <code>.opi_api.network.v1alpha1.State state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder mergeState(opi_api.network.v1alpha1.State value) {
       if (stateBuilder_ == null) {
@@ -6051,7 +6051,7 @@ private static final long serialVersionUID = 0L;
      * Interface State and Statistics - ro
      * </pre>
      *
-     * <code>.opi_api.network.v1alpha1.State state = 3;</code>
+     * <code>.opi_api.network.v1alpha1.State state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearState() {
       if (stateBuilder_ == null) {
@@ -6069,7 +6069,7 @@ private static final long serialVersionUID = 0L;
      * Interface State and Statistics - ro
      * </pre>
      *
-     * <code>.opi_api.network.v1alpha1.State state = 3;</code>
+     * <code>.opi_api.network.v1alpha1.State state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public opi_api.network.v1alpha1.State.Builder getStateBuilder() {
       
@@ -6081,7 +6081,7 @@ private static final long serialVersionUID = 0L;
      * Interface State and Statistics - ro
      * </pre>
      *
-     * <code>.opi_api.network.v1alpha1.State state = 3;</code>
+     * <code>.opi_api.network.v1alpha1.State state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public opi_api.network.v1alpha1.StateOrBuilder getStateOrBuilder() {
       if (stateBuilder_ != null) {
@@ -6096,7 +6096,7 @@ private static final long serialVersionUID = 0L;
      * Interface State and Statistics - ro
      * </pre>
      *
-     * <code>.opi_api.network.v1alpha1.State state = 3;</code>
+     * <code>.opi_api.network.v1alpha1.State state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.network.v1alpha1.State, opi_api.network.v1alpha1.State.Builder, opi_api.network.v1alpha1.StateOrBuilder> 
@@ -6120,7 +6120,7 @@ private static final long serialVersionUID = 0L;
      * Hold Time Settings
      * </pre>
      *
-     * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime holdtime = 4;</code>
+     * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime holdtime = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return Whether the holdtime field is set.
      */
     public boolean hasHoldtime() {
@@ -6131,7 +6131,7 @@ private static final long serialVersionUID = 0L;
      * Hold Time Settings
      * </pre>
      *
-     * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime holdtime = 4;</code>
+     * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime holdtime = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The holdtime.
      */
     public opi_api.network.v1alpha1.NetInterface.HoldTime getHoldtime() {
@@ -6146,7 +6146,7 @@ private static final long serialVersionUID = 0L;
      * Hold Time Settings
      * </pre>
      *
-     * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime holdtime = 4;</code>
+     * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime holdtime = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setHoldtime(opi_api.network.v1alpha1.NetInterface.HoldTime value) {
       if (holdtimeBuilder_ == null) {
@@ -6166,7 +6166,7 @@ private static final long serialVersionUID = 0L;
      * Hold Time Settings
      * </pre>
      *
-     * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime holdtime = 4;</code>
+     * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime holdtime = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setHoldtime(
         opi_api.network.v1alpha1.NetInterface.HoldTime.Builder builderForValue) {
@@ -6184,7 +6184,7 @@ private static final long serialVersionUID = 0L;
      * Hold Time Settings
      * </pre>
      *
-     * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime holdtime = 4;</code>
+     * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime holdtime = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder mergeHoldtime(opi_api.network.v1alpha1.NetInterface.HoldTime value) {
       if (holdtimeBuilder_ == null) {
@@ -6206,7 +6206,7 @@ private static final long serialVersionUID = 0L;
      * Hold Time Settings
      * </pre>
      *
-     * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime holdtime = 4;</code>
+     * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime holdtime = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearHoldtime() {
       if (holdtimeBuilder_ == null) {
@@ -6224,7 +6224,7 @@ private static final long serialVersionUID = 0L;
      * Hold Time Settings
      * </pre>
      *
-     * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime holdtime = 4;</code>
+     * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime holdtime = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public opi_api.network.v1alpha1.NetInterface.HoldTime.Builder getHoldtimeBuilder() {
       
@@ -6236,7 +6236,7 @@ private static final long serialVersionUID = 0L;
      * Hold Time Settings
      * </pre>
      *
-     * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime holdtime = 4;</code>
+     * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime holdtime = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public opi_api.network.v1alpha1.NetInterface.HoldTimeOrBuilder getHoldtimeOrBuilder() {
       if (holdtimeBuilder_ != null) {
@@ -6251,7 +6251,7 @@ private static final long serialVersionUID = 0L;
      * Hold Time Settings
      * </pre>
      *
-     * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime holdtime = 4;</code>
+     * <code>.opi_api.network.v1alpha1.NetInterface.HoldTime holdtime = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.network.v1alpha1.NetInterface.HoldTime, opi_api.network.v1alpha1.NetInterface.HoldTime.Builder, opi_api.network.v1alpha1.NetInterface.HoldTimeOrBuilder> 
@@ -6275,7 +6275,7 @@ private static final long serialVersionUID = 0L;
      * Subinterfaces assigned to the interface
      * </pre>
      *
-     * <code>.opi_api.network.v1alpha1.NetInterface.Subinterfaces subinterfaces = 5;</code>
+     * <code>.opi_api.network.v1alpha1.NetInterface.Subinterfaces subinterfaces = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return Whether the subinterfaces field is set.
      */
     public boolean hasSubinterfaces() {
@@ -6286,7 +6286,7 @@ private static final long serialVersionUID = 0L;
      * Subinterfaces assigned to the interface
      * </pre>
      *
-     * <code>.opi_api.network.v1alpha1.NetInterface.Subinterfaces subinterfaces = 5;</code>
+     * <code>.opi_api.network.v1alpha1.NetInterface.Subinterfaces subinterfaces = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The subinterfaces.
      */
     public opi_api.network.v1alpha1.NetInterface.Subinterfaces getSubinterfaces() {
@@ -6301,7 +6301,7 @@ private static final long serialVersionUID = 0L;
      * Subinterfaces assigned to the interface
      * </pre>
      *
-     * <code>.opi_api.network.v1alpha1.NetInterface.Subinterfaces subinterfaces = 5;</code>
+     * <code>.opi_api.network.v1alpha1.NetInterface.Subinterfaces subinterfaces = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setSubinterfaces(opi_api.network.v1alpha1.NetInterface.Subinterfaces value) {
       if (subinterfacesBuilder_ == null) {
@@ -6321,7 +6321,7 @@ private static final long serialVersionUID = 0L;
      * Subinterfaces assigned to the interface
      * </pre>
      *
-     * <code>.opi_api.network.v1alpha1.NetInterface.Subinterfaces subinterfaces = 5;</code>
+     * <code>.opi_api.network.v1alpha1.NetInterface.Subinterfaces subinterfaces = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setSubinterfaces(
         opi_api.network.v1alpha1.NetInterface.Subinterfaces.Builder builderForValue) {
@@ -6339,7 +6339,7 @@ private static final long serialVersionUID = 0L;
      * Subinterfaces assigned to the interface
      * </pre>
      *
-     * <code>.opi_api.network.v1alpha1.NetInterface.Subinterfaces subinterfaces = 5;</code>
+     * <code>.opi_api.network.v1alpha1.NetInterface.Subinterfaces subinterfaces = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder mergeSubinterfaces(opi_api.network.v1alpha1.NetInterface.Subinterfaces value) {
       if (subinterfacesBuilder_ == null) {
@@ -6361,7 +6361,7 @@ private static final long serialVersionUID = 0L;
      * Subinterfaces assigned to the interface
      * </pre>
      *
-     * <code>.opi_api.network.v1alpha1.NetInterface.Subinterfaces subinterfaces = 5;</code>
+     * <code>.opi_api.network.v1alpha1.NetInterface.Subinterfaces subinterfaces = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearSubinterfaces() {
       if (subinterfacesBuilder_ == null) {
@@ -6379,7 +6379,7 @@ private static final long serialVersionUID = 0L;
      * Subinterfaces assigned to the interface
      * </pre>
      *
-     * <code>.opi_api.network.v1alpha1.NetInterface.Subinterfaces subinterfaces = 5;</code>
+     * <code>.opi_api.network.v1alpha1.NetInterface.Subinterfaces subinterfaces = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public opi_api.network.v1alpha1.NetInterface.Subinterfaces.Builder getSubinterfacesBuilder() {
       
@@ -6391,7 +6391,7 @@ private static final long serialVersionUID = 0L;
      * Subinterfaces assigned to the interface
      * </pre>
      *
-     * <code>.opi_api.network.v1alpha1.NetInterface.Subinterfaces subinterfaces = 5;</code>
+     * <code>.opi_api.network.v1alpha1.NetInterface.Subinterfaces subinterfaces = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public opi_api.network.v1alpha1.NetInterface.SubinterfacesOrBuilder getSubinterfacesOrBuilder() {
       if (subinterfacesBuilder_ != null) {
@@ -6406,7 +6406,7 @@ private static final long serialVersionUID = 0L;
      * Subinterfaces assigned to the interface
      * </pre>
      *
-     * <code>.opi_api.network.v1alpha1.NetInterface.Subinterfaces subinterfaces = 5;</code>
+     * <code>.opi_api.network.v1alpha1.NetInterface.Subinterfaces subinterfaces = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.network.v1alpha1.NetInterface.Subinterfaces, opi_api.network.v1alpha1.NetInterface.Subinterfaces.Builder, opi_api.network.v1alpha1.NetInterface.SubinterfacesOrBuilder> 

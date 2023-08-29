@@ -184,7 +184,7 @@ private static final long serialVersionUID = 0L;
    * used for designating the created interface.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The name.
    */
   @java.lang.Override
@@ -206,7 +206,7 @@ private static final long serialVersionUID = 0L;
    * used for designating the created interface.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The bytes for name.
    */
   @java.lang.Override
@@ -231,7 +231,7 @@ private static final long serialVersionUID = 0L;
    * Interface type indicator
    * </pre>
    *
-   * <code>.opi_api.network.v1alpha1.InterfaceType type = 2;</code>
+   * <code>.opi_api.network.v1alpha1.InterfaceType type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The enum numeric value on the wire for type.
    */
   @java.lang.Override public int getTypeValue() {
@@ -242,7 +242,7 @@ private static final long serialVersionUID = 0L;
    * Interface type indicator
    * </pre>
    *
-   * <code>.opi_api.network.v1alpha1.InterfaceType type = 2;</code>
+   * <code>.opi_api.network.v1alpha1.InterfaceType type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The type.
    */
   @java.lang.Override public opi_api.network.v1alpha1.InterfaceType getType() {
@@ -258,7 +258,7 @@ private static final long serialVersionUID = 0L;
    * Configured MTU size
    * </pre>
    *
-   * <code>uint32 mtu = 3;</code>
+   * <code>uint32 mtu = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The mtu.
    */
   @java.lang.Override
@@ -273,7 +273,7 @@ private static final long serialVersionUID = 0L;
    * Configured Loopback mode
    * </pre>
    *
-   * <code>bool loopback_mode = 4;</code>
+   * <code>bool loopback_mode = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The loopbackMode.
    */
   @java.lang.Override
@@ -288,7 +288,7 @@ private static final long serialVersionUID = 0L;
    * Interface description
    * </pre>
    *
-   * <code>string description = 5;</code>
+   * <code>string description = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The description.
    */
   @java.lang.Override
@@ -309,7 +309,7 @@ private static final long serialVersionUID = 0L;
    * Interface description
    * </pre>
    *
-   * <code>string description = 5;</code>
+   * <code>string description = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The bytes for description.
    */
   @java.lang.Override
@@ -334,7 +334,7 @@ private static final long serialVersionUID = 0L;
    * Interface enabled indicator
    * </pre>
    *
-   * <code>bool enabled = 6;</code>
+   * <code>bool enabled = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The enabled.
    */
   @java.lang.Override
@@ -349,7 +349,7 @@ private static final long serialVersionUID = 0L;
    * Interface Index
    * </pre>
    *
-   * <code>uint32 ifindex = 7;</code>
+   * <code>uint32 ifindex = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The ifindex.
    */
   @java.lang.Override
@@ -364,7 +364,7 @@ private static final long serialVersionUID = 0L;
    * Admin State
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.AdminState admin_state = 8;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.AdminState admin_state = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The enum numeric value on the wire for adminState.
    */
   @java.lang.Override public int getAdminStateValue() {
@@ -375,7 +375,7 @@ private static final long serialVersionUID = 0L;
    * Admin State
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.AdminState admin_state = 8;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.AdminState admin_state = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The adminState.
    */
   @java.lang.Override public opi_api.network.opinetcommon.v1alpha1.AdminState getAdminState() {
@@ -391,7 +391,7 @@ private static final long serialVersionUID = 0L;
    * Operational State
    * </pre>
    *
-   * <code>.opi_api.network.v1alpha1.OperState oper_state = 9;</code>
+   * <code>.opi_api.network.v1alpha1.OperState oper_state = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The enum numeric value on the wire for operState.
    */
   @java.lang.Override public int getOperStateValue() {
@@ -402,7 +402,7 @@ private static final long serialVersionUID = 0L;
    * Operational State
    * </pre>
    *
-   * <code>.opi_api.network.v1alpha1.OperState oper_state = 9;</code>
+   * <code>.opi_api.network.v1alpha1.OperState oper_state = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The operState.
    */
   @java.lang.Override public opi_api.network.v1alpha1.OperState getOperState() {
@@ -418,7 +418,7 @@ private static final long serialVersionUID = 0L;
    * Last Change
    * </pre>
    *
-   * <code>uint64 last_change = 10;</code>
+   * <code>uint64 last_change = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The lastChange.
    */
   @java.lang.Override
@@ -433,7 +433,7 @@ private static final long serialVersionUID = 0L;
    * Logical interface
    * </pre>
    *
-   * <code>bool logical = 11;</code>
+   * <code>bool logical = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The logical.
    */
   @java.lang.Override
@@ -448,7 +448,7 @@ private static final long serialVersionUID = 0L;
    * Management interface indicator
    * </pre>
    *
-   * <code>bool management = 12;</code>
+   * <code>bool management = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The management.
    */
   @java.lang.Override
@@ -463,7 +463,7 @@ private static final long serialVersionUID = 0L;
    * CPU
    * </pre>
    *
-   * <code>bool cpu = 13;</code>
+   * <code>bool cpu = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The cpu.
    */
   @java.lang.Override
@@ -478,7 +478,7 @@ private static final long serialVersionUID = 0L;
    * Interface Statistics Counters
    * </pre>
    *
-   * <code>.opi_api.network.v1alpha1.Counters counters = 14;</code>
+   * <code>.opi_api.network.v1alpha1.Counters counters = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return Whether the counters field is set.
    */
   @java.lang.Override
@@ -490,7 +490,7 @@ private static final long serialVersionUID = 0L;
    * Interface Statistics Counters
    * </pre>
    *
-   * <code>.opi_api.network.v1alpha1.Counters counters = 14;</code>
+   * <code>.opi_api.network.v1alpha1.Counters counters = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The counters.
    */
   @java.lang.Override
@@ -502,7 +502,7 @@ private static final long serialVersionUID = 0L;
    * Interface Statistics Counters
    * </pre>
    *
-   * <code>.opi_api.network.v1alpha1.Counters counters = 14;</code>
+   * <code>.opi_api.network.v1alpha1.Counters counters = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   @java.lang.Override
   public opi_api.network.v1alpha1.CountersOrBuilder getCountersOrBuilder() {
@@ -1061,7 +1061,7 @@ private static final long serialVersionUID = 0L;
      * used for designating the created interface.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The name.
      */
     public java.lang.String getName() {
@@ -1082,7 +1082,7 @@ private static final long serialVersionUID = 0L;
      * used for designating the created interface.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
@@ -1104,7 +1104,7 @@ private static final long serialVersionUID = 0L;
      * used for designating the created interface.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The name to set.
      * @return This builder for chaining.
      */
@@ -1124,7 +1124,7 @@ private static final long serialVersionUID = 0L;
      * used for designating the created interface.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearName() {
@@ -1139,7 +1139,7 @@ private static final long serialVersionUID = 0L;
      * used for designating the created interface.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The bytes for name to set.
      * @return This builder for chaining.
      */
@@ -1161,7 +1161,7 @@ private static final long serialVersionUID = 0L;
      * Interface type indicator
      * </pre>
      *
-     * <code>.opi_api.network.v1alpha1.InterfaceType type = 2;</code>
+     * <code>.opi_api.network.v1alpha1.InterfaceType type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The enum numeric value on the wire for type.
      */
     @java.lang.Override public int getTypeValue() {
@@ -1172,7 +1172,7 @@ private static final long serialVersionUID = 0L;
      * Interface type indicator
      * </pre>
      *
-     * <code>.opi_api.network.v1alpha1.InterfaceType type = 2;</code>
+     * <code>.opi_api.network.v1alpha1.InterfaceType type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The enum numeric value on the wire for type to set.
      * @return This builder for chaining.
      */
@@ -1187,7 +1187,7 @@ private static final long serialVersionUID = 0L;
      * Interface type indicator
      * </pre>
      *
-     * <code>.opi_api.network.v1alpha1.InterfaceType type = 2;</code>
+     * <code>.opi_api.network.v1alpha1.InterfaceType type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The type.
      */
     @java.lang.Override
@@ -1201,7 +1201,7 @@ private static final long serialVersionUID = 0L;
      * Interface type indicator
      * </pre>
      *
-     * <code>.opi_api.network.v1alpha1.InterfaceType type = 2;</code>
+     * <code>.opi_api.network.v1alpha1.InterfaceType type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The type to set.
      * @return This builder for chaining.
      */
@@ -1219,7 +1219,7 @@ private static final long serialVersionUID = 0L;
      * Interface type indicator
      * </pre>
      *
-     * <code>.opi_api.network.v1alpha1.InterfaceType type = 2;</code>
+     * <code>.opi_api.network.v1alpha1.InterfaceType type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearType() {
@@ -1235,7 +1235,7 @@ private static final long serialVersionUID = 0L;
      * Configured MTU size
      * </pre>
      *
-     * <code>uint32 mtu = 3;</code>
+     * <code>uint32 mtu = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The mtu.
      */
     @java.lang.Override
@@ -1247,7 +1247,7 @@ private static final long serialVersionUID = 0L;
      * Configured MTU size
      * </pre>
      *
-     * <code>uint32 mtu = 3;</code>
+     * <code>uint32 mtu = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The mtu to set.
      * @return This builder for chaining.
      */
@@ -1262,7 +1262,7 @@ private static final long serialVersionUID = 0L;
      * Configured MTU size
      * </pre>
      *
-     * <code>uint32 mtu = 3;</code>
+     * <code>uint32 mtu = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearMtu() {
@@ -1278,7 +1278,7 @@ private static final long serialVersionUID = 0L;
      * Configured Loopback mode
      * </pre>
      *
-     * <code>bool loopback_mode = 4;</code>
+     * <code>bool loopback_mode = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The loopbackMode.
      */
     @java.lang.Override
@@ -1290,7 +1290,7 @@ private static final long serialVersionUID = 0L;
      * Configured Loopback mode
      * </pre>
      *
-     * <code>bool loopback_mode = 4;</code>
+     * <code>bool loopback_mode = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The loopbackMode to set.
      * @return This builder for chaining.
      */
@@ -1305,7 +1305,7 @@ private static final long serialVersionUID = 0L;
      * Configured Loopback mode
      * </pre>
      *
-     * <code>bool loopback_mode = 4;</code>
+     * <code>bool loopback_mode = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearLoopbackMode() {
@@ -1321,7 +1321,7 @@ private static final long serialVersionUID = 0L;
      * Interface description
      * </pre>
      *
-     * <code>string description = 5;</code>
+     * <code>string description = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The description.
      */
     public java.lang.String getDescription() {
@@ -1341,7 +1341,7 @@ private static final long serialVersionUID = 0L;
      * Interface description
      * </pre>
      *
-     * <code>string description = 5;</code>
+     * <code>string description = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The bytes for description.
      */
     public com.google.protobuf.ByteString
@@ -1362,7 +1362,7 @@ private static final long serialVersionUID = 0L;
      * Interface description
      * </pre>
      *
-     * <code>string description = 5;</code>
+     * <code>string description = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The description to set.
      * @return This builder for chaining.
      */
@@ -1381,7 +1381,7 @@ private static final long serialVersionUID = 0L;
      * Interface description
      * </pre>
      *
-     * <code>string description = 5;</code>
+     * <code>string description = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
@@ -1395,7 +1395,7 @@ private static final long serialVersionUID = 0L;
      * Interface description
      * </pre>
      *
-     * <code>string description = 5;</code>
+     * <code>string description = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The bytes for description to set.
      * @return This builder for chaining.
      */
@@ -1417,7 +1417,7 @@ private static final long serialVersionUID = 0L;
      * Interface enabled indicator
      * </pre>
      *
-     * <code>bool enabled = 6;</code>
+     * <code>bool enabled = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The enabled.
      */
     @java.lang.Override
@@ -1429,7 +1429,7 @@ private static final long serialVersionUID = 0L;
      * Interface enabled indicator
      * </pre>
      *
-     * <code>bool enabled = 6;</code>
+     * <code>bool enabled = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The enabled to set.
      * @return This builder for chaining.
      */
@@ -1444,7 +1444,7 @@ private static final long serialVersionUID = 0L;
      * Interface enabled indicator
      * </pre>
      *
-     * <code>bool enabled = 6;</code>
+     * <code>bool enabled = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearEnabled() {
@@ -1460,7 +1460,7 @@ private static final long serialVersionUID = 0L;
      * Interface Index
      * </pre>
      *
-     * <code>uint32 ifindex = 7;</code>
+     * <code>uint32 ifindex = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The ifindex.
      */
     @java.lang.Override
@@ -1472,7 +1472,7 @@ private static final long serialVersionUID = 0L;
      * Interface Index
      * </pre>
      *
-     * <code>uint32 ifindex = 7;</code>
+     * <code>uint32 ifindex = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The ifindex to set.
      * @return This builder for chaining.
      */
@@ -1487,7 +1487,7 @@ private static final long serialVersionUID = 0L;
      * Interface Index
      * </pre>
      *
-     * <code>uint32 ifindex = 7;</code>
+     * <code>uint32 ifindex = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearIfindex() {
@@ -1503,7 +1503,7 @@ private static final long serialVersionUID = 0L;
      * Admin State
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.AdminState admin_state = 8;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.AdminState admin_state = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The enum numeric value on the wire for adminState.
      */
     @java.lang.Override public int getAdminStateValue() {
@@ -1514,7 +1514,7 @@ private static final long serialVersionUID = 0L;
      * Admin State
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.AdminState admin_state = 8;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.AdminState admin_state = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The enum numeric value on the wire for adminState to set.
      * @return This builder for chaining.
      */
@@ -1529,7 +1529,7 @@ private static final long serialVersionUID = 0L;
      * Admin State
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.AdminState admin_state = 8;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.AdminState admin_state = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The adminState.
      */
     @java.lang.Override
@@ -1543,7 +1543,7 @@ private static final long serialVersionUID = 0L;
      * Admin State
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.AdminState admin_state = 8;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.AdminState admin_state = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The adminState to set.
      * @return This builder for chaining.
      */
@@ -1561,7 +1561,7 @@ private static final long serialVersionUID = 0L;
      * Admin State
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.AdminState admin_state = 8;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.AdminState admin_state = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearAdminState() {
@@ -1577,7 +1577,7 @@ private static final long serialVersionUID = 0L;
      * Operational State
      * </pre>
      *
-     * <code>.opi_api.network.v1alpha1.OperState oper_state = 9;</code>
+     * <code>.opi_api.network.v1alpha1.OperState oper_state = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The enum numeric value on the wire for operState.
      */
     @java.lang.Override public int getOperStateValue() {
@@ -1588,7 +1588,7 @@ private static final long serialVersionUID = 0L;
      * Operational State
      * </pre>
      *
-     * <code>.opi_api.network.v1alpha1.OperState oper_state = 9;</code>
+     * <code>.opi_api.network.v1alpha1.OperState oper_state = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The enum numeric value on the wire for operState to set.
      * @return This builder for chaining.
      */
@@ -1603,7 +1603,7 @@ private static final long serialVersionUID = 0L;
      * Operational State
      * </pre>
      *
-     * <code>.opi_api.network.v1alpha1.OperState oper_state = 9;</code>
+     * <code>.opi_api.network.v1alpha1.OperState oper_state = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The operState.
      */
     @java.lang.Override
@@ -1617,7 +1617,7 @@ private static final long serialVersionUID = 0L;
      * Operational State
      * </pre>
      *
-     * <code>.opi_api.network.v1alpha1.OperState oper_state = 9;</code>
+     * <code>.opi_api.network.v1alpha1.OperState oper_state = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The operState to set.
      * @return This builder for chaining.
      */
@@ -1635,7 +1635,7 @@ private static final long serialVersionUID = 0L;
      * Operational State
      * </pre>
      *
-     * <code>.opi_api.network.v1alpha1.OperState oper_state = 9;</code>
+     * <code>.opi_api.network.v1alpha1.OperState oper_state = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearOperState() {
@@ -1651,7 +1651,7 @@ private static final long serialVersionUID = 0L;
      * Last Change
      * </pre>
      *
-     * <code>uint64 last_change = 10;</code>
+     * <code>uint64 last_change = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The lastChange.
      */
     @java.lang.Override
@@ -1663,7 +1663,7 @@ private static final long serialVersionUID = 0L;
      * Last Change
      * </pre>
      *
-     * <code>uint64 last_change = 10;</code>
+     * <code>uint64 last_change = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The lastChange to set.
      * @return This builder for chaining.
      */
@@ -1678,7 +1678,7 @@ private static final long serialVersionUID = 0L;
      * Last Change
      * </pre>
      *
-     * <code>uint64 last_change = 10;</code>
+     * <code>uint64 last_change = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearLastChange() {
@@ -1694,7 +1694,7 @@ private static final long serialVersionUID = 0L;
      * Logical interface
      * </pre>
      *
-     * <code>bool logical = 11;</code>
+     * <code>bool logical = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The logical.
      */
     @java.lang.Override
@@ -1706,7 +1706,7 @@ private static final long serialVersionUID = 0L;
      * Logical interface
      * </pre>
      *
-     * <code>bool logical = 11;</code>
+     * <code>bool logical = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The logical to set.
      * @return This builder for chaining.
      */
@@ -1721,7 +1721,7 @@ private static final long serialVersionUID = 0L;
      * Logical interface
      * </pre>
      *
-     * <code>bool logical = 11;</code>
+     * <code>bool logical = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearLogical() {
@@ -1737,7 +1737,7 @@ private static final long serialVersionUID = 0L;
      * Management interface indicator
      * </pre>
      *
-     * <code>bool management = 12;</code>
+     * <code>bool management = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The management.
      */
     @java.lang.Override
@@ -1749,7 +1749,7 @@ private static final long serialVersionUID = 0L;
      * Management interface indicator
      * </pre>
      *
-     * <code>bool management = 12;</code>
+     * <code>bool management = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The management to set.
      * @return This builder for chaining.
      */
@@ -1764,7 +1764,7 @@ private static final long serialVersionUID = 0L;
      * Management interface indicator
      * </pre>
      *
-     * <code>bool management = 12;</code>
+     * <code>bool management = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearManagement() {
@@ -1780,7 +1780,7 @@ private static final long serialVersionUID = 0L;
      * CPU
      * </pre>
      *
-     * <code>bool cpu = 13;</code>
+     * <code>bool cpu = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The cpu.
      */
     @java.lang.Override
@@ -1792,7 +1792,7 @@ private static final long serialVersionUID = 0L;
      * CPU
      * </pre>
      *
-     * <code>bool cpu = 13;</code>
+     * <code>bool cpu = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The cpu to set.
      * @return This builder for chaining.
      */
@@ -1807,7 +1807,7 @@ private static final long serialVersionUID = 0L;
      * CPU
      * </pre>
      *
-     * <code>bool cpu = 13;</code>
+     * <code>bool cpu = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearCpu() {
@@ -1825,7 +1825,7 @@ private static final long serialVersionUID = 0L;
      * Interface Statistics Counters
      * </pre>
      *
-     * <code>.opi_api.network.v1alpha1.Counters counters = 14;</code>
+     * <code>.opi_api.network.v1alpha1.Counters counters = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return Whether the counters field is set.
      */
     public boolean hasCounters() {
@@ -1836,7 +1836,7 @@ private static final long serialVersionUID = 0L;
      * Interface Statistics Counters
      * </pre>
      *
-     * <code>.opi_api.network.v1alpha1.Counters counters = 14;</code>
+     * <code>.opi_api.network.v1alpha1.Counters counters = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The counters.
      */
     public opi_api.network.v1alpha1.Counters getCounters() {
@@ -1851,7 +1851,7 @@ private static final long serialVersionUID = 0L;
      * Interface Statistics Counters
      * </pre>
      *
-     * <code>.opi_api.network.v1alpha1.Counters counters = 14;</code>
+     * <code>.opi_api.network.v1alpha1.Counters counters = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setCounters(opi_api.network.v1alpha1.Counters value) {
       if (countersBuilder_ == null) {
@@ -1871,7 +1871,7 @@ private static final long serialVersionUID = 0L;
      * Interface Statistics Counters
      * </pre>
      *
-     * <code>.opi_api.network.v1alpha1.Counters counters = 14;</code>
+     * <code>.opi_api.network.v1alpha1.Counters counters = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setCounters(
         opi_api.network.v1alpha1.Counters.Builder builderForValue) {
@@ -1889,7 +1889,7 @@ private static final long serialVersionUID = 0L;
      * Interface Statistics Counters
      * </pre>
      *
-     * <code>.opi_api.network.v1alpha1.Counters counters = 14;</code>
+     * <code>.opi_api.network.v1alpha1.Counters counters = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder mergeCounters(opi_api.network.v1alpha1.Counters value) {
       if (countersBuilder_ == null) {
@@ -1911,7 +1911,7 @@ private static final long serialVersionUID = 0L;
      * Interface Statistics Counters
      * </pre>
      *
-     * <code>.opi_api.network.v1alpha1.Counters counters = 14;</code>
+     * <code>.opi_api.network.v1alpha1.Counters counters = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearCounters() {
       if (countersBuilder_ == null) {
@@ -1929,7 +1929,7 @@ private static final long serialVersionUID = 0L;
      * Interface Statistics Counters
      * </pre>
      *
-     * <code>.opi_api.network.v1alpha1.Counters counters = 14;</code>
+     * <code>.opi_api.network.v1alpha1.Counters counters = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public opi_api.network.v1alpha1.Counters.Builder getCountersBuilder() {
       
@@ -1941,7 +1941,7 @@ private static final long serialVersionUID = 0L;
      * Interface Statistics Counters
      * </pre>
      *
-     * <code>.opi_api.network.v1alpha1.Counters counters = 14;</code>
+     * <code>.opi_api.network.v1alpha1.Counters counters = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public opi_api.network.v1alpha1.CountersOrBuilder getCountersOrBuilder() {
       if (countersBuilder_ != null) {
@@ -1956,7 +1956,7 @@ private static final long serialVersionUID = 0L;
      * Interface Statistics Counters
      * </pre>
      *
-     * <code>.opi_api.network.v1alpha1.Counters counters = 14;</code>
+     * <code>.opi_api.network.v1alpha1.Counters counters = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.network.v1alpha1.Counters, opi_api.network.v1alpha1.Counters.Builder, opi_api.network.v1alpha1.CountersOrBuilder> 

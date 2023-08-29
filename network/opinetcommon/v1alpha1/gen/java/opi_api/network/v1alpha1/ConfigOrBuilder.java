@@ -13,7 +13,7 @@ public interface ConfigOrBuilder extends
    * used for designating the created interface.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The name.
    */
   java.lang.String getName();
@@ -23,7 +23,7 @@ public interface ConfigOrBuilder extends
    * used for designating the created interface.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString
@@ -34,7 +34,7 @@ public interface ConfigOrBuilder extends
    * Type of interface - Ethernet and others
    * </pre>
    *
-   * <code>.opi_api.network.v1alpha1.InterfaceType type = 2;</code>
+   * <code>.opi_api.network.v1alpha1.InterfaceType type = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
@@ -43,7 +43,7 @@ public interface ConfigOrBuilder extends
    * Type of interface - Ethernet and others
    * </pre>
    *
-   * <code>.opi_api.network.v1alpha1.InterfaceType type = 2;</code>
+   * <code>.opi_api.network.v1alpha1.InterfaceType type = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The type.
    */
   opi_api.network.v1alpha1.InterfaceType getType();
@@ -53,7 +53,7 @@ public interface ConfigOrBuilder extends
    * MTU for the interface that can be configured
    * </pre>
    *
-   * <code>uint32 mtu = 3;</code>
+   * <code>uint32 mtu = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The mtu.
    */
   int getMtu();
@@ -63,7 +63,7 @@ public interface ConfigOrBuilder extends
    * Setting the loopback mode of the interface
    * </pre>
    *
-   * <code>bool loopback_mode = 4;</code>
+   * <code>bool loopback_mode = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The loopbackMode.
    */
   boolean getLoopbackMode();
@@ -73,7 +73,7 @@ public interface ConfigOrBuilder extends
    * Description of the interface and usage
    * </pre>
    *
-   * <code>string description = 5;</code>
+   * <code>string description = 5 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The description.
    */
   java.lang.String getDescription();
@@ -82,7 +82,7 @@ public interface ConfigOrBuilder extends
    * Description of the interface and usage
    * </pre>
    *
-   * <code>string description = 5;</code>
+   * <code>string description = 5 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The bytes for description.
    */
   com.google.protobuf.ByteString
@@ -93,7 +93,7 @@ public interface ConfigOrBuilder extends
    * Setting for enabling/disabling the interface
    * </pre>
    *
-   * <code>bool enabled = 6;</code>
+   * <code>bool enabled = 6 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The enabled.
    */
   boolean getEnabled();
