@@ -11,7 +11,7 @@
       "fileMatch": ["^Makefile$"],
       "matchStrings": ["namely/protoc-all:(?<currentValue>.*?)"],
       "datasourceTemplate": "docker",
-      "depNameTemplate": "docker.io/namely/protoc-all",
+      "depNameTemplate": "docker.io/namely/protoc-all"
     }
   ]
 }
