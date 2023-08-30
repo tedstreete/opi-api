@@ -399,8 +399,8 @@ message BGPAdjRibOut {
 }
 
 // BGP Adj-RIB-Out spec for get operations
+// empty for now; add support for more filtered gets in future
 message BGPAdjRibOutSpec {
-  // empty for now; add support for more filtered gets in future
 }
 
 // BGP Adj-RIB-Out table contains set of routes advertised to all peers

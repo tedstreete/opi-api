@@ -6,6 +6,7 @@ package opi_api.network.cloud.v1alpha1;
 /**
  * <pre>
  * BGP Adj-RIB-Out spec for get operations
+ * empty for now; add support for more filtered gets in future
  * </pre>
  *
  * Protobuf type {@code opi_api.network.cloud.v1alpha1.BGPAdjRibOutSpec}
@@ -233,6 +234,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * BGP Adj-RIB-Out spec for get operations
+   * empty for now; add support for more filtered gets in future
    * </pre>
    *
    * Protobuf type {@code opi_api.network.cloud.v1alpha1.BGPAdjRibOutSpec}

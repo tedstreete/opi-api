@@ -362,7 +362,6 @@ spec is used to query specific adjacencies
 
 ### BGPAdjRibOutSpec
 BGP Adj-RIB-Out spec for get operations
-
 empty for now; add support for more filtered gets in future
 
 

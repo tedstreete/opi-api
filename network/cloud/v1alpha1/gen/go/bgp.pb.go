@@ -2896,6 +2896,7 @@ func (x *BGPAdjRibOut) GetStatus() *BGPAdjRibOutStatus {
 }
 
 // BGP Adj-RIB-Out spec for get operations
+// empty for now; add support for more filtered gets in future
 type BGPAdjRibOutSpec struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
