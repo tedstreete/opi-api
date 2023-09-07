@@ -8,7 +8,7 @@ see <https://github.com/opiproject/opi-poc/tree/main/demos/storage>
 
 see <https://github.com/opiproject/pydpu> and <https://github.com/opiproject/godpu>
 
-## Reference implemntations
+## Reference implementations
 
 - <https://github.com/opiproject/opi-spdk-bridge>
 - <https://github.com/opiproject/opi-nvidia-bridge>
@@ -43,10 +43,20 @@ _All implementations above are reference only and __not__ meant to be used as-is
 
 ## Implementation
 
-The [Specification](proto/autogen.md) is implemented in proto. Compile it as:
+Compile it as:
 
 ```bash
-   docker run --user=$$(id -u):$$(id -g) --rm -v $PWD:/defs namely/protoc-all --lint -d proto -l go -o ./proto/  --go-source-relative
+	docker run --user=$$(id -u):$$(id -g) --rm -v "${PWD}":/defs -v "${PWD}/../common/v1":/common namely/protoc-all:1.51_2 -i /common --lint -d v1alpha1 -l go -o ./v1alpha1/gen/go/  --go-source-relative
+```
+
+Linter it as:
+```bash
+	docker run --user=$$(id -u):$$(id -g) --rm --entrypoint=sh -v "${PWD}/../common/v1":/common -v "${PWD}"/v1alpha1/:/out -w /out ghcr.io/docker-multiarch/google-api-linter:1.56.1 -c "api-linter -I /common /out/*.proto --output-format github --set-exit-status"
+```
+
+Generate [docs](v1alpha1/autogen.md) as:
+```bash
+	docker run --user=$$(id -u):$$(id -g) --rm --entrypoint=sh -v "${PWD}/../common/v1":/common -v "${PWD}"/v1alpha1/:/out -w /out -v "${PWD}"/v1alpha1:/protos pseudomuto/protoc-gen-doc -c "protoc -I /common -I /protos --doc_out=/out --doc_opt=markdown,autogen.md /protos/*.proto /common/*.proto"
 ```
 
 Test your APIs even if unmerged using your private fork like this:
