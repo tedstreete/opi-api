@@ -36,7 +36,7 @@ found [here](https://github.com/strongswan/strongswan/blob/master/src/libcharon/
 
 The architecture is seen in the diagram below.
 
-![OPI IPsec Security Architecture](https://github.com/opiproject/opi-poc/blob/main/security/sec-architecture.drawio.png)
+![OPI IPsec Security Architecture](https://github.com/opiproject/opi-strongswan-bridge/blob/main/sec-architecture.drawio.png)
 
 The idea here is that DPU and IPU vendors will implement strongSwan plugins to
 offload the tunnels into hardware.
