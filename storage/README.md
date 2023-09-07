@@ -14,6 +14,9 @@ see <https://github.com/opiproject/pydpu> and <https://github.com/opiproject/god
 - <https://github.com/opiproject/opi-nvidia-bridge>
 - <https://github.com/opiproject/opi-marvell-bridge>
 - <https://github.com/opiproject/opi-intel-bridge>
+- AMD (WIP)
+
+_All implementations above are reference only and not meant to be used as-is in production_
 
 ## Storage API sub-group Goals & Deliverables
 
