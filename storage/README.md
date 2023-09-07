@@ -1,5 +1,20 @@
 # OPI Storage APIs
 
+## Demos
+
+see <https://github.com/opiproject/opi-poc/tree/main/demos/storage>
+
+## Clients
+
+see <https://github.com/opiproject/pydpu> and <https://github.com/opiproject/godpu>
+
+## Reference implemntations
+
+- <https://github.com/opiproject/opi-spdk-bridge>
+- <https://github.com/opiproject/opi-nvidia-bridge>
+- <https://github.com/opiproject/opi-marvell-bridge>
+- <https://github.com/opiproject/opi-intel-bridge>
+
 ## Storage API sub-group Goals & Deliverables
 
 ### Objectives
