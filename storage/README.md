@@ -59,6 +59,12 @@ Linter it as:
 docker run --user=$$(id -u):$$(id -g) --rm --entrypoint=sh -v "${PWD}/../common/v1":/common -v "${PWD}"/v1alpha1/:/out -w /out ghcr.io/docker-multiarch/google-api-linter:1.57.0 -c "api-linter -I /common /out/*.proto --output-format github --set-exit-status"
 ```
 
+Additional linter:
+
+```bash
+docker run --rm -it -v /etc/pki/ca-trust/extracted/pem/tls-ca-bundle.pem:/etc/ssl/certs/ca-certificates.crt -v "$(pwd):/workspace" -w /workspace bufbuild/buf lint
+```
+
 Generate [docs](v1alpha1/autogen.md) as:
 
 ```bash
