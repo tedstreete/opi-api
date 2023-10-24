@@ -15,6 +15,7 @@ see <https://github.com/opiproject/pydpu> and <https://github.com/opiproject/god
 - <https://github.com/opiproject/opi-marvell-bridge>
 - <https://github.com/opiproject/opi-intel-bridge>
 - AMD (WIP)
+- Xsight (WIP)
 
 _All implementations above are reference only and __not__ meant to be used as-is in production_
 
