@@ -27,25 +27,25 @@
       "depNameTemplate": "ghcr.io/docker-multiarch/google-api-linter"
     },
     {
-      "fileMatch": ["(^|\\/)buf.work.yaml"],
+      "fileMatch": ["(^|\\/)buf.gem.yaml"],
       "matchStrings": ["grpc/python:(?<currentValue>.*?\\s"],
       "datasourceTemplate": "github-tags",
       "depNameTemplate": "grpc/grpc"
     },
     {
-      "fileMatch": ["(^|\\/)buf.work.yaml"],
+      "fileMatch": ["(^|\\/)buf.gen.yaml"],
       "matchStrings": ["protocolbuffers/python:(?<currentValue>.*?\\s"],
       "datasourceTemplate": "github-tags",
       "depNameTemplate": "protocolbuffers/protobuf"
     },
     {
-      "fileMatch": ["(^|\\/)buf.work.yaml"],
+      "fileMatch": ["(^|\\/)buf.gen.yaml"],
       "matchStrings": ["protocolbuffers/go:(?<currentValue>.*?\\s"],
       "datasourceTemplate": "github-tags",
       "depNameTemplate": "protocolbuffers/protobuf-go"
     },
     {
-      "fileMatch": ["(^|\\/)buf.work.yaml"],
+      "fileMatch": ["(^|\\/)buf.gen.yaml"],
       "matchStrings": ["grpc-ecosystem/gateway:(?<currentValue>.*?\\s"],
       "datasourceTemplate": "github-tags",
       "depNameTemplate": "grpc-ecosystem/grpc-gateway"
