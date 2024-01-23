@@ -28,25 +28,25 @@
     },
     {
       "fileMatch": ["(^|\\/)buf.gem.yaml"],
-      "matchStrings": ["grpc/python:(?<currentValue>.*?\\s"],
+      "matchStrings": ["grpc/python:(?<currentValue>.*?)\\s"],
       "datasourceTemplate": "github-tags",
       "depNameTemplate": "grpc/grpc"
     },
     {
       "fileMatch": ["(^|\\/)buf.gen.yaml"],
-      "matchStrings": ["protocolbuffers/python:(?<currentValue>.*?\\s"],
+      "matchStrings": ["protocolbuffers/python:(?<currentValue>.*?)\\s"],
       "datasourceTemplate": "github-tags",
       "depNameTemplate": "protocolbuffers/protobuf"
     },
     {
       "fileMatch": ["(^|\\/)buf.gen.yaml"],
-      "matchStrings": ["protocolbuffers/go:(?<currentValue>.*?\\s"],
+      "matchStrings": ["protocolbuffers/go:(?<currentValue>.*?)\\s"],
       "datasourceTemplate": "github-tags",
       "depNameTemplate": "protocolbuffers/protobuf-go"
     },
     {
       "fileMatch": ["(^|\\/)buf.gen.yaml"],
-      "matchStrings": ["grpc-ecosystem/gateway:(?<currentValue>.*?\\s"],
+      "matchStrings": ["grpc-ecosystem/gateway:(?<currentValue>.*?)\\s"],
       "datasourceTemplate": "github-tags",
       "depNameTemplate": "grpc-ecosystem/grpc-gateway"
     }
